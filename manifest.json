@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.11.15+2",
+  "contentVersion": "2026.11.15+3",
   "minAppVersion": 1,
   "categories": [
     {
@@ -39,6 +39,15 @@
               "sha256": "c35c3e00d54b21ce53989848b34b9490107d269315e258630509fdabb710e6c5",
               "sizeBytes": 1772,
               "order": 1
+            },
+            {
+              "id": "linear-eq-02",
+              "title": "Two-step equations",
+              "path": "math/algebra-1/linear-eq/lesson-02.json",
+              "version": 1,
+              "sha256": "5be23cac6f1e8f1f4b1d66da1c2154b54285c898649f01e17a421ba788bbbd37",
+              "sizeBytes": 885,
+              "order": 2
             }
           ]
         }
@@ -64,6 +73,15 @@
               "sha256": "9ed57fce6e93a07ba18851882d4562f6230577cc04e1c9e7258a0451d5fcb7a9",
               "sizeBytes": 1586,
               "order": 1
+            },
+            {
+              "id": "matter-02",
+              "title": "Atoms and molecules",
+              "path": "science/basics/matter/lesson-02.json",
+              "version": 1,
+              "sha256": "1034f258125e14d2c5f8b93c337ec2f017005dfffc2d629283801270a1bb8966",
+              "sizeBytes": 1005,
+              "order": 2
             }
           ]
         }
