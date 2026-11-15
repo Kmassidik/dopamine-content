@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lesson.schema.json",
+  "title": "Dopamine lesson",
+  "type": "object",
+  "required": ["id", "version", "title", "xp", "questions"],
+  "additionalProperties": true,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "version": { "type": "integer", "minimum": 1 },
+    "title": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "xp": { "type": "integer", "minimum": 1, "maximum": 100 },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "questions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 40,
+      "items": { "$ref": "#/definitions/question" }
+    }
+  },
+  "definitions": {
+    "text": { "type": "string", "minLength": 1, "maxLength": 600 },
+    "relativeSvg": {
+      "type": "string",
+      "pattern": "^(?!/)(?!.*\\.\\.)[A-Za-z0-9_\\-/]+\\.svg$"
+    },
+    "question": {
+      "type": "object",
+      "required": ["id", "type", "explanation"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "type": { "type": "string", "minLength": 1 },
+        "explanation": { "$ref": "#/definitions/text" },
+        "image": { "$ref": "#/definitions/relativeSvg" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "multiple_choice" } }, "required": ["type"] },
+          "then": {
+            "required": ["prompt", "choices", "answerIndex"],
+            "properties": {
+              "prompt": { "$ref": "#/definitions/text" },
+              "choices": { "type": "array", "minItems": 2, "maxItems": 5, "items": { "$ref": "#/definitions/text" } },
+              "answerIndex": { "type": "integer", "minimum": 0, "maximum": 4 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "fill_blank" } }, "required": ["type"] },
+          "then": {
+            "required": ["prompt", "choices", "answerIndex"],
+            "properties": {
+              "prompt": { "$ref": "#/definitions/text" },
+              "choices": { "type": "array", "minItems": 2, "maxItems": 5, "items": { "$ref": "#/definitions/text" } },
+              "answerIndex": { "type": "integer", "minimum": 0, "maximum": 4 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "type_answer" } }, "required": ["type"] },
+          "then": {
+            "required": ["prompt", "accepted"],
+            "properties": {
+              "prompt": { "$ref": "#/definitions/text" },
+              "accepted": { "type": "array", "minItems": 1, "maxItems": 12, "items": { "type": "string", "minLength": 1, "maxLength": 60 } },
+              "keypad": { "enum": ["numeric", "algebra", "full"] }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "match_pairs" } }, "required": ["type"] },
+          "then": {
+            "required": ["pairs"],
+            "properties": {
+              "prompt": { "$ref": "#/definitions/text" },
+              "pairs": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 6,
+                "items": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "items": { "$ref": "#/definitions/text" }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "order_steps" } }, "required": ["type"] },
+          "then": {
+            "required": ["steps"],
+            "properties": {
+              "prompt": { "$ref": "#/definitions/text" },
+              "steps": { "type": "array", "minItems": 2, "maxItems": 8, "items": { "$ref": "#/definitions/text" } }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

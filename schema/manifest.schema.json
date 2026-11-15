@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "manifest.schema.json",
+  "title": "Dopamine content manifest",
+  "type": "object",
+  "required": ["schemaVersion", "contentVersion", "minAppVersion", "categories", "courses", "images"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "contentVersion": { "type": "string", "minLength": 1 },
+    "minAppVersion": { "type": "integer", "minimum": 1 },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "icon", "color", "order"],
+        "properties": {
+          "id": { "$ref": "#/definitions/id" },
+          "name": { "type": "string", "minLength": 1 },
+          "icon": { "type": "string" },
+          "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+          "order": { "type": "integer" }
+        }
+      }
+    },
+    "courses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "categoryId", "title", "description", "order", "units"],
+        "properties": {
+          "id": { "$ref": "#/definitions/id" },
+          "categoryId": { "$ref": "#/definitions/id" },
+          "title": { "type": "string", "minLength": 1 },
+          "description": { "type": "string" },
+          "order": { "type": "integer" },
+          "units": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "title", "order", "lessons"],
+              "properties": {
+                "id": { "$ref": "#/definitions/id" },
+                "title": { "type": "string", "minLength": 1 },
+                "order": { "type": "integer" },
+                "lessons": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["id", "title", "path", "version", "sha256", "sizeBytes", "order"],
+                    "properties": {
+                      "id": { "$ref": "#/definitions/id" },
+                      "title": { "type": "string", "minLength": 1 },
+                      "path": { "$ref": "#/definitions/relativePath" },
+                      "version": { "type": "integer", "minimum": 1 },
+                      "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+                      "sizeBytes": { "type": "integer", "minimum": 1 },
+                      "order": { "type": "integer" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256", "sizeBytes"],
+        "properties": {
+          "path": { "$ref": "#/definitions/relativePath" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "sizeBytes": { "type": "integer", "minimum": 1 }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "relativePath": {
+      "type": "string",
+      "pattern": "^(?!/)(?!.*\\.\\.)[A-Za-z0-9_\\-/]+\\.(json|svg)$"
+    }
+  }
+}

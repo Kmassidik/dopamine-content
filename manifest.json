@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.11.15+2",
+  "minAppVersion": 1,
+  "categories": [
+    {
+      "id": "math",
+      "name": "Math",
+      "icon": "ic_math",
+      "color": "#3A4A8C",
+      "order": 1
+    },
+    {
+      "id": "science",
+      "name": "Science",
+      "icon": "ic_science",
+      "color": "#5E8B4F",
+      "order": 2
+    }
+  ],
+  "courses": [
+    {
+      "id": "algebra-1",
+      "categoryId": "math",
+      "title": "Algebra 1",
+      "description": "Equations, expressions, and functions",
+      "order": 1,
+      "units": [
+        {
+          "id": "linear-eq",
+          "title": "Linear Equations",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "linear-eq-01",
+              "title": "One-step equations",
+              "path": "math/algebra-1/linear-eq/lesson-01.json",
+              "version": 1,
+              "sha256": "c35c3e00d54b21ce53989848b34b9490107d269315e258630509fdabb710e6c5",
+              "sizeBytes": 1772,
+              "order": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science-basics",
+      "categoryId": "science",
+      "title": "Science Basics",
+      "description": "Matter, energy, and the living world",
+      "order": 1,
+      "units": [
+        {
+          "id": "matter",
+          "title": "Matter",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "matter-01",
+              "title": "States of matter",
+              "path": "science/basics/matter/lesson-01.json",
+              "version": 1,
+              "sha256": "9ed57fce6e93a07ba18851882d4562f6230577cc04e1c9e7258a0451d5fcb7a9",
+              "sizeBytes": 1586,
+              "order": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "path": "images/number-line.svg",
+      "sha256": "69f1ff6bef33841bbfd9e09d21b97c0ab570c288af5d63ea15bb1249b88604c3",
+      "sizeBytes": 842
+    }
+  ]
+}

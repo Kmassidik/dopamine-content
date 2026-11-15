@@ -1,0 +1,47 @@
+{
+  "id": "matter-01",
+  "version": 1,
+  "title": "States of matter",
+  "xp": 10,
+  "tags": ["chemistry", "matter"],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which state of matter keeps its shape and its volume?",
+      "choices": ["Solid", "Liquid", "Gas"],
+      "answerIndex": 0,
+      "explanation": "Particles in a solid are packed tightly and only vibrate in place."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Water boils at how many degrees Celsius at sea level?",
+      "accepted": ["100", "100.0"],
+      "keypad": "numeric",
+      "explanation": "At sea level, water boils at $100\\,^\\circ\\text{C}$."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "Ice turning into water is called \\_\\_.",
+      "choices": ["melting", "freezing", "condensation"],
+      "answerIndex": 0,
+      "explanation": "Solid to liquid is melting. The reverse is freezing."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each formula with its substance.",
+      "pairs": [["$\\text{H}_2\\text{O}$", "water"], ["$\\text{CO}_2$", "carbon dioxide"], ["$\\text{O}_2$", "oxygen"]],
+      "explanation": "The subscript counts atoms of the element before it."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put the water cycle in order.",
+      "steps": ["Water evaporates", "Vapor condenses into clouds", "Rain falls"],
+      "explanation": "Heat lifts water up, cooling forms clouds, and gravity brings it back."
+    }
+  ]
+}

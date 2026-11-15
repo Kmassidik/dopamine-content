@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "minAppVersion": 1,
+  "categories": [
+    { "id": "math", "name": "Math", "icon": "ic_math", "color": "#3A4A8C", "order": 1 },
+    { "id": "science", "name": "Science", "icon": "ic_science", "color": "#5E8B4F", "order": 2 }
+  ],
+  "courses": [
+    {
+      "id": "algebra-1",
+      "categoryId": "math",
+      "title": "Algebra 1",
+      "description": "Equations, expressions, and functions",
+      "order": 1,
+      "dir": "math/algebra-1",
+      "units": [
+        { "id": "linear-eq", "title": "Linear Equations", "order": 1, "dir": "linear-eq" }
+      ]
+    },
+    {
+      "id": "science-basics",
+      "categoryId": "science",
+      "title": "Science Basics",
+      "description": "Matter, energy, and the living world",
+      "order": 1,
+      "dir": "science/basics",
+      "units": [
+        { "id": "matter", "title": "Matter", "order": 1, "dir": "matter" }
+      ]
+    }
+  ]
+}
