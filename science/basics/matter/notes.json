@@ -1,0 +1,59 @@
+{
+  "id": "matter-notes",
+  "version": 1,
+  "title": "Matter: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Everything is matter, and matter is made of tiny particles. How those particles move decides its state."
+    },
+    {
+      "id": "states",
+      "kind": "list",
+      "title": "States of matter",
+      "items": [
+        "Solid: fixed shape and fixed volume",
+        "Liquid: fixed volume, takes the shape of its container",
+        "Gas: spreads out to fill any container"
+      ]
+    },
+    {
+      "id": "changes",
+      "kind": "list",
+      "title": "Changes of state",
+      "items": [
+        "Melting: solid to liquid",
+        "Freezing: liquid to solid",
+        "Evaporation: liquid to gas",
+        "Condensation: gas to liquid"
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "list",
+      "title": "Common formulas",
+      "items": [
+        "$\\text{H}_2\\text{O}$ is water",
+        "$\\text{CO}_2$ is carbon dioxide",
+        "$\\text{O}_2$ is oxygen"
+      ]
+    },
+    {
+      "id": "atom",
+      "kind": "list",
+      "title": "Inside an atom",
+      "items": [
+        "Proton: positive, in the nucleus",
+        "Neutron: no charge, in the nucleus",
+        "Electron: negative, moves around the nucleus"
+      ]
+    },
+    {
+      "id": "molecule",
+      "kind": "tip",
+      "body": "A molecule is two or more atoms bonded together."
+    }
+  ]
+}

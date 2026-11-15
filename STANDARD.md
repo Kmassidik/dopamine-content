@@ -8,6 +8,7 @@ Every course in this repo has the same shape. `python3 tools/validate.py` enforc
 Course
   overview      summary, what you'll learn, before you start, minutes
   Unit          one objective (a topic you can say in one line)
+    notes.json  the unit's cheat sheet (look things up any time)
     Lesson      Learn pages (read) -> Practice questions (do)
 ```
 
@@ -23,6 +24,14 @@ A learner first **reads** a few short pages, then **practises**. Never questions
 | COURSE-REQUIREMENTS | `requirements` ("Before you start"): 1 to 4 items. Write "None. ..." if nothing is needed |
 | COURSE-MINUTES | `minutes` is at least the estimate and at most 3x it. Estimate = reading words / 200 + 0.5 per question. The error message tells you the range |
 | UNIT-SIZE | 1 to 8 lessons per unit |
+| UNIT-NOTES | Every unit has a `notes.json` next to its lessons |
+| NOTES-BLOCKS | 3 to 10 blocks |
+| NOTES-INTRO | The first block is kind `text` (the big idea of the unit) |
+| NOTES-CONTENT | At least one `formula` or `list` block (something to look up) |
+| NOTES-KIND / BODY / TITLE | Kinds are `text`, `formula`, `list`, `tip`. `text`, `formula` and `tip` need a `body`; `text`, `formula` and `list` need a `title` |
+| NOTES-FORMULA | A `formula` body contains a `$...$` formula |
+| NOTES-ITEMS | A `list` has 2 to 8 items, each at most 100 characters |
+| NOTES-LENGTH | A block body is at most 450 characters and the whole notes file at most 400 words |
 | LESSON-LEARN | 2 to 10 learn pages |
 | LESSON-INTRO | The first page is `text` (what this lesson is about) |
 | LESSON-EXAMPLE | At least one `example` page (a worked example) |
@@ -40,6 +49,8 @@ A learner first **reads** a few short pages, then **practises**. Never questions
 | TEXT-MATH-BALANCE | An even number of `$`, and balanced `{ }` inside each formula |
 | TEXT-DOLLAR | No `\$` (the app does not support an escaped dollar) |
 | TEXT-LATEX | Only the LaTeX commands the app can draw (list in `tools/standard.py`, `LATEX_OK`) |
+
+Notes file (`<unit>/notes.json`): `{ "id", "version", "title", "blocks": [ { "id", "kind", "title", "body", "items" } ] }`. Bump `version` when you change it. Keep it to what a learner looks up: the big idea, the rules, the formulas, the notation, one tip.
 
 Page kinds: `text` (explain one idea), `example` (a title, a one-line `body` and 2 to 6 `steps` shown one at a time), `tip` (a short reminder, `body` only). A page may have an `image` (relative `.svg`).
 
@@ -60,6 +71,6 @@ These are guidelines drawn from public teaching advice, not hard science. If a r
 ## Adding a course (checklist)
 
 1. Add the course and its units to `catalog.json`, including `overview`.
-2. For each unit, add `lesson-NN.json` files with `learn` pages and `questions`.
+2. For each unit, add `notes.json` and `lesson-NN.json` files with `learn` pages and `questions`.
 3. `python3 tools/build_manifest.py`, then `pip install jsonschema` and `python3 tools/validate.py`. Fix every `FAIL` line.
 4. Open a pull request. CI runs the same checks.

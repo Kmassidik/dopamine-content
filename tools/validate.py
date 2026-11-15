@@ -78,6 +78,22 @@ def main() -> int:
                     learn_check(doc, l["path"])
                 if doc.get("id") != l["id"] or doc.get("version") != l["version"]:
                     errors.append(f"{l['path']}: id/version differ from manifest")
+    for course in manifest["courses"]:
+        for unit in course["units"]:
+            n = unit.get("notes")
+            if not n:
+                continue
+            p = ROOT / n["path"]
+            if not p.is_file():
+                errors.append(f"{n['path']}: file missing")
+                continue
+            doc = load(p)
+            schema_check(doc, "notes.schema.json", n["path"])
+            if doc.get("id") != n["id"] or doc.get("version") != n["version"]:
+                errors.append(f"{n['path']}: id/version differ from manifest")
+            ids = [b["id"] for b in doc.get("blocks", [])]
+            if len(set(ids)) != len(ids):
+                errors.append(f"{n['path']}: duplicate block ids")
     for img in manifest["images"]:
         if not (ROOT / img["path"]).is_file():
             errors.append(f"{img['path']}: image missing")

@@ -30,6 +30,10 @@ RULES = {
     "words_per_minute": 200,         # reading speed used for the time estimate
     "minutes_per_question": 0.5,
     "minutes_slack": 3,              # overview.minutes may be up to 3x the estimate
+    "notes_blocks": (3, 10),
+    "notes_words": 400,
+    "notes_list_items": (2, 8),
+    "notes_item_chars": 100,
 }
 
 # LaTeX commands the app's renderer understands (ui/math/MathParser.kt). Keep in sync.
@@ -98,6 +102,53 @@ def check_text(rep, where, s):
         for cmd in re.findall(r"\\([A-Za-z]+)", body):
             if cmd not in LATEX_OK:
                 rep.fail("TEXT-LATEX", where, f"\\{cmd} is not supported by the app's math renderer")
+
+
+def notes_texts(notes: dict):
+    for b in notes.get("blocks", []):
+        for k in ("title", "body"):
+            if k in b:
+                yield f"notes/{b['id']}.{k}", b[k]
+        for i, s in enumerate(b.get("items", [])):
+            yield f"notes/{b['id']}.items[{i}]", s
+
+
+def check_notes(rep, label, notes):
+    blocks = notes.get("blocks", [])
+    lo, hi = RULES["notes_blocks"]
+    if not lo <= len(blocks) <= hi:
+        rep.fail("NOTES-BLOCKS", label, f"needs {lo} to {hi} blocks, has {len(blocks)}")
+    if blocks and blocks[0]["kind"] != "text":
+        rep.fail("NOTES-INTRO", label, "the first block must be kind 'text' (the big idea of the unit)")
+    if not any(b["kind"] in ("formula", "list") for b in blocks):
+        rep.fail("NOTES-CONTENT", label, "needs at least one 'formula' or 'list' block (something to look up)")
+    if len(notes["title"]) > RULES["title_chars"] + 20 or notes["title"].endswith("."):
+        rep.fail("NOTES-TITLE", label, "title up to 60 characters, no trailing period")
+    for b in blocks:
+        w = f"{label} block {b['id']}"
+        kind = b["kind"]
+        if kind not in ("text", "formula", "list", "tip"):
+            rep.fail("NOTES-KIND", w, f"unknown kind '{kind}' (use text, formula, list or tip)")
+        if kind in ("text", "formula", "tip") and "body" not in b:
+            rep.fail("NOTES-BODY", w, f"a {kind} block needs a body")
+        if kind in ("text", "list", "formula") and "title" not in b:
+            rep.fail("NOTES-TITLE", w, f"a {kind} block needs a title")
+        if kind == "formula" and "$" not in b.get("body", ""):
+            rep.fail("NOTES-FORMULA", w, "a formula block's body must contain a $formula$")
+        if kind == "list":
+            a, z = RULES["notes_list_items"]
+            items = b.get("items", [])
+            if not a <= len(items) <= z:
+                rep.fail("NOTES-ITEMS", w, f"a list needs {a} to {z} items")
+            if any(len(i) > RULES["notes_item_chars"] for i in items):
+                rep.fail("NOTES-ITEMS", w, f"list items are at most {RULES['notes_item_chars']} characters")
+        if len(b.get("body", "")) > RULES["page_body_chars"]:
+            rep.fail("NOTES-LENGTH", w, f"body over {RULES['page_body_chars']} characters")
+    nw = sum(words(t) for _, t in notes_texts(notes))
+    if nw > RULES["notes_words"]:
+        rep.fail("NOTES-LENGTH", label, f"notes are {nw} words; keep them under {RULES['notes_words']}")
+    for where, t in notes_texts(notes):
+        check_text(rep, f"{label} {where}", t)
 
 
 def estimate_minutes(lessons):
@@ -195,6 +246,12 @@ def run(root: Path = ROOT) -> list:
                 l = json.loads(f.read_text(encoding="utf-8"))
                 by_unit[unit["id"]].append(l)
                 check_lesson(rep, f.relative_to(root).as_posix(), l)
+        for unit in course["units"]:
+            nf = root / course["dir"] / unit["dir"] / "notes.json"
+            if not nf.is_file():
+                rep.fail("UNIT-NOTES", f"course {course['id']} unit {unit['id']}", "every unit needs a notes.json (the cheat sheet)")
+            else:
+                check_notes(rep, nf.relative_to(root).as_posix(), json.loads(nf.read_text(encoding="utf-8")))
         check_course(rep, course, by_unit)
     return rep.items
 

@@ -77,6 +77,37 @@ class StandardTest(unittest.TestCase):
         self.edit_lesson(f)
         self.assertIn("TEXT-CLEAN", self.rules())
 
+    def edit_notes(self, fn):
+        f = self.tmp / "math/algebra-1/linear-eq/notes.json"
+        d = json.loads(f.read_text(encoding="utf-8"))
+        fn(d)
+        f.write_text(json.dumps(d), encoding="utf-8")
+
+    def test_unit_without_notes_fails(self):
+        (self.tmp / "math/algebra-1/linear-eq/notes.json").unlink()
+        self.assertIn("UNIT-NOTES", self.rules())
+
+    def test_notes_need_a_lookup_block(self):
+        self.edit_notes(lambda d: d.update(blocks=[b for b in d["blocks"] if b["kind"] not in ("formula", "list")]))
+        self.assertIn("NOTES-CONTENT", self.rules())
+
+    def test_notes_formula_without_dollar_fails(self):
+        def f(d):
+            for b in d["blocks"]:
+                if b["kind"] == "formula":
+                    b["body"] = "x equals y"
+        self.edit_notes(f)
+        self.assertIn("NOTES-FORMULA", self.rules())
+
+    def test_notes_first_block_must_be_text(self):
+        self.edit_notes(lambda d: d["blocks"].reverse())
+        self.assertIn("NOTES-INTRO", self.rules())
+
+    def test_notes_unsupported_latex_fails(self):
+        def f(d): d["blocks"][0]["body"] = "Use $\\begin{matrix}1\\end{matrix}$"
+        self.edit_notes(f)
+        self.assertIn("TEXT-LATEX", self.rules())
+
     def test_course_without_overview_fails(self):
         cat = json.loads((self.tmp / "catalog.json").read_text(encoding="utf-8"))
         del cat["courses"][0]["overview"]

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.11.16+1",
+  "contentVersion": "2026.11.16+2",
   "minAppVersion": 1,
   "categories": [
     {
@@ -49,7 +49,15 @@
               "sizeBytes": 2094,
               "order": 2
             }
-          ]
+          ],
+          "notes": {
+            "id": "linear-eq-notes",
+            "title": "Linear equations: cheat sheet",
+            "path": "math/algebra-1/linear-eq/notes.json",
+            "version": 1,
+            "sha256": "52479906dd261d28830173d31d59bc0eadd038bdfeeef76acf955ef1bfe5ef63",
+            "sizeBytes": 1505
+          }
         }
       ],
       "overview": {
@@ -95,7 +103,15 @@
               "sizeBytes": 2426,
               "order": 2
             }
-          ]
+          ],
+          "notes": {
+            "id": "matter-notes",
+            "title": "Matter: cheat sheet",
+            "path": "science/basics/matter/notes.json",
+            "version": 1,
+            "sha256": "6966ffee90ac86f24eab873faa9016a8e57562c90129a3d89167a8dd1897740a",
+            "sizeBytes": 1471
+          }
         }
       ],
       "overview": {

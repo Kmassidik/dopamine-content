@@ -48,8 +48,18 @@ def build(content_version: str) -> dict:
                     "order": int(m.group(1)),
                 })
             lessons.sort(key=lambda l: l["order"])
-            units.append({"id": unit["id"], "title": unit["title"],
-                          "order": unit["order"], "lessons": lessons})
+            entry = {"id": unit["id"], "title": unit["title"],
+                     "order": unit["order"], "lessons": lessons}
+            notes_file = unit_dir / "notes.json"
+            if notes_file.is_file():
+                nd = json.loads(notes_file.read_text(encoding="utf-8"))
+                entry["notes"] = {
+                    "id": nd["id"], "title": nd["title"],
+                    "path": notes_file.relative_to(ROOT).as_posix(),
+                    "version": nd["version"], "sha256": sha256(notes_file),
+                    "sizeBytes": notes_file.stat().st_size,
+                }
+            units.append(entry)
         courses.append({
             "id": course["id"], "categoryId": course["categoryId"],
             "title": course["title"], "description": course["description"],

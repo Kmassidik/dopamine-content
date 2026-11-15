@@ -1,0 +1,58 @@
+{
+  "id": "linear-eq-notes",
+  "version": 1,
+  "title": "Linear equations: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "An equation is a balance. Whatever you do to one side, do to the other. Your goal is to get $x$ alone."
+    },
+    {
+      "id": "opposites",
+      "kind": "list",
+      "title": "Undo with the opposite",
+      "items": [
+        "Adding is undone by subtracting",
+        "Subtracting is undone by adding",
+        "Multiplying is undone by dividing",
+        "Dividing is undone by multiplying"
+      ]
+    },
+    {
+      "id": "add-subtract",
+      "kind": "formula",
+      "title": "Add or subtract",
+      "body": "$x+a=b\\ \\Rightarrow\\ x=b-a$"
+    },
+    {
+      "id": "multiply-divide",
+      "kind": "formula",
+      "title": "Multiply or divide",
+      "body": "$ax=b\\ \\Rightarrow\\ x=\\frac{b}{a}$"
+    },
+    {
+      "id": "two-step",
+      "kind": "formula",
+      "title": "Two steps",
+      "body": "$ax+b=c\\ \\Rightarrow\\ x=\\frac{c-b}{a}$"
+    },
+    {
+      "id": "notation",
+      "kind": "list",
+      "title": "Notation",
+      "items": [
+        "$x^2$ is a square: $x$ times itself",
+        "$\\sqrt{x}$ is the root of $x$",
+        "$|x|$ is the distance from zero",
+        "$\\frac{a}{b}+\\frac{c}{b}=\\frac{a+c}{b}$"
+      ]
+    },
+    {
+      "id": "check",
+      "kind": "tip",
+      "body": "Always check: put your answer back into the original equation."
+    }
+  ]
+}
