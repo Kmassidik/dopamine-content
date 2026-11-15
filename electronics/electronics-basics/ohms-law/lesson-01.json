@@ -1,0 +1,136 @@
+{
+  "id": "ohms-law-01",
+  "version": 1,
+  "title": "Voltage and current",
+  "xp": 10,
+  "tags": [
+    "electronics",
+    "basics"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Two ideas to start",
+      "body": "Every circuit is built on two ideas. Voltage is the push that moves charge. Current is the flow of charge that results. A battery gives the push, and wires give the path."
+    },
+    {
+      "id": "voltage",
+      "kind": "text",
+      "title": "Voltage",
+      "body": "Voltage is measured in volts (V). It is the push between two points, such as the two ends of a battery. A typical AA battery gives about 1.5 V. You always measure voltage across two points."
+    },
+    {
+      "id": "current",
+      "kind": "text",
+      "title": "Current",
+      "body": "Current is how much charge passes a point each second. It is measured in amperes (A), also called amps. $I=\\frac{Q}{t}$ where $Q$ is charge in coulombs and $t$ is time in seconds."
+    },
+    {
+      "id": "example-current",
+      "kind": "example",
+      "title": "Find the current",
+      "body": "12 coulombs of charge pass a point in 4 seconds.",
+      "steps": [
+        "Write the formula: $I=\\frac{Q}{t}$",
+        "Put in the numbers: $I=\\frac{12}{4}$",
+        "Divide: $I=3\\ \\text{A}$"
+      ]
+    },
+    {
+      "id": "milli",
+      "kind": "text",
+      "title": "Small currents",
+      "body": "Many electronics use small currents, measured in milliamps (mA). $1\\ \\text{A}=1000\\ \\text{mA}$. So $250\\ \\text{mA}=0.25\\ \\text{A}$. To go from mA to A, divide by 1000."
+    },
+    {
+      "id": "across-through",
+      "kind": "tip",
+      "body": "Voltage is measured across two points. Current flows through a path."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which unit measures current?",
+      "choices": [
+        "Volt",
+        "Ampere",
+        "Coulomb"
+      ],
+      "answerIndex": 1,
+      "explanation": "Current is measured in amperes. Volts measure voltage."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "10 C of charge pass in 5 s. What is the current in A?",
+      "accepted": [
+        "2",
+        "2.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$I=\\frac{10}{5}=2\\ \\text{A}$."
+    },
+    {
+      "id": "q3",
+      "type": "match_pairs",
+      "prompt": "Match each word to its meaning.",
+      "pairs": [
+        [
+          "Voltage",
+          "The push that moves charge"
+        ],
+        [
+          "Current",
+          "The flow of charge"
+        ],
+        [
+          "Battery",
+          "A source of voltage"
+        ],
+        [
+          "Wire",
+          "A path for current"
+        ]
+      ],
+      "explanation": "The battery pushes, the wire carries, and the flow is the current."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "Convert 500 mA to amperes.",
+      "accepted": [
+        "0.5",
+        ".5"
+      ],
+      "keypad": "numeric",
+      "explanation": "Divide by 1000: $500\\div 1000=0.5\\ \\text{A}$."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "$I=\\frac{Q}{t}$ means current is charge divided by \\_\\_.",
+      "choices": [
+        "time",
+        "voltage",
+        "resistance"
+      ],
+      "answerIndex": 0,
+      "explanation": "Current is charge per second, so you divide by time."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "A AA battery is rated 1.5 V. What does that number describe?",
+      "choices": [
+        "The push it gives",
+        "The flow it carries",
+        "The wire it needs"
+      ],
+      "answerIndex": 0,
+      "explanation": "Volts measure the push, not the flow."
+    }
+  ]
+}

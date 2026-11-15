@@ -1,0 +1,151 @@
+{
+  "id": "ohms-law-02",
+  "version": 1,
+  "title": "Resistance and Ohm's law",
+  "xp": 10,
+  "tags": [
+    "electronics",
+    "ohms-law"
+  ],
+  "learn": [
+    {
+      "id": "resistance",
+      "kind": "text",
+      "title": "Resistance",
+      "body": "Resistance is how much a part opposes current. It is measured in ohms, written $\\Omega$. With the same voltage, more resistance means less current. A resistor is a part made to have a set resistance."
+    },
+    {
+      "id": "ohm",
+      "kind": "text",
+      "title": "Ohm's law",
+      "body": "Voltage, current and resistance are linked by $V=IR$. Rearranged: $I=\\frac{V}{R}$ and $R=\\frac{V}{I}$. Use volts, amps and ohms together. Cover the one you want and the other two show how to find it."
+    },
+    {
+      "id": "example-current",
+      "kind": "example",
+      "title": "Find the current",
+      "body": "A 12 V supply is across a 4 ohm resistor.",
+      "steps": [
+        "Choose $I=\\frac{V}{R}$",
+        "Put in the numbers: $I=\\frac{12}{4}$",
+        "Divide: $I=3\\ \\text{A}$"
+      ]
+    },
+    {
+      "id": "example-voltage",
+      "kind": "example",
+      "title": "Find the voltage",
+      "body": "0.5 A flows through a 20 ohm resistor.",
+      "steps": [
+        "Choose $V=IR$",
+        "Put in the numbers: $V=0.5\\cdot 20$",
+        "Multiply: $V=10\\ \\text{V}$"
+      ]
+    },
+    {
+      "id": "power",
+      "kind": "text",
+      "title": "Power",
+      "body": "Power is how fast energy is used. It is measured in watts (W). $P=VI$. A part with 12 V across it and 3 A through it uses $12\\cdot 3=36\\ \\text{W}$."
+    },
+    {
+      "id": "units",
+      "kind": "tip",
+      "body": "Check your units. Volts, amps and ohms go together. Convert mA to A first."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "6 ohms across 12 V. What is the current in A?",
+      "accepted": [
+        "2",
+        "2.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$I=\\frac{V}{R}=\\frac{12}{6}=2\\ \\text{A}$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "3 A flows through 4 ohms. What is the voltage in V?",
+      "accepted": [
+        "12",
+        "12.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$V=IR=3\\cdot 4=12\\ \\text{V}$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "10 V drives 2 A. What is the resistance in ohms?",
+      "accepted": [
+        "5",
+        "5.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$R=\\frac{V}{I}=\\frac{10}{2}=5$ ohms."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "The voltage stays the same and the resistance doubles. What happens to the current?",
+      "choices": [
+        "It doubles",
+        "It halves",
+        "It stays the same"
+      ],
+      "answerIndex": 1,
+      "explanation": "$I=\\frac{V}{R}$, so a bigger $R$ gives a smaller $I$. Doubling $R$ halves $I$."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "$R=\\frac{V}{\\_\\_}$",
+      "choices": [
+        "$I$",
+        "$P$",
+        "$t$"
+      ],
+      "answerIndex": 0,
+      "explanation": "From $V=IR$, divide both sides by $I$ to get $R=\\frac{V}{I}$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "5 V and 2 A. What is the power in W?",
+      "accepted": [
+        "10",
+        "10.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$P=VI=5\\cdot 2=10\\ \\text{W}$."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each formula to the quantity it gives.",
+      "pairs": [
+        [
+          "$V=IR$",
+          "Voltage"
+        ],
+        [
+          "$I=\\frac{V}{R}$",
+          "Current"
+        ],
+        [
+          "$R=\\frac{V}{I}$",
+          "Resistance"
+        ],
+        [
+          "$P=VI$",
+          "Power"
+        ]
+      ],
+      "explanation": "Each formula is the same law arranged to find a different quantity, plus power."
+    }
+  ]
+}

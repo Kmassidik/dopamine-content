@@ -1,0 +1,51 @@
+{
+  "id": "circuits-notes",
+  "version": 1,
+  "title": "Simple circuits: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Series means one path. Parallel means several paths. The layout decides how current, voltage and resistance behave."
+    },
+    {
+      "id": "series-r",
+      "kind": "formula",
+      "title": "Series resistance",
+      "body": "$R_{total}=R_1+R_2$"
+    },
+    {
+      "id": "parallel-r",
+      "kind": "formula",
+      "title": "Parallel resistance",
+      "body": "$\\frac{1}{R_{total}}=\\frac{1}{R_1}+\\frac{1}{R_2}$"
+    },
+    {
+      "id": "series",
+      "kind": "list",
+      "title": "Series",
+      "items": [
+        "Same current everywhere",
+        "Voltages add up to the source",
+        "One break stops everything"
+      ]
+    },
+    {
+      "id": "parallel",
+      "kind": "list",
+      "title": "Parallel",
+      "items": [
+        "Same voltage on every branch",
+        "Currents add up",
+        "One break leaves the others working",
+        "Total is below the smallest branch"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Two equal resistors $R$ in parallel give $\\frac{R}{2}$."
+    }
+  ]
+}

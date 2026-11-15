@@ -1,0 +1,123 @@
+{
+  "id": "circuits-01",
+  "version": 1,
+  "title": "Series circuits",
+  "xp": 10,
+  "tags": [
+    "electronics",
+    "circuits"
+  ],
+  "learn": [
+    {
+      "id": "one-path",
+      "kind": "text",
+      "title": "One path",
+      "body": "In a series circuit the parts are connected one after another, so the current has only one path. The same current flows through every part. If one part breaks, the whole circuit stops."
+    },
+    {
+      "id": "add-r",
+      "kind": "text",
+      "title": "Resistances add",
+      "body": "In series, the resistances add up: $R_{total}=R_1+R_2$. The total is always bigger than any single resistor. Voltage is shared: $V_{total}=V_1+V_2$, so the drops add up to the source voltage."
+    },
+    {
+      "id": "example-series",
+      "kind": "example",
+      "title": "A 9 V series circuit",
+      "body": "A 9 V battery drives a 100 ohm and a 200 ohm resistor in series.",
+      "steps": [
+        "Add the resistances: $R_{total}=100+200=300$ ohms",
+        "Current: $I=\\frac{9}{300}=0.03\\ \\text{A}$",
+        "Drops: $V_1=0.03\\cdot 100=3\\ \\text{V}$ and $V_2=0.03\\cdot 200=6\\ \\text{V}$",
+        "Check: $3+6=9\\ \\text{V}$"
+      ]
+    },
+    {
+      "id": "same-current",
+      "kind": "tip",
+      "body": "In series, the current is the same everywhere. The voltage is what gets divided."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "10, 20 and 30 ohms are in series. What is the total in ohms?",
+      "accepted": [
+        "60",
+        "60.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$R_{total}=10+20+30=60$ ohms."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "6 V across 2 ohms and 4 ohms in series. What is the current in A?",
+      "accepted": [
+        "1",
+        "1.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$R_{total}=6$ ohms, so $I=\\frac{6}{6}=1\\ \\text{A}$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Two resistors are in series. How do their currents compare?",
+      "choices": [
+        "They are the same",
+        "The bigger resistor has more",
+        "The smaller resistor has more"
+      ],
+      "answerIndex": 0,
+      "explanation": "There is only one path, so the same current flows through both."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "One bulb in a series string breaks. What happens to the others?",
+      "choices": [
+        "They all go out",
+        "They get brighter",
+        "They stay on"
+      ],
+      "answerIndex": 0,
+      "explanation": "A break in the only path stops the current everywhere."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "A 6 V source has two parts in series. One drops 2 V. How many volts does the other drop?",
+      "accepted": [
+        "4",
+        "4.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "The drops add up to the source: $6-2=4\\ \\text{V}$."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "In series, the total resistance is the \\_\\_ of the resistances.",
+      "choices": [
+        "sum",
+        "average",
+        "product"
+      ],
+      "answerIndex": 0,
+      "explanation": "$R_{total}=R_1+R_2$."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Put the steps for a series circuit in order.",
+      "steps": [
+        "Add the resistances to get the total",
+        "Divide the source voltage by the total",
+        "Multiply the current by each resistance to get each drop"
+      ],
+      "explanation": "First the total resistance, then the current, then the voltage across each part."
+    }
+  ]
+}

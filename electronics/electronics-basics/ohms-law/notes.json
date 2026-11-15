@@ -1,0 +1,54 @@
+{
+  "id": "ohms-law-notes",
+  "version": 1,
+  "title": "Voltage, current, resistance: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Voltage pushes, current flows and resistance holds back. Ohm's law ties the three together."
+    },
+    {
+      "id": "ohm",
+      "kind": "formula",
+      "title": "Ohm's law",
+      "body": "$V=IR$"
+    },
+    {
+      "id": "current",
+      "kind": "formula",
+      "title": "Current",
+      "body": "$I=\\frac{V}{R}$"
+    },
+    {
+      "id": "resistance",
+      "kind": "formula",
+      "title": "Resistance",
+      "body": "$R=\\frac{V}{I}$"
+    },
+    {
+      "id": "power",
+      "kind": "formula",
+      "title": "Power",
+      "body": "$P=VI$"
+    },
+    {
+      "id": "units",
+      "kind": "list",
+      "title": "Units",
+      "items": [
+        "Voltage $V$: volts (V)",
+        "Current $I$: amperes (A)",
+        "Resistance $R$: ohms ($\\Omega$)",
+        "Power $P$: watts (W)",
+        "$1\\ \\text{A}=1000\\ \\text{mA}$"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Convert mA to A before using the formulas."
+    }
+  ]
+}
