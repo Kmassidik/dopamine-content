@@ -1,0 +1,59 @@
+{
+  "id": "variables-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Variables and types: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A variable is a name for a value. `=` stores a value in a name. Every value has a type, and the type decides what you can do with it."
+    },
+    {
+      "id": "n-code",
+      "kind": "code",
+      "title": "Store and print",
+      "code": "price = 4\nprice = price + 1\nprint(price)",
+      "language": "python"
+    },
+    {
+      "id": "n-types",
+      "kind": "list",
+      "title": "Common types",
+      "items": [
+        "`int`: whole numbers, like `7`",
+        "`float`: decimals, like `3.5`",
+        "`str`: text in quotes, like `\"hi\"`"
+      ]
+    },
+    {
+      "id": "n-ops",
+      "kind": "list",
+      "title": "Operators",
+      "items": [
+        "`+` add or join text",
+        "`/` divide (gives a float)",
+        "`//` divide and drop decimals",
+        "`%` remainder",
+        "`*` multiply or repeat text"
+      ]
+    },
+    {
+      "id": "n-names",
+      "kind": "list",
+      "title": "Name rules",
+      "items": [
+        "Letters, digits and underscores only",
+        "Cannot start with a digit",
+        "No spaces",
+        "`Age` and `age` are different"
+      ]
+    },
+    {
+      "id": "n-tip",
+      "kind": "tip",
+      "body": "Convert with `str()`, `int()` and `float()` before mixing text and numbers."
+    }
+  ]
+}

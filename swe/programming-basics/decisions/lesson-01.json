@@ -1,0 +1,129 @@
+{
+  "id": "decisions-01",
+  "version": 1,
+  "minApp": 2,
+  "title": "If and else",
+  "xp": 10,
+  "tags": [
+    "python",
+    "conditions"
+  ],
+  "learn": [
+    {
+      "id": "choice",
+      "kind": "text",
+      "title": "Making a choice",
+      "body": "A program can choose what to do. `if` runs a block only when its condition is true. `else` runs when it is not. The indented lines belong to the `if` or `else` above them."
+    },
+    {
+      "id": "if-else",
+      "kind": "code",
+      "title": "if and else",
+      "body": "Here `temp > 25` is true, so it prints hot. The `else` block is skipped.",
+      "code": "temp = 30\nif temp > 25:\n    print(\"hot\")\nelse:\n    print(\"ok\")",
+      "language": "python"
+    },
+    {
+      "id": "colon-indent",
+      "kind": "text",
+      "title": "Colons and indents",
+      "body": "Each `if` and `else` line ends with a colon. The lines under it are indented by four spaces. The indent is how Python knows which lines belong together. A missing colon or indent is an error."
+    },
+    {
+      "id": "elif",
+      "kind": "code",
+      "title": "More than two paths",
+      "body": "Python checks from the top and stops at the first true condition. 75 is not at least 90 but is at least 70, so it prints B.",
+      "code": "score = 75\nif score >= 90:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelse:\n    print(\"C\")",
+      "language": "python"
+    },
+    {
+      "id": "example-even",
+      "kind": "example",
+      "title": "Even or odd?",
+      "body": "Code: `n = 4`, then `if n % 2 == 0:` prints even, `else:` prints odd.",
+      "steps": [
+        "`n % 2` is 0, because 4 divides by 2 with no remainder",
+        "`0 == 0` is true, so the `if` block runs",
+        "It prints even, and the `else` block is skipped"
+      ]
+    },
+    {
+      "id": "one-branch",
+      "kind": "tip",
+      "body": "In an if, elif, else chain only one block ever runs."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "`x = 3`. `if x > 5:` prints big, `else:` prints small. What prints?",
+      "choices": [
+        "big",
+        "small",
+        "nothing"
+      ],
+      "answerIndex": 1,
+      "explanation": "3 is not greater than 5, so the `else` block runs."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What must an `if` line end with?",
+      "choices": [
+        "`:`",
+        "`;`",
+        "`.`"
+      ],
+      "answerIndex": 0,
+      "explanation": "Python needs a colon at the end of `if`, `elif` and `else` lines."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "`score = 75`. `if score >= 90` prints A, `elif score >= 70` prints B, `else` prints C. What prints?",
+      "accepted": [
+        "B",
+        "b"
+      ],
+      "keypad": "full",
+      "explanation": "The first test fails, the second passes, so it prints B and stops."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "Use \\_\\_ to run code when the `if` condition is false.",
+      "choices": [
+        "`else`",
+        "`then`",
+        "`end`"
+      ],
+      "answerIndex": 0,
+      "explanation": "`else` has no condition. It catches everything the `if` did not."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put the parts of an if and else in order.",
+      "steps": [
+        "Write `if` and a condition, ending in a colon",
+        "Indent the lines to run when true",
+        "Write `else:`",
+        "Indent the lines to run when false"
+      ],
+      "explanation": "The `if` part comes first with its own indented lines, then the `else` part."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "`n = 7`. `if n % 2 == 0:` prints even, `else:` prints odd. What prints?",
+      "choices": [
+        "even",
+        "odd"
+      ],
+      "answerIndex": 1,
+      "explanation": "7 % 2 is 1, not 0, so the condition is false and it prints odd."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "decisions-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Decisions: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Code can choose. A condition is a question that is True or False. `if` runs a block only when the condition is True."
+    },
+    {
+      "id": "n-code",
+      "kind": "code",
+      "title": "if, elif, else",
+      "code": "n = 5\nif n > 10:\n    print(\"big\")\nelif n > 3:\n    print(\"mid\")\nelse:\n    print(\"small\")",
+      "language": "python"
+    },
+    {
+      "id": "n-compare",
+      "kind": "list",
+      "title": "Comparisons",
+      "items": [
+        "`==` equal",
+        "`!=` not equal",
+        "`<` less, `>` greater",
+        "`<=` at most, `>=` at least"
+      ]
+    },
+    {
+      "id": "n-logic",
+      "kind": "list",
+      "title": "Combining",
+      "items": [
+        "`a and b`: both True",
+        "`a or b`: at least one True",
+        "`not a`: flips True and False"
+      ]
+    },
+    {
+      "id": "n-tip",
+      "kind": "tip",
+      "body": "`=` stores, `==` compares. Every `if`, `elif` and `else` line ends with a colon."
+    }
+  ]
+}

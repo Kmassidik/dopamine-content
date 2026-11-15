@@ -1,0 +1,129 @@
+{
+  "id": "variables-01",
+  "version": 1,
+  "minApp": 2,
+  "title": "Variables",
+  "xp": 10,
+  "tags": [
+    "python",
+    "variables"
+  ],
+  "learn": [
+    {
+      "id": "what-is-a-variable",
+      "kind": "text",
+      "title": "What is a variable?",
+      "body": "A variable is a name that holds a value. Think of a labelled box: the label is the name, and what is inside is the value. You make one with `=`, which means store, not equals."
+    },
+    {
+      "id": "first-variable",
+      "kind": "code",
+      "title": "Making a variable",
+      "body": "This prints 12, then 13. The second `=` replaces the old value. A variable can change, which is why it is called a variable.",
+      "code": "age = 12\nprint(age)\nage = 13\nprint(age)",
+      "language": "python"
+    },
+    {
+      "id": "example-trace",
+      "kind": "example",
+      "title": "What does this print?",
+      "body": "Code: `score = 5`, then `score = score + 2`, then `print(score)`.",
+      "steps": [
+        "`score = 5` stores 5 in `score`",
+        "`score = score + 2` reads 5, adds 2 and stores 7",
+        "`print(score)` shows 7"
+      ]
+    },
+    {
+      "id": "naming",
+      "kind": "text",
+      "title": "Choosing names",
+      "body": "Names can use letters, digits and underscores, but cannot start with a digit or contain spaces. `player_name` is fine; `2nd` is not. Python is case sensitive: `Age` and `age` are two different names."
+    },
+    {
+      "id": "good-names",
+      "kind": "tip",
+      "body": "Pick names that say what the value means. `price` is easier to read than `p`."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "After `x = 4` and then `x = 9`, what is `x`?",
+      "choices": [
+        "4",
+        "9",
+        "13"
+      ],
+      "answerIndex": 1,
+      "explanation": "The second line replaces the first value, so `x` is 9."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "`n = 3`, then `n = n + 4`, then `print(n)`. What is printed?",
+      "accepted": [
+        "7"
+      ],
+      "keypad": "numeric",
+      "explanation": "`n + 4` is 3 + 4 = 7, and 7 is stored back in `n`."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Which is a valid variable name?",
+      "choices": [
+        "`my_score`",
+        "`2score`",
+        "`my score`",
+        "`my-score`"
+      ],
+      "answerIndex": 0,
+      "explanation": "Only `my_score` uses letters and an underscore. The others start with a digit, contain a space or contain a minus sign."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "In Python, `=` is used to \\_\\_ a value in a name.",
+      "choices": [
+        "store",
+        "compare",
+        "subtract"
+      ],
+      "answerIndex": 0,
+      "explanation": "`=` stores a value. Comparing uses `==`, which comes later."
+    },
+    {
+      "id": "q5",
+      "type": "match_pairs",
+      "prompt": "Match each line to what it does.",
+      "pairs": [
+        [
+          "`age = 10`",
+          "Stores 10 in age"
+        ],
+        [
+          "`print(age)`",
+          "Shows the value of age"
+        ],
+        [
+          "`age = age + 1`",
+          "Makes age one bigger"
+        ]
+      ],
+      "explanation": "`=` stores, `print` shows, and `age + 1` is worked out before it is stored."
+    },
+    {
+      "id": "q6",
+      "type": "order_steps",
+      "prompt": "Put these lines in order so the program prints 10.",
+      "steps": [
+        "`a = 4`",
+        "`b = a + 6`",
+        "`print(b)`"
+      ],
+      "explanation": "A variable must exist before you use it: `a` first, then `b` from `a`, then print."
+    }
+  ]
+}
