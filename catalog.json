@@ -15,6 +15,20 @@
       "icon": "ic_science",
       "color": "#5E8B4F",
       "order": 2
+    },
+    {
+      "id": "swe",
+      "name": "Programming",
+      "icon": "ic_swe",
+      "color": "#2F7D8C",
+      "order": 3
+    },
+    {
+      "id": "electronics",
+      "name": "Electronics",
+      "icon": "ic_electronics",
+      "color": "#C58A1B",
+      "order": 4
     }
   ],
   "courses": [
@@ -72,6 +86,76 @@
           "None. Curiosity is enough"
         ],
         "minutes": 8
+      }
+    },
+    {
+      "id": "programming-basics",
+      "categoryId": "swe",
+      "title": "Programming Basics",
+      "description": "Learn to think in code with Python",
+      "order": 1,
+      "dir": "swe/programming-basics",
+      "units": [
+        {
+          "id": "variables",
+          "title": "Variables and Types",
+          "order": 1,
+          "dir": "variables"
+        },
+        {
+          "id": "decisions",
+          "title": "Decisions",
+          "order": 2,
+          "dir": "decisions"
+        }
+      ],
+      "overview": {
+        "summary": "Learn to think in code with Python. Start with variables and types, then teach your programs to make decisions.",
+        "outcomes": [
+          "Store values in variables and change them",
+          "Tell numbers, decimals and text apart",
+          "Write if, elif and else decisions",
+          "Compare values and combine conditions"
+        ],
+        "requirements": [
+          "None. No coding experience needed"
+        ],
+        "minutes": 20
+      }
+    },
+    {
+      "id": "electronics-basics",
+      "categoryId": "electronics",
+      "title": "Electronics Basics",
+      "description": "Voltage, current, resistance and simple circuits",
+      "order": 1,
+      "dir": "electronics/electronics-basics",
+      "units": [
+        {
+          "id": "ohms-law",
+          "title": "Voltage, Current, Resistance",
+          "order": 1,
+          "dir": "ohms-law"
+        },
+        {
+          "id": "circuits",
+          "title": "Simple Circuits",
+          "order": 2,
+          "dir": "circuits"
+        }
+      ],
+      "overview": {
+        "summary": "Understand what voltage, current and resistance are, use Ohm's law, and work out simple series and parallel circuits.",
+        "outcomes": [
+          "Explain voltage, current and resistance",
+          "Use Ohm's law to find any one of the three",
+          "Calculate power with P = VI",
+          "Work out series and parallel circuits"
+        ],
+        "requirements": [
+          "Basic arithmetic and simple fractions"
+        ],
+        "minutes": 20
       }
     }
   ]

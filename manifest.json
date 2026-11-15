@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.11.16+2",
+  "contentVersion": "2026.11.16+3",
   "minAppVersion": 1,
   "categories": [
     {
@@ -16,6 +16,20 @@
       "icon": "ic_science",
       "color": "#5E8B4F",
       "order": 2
+    },
+    {
+      "id": "swe",
+      "name": "Programming",
+      "icon": "ic_swe",
+      "color": "#2F7D8C",
+      "order": 3
+    },
+    {
+      "id": "electronics",
+      "name": "Electronics",
+      "icon": "ic_electronics",
+      "color": "#C58A1B",
+      "order": 4
     }
   ],
   "courses": [
@@ -125,6 +139,188 @@
           "None. Curiosity is enough"
         ],
         "minutes": 8
+      }
+    },
+    {
+      "id": "programming-basics",
+      "categoryId": "swe",
+      "title": "Programming Basics",
+      "description": "Learn to think in code with Python",
+      "order": 1,
+      "units": [
+        {
+          "id": "variables",
+          "title": "Variables and Types",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "variables-01",
+              "title": "Variables",
+              "path": "swe/programming-basics/variables/lesson-01.json",
+              "version": 1,
+              "sha256": "b2a726c7729e82bb369bc5ec11e958206a277643de397cfbf942278633561b1f",
+              "sizeBytes": 3713,
+              "order": 1,
+              "minApp": 2
+            },
+            {
+              "id": "variables-02",
+              "title": "Numbers and text",
+              "path": "swe/programming-basics/variables/lesson-02.json",
+              "version": 1,
+              "sha256": "5ab4331f01eddc4c1f96b3abee61e666799271cf71f2b8ca57f52426c5bdd85d",
+              "sizeBytes": 4008,
+              "order": 2,
+              "minApp": 2
+            }
+          ],
+          "notes": {
+            "id": "variables-notes",
+            "title": "Variables and types: cheat sheet",
+            "path": "swe/programming-basics/variables/notes.json",
+            "version": 1,
+            "sha256": "41951fb32445619fefe67b474821cf24239f4d65444da7c0059f569d9b9c1469",
+            "sizeBytes": 1476,
+            "minApp": 2
+          }
+        },
+        {
+          "id": "decisions",
+          "title": "Decisions",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "decisions-01",
+              "title": "If and else",
+              "path": "swe/programming-basics/decisions/lesson-01.json",
+              "version": 1,
+              "sha256": "f4dc9900619fa2b26ba7895c25a1b14bd7392f8d4bde49e5d98cc4a7d48fd10c",
+              "sizeBytes": 4007,
+              "order": 1,
+              "minApp": 2
+            },
+            {
+              "id": "decisions-02",
+              "title": "Comparing values",
+              "path": "swe/programming-basics/decisions/lesson-02.json",
+              "version": 1,
+              "sha256": "e739bfa81f22b185403855da27f2e1fe342d45a526af00b0564a7cf7d6c01346",
+              "sizeBytes": 3929,
+              "order": 2,
+              "minApp": 2
+            }
+          ],
+          "notes": {
+            "id": "decisions-notes",
+            "title": "Decisions: cheat sheet",
+            "path": "swe/programming-basics/decisions/notes.json",
+            "version": 1,
+            "sha256": "0bda458336a634e091cb14f3cca8fb94d7d9fedbc37169dbe3ae932d536bbb14",
+            "sizeBytes": 1181,
+            "minApp": 2
+          }
+        }
+      ],
+      "overview": {
+        "summary": "Learn to think in code with Python. Start with variables and types, then teach your programs to make decisions.",
+        "outcomes": [
+          "Store values in variables and change them",
+          "Tell numbers, decimals and text apart",
+          "Write if, elif and else decisions",
+          "Compare values and combine conditions"
+        ],
+        "requirements": [
+          "None. No coding experience needed"
+        ],
+        "minutes": 20
+      }
+    },
+    {
+      "id": "electronics-basics",
+      "categoryId": "electronics",
+      "title": "Electronics Basics",
+      "description": "Voltage, current, resistance and simple circuits",
+      "order": 1,
+      "units": [
+        {
+          "id": "ohms-law",
+          "title": "Voltage, Current, Resistance",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "ohms-law-01",
+              "title": "Voltage and current",
+              "path": "electronics/electronics-basics/ohms-law/lesson-01.json",
+              "version": 1,
+              "sha256": "3e10b1b28f255c179eaeab92da4814d926b0bd8593a4f897749755f621a3a29c",
+              "sizeBytes": 3802,
+              "order": 1
+            },
+            {
+              "id": "ohms-law-02",
+              "title": "Resistance and Ohm's law",
+              "path": "electronics/electronics-basics/ohms-law/lesson-02.json",
+              "version": 1,
+              "sha256": "b3d0ef37a74b589d7c04d7ed73a7d74e4961dee085f1fd4dbae4c64e02eb11d0",
+              "sizeBytes": 4058,
+              "order": 2
+            }
+          ],
+          "notes": {
+            "id": "ohms-law-notes",
+            "title": "Voltage, current, resistance: cheat sheet",
+            "path": "electronics/electronics-basics/ohms-law/notes.json",
+            "version": 1,
+            "sha256": "28d06e2750c6ed0224ff7931e0aae85194693e9710de58e2615fbe06a4ab4147",
+            "sizeBytes": 1184
+          }
+        },
+        {
+          "id": "circuits",
+          "title": "Simple Circuits",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "circuits-01",
+              "title": "Series circuits",
+              "path": "electronics/electronics-basics/circuits/lesson-01.json",
+              "version": 1,
+              "sha256": "ee178cb9d5526f4e9e6373e8b76ce7720d438fb1a1835cfc2606fc2b184f483e",
+              "sizeBytes": 3746,
+              "order": 1
+            },
+            {
+              "id": "circuits-02",
+              "title": "Parallel circuits",
+              "path": "electronics/electronics-basics/circuits/lesson-02.json",
+              "version": 1,
+              "sha256": "a9d16bab621db4692c4371afa4e00376a8951153f0b7de587a40b849d02ba146",
+              "sizeBytes": 3674,
+              "order": 2
+            }
+          ],
+          "notes": {
+            "id": "circuits-notes",
+            "title": "Simple circuits: cheat sheet",
+            "path": "electronics/electronics-basics/circuits/notes.json",
+            "version": 1,
+            "sha256": "17e6b8e0f6f8e5502bb833a02f97d897c2e47e3c704454f989900993c44b9490",
+            "sizeBytes": 1249
+          }
+        }
+      ],
+      "overview": {
+        "summary": "Understand what voltage, current and resistance are, use Ohm's law, and work out simple series and parallel circuits.",
+        "outcomes": [
+          "Explain voltage, current and resistance",
+          "Use Ohm's law to find any one of the three",
+          "Calculate power with P = VI",
+          "Work out series and parallel circuits"
+        ],
+        "requirements": [
+          "Basic arithmetic and simple fractions"
+        ],
+        "minutes": 20
       }
     }
   ],
