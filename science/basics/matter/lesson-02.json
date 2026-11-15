@@ -1,15 +1,58 @@
 {
   "id": "matter-02",
-  "version": 1,
+  "version": 2,
   "title": "Atoms and molecules",
   "xp": 15,
-  "tags": ["chemistry", "atoms"],
+  "tags": [
+    "chemistry",
+    "atoms"
+  ],
+  "learn": [
+    {
+      "id": "atoms",
+      "kind": "text",
+      "title": "Atoms",
+      "body": "An atom is the smallest unit of an element. Every element, like oxygen or gold, is made of its own kind of atom."
+    },
+    {
+      "id": "inside-an-atom",
+      "kind": "text",
+      "title": "Inside an atom",
+      "body": "The center, the nucleus, holds protons (positive) and neutrons (neutral). Electrons (negative) move around it."
+    },
+    {
+      "id": "molecules",
+      "kind": "text",
+      "title": "Molecules",
+      "body": "When two or more atoms bond together they form a molecule. Two hydrogen atoms and one oxygen atom bond to make a water molecule, $\\text{H}_2\\text{O}$."
+    },
+    {
+      "id": "build-water",
+      "kind": "example",
+      "title": "Build a water molecule",
+      "body": "Follow the atoms as they bond.",
+      "steps": [
+        "Take 2 hydrogen atoms and 1 oxygen atom.",
+        "Let them bond together.",
+        "You now have one water molecule, written $\\text{H}_2\\text{O}$."
+      ]
+    },
+    {
+      "id": "charges",
+      "kind": "tip",
+      "body": "Opposite charges attract. Protons (+) hold electrons (−) close, and neutrons add no charge at all."
+    }
+  ],
   "questions": [
     {
       "id": "q1",
       "type": "multiple_choice",
       "prompt": "What is the smallest unit of an element?",
-      "choices": ["Atom", "Molecule", "Cell"],
+      "choices": [
+        "Atom",
+        "Molecule",
+        "Cell"
+      ],
       "answerIndex": 0,
       "explanation": "An atom is the smallest unit that still has the properties of its element."
     },
@@ -17,14 +60,31 @@
       "id": "q2",
       "type": "match_pairs",
       "prompt": "Match each particle with its charge.",
-      "pairs": [["Proton", "positive"], ["Electron", "negative"], ["Neutron", "neutral"]],
+      "pairs": [
+        [
+          "Proton",
+          "positive"
+        ],
+        [
+          "Electron",
+          "negative"
+        ],
+        [
+          "Neutron",
+          "neutral"
+        ]
+      ],
       "explanation": "Protons and electrons carry opposite charges, neutrons carry none."
     },
     {
       "id": "q3",
       "type": "fill_blank",
       "prompt": "Two or more atoms bonded together form a \\_\\_.",
-      "choices": ["molecule", "proton", "nucleus"],
+      "choices": [
+        "molecule",
+        "proton",
+        "nucleus"
+      ],
       "answerIndex": 0,
       "explanation": "Atoms joined by chemical bonds make a molecule."
     }

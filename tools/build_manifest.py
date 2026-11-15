@@ -35,7 +35,7 @@ def build(content_version: str) -> dict:
                 if not m:
                     continue
                 data = json.loads(f.read_text(encoding="utf-8"))
-                for q in data.get("questions", []):
+                for q in data.get("questions", []) + data.get("learn", []):
                     if "image" in q:
                         used_images.add(q["image"])
                 lessons.append({
@@ -54,6 +54,7 @@ def build(content_version: str) -> dict:
             "id": course["id"], "categoryId": course["categoryId"],
             "title": course["title"], "description": course["description"],
             "order": course["order"], "units": units,
+            **({"overview": course["overview"]} if "overview" in course else {}),
         })
     images = []
     for rel in sorted(used_images):

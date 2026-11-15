@@ -6,6 +6,9 @@ from pathlib import Path
 
 from jsonschema import Draft7Validator
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import standard  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 errors = []
 
@@ -44,6 +47,16 @@ def semantic_check(lesson: dict, label: str):
             errors.append(f"{label}: {qid}: image not found: {q['image']}")
 
 
+def learn_check(lesson: dict, label: str):
+    seen = set()
+    for pg in lesson.get("learn", []):
+        if pg["id"] in seen:
+            errors.append(f"{label}: duplicate learn page id {pg['id']}")
+        seen.add(pg["id"])
+        if "image" in pg and not (ROOT / pg["image"]).is_file():
+            errors.append(f"{label}: learn page {pg['id']}: image not found: {pg['image']}")
+
+
 def main() -> int:
     manifest = load(ROOT / "manifest.json")
     schema_check(manifest, "manifest.schema.json", "manifest.json")
@@ -62,11 +75,13 @@ def main() -> int:
                 schema_check(doc, "lesson.schema.json", l["path"])
                 if not errors:
                     semantic_check(doc, l["path"])
+                    learn_check(doc, l["path"])
                 if doc.get("id") != l["id"] or doc.get("version") != l["version"]:
                     errors.append(f"{l['path']}: id/version differ from manifest")
     for img in manifest["images"]:
         if not (ROOT / img["path"]).is_file():
             errors.append(f"{img['path']}: image missing")
+    errors.extend(standard.run(ROOT))
     if errors:
         print("\n".join(errors))
         return 1

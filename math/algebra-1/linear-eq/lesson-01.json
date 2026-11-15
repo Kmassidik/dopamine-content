@@ -1,15 +1,75 @@
 {
   "id": "linear-eq-01",
-  "version": 1,
+  "version": 2,
   "title": "One-step equations",
   "xp": 10,
-  "tags": ["algebra", "equations"],
+  "tags": [
+    "algebra",
+    "equations"
+  ],
+  "learn": [
+    {
+      "id": "what-is-an-equation",
+      "kind": "text",
+      "title": "What is an equation?",
+      "body": "An equation says two things are equal, like $x+3=7$. The letter $x$ stands for a number we do not know yet. Solving the equation means finding that number."
+    },
+    {
+      "id": "keep-it-balanced",
+      "kind": "text",
+      "title": "Keep it balanced",
+      "body": "Picture a balance scale. If you add or remove the same amount on both sides, it stays level. That is the one rule of equations: do the same thing to both sides."
+    },
+    {
+      "id": "example-add",
+      "kind": "example",
+      "title": "Solve $x+3=7$",
+      "body": "We want $x$ alone. Right now 3 is added to it, so we undo that.",
+      "steps": [
+        "Subtract 3 from both sides: $x+3-3=7-3$",
+        "Simplify: $x=4$",
+        "Check: $4+3=7$, so it works."
+      ]
+    },
+    {
+      "id": "example-multiply",
+      "kind": "example",
+      "title": "Solve $2x=10$",
+      "body": "Here $x$ is multiplied by 2, so we undo that by dividing.",
+      "steps": [
+        "Divide both sides by 2: $\\frac{2x}{2}=\\frac{10}{2}$",
+        "Simplify: $x=5$",
+        "Check: $2\\cdot 5=10$."
+      ]
+    },
+    {
+      "id": "same-denominator",
+      "kind": "text",
+      "title": "Fractions with the same bottom",
+      "body": "When the denominators match, you only add the numerators: $\\frac{a}{b}+\\frac{c}{b}=\\frac{a+c}{b}$. For example $\\frac{2}{7}+\\frac{3}{7}=\\frac{5}{7}$."
+    },
+    {
+      "id": "notation",
+      "kind": "text",
+      "title": "Reading notation",
+      "body": "$x^2$ means $x$ times itself and is called a square. $\\sqrt{x}$ is the root, the number that squares to $x$. $|x|$ is the absolute value, the distance from zero."
+    },
+    {
+      "id": "opposite",
+      "kind": "tip",
+      "body": "Do the opposite: adding undoes subtracting, and multiplying undoes dividing. Then check by putting your answer back into the equation."
+    }
+  ],
   "questions": [
     {
       "id": "q1",
       "type": "multiple_choice",
       "prompt": "Solve $x+3=7$",
-      "choices": ["$x=4$", "$x=10$", "$x=-4$"],
+      "choices": [
+        "$x=4$",
+        "$x=10$",
+        "$x=-4$"
+      ],
       "answerIndex": 0,
       "explanation": "Subtract 3 from both sides: $x=7-3=4$."
     },
@@ -17,7 +77,10 @@
       "id": "q2",
       "type": "type_answer",
       "prompt": "$2x=10$, so $x=$ ?",
-      "accepted": ["5", "5.0"],
+      "accepted": [
+        "5",
+        "5.0"
+      ],
       "keypad": "numeric",
       "explanation": "Divide both sides by 2: $x=\\frac{10}{2}=5$."
     },
@@ -25,7 +88,11 @@
       "id": "q3",
       "type": "fill_blank",
       "prompt": "$\\frac{a}{b}+\\frac{c}{b}=\\frac{\\_\\_}{b}$",
-      "choices": ["$a+c$", "$ac$", "$a-c$"],
+      "choices": [
+        "$a+c$",
+        "$ac$",
+        "$a-c$"
+      ],
       "answerIndex": 0,
       "explanation": "Same denominator, so add the numerators."
     },
@@ -33,14 +100,31 @@
       "id": "q4",
       "type": "match_pairs",
       "prompt": "Match each notation with its name.",
-      "pairs": [["$x^2$", "square"], ["$\\sqrt{x}$", "root"], ["$|x|$", "absolute value"]],
+      "pairs": [
+        [
+          "$x^2$",
+          "square"
+        ],
+        [
+          "$\\sqrt{x}$",
+          "root"
+        ],
+        [
+          "$|x|$",
+          "absolute value"
+        ]
+      ],
       "explanation": "A square multiplies by itself, a root undoes it, and the bars give distance from zero."
     },
     {
       "id": "q5",
       "type": "order_steps",
       "prompt": "Solve $2x+3=7$. Put the steps in order.",
-      "steps": ["Subtract 3 from both sides", "Divide both sides by 2", "State that x is 2"],
+      "steps": [
+        "Subtract 3 from both sides",
+        "Divide both sides by 2",
+        "State that x is 2"
+      ],
       "explanation": "Undo the operations in reverse order: first the addition, then the multiplication."
     },
     {
@@ -48,7 +132,11 @@
       "type": "multiple_choice",
       "prompt": "Which point on the line is $x=3$?",
       "image": "images/number-line.svg",
-      "choices": ["A", "B", "C"],
+      "choices": [
+        "A",
+        "B",
+        "C"
+      ],
       "answerIndex": 1,
       "explanation": "Point B sits three steps right of zero."
     }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.11.15+3",
+  "contentVersion": "2026.11.16+1",
   "minAppVersion": 1,
   "categories": [
     {
@@ -35,23 +35,35 @@
               "id": "linear-eq-01",
               "title": "One-step equations",
               "path": "math/algebra-1/linear-eq/lesson-01.json",
-              "version": 1,
-              "sha256": "c35c3e00d54b21ce53989848b34b9490107d269315e258630509fdabb710e6c5",
-              "sizeBytes": 1772,
+              "version": 2,
+              "sha256": "6c0baf4f7b5c743744d8961f467266751d583f4262eb66ef6a3a748c84a8aeea",
+              "sizeBytes": 4052,
               "order": 1
             },
             {
               "id": "linear-eq-02",
               "title": "Two-step equations",
               "path": "math/algebra-1/linear-eq/lesson-02.json",
-              "version": 1,
-              "sha256": "5be23cac6f1e8f1f4b1d66da1c2154b54285c898649f01e17a421ba788bbbd37",
-              "sizeBytes": 885,
+              "version": 2,
+              "sha256": "7d055153890481f1d366dc9bea82db49286ed64cb6f6e8bb75a36fa8a86d63e5",
+              "sizeBytes": 2094,
               "order": 2
             }
           ]
         }
-      ]
+      ],
+      "overview": {
+        "summary": "Learn to solve equations step by step. Each lesson starts with a short reading, then you practise.",
+        "outcomes": [
+          "Solve one-step and two-step equations",
+          "Understand why doing the same thing to both sides works",
+          "Read common math notation like squares, roots and absolute value"
+        ],
+        "requirements": [
+          "Basic arithmetic: add, subtract, multiply, divide"
+        ],
+        "minutes": 10
+      }
     },
     {
       "id": "science-basics",
@@ -69,23 +81,35 @@
               "id": "matter-01",
               "title": "States of matter",
               "path": "science/basics/matter/lesson-01.json",
-              "version": 1,
-              "sha256": "9ed57fce6e93a07ba18851882d4562f6230577cc04e1c9e7258a0451d5fcb7a9",
-              "sizeBytes": 1586,
+              "version": 2,
+              "sha256": "bd9387bef8be24672b95a517594fa373a2c8ec9ed8c990c12b4a20dfbb55b2c2",
+              "sizeBytes": 3959,
               "order": 1
             },
             {
               "id": "matter-02",
               "title": "Atoms and molecules",
               "path": "science/basics/matter/lesson-02.json",
-              "version": 1,
-              "sha256": "1034f258125e14d2c5f8b93c337ec2f017005dfffc2d629283801270a1bb8966",
-              "sizeBytes": 1005,
+              "version": 2,
+              "sha256": "a757cb2d6efdf411bb5e0352aee9d0dc2bc45ebc91dc1115e7b3225ab73ebc6c",
+              "sizeBytes": 2426,
               "order": 2
             }
           ]
         }
-      ]
+      ],
+      "overview": {
+        "summary": "A friendly start to science: what everything is made of and how it changes.",
+        "outcomes": [
+          "Tell solids, liquids and gases apart and explain why",
+          "Describe how matter changes state",
+          "Name the parts of an atom and what a molecule is"
+        ],
+        "requirements": [
+          "None. Curiosity is enough"
+        ],
+        "minutes": 8
+      }
     }
   ],
   "images": [

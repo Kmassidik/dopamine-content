@@ -1,15 +1,75 @@
 {
   "id": "matter-01",
-  "version": 1,
+  "version": 2,
   "title": "States of matter",
   "xp": 10,
-  "tags": ["chemistry", "matter"],
+  "tags": [
+    "chemistry",
+    "matter"
+  ],
+  "learn": [
+    {
+      "id": "everything-is-matter",
+      "kind": "text",
+      "title": "Everything is matter",
+      "body": "Matter is anything that takes up space and has mass. Air, water, your phone and you are all matter."
+    },
+    {
+      "id": "three-states",
+      "kind": "text",
+      "title": "Three common states",
+      "body": "A solid keeps its own shape and volume. A liquid keeps its volume but takes the shape of its container. A gas spreads out to fill any container."
+    },
+    {
+      "id": "why-they-differ",
+      "kind": "text",
+      "title": "Why they differ",
+      "body": "It comes down to particles and how much they move. In a solid they are packed tight and only vibrate. In a liquid they slide past each other. In a gas they zoom around with lots of space between them."
+    },
+    {
+      "id": "changing-state",
+      "kind": "example",
+      "title": "Changing state",
+      "body": "Heating and cooling change the state of water.",
+      "steps": [
+        "Ice melts into water at $0\\,^\\circ\\text{C}$ (solid to liquid).",
+        "Water boils into steam at $100\\,^\\circ\\text{C}$ at sea level (liquid to gas).",
+        "Steam condenses back into water when it cools, and water freezes back into ice."
+      ]
+    },
+    {
+      "id": "water-cycle",
+      "kind": "example",
+      "title": "The water cycle",
+      "body": "The same water goes round and round.",
+      "steps": [
+        "Heat from the sun makes water evaporate.",
+        "The vapor rises, cools and condenses into clouds.",
+        "Rain falls and collects, ready to start again."
+      ]
+    },
+    {
+      "id": "formulas",
+      "kind": "text",
+      "title": "Chemical formulas",
+      "body": "A formula says which atoms a substance has. $\\text{H}_2\\text{O}$ has 2 hydrogen atoms and 1 oxygen atom. The small number after a symbol counts its atoms, so $\\text{CO}_2$ has 1 carbon and 2 oxygen, and $\\text{O}_2$ is two oxygen atoms."
+    },
+    {
+      "id": "opposites",
+      "kind": "tip",
+      "body": "Melting and freezing are opposites. So are evaporation and condensation."
+    }
+  ],
   "questions": [
     {
       "id": "q1",
       "type": "multiple_choice",
       "prompt": "Which state of matter keeps its shape and its volume?",
-      "choices": ["Solid", "Liquid", "Gas"],
+      "choices": [
+        "Solid",
+        "Liquid",
+        "Gas"
+      ],
       "answerIndex": 0,
       "explanation": "Particles in a solid are packed tightly and only vibrate in place."
     },
@@ -17,7 +77,10 @@
       "id": "q2",
       "type": "type_answer",
       "prompt": "Water boils at how many degrees Celsius at sea level?",
-      "accepted": ["100", "100.0"],
+      "accepted": [
+        "100",
+        "100.0"
+      ],
       "keypad": "numeric",
       "explanation": "At sea level, water boils at $100\\,^\\circ\\text{C}$."
     },
@@ -25,7 +88,11 @@
       "id": "q3",
       "type": "fill_blank",
       "prompt": "Ice turning into water is called \\_\\_.",
-      "choices": ["melting", "freezing", "condensation"],
+      "choices": [
+        "melting",
+        "freezing",
+        "condensation"
+      ],
       "answerIndex": 0,
       "explanation": "Solid to liquid is melting. The reverse is freezing."
     },
@@ -33,14 +100,31 @@
       "id": "q4",
       "type": "match_pairs",
       "prompt": "Match each formula with its substance.",
-      "pairs": [["$\\text{H}_2\\text{O}$", "water"], ["$\\text{CO}_2$", "carbon dioxide"], ["$\\text{O}_2$", "oxygen"]],
+      "pairs": [
+        [
+          "$\\text{H}_2\\text{O}$",
+          "water"
+        ],
+        [
+          "$\\text{CO}_2$",
+          "carbon dioxide"
+        ],
+        [
+          "$\\text{O}_2$",
+          "oxygen"
+        ]
+      ],
       "explanation": "The subscript counts atoms of the element before it."
     },
     {
       "id": "q5",
       "type": "order_steps",
       "prompt": "Put the water cycle in order.",
-      "steps": ["Water evaporates", "Vapor condenses into clouds", "Rain falls"],
+      "steps": [
+        "Water evaporates",
+        "Vapor condenses into clouds",
+        "Rain falls"
+      ],
       "explanation": "Heat lifts water up, cooling forms clouds, and gravity brings it back."
     }
   ]

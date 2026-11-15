@@ -16,7 +16,7 @@ tools/build_manifest.py           generates manifest.json (stdlib only)
 tools/validate.py                 schema + semantic checks (needs `pip install jsonschema`)
 ```
 
-Current content: Math / Algebra 1 / Linear Equations (2 lessons), Science / Science Basics / Matter (2 lessons).
+Current content: Math / Algebra 1 / Linear Equations (2 lessons), Science / Science Basics / Matter (2 lessons). Every lesson has reading pages (`learn`) before its practice questions, and every course has an `overview`. **The layout is enforced: read [STANDARD.md](STANDARD.md) before contributing.**
 
 ## Publish an update
 
@@ -40,6 +40,13 @@ Edit `catalog.json`: add the category (`id`, `name`, `icon`, `color` hex, `order
   "title": "One-step equations",
   "xp": 10,
   "tags": ["algebra"],
+  "learn": [
+    { "id": "what-is-an-equation", "kind": "text", "title": "What is an equation?",
+      "body": "An equation says two things are equal, like $x+3=7$." },
+    { "id": "example-add", "kind": "example", "title": "Solve $x+3=7$", "body": "Undo the +3.",
+      "steps": ["Subtract 3 from both sides: $x=4$", "Check: $4+3=7$."] },
+    { "id": "opposite", "kind": "tip", "body": "Do the opposite operation, then check." }
+  ],
   "questions": [ { "id": "q1", "type": "multiple_choice", "prompt": "Solve $x+3=7$",
                    "choices": ["$x=4$", "$x=10$", "$x=-4$"], "answerIndex": 0,
                    "explanation": "Subtract 3 from both sides: $x=7-3=4$." } ]
@@ -60,6 +67,6 @@ Unknown `type` values are skipped by older apps (forward compatible), so new typ
 
 ## Writing math
 
-Every text field supports `$inline$` and `$$block$$` LaTeX; write a literal dollar as `\$`. In JSON, backslashes are doubled: `"$\\frac{a}{b}$"`. Keep formulas short; wide ones scroll horizontally. The native renderer's supported subset is documented in the app repo once the renderer is built (`HANDOVER.md`, item 1); stick to common commands (`\frac`, `\sqrt`, `^`, `_`, Greek letters, `\sum`, `\int`, `\begin{cases}`) until then.
+Text fields support `$inline$` LaTeX (a literal dollar sign is not supported; write the word). The standard only allows commands the app can draw (`LATEX_OK` in `tools/standard.py`). In JSON, backslashes are doubled: `"$\\frac{a}{b}$"`. Keep formulas short; very wide ones can overflow a narrow screen. The renderer's limits are in the app repo's `HANDOVER.md` (Known LaTeX limits): no matrices, `cases` or `align`.
 
 Copy style: short, calm, specific. One idea per question. The explanation says why, not just what.

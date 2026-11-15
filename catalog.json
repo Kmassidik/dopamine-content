@@ -2,8 +2,20 @@
   "schemaVersion": 1,
   "minAppVersion": 1,
   "categories": [
-    { "id": "math", "name": "Math", "icon": "ic_math", "color": "#3A4A8C", "order": 1 },
-    { "id": "science", "name": "Science", "icon": "ic_science", "color": "#5E8B4F", "order": 2 }
+    {
+      "id": "math",
+      "name": "Math",
+      "icon": "ic_math",
+      "color": "#3A4A8C",
+      "order": 1
+    },
+    {
+      "id": "science",
+      "name": "Science",
+      "icon": "ic_science",
+      "color": "#5E8B4F",
+      "order": 2
+    }
   ],
   "courses": [
     {
@@ -14,8 +26,25 @@
       "order": 1,
       "dir": "math/algebra-1",
       "units": [
-        { "id": "linear-eq", "title": "Linear Equations", "order": 1, "dir": "linear-eq" }
-      ]
+        {
+          "id": "linear-eq",
+          "title": "Linear Equations",
+          "order": 1,
+          "dir": "linear-eq"
+        }
+      ],
+      "overview": {
+        "summary": "Learn to solve equations step by step. Each lesson starts with a short reading, then you practise.",
+        "outcomes": [
+          "Solve one-step and two-step equations",
+          "Understand why doing the same thing to both sides works",
+          "Read common math notation like squares, roots and absolute value"
+        ],
+        "requirements": [
+          "Basic arithmetic: add, subtract, multiply, divide"
+        ],
+        "minutes": 10
+      }
     },
     {
       "id": "science-basics",
@@ -25,8 +54,25 @@
       "order": 1,
       "dir": "science/basics",
       "units": [
-        { "id": "matter", "title": "Matter", "order": 1, "dir": "matter" }
-      ]
+        {
+          "id": "matter",
+          "title": "Matter",
+          "order": 1,
+          "dir": "matter"
+        }
+      ],
+      "overview": {
+        "summary": "A friendly start to science: what everything is made of and how it changes.",
+        "outcomes": [
+          "Tell solids, liquids and gases apart and explain why",
+          "Describe how matter changes state",
+          "Name the parts of an atom and what a molecule is"
+        ],
+        "requirements": [
+          "None. Curiosity is enough"
+        ],
+        "minutes": 8
+      }
     }
   ]
 }
