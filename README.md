@@ -67,6 +67,6 @@ Unknown `type` values are skipped by older apps (forward compatible), so new typ
 
 ## Writing math
 
-Text fields support `$inline$` LaTeX (a literal dollar sign is not supported; write the word). The standard only allows commands the app can draw (`LATEX_OK` in `tools/standard.py`). In JSON, backslashes are doubled: `"$\\frac{a}{b}$"`. Keep formulas short; very wide ones can overflow a narrow screen. The renderer's limits are in the app repo's `HANDOVER.md` (Known LaTeX limits): no matrices, `cases` or `align`.
+Text fields support `$inline$` LaTeX (a literal dollar sign is not supported; write the word). The standard only allows commands the app can draw (`LATEX_OK` in `tools/standard.py`). In JSON, backslashes are doubled: `"$\\frac{a}{b}$"`. Keep formulas short; very wide ones can overflow a narrow screen. The renderer has no matrices, `cases` or `align`, and `\left(` `\right)` do not stretch to the height of what they wrap.
 
 Copy style: short, calm, specific. One idea per question. The explanation says why, not just what.
