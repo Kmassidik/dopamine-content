@@ -47,12 +47,17 @@ A learner first **reads** a few short pages, then **practises**. Never questions
 | LESSON-TAGS | At least one tag |
 | TEXT-CLEAN | No leading, trailing or double spaces, tabs, newlines, HTML tags, TODO or FIXME |
 | TEXT-MATH-BALANCE | An even number of `$`, and balanced `{ }` inside each formula |
+| LESSON-QTYPE | Question `type` is one the app supports (`QUESTION_TYPES` in `tools/standard.py`) |
+| LESSON-MINAPP / NOTES-MINAPP | Content that uses a feature introduced in app version N declares `"minApp": N` (or higher). Older apps then show it as locked instead of half-rendering it. Code pages, code note blocks and `` `inline code` `` need `"minApp": 2` |
+| LESSON-CODE / NOTES-CODE | A `code` page or block has a `code` field (and a title) |
+| CODE-LINES / CODE-WIDTH / CODE-CLEAN | Code is at most 12 lines of at most 40 characters, with no tabs, trailing spaces or blank first/last lines |
+| TEXT-CODE-BALANCE | An even number of backticks |
 | TEXT-DOLLAR | No `\$` (the app does not support an escaped dollar) |
 | TEXT-LATEX | Only the LaTeX commands the app can draw (list in `tools/standard.py`, `LATEX_OK`) |
 
 Notes file (`<unit>/notes.json`): `{ "id", "version", "title", "blocks": [ { "id", "kind", "title", "body", "items" } ] }`. Bump `version` when you change it. Keep it to what a learner looks up: the big idea, the rules, the formulas, the notation, one tip.
 
-Page kinds: `text` (explain one idea), `example` (a title, a one-line `body` and 2 to 6 `steps` shown one at a time), `tip` (a short reminder, `body` only). A page may have an `image` (relative `.svg`).
+Page kinds: `code` (title, optional `body`, a `code` string and an optional `language`; shown in monospace), `text` (explain one idea), `example` (a title, a one-line `body` and 2 to 6 `steps` shown one at a time), `tip` (a short reminder, `body` only). A page may have an `image` (relative `.svg`).
 
 The numbers live in one place, the `RULES` dictionary in `tools/standard.py`. If you change a number, change it here too. `python3 tools/test_standard.py` proves the checks catch bad content, and CI runs it.
 
@@ -74,3 +79,8 @@ These are guidelines drawn from public teaching advice, not hard science. If a r
 2. For each unit, add `notes.json` and `lesson-NN.json` files with `learn` pages and `questions`.
 3. `python3 tools/build_manifest.py`, then `pip install jsonschema` and `python3 tools/validate.py`. Fix every `FAIL` line.
 4. Open a pull request. CI runs the same checks.
+
+## The contract with the app
+`contract.json` is generated (`python3 tools/build_contract.py`) from the schemas and `tools/standard.py`. It lists the question types, page kinds and note kinds the app must understand (with the app version that introduced each), every allowed LaTeX command and every size limit. The app repo keeps a copy and has a unit test that fails if the app's parser or limits disagree with it, so the two repos cannot drift apart. CI fails if `contract.json` is stale.
+
+Adding a new kind of content: (1) build it in the app and bump its `versionCode`, (2) add it to the maps in `tools/standard.py` with that version, (3) regenerate `contract.json`, (4) update the schemas and this document. Content that uses it must declare `minApp`.

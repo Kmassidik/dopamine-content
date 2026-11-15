@@ -31,6 +31,10 @@
       "items": {
         "$ref": "#/definitions/block"
       }
+    },
+    "minApp": {
+      "type": "integer",
+      "minimum": 1
     }
   },
   "definitions": {
@@ -69,8 +73,38 @@
           "items": {
             "$ref": "#/definitions/text"
           }
+        },
+        "code": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 700
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "code"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "required": [
+              "title",
+              "code"
+            ]
+          }
+        }
+      ]
     }
   }
 }

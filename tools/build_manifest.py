@@ -46,6 +46,7 @@ def build(content_version: str) -> dict:
                     "sha256": sha256(f),
                     "sizeBytes": f.stat().st_size,
                     "order": int(m.group(1)),
+                    **({"minApp": data["minApp"]} if "minApp" in data else {}),
                 })
             lessons.sort(key=lambda l: l["order"])
             entry = {"id": unit["id"], "title": unit["title"],
@@ -58,6 +59,7 @@ def build(content_version: str) -> dict:
                     "path": notes_file.relative_to(ROOT).as_posix(),
                     "version": nd["version"], "sha256": sha256(notes_file),
                     "sizeBytes": notes_file.stat().st_size,
+                    **({"minApp": nd["minApp"]} if "minApp" in nd else {}),
                 }
             units.append(entry)
         courses.append({

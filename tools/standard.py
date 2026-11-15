@@ -34,6 +34,8 @@ RULES = {
     "notes_words": 400,
     "notes_list_items": (2, 8),
     "notes_item_chars": 100,
+    "code_lines": 12,
+    "code_width": 40,                # characters per line; a 320dp phone shows about 40 in monospace
 }
 
 # LaTeX commands the app's renderer understands (ui/math/MathParser.kt). Keep in sync.
@@ -44,6 +46,15 @@ infty degree circ ldots dots cdots sum int prod partial nabla angle triangle per
 Delta Omega Sigma Pi Theta alpha beta gamma delta epsilon eta theta lambda mu pi rho sigma tau phi omega
 sin cos tan log ln lim min max exp det
 """.split())
+
+# Content kinds the app understands, and the app version (versionCode) that introduced each.
+# A lesson that uses a kind introduced in version N must declare "minApp": N or higher, so an older
+# app shows it as locked instead of half-rendering it. Add a kind here only AFTER the app supports it.
+QUESTION_TYPES = {"multiple_choice": 1, "fill_blank": 1, "type_answer": 1, "match_pairs": 1, "order_steps": 1}
+PAGE_KINDS = {"text": 1, "example": 1, "tip": 1, "code": 2}
+NOTE_KINDS = {"text": 1, "formula": 1, "list": 1, "tip": 1, "code": 2}
+INLINE_CODE_APP = 2   # `inline code` in any text needs app version 2
+CONTRACT_VERSION = 1
 
 MATH_RE = re.compile(r"\$(.*?)\$", re.S)
 
@@ -95,6 +106,8 @@ def check_text(rep, where, s):
         rep.fail("TEXT-CLEAN", where, "no leading/trailing/double spaces, tabs or newlines")
     if re.search(r"<[a-zA-Z/]", s) or "TODO" in s or "FIXME" in s:
         rep.fail("TEXT-CLEAN", where, "no HTML tags and no TODO/FIXME")
+    if s.count("`") % 2:
+        rep.fail("TEXT-CODE-BALANCE", where, "odd number of backticks")
     for m in MATH_RE.finditer(s):
         body = m.group(1)
         if body.count("{") != body.count("}"):
@@ -127,11 +140,16 @@ def check_notes(rep, label, notes):
     for b in blocks:
         w = f"{label} block {b['id']}"
         kind = b["kind"]
-        if kind not in ("text", "formula", "list", "tip"):
+        if kind not in NOTE_KINDS:
             rep.fail("NOTES-KIND", w, f"unknown kind '{kind}' (use text, formula, list or tip)")
+        if kind == "code":
+            if "code" not in b:
+                rep.fail("NOTES-CODE", w, "a code block needs a `code` field")
+            else:
+                check_code(rep, w, b["code"])
         if kind in ("text", "formula", "tip") and "body" not in b:
             rep.fail("NOTES-BODY", w, f"a {kind} block needs a body")
-        if kind in ("text", "list", "formula") and "title" not in b:
+        if kind in ("text", "list", "formula", "code") and "title" not in b:
             rep.fail("NOTES-TITLE", w, f"a {kind} block needs a title")
         if kind == "formula" and "$" not in b.get("body", ""):
             rep.fail("NOTES-FORMULA", w, "a formula block's body must contain a $formula$")
@@ -144,11 +162,28 @@ def check_notes(rep, label, notes):
                 rep.fail("NOTES-ITEMS", w, f"list items are at most {RULES['notes_item_chars']} characters")
         if len(b.get("body", "")) > RULES["page_body_chars"]:
             rep.fail("NOTES-LENGTH", w, f"body over {RULES['page_body_chars']} characters")
+    needed = max([NOTE_KINDS.get(b["kind"], 1) for b in blocks] + [INLINE_CODE_APP if uses_inline_code(t for _, t in notes_texts(notes)) else 1])
+    if notes.get("minApp", 1) < needed:
+        rep.fail("NOTES-MINAPP", label, f"uses features from app version {needed}, so it needs \"minApp\": {needed} or higher")
     nw = sum(words(t) for _, t in notes_texts(notes))
     if nw > RULES["notes_words"]:
         rep.fail("NOTES-LENGTH", label, f"notes are {nw} words; keep them under {RULES['notes_words']}")
     for where, t in notes_texts(notes):
         check_text(rep, f"{label} {where}", t)
+
+
+def check_code(rep, where, code):
+    lines = code.split("\n")
+    if len(lines) > RULES["code_lines"]:
+        rep.fail("CODE-LINES", where, f"code is {len(lines)} lines; at most {RULES['code_lines']}")
+    if any(len(l) > RULES["code_width"] for l in lines):
+        rep.fail("CODE-WIDTH", where, f"a code line is longer than {RULES['code_width']} characters")
+    if "\t" in code or code != code.strip("\n") or any(l != l.rstrip() for l in lines):
+        rep.fail("CODE-CLEAN", where, "no tabs, no trailing spaces, no blank first or last line")
+
+
+def uses_inline_code(strings):
+    return any("`" in s for s in strings)
 
 
 def estimate_minutes(lessons):
@@ -174,19 +209,37 @@ def check_lesson(rep, label, l):
         w = f"{label} page {p['id']}"
         if len(p.get("body", "")) > RULES["page_body_chars"]:
             rep.fail("LESSON-PAGE-LENGTH", w, f"body over {RULES['page_body_chars']} characters; one idea per page")
-        if p["kind"] in ("text", "example") and "title" not in p:
-            rep.fail("LESSON-PAGE-TITLE", w, "text and example pages need a title")
+        if p["kind"] in ("text", "example", "code") and "title" not in p:
+            rep.fail("LESSON-PAGE-TITLE", w, "text, example and code pages need a title")
+        if p["kind"] == "code":
+            if "code" not in p:
+                rep.fail("LESSON-CODE", w, "a code page needs a `code` field")
+            else:
+                check_code(rep, w, p["code"])
         if p["kind"] == "example":
             lo2, hi2 = RULES["example_steps"]
             if not lo2 <= len(p.get("steps", [])) <= hi2:
                 rep.fail("LESSON-STEPS", w, f"an example needs {lo2} to {hi2} steps")
-        if p["kind"] not in ("text", "example", "tip"):
+        if p["kind"] not in PAGE_KINDS:
             rep.fail("LESSON-KIND", w, f"unknown page kind '{p['kind']}' (use text, example or tip)")
     reading = sum(words(t) for _, t in texts_of({"learn": pages, "questions": []}))
     lo3, hi3 = RULES["reading_words"]
     if pages and not lo3 <= reading <= hi3:
         rep.fail("LESSON-READING", label, f"reading is {reading} words; keep it between {lo3} and {hi3}")
     qs = l.get("questions", [])
+    needed = 1
+    for q in qs:
+        if q["type"] not in QUESTION_TYPES:
+            rep.fail("LESSON-QTYPE", f"{label} {q['id']}", f"unknown question type '{q['type']}'; the app must support it first (add it to QUESTION_TYPES)")
+        else:
+            needed = max(needed, QUESTION_TYPES[q["type"]])
+    for p in pages:
+        if p["kind"] in PAGE_KINDS:
+            needed = max(needed, PAGE_KINDS[p["kind"]])
+    if uses_inline_code(t for _, t in texts_of(l)):
+        needed = max(needed, INLINE_CODE_APP)
+    if l.get("minApp", 1) < needed:
+        rep.fail("LESSON-MINAPP", label, f"uses features from app version {needed}, so it needs \"minApp\": {needed} or higher")
     lo4, hi4 = RULES["questions"]
     if not lo4 <= len(qs) <= hi4:
         rep.fail("LESSON-QUESTIONS", label, f"needs {lo4} to {hi4} practice questions, has {len(qs)}")

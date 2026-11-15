@@ -144,6 +144,10 @@
                       },
                       "order": {
                         "type": "integer"
+                      },
+                      "minApp": {
+                        "type": "integer",
+                        "minimum": 1
                       }
                     }
                   }
@@ -178,6 +182,10 @@
                       "pattern": "^[0-9a-f]{64}$"
                     },
                     "sizeBytes": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "minApp": {
                       "type": "integer",
                       "minimum": 1
                     }

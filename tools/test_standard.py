@@ -108,6 +108,43 @@ class StandardTest(unittest.TestCase):
         self.edit_notes(f)
         self.assertIn("TEXT-LATEX", self.rules())
 
+    def test_unknown_question_type_fails(self):
+        def f(d): d["questions"][0]["type"] = "hologram"
+        self.edit_lesson(f)
+        self.assertIn("LESSON-QTYPE", self.rules())
+
+    def test_code_page_needs_minapp_2(self):
+        def f(d): d["learn"].append({"id": "c1", "kind": "code", "title": "Code", "code": "x = 1"})
+        self.edit_lesson(f)
+        self.assertIn("LESSON-MINAPP", self.rules())
+
+    def test_code_page_with_minapp_passes_that_rule(self):
+        def f(d):
+            d["minApp"] = 2
+            d["learn"].append({"id": "c1", "kind": "code", "title": "Code", "code": "x = 1"})
+        self.edit_lesson(f)
+        self.assertNotIn("LESSON-MINAPP", self.rules())
+
+    def test_inline_code_needs_minapp_2(self):
+        def f(d): d["questions"][0]["explanation"] = "Use `x` here."
+        self.edit_lesson(f)
+        self.assertIn("LESSON-MINAPP", self.rules())
+
+    def test_code_too_wide_and_too_long_fail(self):
+        def f(d):
+            d["minApp"] = 2
+            d["learn"].append({"id": "c1", "kind": "code", "title": "Code", "code": "x" * 60})
+            d["learn"].append({"id": "c2", "kind": "code", "title": "Code", "code": "\n".join("a" for _ in range(20))})
+        self.edit_lesson(f)
+        r = self.rules()
+        self.assertIn("CODE-WIDTH", r)
+        self.assertIn("CODE-LINES", r)
+
+    def test_unbalanced_backtick_fails(self):
+        def f(d): d["questions"][0]["prompt"] = "Solve `x"
+        self.edit_lesson(f)
+        self.assertIn("TEXT-CODE-BALANCE", self.rules())
+
     def test_course_without_overview_fails(self):
         cat = json.loads((self.tmp / "catalog.json").read_text(encoding="utf-8"))
         del cat["courses"][0]["overview"]
