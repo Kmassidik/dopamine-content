@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.11.16+3",
+  "contentVersion": "2026.11.16+4",
   "minAppVersion": 1,
   "categories": [
     {
@@ -252,8 +252,8 @@
               "title": "Voltage and current",
               "path": "electronics/electronics-basics/ohms-law/lesson-01.json",
               "version": 1,
-              "sha256": "3e10b1b28f255c179eaeab92da4814d926b0bd8593a4f897749755f621a3a29c",
-              "sizeBytes": 3802,
+              "sha256": "55715b76b175a4e1280fd2f3223808ec5f53f0e4a65a1900b1e584ee39b8fdb0",
+              "sizeBytes": 3803,
               "order": 1
             },
             {

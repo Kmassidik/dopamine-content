@@ -123,7 +123,7 @@
     {
       "id": "q6",
       "type": "multiple_choice",
-      "prompt": "A AA battery is rated 1.5 V. What does that number describe?",
+      "prompt": "An AA battery is rated 1.5 V. What does that number describe?",
       "choices": [
         "The push it gives",
         "The flow it carries",
