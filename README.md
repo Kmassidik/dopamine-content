@@ -6,6 +6,8 @@ The lessons behind [Dopamine](https://github.com/Kmassidik/dopamine), a private,
 
 **Data only. No code from this repository ever runs in the app.**
 
+The app downloads these files from [kmassidik.github.io/dopamine-content](https://kmassidik.github.io/dopamine-content/manifest.json). The `deploy content` workflow publishes every push to `main` through GitHub Pages; app v0.3.2+ uses this host instead of `raw.githubusercontent.com`.
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/Kmassidik/dopamine/main/docs/screenshots/subjects.png" width="200" alt="Subjects in the app">
   <img src="https://raw.githubusercontent.com/Kmassidik/dopamine/main/docs/screenshots/diagram.png" width="200" alt="A lesson with a diagram">
