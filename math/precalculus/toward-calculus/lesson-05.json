@@ -1,0 +1,158 @@
+{
+  "id": "pc-calculus-05",
+  "version": 1,
+  "title": "The derivative idea",
+  "xp": 25,
+  "tags": [
+    "precalculus",
+    "derivative"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "From average to instant",
+      "body": "The average rate uses two points. The instantaneous rate at one point asks what the average rate approaches as the second point slides toward the first. It is the slope of the tangent line, the line that just touches the curve there."
+    },
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "The definition",
+      "body": "The derivative of $f$ at $a$ is $f'(a)=\\lim_{h\\to0}\\frac{f(a+h)-f(a)}{h}$. It is a limit of average rates over smaller and smaller intervals of width $h$."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "$f(x)=x^2$ at $x=3$",
+      "body": "Compute the average rate over width $h$.",
+      "steps": [
+        "$\\frac{(3+h)^2-9}{h}=\\frac{6h+h^2}{h}=6+h$",
+        "$h=0.1$: $6.1$. $h=0.01$: $6.01$",
+        "As $h\\to0$, the value approaches 6, so $f'(3)=6$."
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "A pattern appears",
+      "body": "At $x=1$ the same steps give $2+h\\to2$. At $x=3$ we got 6. The answers are $2x$, so the derivative of $x^2$ is $2x$. For a line like $3x+1$ the rate is always 3, since the slope never changes."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "For $f(x)=x^2$, what does $\\frac{(3+h)^2-9}{h}$ simplify to? Give the value at $h=0.01$.",
+      "accepted": [
+        "6.01"
+      ],
+      "keypad": "numeric",
+      "explanation": "$6+h=6.01$ when $h=0.01$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "What is $f'(3)$ for $f(x)=x^2$?",
+      "accepted": [
+        "6"
+      ],
+      "keypad": "numeric",
+      "explanation": "The averages $6+h$ approach 6."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What is $f'(1)$ for $f(x)=x^2$?",
+      "accepted": [
+        "2"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac{(1+h)^2-1}{h}=2+h\\to2$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What does $f'(a)$ measure?",
+      "choices": [
+        "The average rate between $0$ and $a$",
+        "The instantaneous rate of change at $x=a$",
+        "The value $f(a)$",
+        "The area under the curve"
+      ],
+      "answerIndex": 1,
+      "explanation": "It is the slope of the tangent line at $a$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "For $f(x)=3x+1$, what is the instantaneous rate at any point?",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "A line has the same slope everywhere."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which gets closer to an instantaneous rate?",
+      "choices": [
+        "An average rate over a year",
+        "The largest value of $f$",
+        "An average rate over a very short interval",
+        "The value at $x=0$"
+      ],
+      "answerIndex": 2,
+      "explanation": "The shorter the interval, the closer to the instant."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "The slope of the tangent line at a point is the \\_\\_ there.",
+      "choices": [
+        "limit at infinity",
+        "intercept",
+        "period",
+        "derivative"
+      ],
+      "answerIndex": 3,
+      "explanation": "That is the geometric meaning of $f'(a)$."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        [
+          "Secant line",
+          "through two points on the curve"
+        ],
+        [
+          "Tangent line",
+          "touches the curve at one point"
+        ],
+        [
+          "Average rate",
+          "slope of a secant"
+        ],
+        [
+          "Instantaneous rate",
+          "slope of a tangent"
+        ]
+      ],
+      "explanation": "Secant is for averages and tangent is for instants."
+    },
+    {
+      "id": "q9",
+      "type": "order_steps",
+      "prompt": "Estimate a derivative. Put the steps in order.",
+      "steps": [
+        "Write the average rate over width $h$",
+        "Simplify the expression",
+        "Let $h$ get smaller and smaller",
+        "Read the value it approaches"
+      ],
+      "explanation": "Slide the second point toward the first."
+    }
+  ]
+}

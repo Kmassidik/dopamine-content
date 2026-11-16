@@ -1,0 +1,59 @@
+{
+  "id": "pc-calculus-notes",
+  "version": 1,
+  "title": "Toward calculus: cheat sheet",
+  "blocks": [
+    {
+      "id": "b1",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Calculus studies change. Limits make precise what \"approaches\" means, and the derivative turns average rates into instant rates."
+    },
+    {
+      "id": "b2",
+      "kind": "list",
+      "title": "Conics",
+      "items": [
+        "Circle: $(x-h)^2+(y-k)^2=r^2$",
+        "Ellipse: $\\frac{x^2}{a^2}+\\frac{y^2}{b^2}=1$",
+        "Hyperbola: $\\frac{x^2}{a^2}-\\frac{y^2}{b^2}=1$",
+        "Parabola: $y=a(x-h)^2+k$"
+      ]
+    },
+    {
+      "id": "b3",
+      "kind": "formula",
+      "title": "Arithmetic sequence",
+      "body": "$a_n=a_1+(n-1)d,\\ S_n=\\frac{n(a_1+a_n)}{2}$"
+    },
+    {
+      "id": "b4",
+      "kind": "formula",
+      "title": "Geometric sequence",
+      "body": "$a_n=a_1r^{n-1},\\ S_n=\\frac{a_1(1-r^n)}{1-r}$"
+    },
+    {
+      "id": "b5",
+      "kind": "formula",
+      "title": "Infinite geometric sum",
+      "body": "$S=\\frac{a_1}{1-r}$ when $|r|<1$"
+    },
+    {
+      "id": "b6",
+      "kind": "formula",
+      "title": "Average rate of change",
+      "body": "$\\frac{f(b)-f(a)}{b-a}$"
+    },
+    {
+      "id": "b7",
+      "kind": "formula",
+      "title": "Derivative at a point",
+      "body": "$f'(a)=\\lim_{h\\to0}\\frac{f(a+h)-f(a)}{h}$"
+    },
+    {
+      "id": "b8",
+      "kind": "tip",
+      "body": "The limit only looks near the point, never at it. A hole in the graph does not stop a limit."
+    }
+  ]
+}

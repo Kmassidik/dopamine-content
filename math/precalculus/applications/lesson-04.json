@@ -1,0 +1,175 @@
+{
+  "id": "pc-applications-04",
+  "version": 1,
+  "title": "Polar coordinates",
+  "xp": 20,
+  "tags": [
+    "precalculus",
+    "polar"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "A point by distance and angle",
+      "body": "Instead of $(x,y)$, polar coordinates give $(r,\\theta)$: go out a distance $r$ from the origin at angle $\\theta$. The point $(2,\\frac{\\pi}{3})$ is 2 units away at $60^\\circ$."
+    },
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Converting",
+      "body": "From polar to rectangular: $x=r\\cos\\theta$, $y=r\\sin\\theta$. From rectangular to polar: $r=\\sqrt{x^2+y^2}$, and $\\theta$ from $\\tan^{-1}\\frac{y}{x}$, checking the quadrant."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Polar $\\left(2,\\frac{\\pi}{3}\\right)$ to rectangular",
+      "body": "Use cosine and sine.",
+      "steps": [
+        "$x=2\\cos\\frac{\\pi}{3}=1$",
+        "$y=2\\sin\\frac{\\pi}{3}=\\sqrt3\\approx 1.732$",
+        "The point is $(1,1.732)$."
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Rectangular $(-3,3)$ to polar",
+      "body": "Find $r$, then the angle.",
+      "steps": [
+        "$r=\\sqrt{9+9}\\approx 4.243$",
+        "The point is in quadrant II, so $\\theta=135^\\circ$, not $-45^\\circ$",
+        "Polar: $(4.243,135^\\circ)$"
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "tip",
+      "body": "A point has many polar names: adding $360^\\circ$ to $\\theta$ gives the same point."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "What is $r$ for the rectangular point $(0,5)$?",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\sqrt{0+25}=5$."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What is the rectangular $x$ of the polar point $(6,150^\\circ)$ to one decimal place?",
+      "choices": [
+        "$5.2$",
+        "$3.0$",
+        "$-3.0$",
+        "$-5.2$"
+      ],
+      "answerIndex": 3,
+      "explanation": "$6\\cos150^\\circ=-5.196$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What is the rectangular $y$ of polar $(6,150^\\circ)$?",
+      "accepted": [
+        "3",
+        "3.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$6\\sin150^\\circ=3$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What is the polar angle of the point $(-3,3)$?",
+      "choices": [
+        "$135^\\circ$",
+        "$45^\\circ$",
+        "$-45^\\circ$",
+        "$225^\\circ$"
+      ],
+      "answerIndex": 0,
+      "explanation": "The point is in quadrant II, so the angle is $135^\\circ$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What is the rectangular form of $(2,\\frac{\\pi}{3})$ (to 3 decimals for $y$)?",
+      "choices": [
+        "$(1.732,1)$",
+        "$(1,1.732)$",
+        "$(2,1.732)$",
+        "$(1,0.5)$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$x=2\\cos\\frac{\\pi}{3}=1$ and $y=2\\sin\\frac{\\pi}{3}\\approx1.732$."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "To go from $(x,y)$ to $r$ we use $r=$ \\_\\_.",
+      "choices": [
+        "$x+y$",
+        "$\\frac{y}{x}$",
+        "$\\sqrt{x^2+y^2}$",
+        "$x^2+y^2$"
+      ],
+      "answerIndex": 2,
+      "explanation": "It is the distance from the origin."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each polar point to its rectangular point.",
+      "pairs": [
+        [
+          "$(1,0^\\circ)$",
+          "$(1,0)$"
+        ],
+        [
+          "$(1,90^\\circ)$",
+          "$(0,1)$"
+        ],
+        [
+          "$(1,180^\\circ)$",
+          "$(-1,0)$"
+        ],
+        [
+          "$(1,270^\\circ)$",
+          "$(0,-1)$"
+        ]
+      ],
+      "explanation": "Plug the angle into $(\\cos,\\sin)$."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "Does $(3,\\theta)$ and $(3,\\theta+360^\\circ)$ name the same point?",
+      "choices": [
+        "No",
+        "Only if $\\theta=0$",
+        "Only in radians",
+        "Yes"
+      ],
+      "answerIndex": 3,
+      "explanation": "A full turn returns to the same place."
+    },
+    {
+      "id": "q9",
+      "type": "order_steps",
+      "prompt": "Convert $(x,y)$ to polar. Put the steps in order.",
+      "steps": [
+        "Compute $r=\\sqrt{x^2+y^2}$",
+        "Compute $\\tan^{-1}\\frac{y}{x}$",
+        "Check the quadrant and adjust",
+        "Write $(r,\\theta)$"
+      ],
+      "explanation": "The quadrant check prevents wrong angles."
+    }
+  ]
+}
