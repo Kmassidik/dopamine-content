@@ -1,0 +1,154 @@
+{
+  "id": "ca-build-01",
+  "version": 1,
+  "minApp": 2,
+  "title": "The preprocessor",
+  "xp": 15,
+  "tags": [
+    "c",
+    "build"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Four quiet steps",
+      "body": "When you run `clang hello.c -o hello`, four steps happen without a word: preprocessing, compiling, assembling and linking. This unit opens the box, one stage at a time. The first stage is the preprocessor, a text editor that runs on your source before the compiler sees it."
+    },
+    {
+      "id": "directives",
+      "kind": "text",
+      "title": "Lines that start with #",
+      "body": "A line that starts with `#` is a directive for the preprocessor, not C code. `#include` pastes the text of another file at that spot. `#define NAME text` makes every later `NAME` turn into `text`."
+    },
+    {
+      "id": "define",
+      "kind": "code",
+      "title": "A constant with #define",
+      "body": "Before compiling, `LIMIT` is replaced by `10`, so this prints 20.",
+      "code": "#include <stdio.h>\n#define LIMIT 10\n\nint main(void) {\n    printf(\"%d\\n\", LIMIT * 2);\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "see-e",
+      "kind": "code",
+      "title": "Look at the result",
+      "body": "The `-E` flag stops after preprocessing and prints the text. Your own lines come last, after all the pasted header text.",
+      "code": "cc -E prog.c | tail -5",
+      "language": "sh"
+    },
+    {
+      "id": "macro-trap",
+      "kind": "example",
+      "title": "A macro only swaps text",
+      "body": "Take `#define SQ(x) x*x` and the call `SQ(1+2)`.",
+      "steps": [
+        "The preprocessor does no maths, it only swaps text",
+        "`SQ(1+2)` becomes `1+2*1+2`",
+        "Multiplication goes first: 1 + 2 + 2 = 5, not 9",
+        "Safer: `#define SQ(x) ((x) * (x))` gives 9"
+      ]
+    },
+    {
+      "id": "parens",
+      "kind": "tip",
+      "body": "Wrap each macro parameter, and the whole body, in parentheses. Then the swapped text keeps its meaning."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which of the four steps runs first?",
+      "choices": [
+        "Preprocessing",
+        "Compiling",
+        "Linking"
+      ],
+      "answerIndex": 0,
+      "explanation": "The preprocessor handles `#include` and `#define` lines before the compiler reads anything."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What does `#include` do with a header such as `stdio.h`?",
+      "choices": [
+        "Runs the program",
+        "Pastes the text of that header file in its place",
+        "Deletes unused code"
+      ],
+      "answerIndex": 1,
+      "explanation": "`#include` is a text paste done by the preprocessor."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Which flag makes `cc` stop after preprocessing and print the result? Type it.",
+      "accepted": [
+        "-E",
+        "-e",
+        "`-E`"
+      ],
+      "keypad": "full",
+      "explanation": "`-E` stops after the preprocessor."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "After `#define MAX 5`, the text `MAX + 1` becomes \\_\\_.",
+      "choices": [
+        "`6`",
+        "`MAX 5 + 1`",
+        "`5 + 1`"
+      ],
+      "answerIndex": 2,
+      "explanation": "The preprocessor swaps text and does not calculate. The compiler later turns `5 + 1` into 6."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "With `#define SQ(x) x*x`, what does `printf(\"%d\", SQ(1+2))` print?",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "`SQ(1+2)` becomes `1+2*1+2`, which is 1 + 2 + 2 = 5."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Why is `#define SQ(x) ((x) * (x))` safer than `x*x`?",
+      "choices": [
+        "The parentheses keep each argument together",
+        "It runs faster",
+        "It checks types"
+      ],
+      "answerIndex": 0,
+      "explanation": "With parentheses `SQ(1+2)` becomes `((1+2) * (1+2))`, which is 9."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each item to what it does.",
+      "pairs": [
+        [
+          "`#include` and a header name",
+          "Pastes the header here"
+        ],
+        [
+          "`#define N 4`",
+          "Replaces N with 4"
+        ],
+        [
+          "`cc -E prog.c`",
+          "Shows the preprocessed text"
+        ],
+        [
+          "`x*x` in a macro",
+          "Can break with `1+2`"
+        ]
+      ],
+      "explanation": "Each one is plain text work done before the compiler starts."
+    }
+  ]
+}
