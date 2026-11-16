@@ -1,0 +1,155 @@
+{
+  "id": "a1-quadratics-03",
+  "version": 1,
+  "title": "Square roots and completing the square",
+  "xp": 20,
+  "tags": [
+    "algebra",
+    "quadratics"
+  ],
+  "learn": [
+    {
+      "id": "roots",
+      "kind": "text",
+      "title": "Undoing a square",
+      "body": "If $x^2=k$, then $x=\\pm\\sqrt{k}$. There are two answers because $4^2$ and $(-4)^2$ both equal 16. This also works when a whole bracket is squared: $(x-1)^2=9$ gives $x-1=\\pm3$."
+    },
+    {
+      "id": "example-bracket",
+      "kind": "example",
+      "title": "Solve $(x-1)^2=9$",
+      "body": "Take the square root of both sides.",
+      "steps": [
+        "$x-1=3$ or $x-1=-3$",
+        "So $x=4$ or $x=-2$",
+        "Check: $(4-1)^2=9$ and $(-2-1)^2=9$."
+      ]
+    },
+    {
+      "id": "complete",
+      "kind": "text",
+      "title": "Completing the square",
+      "body": "To turn $x^2+bx$ into a perfect square, add $\\left(\\frac{b}{2}\\right)^2$. For $x^2+6x$ add 9, since $x^2+6x+9=(x+3)^2$. Add the same number to both sides."
+    },
+    {
+      "id": "example-complete",
+      "kind": "example",
+      "title": "Solve $x^2+6x+5=0$",
+      "body": "Move the constant, then complete the square.",
+      "steps": [
+        "Subtract 5: $x^2+6x=-5$",
+        "Add 9 to both sides: $(x+3)^2=4$",
+        "$x+3=\\pm2$, so $x=-1$ or $x=-5$"
+      ]
+    },
+    {
+      "id": "both-sides",
+      "kind": "tip",
+      "body": "Whatever you add to complete the square, add to both sides. Otherwise the equation changes."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Solve $x^2=16$",
+      "choices": [
+        "$x=4$ only",
+        "$x=4$ or $x=-4$",
+        "$x=8$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Both $4^2$ and $(-4)^2$ equal 16, so there are two solutions: $x=\\pm4$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Solve $x^2=25$. What is the positive solution?",
+      "accepted": [
+        "5",
+        "5.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\sqrt{25}=5$, and the other solution is $-5$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Solve $x^2=2$",
+      "choices": [
+        "$x=\\pm\\sqrt{2}$",
+        "$x=\\pm1$",
+        "$x=2$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$\\sqrt{2}$ is not a whole number, so leave it as $\\pm\\sqrt{2}$. About $\\pm1.414$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "Solve $(x-1)^2=9$. What is the larger solution?",
+      "accepted": [
+        "4",
+        "4.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$x-1=\\pm3$, so $x=4$ or $x=-2$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "In the same equation, what is the smaller solution?",
+      "accepted": [
+        "-2",
+        "-2.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$x-1=-3$ gives $x=-2$."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "To complete the square for $x^2+6x$, add $\\left(\\frac{6}{2}\\right)^2=\\_\\_$",
+      "choices": [
+        "9",
+        "6",
+        "3"
+      ],
+      "answerIndex": 0,
+      "explanation": "Then $x^2+6x+9=(x+3)^2$."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "To complete the square for $x^2+10x$, what number do you add?",
+      "accepted": [
+        "25",
+        "25.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Half of 10 is 5, and $5^2=25$. So $x^2+10x+25=(x+5)^2$."
+    },
+    {
+      "id": "q8",
+      "type": "type_answer",
+      "prompt": "Solve $x^2+6x+5=0$ by completing the square. What is the larger solution?",
+      "accepted": [
+        "-1",
+        "-1.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$x^2+6x=-5$. Add 9: $(x+3)^2=4$. So $x+3=\\pm2$, giving $x=-1$ or $x=-5$."
+    },
+    {
+      "id": "q9",
+      "type": "type_answer",
+      "prompt": "In the same equation, what is the smaller solution?",
+      "accepted": [
+        "-5",
+        "-5.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$x+3=-2$ gives $x=-5$."
+    }
+  ]
+}
