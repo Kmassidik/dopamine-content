@@ -1,0 +1,61 @@
+{
+  "id": "cf-data-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Data and operators: cheat sheet",
+  "blocks": [
+    {
+      "id": "big",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A variable has a type, a name and a value. The type decides the range and the kind of number. Integers divide by dropping decimals, and decimals are only approximate."
+    },
+    {
+      "id": "types",
+      "kind": "list",
+      "title": "Types on 64-bit systems",
+      "items": [
+        "`int`: whole number, 4 bytes",
+        "`char`: one character, 1 byte",
+        "`float`: decimal, 4 bytes",
+        "`double`: decimal, 8 bytes",
+        "`long long`: big whole number, 8 bytes"
+      ]
+    },
+    {
+      "id": "fmt",
+      "kind": "list",
+      "title": "Format specifiers",
+      "items": [
+        "`%d` int, `%c` char",
+        "`%f` float or double in printf",
+        "`%lf` double in scanf",
+        "`%s` text, `%%` percent sign",
+        "`%.2f` two decimals"
+      ]
+    },
+    {
+      "id": "ops",
+      "kind": "list",
+      "title": "Operators",
+      "items": [
+        "`+ - * /` arithmetic",
+        "`%` remainder (integers only)",
+        "`x += 2`, `x++`, `x--` shortcuts",
+        "`7 / 2` is 3, `7 / 2.0` is 3.5"
+      ]
+    },
+    {
+      "id": "code",
+      "kind": "code",
+      "title": "Read a number",
+      "code": "int n;\nscanf(\"%d\", &n);\nprintf(\"%d\\n\", n % 10);",
+      "language": "c"
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Do not use `==` on decimals. Signed int overflow is undefined, so pick a bigger type early."
+    }
+  ]
+}

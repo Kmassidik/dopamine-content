@@ -1,0 +1,163 @@
+{
+  "id": "cf-first-04",
+  "version": 1,
+  "minApp": 2,
+  "title": "printf and escape sequences",
+  "xp": 15,
+  "tags": [
+    "c",
+    "printf",
+    "escape"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Printing text",
+      "body": "`printf` prints exactly the characters inside its quotes. It does not add a new line by itself. If you want the next output to start on a new line, you must ask for one."
+    },
+    {
+      "id": "lines",
+      "kind": "code",
+      "title": "Joining output",
+      "body": "Output continues where the last printf stopped.",
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    printf(\"one\\n\");\n    printf(\"two\");\n    printf(\" three\\n\");\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "result",
+      "kind": "text",
+      "title": "What that prints",
+      "body": "The first printf prints `one` and a new line. The second prints `two` with no new line, so the third continues on the same line. The output is two lines: `one` and then `two three`."
+    },
+    {
+      "id": "escape",
+      "kind": "text",
+      "title": "Escape sequences",
+      "body": "A backslash inside a string starts an escape sequence, a special character. `\\n` is a new line. `\\t` is a tab. `\\\"` prints a double quote. `\\\\` prints one backslash."
+    },
+    {
+      "id": "esc",
+      "kind": "code",
+      "title": "Escapes in use",
+      "body": "A quote needs a backslash, or it would end the string early.",
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    printf(\"a\\tb\\n\");\n    printf(\"say \\\"hi\\\"\\n\");\n    printf(\"path\\\\file\\n\");\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "trace",
+      "kind": "example",
+      "title": "Reading an escape",
+      "body": "Take `printf(\"say \\\"hi\\\"\\n\");`.",
+      "steps": [
+        "The text starts after the first quote",
+        "`\\\"` prints a literal double quote and does not end the string",
+        "The output is say \"hi\" followed by a new line"
+      ]
+    },
+    {
+      "id": "newline",
+      "kind": "tip",
+      "body": "End most lines of output with `\\n`. Otherwise the next prompt appears on the same line."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What does `printf(\"A\");` followed by `printf(\"B\\n\");` print?",
+      "choices": [
+        "AB on one line",
+        "A and B on two lines",
+        "Only B",
+        "A\\nB as typed"
+      ],
+      "answerIndex": 0,
+      "explanation": "The first printf has no `\\n`, so B follows directly after A."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Which escape sequence means a new line?",
+      "choices": [
+        "`\\t`",
+        "`\\n`",
+        "`\\\\`",
+        "`/n`"
+      ],
+      "answerIndex": 1,
+      "explanation": "`\\n` is newline. `\\t` is a tab."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "To print a double quote inside a string, write \\_\\_.",
+      "choices": [
+        "`/\"`",
+        "`\"\"`",
+        "`\\\"`",
+        "`%\"`"
+      ],
+      "answerIndex": 2,
+      "explanation": "A backslash before the quote stops it ending the string."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "To print one backslash, write \\_\\_ in the string.",
+      "choices": [
+        "`\\`",
+        "`//`",
+        "`\\/`",
+        "`\\\\`"
+      ],
+      "answerIndex": 3,
+      "explanation": "A single backslash starts an escape, so you double it."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "How many lines does `printf(\"x\\ny\\nz\\n\");` print? Type the number.",
+      "accepted": [
+        "3",
+        "three"
+      ],
+      "keypad": "full",
+      "explanation": "Each `\\n` ends a line: x, y and z are on three lines."
+    },
+    {
+      "id": "q6",
+      "type": "match_pairs",
+      "prompt": "Match each escape to what it does.",
+      "pairs": [
+        [
+          "`\\n`",
+          "New line"
+        ],
+        [
+          "`\\t`",
+          "Tab"
+        ],
+        [
+          "`\\\"`",
+          "Double quote"
+        ],
+        [
+          "`\\\\`",
+          "Backslash"
+        ]
+      ],
+      "explanation": "Each escape starts with a backslash followed by a code letter or symbol."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Put the lines in order to print Hi on the first line and Bye on the second.",
+      "steps": [
+        "`printf(\"Hi\\n\");`",
+        "`printf(\"Bye\\n\");`"
+      ],
+      "explanation": "Output appears in the order the printf calls run."
+    }
+  ]
+}

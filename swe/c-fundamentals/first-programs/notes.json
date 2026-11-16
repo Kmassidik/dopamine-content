@@ -1,0 +1,54 @@
+{
+  "id": "cf-first-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Your first programs: cheat sheet",
+  "blocks": [
+    {
+      "id": "big",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "You write source code, a compiler turns it into a program, and you run it. The computer follows your instructions exactly, one after another, starting at `main`."
+    },
+    {
+      "id": "hello",
+      "kind": "code",
+      "title": "Hello, world",
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    printf(\"hello, world\\n\");\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "cmds",
+      "kind": "code",
+      "title": "Compile and run",
+      "code": "clang hello.c -o hello\n./hello",
+      "language": "c"
+    },
+    {
+      "id": "esc",
+      "kind": "list",
+      "title": "Escape sequences",
+      "items": [
+        "`\\n` new line",
+        "`\\t` tab",
+        "`\\\"` double quote",
+        "`\\\\` backslash"
+      ]
+    },
+    {
+      "id": "cm",
+      "kind": "list",
+      "title": "Comments",
+      "items": [
+        "`// one line`",
+        "`/* many lines */`",
+        "Compilers ignore them"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Read the first compiler error first. Every instruction ends with `;`. Recompile after every edit."
+    }
+  ]
+}
