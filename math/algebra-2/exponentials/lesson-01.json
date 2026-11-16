@@ -1,0 +1,132 @@
+{
+  "id": "a2-exponentials-01",
+  "version": 1,
+  "title": "Exponential growth and decay",
+  "xp": 15,
+  "tags": [
+    "algebra",
+    "exponentials"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Repeated multiplying",
+      "body": "An exponential function has the form $y=a\\cdot b^x$. The starting value is $a$ (the value at $x=0$) and each step multiplies by the base $b$. If $b>1$ it is growth. If $b$ is between 0 and 1 it is decay."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Doubling population",
+      "body": "A colony starts at 200 and doubles every hour.",
+      "steps": [
+        "Model: $y=200\\cdot 2^t$",
+        "After 3 hours: $200\\cdot 2^3$",
+        "$=200\\cdot 8=1600$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Percent change",
+      "body": "For a growth rate $r$ the base is $b=1+r$. Growing 5% a year gives $b=1.05$. A decay of 12% gives $b=1-0.12=0.88$. Starting at 1000 and growing 5% for 10 years gives $1000\\cdot 1.05^{10}\\approx 1628.89$."
+    },
+    {
+      "id": "p4",
+      "kind": "tip",
+      "body": "A half-life is a decay with $b=\\frac{1}{2}$ per period. After 3 half-lives only $\\frac{1}{8}$ is left."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "A colony is $200\\cdot 2^t$. How many after $t=3$ hours?",
+      "accepted": [
+        "1600"
+      ],
+      "keypad": "numeric",
+      "explanation": "$2^3=8$ and $200\\cdot 8=1600$."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Is $y=5\\cdot 0.9^x$ growth or decay?",
+      "choices": [
+        "Growth, because 5 is positive",
+        "Neither, it is linear",
+        "Decay, because $0<0.9<1$"
+      ],
+      "answerIndex": 2,
+      "explanation": "The base 0.9 is between 0 and 1, so each step multiplies by less than 1."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What base $b$ models 8% growth per year?",
+      "accepted": [
+        "1.08"
+      ],
+      "keypad": "numeric",
+      "explanation": "$b=1+0.08=1.08$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What base models 12% decay per year?",
+      "choices": [
+        "$0.88$",
+        "$1.12$",
+        "$0.12$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Decay by 12% leaves 88%, so $b=1-0.12=0.88$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "80 mg of a drug has a half-life of 1 hour. How many mg remain after 3 hours?",
+      "accepted": [
+        "10"
+      ],
+      "keypad": "numeric",
+      "explanation": "$80\\cdot\\left(\\frac{1}{2}\\right)^3=80\\cdot\\frac{1}{8}=10$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "1000 grows 5% per year for 10 years. Give the result rounded to 2 decimals.",
+      "accepted": [
+        "1628.89",
+        "1628.9",
+        "1629"
+      ],
+      "keypad": "numeric",
+      "explanation": "$1000\\cdot 1.05^{10}\\approx 1628.89$."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "What is the value of $y=3\\cdot 2^x$ at $x=0$?",
+      "choices": [
+        "$3$",
+        "$6$",
+        "$1$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$2^0=1$, so $y=3$. The value at $x=0$ is always $a$."
+    },
+    {
+      "id": "q8",
+      "type": "fill_blank",
+      "prompt": "In $y=a\\cdot b^x$, growth means $b$ is \\_\\_ 1",
+      "choices": [
+        "less than",
+        "equal to",
+        "greater than"
+      ],
+      "answerIndex": 2,
+      "explanation": "A base above 1 makes the values rise at every step."
+    }
+  ]
+}

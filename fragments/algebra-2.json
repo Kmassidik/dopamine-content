@@ -1,0 +1,51 @@
+{
+  "course": {
+    "id": "algebra-2",
+    "categoryId": "math",
+    "title": "Algebra 2",
+    "description": "Functions, polynomials, logarithms, sequences and the normal curve",
+    "order": 4,
+    "dir": "math/algebra-2",
+    "overview": {
+      "summary": "Go beyond Algebra 1 with functions, polynomials, complex numbers, exponentials, logarithms, sequences and probability. Short readings, then practice.",
+      "outcomes": [
+        "Use function notation, compose and invert functions, and transform graphs",
+        "Divide, factor and solve polynomial equations, including complex solutions",
+        "Model growth and decay with exponentials and solve them with logarithms",
+        "Simplify and solve rational expressions and equations",
+        "Work with arithmetic and geometric sequences and series",
+        "Find simple probabilities and read the normal curve"
+      ],
+      "requirements": [
+        "Algebra 1: equations, graphs, factoring and quadratics"
+      ],
+      "minutes": 120
+    },
+    "units": [
+      {
+        "id": "a2-functions",
+        "title": "Functions and Transformations",
+        "order": 1,
+        "dir": "functions"
+      },
+      {
+        "id": "a2-polynomials",
+        "title": "Polynomials and Complex Numbers",
+        "order": 2,
+        "dir": "polynomials"
+      },
+      {
+        "id": "a2-exponentials",
+        "title": "Exponentials and Logarithms",
+        "order": 3,
+        "dir": "exponentials"
+      },
+      {
+        "id": "a2-rational",
+        "title": "Rational Functions and Sequences",
+        "order": 4,
+        "dir": "rational"
+      }
+    ]
+  }
+}

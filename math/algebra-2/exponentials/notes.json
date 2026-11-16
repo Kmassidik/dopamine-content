@@ -1,0 +1,53 @@
+{
+  "id": "a2-exponentials-notes",
+  "version": 1,
+  "title": "Exponentials and logarithms: cheat sheet",
+  "blocks": [
+    {
+      "id": "b1",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Exponentials multiply by the same factor each step. Logarithms are their inverses and answer the question: what power gives this number?"
+    },
+    {
+      "id": "b2",
+      "kind": "formula",
+      "title": "Exponential model",
+      "body": "$y=a\\cdot b^x$ with $b=1+r$ for growth rate $r$"
+    },
+    {
+      "id": "b3",
+      "kind": "formula",
+      "title": "Compound interest",
+      "body": "$A=P\\left(1+\\frac{r}{n}\\right)^{nt}$"
+    },
+    {
+      "id": "b4",
+      "kind": "formula",
+      "title": "Continuous growth",
+      "body": "$A=Pe^{rt}$ with $e\\approx 2.71828$"
+    },
+    {
+      "id": "b5",
+      "kind": "formula",
+      "title": "Definition of a log",
+      "body": "$\\log_b x=y$ means $b^y=x$"
+    },
+    {
+      "id": "b6",
+      "kind": "list",
+      "title": "Log rules",
+      "items": [
+        "$\\log_b(MN)=\\log_b M+\\log_b N$",
+        "$\\log_b\\frac{M}{N}=\\log_b M-\\log_b N$",
+        "$\\log_b M^p=p\\log_b M$",
+        "$\\log_b x=\\frac{\\log x}{\\log b}$"
+      ]
+    },
+    {
+      "id": "b7",
+      "kind": "tip",
+      "body": "Check log solutions: every log input must be positive."
+    }
+  ]
+}

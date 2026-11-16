@@ -1,0 +1,148 @@
+{
+  "id": "a2-exponentials-05",
+  "version": 1,
+  "title": "Solving exponential and log equations",
+  "xp": 20,
+  "tags": [
+    "algebra",
+    "exponentials",
+    "logarithms"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Two directions",
+      "body": "To solve an equation with the unknown in an exponent, use a log. To solve one with the unknown inside a log, rewrite it as a power. If both sides are powers of the same base, just compare the exponents."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Solve $5^x=20$",
+      "body": "The bases do not match, so take logs of both sides.",
+      "steps": [
+        "$\\log 5^x=\\log 20$",
+        "Power rule: $x\\log 5=\\log 20$",
+        "$x=\\frac{\\log 20}{\\log 5}\\approx 1.861$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Solve $\\log_2(x+1)=4$",
+      "body": "Rewrite as a power.",
+      "steps": [
+        "$x+1=2^4=16$",
+        "$x=15$",
+        "Check: $\\log_2 16=4$"
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Solve $\\ln x+\\ln(x-2)=\\ln 3$",
+      "body": "Combine, drop the logs, then check.",
+      "steps": [
+        "$\\ln(x(x-2))=\\ln 3$",
+        "$x^2-2x-3=0$, so $x=3$ or $x=-1$",
+        "$x=-1$ makes $\\ln x$ undefined. Reject it",
+        "Answer: $x=3$"
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "tip",
+      "body": "Always check log solutions: the original logs need positive inputs."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "$2^x=32$, so $x=$ ?",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "$32=2^5$, so $x=5$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "$3^{x+1}=81$, so $x=$ ?",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "$81=3^4$, so $x+1=4$ and $x=3$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Solve $5^x=20$. Give $x$ to 2 decimals.",
+      "accepted": [
+        "1.86"
+      ],
+      "keypad": "numeric",
+      "explanation": "$x=\\frac{\\log 20}{\\log 5}\\approx 1.86$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Solve $\\log_2(x+1)=4$.",
+      "choices": [
+        "$x=7$",
+        "$x=15$",
+        "$x=16$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$x+1=2^4=16$, so $x=15$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Solve $\\ln x+\\ln(x-2)=\\ln 3$.",
+      "choices": [
+        "$x=3$",
+        "$x=-1$",
+        "$x=3$ and $x=-1$"
+      ],
+      "answerIndex": 0,
+      "explanation": "The quadratic gives 3 and $-1$, but $-1$ makes $\\ln x$ undefined."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Solve $e^{2x}=7$.",
+      "choices": [
+        "$x=\\ln 14$",
+        "$x=\\frac{7}{2}$",
+        "$x=\\frac{\\ln 7}{2}\\approx 0.97$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Take $\\ln$ of both sides: $2x=\\ln 7$."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "At 5% growth per year, about how many years to double? Solve $1.05^t=2$ to 1 decimal.",
+      "accepted": [
+        "14.2"
+      ],
+      "keypad": "numeric",
+      "explanation": "$t=\\frac{\\ln 2}{\\ln 1.05}\\approx 14.2$ years."
+    },
+    {
+      "id": "q8",
+      "type": "order_steps",
+      "prompt": "Put the steps for solving $3^x=50$ in order.",
+      "steps": [
+        "Take the log of both sides",
+        "Bring the exponent down with the power rule",
+        "Divide both sides by $\\log 3$",
+        "Evaluate with a calculator: $x\\approx 3.56$"
+      ],
+      "explanation": "The power rule is what frees $x$ from the exponent."
+    }
+  ]
+}
