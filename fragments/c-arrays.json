@@ -1,0 +1,51 @@
+{
+  "course": {
+    "id": "c-arrays",
+    "categoryId": "swe",
+    "title": "Arrays, Strings and Debugging",
+    "description": "Build, debug and work with arrays and strings in C",
+    "order": 2,
+    "dir": "swe/c-arrays",
+    "overview": {
+      "summary": "See how C source becomes a program, learn to find bugs with warnings, prints, a debugger and asserts, then master arrays, strings and the command line.",
+      "outcomes": [
+        "Explain preprocessing, compiling, assembling and linking",
+        "Build a program from several files with make",
+        "Debug with warnings, printf, a debugger and assert",
+        "Use one- and two-dimensional arrays safely",
+        "Handle strings with string.h, ctype.h and fgets",
+        "Read command-line arguments with argc and argv"
+      ],
+      "requirements": [
+        "C Fundamentals: variables, loops and functions"
+      ],
+      "minutes": 130
+    },
+    "units": [
+      {
+        "id": "ca-build",
+        "title": "How C Becomes a Program",
+        "order": 1,
+        "dir": "build"
+      },
+      {
+        "id": "ca-debug",
+        "title": "Debugging",
+        "order": 2,
+        "dir": "debugging"
+      },
+      {
+        "id": "ca-arrays",
+        "title": "Arrays",
+        "order": 3,
+        "dir": "arrays"
+      },
+      {
+        "id": "ca-strings",
+        "title": "Strings and the Command Line",
+        "order": 4,
+        "dir": "strings"
+      }
+    ]
+  }
+}
