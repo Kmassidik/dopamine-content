@@ -1,0 +1,128 @@
+{
+  "id": "cd-trees-02",
+  "version": 1,
+  "minApp": 2,
+  "title": "Binary search trees",
+  "xp": 15,
+  "tags": [
+    "c",
+    "bst",
+    "tree"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "An ordered tree",
+      "body": "A binary search tree, or BST, adds one rule to a binary tree. For every node, everything in its left subtree is smaller, and everything in its right subtree is larger. A subtree is a node together with all it leads to."
+    },
+    {
+      "id": "why",
+      "kind": "text",
+      "title": "Why the rule helps",
+      "body": "To find a value, compare it with the root. If it is smaller, the answer can only be on the left, so the whole right side is ignored. Each step skips a large part of the tree, much as a binary search skips half of a sorted array."
+    },
+    {
+      "id": "ex-build",
+      "kind": "example",
+      "title": "Building from 5, 3, 8, 1, 4",
+      "body": "Insert the values one at a time into an empty tree.",
+      "steps": [
+        "5 becomes the root",
+        "3 is less than 5, so it goes left of 5. 8 goes right",
+        "1 is less than 5, then less than 3, so it is left of 3",
+        "4 is less than 5, then greater than 3, so it is right of 3"
+      ]
+    },
+    {
+      "id": "min",
+      "kind": "code",
+      "title": "The smallest value",
+      "code": "tnode *min_node(tnode *t) {\n    while (t->left != NULL)\n        t = t->left;\n    return t;\n}",
+      "language": "c",
+      "body": "The smallest value is far left: keep going left until there is no left child."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "The same values inserted in a different order can give a differently shaped tree."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "In a BST, where do smaller values go relative to a node?",
+      "choices": [
+        "In its left subtree",
+        "In its right subtree",
+        "Above it",
+        "Anywhere"
+      ],
+      "answerIndex": 0,
+      "explanation": "Left is smaller, right is larger.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "A node holds 10. Its right subtree may contain...",
+      "choices": [
+        "only values less than 10",
+        "only values greater than 10",
+        "any values",
+        "only 10"
+      ],
+      "answerIndex": 1,
+      "explanation": "The rule is the same for every node.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "A BST holds 5, 3, 8, 1, 4. What is its smallest value?",
+      "accepted": [
+        "1"
+      ],
+      "keypad": "numeric",
+      "explanation": "Go left from the root: 5, 3, 1. Node 1 has no left child.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "You look for 4 in the tree with root 5. What do you do first?",
+      "choices": [
+        "Go right",
+        "Check every node",
+        "Go left, because 4 is less than 5",
+        "Start at a leaf"
+      ],
+      "answerIndex": 2,
+      "explanation": "4 is smaller than 5, so it can only be in the left subtree.",
+      "id": "q4"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which tree is NOT a valid BST?",
+      "choices": [
+        "Root 5 with 3 as its left child",
+        "Root 5 with 8 as its right child",
+        "Root 5 alone",
+        "Root 5 with 6 as its left child"
+      ],
+      "answerIndex": 3,
+      "explanation": "6 is larger than 5, so it cannot be on the left.",
+      "id": "q5"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "To find the largest value in a BST, keep going \\_\\_.",
+      "choices": [
+        "right",
+        "left",
+        "up",
+        "back to the root"
+      ],
+      "answerIndex": 0,
+      "explanation": "Larger values are on the right, so the largest has no right child.",
+      "id": "q6"
+    }
+  ]
+}

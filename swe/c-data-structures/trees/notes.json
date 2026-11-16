@@ -1,0 +1,56 @@
+{
+  "id": "cd-trees-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Trees and tries: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A tree is nodes with children below a root. In a binary search tree, smaller values go left and larger go right, so a search can skip a whole subtree at each step."
+    },
+    {
+      "id": "node",
+      "kind": "code",
+      "title": "The tree node",
+      "code": "typedef struct tnode {\n    int value;\n    struct tnode *left, *right;\n} tnode;",
+      "language": "c"
+    },
+    {
+      "id": "order",
+      "kind": "list",
+      "title": "Traversals",
+      "items": [
+        "In-order: left, node, right (sorted for a BST)",
+        "Pre-order: node, left, right",
+        "Post-order: left, right, node",
+        "Free a tree with post-order"
+      ]
+    },
+    {
+      "id": "insert",
+      "kind": "code",
+      "title": "BST insert",
+      "code": "if (t == NULL)\n    return new_node(v);\nif (v < t->value)\n    t->left = insert(t->left, v);\nelse if (v > t->value)\n    t->right = insert(t->right, v);\nreturn t;",
+      "language": "c"
+    },
+    {
+      "id": "pick",
+      "kind": "list",
+      "title": "Choosing",
+      "items": [
+        "Array: access by index",
+        "Linked list: cheap insert and delete",
+        "Hash table: lookup by key, unordered",
+        "BST: lookup plus sorted order",
+        "Trie: words and prefixes"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Sorted input makes a BST a chain. Free a tree children first. A trie trades memory for letter-by-letter speed."
+    }
+  ]
+}
