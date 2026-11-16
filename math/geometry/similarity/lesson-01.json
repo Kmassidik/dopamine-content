@@ -1,0 +1,128 @@
+{
+  "id": "geo-similar-01",
+  "version": 1,
+  "title": "Similar figures and scale factor",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "similarity"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Same shape, different size",
+      "body": "Two figures are similar if one is an enlarged or reduced copy of the other. A photo and its poster are similar. Similar is weaker than congruent: the shape matches, but the size may not."
+    },
+    {
+      "id": "def",
+      "kind": "text",
+      "title": "What similar means",
+      "body": "Similar figures have equal matching angles and matching sides in the same ratio. That ratio is the scale factor $k$. If a small triangle has sides $3,4,5$ and a larger one has sides $6,8,10$, then $k=2$."
+    },
+    {
+      "id": "area",
+      "kind": "text",
+      "title": "Perimeter and area",
+      "body": "Lengths grow by $k$, so the perimeter grows by $k$ too. Area is length times length, so area grows by $k^2$. Doubling every side makes the perimeter twice as big, but the area four times as big."
+    },
+    {
+      "id": "use",
+      "kind": "example",
+      "title": "Find a missing side",
+      "body": "Triangles $ABC$ and $DEF$ are similar. Sides $AB=6$ and $AC=9$. Sides $DE=8$ and $DF$ is unknown.",
+      "steps": [
+        "Match the ratios: $\\frac{DE}{AB}=\\frac{DF}{AC}$.",
+        "$\\frac{8}{6}=\\frac{DF}{9}$.",
+        "$DF=\\frac{8\\cdot9}{6}=12$.",
+        "The scale factor is $\\frac{8}{6}=\\frac43$."
+      ]
+    },
+    {
+      "id": "order",
+      "kind": "tip",
+      "body": "Write the ratio the same way on both sides: always new over old, or always old over new. Mixing them is the usual mistake."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "A $4\\times6$ rectangle is similar to a $10\\times15$ rectangle. What is the scale factor from the small to the large one?",
+      "accepted": [
+        "2.5",
+        "5/2"
+      ],
+      "keypad": "numeric",
+      "explanation": "$10\\div4=2.5$ and $15\\div6=2.5$. Both ratios agree, so they are similar."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Two similar triangles have scale factor 3. How does the perimeter of the larger compare to the smaller?",
+      "choices": [
+        "3 times as big",
+        "9 times as big",
+        "The same",
+        "6 times as big"
+      ],
+      "answerIndex": 0,
+      "explanation": "All lengths, including the perimeter, scale by $k=3$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Two similar triangles have scale factor 3. The smaller has area 6. What is the area of the larger?",
+      "accepted": [
+        "54"
+      ],
+      "keypad": "numeric",
+      "explanation": "Area scales by $k^2=9$: $6\\cdot9=54$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Which statement is true of similar figures?",
+      "choices": [
+        "Matching sides are equal",
+        "Matching angles are equal",
+        "The areas are equal",
+        "They must be congruent"
+      ],
+      "answerIndex": 1,
+      "explanation": "Similar figures have equal angles and proportional sides. Sides are equal only when $k=1$."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "Areas of similar figures differ by the scale factor \\_\\_.",
+      "choices": [
+        "doubled",
+        "added",
+        "squared"
+      ],
+      "answerIndex": 2,
+      "explanation": "Area measures two dimensions, so the factor is $k^2$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "Similar triangles: sides 6 and 9 in the first match sides 8 and $x$ in the second. Find $x$.",
+      "accepted": [
+        "12"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac{6}{8}=\\frac{9}{x}$, so $x=12$."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "A $3,4,5$ triangle is enlarged with scale factor 2. What is the new perimeter?",
+      "accepted": [
+        "24"
+      ],
+      "keypad": "numeric",
+      "explanation": "New sides $6,8,10$ add to 24. Also $12\\cdot2=24$."
+    }
+  ]
+}

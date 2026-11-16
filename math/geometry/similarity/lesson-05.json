@@ -1,0 +1,138 @@
+{
+  "id": "geo-similar-05",
+  "version": 1,
+  "title": "Solving right triangles",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "trigonometry"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Finding sides and angles",
+      "body": "To solve a right triangle means to find every missing side and angle. You need one side plus one more side or one acute angle. A calculator in degree mode gives sine, cosine and tangent of any angle."
+    },
+    {
+      "id": "sides",
+      "kind": "text",
+      "title": "Finding a side",
+      "body": "Choose the ratio that links the side you know and the side you want. Write it as an equation, then solve. If you know the angle and the hypotenuse, and want the opposite side, use sine: opposite $=$ hypotenuse $\\cdot\\sin A$."
+    },
+    {
+      "id": "angles",
+      "kind": "text",
+      "title": "Finding an angle",
+      "body": "If you know two sides, compute their ratio and use the inverse function on a calculator: $\\sin^{-1}$, $\\cos^{-1}$ or $\\tan^{-1}$. The other acute angle is $90^\\circ$ minus the first."
+    },
+    {
+      "id": "use",
+      "kind": "example",
+      "title": "Solve by trigonometry",
+      "body": "Four short cases, rounded to one decimal.",
+      "steps": [
+        "Angle $30^\\circ$, hypotenuse 10: opposite $=10\\sin30^\\circ=5$.",
+        "Angle $40^\\circ$, adjacent 10: opposite $=10\\tan40^\\circ\\approx8.4$.",
+        "Legs 3 and 4: $A=\\tan^{-1}(0.75)\\approx36.9^\\circ$.",
+        "A 10 m ladder at $70^\\circ$ to the ground reaches $10\\sin70^\\circ\\approx9.4$ m."
+      ]
+    },
+    {
+      "id": "mode",
+      "kind": "tip",
+      "body": "If a calculator answer looks wild, check that it is in degree mode, not radians."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "You know the hypotenuse and an angle, and want the opposite side. Which ratio do you use?",
+      "choices": [
+        "Cosine",
+        "Tangent",
+        "None",
+        "Sine"
+      ],
+      "answerIndex": 3,
+      "explanation": "Opposite and hypotenuse are linked by sine."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Hypotenuse 10 and angle $30^\\circ$. Find the side opposite the angle.",
+      "accepted": [
+        "5",
+        "5.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$10\\sin30^\\circ=10\\cdot\\frac12=5$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "The side adjacent to a $40^\\circ$ angle is 10. Find the opposite side, rounded to one decimal.",
+      "accepted": [
+        "8.4"
+      ],
+      "keypad": "numeric",
+      "explanation": "$10\\tan40^\\circ\\approx8.39$, which rounds to 8.4."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "Legs of a right triangle are 3 and 4. The angle opposite 3 is about how many degrees, rounded to one decimal?",
+      "accepted": [
+        "36.9"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\tan A=\\frac34=0.75$ and $\\tan^{-1}(0.75)\\approx36.87^\\circ$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "One acute angle of a right triangle is $36.9^\\circ$. What is the other?",
+      "choices": [
+        "$53.1^\\circ$",
+        "$36.9^\\circ$",
+        "$63.1^\\circ$",
+        "$143.1^\\circ$"
+      ],
+      "answerIndex": 0,
+      "explanation": "The two acute angles add to $90^\\circ$: $90-36.9=53.1$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "A 10 m ladder leans at $70^\\circ$ to the ground. How high does it reach, to the nearest tenth of a metre?",
+      "accepted": [
+        "9.4"
+      ],
+      "keypad": "numeric",
+      "explanation": "Height is opposite the angle: $10\\sin70^\\circ\\approx9.40$."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "To find an angle from two sides, use the \\_\\_ of the ratio.",
+      "choices": [
+        "square",
+        "double",
+        "inverse"
+      ],
+      "answerIndex": 2,
+      "explanation": "Inverse trig functions turn a ratio back into an angle."
+    },
+    {
+      "id": "q8",
+      "type": "type_answer",
+      "prompt": "An angle of $60^\\circ$ has adjacent side 10. Find the hypotenuse.",
+      "accepted": [
+        "20"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\cos60^\\circ=\\frac{10}{h}$, so $h=\\frac{10}{0.5}=20$."
+    }
+  ]
+}

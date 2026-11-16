@@ -1,0 +1,128 @@
+{
+  "id": "geo-solids-03",
+  "version": 1,
+  "title": "Surface area",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "solids",
+    "area"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Covering a solid",
+      "body": "Surface area is the total area of all the faces of a solid, measured in square units. It tells you how much wrapping paper or paint you need, while volume tells how much fits inside."
+    },
+    {
+      "id": "prism",
+      "kind": "text",
+      "title": "Prisms and cylinders",
+      "body": "For a prism, add the areas of all faces. For a box: $2(lw+lh+wh)$. A cube with side $s$ has $6s^2$. A cylinder has two circles and one rolled-up rectangle: $2\\pi r^2+2\\pi rh$."
+    },
+    {
+      "id": "sphere-cone",
+      "kind": "text",
+      "title": "Sphere and cone",
+      "body": "A sphere has surface area $4\\pi r^2$, exactly four times the area of its great circle. A cone has a base $\\pi r^2$ and a side area $\\pi rl$, where $l$ is the slant height."
+    },
+    {
+      "id": "use",
+      "kind": "example",
+      "title": "Compute surface areas",
+      "body": "Find each one.",
+      "steps": [
+        "Cube, side 5: $6\\cdot25=150$.",
+        "Box $4\\times3\\times5$: $2(12+20+15)=94$.",
+        "Cylinder $r=3$, $h=10$: $18\\pi+60\\pi=78\\pi\\approx245.0$.",
+        "Sphere $r=5$: $4\\pi\\cdot25=100\\pi\\approx314.2$."
+      ]
+    },
+    {
+      "id": "net",
+      "kind": "tip",
+      "body": "Picture the net, the solid unfolded flat. Surface area is the area of the net."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "Find the surface area of a cube with side 5.",
+      "accepted": [
+        "150"
+      ],
+      "keypad": "numeric",
+      "explanation": "Six faces of area 25: $6\\cdot25=150$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Find the surface area of a box that is 4 by 3 by 5.",
+      "accepted": [
+        "94"
+      ],
+      "keypad": "numeric",
+      "explanation": "$2(12+20+15)=94$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "A cylinder has radius 3 and height 10. What is its surface area in terms of $\\pi$?",
+      "choices": [
+        "$90\\pi$",
+        "$60\\pi$",
+        "$48\\pi$",
+        "$78\\pi$"
+      ],
+      "answerIndex": 3,
+      "explanation": "$2\\pi r^2+2\\pi rh=18\\pi+60\\pi=78\\pi$. The $90\\pi$ is the volume."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "The surface area of a sphere is $4\\pi\\_\\_$.",
+      "choices": [
+        "$r$",
+        "$r^3$",
+        "$r^2$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Surface area is measured in square units, so it uses $r^2$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "A sphere has radius 5. Its surface area is $k\\pi$. Find $k$.",
+      "accepted": [
+        "100"
+      ],
+      "keypad": "numeric",
+      "explanation": "$4\\cdot25=100$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which measures how much paint covers a solid?",
+      "choices": [
+        "Volume",
+        "Surface area",
+        "Perimeter",
+        "Diameter"
+      ],
+      "answerIndex": 1,
+      "explanation": "Paint covers surfaces, so you need the surface area."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "A cone has radius 3 and slant height 5. Its side area is $k\\pi$. Find $k$.",
+      "accepted": [
+        "15"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\pi rl=\\pi\\cdot3\\cdot5=15\\pi$."
+    }
+  ]
+}

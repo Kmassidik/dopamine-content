@@ -1,0 +1,137 @@
+{
+  "id": "geo-polygons-02",
+  "version": 1,
+  "title": "Angles of polygons",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "polygons"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Beyond four sides",
+      "body": "A polygon is a closed figure made of straight sides. A regular polygon has equal sides and equal angles. There is a simple rule for how the angles add up, whatever the number of sides."
+    },
+    {
+      "id": "interior",
+      "kind": "text",
+      "title": "Interior angles",
+      "body": "From one vertex, draw diagonals to split an $n$-sided polygon into $n-2$ triangles. Each triangle gives $180^\\circ$, so the interior angles add to $(n-2)\\cdot180^\\circ$. A regular polygon shares this equally, so each angle is $\\frac{(n-2)\\cdot180}{n}$."
+    },
+    {
+      "id": "exterior",
+      "kind": "text",
+      "title": "Exterior angles",
+      "body": "Extend each side and take the angle outside at each vertex. The exterior angles of any polygon add to $360^\\circ$. For a regular polygon, each exterior angle is $\\frac{360}{n}$, and an interior angle is $180^\\circ$ minus it."
+    },
+    {
+      "id": "use",
+      "kind": "example",
+      "title": "Work with polygons",
+      "body": "Compute each value.",
+      "steps": [
+        "Hexagon, $n=6$: sum $=4\\cdot180=720^\\circ$.",
+        "Regular octagon: $\\frac{6\\cdot180}{8}=135^\\circ$ each.",
+        "Regular pentagon: exterior angle $=\\frac{360}{5}=72^\\circ$.",
+        "Interior angle $150^\\circ$ means exterior $30^\\circ$, and $360\\div30=12$ sides."
+      ]
+    },
+    {
+      "id": "check",
+      "kind": "tip",
+      "body": "A quadrilateral gives $(4-2)\\cdot180=360^\\circ$, the same as before. A triangle gives $180^\\circ$. The formula is consistent."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "What is the sum of the interior angles of a hexagon, in degrees?",
+      "accepted": [
+        "720"
+      ],
+      "keypad": "numeric",
+      "explanation": "$(6-2)\\cdot180=720$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "What is the sum of the interior angles of a heptagon (7 sides), in degrees?",
+      "accepted": [
+        "900"
+      ],
+      "keypad": "numeric",
+      "explanation": "$(7-2)\\cdot180=900$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Find each interior angle of a regular octagon, in degrees.",
+      "accepted": [
+        "135"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac{1080}{8}=135$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What do the exterior angles of any polygon add to?",
+      "choices": [
+        "$360^\\circ$",
+        "$180^\\circ$",
+        "$720^\\circ$",
+        "It depends on the number of sides"
+      ],
+      "answerIndex": 0,
+      "explanation": "Walking around a polygon, you turn one full turn in total."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "What is each exterior angle of a regular pentagon, in degrees?",
+      "accepted": [
+        "72"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac{360}{5}=72$."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "An $n$-sided polygon splits into \\_\\_ triangles from one vertex.",
+      "choices": [
+        "$n$",
+        "$n-1$",
+        "$n-2$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Two sides at the chosen vertex do not need a diagonal, so there are $n-2$ triangles."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "Each interior angle of a regular polygon is $150^\\circ$. How many sides does it have?",
+      "accepted": [
+        "12"
+      ],
+      "keypad": "numeric",
+      "explanation": "Exterior angle $=180-150=30$, and $\\frac{360}{30}=12$."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "Each interior angle of a regular polygon is $108^\\circ$. Which polygon is it?",
+      "choices": [
+        "Hexagon",
+        "Square",
+        "Pentagon",
+        "Octagon"
+      ],
+      "answerIndex": 2,
+      "explanation": "Exterior angle $=72$, and $360\\div72=5$ sides."
+    }
+  ]
+}

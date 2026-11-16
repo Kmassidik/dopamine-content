@@ -1,0 +1,70 @@
+{
+  "id": "geo-polygons-notes",
+  "version": 1,
+  "title": "Polygons, Circles and Area: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Polygons and circles are measured with a few formulas. Break complicated shapes into triangles, rectangles and sectors, and add or subtract areas."
+    },
+    {
+      "id": "poly",
+      "kind": "formula",
+      "title": "Polygon angles",
+      "body": "Interior sum $=(n-2)\\cdot180^\\circ$. Exterior sum $=360^\\circ$."
+    },
+    {
+      "id": "quad",
+      "kind": "list",
+      "title": "Quadrilaterals",
+      "items": [
+        "Angle sum is $360^\\circ$",
+        "Parallelogram: opposite sides parallel and equal",
+        "Rectangle: four right angles, equal diagonals",
+        "Rhombus: four equal sides, perpendicular diagonals",
+        "Square: rectangle and rhombus in one",
+        "Trapezoid: one pair of parallel sides"
+      ]
+    },
+    {
+      "id": "area",
+      "kind": "list",
+      "title": "Area formulas",
+      "items": [
+        "Rectangle: $lw$",
+        "Triangle: $\\frac12bh$",
+        "Parallelogram: $bh$",
+        "Trapezoid: $\\frac12(b_1+b_2)h$"
+      ]
+    },
+    {
+      "id": "circle",
+      "kind": "formula",
+      "title": "Circle",
+      "body": "$C=2\\pi r,\\ A=\\pi r^2$"
+    },
+    {
+      "id": "sector",
+      "kind": "formula",
+      "title": "Sector",
+      "body": "Arc length $=\\frac{\\theta}{360}\\cdot2\\pi r$ and area $=\\frac{\\theta}{360}\\cdot\\pi r^2$"
+    },
+    {
+      "id": "circle-angles",
+      "kind": "list",
+      "title": "Circle angles",
+      "items": [
+        "Central angle equals its arc",
+        "Inscribed angle is half its arc",
+        "Angle in a semicircle is $90^\\circ$"
+      ]
+    },
+    {
+      "id": "units",
+      "kind": "tip",
+      "body": "Area uses square units. Doubling a length multiplies area by 4."
+    }
+  ]
+}
