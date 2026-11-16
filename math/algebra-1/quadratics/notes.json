@@ -1,0 +1,57 @@
+{
+  "id": "a1-quadratics-notes",
+  "version": 1,
+  "title": "Quadratics: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A quadratic has an $x^2$ term. Its graph is a parabola, and solving it means finding where it meets the $x$-axis."
+    },
+    {
+      "id": "standard",
+      "kind": "formula",
+      "title": "Standard form",
+      "body": "$y=ax^2+bx+c$"
+    },
+    {
+      "id": "axis",
+      "kind": "formula",
+      "title": "Axis of symmetry",
+      "body": "$x=-\\frac{b}{2a}$"
+    },
+    {
+      "id": "formula",
+      "kind": "formula",
+      "title": "Quadratic formula",
+      "body": "$x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}$"
+    },
+    {
+      "id": "methods",
+      "kind": "list",
+      "title": "Ways to solve",
+      "items": [
+        "Factoring and the zero product property",
+        "Square roots: $x^2=k$ gives $x=\\pm\\sqrt{k}$",
+        "Completing the square: add $\\left(\\frac{b}{2}\\right)^2$",
+        "The quadratic formula (always works)"
+      ]
+    },
+    {
+      "id": "disc",
+      "kind": "list",
+      "title": "The discriminant",
+      "items": [
+        "$b^2-4ac>0$: two real solutions",
+        "$b^2-4ac=0$: one solution",
+        "$b^2-4ac<0$: no real solutions"
+      ]
+    },
+    {
+      "id": "zero-first",
+      "kind": "tip",
+      "body": "Get 0 on one side before factoring. Never divide by x, or you lose a solution."
+    }
+  ]
+}

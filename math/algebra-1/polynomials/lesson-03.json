@@ -1,0 +1,141 @@
+{
+  "id": "a1-polynomials-03",
+  "version": 1,
+  "title": "Scientific notation",
+  "xp": 15,
+  "tags": [
+    "algebra",
+    "polynomials"
+  ],
+  "learn": [
+    {
+      "id": "why",
+      "kind": "text",
+      "title": "Very big, very small",
+      "body": "Scientific notation writes huge or tiny numbers compactly as $a\\times10^n$, where $1\\le a<10$ and $n$ is a whole number. The exponent counts how far the decimal point moves."
+    },
+    {
+      "id": "example-big",
+      "kind": "example",
+      "title": "Write 45000",
+      "body": "Move the decimal point until one digit is in front.",
+      "steps": [
+        "$45000\\to4.5$ (4 places left)",
+        "So $45000=4.5\\times10^4$"
+      ]
+    },
+    {
+      "id": "example-small",
+      "kind": "example",
+      "title": "Write 0.0032",
+      "body": "Small numbers get a negative exponent.",
+      "steps": [
+        "$0.0032\\to3.2$ (3 places right)",
+        "So $0.0032=3.2\\times10^{-3}$"
+      ]
+    },
+    {
+      "id": "multiply",
+      "kind": "text",
+      "title": "Multiplying",
+      "body": "Multiply the front numbers, and add the exponents. $(2\\times10^3)(3\\times10^4)=6\\times10^7$. If the front number reaches 10 or more, adjust: $20\\times10^5=2\\times10^6$."
+    },
+    {
+      "id": "direction",
+      "kind": "tip",
+      "body": "Big number means positive exponent. Number below 1 means negative exponent."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which number is $4.5\\times10^4$?",
+      "choices": [
+        "$4500$",
+        "$45000$",
+        "$450000$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Move the decimal 4 places right: $4.5\\to45000$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Write $3.2\\times10^{-3}$ as a decimal.",
+      "accepted": [
+        "0.0032",
+        ".0032"
+      ],
+      "keypad": "numeric",
+      "explanation": "A negative exponent moves the point left: 3 places gives $0.0032$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "$83000=8.3\\times10^n$. Find $n$.",
+      "accepted": [
+        "4",
+        "4.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "The decimal point moves 4 places left to get 8.3."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "$0.0007=7\\times10^n$. Find $n$.",
+      "accepted": [
+        "-4"
+      ],
+      "keypad": "numeric",
+      "explanation": "The point moves 4 places right, so the exponent is $-4$."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "In $a\\times10^n$, $a$ is at least 1 and less than \\_\\_",
+      "choices": [
+        "$1$",
+        "$100$",
+        "$10$"
+      ],
+      "answerIndex": 2,
+      "explanation": "This keeps the form standard: exactly one digit before the decimal point."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which is written in scientific notation?",
+      "choices": [
+        "$3.5\\times10^2$",
+        "$35\\times10^1$",
+        "$0.35\\times10^3$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Only 3.5 is between 1 and 10. The others have $a$ outside that range."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "$(2\\times10^3)(3\\times10^4)=6\\times10^n$. Find $n$.",
+      "accepted": [
+        "7",
+        "7.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Multiply the numbers: $6$. Add exponents: $3+4=7$."
+    },
+    {
+      "id": "q8",
+      "type": "type_answer",
+      "prompt": "Write $(5\\times10^3)(4\\times10^2)$ as $a\\times10^n$ with $1\\le a<10$. What is $n$?",
+      "accepted": [
+        "6",
+        "6.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$5\\cdot4=20$ and $10^3\\cdot10^2=10^5$, giving $20\\times10^5$. Rewrite 20 as $2\\times10^1$: $2\\times10^6$."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "a1-polynomials-notes",
+  "version": 1,
+  "title": "Exponents and polynomials: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Exponents are shorthand for repeated multiplication, and polynomials are sums of terms with exponents. Factoring reverses multiplying."
+    },
+    {
+      "id": "product",
+      "kind": "formula",
+      "title": "Product rule",
+      "body": "$x^a\\cdot x^b=x^{a+b}$"
+    },
+    {
+      "id": "quotient",
+      "kind": "formula",
+      "title": "Quotient rule",
+      "body": "$\\frac{x^a}{x^b}=x^{a-b}$"
+    },
+    {
+      "id": "power",
+      "kind": "formula",
+      "title": "Power rule",
+      "body": "$(x^a)^b=x^{ab}$"
+    },
+    {
+      "id": "special",
+      "kind": "list",
+      "title": "Zero and negative exponents",
+      "items": [
+        "$x^0=1$ for $x\\ne0$",
+        "$x^{-n}=\\frac{1}{x^n}$",
+        "Scientific notation: $a\\times10^n$ with $1\\le a<10$"
+      ]
+    },
+    {
+      "id": "patterns",
+      "kind": "list",
+      "title": "Handy patterns",
+      "items": [
+        "$(x+a)(x+b)=x^2+(a+b)x+ab$",
+        "$(x+a)^2=x^2+2ax+a^2$",
+        "$x^2-a^2=(x-a)(x+a)$"
+      ]
+    },
+    {
+      "id": "factor-steps",
+      "kind": "tip",
+      "body": "To factor: look for a common factor first, then try a trinomial or a difference of squares. Check by multiplying."
+    }
+  ]
+}

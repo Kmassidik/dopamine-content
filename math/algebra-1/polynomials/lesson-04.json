@@ -1,0 +1,149 @@
+{
+  "id": "a1-polynomials-04",
+  "version": 1,
+  "title": "Adding and subtracting polynomials",
+  "xp": 15,
+  "tags": [
+    "algebra",
+    "polynomials"
+  ],
+  "learn": [
+    {
+      "id": "terms",
+      "kind": "text",
+      "title": "Terms and degree",
+      "body": "A polynomial is a sum of terms like $4x^3$, $-x$ and 2. The number in front is the coefficient. The degree is the highest exponent. Like terms have the same variable and exponent."
+    },
+    {
+      "id": "example-add",
+      "kind": "example",
+      "title": "Add $(3x^2+2x)+(x^2-5x)$",
+      "body": "Combine like terms only.",
+      "steps": [
+        "Group: $(3x^2+x^2)+(2x-5x)$",
+        "Add coefficients: $4x^2-3x$"
+      ]
+    },
+    {
+      "id": "example-subtract",
+      "kind": "example",
+      "title": "Subtract $(5x^2+3x-2)-(2x^2-x+4)$",
+      "body": "Change every sign in the second bracket.",
+      "steps": [
+        "Distribute the minus: $5x^2+3x-2-2x^2+x-4$",
+        "Group: $(5x^2-2x^2)+(3x+x)+(-2-4)$",
+        "Result: $3x^2+4x-6$"
+      ]
+    },
+    {
+      "id": "only-coeff",
+      "kind": "tip",
+      "body": "Only the coefficients change when you combine like terms. $2x+3x=5x$, not $5x^2$."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is the degree of $4x^3-x+2$?",
+      "choices": [
+        "$4$",
+        "$3$",
+        "$2$"
+      ],
+      "answerIndex": 1,
+      "explanation": "The degree is the highest exponent of the variable."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Which term is a like term of $3x^2$?",
+      "choices": [
+        "$3x$",
+        "$3x^3$",
+        "$5x^2$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Like terms have the same variable raised to the same power."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Simplify $2x+3x$",
+      "choices": [
+        "$5x$",
+        "$5x^2$",
+        "$6x$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Add the coefficients: $2+3=5$. The $x$ stays as it is."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "$(3x^2+2x)+(x^2-5x)$. What is the coefficient of $x^2$?",
+      "accepted": [
+        "4",
+        "4.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$3x^2+x^2=4x^2$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "In the same sum, what is the coefficient of $x$?",
+      "accepted": [
+        "-3",
+        "-3.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$2x-5x=-3x$. The sum is $4x^2-3x$."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "When you subtract a polynomial, \\_\\_ the sign of every term in it.",
+      "choices": [
+        "change",
+        "keep",
+        "remove"
+      ],
+      "answerIndex": 0,
+      "explanation": "The minus sign multiplies every term inside the brackets."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "$(5x^2+3x-2)-(2x^2-x+4)$. What is the constant term?",
+      "accepted": [
+        "-6",
+        "-6.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$-2-4=-6$. The result is $3x^2+4x-6$."
+    },
+    {
+      "id": "q8",
+      "type": "type_answer",
+      "prompt": "In that difference, what is the coefficient of $x$?",
+      "accepted": [
+        "4",
+        "4.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$3x-(-x)=3x+x=4x$."
+    },
+    {
+      "id": "q9",
+      "type": "order_steps",
+      "prompt": "Subtract $(2x+5)-(x+1)$. Put the steps in order.",
+      "steps": [
+        "Change the signs of the second polynomial: $2x+5-x-1$",
+        "Group like terms: $(2x-x)+(5-1)$",
+        "Combine: $x+4$"
+      ],
+      "explanation": "Distribute the minus sign first, or you will subtract only the first term."
+    }
+  ]
+}

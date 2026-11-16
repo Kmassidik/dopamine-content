@@ -1,0 +1,53 @@
+{
+  "id": "a1-functions-notes",
+  "version": 1,
+  "title": "Linear functions: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A function gives exactly one output for each input. Lines are the simplest functions, and slope tells you how steep they are."
+    },
+    {
+      "id": "slope",
+      "kind": "formula",
+      "title": "Slope",
+      "body": "$m=\\frac{y_2-y_1}{x_2-x_1}$"
+    },
+    {
+      "id": "slope-int",
+      "kind": "formula",
+      "title": "Slope-intercept form",
+      "body": "$y=mx+b$"
+    },
+    {
+      "id": "point-slope",
+      "kind": "formula",
+      "title": "Point-slope form",
+      "body": "$y-y_1=m(x-x_1)$"
+    },
+    {
+      "id": "standard",
+      "kind": "formula",
+      "title": "Standard form",
+      "body": "$Ax+By=C$"
+    },
+    {
+      "id": "slopes",
+      "kind": "list",
+      "title": "Slope facts",
+      "items": [
+        "Positive slope rises, negative falls",
+        "Horizontal: slope 0. Vertical: undefined",
+        "Parallel lines: same slope",
+        "Perpendicular: slopes multiply to $-1$"
+      ]
+    },
+    {
+      "id": "intercepts",
+      "kind": "tip",
+      "body": "For the $y$-intercept set $x=0$. For the $x$-intercept set $y=0$."
+    }
+  ]
+}

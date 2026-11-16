@@ -1,0 +1,150 @@
+{
+  "id": "a1-quadratics-04",
+  "version": 1,
+  "title": "The quadratic formula",
+  "xp": 20,
+  "tags": [
+    "algebra",
+    "quadratics"
+  ],
+  "learn": [
+    {
+      "id": "formula",
+      "kind": "text",
+      "title": "A formula that always works",
+      "body": "Not every quadratic factors nicely. For $ax^2+bx+c=0$ the quadratic formula always gives the solutions: $x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}$. It comes from completing the square on the general equation."
+    },
+    {
+      "id": "example-nice",
+      "kind": "example",
+      "title": "Solve $2x^2+3x-2=0$",
+      "body": "Here $a=2$, $b=3$, $c=-2$.",
+      "steps": [
+        "$b^2-4ac=9+16=25$",
+        "$x=\\frac{-3\\pm5}{4}$",
+        "Plus: $x=\\frac{2}{4}=\\frac{1}{2}$",
+        "Minus: $x=\\frac{-8}{4}=-2$"
+      ]
+    },
+    {
+      "id": "example-root",
+      "kind": "example",
+      "title": "Solve $x^2-2x-1=0$",
+      "body": "The root does not simplify to a whole number.",
+      "steps": [
+        "$a=1$, $b=-2$, $c=-1$",
+        "$b^2-4ac=4+4=8$, and $\\sqrt{8}=2\\sqrt{2}$",
+        "$x=\\frac{2\\pm2\\sqrt{2}}{2}=1\\pm\\sqrt{2}$"
+      ]
+    },
+    {
+      "id": "signs",
+      "kind": "tip",
+      "body": "Keep the signs of $b$ and $c$. Put negative numbers in brackets, like $(-5)^2$, so the square comes out positive."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which is the quadratic formula?",
+      "choices": [
+        "$x=\\frac{b\\pm\\sqrt{b^2-4ac}}{2a}$",
+        "$x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}$",
+        "$x=\\frac{-b\\pm\\sqrt{b^2+4ac}}{2a}$"
+      ],
+      "answerIndex": 1,
+      "explanation": "It starts with $-b$, and under the root is $b^2-4ac$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "For $x^2-5x+6=0$, what is $b$?",
+      "accepted": [
+        "-5",
+        "-5.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "In $ax^2+bx+c=0$ the number with $x$ is $b=-5$. Keep the sign."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "For $x^2-5x+6=0$, compute $b^2-4ac$.",
+      "accepted": [
+        "1",
+        "1.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$25-4\\cdot1\\cdot6=25-24=1$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "Solve $x^2-5x+6=0$. What is the larger solution?",
+      "accepted": [
+        "3",
+        "3.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$x=\\frac{5\\pm1}{2}$, so $x=3$ or $x=2$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "For $2x^2+3x-2=0$, compute $b^2-4ac$.",
+      "accepted": [
+        "25",
+        "25.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$9-4\\cdot2\\cdot(-2)=9+16=25$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "Solve $2x^2+3x-2=0$. What is the positive solution? Give a fraction.",
+      "accepted": [
+        "1/2",
+        "0.5"
+      ],
+      "keypad": "numeric",
+      "explanation": "$x=\\frac{-3\\pm5}{4}$. With plus: $\\frac{2}{4}=\\frac{1}{2}$."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "In the same equation, what is the negative solution?",
+      "accepted": [
+        "-2",
+        "-2.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "With minus: $\\frac{-8}{4}=-2$."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "Solve $x^2-2x-1=0$",
+      "choices": [
+        "$x=1\\pm2$",
+        "$x=2\\pm\\sqrt{2}$",
+        "$x=1\\pm\\sqrt{2}$"
+      ],
+      "answerIndex": 2,
+      "explanation": "$b^2-4ac=4+4=8$, and $\\sqrt{8}=2\\sqrt{2}$. So $x=\\frac{2\\pm2\\sqrt{2}}{2}=1\\pm\\sqrt{2}$."
+    },
+    {
+      "id": "q9",
+      "type": "order_steps",
+      "prompt": "Use the formula on $x^2-5x+6=0$. Put the steps in order.",
+      "steps": [
+        "Read off $a=1$, $b=-5$, $c=6$",
+        "Compute $b^2-4ac=1$",
+        "Put in the formula: $x=\\frac{5\\pm1}{2}$",
+        "Solutions: $x=3$ and $x=2$"
+      ],
+      "explanation": "Identify the coefficients, evaluate the root part, then finish."
+    }
+  ]
+}
