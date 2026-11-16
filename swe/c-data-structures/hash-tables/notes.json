@@ -1,0 +1,55 @@
+{
+  "id": "cd-hash-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Hash tables: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A hash table turns a key into an array index with a hash function, so you can jump straight to where an item belongs instead of searching for it."
+    },
+    {
+      "id": "steps",
+      "kind": "list",
+      "title": "Using a table",
+      "items": [
+        "Hash the key to a number",
+        "Take it modulo the table size",
+        "Store or look up in that slot",
+        "Handle collisions: probe or chain"
+      ]
+    },
+    {
+      "id": "hash",
+      "kind": "code",
+      "title": "A string hash",
+      "code": "unsigned hash(const char *s) {\n    unsigned h = 0;\n    for (; *s; s++)\n        h = h * 31 + (unsigned char)*s;\n    return h % SIZE;\n}",
+      "language": "c"
+    },
+    {
+      "id": "chain",
+      "kind": "code",
+      "title": "Add to a chain",
+      "code": "unsigned i = hash(k);\ne->next = table[i];\ntable[i] = e;",
+      "language": "c"
+    },
+    {
+      "id": "good",
+      "kind": "list",
+      "title": "A good hash function",
+      "items": [
+        "Same key always gives the same result",
+        "Spreads keys evenly",
+        "Fast to compute",
+        "Position matters, so anagrams differ"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Collisions cannot be avoided. Compare strings with `strcmp`, never `==`, and free keys you copied."
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "id": "cd-trees-06",
+  "version": 1,
+  "minApp": 2,
+  "title": "Choosing a data structure",
+  "xp": 20,
+  "tags": [
+    "c",
+    "design",
+    "trade-offs"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Start from the question",
+      "body": "There is no best data structure, only a good fit for what the program does most. Ask what you do often: read by position, add and remove, look up by key, keep sorted, or match word prefixes."
+    },
+    {
+      "id": "table",
+      "kind": "text",
+      "title": "What each is good at",
+      "body": "Array: fast access by index, costly to insert in the middle. Linked list: cheap insert and remove at a known place, slow to search. Hash table: fast lookup by key on average, no order. BST: lookup and sorted order, if it stays bushy. Trie: lookups and prefixes by letters."
+    },
+    {
+      "id": "ex-pick",
+      "kind": "example",
+      "title": "Three small decisions",
+      "body": "Decide which structure fits each need.",
+      "steps": [
+        "A to-do pile where you only add and remove the newest: a stack",
+        "Word counts by name with quick lookup: a hash table",
+        "A word list that must suggest completions for typed letters: a trie",
+        "Names kept in sorted order, with fast search: a BST"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Start with the simplest structure that works. Switch only when measuring shows a real problem."
+    }
+  ],
+  "questions": [
+    {
+      "type": "match_pairs",
+      "prompt": "Match each need to the best fit.",
+      "pairs": [
+        [
+          "Look up a value by key quickly",
+          "Hash table"
+        ],
+        [
+          "Suggest words from a prefix",
+          "Trie"
+        ],
+        [
+          "Items by position",
+          "Array"
+        ],
+        [
+          "Cheap removal from the middle",
+          "Linked list"
+        ]
+      ],
+      "explanation": "Each structure is strongest at one kind of job.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which structure keeps its items in sorted order as you insert?",
+      "choices": [
+        "A hash table",
+        "A stack",
+        "A binary search tree",
+        "A queue"
+      ],
+      "answerIndex": 2,
+      "explanation": "An in-order walk of a BST gives sorted values.",
+      "id": "q2"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "A hash table is bad at...",
+      "choices": [
+        "Finding a key",
+        "Adding a key",
+        "Handling strings",
+        "Giving items in sorted order"
+      ],
+      "answerIndex": 3,
+      "explanation": "The hash scatters keys, so order is lost.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "You must undo actions in reverse order of doing them. Which fits?",
+      "choices": [
+        "A stack",
+        "A queue",
+        "A trie",
+        "A hash table"
+      ],
+      "answerIndex": 0,
+      "explanation": "Undo takes the newest action first, which is last in, first out.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "Jobs should run in the order they arrive, so use a \\_\\_.",
+      "choices": [
+        "stack",
+        "queue",
+        "trie",
+        "BST"
+      ],
+      "answerIndex": 1,
+      "explanation": "A queue serves the oldest item first.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "A BST fed sorted data behaves like...",
+      "choices": [
+        "a hash table",
+        "a trie",
+        "a linked list",
+        "a stack of arrays"
+      ],
+      "answerIndex": 2,
+      "explanation": "Every insert goes the same way, giving a chain.",
+      "id": "q6"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What is the first thing to do when choosing?",
+      "choices": [
+        "Pick the newest structure",
+        "Always use arrays",
+        "Use a trie everywhere",
+        "Think about which operations happen most"
+      ],
+      "answerIndex": 3,
+      "explanation": "The most frequent operation should be the cheap one.",
+      "id": "q7"
+    }
+  ]
+}
