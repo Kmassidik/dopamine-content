@@ -1,0 +1,57 @@
+{
+  "course": {
+    "id": "geometry",
+    "categoryId": "math",
+    "title": "Geometry",
+    "description": "Shapes, angles, triangles, circles and solids, with proofs and trigonometry",
+    "order": 3,
+    "dir": "math/geometry",
+    "overview": {
+      "summary": "Learn how shapes work, from points and angles to triangles, circles and solids. Each lesson is a short reading followed by practice, and every result comes with a reason.",
+      "outcomes": [
+        "Find unknown angles using angle pairs and parallel lines",
+        "Use triangle rules, congruence and the Pythagorean theorem",
+        "Use similar triangles and right-triangle trigonometry",
+        "Calculate areas, circle measures and angles in polygons",
+        "Find volume and surface area of common solids",
+        "Move shapes with reflections, rotations and dilations"
+      ],
+      "requirements": [
+        "Algebra 1: solving equations and the coordinate plane"
+      ],
+      "minutes": 150
+    },
+    "units": [
+      {
+        "id": "geo-basics",
+        "title": "Points, Lines and Angles",
+        "order": 1,
+        "dir": "basics"
+      },
+      {
+        "id": "geo-triangles",
+        "title": "Triangles",
+        "order": 2,
+        "dir": "triangles"
+      },
+      {
+        "id": "geo-similar",
+        "title": "Similarity and Right-Triangle Trig",
+        "order": 3,
+        "dir": "similarity"
+      },
+      {
+        "id": "geo-polygons",
+        "title": "Polygons, Circles and Area",
+        "order": 4,
+        "dir": "polygons"
+      },
+      {
+        "id": "geo-solids",
+        "title": "Solids and Transformations",
+        "order": 5,
+        "dir": "solids"
+      }
+    ]
+  }
+}

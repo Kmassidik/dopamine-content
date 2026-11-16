@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 200">
+  <circle cx="170" cy="100" r="80" fill="#E4F8EC" stroke="currentColor" stroke-width="2"/>
+  <line x1="90" y1="100" x2="250" y2="100" stroke="currentColor" stroke-width="2"/>
+  <line x1="101" y1="60" x2="239" y2="60" stroke="#17803F" stroke-width="3"/>
+  <line x1="170" y1="100" x2="170" y2="180" stroke="#B8305F" stroke-width="3"/>
+  <circle cx="170" cy="100" r="3" fill="currentColor"/>
+  <g fill="currentColor" font-size="14" text-anchor="middle">
+    <text x="170" y="52">chord</text>
+    <text x="170" y="120">diameter</text>
+  </g>
+  <g fill="currentColor" font-size="14" text-anchor="start">
+    <text x="178" y="150">radius</text>
+  </g>
+</svg>

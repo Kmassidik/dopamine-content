@@ -1,0 +1,149 @@
+{
+  "id": "geo-basics-06",
+  "version": 1,
+  "title": "Reasoning and simple proofs",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "proof"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Why proofs",
+      "body": "In geometry we do not just notice that something is true. We show why it must be true, using facts we already accept. That chain of reasons is called a proof."
+    },
+    {
+      "id": "if-then",
+      "kind": "text",
+      "title": "If-then statements",
+      "body": "A conditional has the form: if $p$, then $q$. The $p$ part is the hypothesis and the $q$ part is the conclusion. The converse swaps them: if $q$, then $p$. A statement can be true while its converse is false."
+    },
+    {
+      "id": "counter",
+      "kind": "text",
+      "title": "Counterexamples",
+      "body": "To show a statement is false, one counterexample is enough. The statement all prime numbers are odd fails for 2, which is prime and even. But examples alone never prove a statement true. A proof must cover every case."
+    },
+    {
+      "id": "vertical-proof",
+      "kind": "example",
+      "title": "Prove vertical angles are equal",
+      "body": "Two lines cross. Call the angles around the crossing 1, 2, 3, 4 in order, so 1 and 3 are opposite.",
+      "steps": [
+        "Angles 1 and 2 are a linear pair, so $\\angle1+\\angle2=180^\\circ$.",
+        "Angles 2 and 3 are a linear pair, so $\\angle2+\\angle3=180^\\circ$.",
+        "Both sums equal $180^\\circ$, so $\\angle1+\\angle2=\\angle2+\\angle3$.",
+        "Subtract $\\angle2$ from both sides: $\\angle1=\\angle3$."
+      ]
+    },
+    {
+      "id": "reasons",
+      "kind": "tip",
+      "body": "In a proof, every statement needs a reason: a given fact, a definition, or a rule you already proved."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "In the statement if it rains, the ground is wet, which part is the hypothesis?",
+      "choices": [
+        "The ground is wet",
+        "It rains",
+        "Both parts",
+        "Neither part"
+      ],
+      "answerIndex": 1,
+      "explanation": "The hypothesis is the part after if. The part after then is the conclusion."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What is the converse of if a shape is a square, then it is a rectangle?",
+      "choices": [
+        "If a shape is not a square, then it is not a rectangle",
+        "If a shape is a rectangle, then it has four sides",
+        "If a shape is a rectangle, then it is a square",
+        "A shape is a square"
+      ],
+      "answerIndex": 2,
+      "explanation": "The converse swaps hypothesis and conclusion."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Is the converse of that statement true?",
+      "choices": [
+        "Yes, always",
+        "Yes, but only sometimes",
+        "It cannot be decided",
+        "No, many rectangles are not squares"
+      ],
+      "answerIndex": 3,
+      "explanation": "A rectangle with sides 2 and 5 is a counterexample. A statement can be true while its converse is false."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Which number is a counterexample to every odd number is prime?",
+      "choices": [
+        "9",
+        "3",
+        "7",
+        "11"
+      ],
+      "answerIndex": 0,
+      "explanation": "9 is odd but equals $3\\cdot3$, so it is not prime. The others are prime."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "One \\_\\_ is enough to show a statement is false.",
+      "choices": [
+        "counterexample",
+        "example",
+        "proof"
+      ],
+      "answerIndex": 0,
+      "explanation": "A single case that breaks the statement disproves it. A single case that fits does not prove anything."
+    },
+    {
+      "id": "q6",
+      "type": "order_steps",
+      "prompt": "Put the proof that vertical angles are equal in order.",
+      "steps": [
+        "Angles 1 and 2 are a linear pair: $\\angle1+\\angle2=180^\\circ$",
+        "Angles 2 and 3 are a linear pair: $\\angle2+\\angle3=180^\\circ$",
+        "So $\\angle1+\\angle2=\\angle2+\\angle3$",
+        "Subtract $\\angle2$: $\\angle1=\\angle3$"
+      ],
+      "explanation": "Two linear-pair facts give two equal sums, and subtracting the shared angle finishes the proof."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match the term to its meaning.",
+      "pairs": [
+        [
+          "Hypothesis",
+          "The if part"
+        ],
+        [
+          "Conclusion",
+          "The then part"
+        ],
+        [
+          "Converse",
+          "Hypothesis and conclusion swapped"
+        ],
+        [
+          "Counterexample",
+          "A case that breaks a statement"
+        ]
+      ],
+      "explanation": "These four words are the vocabulary of logical statements in geometry."
+    }
+  ]
+}

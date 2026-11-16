@@ -1,0 +1,136 @@
+{
+  "id": "geo-basics-04",
+  "version": 1,
+  "title": "Parallel lines and transversals",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "parallel"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "A line that cuts two lines",
+      "body": "Parallel lines never meet and stay the same distance apart. A transversal is a line that crosses two or more other lines. When it crosses two parallel lines, it makes eight angles that follow clear rules."
+    },
+    {
+      "id": "figure",
+      "kind": "text",
+      "title": "The picture",
+      "body": "Two horizontal lines are parallel. A slanted line crosses both. Angle 1 is above the top line, right of the slant. Angle 2 is below the bottom line, left of the slant. Angles 3 and 4 are between the lines, 3 on the left and 4 on the right. Figure not to scale.",
+      "image": "images/geo-transversal.svg",
+      "alt": "Two horizontal parallel lines crossed by a slanted line. Four angles are numbered 1 to 4 around the two crossing points."
+    },
+    {
+      "id": "rules",
+      "kind": "text",
+      "title": "Four rules",
+      "body": "Corresponding angles are equal. Alternate interior angles are equal. Alternate exterior angles are equal. Same-side interior angles add to $180^\\circ$. These hold only when the two lines really are parallel."
+    },
+    {
+      "id": "solve",
+      "kind": "example",
+      "title": "Use the rules",
+      "body": "The lines are parallel. Find $x$ in each case.",
+      "steps": [
+        "Corresponding: $2x+10=70$, so $x=30$.",
+        "Alternate interior: $3x-20=100$, so $x=40$.",
+        "Same-side interior: $(x+40)+(2x+20)=180$, so $3x=120$ and $x=40$.",
+        "Check: the angles are $80^\\circ$ and $100^\\circ$."
+      ]
+    },
+    {
+      "id": "start",
+      "kind": "tip",
+      "body": "Find one angle you know, then pass it around: equal to its corresponding or alternate partner, and supplementary to its neighbour on the line."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Parallel lines are cut by a transversal. Two corresponding angles are always what?",
+      "choices": [
+        "Supplementary",
+        "Complementary",
+        "Equal",
+        "One is double the other"
+      ],
+      "answerIndex": 2,
+      "explanation": "Corresponding angles sit in the same position at each crossing, so they are equal when the lines are parallel."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Which pair of angles adds to $180^\\circ$?",
+      "choices": [
+        "Alternate interior angles",
+        "Corresponding angles",
+        "Alternate exterior angles",
+        "Same-side interior angles"
+      ],
+      "answerIndex": 3,
+      "explanation": "The other three pairs are equal. Same-side interior angles are supplementary."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Parallel lines. Two alternate interior angles are $(2x+5)^\\circ$ and $75^\\circ$. Find $x$.",
+      "accepted": [
+        "35"
+      ],
+      "keypad": "numeric",
+      "explanation": "Alternate interior angles are equal: $2x+5=75$, so $x=35$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "The top and bottom lines are parallel and angle 1 measures $50^\\circ$. What does angle 4 measure?",
+      "choices": [
+        "$130^\\circ$",
+        "$50^\\circ$",
+        "$40^\\circ$",
+        "$100^\\circ$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Angle 4 and angle 1 sit side by side across the top line, so they form a linear pair: $180-50=130$.",
+      "image": "images/geo-transversal.svg",
+      "alt": "Two horizontal parallel lines crossed by a slanted line. Four angles are numbered 1 to 4 around the two crossing points."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "The top and bottom lines are parallel and angle 1 measures $50^\\circ$. What does angle 2 measure in degrees?",
+      "accepted": [
+        "50"
+      ],
+      "keypad": "numeric",
+      "explanation": "Angles 1 and 2 are alternate exterior angles, so they are equal.",
+      "image": "images/geo-transversal.svg",
+      "alt": "Two horizontal parallel lines crossed by a slanted line. Four angles are numbered 1 to 4 around the two crossing points."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "Same-side interior angles are \\_\\_.",
+      "choices": [
+        "equal",
+        "supplementary",
+        "complementary"
+      ],
+      "answerIndex": 1,
+      "explanation": "Together they make a straight angle, so they add to $180^\\circ$."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "Parallel lines. Same-side interior angles are $x^\\circ$ and $(x+30)^\\circ$. Find $x$.",
+      "accepted": [
+        "75"
+      ],
+      "keypad": "numeric",
+      "explanation": "$x+x+30=180$ gives $2x=150$, so $x=75$."
+    }
+  ]
+}

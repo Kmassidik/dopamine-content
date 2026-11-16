@@ -1,0 +1,142 @@
+{
+  "id": "geo-basics-05",
+  "version": 1,
+  "title": "Distance and midpoint",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "coordinates"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Geometry on a grid",
+      "body": "Put points on the coordinate plane and geometry becomes arithmetic. Two questions come up all the time: how far apart are two points, and where is the point halfway between them?"
+    },
+    {
+      "id": "distance",
+      "kind": "text",
+      "title": "The distance formula",
+      "body": "For points $(x_1,y_1)$ and $(x_2,y_2)$, the distance is $d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$. It comes from a right triangle with the two points at the ends of the slanted side. We prove this in the next unit. On a horizontal or vertical line, just subtract."
+    },
+    {
+      "id": "midpoint",
+      "kind": "text",
+      "title": "The midpoint formula",
+      "body": "The midpoint is the average of the coordinates: $M=\\left(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2}\\right)$. It sits exactly halfway, so it is the same distance from both ends."
+    },
+    {
+      "id": "distance-ex",
+      "kind": "example",
+      "title": "Distance and midpoint",
+      "body": "Take $A(1,2)$ and $B(4,6)$.",
+      "steps": [
+        "Horizontal change: $4-1=3$. Vertical change: $6-2=4$.",
+        "$d=\\sqrt{3^2+4^2}=\\sqrt{25}=5$.",
+        "Midpoint: $\\left(\\frac{1+4}{2},\\frac{2+6}{2}\\right)=(2.5,4)$."
+      ]
+    },
+    {
+      "id": "end-ex",
+      "kind": "example",
+      "title": "Find an endpoint",
+      "body": "The midpoint of $AB$ is $M(3,4)$ and $A=(1,1)$. Find $B$.",
+      "steps": [
+        "$M$ is the average, so $\\frac{1+x}{2}=3$ and $x=5$.",
+        "Also $\\frac{1+y}{2}=4$, so $y=7$.",
+        "$B=(5,7)$."
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "Distance from $(0,0)$ to $(6,8)$?",
+      "accepted": [
+        "10"
+      ],
+      "keypad": "numeric",
+      "explanation": "$d=\\sqrt{6^2+8^2}=\\sqrt{100}=10$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Distance from $(-2,1)$ to $(3,1)$?",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "The points share a $y$-value, so subtract the $x$-values: $3-(-2)=5$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What is the $x$-coordinate of the midpoint of $(-4,2)$ and $(6,8)$?",
+      "accepted": [
+        "1"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac{-4+6}{2}=1$. The midpoint is $(1,5)$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Midpoint of $(2,3)$ and $(8,7)$?",
+      "choices": [
+        "$(10,10)$",
+        "$(6,4)$",
+        "$(5,5)$",
+        "$(3,2)$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Average each coordinate: $\\frac{2+8}{2}=5$ and $\\frac{3+7}{2}=5$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "Distance from $(0,0)$ to $(5,12)$?",
+      "accepted": [
+        "13"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\sqrt{25+144}=\\sqrt{169}=13$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "The midpoint of $AB$ is $(2,1)$ and $A=(0,-3)$. What is $B$?",
+      "choices": [
+        "$(1,-1)$",
+        "$(2,4)$",
+        "$(4,-1)$",
+        "$(4,5)$"
+      ],
+      "answerIndex": 3,
+      "explanation": "$B=2M-A$: $2\\cdot2-0=4$ and $2\\cdot1-(-3)=5$."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "The distance formula is built from a \\_\\_ triangle.",
+      "choices": [
+        "equilateral",
+        "right",
+        "obtuse"
+      ],
+      "answerIndex": 1,
+      "explanation": "The horizontal and vertical changes are the two legs, and the distance is the slanted side."
+    },
+    {
+      "id": "q8",
+      "type": "type_answer",
+      "prompt": "Distance from $(2,-1)$ to $(-1,3)$?",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "Changes: $-3$ and $4$. $\\sqrt{9+16}=5$."
+    }
+  ]
+}

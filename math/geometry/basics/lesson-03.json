@@ -1,0 +1,141 @@
+{
+  "id": "geo-basics-03",
+  "version": 1,
+  "title": "Angle pairs",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "angles"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Angles that work together",
+      "body": "Angles often come in pairs with a fixed relationship. Knowing the relationship lets you find an angle without measuring it. This is the first real tool of geometry."
+    },
+    {
+      "id": "comp-supp",
+      "kind": "text",
+      "title": "Complementary and supplementary",
+      "body": "Two angles are complementary if their measures add to $90^\\circ$. They are supplementary if they add to $180^\\circ$. Two angles that sit side by side on a straight line form a linear pair, and a linear pair is always supplementary."
+    },
+    {
+      "id": "vertical",
+      "kind": "text",
+      "title": "Vertical angles",
+      "body": "When two lines cross, they make four angles. The angles directly opposite each other are vertical angles, and they are always equal. If one is $70^\\circ$, the opposite one is $70^\\circ$ and the other two are each $110^\\circ$."
+    },
+    {
+      "id": "algebra",
+      "kind": "example",
+      "title": "Angles with algebra",
+      "body": "Two angles with measures $x$ and $2x+30$ are supplementary. Find both.",
+      "steps": [
+        "Supplementary means the sum is $180$.",
+        "$x+(2x+30)=180$, so $3x+30=180$.",
+        "$3x=150$, so $x=50$.",
+        "The angles are $50^\\circ$ and $2(50)+30=130^\\circ$."
+      ]
+    },
+    {
+      "id": "check",
+      "kind": "tip",
+      "body": "Always check the sum. Here $50+130=180$, so the answer fits the rule."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "What is the complement of $35^\\circ$?",
+      "accepted": [
+        "55"
+      ],
+      "keypad": "numeric",
+      "explanation": "Complementary angles add to $90^\\circ$, so $90-35=55$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "What is the supplement of $35^\\circ$?",
+      "accepted": [
+        "145"
+      ],
+      "keypad": "numeric",
+      "explanation": "Supplementary angles add to $180^\\circ$, so $180-35=145$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Two lines cross. One angle is $70^\\circ$. What is the angle next to it, sharing a side?",
+      "choices": [
+        "$70^\\circ$",
+        "$20^\\circ$",
+        "$90^\\circ$",
+        "$110^\\circ$"
+      ],
+      "answerIndex": 3,
+      "explanation": "Neighbouring angles at a crossing form a linear pair, so they add to $180^\\circ$: $180-70=110$."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "Vertical angles are \\_\\_.",
+      "choices": [
+        "supplementary",
+        "complementary",
+        "equal"
+      ],
+      "answerIndex": 2,
+      "explanation": "Opposite angles at a crossing are equal. Next-door angles are the supplementary ones."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "Two complementary angles measure $x$ and $2x$. Find $x$.",
+      "accepted": [
+        "30"
+      ],
+      "keypad": "numeric",
+      "explanation": "$x+2x=90$ gives $3x=90$, so $x=30$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Angles of $x$ and $x+40$ are supplementary. What is $x$?",
+      "choices": [
+        "$35$",
+        "$70$",
+        "$90$",
+        "$140$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$2x+40=180$ gives $2x=140$, so $x=70$. The angles are $70^\\circ$ and $110^\\circ$."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each pair to its rule.",
+      "pairs": [
+        [
+          "Complementary",
+          "Sum is $90^\\circ$"
+        ],
+        [
+          "Supplementary",
+          "Sum is $180^\\circ$"
+        ],
+        [
+          "Linear pair",
+          "Side by side on a line"
+        ],
+        [
+          "Vertical angles",
+          "Opposite, always equal"
+        ]
+      ],
+      "explanation": "Each name tells you either the sum or the equality you can use."
+    }
+  ]
+}

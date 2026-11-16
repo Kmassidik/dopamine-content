@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 220">
+  <g stroke="currentColor" stroke-width="2" fill="none">
+    <line x1="20" y1="70" x2="320" y2="70"/>
+    <line x1="20" y1="150" x2="320" y2="150"/>
+    <line x1="95" y1="195" x2="238" y2="25"/>
+  </g>
+  <g fill="currentColor" font-size="14" font-weight="bold" text-anchor="middle">
+    <text x="231" y="61">1</text>
+    <text x="102" y="169">2</text>
+    <text x="119" y="124">3</text>
+    <text x="214" y="106">4</text>
+  </g>
+</svg>

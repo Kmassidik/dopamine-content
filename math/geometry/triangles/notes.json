@@ -1,0 +1,61 @@
+{
+  "id": "geo-triangles-notes",
+  "version": 1,
+  "title": "Triangles: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A triangle's three angles always add to $180^\\circ$, and its sides obey fixed rules. Right triangles have an extra tool, the Pythagorean theorem."
+    },
+    {
+      "id": "classify",
+      "kind": "list",
+      "title": "Classify triangles",
+      "items": [
+        "Equilateral: 3 equal sides, each angle $60^\\circ$",
+        "Isosceles: at least 2 equal sides, base angles equal",
+        "Scalene: no equal sides",
+        "Acute, right, obtuse: by the largest angle"
+      ]
+    },
+    {
+      "id": "angle-sum",
+      "kind": "formula",
+      "title": "Angle sum",
+      "body": "$A+B+C=180^\\circ$"
+    },
+    {
+      "id": "congruence",
+      "kind": "list",
+      "title": "Congruence rules",
+      "items": [
+        "SSS: three sides",
+        "SAS: two sides and the angle between",
+        "ASA: two angles and the side between",
+        "AAA and SSA do not work"
+      ]
+    },
+    {
+      "id": "pyth",
+      "kind": "formula",
+      "title": "Pythagorean theorem",
+      "body": "$a^2+b^2=c^2$"
+    },
+    {
+      "id": "special",
+      "kind": "list",
+      "title": "Special right triangles",
+      "items": [
+        "45-45-90: sides $s,\\ s,\\ s\\sqrt{2}$",
+        "30-60-90: sides $s,\\ s\\sqrt{3},\\ 2s$"
+      ]
+    },
+    {
+      "id": "triangle-ineq",
+      "kind": "tip",
+      "body": "Three lengths form a triangle only if the two shorter ones add to more than the longest."
+    }
+  ]
+}
