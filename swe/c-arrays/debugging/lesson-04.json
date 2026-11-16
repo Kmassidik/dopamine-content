@@ -1,0 +1,155 @@
+{
+  "id": "ca-debug-04",
+  "version": 1,
+  "minApp": 2,
+  "title": "Using a debugger",
+  "xp": 15,
+  "tags": [
+    "c",
+    "debugging"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Stop time and look around",
+      "body": "A debugger runs your program under your control. You can pause it on any line, step one line at a time, and look at variables without editing the code. The usual ones are gdb on Linux and lldb on macOS."
+    },
+    {
+      "id": "build-g",
+      "kind": "code",
+      "title": "Build with -g",
+      "body": "The `-g` flag adds line information so the debugger can show your source. Then start the program under the debugger.",
+      "code": "cc -g -std=c11 prog.c -o prog\nlldb ./prog\n# or: gdb ./prog",
+      "language": "sh"
+    },
+    {
+      "id": "break",
+      "kind": "text",
+      "title": "Breakpoints",
+      "body": "A breakpoint is a place where the program pauses. `break main` (gdb) or `b main` (lldb) pauses at the start of `main`. `run` starts the program and it stops at the first breakpoint."
+    },
+    {
+      "id": "step",
+      "kind": "code",
+      "title": "Moving and looking",
+      "body": "`next` runs one line and skips over calls. `step` goes into a call. `print total` shows a variable. `continue` runs on. `quit` leaves. Short forms: `n`, `s`, `p`, `c`, `q`.",
+      "code": "break main\nrun\nnext\nprint total\ncontinue\nquit",
+      "language": "sh"
+    },
+    {
+      "id": "session",
+      "kind": "example",
+      "title": "A debugging session",
+      "body": "Track `total` in a loop.",
+      "steps": [
+        "Build with `-g` and start the debugger",
+        "`break main`, then `run`",
+        "Press `next` and `print total` after each line",
+        "The first wrong value shows where the bug is"
+      ]
+    },
+    {
+      "id": "bt",
+      "kind": "tip",
+      "body": "If the program crashes, type `bt` to see the chain of calls that led there."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which flag lets the debugger show your source lines?",
+      "choices": [
+        "`-c`",
+        "`-E`",
+        "`-g`"
+      ],
+      "answerIndex": 2,
+      "explanation": "`-g` adds debug information to the program."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What does a breakpoint do?",
+      "choices": [
+        "Pauses the program at that place",
+        "Deletes the line",
+        "Ends the program"
+      ],
+      "answerIndex": 0,
+      "explanation": "You then inspect and step from there."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Which command shows the value of a variable `total`? Type the long form with the variable.",
+      "accepted": [
+        "print total",
+        "p total"
+      ],
+      "keypad": "full",
+      "explanation": "`print total` (short: `p total`) shows its current value."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What is the difference between `next` and `step`?",
+      "choices": [
+        "`next` quits, `step` runs on",
+        "`step` goes into a function call, `next` skips over it",
+        "There is none"
+      ],
+      "answerIndex": 1,
+      "explanation": "Use `step` when you want to look inside the function."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "Typing \\_\\_ makes the program run until the next breakpoint.",
+      "choices": [
+        "`quit`",
+        "`print`",
+        "`continue`"
+      ],
+      "answerIndex": 2,
+      "explanation": "`continue` resumes the run."
+    },
+    {
+      "id": "q6",
+      "type": "match_pairs",
+      "prompt": "Match each command to what it does.",
+      "pairs": [
+        [
+          "`break main`",
+          "Pause at the start of main"
+        ],
+        [
+          "`run`",
+          "Start the program"
+        ],
+        [
+          "`next`",
+          "Run one line"
+        ],
+        [
+          "`print x`",
+          "Show the value of x"
+        ]
+      ],
+      "explanation": "These four commands cover most sessions."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Put a debugging session in order.",
+      "steps": [
+        "Build with -g",
+        "Set a breakpoint",
+        "Run the program",
+        "Step and print variables"
+      ],
+      "explanation": "You need the symbols first, then a stop point, then a run to reach it."
+    }
+  ]
+}

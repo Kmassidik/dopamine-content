@@ -1,0 +1,138 @@
+{
+  "id": "ca-debug-03",
+  "version": 1,
+  "minApp": 2,
+  "title": "printf debugging",
+  "xp": 15,
+  "tags": [
+    "c",
+    "debugging"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Make the program talk",
+      "body": "The simplest debugging tool is `printf`. Print a variable and a label at the points where you doubt your code, run it, and compare what you see with what you expected."
+    },
+    {
+      "id": "trace",
+      "kind": "code",
+      "title": "Print inside a loop",
+      "body": "Each pass prints `i` and `sum`, which shows how the sum grows: 2, then 6, then 12.",
+      "code": "#include <stdio.h>\n\nint main(void) {\n    int sum = 0;\n    for (int i = 1; i <= 3; i++) {\n        sum += i * 2;\n        printf(\"i=%d sum=%d\\n\", i, sum);\n    }\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "labels",
+      "kind": "text",
+      "title": "Label your prints",
+      "body": "A bare number tells you little. Write `i=` before it so you know which value you are reading. A line like `reached here` also shows which branch of an `if` ran."
+    },
+    {
+      "id": "stderr",
+      "kind": "text",
+      "title": "Use stderr for debug text",
+      "body": "`fprintf(stderr, \"x=%d\\n\", x);` writes to the error stream, which can be shown at once even if the program crashes right after. Normal output may be held back, so the line you wanted can be lost."
+    },
+    {
+      "id": "average",
+      "kind": "example",
+      "title": "Find the bug by printing",
+      "body": "`(a + b) / 2` with `a = 3` and `b = 4` gives 3, not 3.5.",
+      "steps": [
+        "Print `a + b`: it shows 7, as expected",
+        "Print `(a + b) / 2`: it shows 3",
+        "Both operands are `int`, so `/` drops the decimals",
+        "Divide by `2.0` instead and the result is 3.5"
+      ]
+    },
+    {
+      "id": "remove",
+      "kind": "tip",
+      "body": "Delete debug prints when the bug is fixed, or they clutter the real output."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is the main goal of a debug `printf`?",
+      "choices": [
+        "See the real value of a variable",
+        "Make the program faster",
+        "Fix the bug automatically"
+      ],
+      "answerIndex": 0,
+      "explanation": "You compare what you see with what you expected."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "In the trace above, what is `sum` after the second pass? Type the number.",
+      "accepted": [
+        "6"
+      ],
+      "keypad": "numeric",
+      "explanation": "Pass 1 adds 2, pass 2 adds 4: 2 + 4 = 6."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Why write `i=%d` rather than just `%d`?",
+      "choices": [
+        "It is required by C",
+        "So you know which value you are reading",
+        "It prints faster"
+      ],
+      "answerIndex": 1,
+      "explanation": "Labels keep several values apart."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "Debug text can go to the error stream, written `fprintf(\\_\\_, ...)`.",
+      "choices": [
+        "`stdin`",
+        "`stdout`",
+        "`stderr`"
+      ],
+      "answerIndex": 2,
+      "explanation": "`stderr` is meant for messages about the program rather than its normal output."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What does `7 / 2` give in C when both are `int`?",
+      "choices": [
+        "3",
+        "3.5",
+        "4"
+      ],
+      "answerIndex": 0,
+      "explanation": "Integer division drops the decimals."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "What does `printf(\"%d\", 9 / 2)` print? Type the number.",
+      "accepted": [
+        "4"
+      ],
+      "keypad": "numeric",
+      "explanation": "9 / 2 is 4.5, and integer division drops the .5."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "What should you do with debug prints once the bug is fixed?",
+      "choices": [
+        "Leave them forever",
+        "Remove them",
+        "Move them into a header"
+      ],
+      "answerIndex": 1,
+      "explanation": "Extra prints clutter the output and slow you down later."
+    }
+  ]
+}
