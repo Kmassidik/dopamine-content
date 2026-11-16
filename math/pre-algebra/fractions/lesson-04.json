@@ -1,0 +1,137 @@
+{
+  "id": "pa-fractions-04",
+  "version": 1,
+  "title": "Decimals and rounding",
+  "xp": 10,
+  "tags": [
+    "decimals",
+    "rounding"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Place value",
+      "body": "A decimal extends our number system to parts smaller than 1. In $3.746$ the digits after the point are tenths (7), hundredths (4) and thousandths (6). Each place is ten times smaller than the one to its left."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "Fractions and decimals",
+      "body": "A decimal is a fraction with a denominator of 10, 100, 1000 and so on. $0.75=\\frac{75}{100}=\\frac{3}{4}$. To turn a fraction into a decimal, divide: $\\frac{1}{8}=1\\div 8=0.125$. Some decimals repeat forever, like $\\frac{1}{3}=0.333\\ldots$"
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Adding and multiplying",
+      "body": "To add or subtract, line up the decimal points: $4.5+2.35=6.85$. To multiply, ignore the points, multiply, then count the decimal places in the factors. $0.3\\times 0.2$: $3\\times 2=6$, with two decimal places, gives $0.06$."
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Round $3.746$ to 2 decimal places",
+      "body": "Look at the digit just after the place you keep.",
+      "steps": [
+        "Keep two decimals: $3.74$ and look at the next digit, 6.",
+        "6 is 5 or more, so round the last kept digit up.",
+        "$3.746\\approx 3.75$."
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "tip",
+      "body": "The rule for rounding: 5 or more rounds up, 4 or less leaves the digit alone. $3.742$ would round to $3.74$."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "In $3.746$, what is the digit 7 worth?",
+      "choices": [
+        "hundredths",
+        "sevens",
+        "tenths"
+      ],
+      "answerIndex": 2,
+      "explanation": "The first place after the point is tenths, so the 7 means $\\frac{7}{10}$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Write $\\frac{3}{4}$ as a decimal.",
+      "accepted": [
+        "0.75",
+        ".75"
+      ],
+      "keypad": "numeric",
+      "explanation": "$3\\div 4=0.75$. Equivalently $\\frac{3}{4}=\\frac{75}{100}$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Round $3.746$ to 2 decimal places.",
+      "choices": [
+        "$3.74$",
+        "$3.7$",
+        "$3.75$"
+      ],
+      "answerIndex": 2,
+      "explanation": "The next digit is 6, so round the 4 up to 5."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "$0.3\\times 0.2=\\_\\_$",
+      "choices": [
+        "$0.06$",
+        "$0.6$",
+        "$0.5$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$3\\times 2=6$ and there are two decimal places in total, so $0.06$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "What is $4.5+2.35$?",
+      "accepted": [
+        "6.85"
+      ],
+      "keypad": "numeric",
+      "explanation": "Line up the points: $4.50+2.35=6.85$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which is greater?",
+      "choices": [
+        "$0.45$",
+        "$0.5$",
+        "$0.095$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Compare place by place. $0.5=0.50$, which is more than $0.45$ and $0.095$."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each fraction with its decimal.",
+      "pairs": [
+        [
+          "$\\frac{1}{2}$",
+          "0.5"
+        ],
+        [
+          "$\\frac{1}{4}$",
+          "0.25"
+        ],
+        [
+          "$\\frac{1}{8}$",
+          "0.125"
+        ]
+      ],
+      "explanation": "Divide the top by the bottom: $1\\div 2=0.5$, $1\\div 4=0.25$, $1\\div 8=0.125$."
+    }
+  ]
+}

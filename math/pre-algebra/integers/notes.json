@@ -1,0 +1,68 @@
+{
+  "id": "pa-integers-notes",
+  "version": 1,
+  "title": "Integers and operations: cheat sheet",
+  "blocks": [
+    {
+      "id": "b1",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Integers are the whole numbers and their negatives. They sit on a number line, and a strict order of operations makes every expression have one answer."
+    },
+    {
+      "id": "b2",
+      "kind": "list",
+      "title": "Sign rules",
+      "items": [
+        "Same signs when multiplying or dividing: positive",
+        "Different signs when multiplying or dividing: negative",
+        "Subtracting a number: add its opposite",
+        "$5-(-2)=5+2=7$"
+      ]
+    },
+    {
+      "id": "b3",
+      "kind": "list",
+      "title": "Order of operations",
+      "items": [
+        "1. Brackets",
+        "2. Exponents",
+        "3. Multiply and divide, left to right",
+        "4. Add and subtract, left to right"
+      ]
+    },
+    {
+      "id": "b4",
+      "kind": "formula",
+      "title": "Exponents",
+      "body": "$a^n=a\\times a\\times\\cdots\\times a$ ($n$ factors), and $a^0=1$"
+    },
+    {
+      "id": "b5",
+      "kind": "list",
+      "title": "Common squares",
+      "items": [
+        "$2^2=4,\\ 3^2=9,\\ 4^2=16$",
+        "$5^2=25,\\ 6^2=36,\\ 7^2=49$",
+        "$8^2=64,\\ 9^2=81,\\ 10^2=100$",
+        "$11^2=121,\\ 12^2=144$"
+      ]
+    },
+    {
+      "id": "b6",
+      "kind": "list",
+      "title": "Primes, GCF and LCM",
+      "items": [
+        "First primes: 2, 3, 5, 7, 11, 13, 17, 19",
+        "GCF: largest number that divides both",
+        "LCM: smallest number both divide into",
+        "GCF of 12 and 18 is 6; LCM of 4 and 6 is 12"
+      ]
+    },
+    {
+      "id": "b7",
+      "kind": "tip",
+      "body": "Watch the brackets: $(-2)^2=4$ but $-2^2=-4$."
+    }
+  ]
+}

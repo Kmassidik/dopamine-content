@@ -1,0 +1,141 @@
+{
+  "id": "pa-integers-06",
+  "version": 1,
+  "title": "Factors, multiples and primes",
+  "xp": 10,
+  "tags": [
+    "factors",
+    "multiples",
+    "primes"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Factors and multiples",
+      "body": "A factor of a number divides it exactly. The factors of 12 are 1, 2, 3, 4, 6 and 12. A multiple is what you get by multiplying by whole numbers. The multiples of 4 are 4, 8, 12, 16, and so on."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "Prime numbers",
+      "body": "A prime has exactly two factors: 1 and itself. The first primes are 2, 3, 5, 7, 11, 13, 17, 19, 23, 29. The number 1 is not prime, and 2 is the only even prime. A number with more factors is called composite."
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Prime factorization of 60",
+      "body": "Break the number into primes by dividing again and again.",
+      "steps": [
+        "$60=2\\times 30$.",
+        "$30=2\\times 15$, and $15=3\\times 5$.",
+        "So $60=2\\times 2\\times 3\\times 5=2^2\\times 3\\times 5$."
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "text",
+      "title": "Greatest common factor",
+      "body": "The GCF of two numbers is the largest number that divides both. Factors of 12: 1, 2, 3, 4, 6, 12. Factors of 18: 1, 2, 3, 6, 9, 18. Shared: 1, 2, 3, 6. So the GCF of 12 and 18 is 6."
+    },
+    {
+      "id": "p5",
+      "kind": "text",
+      "title": "Least common multiple",
+      "body": "The LCM is the smallest number that is a multiple of both. Multiples of 4: 4, 8, 12, 16. Multiples of 6: 6, 12, 18. The first one in both lists is 12, so the LCM of 4 and 6 is 12. You will use it to add fractions."
+    },
+    {
+      "id": "p6",
+      "kind": "tip",
+      "body": "List the factors in pairs to be sure you miss none: for 12 try $1\\times 12$, $2\\times 6$, $3\\times 4$."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which number is prime?",
+      "choices": [
+        "$13$",
+        "$15$",
+        "$21$"
+      ],
+      "answerIndex": 0,
+      "explanation": "13 has only the factors 1 and 13. 15 is $3\\times 5$ and 21 is $3\\times 7$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "What is the GCF of 12 and 18?",
+      "accepted": [
+        "6"
+      ],
+      "keypad": "numeric",
+      "explanation": "The shared factors are 1, 2, 3 and 6. The greatest is 6."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "The LCM of 4 and 6 is \\_\\_.",
+      "choices": [
+        "$24$",
+        "$12$",
+        "$2$"
+      ],
+      "answerIndex": 1,
+      "explanation": "12 is the smallest number in both lists of multiples. 24 is a common multiple but not the least."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Which is the prime factorization of 60?",
+      "choices": [
+        "$2\\times 3\\times 10$",
+        "$4\\times 15$",
+        "$2^2\\times 3\\times 5$"
+      ],
+      "answerIndex": 2,
+      "explanation": "A prime factorization uses only primes. $2^2\\times 3\\times 5=60$. 10 and 4 are not prime."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "What is the GCF of 24 and 36?",
+      "accepted": [
+        "12"
+      ],
+      "keypad": "numeric",
+      "explanation": "24 and 36 are both divisible by 12, and no larger number divides both."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "What is the LCM of 6 and 8?",
+      "accepted": [
+        "24"
+      ],
+      "keypad": "numeric",
+      "explanation": "Multiples of 6: 6, 12, 18, 24. Multiples of 8: 8, 16, 24. The first shared multiple is 24."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each number with a fact about it.",
+      "pairs": [
+        [
+          "1",
+          "not prime"
+        ],
+        [
+          "2",
+          "the only even prime"
+        ],
+        [
+          "9",
+          "composite"
+        ]
+      ],
+      "explanation": "1 has just one factor. 2 is prime and even. 9 has the factor 3 as well as 1 and 9."
+    }
+  ]
+}

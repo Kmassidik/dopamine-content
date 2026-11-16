@@ -1,0 +1,140 @@
+{
+  "id": "pa-fractions-06",
+  "version": 1,
+  "title": "Percent applications",
+  "xp": 10,
+  "tags": [
+    "percents",
+    "money"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Percents in daily life",
+      "body": "Sales, tax and tips all use percents. The method is always the same: find the percent of the amount, then add it or take it away. We write money in dollars to keep the numbers simple."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "A 20% discount on 45 dollars",
+      "body": "The discount is 20% of the price.",
+      "steps": [
+        "Discount: $0.20\\times 45=9$ dollars.",
+        "Subtract: $45-9=36$ dollars.",
+        "The sale price is 36 dollars."
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "A shortcut for sales",
+      "body": "You can do it in one step. Paying 80% of the price after a 20% discount means $0.80\\times 45=36$. In general, after a discount of $d\\%$ you pay $(100-d)\\%$ of the price."
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Add 8% tax to 50 dollars",
+      "body": "Tax is an extra percent added on top.",
+      "steps": [
+        "Tax: $0.08\\times 50=4$ dollars.",
+        "Add: $50+4=54$ dollars.",
+        "Or in one step: $1.08\\times 50=54$."
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "text",
+      "title": "Tips",
+      "body": "A tip is a percent of the bill. A 15% tip on a 40 dollar meal is $0.15\\times 40=6$ dollars. A quick way is to take 10% (4 dollars), then add half of that (2 dollars): 6 dollars again."
+    },
+    {
+      "id": "p6",
+      "kind": "tip",
+      "body": "Discount means pay less, tax and tip mean pay more. Decide which way you are going before you calculate."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "A 60 dollar jacket is 25% off. What is the sale price?",
+      "choices": [
+        "45 dollars",
+        "15 dollars",
+        "75 dollars"
+      ],
+      "answerIndex": 0,
+      "explanation": "25% of 60 is 15, and $60-15=45$. The 15 dollars is the discount, not the price."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "What is the tax on 50 dollars at 8%? Give the number of dollars.",
+      "accepted": [
+        "4",
+        "4.0",
+        "4.00"
+      ],
+      "keypad": "numeric",
+      "explanation": "$0.08\\times 50=4$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "A 40 dollar meal gets a 15% tip. What is the total paid?",
+      "choices": [
+        "6 dollars",
+        "55 dollars",
+        "46 dollars"
+      ],
+      "answerIndex": 2,
+      "explanation": "The tip is $0.15\\times 40=6$. The total is $40+6=46$."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "After a 20% discount you pay \\_\\_% of the price.",
+      "choices": [
+        "$20$",
+        "$120$",
+        "$80$"
+      ],
+      "answerIndex": 2,
+      "explanation": "You lose 20 out of every 100, so you pay the other 80."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "An 80 dollar item is 20% off. What is the sale price in dollars?",
+      "accepted": [
+        "64"
+      ],
+      "keypad": "numeric",
+      "explanation": "$0.8\\times 80=64$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which is the final price of a 100 dollar item with 10% tax?",
+      "choices": [
+        "110 dollars",
+        "10 dollars",
+        "90 dollars"
+      ],
+      "answerIndex": 0,
+      "explanation": "Tax is added. $100+10=110$."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "A 45 dollar item is 20% off. Put the steps in order.",
+      "steps": [
+        "Change 20% to the decimal 0.20",
+        "Multiply $0.20\\times 45=9$ for the discount",
+        "Subtract $45-9=36$ for the price"
+      ],
+      "explanation": "Find the discount first, then subtract it from the original price."
+    }
+  ]
+}

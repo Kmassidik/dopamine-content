@@ -1,0 +1,139 @@
+{
+  "id": "pa-fractions-02",
+  "version": 1,
+  "title": "Adding and subtracting fractions",
+  "xp": 10,
+  "tags": [
+    "fractions",
+    "addition"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Same denominator",
+      "body": "When the denominators match, add or subtract only the numerators. $\\frac{2}{5}+\\frac{1}{5}=\\frac{3}{5}$. The denominator stays, because the parts are still fifths. Simplify if you can."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "Different denominators",
+      "body": "You cannot add pieces of different sizes. First rewrite both fractions with a common denominator. Use the LCM of the denominators, so the numbers stay small. Then add the numerators."
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Work out $\\frac{1}{4}+\\frac{1}{6}$",
+      "body": "The LCM of 4 and 6 is 12.",
+      "steps": [
+        "$\\frac{1}{4}=\\frac{3}{12}$ and $\\frac{1}{6}=\\frac{2}{12}$.",
+        "Add the numerators: $\\frac{3}{12}+\\frac{2}{12}=\\frac{5}{12}$.",
+        "$\\frac{5}{12}$ cannot be simplified."
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Work out $\\frac{3}{4}-\\frac{1}{3}$",
+      "body": "Subtracting works the same way. The LCM of 4 and 3 is 12.",
+      "steps": [
+        "$\\frac{3}{4}=\\frac{9}{12}$ and $\\frac{1}{3}=\\frac{4}{12}$.",
+        "Subtract the numerators: $\\frac{9}{12}-\\frac{4}{12}=\\frac{5}{12}$."
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "text",
+      "title": "Answers bigger than one",
+      "body": "$\\frac{1}{2}+\\frac{2}{3}=\\frac{3}{6}+\\frac{4}{6}=\\frac{7}{6}$. That is more than 1, so you can write it as the mixed number $1\\frac{1}{6}$. Both forms are correct."
+    },
+    {
+      "id": "p6",
+      "kind": "tip",
+      "body": "Never add the denominators. $\\frac{1}{2}+\\frac{1}{2}$ is 1, not $\\frac{2}{4}$."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is $\\frac{2}{5}+\\frac{1}{5}$?",
+      "choices": [
+        "$\\frac{3}{10}$",
+        "$\\frac{2}{5}$",
+        "$\\frac{3}{5}$"
+      ],
+      "answerIndex": 2,
+      "explanation": "The denominators match, so add only the numerators: $\\frac{3}{5}$."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What is $\\frac{1}{4}+\\frac{1}{6}$?",
+      "choices": [
+        "$\\frac{2}{10}$",
+        "$\\frac{1}{5}$",
+        "$\\frac{5}{12}$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Use the denominator 12: $\\frac{3}{12}+\\frac{2}{12}=\\frac{5}{12}$."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "To add fractions with different denominators, first find a \\_\\_ denominator.",
+      "choices": [
+        "common",
+        "smaller",
+        "larger"
+      ],
+      "answerIndex": 0,
+      "explanation": "A common denominator lets you add parts of the same size. The LCM is the neatest choice."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What is $\\frac{3}{4}-\\frac{1}{3}$?",
+      "choices": [
+        "$\\frac{2}{1}$",
+        "$\\frac{5}{12}$",
+        "$\\frac{2}{12}$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$\\frac{9}{12}-\\frac{4}{12}=\\frac{5}{12}$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What is $\\frac{1}{2}+\\frac{2}{3}$?",
+      "choices": [
+        "$\\frac{7}{6}$",
+        "$\\frac{3}{5}$",
+        "$\\frac{3}{6}$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$\\frac{3}{6}+\\frac{4}{6}=\\frac{7}{6}$, which equals $1\\frac{1}{6}$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "$\\frac{7}{8}-\\frac{3}{8}=\\frac{1}{\\ ?\\ }$. What is the missing number?",
+      "accepted": [
+        "2"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac{7}{8}-\\frac{3}{8}=\\frac{4}{8}=\\frac{1}{2}$."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Work out $\\frac{1}{3}+\\frac{1}{4}$. Put the steps in order.",
+      "steps": [
+        "Find the common denominator, 12",
+        "Rewrite as $\\frac{4}{12}+\\frac{3}{12}$",
+        "Add the numerators to get $\\frac{7}{12}$"
+      ],
+      "explanation": "Common denominator first, then add the tops."
+    }
+  ]
+}

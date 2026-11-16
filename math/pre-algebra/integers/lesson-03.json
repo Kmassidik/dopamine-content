@@ -1,0 +1,135 @@
+{
+  "id": "pa-integers-03",
+  "version": 1,
+  "title": "Multiplying and dividing integers",
+  "xp": 10,
+  "tags": [
+    "integers",
+    "multiplication"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Signs in a product",
+      "body": "Multiplying integers uses two simple rules. Same signs give a positive answer. Different signs give a negative answer. Then multiply the sizes as usual."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "Why it works",
+      "body": "$3\\times(-2)$ means 3 groups of $-2$, which is $-6$. Going the other way, $(-3)\\times(-2)$ is the opposite of $3\\times(-2)$. The opposite of $-6$ is $6$. Two negatives cancel out to a positive."
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Division follows the same rules",
+      "body": "Division undoes multiplication, so it has the same sign rules. $-36\\div 9=-4$ because $-4\\times 9=-36$. And $-20\\div(-5)=4$ because $4\\times(-5)=-20$."
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Work out $(-2)\\times(-3)\\times(-4)$",
+      "body": "Multiply two numbers at a time and watch the sign.",
+      "steps": [
+        "$(-2)\\times(-3)=6$ (same signs).",
+        "$6\\times(-4)=-24$ (different signs).",
+        "The answer is $-24$."
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "tip",
+      "body": "Count the negative signs in a product. An even count gives a positive answer, an odd count gives a negative one."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is $-4\\times 6$?",
+      "choices": [
+        "$24$",
+        "$-24$",
+        "$-10$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Different signs, so the answer is negative: $4\\times 6=24$, giving $-24$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "What is $(-7)\\times(-3)$?",
+      "accepted": [
+        "21"
+      ],
+      "keypad": "numeric",
+      "explanation": "Same signs give a positive answer: $7\\times 3=21$."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "$-36\\div 9=\\_\\_$",
+      "choices": [
+        "$-4$",
+        "$4$",
+        "$-27$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Different signs give a negative answer, and $36\\div 9=4$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "What is $-20\\div(-5)$?",
+      "accepted": [
+        "4"
+      ],
+      "keypad": "numeric",
+      "explanation": "Same signs give a positive answer: $20\\div 5=4$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What is $9\\times(-8)$?",
+      "choices": [
+        "$72$",
+        "$-72$",
+        "$1$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Different signs: $9\\times 8=72$, so the answer is $-72$."
+    },
+    {
+      "id": "q6",
+      "type": "match_pairs",
+      "prompt": "Match each product with its value.",
+      "pairs": [
+        [
+          "$(-3)\\times(-5)$",
+          "15"
+        ],
+        [
+          "$(-3)\\times 5$",
+          "-15"
+        ],
+        [
+          "$(-2)\\times(-2)\\times(-2)$",
+          "-8"
+        ]
+      ],
+      "explanation": "Same signs give a positive result. Different signs give a negative one. Three negative factors give a negative result."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Work out $(-5)\\times 4\\div(-2)$. Put the steps in order.",
+      "steps": [
+        "Multiply $(-5)\\times 4=-20$",
+        "Divide $-20\\div(-2)$",
+        "The answer is 10"
+      ],
+      "explanation": "Work left to right. $-20$ divided by $-2$ has the same signs, so the result is positive: 10."
+    }
+  ]
+}

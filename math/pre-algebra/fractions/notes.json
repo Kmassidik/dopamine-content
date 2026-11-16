@@ -1,0 +1,59 @@
+{
+  "id": "pa-fractions-notes",
+  "version": 1,
+  "title": "Fractions, decimals and percents: cheat sheet",
+  "blocks": [
+    {
+      "id": "b1",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Fractions, decimals and percents are three ways to write the same amount. $\\frac{1}{4}=0.25=25\\%$. Pick whichever form makes the job easiest."
+    },
+    {
+      "id": "b2",
+      "kind": "list",
+      "title": "Common equivalents",
+      "items": [
+        "$\\frac{1}{2}=0.5=50\\%$",
+        "$\\frac{1}{4}=0.25=25\\%$",
+        "$\\frac{3}{4}=0.75=75\\%$",
+        "$\\frac{1}{5}=0.2=20\\%$",
+        "$\\frac{1}{10}=0.1=10\\%$"
+      ]
+    },
+    {
+      "id": "b3",
+      "kind": "formula",
+      "title": "Add fractions",
+      "body": "$\\frac{a}{b}+\\frac{c}{d}=\\frac{ad+cb}{bd}$ (use the LCM to keep numbers small)"
+    },
+    {
+      "id": "b4",
+      "kind": "formula",
+      "title": "Multiply fractions",
+      "body": "$\\frac{a}{b}\\times\\frac{c}{d}=\\frac{ac}{bd}$"
+    },
+    {
+      "id": "b5",
+      "kind": "formula",
+      "title": "Divide fractions",
+      "body": "$\\frac{a}{b}\\div\\frac{c}{d}=\\frac{a}{b}\\times\\frac{d}{c}$"
+    },
+    {
+      "id": "b6",
+      "kind": "list",
+      "title": "Rounding and percents",
+      "items": [
+        "5 or more rounds up, 4 or less stays",
+        "Percent to decimal: divide by 100",
+        "Percent of a number: decimal times number",
+        "Discount: pay $(100-d)\\%$ of the price"
+      ]
+    },
+    {
+      "id": "b7",
+      "kind": "tip",
+      "body": "For 10% of a number, move the decimal point one place left. Build other percents from it."
+    }
+  ]
+}
