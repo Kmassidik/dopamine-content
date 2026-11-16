@@ -1,0 +1,53 @@
+{
+  "id": "a1-systems-notes",
+  "version": 1,
+  "title": "Inequalities and systems: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Inequalities have a range of answers. Systems ask for values that make several equations true at the same time."
+    },
+    {
+      "id": "flip",
+      "kind": "tip",
+      "body": "Multiply or divide by a negative number and the inequality sign flips."
+    },
+    {
+      "id": "abs",
+      "kind": "list",
+      "title": "Absolute value",
+      "items": [
+        "$|x|=a$ means $x=a$ or $x=-a$",
+        "$|x|< a$ means $-a< x< a$",
+        "$|x|>a$ means $x<-a$ or $x>a$"
+      ]
+    },
+    {
+      "id": "outcomes",
+      "kind": "list",
+      "title": "Possible results of a system",
+      "items": [
+        "Crossing lines: one solution",
+        "Parallel lines: no solution",
+        "Same line: infinitely many solutions"
+      ]
+    },
+    {
+      "id": "methods",
+      "kind": "list",
+      "title": "Three methods",
+      "items": [
+        "Graphing: find where the lines cross",
+        "Substitution: replace one letter by an expression",
+        "Elimination: add equations so a letter cancels"
+      ]
+    },
+    {
+      "id": "check",
+      "kind": "tip",
+      "body": "Always check your answer in both original equations."
+    }
+  ]
+}
