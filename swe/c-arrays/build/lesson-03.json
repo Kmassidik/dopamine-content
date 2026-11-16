@@ -1,0 +1,143 @@
+{
+  "id": "ca-build-03",
+  "version": 1,
+  "minApp": 2,
+  "title": "Assembling and linking",
+  "xp": 15,
+  "tags": [
+    "c",
+    "build"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Machine code, then one program",
+      "body": "The assembler turns assembly into machine code and saves it in an object file, ending in `.o`. An object file is not runnable yet. The linker then joins object files and library code into one program."
+    },
+    {
+      "id": "flag-c",
+      "kind": "code",
+      "title": "Stop before linking",
+      "body": "The `-c` flag compiles and assembles, then stops. You get `prog.o` and no program.",
+      "code": "cc -c prog.c",
+      "language": "sh"
+    },
+    {
+      "id": "libs",
+      "kind": "text",
+      "title": "Where printf lives",
+      "body": "You never wrote `printf`. Its machine code sits in the C library. Your object file only says it needs `printf`, and the linker finds it and fills in the address."
+    },
+    {
+      "id": "undefined",
+      "kind": "code",
+      "title": "A link error",
+      "body": "`greet` is declared but never defined. This compiles, then the link fails with a message about an undefined symbol and the name `greet`.",
+      "code": "#include <stdio.h>\n\nvoid greet(void);\n\nint main(void) {\n    greet();\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "which",
+      "kind": "example",
+      "title": "Compile error or link error?",
+      "body": "Match the message to the stage.",
+      "steps": [
+        "`expected ';'` with a line number: the compiler",
+        "`undefined symbol` and a name, no line number: the linker",
+        "The linker works on whole files, so it has no line to point to",
+        "For a link error, check spelling and that every file is on the command line"
+      ]
+    },
+    {
+      "id": "count",
+      "kind": "tip",
+      "body": "Compile errors give a line. Link errors give a name that has no definition."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "order_steps",
+      "prompt": "Put these in order.",
+      "steps": [
+        "Write prog.c",
+        "Compile and assemble to prog.o",
+        "Link into a program",
+        "Run the program"
+      ],
+      "explanation": "The source becomes an object file, the linker makes the program, and only then can it run."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What is a `.o` file?",
+      "choices": [
+        "A text copy of your source",
+        "A finished program",
+        "Machine code that is not yet linked"
+      ],
+      "answerIndex": 2,
+      "explanation": "An object file holds machine code with gaps the linker fills in."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Which flag compiles and assembles but does not link? Type it.",
+      "accepted": [
+        "-c",
+        "`-c`"
+      ],
+      "keypad": "full",
+      "explanation": "`-c` stops before linking and writes `prog.o`."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "The message says `undefined symbol: greet`. Which stage reported it?",
+      "choices": [
+        "The linker",
+        "The preprocessor",
+        "The compiler"
+      ],
+      "answerIndex": 0,
+      "explanation": "The compiler was happy with a declaration. The linker found no definition."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Where does the machine code of `printf` come from?",
+      "choices": [
+        "Your own `.c` file",
+        "The C library, added by the linker",
+        "The preprocessor"
+      ],
+      "answerIndex": 1,
+      "explanation": "The linker joins your object files with library code."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "The \\_\\_ joins object files into one program.",
+      "choices": [
+        "`compiler`",
+        "`preprocessor`",
+        "`linker`"
+      ],
+      "answerIndex": 2,
+      "explanation": "Joining and filling in addresses is the linker's job."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "A link error has no line number. Why?",
+      "choices": [
+        "The linker works on whole files",
+        "It is a mistake in the tool",
+        "The error is in a header"
+      ],
+      "answerIndex": 0,
+      "explanation": "By then the program text is gone, only names and machine code remain."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "ca-debug-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Debugging: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Debugging is a method, not luck. Work out the kind of bug, make it happen every time, narrow down where it starts, change one thing and test again. The compiler, prints, a debugger and asserts are your tools."
+    },
+    {
+      "id": "kinds",
+      "kind": "list",
+      "title": "Kinds of bugs",
+      "items": [
+        "Syntax: compiler stops, message with line",
+        "Link: `undefined symbol` and a name",
+        "Runtime: crash while running",
+        "Logic: runs, wrong answer, no message"
+      ]
+    },
+    {
+      "id": "flags",
+      "kind": "list",
+      "title": "Flags to remember",
+      "items": [
+        "`-Wall -Wextra` more warnings",
+        "`-Werror` warnings become errors",
+        "`-g` debug information",
+        "`-DNDEBUG` removes asserts"
+      ]
+    },
+    {
+      "id": "gdb",
+      "kind": "list",
+      "title": "Debugger commands",
+      "items": [
+        "`break main` or `b main`: pause at main",
+        "`run`: start the program",
+        "`next` or `n`: one line, skip calls",
+        "`step` or `s`: one line, enter calls",
+        "`print x` or `p x`: show a value",
+        "`continue` or `c`: run on, `quit` or `q`: leave"
+      ]
+    },
+    {
+      "id": "assert",
+      "kind": "code",
+      "title": "An assertion",
+      "code": "#include <assert.h>\n\nassert(twice(2) == 4);",
+      "language": "c"
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Fix the first error first, and print with labels like `i=%d`."
+    }
+  ]
+}

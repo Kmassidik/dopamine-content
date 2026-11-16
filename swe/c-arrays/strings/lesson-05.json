@@ -1,0 +1,163 @@
+{
+  "id": "ca-strings-05",
+  "version": 1,
+  "minApp": 2,
+  "title": "Reading input with fgets",
+  "xp": 15,
+  "tags": [
+    "c",
+    "strings",
+    "input"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Reading a line safely",
+      "body": "To read a line of text, use `fgets(buffer, size, stdin)`. It reads at most `size - 1` characters, always adds the terminator, and so never writes past the end of your buffer. That makes it the safe tool."
+    },
+    {
+      "id": "basic",
+      "kind": "code",
+      "title": "Read one line",
+      "body": "`sizeof line` is the buffer size, 20. The input `hi` plus Enter is read as `hi` and the newline. The output shows the newline inside the brackets.",
+      "code": "char line[20];\nif (fgets(line, sizeof line, stdin)) {\n    printf(\"[%s]\\n\", line);\n}",
+      "language": "c"
+    },
+    {
+      "id": "newline",
+      "kind": "text",
+      "title": "fgets keeps the newline",
+      "body": "The Enter key is part of the line, so the string ends with `'\\n'`. If the line is too long for the buffer, only the first part is read and the rest waits for the next call."
+    },
+    {
+      "id": "strip",
+      "kind": "code",
+      "title": "Remove the newline",
+      "body": "`strcspn(line, \"\\n\")` returns the index of the first newline, or the length if there is none. Setting that slot to the terminator cuts it off. It prints `[hi]`.",
+      "code": "char line[20];\nif (fgets(line, sizeof line, stdin)) {\n    line[strcspn(line, \"\\n\")] = '\\0';\n    printf(\"[%s]\\n\", line);\n}",
+      "language": "c"
+    },
+    {
+      "id": "loop",
+      "kind": "code",
+      "title": "Read until the end",
+      "body": "`fgets` returns `NULL` at the end of input, so a `while` loop reads every line. With two lines of input it prints 2.",
+      "code": "char buf[20];\nint n = 0;\nwhile (fgets(buf, sizeof buf, stdin)) {\n    n++;\n}\nprintf(\"%d\\n\", n);",
+      "language": "c"
+    },
+    {
+      "id": "trace",
+      "kind": "example",
+      "title": "Trace a read",
+      "body": "Buffer `char b[4]`, input `hello`.",
+      "steps": [
+        "`fgets` can store at most 3 characters",
+        "It stores `hel`",
+        "It adds the terminator in slot 3",
+        "`lo` and the newline wait for the next call"
+      ]
+    },
+    {
+      "id": "avoid",
+      "kind": "tip",
+      "body": "Avoid `gets`, it cannot limit the length and was removed in C11. `scanf(\"%s\")` has no limit either, unless you give one."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What does `fgets(line, sizeof line, stdin)` do?",
+      "choices": [
+        "Reads one word",
+        "Reads a number",
+        "Reads one line, at most the buffer size"
+      ],
+      "answerIndex": 2,
+      "explanation": "It stops at a newline or when the buffer is nearly full."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "`char line[20];` With `fgets(line, sizeof line, stdin)`, how many characters can it read at most? Type the number.",
+      "accepted": [
+        "19"
+      ],
+      "keypad": "numeric",
+      "explanation": "One slot is kept for the terminator."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "What does `fgets` return at the end of the input?",
+      "choices": [
+        "`NULL`",
+        "0 characters read",
+        "The last line"
+      ],
+      "answerIndex": 0,
+      "explanation": "That lets a `while` loop stop."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "`fgets` keeps the \\_\\_ at the end of the line.",
+      "choices": [
+        "`space`",
+        "`newline`",
+        "`terminator`"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Enter key becomes `'\\n'` in the string."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What removes the newline from `line`?",
+      "choices": [
+        "`line[0] = '\\0';`",
+        "`strlen(line) = 0;`",
+        "`line[strcspn(line, \"\\n\")] = '\\0';`"
+      ],
+      "answerIndex": 2,
+      "explanation": "`strcspn` finds where the newline sits, and a terminator cuts the string there."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Why is `gets` unsafe?",
+      "choices": [
+        "It cannot limit how much it writes",
+        "It is too slow",
+        "It needs `math.h`"
+      ],
+      "answerIndex": 0,
+      "explanation": "A long line overruns the buffer. It was removed in C11."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "The input is `hello`, the buffer is `char b[4]`. What does the first `fgets` store?",
+      "choices": [
+        "`hello`",
+        "`hel`",
+        "`hell`"
+      ],
+      "answerIndex": 1,
+      "explanation": "At most 3 characters, plus the terminator."
+    },
+    {
+      "id": "q8",
+      "type": "order_steps",
+      "prompt": "Put the safe input steps in order.",
+      "steps": [
+        "Declare a buffer",
+        "Call fgets with its size",
+        "Check it did not return NULL",
+        "Strip the newline and use the text"
+      ],
+      "explanation": "Check the result before using the buffer."
+    }
+  ]
+}

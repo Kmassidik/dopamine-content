@@ -1,0 +1,152 @@
+{
+  "id": "ca-debug-01",
+  "version": 1,
+  "minApp": 2,
+  "title": "Kinds of bugs",
+  "xp": 15,
+  "tags": [
+    "c",
+    "debugging"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "What a bug is",
+      "body": "A bug is a gap between what you meant and what the program does. Some bugs stop the build, some crash the program, and some run happily and give the wrong answer. Naming the kind tells you where to start looking."
+    },
+    {
+      "id": "kinds",
+      "kind": "text",
+      "title": "Four kinds",
+      "body": "A syntax error breaks the grammar and the compiler stops. A link error means a name has no definition. A runtime error crashes while the program runs. A logic error runs to the end but gives wrong results."
+    },
+    {
+      "id": "logic",
+      "kind": "code",
+      "title": "A logic bug",
+      "body": "We meant to add 1 to 4, which is 10. It compiles without a warning and prints 6, because `i < 4` stops before 4.",
+      "code": "#include <stdio.h>\n\nint main(void) {\n    int sum = 0;\n    for (int i = 1; i < 4; i++) {\n        sum += i;\n    }\n    printf(\"%d\\n\", sum);\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "hard",
+      "kind": "text",
+      "title": "Why logic bugs are hard",
+      "body": "No message appears. The computer did exactly what you wrote, and what you wrote was not what you meant. An off-by-one error like this one, a loop that runs one time too many or too few, is among the most common."
+    },
+    {
+      "id": "classify",
+      "kind": "example",
+      "title": "Name the bug",
+      "body": "Decide which kind each symptom is.",
+      "steps": [
+        "`expected ';'` at build time: syntax error",
+        "`undefined symbol` at link time: link error",
+        "`Segmentation fault` while running: runtime error",
+        "Prints 6 instead of 10, no message: logic error"
+      ]
+    },
+    {
+      "id": "method",
+      "kind": "tip",
+      "body": "Reproduce the bug, narrow down where it starts, change one thing, test again."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "A program compiles and runs but prints the wrong total. What kind of bug is it?",
+      "choices": [
+        "A logic error",
+        "A syntax error",
+        "A link error"
+      ],
+      "answerIndex": 0,
+      "explanation": "Nothing stopped the build or crashed it, so the grammar is fine. The meaning is wrong."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "The compiler stops with `expected ';'`. What kind of bug is that?",
+      "choices": [
+        "A logic error",
+        "A syntax error",
+        "A runtime error"
+      ],
+      "answerIndex": 1,
+      "explanation": "Grammar mistakes are found before the program exists."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "In the loop `for (int i = 1; i < 4; i++)`, what is the largest value `i` takes? Type the number.",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "The loop stops as soon as `i < 4` is false, so `i` takes 1, 2 and 3 only."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "A loop that runs one time too many or too few has an \\_\\_ error.",
+      "choices": [
+        "`link`",
+        "`syntax`",
+        "`off-by-one`"
+      ],
+      "answerIndex": 2,
+      "explanation": "Off-by-one errors are very common, usually from `<` versus `<=`."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which bug is the hardest to spot?",
+      "choices": [
+        "A logic error that gives no message",
+        "A missing semicolon",
+        "An undefined symbol"
+      ],
+      "answerIndex": 0,
+      "explanation": "The other two come with a message. A logic error is silent."
+    },
+    {
+      "id": "q6",
+      "type": "match_pairs",
+      "prompt": "Match each symptom to the kind of bug.",
+      "pairs": [
+        [
+          "`expected ';'`",
+          "Syntax error"
+        ],
+        [
+          "`undefined symbol`",
+          "Link error"
+        ],
+        [
+          "Crash with `Segmentation fault`",
+          "Runtime error"
+        ],
+        [
+          "Wrong total, no message",
+          "Logic error"
+        ]
+      ],
+      "explanation": "The symptom and the stage where it appears point to the kind."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Put a sensible debugging routine in order.",
+      "steps": [
+        "Reproduce the bug",
+        "Narrow down where it starts",
+        "Change one thing",
+        "Test again"
+      ],
+      "explanation": "Changing one thing at a time tells you which change mattered."
+    }
+  ]
+}

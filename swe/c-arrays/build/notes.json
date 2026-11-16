@@ -1,0 +1,60 @@
+{
+  "id": "ca-build-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "How C becomes a program: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Building a C program is four stages: preprocess, compile, assemble, link. Each stage has its own job and its own kind of error. Knowing which stage failed tells you where to look."
+    },
+    {
+      "id": "stages",
+      "kind": "list",
+      "title": "The four stages",
+      "items": [
+        "Preprocess: `#include` and `#define` become plain text",
+        "Compile: C becomes assembly, grammar and types are checked",
+        "Assemble: assembly becomes machine code in a `.o` file",
+        "Link: object files and libraries become one program"
+      ]
+    },
+    {
+      "id": "flags",
+      "kind": "list",
+      "title": "Useful flags",
+      "items": [
+        "`-E` stop after preprocessing",
+        "`-S` stop after compiling",
+        "`-c` stop before linking",
+        "`-o name` name the output",
+        "`-Wall -Wextra` more warnings",
+        "`-std=c11` language version"
+      ]
+    },
+    {
+      "id": "errors",
+      "kind": "list",
+      "title": "Which stage complained",
+      "items": [
+        "`expected ';'` with a line: compiler",
+        "`undefined symbol` with a name: linker",
+        "Weird macro results: preprocessor"
+      ]
+    },
+    {
+      "id": "header",
+      "kind": "code",
+      "title": "A header with a guard",
+      "code": "#ifndef TWICE_H\n#define TWICE_H\n\nint twice(int n);\n\n#endif",
+      "language": "c"
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Fix the first error first, and wrap macro parameters in parentheses."
+    }
+  ]
+}

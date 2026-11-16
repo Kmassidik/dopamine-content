@@ -1,0 +1,165 @@
+{
+  "id": "ca-arrays-04",
+  "version": 1,
+  "minApp": 2,
+  "title": "Two-dimensional arrays",
+  "xp": 15,
+  "tags": [
+    "c",
+    "arrays"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Rows and columns",
+      "body": "A two-dimensional array is a grid. `int g[2][3];` has 2 rows and 3 columns. You pick an element with two indexes, `g[row][col]`, and both start at 0."
+    },
+    {
+      "id": "init",
+      "kind": "code",
+      "title": "Fill a grid",
+      "body": "Braces inside braces give one row each. Here `g[1][2]` is the last element, 6, and `g[0][1]` is 2.",
+      "code": "int g[2][3] = {{1, 2, 3}, {4, 5, 6}};\nprintf(\"%d %d\\n\", g[1][2], g[0][1]);",
+      "language": "c"
+    },
+    {
+      "id": "loop",
+      "kind": "code",
+      "title": "Two loops",
+      "body": "The outer loop picks the row, the inner loop walks along it. It prints two lines, each with three numbers.",
+      "code": "int g[2][3] = {{1, 2, 3}, {4, 5, 6}};\nfor (int r = 0; r < 2; r++) {\n    for (int c = 0; c < 3; c++) {\n        printf(\"%d \", g[r][c]);\n    }\n    printf(\"\\n\");\n}",
+      "language": "c"
+    },
+    {
+      "id": "memory",
+      "kind": "text",
+      "title": "Stored row by row",
+      "body": "In memory the rows sit one after another: 1 2 3 4 5 6. So `g[1][0]` comes right after `g[0][2]`. Because of this, a function must be told the number of columns."
+    },
+    {
+      "id": "func",
+      "kind": "text",
+      "title": "Passing a grid",
+      "body": "Write `void show(int g[][3], int rows)`. The column count must be given, the row count may be left out. The function needs the width to know where each row starts."
+    },
+    {
+      "id": "board",
+      "kind": "example",
+      "title": "A tic-tac-toe board",
+      "body": "Use `char b[3][3]` with the rows X O X, blank X O, and O blank X.",
+      "steps": [
+        "`b[1][1]` is the middle square: `X`",
+        "The diagonal squares are `b[0][0]`, `b[1][1]`, `b[2][2]`",
+        "In a loop that is `b[i][i]` for `i` from 0 to 2",
+        "All three are `X`, so X wins on the diagonal"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "In `int g[2][3];`, how many elements are there?",
+      "choices": [
+        "5",
+        "6",
+        "2"
+      ],
+      "answerIndex": 1,
+      "explanation": "2 rows times 3 columns is 6 elements."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "In `g[r][c]`, what does `r` stand for?",
+      "choices": [
+        "The column index",
+        "The value",
+        "The row index"
+      ],
+      "answerIndex": 2,
+      "explanation": "The first index picks the row, the second the column."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "In `{{1, 2, 3}, {4, 5, 6}}`, what is `g[1][0]`? Type the number.",
+      "accepted": [
+        "4"
+      ],
+      "keypad": "numeric",
+      "explanation": "Row 1 is `{4, 5, 6}` and its first element is 4."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "What is the sum of row 1, `{4, 5, 6}`? Type the number.",
+      "accepted": [
+        "15"
+      ],
+      "keypad": "numeric",
+      "explanation": "4 + 5 + 6 = 15."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "A function that takes `int g[][3]` must be told the number of \\_\\_ in the type.",
+      "choices": [
+        "`columns`",
+        "`rows`",
+        "`bytes`"
+      ],
+      "answerIndex": 0,
+      "explanation": "The width tells the function where each row starts."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "To visit every element, how do you usually loop?",
+      "choices": [
+        "A single loop with no index",
+        "One loop inside another",
+        "Two loops side by side"
+      ],
+      "answerIndex": 1,
+      "explanation": "The outer loop walks rows, the inner loop walks the columns of that row."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each tic-tac-toe expression to its meaning.",
+      "pairs": [
+        [
+          "`b[0][0]`",
+          "Top left"
+        ],
+        [
+          "`b[1][1]`",
+          "Middle"
+        ],
+        [
+          "`b[2][2]`",
+          "Bottom right"
+        ],
+        [
+          "`b[0][2]`",
+          "Top right"
+        ]
+      ],
+      "explanation": "Row first, then column, both from 0."
+    },
+    {
+      "id": "q8",
+      "type": "order_steps",
+      "prompt": "Put the order in which the nested loops print `g[0][0]` to `g[1][2]`.",
+      "steps": [
+        "Row 0, column 0",
+        "Row 0, column 2",
+        "Row 1, column 0",
+        "Row 1, column 2"
+      ],
+      "explanation": "The inner loop finishes a whole row before the outer loop moves on."
+    }
+  ]
+}

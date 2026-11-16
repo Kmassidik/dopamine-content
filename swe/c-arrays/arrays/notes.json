@@ -1,0 +1,61 @@
+{
+  "id": "ca-arrays-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Arrays: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "An array is a row of same-type values under one name, picked by an index that starts at 0. Loops walk it. Functions receive its address and need the length. C never checks the bounds."
+    },
+    {
+      "id": "declare",
+      "kind": "code",
+      "title": "Declare and index",
+      "code": "int a[3] = {90, 75, 60};\na[1] = 80;\nprintf(\"%d\", a[0]);",
+      "language": "c"
+    },
+    {
+      "id": "rules",
+      "kind": "list",
+      "title": "Rules",
+      "items": [
+        "Length n means indexes 0 to n - 1",
+        "Missing initial values become 0",
+        "Length: `sizeof a / sizeof a[0]`",
+        "Loop with `i < n`, not `i <= n`"
+      ]
+    },
+    {
+      "id": "func",
+      "kind": "code",
+      "title": "An array parameter",
+      "code": "int sum(const int a[], int n) {\n    int s = 0;\n    for (int i = 0; i < n; i++) {\n        s += a[i];\n    }\n    return s;\n}",
+      "language": "c"
+    },
+    {
+      "id": "grid",
+      "kind": "code",
+      "title": "A grid",
+      "code": "int g[2][3] = {{1, 2, 3}, {4, 5, 6}};\ng[1][2] = 9;",
+      "language": "c"
+    },
+    {
+      "id": "grid-rules",
+      "kind": "list",
+      "title": "Two dimensions",
+      "items": [
+        "`g[row][col]`, both start at 0",
+        "Rows are stored one after another",
+        "A function needs the column count: `int g[][3]`"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Out of bounds is undefined behavior. Check indexes, and use `-fsanitize=address` to find slips."
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "id": "ca-arrays-01",
+  "version": 1,
+  "minApp": 2,
+  "title": "Declaring and indexing",
+  "xp": 15,
+  "tags": [
+    "c",
+    "arrays"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Many values, one name",
+      "body": "An array holds several values of the same type, one after another in memory. Instead of `score1`, `score2` and `score3` you write one name and pick a position. Arrays make loops over data possible."
+    },
+    {
+      "id": "declare",
+      "kind": "text",
+      "title": "Declaring an array",
+      "body": "`int scores[3];` makes room for three ints. The number in brackets is the length. You can fill it at the same time: `int scores[3] = {90, 75, 60};`. Leave the brackets empty and the compiler counts for you: `int a[] = {4, 8, 15};`."
+    },
+    {
+      "id": "index",
+      "kind": "code",
+      "title": "Indexing starts at 0",
+      "body": "The first element is `scores[0]`, the last is `scores[2]`. An element can be read and also changed with `=`.",
+      "code": "#include <stdio.h>\n\nint main(void) {\n    int scores[3] = {90, 75, 60};\n    printf(\"%d\\n\", scores[0]);\n    scores[1] = 80;\n    printf(\"%d\\n\", scores[1]);\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "zero",
+      "kind": "text",
+      "title": "Why zero",
+      "body": "An index counts how far an element sits from the start. The first one is 0 steps away. So an array of length 3 has indexes 0, 1 and 2, and the last valid index is always length minus 1."
+    },
+    {
+      "id": "partial",
+      "kind": "code",
+      "title": "Fewer values than slots",
+      "body": "With `int a[5] = {1, 2};` the other slots become 0, so printing all five shows 1 2 0 0 0. Without braces a local array holds unpredictable leftovers, so always initialize.",
+      "code": "int a[5] = {1, 2};\nprintf(\"%d\\n\", a[0]);\nprintf(\"%d\\n\", a[4]);",
+      "language": "c"
+    },
+    {
+      "id": "sizeof",
+      "kind": "code",
+      "title": "How long is it",
+      "body": "`sizeof a` is the size in bytes. Dividing by the size of one element gives the length. Here 16 bytes divided by 4 bytes is 4.",
+      "code": "int a[] = {4, 8, 15, 16};\nsize_t n = sizeof a / sizeof a[0];\nprintf(\"%zu %zu\\n\", sizeof a, n);",
+      "language": "c"
+    },
+    {
+      "id": "read",
+      "kind": "example",
+      "title": "Read an index",
+      "body": "Take `int a[] = {4, 8, 15, 16};`.",
+      "steps": [
+        "`a[0]` is 4, the first",
+        "`a[1]` is 8, `a[2]` is 15",
+        "`a[3]` is 16, the last: length 4 minus 1",
+        "`a[4]` does not exist"
+      ]
+    },
+    {
+      "id": "last",
+      "kind": "tip",
+      "body": "For an array of length n, the last element is `a[n - 1]`, not `a[n]`."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is the index of the first element of an array?",
+      "choices": [
+        "0",
+        "1",
+        "-1"
+      ],
+      "answerIndex": 0,
+      "explanation": "Indexes count steps from the start, so the first element is 0 steps away."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "In `int a[10];`, what is the largest valid index? Type the number.",
+      "accepted": [
+        "9"
+      ],
+      "keypad": "numeric",
+      "explanation": "Length 10 means indexes 0 to 9."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "What does `int a[] = {4, 8, 15};` make?",
+      "choices": [
+        "An array of 4 ints",
+        "An array of 3 ints",
+        "An array with no size"
+      ],
+      "answerIndex": 1,
+      "explanation": "The compiler counts the values in the braces."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "After `int a[5] = {1, 2};`, what is `a[4]`? Type the number.",
+      "accepted": [
+        "0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Slots without a value in the braces are set to 0."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "An array of 6 ints holds \\_\\_ bytes, if an int is 4 bytes.",
+      "choices": [
+        "`6`",
+        "`10`",
+        "`24`"
+      ],
+      "answerIndex": 2,
+      "explanation": "6 times 4 is 24, which is `sizeof` of the whole array."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which expression gives the number of elements of `int v[]`?",
+      "choices": [
+        "`sizeof v / sizeof v[0]`",
+        "`sizeof v`",
+        "`sizeof v[0]`"
+      ],
+      "answerIndex": 0,
+      "explanation": "Total bytes divided by the bytes of one element."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "After `int s[3] = {90, 75, 60}; s[1] = 80;`, what is `s[1]`?",
+      "choices": [
+        "75",
+        "80",
+        "90"
+      ],
+      "answerIndex": 1,
+      "explanation": "An assignment replaces the stored value."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each expression to its meaning for `int a[4]`.",
+      "pairs": [
+        [
+          "`a[0]`",
+          "The first element"
+        ],
+        [
+          "`a[3]`",
+          "The last element"
+        ],
+        [
+          "`a[4]`",
+          "One past the end"
+        ],
+        [
+          "`sizeof a`",
+          "16 bytes"
+        ]
+      ],
+      "explanation": "Valid indexes are 0 to 3, and four ints take 16 bytes."
+    }
+  ]
+}
