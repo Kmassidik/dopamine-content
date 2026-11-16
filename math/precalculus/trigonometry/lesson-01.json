@@ -1,0 +1,170 @@
+{
+  "id": "pc-trig-01",
+  "version": 1,
+  "title": "Radians and angle measure",
+  "xp": 15,
+  "tags": [
+    "precalculus",
+    "trigonometry",
+    "radians"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "A new unit for angles",
+      "body": "Degrees split a full turn into 360 parts. Radians use the circle itself: an angle of 1 radian cuts off an arc as long as the radius. A full turn is $2\\pi$ radians, so half a turn is $\\pi$ radians."
+    },
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Converting",
+      "body": "Since $180^\\circ=\\pi$ radians, multiply degrees by $\\frac{\\pi}{180}$ to get radians. Multiply radians by $\\frac{180}{\\pi}$ to get degrees. One radian is about $57.3^\\circ$."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Convert $135^\\circ$ to radians",
+      "body": "Use $\\frac{\\pi}{180}$.",
+      "steps": [
+        "Write $135\\cdot\\frac{\\pi}{180}$",
+        "Simplify $\\frac{135}{180}=\\frac{3}{4}$",
+        "So $135^\\circ=\\frac{3\\pi}{4}$ radians."
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Arc length",
+      "body": "On a circle of radius $r$, an angle $\\theta$ in radians cuts off an arc of length $s=r\\theta$. This only works in radians, which is why they are so useful. A radius 5 circle and $\\theta=2$ give $s=10$."
+    },
+    {
+      "id": "p4",
+      "kind": "tip",
+      "body": "Common angles: $30^\\circ=\\frac{\\pi}{6}$, $45^\\circ=\\frac{\\pi}{4}$, $60^\\circ=\\frac{\\pi}{3}$, $90^\\circ=\\frac{\\pi}{2}$."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "How many radians are in a full turn?",
+      "choices": [
+        "$2\\pi$",
+        "$\\pi$",
+        "$360$",
+        "$\\frac{\\pi}{2}$"
+      ],
+      "answerIndex": 0,
+      "explanation": "A full turn is $360^\\circ$, which equals $2\\pi$ radians."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What is $180^\\circ$ in radians?",
+      "choices": [
+        "$2\\pi$",
+        "$\\pi$",
+        "$\\frac{\\pi}{2}$",
+        "$180$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Half a turn is $\\pi$ radians."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "What is $\\frac{\\pi}{3}$ radians in degrees?",
+      "choices": [
+        "$30^\\circ$",
+        "$90^\\circ$",
+        "$60^\\circ$",
+        "$120^\\circ$"
+      ],
+      "answerIndex": 2,
+      "explanation": "$\\frac{\\pi}{3}\\cdot\\frac{180}{\\pi}=60$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What is $270^\\circ$ in radians?",
+      "choices": [
+        "$\\frac{\\pi}{2}$",
+        "$\\frac{2\\pi}{3}$",
+        "$\\frac{5\\pi}{4}$",
+        "$\\frac{3\\pi}{2}$"
+      ],
+      "answerIndex": 3,
+      "explanation": "$270\\cdot\\frac{\\pi}{180}=\\frac{3\\pi}{2}$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "A circle has radius 5. An angle of 2 radians cuts off an arc of what length?",
+      "accepted": [
+        "10"
+      ],
+      "keypad": "numeric",
+      "explanation": "$s=r\\theta=5\\cdot 2=10$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "What is $5\\pi/6$ radians in degrees? Give the number only.",
+      "accepted": [
+        "150"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac{5\\pi}{6}\\cdot\\frac{180}{\\pi}=150$."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "One radian is about \\_\\_ degrees.",
+      "choices": [
+        "$57.3^\\circ$",
+        "$6.28^\\circ$",
+        "$180^\\circ$",
+        "$3.14^\\circ$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$\\frac{180}{\\pi}\\approx 57.3$."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each angle in degrees to radians.",
+      "pairs": [
+        [
+          "$30^\\circ$",
+          "$\\frac{\\pi}{6}$"
+        ],
+        [
+          "$45^\\circ$",
+          "$\\frac{\\pi}{4}$"
+        ],
+        [
+          "$90^\\circ$",
+          "$\\frac{\\pi}{2}$"
+        ],
+        [
+          "$135^\\circ$",
+          "$\\frac{3\\pi}{4}$"
+        ]
+      ],
+      "explanation": "Multiply degrees by $\\frac{\\pi}{180}$ and simplify."
+    },
+    {
+      "id": "q9",
+      "type": "order_steps",
+      "prompt": "Convert $135^\\circ$ to radians. Put the steps in order.",
+      "steps": [
+        "Multiply by $\\frac{\\pi}{180}$",
+        "Write $\\frac{135\\pi}{180}$",
+        "Reduce the fraction by 45",
+        "Answer $\\frac{3\\pi}{4}$"
+      ],
+      "explanation": "Multiply first, then simplify."
+    }
+  ]
+}
