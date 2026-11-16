@@ -1,0 +1,67 @@
+{
+  "id": "cf-functions-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Functions and problem solving: cheat sheet",
+  "blocks": [
+    {
+      "id": "big",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A function is a named block of code. It takes arguments, may return a value, and keeps its own local variables. Break big problems into small functions, then test each one."
+    },
+    {
+      "id": "def",
+      "kind": "code",
+      "title": "Define and call",
+      "code": "int square(int n)\n{\n    return n * n;\n}\n\nint a = square(5);",
+      "language": "c"
+    },
+    {
+      "id": "proto",
+      "kind": "code",
+      "title": "Prototype",
+      "code": "int square(int n);",
+      "language": "c"
+    },
+    {
+      "id": "terms",
+      "kind": "list",
+      "title": "Terms",
+      "items": [
+        "Parameter: variable in the definition",
+        "Argument: value in the call",
+        "`return` sends a value back",
+        "`void` means no value",
+        "Arguments are copied in"
+      ]
+    },
+    {
+      "id": "const",
+      "kind": "list",
+      "title": "Named values",
+      "items": [
+        "`const int n = 5;` read-only variable",
+        "`#define MAX 100` text replacement",
+        "No `=` or `;` in a `#define`",
+        "Name a number instead of a magic number"
+      ]
+    },
+    {
+      "id": "method",
+      "kind": "list",
+      "title": "Solving a problem",
+      "items": [
+        "State the goal",
+        "List inputs and outputs",
+        "Write the steps in pseudocode",
+        "Code one piece, then test it"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "A variable lives only inside its braces. Test the tricky cases, not just the easy ones."
+    }
+  ]
+}

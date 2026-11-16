@@ -1,0 +1,159 @@
+{
+  "id": "cf-functions-05",
+  "version": 1,
+  "minApp": 2,
+  "title": "Breaking a problem into steps",
+  "xp": 15,
+  "tags": [
+    "c",
+    "problem-solving",
+    "functions"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Big problems, small pieces",
+      "body": "Nobody writes a large program in one go. Programmers break a problem into small steps, solve each step, and then combine them. Functions are the natural way to hold the steps."
+    },
+    {
+      "id": "method",
+      "kind": "text",
+      "title": "A method",
+      "body": "First say the goal in one sentence. Then list the inputs and the output. Then write the steps in plain words, which is pseudocode. Only then write C. After each small piece, run it and check it before moving on."
+    },
+    {
+      "id": "leap",
+      "kind": "text",
+      "title": "An example: leap years",
+      "body": "A year is a leap year if it divides by 400, or if it divides by 4 but not by 100. So 2000 and 2024 are leap years. 1900 is not, and neither is 2023. Our plan: check 400 first, then 100, then 4."
+    },
+    {
+      "id": "code",
+      "kind": "code",
+      "title": "From plan to code",
+      "body": "Each rule from the plan becomes one test. This is the function; `main` calls it.",
+      "code": "int is_leap(int year)\n{\n    if (year % 400 == 0)\n    {\n        return 1;\n    }\n    if (year % 100 == 0)\n    {\n        return 0;\n    }\n    return year % 4 == 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "trace",
+      "kind": "example",
+      "title": "Checking 1900",
+      "body": "Run `is_leap(1900)` by hand.",
+      "steps": [
+        "`1900 % 400` is 300, not 0, so the first test is skipped",
+        "`1900 % 100` is 0, so we return 0 straight away",
+        "1900 is not a leap year, which matches the rules"
+      ]
+    },
+    {
+      "id": "test",
+      "kind": "text",
+      "title": "Test with the edges",
+      "body": "Test normal values and the tricky ones. Here we tried 2000, 1900, 2024 and 2023: the program prints 1 0 1 0. Each result matches what the rules say. The tricky years exercise each branch."
+    },
+    {
+      "id": "order",
+      "kind": "tip",
+      "body": "The order of tests in the plan matters. Checking 4 first would wrongly call 1900 a leap year."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is a good first step when facing a big problem?",
+      "choices": [
+        "Start typing code at once",
+        "Copy a random program",
+        "Break it into smaller steps",
+        "Skip the plan"
+      ],
+      "answerIndex": 2,
+      "explanation": "Small steps can be solved and tested one at a time."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What is pseudocode?",
+      "choices": [
+        "Code that never compiles",
+        "A kind of comment that runs",
+        "A compiler setting",
+        "A plan in plain words"
+      ],
+      "answerIndex": 3,
+      "explanation": "It helps you plan before the syntax gets in the way."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Is 2024 a leap year? Type 1 for yes or 0 for no, as `is_leap` returns.",
+      "accepted": [
+        "1"
+      ],
+      "keypad": "full",
+      "explanation": "2024 divides by 4 and not by 100, so it is a leap year."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "`is_leap(1900)` returns what? Type the number.",
+      "accepted": [
+        "0"
+      ],
+      "keypad": "full",
+      "explanation": "1900 divides by 100 but not by 400, so it is not a leap year."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "`is_leap(2000)` returns what? Type the number.",
+      "accepted": [
+        "1"
+      ],
+      "keypad": "full",
+      "explanation": "2000 divides by 400, so it is a leap year."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Why test with 1900 and 2000 as well as normal years?",
+      "choices": [
+        "They exercise the tricky cases",
+        "They are larger numbers",
+        "They are required by C",
+        "They compile faster"
+      ],
+      "answerIndex": 0,
+      "explanation": "Edge cases reveal mistakes that ordinary values hide."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "Each small job in a program is often placed in its own \\_\\_.",
+      "choices": [
+        "comment",
+        "function",
+        "macro",
+        "loop"
+      ],
+      "answerIndex": 1,
+      "explanation": "Functions give each step a name you can test."
+    },
+    {
+      "id": "q8",
+      "type": "order_steps",
+      "prompt": "Put the problem-solving steps in order.",
+      "steps": [
+        "State the goal in one sentence",
+        "List inputs and outputs",
+        "Write the steps in pseudocode",
+        "Write the C code",
+        "Test with tricky values"
+      ],
+      "explanation": "Plan first, then code, then check."
+    }
+  ]
+}

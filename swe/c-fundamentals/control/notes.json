@@ -1,0 +1,55 @@
+{
+  "id": "cf-control-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Conditions and loops: cheat sheet",
+  "blocks": [
+    {
+      "id": "big",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Conditions let a program choose, and loops let it repeat. Both depend on tests that give 1 (true) or 0 (false). Any value other than 0 counts as true."
+    },
+    {
+      "id": "cond",
+      "kind": "code",
+      "title": "if, else if, else",
+      "code": "if (n > 10) {\n    printf(\"big\\n\");\n} else if (n > 3) {\n    printf(\"mid\\n\");\n} else {\n    printf(\"small\\n\");\n}",
+      "language": "c"
+    },
+    {
+      "id": "ops",
+      "kind": "list",
+      "title": "Operators",
+      "items": [
+        "`== != < > <= >=` compare",
+        "`&&` and, `||` or, `!` not",
+        "`=` stores, `==` compares",
+        "0 is false, anything else is true"
+      ]
+    },
+    {
+      "id": "loops",
+      "kind": "code",
+      "title": "for loop",
+      "code": "for (int i = 0; i < 5; i++) {\n    printf(\"%d\\n\", i);\n}",
+      "language": "c"
+    },
+    {
+      "id": "which",
+      "kind": "list",
+      "title": "Which loop",
+      "items": [
+        "`for`: you know the count",
+        "`while`: repeat until a condition fails",
+        "`do while`: run at least once",
+        "`switch`: pick one of several values"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Check the ends of your range. `i < n` repeats n times from 0. Add `break` to each `case`."
+    }
+  ]
+}
