@@ -1,6 +1,6 @@
 {
   "id": "circuits-02",
-  "version": 2,
+  "version": 3,
   "title": "Parallel circuits",
   "xp": 10,
   "tags": [
@@ -31,7 +31,8 @@
         "Branch currents: $\\frac{12}{6}=2\\ \\text{A}$ and $\\frac{12}{3}=4\\ \\text{A}$",
         "Total: $2+4=6\\ \\text{A}$",
         "Check: $\\frac{12}{2}=6\\ \\text{A}$"
-      ]
+      ],
+      "alt": "A circuit with a 12 volt battery and two branches side by side: a 6 ohm resistor on one branch and a 3 ohm resistor on the other."
     },
     {
       "id": "equal",

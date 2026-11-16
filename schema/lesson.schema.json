@@ -87,6 +87,11 @@
         },
         "image": {
           "$ref": "#/definitions/relativeSvg"
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 200
         }
       },
       "allOf": [
@@ -268,6 +273,18 @@
               }
             }
           }
+        },
+        {
+          "if": {
+            "required": [
+              "image"
+            ]
+          },
+          "then": {
+            "required": [
+              "alt"
+            ]
+          }
         }
       ]
     },
@@ -314,6 +331,11 @@
           "type": "string",
           "minLength": 1,
           "maxLength": 20
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 200
         }
       },
       "allOf": [
@@ -384,6 +406,18 @@
             "required": [
               "title",
               "code"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "image"
+            ]
+          },
+          "then": {
+            "required": [
+              "alt"
             ]
           }
         }

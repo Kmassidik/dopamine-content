@@ -78,6 +78,7 @@ def build() -> dict:
         "requirementsMax": ov["requirements"]["maxItems"],
         "minutesMax": ov["minutes"]["maximum"],
         "codeMax": page["code"]["maxLength"],
+        "altMax": page["alt"]["maxLength"],
         "codeLines": standard.RULES["code_lines"],
         "codeWidth": standard.RULES["code_width"],
     }

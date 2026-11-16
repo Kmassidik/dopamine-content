@@ -1,6 +1,6 @@
 {
   "id": "circuits-01",
-  "version": 2,
+  "version": 3,
   "title": "Series circuits",
   "xp": 10,
   "tags": [
@@ -31,7 +31,8 @@
         "Current: $I=\\frac{9}{300}=0.03\\ \\text{A}$",
         "Drops: $V_1=0.03\\cdot 100=3\\ \\text{V}$ and $V_2=0.03\\cdot 200=6\\ \\text{V}$",
         "Check: $3+6=9\\ \\text{V}$"
-      ]
+      ],
+      "alt": "A circuit with a 9 volt battery, a 100 ohm resistor and a 200 ohm resistor connected one after another in a single loop."
     },
     {
       "id": "same-current",

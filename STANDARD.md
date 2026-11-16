@@ -52,6 +52,7 @@ A learner first **reads** a few short pages, then **practises**. Never questions
 | LESSON-CODE / NOTES-CODE | A `code` page or block has a `code` field (and a title) |
 | CODE-LINES / CODE-WIDTH / CODE-CLEAN | Code is at most 12 lines of at most 40 characters, with no tabs, trailing spaces or blank first/last lines |
 | TEXT-CODE-BALANCE | An even number of backticks |
+| IMAGE-ALT | A question or learn page with an `image` also has `alt`: 10 to 200 characters describing what the picture shows, for screen readers. For a question image, describe the picture without giving away the answer |
 | TEXT-DOLLAR | No `\$` (the app does not support an escaped dollar) |
 | TEXT-LATEX | Only the LaTeX commands the app can draw (list in `tools/standard.py`, `LATEX_OK`) |
 

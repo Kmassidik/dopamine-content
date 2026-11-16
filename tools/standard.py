@@ -81,13 +81,13 @@ def words(s: str) -> int:
 def texts_of(lesson: dict):
     """Every learner-visible string in a lesson, with a label."""
     for pg in lesson.get("learn", []):
-        for k in ("title", "body"):
+        for k in ("title", "body", "alt"):
             if k in pg:
                 yield f"learn/{pg['id']}.{k}", pg[k]
         for i, s in enumerate(pg.get("steps", [])):
             yield f"learn/{pg['id']}.steps[{i}]", s
     for q in lesson.get("questions", []):
-        for k in ("prompt", "explanation"):
+        for k in ("prompt", "explanation", "alt"):
             if k in q:
                 yield f"{q['id']}.{k}", q[k]
         for i, s in enumerate(q.get("choices", [])):
@@ -228,6 +228,11 @@ def check_lesson(rep, label, l):
     lo3, hi3 = RULES["reading_words"]
     if pages and not lo3 <= reading <= hi3:
         rep.fail("LESSON-READING", label, f"reading is {reading} words; keep it between {lo3} and {hi3}")
+    for item in list(pages) + list(l.get("questions", [])):
+        if "image" in item:
+            alt = item.get("alt", "")
+            if not 10 <= len(alt) <= 200:
+                rep.fail("IMAGE-ALT", f"{label} {item['id']}", "an image needs an `alt` description of 10 to 200 characters for screen readers")
     qs = l.get("questions", [])
     needed = 1
     for q in qs:

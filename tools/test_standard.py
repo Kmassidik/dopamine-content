@@ -147,6 +147,14 @@ class StandardTest(unittest.TestCase):
         self.edit_lesson(f)
         self.assertIn("TEXT-CODE-BALANCE", self.rules())
 
+    def test_image_without_alt_fails(self):
+        def f(d):
+            for q in d["questions"]:
+                if "image" in q:
+                    del q["alt"]
+        self.edit_lesson(f)
+        self.assertIn("IMAGE-ALT", self.rules())
+
     def test_course_without_overview_fails(self):
         cat = json.loads((self.tmp / "catalog.json").read_text(encoding="utf-8"))
         del cat["courses"][0]["overview"]

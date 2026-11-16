@@ -1,6 +1,6 @@
 {
   "id": "linear-eq-01",
-  "version": 2,
+  "version": 3,
   "title": "One-step equations",
   "xp": 10,
   "tags": [
@@ -138,7 +138,8 @@
         "C"
       ],
       "answerIndex": 1,
-      "explanation": "Point B sits three steps right of zero."
+      "explanation": "Point B sits three steps right of zero.",
+      "alt": "A number line with tick marks at 0 and 2 and three labelled points, A, B and C."
     }
   ]
 }

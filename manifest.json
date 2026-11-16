@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.11.16+5",
+  "contentVersion": "2026.11.16+6",
   "minAppVersion": 1,
   "categories": [
     {
@@ -49,9 +49,9 @@
               "id": "linear-eq-01",
               "title": "One-step equations",
               "path": "math/algebra-1/linear-eq/lesson-01.json",
-              "version": 2,
-              "sha256": "6c0baf4f7b5c743744d8961f467266751d583f4262eb66ef6a3a748c84a8aeea",
-              "sizeBytes": 4052,
+              "version": 3,
+              "sha256": "0c501cc5ef5063914ad4a19b73b2fe9bcd9ee16a4847e5755f76528b807c4f74",
+              "sizeBytes": 4148,
               "order": 1
             },
             {
@@ -284,18 +284,18 @@
               "id": "circuits-01",
               "title": "Series circuits",
               "path": "electronics/electronics-basics/circuits/lesson-01.json",
-              "version": 2,
-              "sha256": "ded5ac9cf9c010e8d2050ca3b6df46dffb261ff24376106b9360c0f04507c0b4",
-              "sizeBytes": 3790,
+              "version": 3,
+              "sha256": "b5ac38d25a5d8a26be25004336a908823caea47e391e278bd40dcf80c001687a",
+              "sizeBytes": 3927,
               "order": 1
             },
             {
               "id": "circuits-02",
               "title": "Parallel circuits",
               "path": "electronics/electronics-basics/circuits/lesson-02.json",
-              "version": 2,
-              "sha256": "e9adea77cf8b91a7d8bd6412520333b80230ebbbf568cb3aeafb82a38b66c6dc",
-              "sizeBytes": 3720,
+              "version": 3,
+              "sha256": "303b99d066dae3facc48a8e94f1b8b69ee1d85706c715125df2820ccdff98699",
+              "sizeBytes": 3866,
               "order": 2
             }
           ],

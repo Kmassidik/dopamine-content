@@ -125,6 +125,7 @@
     "requirementsMax": 6,
     "minutesMax": 10000,
     "codeMax": 700,
+    "altMax": 200,
     "codeLines": 12,
     "codeWidth": 40
   },
