@@ -1,0 +1,56 @@
+{
+  "id": "geo-similar-notes",
+  "version": 1,
+  "title": "Similarity and Right-Triangle Trig: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Similar figures have the same shape and proportional sides. That idea powers indirect measurement, and in right triangles it leads to sine, cosine and tangent."
+    },
+    {
+      "id": "scale",
+      "kind": "formula",
+      "title": "Scale factor $k$",
+      "body": "Lengths $\\times k$, area $\\times k^2$"
+    },
+    {
+      "id": "tests",
+      "kind": "list",
+      "title": "Similarity tests",
+      "items": [
+        "AA: two pairs of equal angles",
+        "SSS: three equal side ratios",
+        "SAS: two equal ratios and the angle between"
+      ]
+    },
+    {
+      "id": "prop",
+      "kind": "formula",
+      "title": "Triangle proportionality",
+      "body": "If $DE\\parallel BC$: $\\frac{AD}{DB}=\\frac{AE}{EC}$"
+    },
+    {
+      "id": "ratios",
+      "kind": "formula",
+      "title": "Trig ratios",
+      "body": "$\\sin A=\\frac{opp}{hyp},\\ \\cos A=\\frac{adj}{hyp},\\ \\tan A=\\frac{opp}{adj}$"
+    },
+    {
+      "id": "values",
+      "kind": "list",
+      "title": "Special values",
+      "items": [
+        "$\\sin30^\\circ=\\frac12$ and $\\cos60^\\circ=\\frac12$",
+        "$\\tan45^\\circ=1$",
+        "$\\sin60^\\circ=\\frac{\\sqrt3}{2}$"
+      ]
+    },
+    {
+      "id": "mode",
+      "kind": "tip",
+      "body": "Use degree mode on your calculator. The second acute angle of a right triangle is $90^\\circ$ minus the first."
+    }
+  ]
+}

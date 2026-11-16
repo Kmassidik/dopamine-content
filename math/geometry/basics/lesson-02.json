@@ -1,0 +1,131 @@
+{
+  "id": "geo-basics-02",
+  "version": 1,
+  "title": "Measuring angles",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "angles"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "What an angle is",
+      "body": "An angle is formed by two rays that share an endpoint. The shared endpoint is the vertex and the rays are the sides. We measure an angle in degrees. A full turn around a point is $360^\\circ$."
+    },
+    {
+      "id": "naming",
+      "kind": "text",
+      "title": "Naming an angle",
+      "body": "We name an angle with three points, and the vertex goes in the middle. $\\angle ABC$ has its vertex at $B$. With a protractor, place the centre on the vertex and line one side up with $0^\\circ$. Read where the other side crosses the scale."
+    },
+    {
+      "id": "types",
+      "kind": "text",
+      "title": "Four kinds of angle",
+      "body": "An acute angle is between $0^\\circ$ and $90^\\circ$. A right angle is exactly $90^\\circ$. An obtuse angle is between $90^\\circ$ and $180^\\circ$. A straight angle is exactly $180^\\circ$, which looks like a straight line."
+    },
+    {
+      "id": "addition",
+      "kind": "example",
+      "title": "Angle addition",
+      "body": "If ray $OB$ lies inside $\\angle AOC$, then $\\angle AOB+\\angle BOC=\\angle AOC$.",
+      "steps": [
+        "Say $\\angle AOB=30^\\circ$ and $\\angle BOC=45^\\circ$.",
+        "Then $\\angle AOC=30+45=75^\\circ$.",
+        "Say $\\angle AOC=110^\\circ$ and $\\angle AOB=40^\\circ$.",
+        "Then $\\angle BOC=110-40=70^\\circ$."
+      ]
+    },
+    {
+      "id": "estimate",
+      "kind": "tip",
+      "body": "Before you measure, classify the angle by eye. If it looks acute, your reading must be under $90^\\circ$. This catches reading the wrong scale on a protractor."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which kind of angle measures $130^\\circ$?",
+      "choices": [
+        "Obtuse",
+        "Acute",
+        "Right",
+        "Straight"
+      ],
+      "answerIndex": 0,
+      "explanation": "Obtuse angles are bigger than $90^\\circ$ and smaller than $180^\\circ$."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "In $\\angle PQR$, which point is the vertex?",
+      "choices": [
+        "$P$",
+        "$Q$",
+        "$R$",
+        "None of them"
+      ],
+      "answerIndex": 1,
+      "explanation": "The middle letter of the name is the vertex."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "$\\angle AOB=35^\\circ$ and $\\angle BOC=50^\\circ$. Find $\\angle AOC$ in degrees.",
+      "accepted": [
+        "85"
+      ],
+      "keypad": "numeric",
+      "explanation": "Angle addition: $35+50=85$."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "A full turn around a point is \\_\\_ degrees.",
+      "choices": [
+        "360",
+        "180",
+        "90"
+      ],
+      "answerIndex": 0,
+      "explanation": "A half turn is $180^\\circ$ and a quarter turn is $90^\\circ$. A full turn is $360^\\circ$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "$\\angle AOC=128^\\circ$ and $\\angle AOB=53^\\circ$. Find $\\angle BOC$ in degrees.",
+      "accepted": [
+        "75"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\angle BOC=128-53=75^\\circ$."
+    },
+    {
+      "id": "q6",
+      "type": "match_pairs",
+      "prompt": "Match each angle measure to its name.",
+      "pairs": [
+        [
+          "$35^\\circ$",
+          "Acute"
+        ],
+        [
+          "$90^\\circ$",
+          "Right"
+        ],
+        [
+          "$150^\\circ$",
+          "Obtuse"
+        ],
+        [
+          "$180^\\circ$",
+          "Straight"
+        ]
+      ],
+      "explanation": "Compare each measure with $90^\\circ$ and $180^\\circ$ to name the angle."
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": "geo-triangles-04",
+  "version": 1,
+  "title": "Isosceles and equilateral triangles",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "triangles"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Equal sides, equal angles",
+      "body": "In an isosceles triangle the two equal sides are the legs, the third side is the base, and the angles at the base are the base angles. The key fact: the base angles are equal."
+    },
+    {
+      "id": "theorem",
+      "kind": "text",
+      "title": "The base angles theorem",
+      "body": "If two sides of a triangle are equal, the angles opposite them are equal. The reverse is also true: if two angles are equal, the sides opposite them are equal. An equilateral triangle has three equal sides, so all three angles are equal, each $60^\\circ$."
+    },
+    {
+      "id": "apex",
+      "kind": "example",
+      "title": "Find the angles",
+      "body": "An isosceles triangle has apex angle $40^\\circ$ at the top.",
+      "steps": [
+        "The two base angles are equal, call each $b$.",
+        "$40+b+b=180$, so $2b=140$.",
+        "$b=70$, so the base angles are $70^\\circ$ each.",
+        "If a base angle is $50^\\circ$ instead, the apex is $180-100=80^\\circ$."
+      ]
+    },
+    {
+      "id": "solve",
+      "kind": "example",
+      "title": "Find a side",
+      "body": "The legs of an isosceles triangle are $2x+1$ and $11$.",
+      "steps": [
+        "The legs are equal: $2x+1=11$.",
+        "$2x=10$, so $x=5$.",
+        "Each leg is 11 long."
+      ]
+    },
+    {
+      "id": "equilateral",
+      "kind": "tip",
+      "body": "Each angle of an equilateral triangle is $180\\div3=60^\\circ$. If a triangle has three $60^\\circ$ angles, it is equilateral."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "An isosceles triangle has apex angle $40^\\circ$. How large is each base angle in degrees?",
+      "accepted": [
+        "70"
+      ],
+      "keypad": "numeric",
+      "explanation": "$180-40=140$, and $140\\div2=70$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "An isosceles triangle has base angles of $50^\\circ$. Find the apex angle in degrees.",
+      "accepted": [
+        "80"
+      ],
+      "keypad": "numeric",
+      "explanation": "$180-50-50=80$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "How large is each angle of an equilateral triangle?",
+      "choices": [
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$90^\\circ$",
+        "$30^\\circ$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Three equal angles that add to $180^\\circ$ give $60^\\circ$ each."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "In an isosceles triangle, the angles opposite the equal sides are \\_\\_.",
+      "choices": [
+        "supplementary",
+        "right angles",
+        "equal"
+      ],
+      "answerIndex": 2,
+      "explanation": "Equal sides face equal angles."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "An isosceles triangle has legs $2x+1$ and $11$. Find $x$.",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "Legs are equal: $2x+1=11$, so $x=5$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "A triangle has angles $70^\\circ,70^\\circ,40^\\circ$. How is it classified by sides?",
+      "choices": [
+        "Equilateral",
+        "Scalene",
+        "It cannot exist",
+        "Isosceles"
+      ],
+      "answerIndex": 3,
+      "explanation": "Two equal angles mean two equal sides, so it is isosceles."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "An equilateral triangle has perimeter 36. How long is each side?",
+      "accepted": [
+        "12"
+      ],
+      "keypad": "numeric",
+      "explanation": "Three equal sides: $36\\div3=12$."
+    }
+  ]
+}

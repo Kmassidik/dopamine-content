@@ -1,0 +1,58 @@
+{
+  "id": "geo-solids-notes",
+  "version": 1,
+  "title": "Solids and Transformations: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Solids are measured by volume (space inside) and surface area (outside). Transformations move or resize figures, and the type of move tells you what stays the same."
+    },
+    {
+      "id": "prism",
+      "kind": "formula",
+      "title": "Prism and cylinder",
+      "body": "$V=Bh$, so $V=\\pi r^2h$ for a cylinder"
+    },
+    {
+      "id": "pyramid",
+      "kind": "formula",
+      "title": "Pyramid and cone",
+      "body": "$V=\\frac13Bh$, so $V=\\frac13\\pi r^2h$ for a cone"
+    },
+    {
+      "id": "sphere",
+      "kind": "formula",
+      "title": "Sphere",
+      "body": "$V=\\frac43\\pi r^3,\\ SA=4\\pi r^2$"
+    },
+    {
+      "id": "sa",
+      "kind": "list",
+      "title": "Surface area",
+      "items": [
+        "Cube: $6s^2$",
+        "Box: $2(lw+lh+wh)$",
+        "Cylinder: $2\\pi r^2+2\\pi rh$"
+      ]
+    },
+    {
+      "id": "moves",
+      "kind": "list",
+      "title": "Moves on the plane",
+      "items": [
+        "Translate: $(x+a,y+b)$",
+        "Reflect over $x$-axis: $(x,-y)$",
+        "Rotate $90^\\circ$ counterclockwise: $(-y,x)$",
+        "Rotate $180^\\circ$: $(-x,-y)$",
+        "Dilate by $k$: $(kx,ky)$"
+      ]
+    },
+    {
+      "id": "congruent",
+      "kind": "tip",
+      "body": "Translations, reflections and rotations give a congruent figure. Dilations give a similar one."
+    }
+  ]
+}

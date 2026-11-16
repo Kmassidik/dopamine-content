@@ -1,0 +1,64 @@
+{
+  "id": "geo-basics-notes",
+  "version": 1,
+  "title": "Points, Lines and Angles: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Points, lines and planes are the building blocks. Angles are measured in degrees, and special pairs of angles let you find unknown angles by reasoning instead of measuring."
+    },
+    {
+      "id": "terms",
+      "kind": "list",
+      "title": "Basic figures",
+      "items": [
+        "Point: a location, no size",
+        "Line: straight, endless both ways",
+        "Segment: two endpoints, has length",
+        "Ray: one endpoint, goes on forever",
+        "Plane: a flat surface that goes on forever"
+      ]
+    },
+    {
+      "id": "angle-pairs",
+      "kind": "list",
+      "title": "Angle pairs",
+      "items": [
+        "Complementary: add to $90^\\circ$",
+        "Supplementary: add to $180^\\circ$",
+        "Linear pair: side by side on a line, add to $180^\\circ$",
+        "Vertical angles: opposite, equal"
+      ]
+    },
+    {
+      "id": "parallel",
+      "kind": "list",
+      "title": "Parallel lines and a transversal",
+      "items": [
+        "Corresponding angles are equal",
+        "Alternate interior angles are equal",
+        "Alternate exterior angles are equal",
+        "Same-side interior angles add to $180^\\circ$"
+      ]
+    },
+    {
+      "id": "distance",
+      "kind": "formula",
+      "title": "Distance",
+      "body": "$d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$"
+    },
+    {
+      "id": "midpoint",
+      "kind": "formula",
+      "title": "Midpoint",
+      "body": "$M=\\left(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2}\\right)$"
+    },
+    {
+      "id": "proof",
+      "kind": "tip",
+      "body": "A proof is a chain of statements, each with a reason. One counterexample disproves a claim, but examples alone never prove it."
+    }
+  ]
+}
