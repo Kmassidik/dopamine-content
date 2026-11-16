@@ -1,0 +1,127 @@
+{
+  "id": "cd-lists-02",
+  "version": 1,
+  "minApp": 2,
+  "title": "Building a list",
+  "xp": 15,
+  "tags": [
+    "c",
+    "linked-list",
+    "malloc"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Adding at the front",
+      "body": "The simplest way to grow a list is to add each new node at the front. Make a node, point its `next` at the current head, then make the head point at the new node. It takes the same few steps every time."
+    },
+    {
+      "id": "build",
+      "kind": "code",
+      "title": "Three prepends",
+      "code": "node *list = NULL;\nfor (int i = 1; i <= 3; i++) {\n    node *n = malloc(sizeof(node));\n    if (n == NULL)\n        return 1;\n    n->value = i;\n    n->next = list;\n    list = n;\n}\nshow(list);\nfree_list(list);",
+      "language": "c",
+      "body": "`list` starts as NULL, an empty list. Each loop pass makes the new node the head."
+    },
+    {
+      "id": "order",
+      "kind": "text",
+      "title": "The order matters",
+      "body": "`n->next = list` must come before `list = n`. If you moved head first, you would lose the rest of the list, with nothing pointing to it. That leaked memory cannot be freed."
+    },
+    {
+      "id": "ex-trace",
+      "kind": "example",
+      "title": "Tracing the loop",
+      "body": "Start with `list` equal to NULL.",
+      "steps": [
+        "i is 1: new node, next NULL, list points to it",
+        "i is 2: new node, next is the node 1, list is now node 2",
+        "i is 3: the same, so the list reads 3, 2, 1",
+        "Items sit in reverse order of adding"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "`show` and `free_list` are written in the next lesson. The output above is 3 2 1."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "An empty list is represented by...",
+      "choices": [
+        "head equal to NULL",
+        "head equal to 0 nodes",
+        "a node with value 0",
+        "an array of size 0"
+      ],
+      "answerIndex": 0,
+      "explanation": "With no nodes, there is nothing for head to point to, so it is NULL.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "After adding 1, 2, 3 in that order at the front, which value is first?",
+      "choices": [
+        "1",
+        "3",
+        "2",
+        "0"
+      ],
+      "answerIndex": 1,
+      "explanation": "Each new node becomes the head, so the last one added is first.",
+      "id": "q2"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "When adding at the front, set `n->next` to the old \\_\\_.",
+      "choices": [
+        "tail",
+        "value",
+        "head",
+        "size"
+      ],
+      "answerIndex": 2,
+      "explanation": "The new node must point at the rest of the list before head moves.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What goes wrong if you run `list = n` before `n->next = list`?",
+      "choices": [
+        "Nothing, same result",
+        "The compiler refuses",
+        "n becomes NULL",
+        "The old list is lost"
+      ],
+      "answerIndex": 3,
+      "explanation": "After moving head, the old head is no longer stored anywhere, so n->next would point to itself.",
+      "id": "q4"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "You add 5, then 6, then 7 at the front. What is the first value in the list?",
+      "accepted": [
+        "7"
+      ],
+      "keypad": "numeric",
+      "explanation": "The newest node is always at the front.",
+      "id": "q5"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Order the steps to add a value at the front.",
+      "steps": [
+        "Allocate a new node",
+        "Set its value",
+        "Point its next at the old head",
+        "Make head point at the new node"
+      ],
+      "explanation": "Link the new node to the list before changing head.",
+      "id": "q6"
+    }
+  ]
+}

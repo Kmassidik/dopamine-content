@@ -1,0 +1,44 @@
+{
+  "id": "cd-adt-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Abstract data types: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "An abstract data type is defined by its operations, not its memory layout. Callers use the interface. The implementation can change without breaking them."
+    },
+    {
+      "id": "order",
+      "kind": "list",
+      "title": "Which order?",
+      "items": [
+        "Stack: last in, first out (`push`, `pop`)",
+        "Queue: first in, first out (`enqueue`, `dequeue`)",
+        "Array: items by index, fixed size",
+        "Dynamic array: `malloc` and `realloc`"
+      ]
+    },
+    {
+      "id": "grow",
+      "kind": "code",
+      "title": "Grow a dynamic array",
+      "code": "if (len == cap) {\n    cap *= 2;\n    a = realloc(a, cap * sizeof *a);\n}\na[len++] = x;",
+      "language": "c"
+    },
+    {
+      "id": "wrap",
+      "kind": "code",
+      "title": "Wrap around an index",
+      "code": "back = (head + count) % CAP;\nhead = (head + 1) % CAP;",
+      "language": "c"
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Check for empty before pop or dequeue, and for full before push or enqueue. Free what you malloc."
+    }
+  ]
+}
