@@ -1,0 +1,167 @@
+{
+  "id": "ca-strings-03",
+  "version": 1,
+  "minApp": 2,
+  "title": "The ctype.h library",
+  "xp": 15,
+  "tags": [
+    "c",
+    "strings"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Questions about characters",
+      "body": "The header `ctype.h` has functions that test one character, such as `isalpha` and `isdigit`, and functions that convert one, `toupper` and `tolower`. They work on a single `char`, not a whole string."
+    },
+    {
+      "id": "tests",
+      "kind": "code",
+      "title": "Testing a char",
+      "body": "The `is...` functions give a nonzero number for true and 0 for false. Do not compare with 1, just use them in an `if`. Here `!= 0` turns the result into 1 or 0.",
+      "code": "printf(\"%d %d\\n\",\n    isalpha('q') != 0,\n    isdigit('q') != 0);",
+      "language": "c"
+    },
+    {
+      "id": "convert",
+      "kind": "code",
+      "title": "Changing case",
+      "body": "`toupper` returns the capital version of a letter. Anything that is not a lowercase letter comes back unchanged.",
+      "code": "printf(\"%c %c %c\\n\",\n    toupper('q'),\n    tolower('Q'),\n    toupper('7'));",
+      "language": "c"
+    },
+    {
+      "id": "math",
+      "kind": "text",
+      "title": "A char is a small number",
+      "body": "Each char is stored as a number, for example `'a'` is 97 and `'A'` is 65 in ASCII. So `'c' - 'a'` is 2, and `'a' + 3` is `'d'`. This is how you turn letters into positions 0 to 25."
+    },
+    {
+      "id": "loop",
+      "kind": "code",
+      "title": "Shout a whole string",
+      "body": "Loop to the terminator and convert each char in place. It prints HELLO, C!. This is fine for plain English text.",
+      "code": "char s[] = \"hello, c!\";\nfor (int i = 0; s[i] != '\\0'; i++) {\n    s[i] = toupper(s[i]);\n}\nprintf(\"%s\\n\", s);",
+      "language": "c"
+    },
+    {
+      "id": "pos",
+      "kind": "example",
+      "title": "Letter to number",
+      "body": "Find the position of `'e'` in the alphabet, counting from 0.",
+      "steps": [
+        "`'e'` is the letter after `'d'`, but we use subtraction",
+        "Compute `'e' - 'a'`",
+        "That is 4, so `'e'` is the fifth letter",
+        "Add the position back to `'a'` to return to the letter"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which header declares `isalpha` and `toupper`?",
+      "choices": [
+        "`string.h`",
+        "`ctype.h`",
+        "`stdio.h`"
+      ],
+      "answerIndex": 1,
+      "explanation": "Character tests and conversions live in `ctype.h`."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What does `isdigit('7')` return?",
+      "choices": [
+        "Exactly 1 and nothing else",
+        "0",
+        "A nonzero number"
+      ],
+      "answerIndex": 2,
+      "explanation": "True is reported as nonzero. Treat it as true, without comparing to 1."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What does `'c' - 'a'` equal? Type the number.",
+      "accepted": [
+        "2"
+      ],
+      "keypad": "numeric",
+      "explanation": "The letters are 2 apart, so subtracting gives 2."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What does `toupper('7')` give?",
+      "choices": [
+        "`'7'`, unchanged",
+        "An error",
+        "`'0'`"
+      ],
+      "answerIndex": 0,
+      "explanation": "Only lowercase letters change."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "`'a' + 3` is the character \\_\\_.",
+      "choices": [
+        "`'c'`",
+        "`'d'`",
+        "`'e'`"
+      ],
+      "answerIndex": 1,
+      "explanation": "a, then b, c, d. Three steps from a is d."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which tool works on a whole string at once?",
+      "choices": [
+        "`toupper(s)`",
+        "`isalpha(s)`",
+        "A loop calling `toupper` on each char"
+      ],
+      "answerIndex": 2,
+      "explanation": "The ctype functions take one char, so loop over the string."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "What is the ASCII value of `'a'` minus the value of `'A'`? Type the number.",
+      "accepted": [
+        "32"
+      ],
+      "keypad": "numeric",
+      "explanation": "97 minus 65 is 32."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each call to its result.",
+      "pairs": [
+        [
+          "`toupper('q')`",
+          "`'Q'`"
+        ],
+        [
+          "`tolower('Q')`",
+          "`'q'`"
+        ],
+        [
+          "`'b' - 'a'`",
+          "`1`"
+        ],
+        [
+          "`isalpha('5') != 0`",
+          "`0`"
+        ]
+      ],
+      "explanation": "These are all single-character operations."
+    }
+  ]
+}

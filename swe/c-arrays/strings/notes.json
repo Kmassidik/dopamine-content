@@ -1,0 +1,65 @@
+{
+  "id": "ca-strings-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Strings and the command line: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A string is a char array that ends in `'\\0'`. Headers `string.h` and `ctype.h` work on strings and chars. `argv` gives you words from the command line, and `fgets` reads a line safely."
+    },
+    {
+      "id": "string-h",
+      "kind": "list",
+      "title": "string.h",
+      "items": [
+        "`strlen(s)`: characters before the terminator",
+        "`strcmp(a, b)`: 0 when equal, sign gives the order",
+        "`strcpy(d, s)` and `strcat(d, s)`: d needs room",
+        "Never compare strings with `==`"
+      ]
+    },
+    {
+      "id": "ctype-h",
+      "kind": "list",
+      "title": "ctype.h",
+      "items": [
+        "`isalpha`, `isdigit`, `isupper`, `islower`: nonzero for true",
+        "`toupper`, `tolower`: convert one char",
+        "`'c' - 'a'` is the letter's position, from 0"
+      ]
+    },
+    {
+      "id": "main",
+      "kind": "code",
+      "title": "main with arguments",
+      "code": "int main(int argc, char *argv[]) {\n    if (argc != 2) {\n        return 1;\n    }\n    printf(\"%s\\n\", argv[1]);\n}",
+      "language": "c"
+    },
+    {
+      "id": "fgets",
+      "kind": "code",
+      "title": "Read a line",
+      "code": "char line[20];\nif (fgets(line, sizeof line, stdin)) {\n    line[strcspn(line, \"\\n\")] = '\\0';\n}",
+      "language": "c"
+    },
+    {
+      "id": "argv",
+      "kind": "list",
+      "title": "argc and argv",
+      "items": [
+        "`argc` counts words, program name included",
+        "`argv[0]` is the program name",
+        "`argv[1]` is the first argument, as text",
+        "`atoi` converts text to an int"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Check `argc` before reading `argv`, and give `fgets` the buffer's real size."
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "id": "ca-strings-02",
+  "version": 1,
+  "minApp": 2,
+  "title": "The string.h library",
+  "xp": 15,
+  "tags": [
+    "c",
+    "strings"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Ready-made helpers",
+      "body": "The header `string.h` offers functions that work on whole strings: `strlen` for length, `strcmp` to compare, `strcpy` to copy and `strcat` to join. You write `#include` with `string.h` to use them."
+    },
+    {
+      "id": "strlen",
+      "kind": "code",
+      "title": "Length and size",
+      "body": "`strlen(s)` counts characters before the terminator, so it gives 3 for \"cat\". `sizeof s` counts every byte of the array, 4. The two answers differ.",
+      "code": "char s[] = \"cat\";\nsize_t n = strlen(s);\nprintf(\"%zu %zu\\n\", sizeof s, n);",
+      "language": "c"
+    },
+    {
+      "id": "strcmp",
+      "kind": "code",
+      "title": "Comparing strings",
+      "body": "`strcmp(a, b)` returns 0 if they are equal, a negative number if `a` comes first alphabetically, a positive one if `a` comes later. Only the sign is promised.",
+      "code": "char a[] = \"apple\";\nchar b[] = \"banana\";\nprintf(\"%d\\n\", strcmp(a, b) < 0);\nprintf(\"%d\\n\", strcmp(a, a) == 0);",
+      "language": "c"
+    },
+    {
+      "id": "eq",
+      "kind": "code",
+      "title": "Why == fails",
+      "body": "`a == b` compares the two arrays' addresses, not their text. Two separate arrays are at different places, so it gives 0 even for equal text. Use `strcmp`.",
+      "code": "char a[] = \"cat\";\nchar b[] = \"cat\";\nprintf(\"%d\\n\", a == b);\nprintf(\"%d\\n\", strcmp(a, b) == 0);",
+      "language": "c"
+    },
+    {
+      "id": "copy",
+      "kind": "code",
+      "title": "Copy and join",
+      "body": "`strcpy` copies text over the start of an array and `strcat` adds text to the end. The destination must be big enough, or you write past its end. Here 20 bytes is plenty.",
+      "code": "char s[20] = \"sun\";\nstrcat(s, \"shine\");\nprintf(\"%s\\n\", s);\nstrcpy(s, \"moon\");\nprintf(\"%s\\n\", s);",
+      "language": "c"
+    },
+    {
+      "id": "order",
+      "kind": "example",
+      "title": "Read a strcmp result",
+      "body": "Compare `\"apple\"` with `\"banana\"`.",
+      "steps": [
+        "Look at the first letters: `a` and `b`",
+        "`a` comes before `b`",
+        "So `strcmp` returns a negative number",
+        "Reverse the arguments and it is positive"
+      ]
+    },
+    {
+      "id": "room",
+      "kind": "tip",
+      "body": "Before `strcpy` or `strcat`, make sure the destination has room for the text plus the terminator."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What does `strlen(\"cat\")` return?",
+      "choices": [
+        "4",
+        "2",
+        "3"
+      ],
+      "answerIndex": 2,
+      "explanation": "It counts the characters before the terminator."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Which expression is true when two strings `a` and `b` hold the same text?",
+      "choices": [
+        "`strcmp(a, b) == 0`",
+        "`a == b`",
+        "`strlen(a) == b`"
+      ],
+      "answerIndex": 0,
+      "explanation": "`==` compares addresses. `strcmp` compares the characters."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What does `strcmp(\"cat\", \"cat\")` return? Type the number.",
+      "accepted": [
+        "0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Equal strings give 0."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "`strcmp(\"apple\", \"banana\")` is \\_\\_ because apple comes first.",
+      "choices": [
+        "`zero`",
+        "`negative`",
+        "`positive`"
+      ],
+      "answerIndex": 1,
+      "explanation": "A comes before B, so the result is below zero."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What can go wrong with `strcpy(dest, src)`?",
+      "choices": [
+        "`src` is changed",
+        "It always fails",
+        "`dest` may be too small and get overrun"
+      ],
+      "answerIndex": 2,
+      "explanation": "`strcpy` does not check sizes. You must make sure there is room."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "After `char s[20] = \"sun\"; strcat(s, \"shine\");`, what is `s`?",
+      "choices": [
+        "sunshine",
+        "shinesun",
+        "sun shine"
+      ],
+      "answerIndex": 0,
+      "explanation": "`strcat` adds to the end of the existing text."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "What does `strlen(\"sunshine\")` return? Type the number.",
+      "accepted": [
+        "8"
+      ],
+      "keypad": "numeric",
+      "explanation": "s-u-n-s-h-i-n-e is 8 letters."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each function to its job.",
+      "pairs": [
+        [
+          "`strlen`",
+          "Counts characters"
+        ],
+        [
+          "`strcmp`",
+          "Compares two strings"
+        ],
+        [
+          "`strcpy`",
+          "Copies a string"
+        ],
+        [
+          "`strcat`",
+          "Appends a string"
+        ]
+      ],
+      "explanation": "All four live in `string.h`."
+    }
+  ]
+}
