@@ -1,0 +1,59 @@
+{
+  "id": "cm-heap-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Dynamic Memory: cheat sheet",
+  "blocks": [
+    {
+      "id": "big",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "The heap is memory you ask for with `malloc` and return with `free`. You are responsible for every block."
+    },
+    {
+      "id": "n-life",
+      "kind": "code",
+      "title": "Block lifecycle",
+      "code": "int *a = malloc(n * sizeof *a);\nif (a == NULL)\n    return 1;\n/* use a[0] .. a[n - 1] */\nfree(a);\na = NULL;",
+      "language": "c"
+    },
+    {
+      "id": "rules",
+      "kind": "list",
+      "title": "Rules",
+      "items": [
+        "One `free` for each `malloc`",
+        "Check for `NULL` after `malloc`",
+        "Never use a block after freeing it",
+        "Stay inside the size you asked for"
+      ]
+    },
+    {
+      "id": "grow",
+      "kind": "list",
+      "title": "Growing a block",
+      "items": [
+        "`t = realloc(a, newBytes);`",
+        "Check `t` before assigning it to `a`",
+        "The block may move",
+        "Double the capacity to copy less often"
+      ]
+    },
+    {
+      "id": "bugs",
+      "kind": "list",
+      "title": "Common bugs",
+      "items": [
+        "Leak: never freed",
+        "Use after free: used after `free`",
+        "Double free: freed twice",
+        "Overflow: wrote past the end"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Compile with -g and run Valgrind where available. Bugs here are undefined behavior, so working code is not proof."
+    }
+  ]
+}

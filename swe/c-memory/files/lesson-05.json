@@ -1,0 +1,157 @@
+{
+  "id": "cm-files-05",
+  "version": 1,
+  "minApp": 2,
+  "title": "Bytes, binary files and images",
+  "xp": 15,
+  "tags": [
+    "c",
+    "files",
+    "binary"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Files are bytes",
+      "body": "A file is just bytes on disk. A text file holds bytes that stand for letters. Other files, such as images, hold bytes with other meanings. Opening with `\"rb\"` or `\"wb\"` treats a file as raw bytes, with no changes. `fread` and `fwrite` move blocks of them."
+    },
+    {
+      "id": "raw",
+      "kind": "code",
+      "title": "Write and read bytes",
+      "body": "The program writes 4 bytes, then reads them back. It prints `4 bytes: 42 4d 00 ff`. `fwrite(buffer, size, count, f)` returns how many items were handled. Checks for `NULL` are left out here to fit.",
+      "code": "unsigned char out[4] =\n    {0x42, 0x4D, 0x00, 0xFF};\nFILE *f = fopen(\"raw.bin\", \"wb\");\nfwrite(out, 1, 4, f);\nfclose(f);\nunsigned char in[4];\nf = fopen(\"raw.bin\", \"rb\");\nsize_t n = fread(in, 1, 4, f);\nfclose(f);\nprintf(\"%zu bytes:\", n);\nfor (size_t i = 0; i < n; i++)\n    printf(\" %02x\", in[i]);",
+      "language": "c"
+    },
+    {
+      "id": "images",
+      "kind": "text",
+      "title": "What an image file is",
+      "body": "An image is also bytes, and many formats begin with a signature that identifies them. A BMP file starts with the bytes 42 4D, which are the letters B and M. A PNG file starts with 89 50 4E 47 0D 0A 1A 0A, where 50 4E 47 spell PNG."
+    },
+    {
+      "id": "copy",
+      "kind": "code",
+      "title": "Copying any file",
+      "body": "Reading one byte at a time with `fgetc` and writing it with `fputc` copies any file, including an image. This prints `copied 4` for the 4-byte file. `fgetc` returns an `int` so that it can also return `EOF`.",
+      "code": "int b;\nlong count = 0;\nwhile ((b = fgetc(in)) != EOF) {\n    fputc(b, out);\n    count++;\n}\nfclose(in);\nfclose(out);\nprintf(\"copied %ld\\n\", count);",
+      "language": "c"
+    },
+    {
+      "id": "ex-sig",
+      "kind": "example",
+      "title": "Checking a signature",
+      "body": "The first two bytes you read are 42 and 4D.",
+      "steps": [
+        "0x42 is 66 in decimal",
+        "66 is the letter B",
+        "0x4D is the letter M",
+        "The file begins with BM, so it could be a BMP image"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Use \"rb\" and \"wb\" for anything that is not plain text. On some systems text mode changes line endings, which would damage an image."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "Which mode opens a file to write raw bytes?",
+      "choices": [
+        "\"wb\"",
+        "\"w\"",
+        "\"rb\"",
+        "\"rw\""
+      ],
+      "answerIndex": 0,
+      "explanation": "`\"wb\"` writes in binary mode.",
+      "id": "q1"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "How many bytes did the example program write and read back?",
+      "accepted": [
+        "4"
+      ],
+      "keypad": "numeric",
+      "explanation": "The array `out` has four bytes.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "The byte 0x42 is the letter B. What is the hex byte 0x4D as a letter?",
+      "accepted": [
+        "M",
+        "m"
+      ],
+      "keypad": "full",
+      "explanation": "0x4D is 77 in decimal, the letter M.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What do the first bytes of a BMP file spell?",
+      "choices": [
+        "BM",
+        "PNG",
+        "JPG",
+        "TXT"
+      ],
+      "answerIndex": 0,
+      "explanation": "A BMP starts with 42 4D, the letters B and M.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "`fgetc` returns an \\_\\_ so it can also return `EOF`.",
+      "choices": [
+        "int",
+        "char",
+        "bool"
+      ],
+      "answerIndex": 0,
+      "explanation": "An `int` can hold every byte value plus the special `EOF`.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does the copy loop do?",
+      "choices": [
+        "Copies a file byte by byte",
+        "Deletes a file",
+        "Prints a file in hex",
+        "Sorts a file"
+      ],
+      "answerIndex": 0,
+      "explanation": "It reads each byte and writes it unchanged to the other file.",
+      "id": "q6"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each function to its job.",
+      "pairs": [
+        [
+          "`fread`",
+          "reads bytes from a file"
+        ],
+        [
+          "`fwrite`",
+          "writes bytes to a file"
+        ],
+        [
+          "`fgetc`",
+          "reads one byte"
+        ],
+        [
+          "`fputc`",
+          "writes one byte"
+        ]
+      ],
+      "explanation": "These four move raw bytes between memory and files.",
+      "id": "q7"
+    }
+  ]
+}

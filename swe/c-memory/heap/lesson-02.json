@@ -1,0 +1,136 @@
+{
+  "id": "cm-heap-02",
+  "version": 1,
+  "minApp": 2,
+  "title": "malloc",
+  "xp": 15,
+  "tags": [
+    "c",
+    "malloc",
+    "heap"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Asking for memory",
+      "body": "`malloc(n)` asks the heap for `n` bytes. It returns the address of the block, as a pointer you can store in any pointer type. If there is no memory to give, it returns `NULL`. It lives in `stdlib.h`."
+    },
+    {
+      "id": "demo",
+      "kind": "code",
+      "title": "An array of five ints",
+      "body": "This prints 30, the sum 0 + 1 + 4 + 9 + 16. We ask for room for 5 ints, check for `NULL`, then use the block like an array.",
+      "code": "int *a = malloc(5 * sizeof(int));\nif (a == NULL)\n    return 1;\nint sum = 0;\nfor (int i = 0; i < 5; i++) {\n    a[i] = i * i;\n    sum += a[i];\n}\nprintf(\"%d\\n\", sum);\nfree(a);",
+      "language": "c"
+    },
+    {
+      "id": "ex-size",
+      "kind": "example",
+      "title": "Counting the bytes",
+      "body": "How many bytes does `malloc(5 * sizeof(int))` request?",
+      "steps": [
+        "`sizeof(int)` is 4 on our platform",
+        "5 items * 4 bytes",
+        "That is 20 bytes",
+        "Always multiply by `sizeof` rather than typing 20"
+      ]
+    },
+    {
+      "id": "garbage",
+      "kind": "text",
+      "title": "Fresh memory is not cleared",
+      "body": "A new block holds whatever bytes were there before. Reading it before writing gives unpredictable values. If you want zeroes, use `calloc(count, size)` or write the values yourself first."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Write `malloc(n * sizeof *a)` instead of repeating the type. If the type of `a` changes, the size stays right."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What does `malloc` return when it fails?",
+      "choices": [
+        "NULL",
+        "0 bytes",
+        "-1",
+        "A crash"
+      ],
+      "answerIndex": 0,
+      "explanation": "On failure it returns a null pointer, so always test it.",
+      "id": "q1"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "How many bytes does `malloc(5 * sizeof(int))` request here?",
+      "accepted": [
+        "20"
+      ],
+      "keypad": "numeric",
+      "explanation": "5 ints of 4 bytes each is 20 bytes.",
+      "id": "q2"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which header declares `malloc`?",
+      "choices": [
+        "stdlib.h",
+        "stdio.h",
+        "math.h",
+        "ctype.h"
+      ],
+      "answerIndex": 0,
+      "explanation": "`malloc` and `free` come from `stdlib.h`.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does a fresh `malloc` block contain?",
+      "choices": [
+        "Unspecified bytes",
+        "All zeros",
+        "All ones",
+        "The letter a"
+      ],
+      "answerIndex": 0,
+      "explanation": "It is not cleared. Write before you read.",
+      "id": "q4"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "What does the example program print?",
+      "accepted": [
+        "30"
+      ],
+      "keypad": "numeric",
+      "explanation": "0 + 1 + 4 + 9 + 16 = 30.",
+      "id": "q5"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "To get zeroed memory, you can use \\_\\_ instead of `malloc`.",
+      "choices": [
+        "calloc",
+        "free",
+        "sizeof"
+      ],
+      "answerIndex": 0,
+      "explanation": "`calloc(count, size)` zeroes the block it returns.",
+      "id": "q6"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put the steps of using heap memory in order.",
+      "steps": [
+        "Call `malloc`",
+        "Check the result is not `NULL`",
+        "Use the memory",
+        "Call `free`"
+      ],
+      "explanation": "Ask, verify, use, give back.",
+      "id": "q7"
+    }
+  ]
+}
