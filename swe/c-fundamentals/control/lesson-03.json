@@ -1,0 +1,175 @@
+{
+  "id": "cf-control-03",
+  "version": 1,
+  "minApp": 2,
+  "title": "else if and switch",
+  "xp": 15,
+  "tags": [
+    "c",
+    "conditions",
+    "switch"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "More than two paths",
+      "body": "Sometimes there are more than two outcomes, like grades. Chain tests with `else if`. C checks them from the top and runs the first block whose condition is true, then skips the rest."
+    },
+    {
+      "id": "chain",
+      "kind": "code",
+      "title": "A grade chain",
+      "body": "75 fails the first test but passes the second.",
+      "code": "    int score = 75;\n    if (score >= 90) {\n        printf(\"A\\n\");\n    } else if (score >= 70) {\n        printf(\"B\\n\");\n    } else {\n        printf(\"C\\n\");\n    }",
+      "language": "c"
+    },
+    {
+      "id": "order",
+      "kind": "text",
+      "title": "Order matters",
+      "body": "Because the first true test wins, put the narrowest or highest tests first. If we tested `score >= 70` before `score >= 90`, a 95 would stop at B. The final `else` catches everything left over."
+    },
+    {
+      "id": "switch",
+      "kind": "text",
+      "title": "switch",
+      "body": "When you compare one whole number or char against fixed values, `switch` can be neater. Each `case` is a possible value. `break` jumps out of the switch. `default` is the catch-all, like a final `else`."
+    },
+    {
+      "id": "sw",
+      "kind": "code",
+      "title": "A switch",
+      "body": "`day` is 2, so the program jumps to `case 2`.",
+      "code": "    int day = 2;\n    switch (day) {\n        case 1:\n            printf(\"Mon\\n\");\n            break;\n        case 2:\n            printf(\"Tue\\n\");\n            break;\n        default:\n            printf(\"other\\n\");\n    }",
+      "language": "c"
+    },
+    {
+      "id": "fall",
+      "kind": "text",
+      "title": "Forgetting break",
+      "body": "Without `break`, execution falls through into the next case. Starting at `case 1`, a missing break prints `one` and then also `two`. Sometimes that is wanted, but usually it is a bug, so add `break` on purpose."
+    },
+    {
+      "id": "trace",
+      "kind": "example",
+      "title": "Tracing the switch",
+      "body": "Follow `switch (day)` with `day` equal to 2.",
+      "steps": [
+        "C jumps straight to `case 2:`",
+        "It prints Tue",
+        "`break` leaves the switch, skipping `default`"
+      ]
+    },
+    {
+      "id": "types",
+      "kind": "tip",
+      "body": "A `switch` works on ints and chars only, not on decimals or text."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "`score = 75`, with chain tests for 90, then 70, then `else`. What prints?",
+      "choices": [
+        "A",
+        "C",
+        "Nothing",
+        "B"
+      ],
+      "answerIndex": 3,
+      "explanation": "75 is not at least 90, but it is at least 70, so B runs."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "In an `if`, `else if`, `else` chain, how many blocks run?",
+      "choices": [
+        "At most one",
+        "All true ones",
+        "Always two",
+        "The last one only"
+      ],
+      "answerIndex": 0,
+      "explanation": "The first true condition wins and the rest are skipped."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "In a switch, \\_\\_ jumps out of the switch.",
+      "choices": [
+        "`exit`",
+        "`break`",
+        "`stop`",
+        "`end`"
+      ],
+      "answerIndex": 1,
+      "explanation": "Without `break`, execution continues into the next case."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "The catch-all label in a switch is \\_\\_.",
+      "choices": [
+        "`else`",
+        "`other`",
+        "`default`",
+        "`all`"
+      ],
+      "answerIndex": 2,
+      "explanation": "`default` runs when no `case` matches."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "`n = 1`, with `case 1` and `case 2` printing one and two, and no breaks. What prints?",
+      "choices": [
+        "one only",
+        "two only",
+        "Nothing",
+        "one, then two"
+      ],
+      "answerIndex": 3,
+      "explanation": "Execution starts at `case 1` and falls through to `case 2`."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which can be the value of a `switch`?",
+      "choices": [
+        "An int or a char",
+        "A decimal like 2.5",
+        "A piece of text",
+        "A list"
+      ],
+      "answerIndex": 0,
+      "explanation": "In C a switch works on integer types, and a char counts as one."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Why test `score >= 90` before `score >= 70`?",
+      "choices": [
+        "The compiler requires it",
+        "Otherwise 95 would stop at the 70 test",
+        "It runs faster",
+        "Higher numbers are checked last"
+      ],
+      "answerIndex": 1,
+      "explanation": "The first true test wins, so the strictest test must come first."
+    },
+    {
+      "id": "q8",
+      "type": "order_steps",
+      "prompt": "Put the grade chain tests in a safe order.",
+      "steps": [
+        "`if (score >= 90)`",
+        "`else if (score >= 80)`",
+        "`else if (score >= 70)`",
+        "`else`"
+      ],
+      "explanation": "From strictest to loosest, then the catch-all."
+    }
+  ]
+}

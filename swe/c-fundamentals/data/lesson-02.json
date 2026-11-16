@@ -1,0 +1,182 @@
+{
+  "id": "cf-data-02",
+  "version": 1,
+  "minApp": 2,
+  "title": "char, float and double",
+  "xp": 15,
+  "tags": [
+    "c",
+    "types"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "More kinds of value",
+      "body": "Whole numbers are not enough. C has `char` for a single character, and `float` and `double` for numbers with a decimal point. Each takes a different amount of memory, measured in bytes."
+    },
+    {
+      "id": "char",
+      "kind": "text",
+      "title": "char",
+      "body": "A `char` holds one character, written in single quotes, like `'A'`. Double quotes mean text, single quotes mean one character. Under the hood a char is a small number: on common systems `'A'` is 65."
+    },
+    {
+      "id": "chardemo",
+      "kind": "code",
+      "title": "A char is a number",
+      "body": "`%c` prints as a character, `%d` prints the number.",
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    char c = 'A';\n    printf(\"%c %d\\n\", c, c);\n    c = c + 1;\n    printf(\"%c\\n\", c);\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "float",
+      "kind": "text",
+      "title": "float and double",
+      "body": "`float` and `double` hold decimals such as 3.14. `double` uses 8 bytes and keeps about 15 digits right. `float` uses 4 bytes and keeps only about 7. Use `double` unless you have a reason not to."
+    },
+    {
+      "id": "prec",
+      "kind": "code",
+      "title": "Precision differs",
+      "body": "Both are one third, but float runs out of correct digits sooner.",
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    float f = 1.0f / 3;\n    double d = 1.0 / 3;\n    printf(\"%.10f\\n\", f);\n    printf(\"%.10f\\n\", d);\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "sizes",
+      "kind": "text",
+      "title": "Sizes",
+      "body": "On common 64-bit systems an `int` is 4 bytes, a `char` is 1, a `float` is 4 and a `double` is 8. The `sizeof` operator tells you. Larger types can hold bigger numbers or more detail."
+    },
+    {
+      "id": "sum",
+      "kind": "example",
+      "title": "Adding to a char",
+      "body": "After `char c = 'A';` we run `c = c + 1;`.",
+      "steps": [
+        "`'A'` is stored as the number 65",
+        "Adding 1 gives 66",
+        "66 is the code for `'B'`, so printing with `%c` shows B"
+      ]
+    },
+    {
+      "id": "quotes",
+      "kind": "tip",
+      "body": "`'A'` is one character. `\"A\"` is text. They are different things in C."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which type holds a single letter?",
+      "choices": [
+        "`int`",
+        "`double`",
+        "`float`",
+        "`char`"
+      ],
+      "answerIndex": 3,
+      "explanation": "A `char` stores one character."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Which is a character, not text?",
+      "choices": [
+        "`'x'`",
+        "`\"x\"`",
+        "`x`",
+        "`(x)`"
+      ],
+      "answerIndex": 0,
+      "explanation": "Single quotes make one character. Double quotes make text."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "On common systems, how many bytes is an `int`? Type the number.",
+      "accepted": [
+        "4",
+        "four"
+      ],
+      "keypad": "full",
+      "explanation": "An `int` is 4 bytes (32 bits) on common platforms."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "On common systems, how many bytes is a `double`? Type the number.",
+      "accepted": [
+        "8",
+        "eight"
+      ],
+      "keypad": "full",
+      "explanation": "A `double` uses 8 bytes."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "To store 3.14 with the most precision, use \\_\\_.",
+      "choices": [
+        "`char`",
+        "`double`",
+        "`int`",
+        "`short`"
+      ],
+      "answerIndex": 1,
+      "explanation": "`double` keeps about 15 correct digits, more than `float`."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "`char c = 'A';` then `printf(\"%d\", c);` prints what on common systems?",
+      "choices": [
+        "A",
+        "1",
+        "65",
+        "0"
+      ],
+      "answerIndex": 2,
+      "explanation": "`%d` prints the number stored. `'A'` is 65."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Why is `double` usually preferred over `float`?",
+      "choices": [
+        "It takes less memory",
+        "It holds only whole numbers",
+        "It is faster to type",
+        "It is more precise"
+      ],
+      "answerIndex": 3,
+      "explanation": "A `double` has twice the storage and about double the correct digits."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each type to what it holds.",
+      "pairs": [
+        [
+          "`int`",
+          "Whole numbers"
+        ],
+        [
+          "`char`",
+          "One character"
+        ],
+        [
+          "`double`",
+          "Decimal numbers, high precision"
+        ],
+        [
+          "`float`",
+          "Decimal numbers, lower precision"
+        ]
+      ],
+      "explanation": "Pick the type that matches the kind of value."
+    }
+  ]
+}

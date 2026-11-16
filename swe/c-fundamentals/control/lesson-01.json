@@ -1,0 +1,144 @@
+{
+  "id": "cf-control-01",
+  "version": 1,
+  "minApp": 2,
+  "title": "if and else",
+  "xp": 15,
+  "tags": [
+    "c",
+    "conditions"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Making a choice",
+      "body": "So far every line ran in order. An `if` statement lets a program choose. It tests a condition, a yes or no question, and runs a block of code only when the answer is yes."
+    },
+    {
+      "id": "ifelse",
+      "kind": "code",
+      "title": "if and else",
+      "body": "`age >= 18` is true for 20, so the first block runs.",
+      "code": "    int age = 20;\n    if (age >= 18) {\n        printf(\"adult\\n\");\n    } else {\n        printf(\"minor\\n\");\n    }",
+      "language": "c"
+    },
+    {
+      "id": "parts",
+      "kind": "text",
+      "title": "The parts",
+      "body": "The condition goes in parentheses after `if`. The code to run goes between curly braces. An optional `else` block runs when the condition is false. Only one of the two blocks ever runs."
+    },
+    {
+      "id": "braces",
+      "kind": "text",
+      "title": "Always use braces",
+      "body": "C lets you skip the braces for a single line, but this causes bugs when you add a second line later. Writing braces every time is a safe habit. Indent the code inside by four spaces so it is easy to read."
+    },
+    {
+      "id": "trace",
+      "kind": "example",
+      "title": "Even or odd",
+      "body": "Take `int n = 7;` and the test `n % 2 == 0`.",
+      "steps": [
+        "`7 % 2` is 1, the remainder",
+        "`1 == 0` is false, so the `if` block is skipped",
+        "The `else` block runs and prints odd"
+      ]
+    },
+    {
+      "id": "eq",
+      "kind": "tip",
+      "body": "`=` stores a value and `==` compares. Writing `if (x = 5)` is a classic bug that stores 5 instead of testing."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "`int x = 3;` `if (x > 5)` prints big, `else` prints small. What prints?",
+      "choices": [
+        "small",
+        "big",
+        "Nothing",
+        "Both"
+      ],
+      "answerIndex": 0,
+      "explanation": "3 is not greater than 5, so the `else` block runs."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "How many blocks of an if and else run in one pass?",
+      "choices": [
+        "Always both",
+        "Exactly one",
+        "None, they are decoration",
+        "Only the else"
+      ],
+      "answerIndex": 1,
+      "explanation": "If the condition is true the `if` block runs, otherwise the `else` block."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "The condition of an `if` goes inside \\_\\_.",
+      "choices": [
+        "quotes",
+        "square brackets",
+        "parentheses",
+        "angle brackets"
+      ],
+      "answerIndex": 2,
+      "explanation": "Write `if (condition)`."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "To test equality in a condition, use \\_\\_.",
+      "choices": [
+        "`=`",
+        "`:=`",
+        "`=>`",
+        "`==`"
+      ],
+      "answerIndex": 3,
+      "explanation": "A single `=` assigns. `==` compares."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "`int n = 7;` With the even test `n % 2 == 0`, what does the program print, even or odd?",
+      "accepted": [
+        "odd"
+      ],
+      "keypad": "full",
+      "explanation": "7 leaves remainder 1 after dividing by 2, so it is odd."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "What is wrong with `if (x = 5)`?",
+      "choices": [
+        "It assigns 5 instead of comparing",
+        "Nothing, it is correct",
+        "It needs a colon",
+        "It needs a semicolon after the `)`"
+      ],
+      "answerIndex": 0,
+      "explanation": "`=` stores 5 in `x`, and 5 counts as true, so the block always runs."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Put the parts of an if and else in order.",
+      "steps": [
+        "`if (condition)`",
+        "Block of code for true",
+        "`else`",
+        "Block of code for false"
+      ],
+      "explanation": "The condition and its block come first, then the else part."
+    }
+  ]
+}

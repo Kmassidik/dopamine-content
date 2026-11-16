@@ -1,0 +1,171 @@
+{
+  "id": "cf-data-01",
+  "version": 1,
+  "minApp": 2,
+  "title": "Variables and int",
+  "xp": 15,
+  "tags": [
+    "c",
+    "variables",
+    "int"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Boxes with names",
+      "body": "A variable is a named place in memory that holds a value. You choose the name, and the computer remembers the value for you. Variables let a program store a score, an age or a result and use it later."
+    },
+    {
+      "id": "types",
+      "kind": "text",
+      "title": "Every variable has a type",
+      "body": "In C you must say what kind of value a variable holds. `int` holds whole numbers like 7, 0 or -12. You declare a variable by writing the type, then the name, then an optional starting value, then a semicolon."
+    },
+    {
+      "id": "decl",
+      "kind": "code",
+      "title": "Declare and change",
+      "body": "`%d` prints an int. We cover format codes fully in a later lesson.",
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    int age = 20;\n    printf(\"%d\\n\", age);\n    age = age + 1;\n    printf(\"%d\\n\", age);\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "assign",
+      "kind": "text",
+      "title": "Assignment is not equality",
+      "body": "The single `=` means store the value on the right into the variable on the left. So `age = age + 1;` is not a puzzle. It reads the current value, adds 1, and stores the result back."
+    },
+    {
+      "id": "copy",
+      "kind": "example",
+      "title": "Copying a value",
+      "body": "Follow this code: `int a = 4;` then `int b = a;` then `a = 10;`.",
+      "steps": [
+        "`a` holds 4",
+        "`b = a` copies the 4 into `b`, so `b` holds 4",
+        "`a = 10` changes only `a`. `b` still holds 4",
+        "Printing `a` and `b` shows 10 4"
+      ]
+    },
+    {
+      "id": "names",
+      "kind": "text",
+      "title": "Choosing names",
+      "body": "A name may use letters, digits and underscores, but cannot start with a digit. C is case sensitive, so `Total` and `total` are different. Pick names that say what the value means, like `score` instead of `s`."
+    },
+    {
+      "id": "init",
+      "kind": "tip",
+      "body": "Give a variable a starting value. An int you never set holds an unpredictable leftover value."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What does `int count = 3;` do?",
+      "choices": [
+        "Prints 3",
+        "Compares count with 3",
+        "Creates a whole-number variable holding 3",
+        "Creates a decimal variable"
+      ],
+      "answerIndex": 2,
+      "explanation": "It declares an `int` called `count` and gives it the starting value 3."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "`int x = 5;` then `x = x + 2;`. What does `x` hold now?",
+      "choices": [
+        "5",
+        "2",
+        "52",
+        "7"
+      ],
+      "answerIndex": 3,
+      "explanation": "The right side reads 5, adds 2 and stores 7 back into `x`."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "`int a = 4; int b = a; a = 10;` What does `b` hold? Type the number.",
+      "accepted": [
+        "4"
+      ],
+      "keypad": "full",
+      "explanation": "`b` got a copy of 4. Changing `a` later does not change `b`."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "In C a variable name cannot start with a \\_\\_.",
+      "choices": [
+        "digit",
+        "letter",
+        "underscore",
+        "capital"
+      ],
+      "answerIndex": 0,
+      "explanation": "Names may contain digits but cannot begin with one."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which is a valid variable name?",
+      "choices": [
+        "`2total`",
+        "`total_2`",
+        "`my total`",
+        "`total-2`"
+      ],
+      "answerIndex": 1,
+      "explanation": "Letters, digits and underscores are allowed, no spaces or dashes, and no leading digit."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Are `Score` and `score` the same variable?",
+      "choices": [
+        "Yes, case is ignored",
+        "Only inside main",
+        "No, C is case sensitive",
+        "Only for ints"
+      ],
+      "answerIndex": 2,
+      "explanation": "Capital and lowercase letters make different names."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each line to what it does.",
+      "pairs": [
+        [
+          "`int n;`",
+          "Declares a variable"
+        ],
+        [
+          "`n = 8;`",
+          "Stores a value"
+        ],
+        [
+          "`int n = 8;`",
+          "Declares and stores"
+        ]
+      ],
+      "explanation": "Declaring creates the variable. Assigning gives it a value. You can do both at once."
+    },
+    {
+      "id": "q8",
+      "type": "order_steps",
+      "prompt": "Put these in order to print 21.",
+      "steps": [
+        "`int age = 20;`",
+        "`age = age + 1;`",
+        "`printf(\"%d\\n\", age);`"
+      ],
+      "explanation": "Declare first, then change, then print the current value."
+    }
+  ]
+}

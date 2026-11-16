@@ -1,0 +1,180 @@
+{
+  "id": "cf-data-06",
+  "version": 1,
+  "minApp": 2,
+  "title": "Overflow and float surprises",
+  "xp": 15,
+  "tags": [
+    "c",
+    "overflow",
+    "float"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Numbers have limits",
+      "body": "A variable has a fixed size, so it can only hold a limited range of numbers. A 4-byte `int` holds about minus 2.1 billion up to 2.1 billion. Go past the edge and the result is not what maths says."
+    },
+    {
+      "id": "wrap",
+      "kind": "code",
+      "title": "Wrapping around",
+      "body": "An unsigned char holds 0 to 255. Adding 1 to 255 wraps to 0.",
+      "code": "    unsigned char c = 255;\n    c = c + 1;\n    printf(\"%d\\n\", c);\n    int big = 2000000000;\n    long long w = (long long) big * 2;\n    printf(\"%lld\\n\", w);",
+      "language": "c"
+    },
+    {
+      "id": "signed",
+      "kind": "text",
+      "title": "Signed overflow",
+      "body": "For unsigned types, wrapping is defined: the value restarts at 0. For a signed `int`, going past the maximum is undefined behaviour. It often wraps to a large negative number, but the language promises nothing. Avoid it."
+    },
+    {
+      "id": "fix",
+      "kind": "text",
+      "title": "Using a bigger type",
+      "body": "If a result may be large, use a bigger type. The second part of the program above casts to `long long`, which holds 8 bytes. `2000000000 * 2` is then a correct 4000000000. Print it with `%lld`."
+    },
+    {
+      "id": "float",
+      "kind": "code",
+      "title": "Decimals are approximate",
+      "body": "Computers store decimals in binary, so 0.1 is not exact.",
+      "code": "    double s = 0.1 + 0.2;\n    printf(\"%.17f\\n\", s);\n    printf(\"%d\\n\", s == 0.3);\n    double d = fabs(s - 0.3);\n    printf(\"%d\\n\", d < 1e-9);",
+      "language": "c"
+    },
+    {
+      "id": "compare",
+      "kind": "text",
+      "title": "Never compare floats with ==",
+      "body": "0.1 + 0.2 is stored as 0.30000000000000004, so `== 0.3` is false (0). Instead check that the two numbers are very close: `fabs(a - b) < 1e-9`. Also, converting a decimal to int drops the decimals, so 3.9 becomes 3."
+    },
+    {
+      "id": "trace",
+      "kind": "example",
+      "title": "Why the sum is not exact",
+      "body": "Follow `0.1 + 0.2` in a double.",
+      "steps": [
+        "0.1 is stored as a nearby binary fraction, a hair above 0.1",
+        "0.2 is stored the same way, a hair above 0.2",
+        "Their sum lands a hair above 0.3, so `== 0.3` is false"
+      ]
+    },
+    {
+      "id": "pick",
+      "kind": "tip",
+      "body": "Use whole numbers for counting and money in cents. Use decimals for measurements, and expect tiny errors."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "`unsigned char c = 255; c = c + 1;` What does `c` hold?",
+      "choices": [
+        "256",
+        "-1",
+        "0",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "An unsigned char wraps around from 255 back to 0."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Is signed `int` overflow well defined in C?",
+      "choices": [
+        "Yes, it always wraps to 0",
+        "Yes, it always gives an error message",
+        "Yes, it stops the program safely",
+        "No, it is undefined behaviour"
+      ],
+      "answerIndex": 3,
+      "explanation": "Only unsigned wrapping is guaranteed. Signed overflow is undefined."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "What is the safest way to hold `2000000000 * 2`?",
+      "choices": [
+        "Use `long long`",
+        "Use `char`",
+        "Use `int` and hope",
+        "Use `unsigned char`"
+      ],
+      "answerIndex": 0,
+      "explanation": "`long long` is large enough to hold 4000000000."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "What does `printf(\"%d\", 0.1 + 0.2 == 0.3);` print on a typical computer? Type the digit.",
+      "accepted": [
+        "0"
+      ],
+      "keypad": "full",
+      "explanation": "A false comparison gives 0 in C. The sum is 0.30000000000000004, not 0.3."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "To compare two doubles, test that the \\_\\_ of their difference is tiny.",
+      "choices": [
+        "square",
+        "absolute value",
+        "sign",
+        "length"
+      ],
+      "answerIndex": 1,
+      "explanation": "`fabs(a - b) < 1e-9` asks whether they are nearly equal."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "`double h = 3.9; int x = h;` What does `x` hold?",
+      "choices": [
+        "4",
+        "3.9",
+        "3",
+        "0"
+      ],
+      "answerIndex": 2,
+      "explanation": "Converting a decimal to int drops the fractional part. It does not round."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "`0.1` cannot be stored exactly because computers store decimals in \\_\\_.",
+      "choices": [
+        "hexagons",
+        "words",
+        "letters",
+        "binary"
+      ],
+      "answerIndex": 3,
+      "explanation": "Many decimals have no exact finite binary form, so they are slightly off."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each type to its safe use.",
+      "pairs": [
+        [
+          "`int`",
+          "Counting small whole numbers"
+        ],
+        [
+          "`long long`",
+          "Very large whole numbers"
+        ],
+        [
+          "`double`",
+          "Measurements with decimals"
+        ]
+      ],
+      "explanation": "Pick a type big enough for the numbers you expect."
+    }
+  ]
+}
