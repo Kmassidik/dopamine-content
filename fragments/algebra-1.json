@@ -1,0 +1,10 @@
+{"course": {"id": "algebra-1", "categoryId": "math", "title": "Algebra 1", "description": "From one-step equations to quadratics, one short lesson at a time.", "order": 2, "dir": "math/algebra-1",
+  "overview": {"summary": "Build algebra from the ground up: equations, lines and functions, inequalities and systems, exponents and polynomials, and quadratics. Short lessons with worked examples and practice.",
+   "outcomes": ["Solve linear equations, including brackets, fractions and word problems", "Graph lines and write their equations in several forms", "Solve inequalities and systems of equations", "Use exponent rules and scientific notation", "Add, multiply and factor polynomials", "Solve quadratic equations by factoring or the formula"],
+   "requirements": ["Pre-Algebra: fractions, integers and one-step equations"], "minutes": 160},
+  "units": [
+   {"id": "linear-eq", "title": "Linear Equations", "order": 1, "dir": "linear-eq"},
+   {"id": "a1-functions", "title": "Linear Functions and Graphs", "order": 2, "dir": "functions"},
+   {"id": "a1-systems", "title": "Inequalities and Systems", "order": 3, "dir": "systems"},
+   {"id": "a1-polynomials", "title": "Exponents and Polynomials", "order": 4, "dir": "polynomials"},
+   {"id": "a1-quadratics", "title": "Quadratics", "order": 5, "dir": "quadratics"}]}}

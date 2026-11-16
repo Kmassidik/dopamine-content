@@ -1,6 +1,6 @@
 {
   "id": "linear-eq-notes",
-  "version": 1,
+  "version": 2,
   "title": "Linear equations: cheat sheet",
   "blocks": [
     {
@@ -47,6 +47,37 @@
         "$\\sqrt{x}$ is the root of $x$",
         "$|x|$ is the distance from zero",
         "$\\frac{a}{b}+\\frac{c}{b}=\\frac{a+c}{b}$"
+      ]
+    },
+    {
+      "id": "both-sides",
+      "kind": "list",
+      "title": "Variables on both sides",
+      "items": [
+        "Gather the $x$ terms on one side first",
+        "Then gather the plain numbers on the other",
+        "$2x+1=2x+5$ gives $1=5$: no solution",
+        "A true result like $3=3$: every number works"
+      ]
+    },
+    {
+      "id": "brackets-fractions",
+      "kind": "list",
+      "title": "Brackets and fractions",
+      "items": [
+        "Distribute: $a(b+c)=ab+ac$",
+        "Clear fractions: multiply every term by the common denominator",
+        "Then solve as an ordinary equation"
+      ]
+    },
+    {
+      "id": "word-problems",
+      "kind": "list",
+      "title": "Word problems and formulas",
+      "items": [
+        "Name the unknown, write the equation, solve, check",
+        "Solve for a letter: treat other letters as numbers",
+        "$d=rt\\ \\Rightarrow\\ t=\\frac{d}{r}$"
       ]
     },
     {

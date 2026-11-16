@@ -1,0 +1,147 @@
+{
+  "id": "linear-eq-03",
+  "version": 1,
+  "title": "Variables on both sides",
+  "xp": 15,
+  "tags": [
+    "algebra",
+    "equations"
+  ],
+  "learn": [
+    {
+      "id": "both-sides",
+      "kind": "text",
+      "title": "Letters on both sides",
+      "body": "Sometimes $x$ appears on both sides, like $5x+2=3x+10$. The plan stays the same: do the same thing to both sides. First gather all the $x$ terms on one side."
+    },
+    {
+      "id": "example-gather",
+      "kind": "example",
+      "title": "Solve $5x+2=3x+10$",
+      "body": "Move the $x$ terms together, then solve as before.",
+      "steps": [
+        "Subtract $3x$ from both sides: $2x+2=10$",
+        "Subtract 2 from both sides: $2x=8$",
+        "Divide both sides by 2: $x=4$",
+        "Check: $5\\cdot4+2=22$ and $3\\cdot4+10=22$."
+      ]
+    },
+    {
+      "id": "example-negative",
+      "kind": "example",
+      "title": "Solve $7x-3=2x+12$",
+      "body": "Subtract the smaller $x$ term so the coefficient stays positive.",
+      "steps": [
+        "Subtract $2x$: $5x-3=12$",
+        "Add 3: $5x=15$",
+        "Divide by 5: $x=3$",
+        "Check: $18=18$."
+      ]
+    },
+    {
+      "id": "which-side",
+      "kind": "tip",
+      "body": "You may gather the $x$ terms on either side. Choosing the side with the bigger coefficient avoids negative numbers, but both choices give the same answer."
+    },
+    {
+      "id": "special-cases",
+      "kind": "text",
+      "title": "When things cancel",
+      "body": "Look at $2x+1=2x+5$. Subtracting $2x$ gives $1=5$, which is never true, so there is no solution. If you get something always true, like $3=3$, every number is a solution."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Solve $4x+1=2x+9$",
+      "choices": [
+        "$x=5$",
+        "$x=4$",
+        "$x=8$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Subtract $2x$: $2x+1=9$. Subtract 1: $2x=8$. Divide by 2: $x=4$. Check: $17=17$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Solve $6x-5=2x+7$. $x=$ ?",
+      "accepted": [
+        "3",
+        "3.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Subtract $2x$: $4x-5=7$. Add 5: $4x=12$, so $x=3$. Check: $13=13$."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "To solve $5x+2=3x+10$, first subtract \\_\\_ from both sides.",
+      "choices": [
+        "$3x$",
+        "$5x$",
+        "$2$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Subtracting $3x$ moves every $x$ to the left side and leaves $2x+2=10$."
+    },
+    {
+      "id": "q4",
+      "type": "order_steps",
+      "prompt": "Solve $3x+4=x+10$. Put the steps in order.",
+      "steps": [
+        "Subtract $x$ from both sides: $2x+4=10$",
+        "Subtract 4 from both sides: $2x=6$",
+        "Divide both sides by 2: $x=3$"
+      ],
+      "explanation": "First gather the $x$ terms on one side, then the plain numbers on the other, then divide."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "Solve $9x-4=5x+8$. $x=$ ?",
+      "accepted": [
+        "3",
+        "3.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Subtract $5x$: $4x-4=8$. Add 4: $4x=12$. So $x=3$. Check: $23=23$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "Solve $10-x=3x+2$. $x=$ ?",
+      "accepted": [
+        "2",
+        "2.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Add $x$ to both sides: $10=4x+2$. Subtract 2: $8=4x$, so $x=2$. Check: $8=8$."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Solve $6x+3=2x+3$",
+      "choices": [
+        "No solution",
+        "$x=0$",
+        "$x=3$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Subtract $2x$ and 3 from both sides: $4x=0$, so $x=0$. A solution of zero is still a solution."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "How many solutions does $3x+5=3x+9$ have?",
+      "choices": [
+        "One",
+        "Every number",
+        "None"
+      ],
+      "answerIndex": 2,
+      "explanation": "Subtract $3x$ from both sides and you get $5=9$, which is false for every $x$. So there is no solution."
+    }
+  ]
+}
