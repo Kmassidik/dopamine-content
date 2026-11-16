@@ -1,0 +1,58 @@
+{
+  "id": "pc-applications-notes",
+  "version": 1,
+  "title": "Applications of trig: cheat sheet",
+  "blocks": [
+    {
+      "id": "b1",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Trig is not only for right triangles. Laws for any triangle, arrows with direction, and angles as coordinates all use the same ratios."
+    },
+    {
+      "id": "b2",
+      "kind": "formula",
+      "title": "Law of sines",
+      "body": "$\\frac{a}{\\sin A}=\\frac{b}{\\sin B}=\\frac{c}{\\sin C}$"
+    },
+    {
+      "id": "b3",
+      "kind": "formula",
+      "title": "Law of cosines",
+      "body": "$c^2=a^2+b^2-2ab\\cos C$"
+    },
+    {
+      "id": "b4",
+      "kind": "list",
+      "title": "Which law?",
+      "items": [
+        "Side and its opposite angle known: sines",
+        "Three sides: cosines",
+        "Two sides and the angle between: cosines"
+      ]
+    },
+    {
+      "id": "b5",
+      "kind": "formula",
+      "title": "Vector magnitude",
+      "body": "$|(x,y)|=\\sqrt{x^2+y^2}$"
+    },
+    {
+      "id": "b6",
+      "kind": "formula",
+      "title": "Polar to rectangular",
+      "body": "$x=r\\cos\\theta,\\ y=r\\sin\\theta$"
+    },
+    {
+      "id": "b7",
+      "kind": "formula",
+      "title": "Complex polar form",
+      "body": "$z=r(\\cos\\theta+i\\sin\\theta)$"
+    },
+    {
+      "id": "b8",
+      "kind": "tip",
+      "body": "For complex numbers: multiply the moduli and add the angles."
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "id": "pc-trig-03",
+  "version": 1,
+  "title": "Graphs of sine and cosine",
+  "xp": 20,
+  "tags": [
+    "precalculus",
+    "trigonometry",
+    "graphs"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Waves",
+      "body": "Plot $\\sin x$ against $x$ in radians and you get a smooth wave that repeats every $2\\pi$. It starts at 0 and rises. The graph of $\\cos x$ is the same wave starting at its peak, 1."
+    },
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "The general form",
+      "body": "For $y=A\\sin(Bx)+D$: the amplitude is $|A|$, the period is $\\frac{2\\pi}{B}$, and the midline is $y=D$. The wave swings from $D-|A|$ to $D+|A|$. A shift inside, $\\sin(x-c)$, moves the graph right by $c$."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Describe $y=3\\sin(2x)$",
+      "body": "Read each number.",
+      "steps": [
+        "Amplitude: $3$",
+        "Period: $\\frac{2\\pi}{2}=\\pi$",
+        "Midline $y=0$, so the wave runs from $-3$ to $3$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Range of $y=2\\cos x+1$",
+      "body": "Add the midline to the swing.",
+      "steps": [
+        "Amplitude 2, midline $y=1$",
+        "Maximum: $1+2=3$",
+        "Minimum: $1-2=-1$, so the range is $[-1,3]$"
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "tip",
+      "body": "A bigger $B$ squeezes the wave, so the period gets shorter."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is the amplitude of $y=-5\\sin x$?",
+      "choices": [
+        "$-5$",
+        "5",
+        "$\\frac{1}{5}$",
+        "$2\\pi$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Amplitude is $|A|=5$. The minus sign flips the wave but not its height."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What is the period of $y=\\sin(4x)$?",
+      "choices": [
+        "$4\\pi$",
+        "$\\frac{\\pi}{4}$",
+        "$\\frac{\\pi}{2}$",
+        "$8\\pi$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Period $=\\frac{2\\pi}{4}=\\frac{\\pi}{2}$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "What is the maximum of $y=3\\cos x+1$?",
+      "choices": [
+        "3",
+        "1",
+        "2",
+        "4"
+      ],
+      "answerIndex": 3,
+      "explanation": "Midline 1 plus amplitude 3 gives 4."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What is the midline of $y=4\\sin x-2$?",
+      "choices": [
+        "$y=-2$",
+        "$y=4$",
+        "$y=2$",
+        "$y=0$"
+      ],
+      "answerIndex": 0,
+      "explanation": "The added constant sets the midline."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What is the period of $y=\\cos\\left(\\frac{x}{3}\\right)$?",
+      "choices": [
+        "$\\frac{2\\pi}{3}$",
+        "$6\\pi$",
+        "$3\\pi$",
+        "$2\\pi$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Here $B=\\frac13$, so the period is $2\\pi\\div\\frac13=6\\pi$."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "The graph of $\\cos x$ starts at its \\_\\_ when $x=0$.",
+      "choices": [
+        "zero",
+        "minimum",
+        "maximum",
+        "midline going down"
+      ],
+      "answerIndex": 2,
+      "explanation": "$\\cos 0=1$, the highest value."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each function to its period.",
+      "pairs": [
+        [
+          "$\\sin x$",
+          "$2\\pi$"
+        ],
+        [
+          "$\\sin 2x$",
+          "$\\pi$"
+        ],
+        [
+          "$\\sin\\frac{x}{2}$",
+          "$4\\pi$"
+        ],
+        [
+          "$\\sin\\pi x$",
+          "$2$"
+        ]
+      ],
+      "explanation": "The period is $\\frac{2\\pi}{B}$."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "The graph of $y=\\sin\\left(x-\\frac{\\pi}{2}\\right)$ is $\\sin x$ shifted:",
+      "choices": [
+        "left by $\\frac{\\pi}{2}$",
+        "up by $\\frac{\\pi}{2}$",
+        "right by $\\pi$",
+        "right by $\\frac{\\pi}{2}$"
+      ],
+      "answerIndex": 3,
+      "explanation": "Replacing $x$ with $x-c$ moves the graph right by $c$."
+    },
+    {
+      "id": "q9",
+      "type": "order_steps",
+      "prompt": "Sketch $y=2\\sin x+1$. Put the steps in order.",
+      "steps": [
+        "Draw the midline $y=1$",
+        "Mark the top $y=3$ and bottom $y=-1$",
+        "Start at the midline and rise",
+        "Repeat every $2\\pi$"
+      ],
+      "explanation": "Midline first, then the swing, then the shape."
+    }
+  ]
+}

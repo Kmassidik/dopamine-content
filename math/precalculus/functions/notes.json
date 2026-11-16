@@ -1,0 +1,69 @@
+{
+  "id": "pc-functions-notes",
+  "version": 1,
+  "title": "Function families: cheat sheet",
+  "blocks": [
+    {
+      "id": "b1",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Each family of functions has a signature. Learn to spot it in a graph, an equation or a table, and you can choose a model and predict."
+    },
+    {
+      "id": "b2",
+      "kind": "list",
+      "title": "End behavior",
+      "items": [
+        "Even degree, positive lead: both ends up",
+        "Even degree, negative lead: both ends down",
+        "Odd degree, positive lead: down left, up right",
+        "Odd degree, negative lead: up left, down right"
+      ]
+    },
+    {
+      "id": "b3",
+      "kind": "list",
+      "title": "Rational function asymptotes",
+      "items": [
+        "Vertical: denominator zero and not cancelled",
+        "Hole: a factor cancels",
+        "Top degree smaller: $y=0$",
+        "Equal degrees: ratio of leading coefficients",
+        "Top degree larger: no horizontal asymptote"
+      ]
+    },
+    {
+      "id": "b4",
+      "kind": "formula",
+      "title": "Exponential model",
+      "body": "$y=a\\cdot b^x$"
+    },
+    {
+      "id": "b5",
+      "kind": "formula",
+      "title": "Log and exponent",
+      "body": "$b^x=y$ means $x=\\log_b y$"
+    },
+    {
+      "id": "b6",
+      "kind": "formula",
+      "title": "Inverse pair",
+      "body": "$f^{-1}(f(x))=x$"
+    },
+    {
+      "id": "b7",
+      "kind": "list",
+      "title": "Spot the model",
+      "items": [
+        "Constant difference: linear",
+        "Constant ratio: exponential",
+        "Constant second difference: quadratic"
+      ]
+    },
+    {
+      "id": "b8",
+      "kind": "tip",
+      "body": "Do not trust a model far outside the range of its data."
+    }
+  ]
+}

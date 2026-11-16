@@ -1,0 +1,50 @@
+{
+  "course": {
+    "id": "precalculus",
+    "categoryId": "math",
+    "title": "Precalculus",
+    "description": "Functions, trigonometry and the ideas that lead to calculus",
+    "order": 5,
+    "dir": "math/precalculus",
+    "overview": {
+      "summary": "Build the toolkit for calculus: function families, trigonometry, applications of trig and the first ideas of limits and derivatives. Short readings, then practice.",
+      "outcomes": [
+        "Describe polynomial, rational, exponential and log functions",
+        "Use radians, the unit circle and trig graphs",
+        "Solve triangles with the laws of sines and cosines",
+        "Convert between polar and rectangular forms",
+        "Understand limits and the derivative as an instant rate"
+      ],
+      "requirements": [
+        "Algebra 2: functions, logarithms and sequences"
+      ],
+      "minutes": 120
+    },
+    "units": [
+      {
+        "id": "pc-functions",
+        "title": "Function Families",
+        "order": 1,
+        "dir": "functions"
+      },
+      {
+        "id": "pc-trig",
+        "title": "Trigonometry",
+        "order": 2,
+        "dir": "trigonometry"
+      },
+      {
+        "id": "pc-applications",
+        "title": "Applications of Trigonometry",
+        "order": 3,
+        "dir": "applications"
+      },
+      {
+        "id": "pc-calculus",
+        "title": "Toward Calculus",
+        "order": 4,
+        "dir": "toward-calculus"
+      }
+    ]
+  }
+}

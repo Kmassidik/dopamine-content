@@ -1,0 +1,69 @@
+{
+  "id": "pc-trig-notes",
+  "version": 1,
+  "title": "Trigonometry: cheat sheet",
+  "blocks": [
+    {
+      "id": "b1",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Trig functions come from the unit circle: the point at angle $\\theta$ is $(\\cos\\theta,\\sin\\theta)$. Everything else builds on that."
+    },
+    {
+      "id": "b2",
+      "kind": "formula",
+      "title": "Degrees and radians",
+      "body": "$180^\\circ=\\pi\\text{ rad}$"
+    },
+    {
+      "id": "b3",
+      "kind": "formula",
+      "title": "Arc length",
+      "body": "$s=r\\theta$"
+    },
+    {
+      "id": "b4",
+      "kind": "list",
+      "title": "Special angles (sine)",
+      "items": [
+        "$30^\\circ$: $\\frac12$",
+        "$45^\\circ$: $\\frac{\\sqrt2}{2}$",
+        "$60^\\circ$: $\\frac{\\sqrt3}{2}$",
+        "$90^\\circ$: $1$"
+      ]
+    },
+    {
+      "id": "b5",
+      "kind": "formula",
+      "title": "Wave form",
+      "body": "$y=A\\sin(Bx)+D$: amplitude $|A|$, period $\\frac{2\\pi}{B}$"
+    },
+    {
+      "id": "b6",
+      "kind": "formula",
+      "title": "Pythagorean identity",
+      "body": "$\\sin^2\\theta+\\cos^2\\theta=1$"
+    },
+    {
+      "id": "b7",
+      "kind": "formula",
+      "title": "Double angle",
+      "body": "$\\sin2\\theta=2\\sin\\theta\\cos\\theta$"
+    },
+    {
+      "id": "b8",
+      "kind": "list",
+      "title": "Inverse ranges",
+      "items": [
+        "$\\sin^{-1}$: $-\\frac{\\pi}{2}$ to $\\frac{\\pi}{2}$",
+        "$\\cos^{-1}$: $0$ to $\\pi$",
+        "$\\tan^{-1}$: $-\\frac{\\pi}{2}$ to $\\frac{\\pi}{2}$"
+      ]
+    },
+    {
+      "id": "b9",
+      "kind": "tip",
+      "body": "For an equation, find the reference angle, then use quadrant signs to list every solution."
+    }
+  ]
+}
