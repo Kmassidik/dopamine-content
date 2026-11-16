@@ -1,0 +1,160 @@
+{
+  "id": "cg-search-05",
+  "version": 1,
+  "minApp": 2,
+  "title": "Searching strings and structs",
+  "xp": 15,
+  "tags": [
+    "c",
+    "searching",
+    "strings"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Not just numbers",
+      "body": "Searching works on any data, but you must be able to ask whether two items match. For int that is `==`. Strings and structs need more care."
+    },
+    {
+      "id": "str",
+      "kind": "text",
+      "title": "Comparing strings",
+      "body": "A C string is an array of characters, so `==` would only compare addresses, not letters. To compare contents use `strcmp` from string.h. It returns 0 when two strings are equal. Never use `==` to compare strings."
+    },
+    {
+      "id": "names",
+      "kind": "code",
+      "title": "Searching an array of names",
+      "body": "The loop is the same as before. Only the comparison changes.",
+      "code": "int find(const char *names[], int n,\n         const char *t) {\n    for (int i = 0; i < n; i++) {\n        if (strcmp(names[i], t) == 0) {\n            return i;\n        }\n    }\n    return -1;\n}",
+      "language": "c"
+    },
+    {
+      "id": "people",
+      "kind": "code",
+      "title": "Searching structs",
+      "body": "Each item holds a name and a number. We compare the name and return the number.",
+      "code": "struct person {\n    char name[16];\n    int phone;\n};\nint lookup(struct person p[], int n,\n           const char *t) {\n    for (int i = 0; i < n; i++)\n        if (strcmp(p[i].name, t) == 0)\n            return p[i].phone;\n    return -1;\n}",
+      "language": "c"
+    },
+    {
+      "id": "lk",
+      "kind": "example",
+      "title": "Looking up Bo",
+      "body": "Call `lookup` on Ada 111, Bo 222, Cy 333.",
+      "steps": [
+        "`i` is 0: `strcmp` of Ada and Bo is not 0",
+        "`i` is 1: `strcmp` of Bo and Bo is 0",
+        "Return `p[1].phone`, which is 222"
+      ]
+    },
+    {
+      "id": "key",
+      "kind": "text",
+      "title": "Search by a key",
+      "body": "For structs you pick one field as the key, here the name. Searching finds the struct whose key matches, and you then use any field you like. The shape of the algorithm does not change."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Sorted strings can be binary searched too. Compare with `strcmp` and use its result: below 0 means the first string sorts before the second."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "Which function compares the contents of two C strings?",
+      "choices": [
+        "`strcmp`",
+        "`==`",
+        "`strlen`"
+      ],
+      "answerIndex": 0,
+      "explanation": "`strcmp` returns 0 for equal strings. `==` only compares addresses.",
+      "id": "q1"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "`strcmp(a, b)` returns \\_\\_ when the strings are equal.",
+      "choices": [
+        "0",
+        "1",
+        "-1"
+      ],
+      "answerIndex": 0,
+      "explanation": "A result of 0 means equal. Non-zero means they differ.",
+      "id": "q2"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "`names = {\"Ada\", \"Bo\", \"Cy\", \"Di\"}`. What does `find(names, 4, \"Cy\")` return?",
+      "choices": [
+        "2",
+        "3",
+        "-1"
+      ],
+      "answerIndex": 0,
+      "explanation": "\"Cy\" is at index 2, counting from 0.",
+      "id": "q3"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "Same array. What does `find(names, 4, \"Ed\")` return?",
+      "accepted": [
+        "-1"
+      ],
+      "keypad": "numeric",
+      "explanation": "\"Ed\" is not there, so the loop finishes and returns -1.",
+      "id": "q4"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "`lookup` is called on Ada 111, Bo 222, Cy 333 with the name \"Bo\". What does it return?",
+      "choices": [
+        "222",
+        "1",
+        "111"
+      ],
+      "answerIndex": 0,
+      "explanation": "The match is the second struct and the function returns its `phone` field.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Why is `names[i] == t` a poor way to compare strings?",
+      "choices": [
+        "It compares addresses, not letters",
+        "It is a syntax error",
+        "It only works for short strings"
+      ],
+      "answerIndex": 0,
+      "explanation": "Two equal strings in different places have different addresses, so `==` may say they differ.",
+      "id": "q6"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each need to the tool.",
+      "pairs": [
+        [
+          "compare two strings",
+          "`strcmp`"
+        ],
+        [
+          "pick the name field of a struct",
+          "`p[i].name`"
+        ],
+        [
+          "signal not found",
+          "return -1"
+        ],
+        [
+          "step through the array",
+          "`for` loop"
+        ]
+      ],
+      "explanation": "Searching strings and structs reuses the same loop with a different comparison.",
+      "id": "q7"
+    }
+  ]
+}

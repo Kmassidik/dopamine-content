@@ -1,0 +1,154 @@
+{
+  "id": "cg-analysis-02",
+  "version": 1,
+  "minApp": 2,
+  "title": "Counting steps",
+  "xp": 15,
+  "tags": [
+    "c",
+    "algorithms",
+    "cost"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Measuring work",
+      "body": "Seconds are a poor measure of an algorithm. A fast phone and an old laptop give different times. Instead we count steps, such as comparisons or additions, as a function of the input size $n$. That count is the same on any machine."
+    },
+    {
+      "id": "sum",
+      "kind": "code",
+      "title": "Counting a simple loop",
+      "body": "This loop adds the numbers 1 to `n`. Its body runs once per number, so it does $n$ additions.",
+      "code": "int total = 0;\nfor (int i = 1; i <= n; i++) {\n    total += i;\n}\nprintf(\"%d\\n\", total);",
+      "language": "c"
+    },
+    {
+      "id": "sum2",
+      "kind": "text",
+      "title": "What to count",
+      "body": "With n = 10 the loop makes 10 additions and prints 55. With n = 100 it makes 100 additions. The work grows in step with n. We choose one kind of step, usually the most repeated one, and count how many times it runs."
+    },
+    {
+      "id": "nest",
+      "kind": "code",
+      "title": "A loop inside a loop",
+      "body": "For each `i`, the inner loop runs `n` times. So the body runs $n \\cdot n$ times.",
+      "code": "int count = 0;\nfor (int i = 0; i < n; i++) {\n    for (int j = 0; j < n; j++) {\n        count++;\n    }\n}\nprintf(\"%d\\n\", count);",
+      "language": "c"
+    },
+    {
+      "id": "grow",
+      "kind": "example",
+      "title": "How the count grows",
+      "body": "Compare the two loops as n gets bigger.",
+      "steps": [
+        "For the single loop, n = 10 gives 10 steps",
+        "For the double loop, n = 10 gives 100 steps",
+        "Double the input to n = 20: the single loop does 20, the double loop does 400",
+        "Doubling n doubles one count but quadruples the other"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Count the work inside the loops, not the lines of code. A short nested loop can cost far more than a long loop with no nesting."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "Why do we count steps instead of timing a program?",
+      "choices": [
+        "Counting does not depend on the machine",
+        "Counting is always exact in seconds",
+        "Timers do not work in C"
+      ],
+      "answerIndex": 0,
+      "explanation": "The step count is a property of the algorithm. Time also depends on the computer.",
+      "id": "q1"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "How many times does `total += i;` run when `n` is 10?",
+      "accepted": [
+        "10",
+        "10 times"
+      ],
+      "keypad": "numeric",
+      "explanation": "The loop goes from `i = 1` to `i = 10`, so the body runs 10 times.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "How many times does `count++` run in the double loop when `n` is 5?",
+      "accepted": [
+        "25"
+      ],
+      "keypad": "numeric",
+      "explanation": "The outer loop runs 5 times and each time the inner loop runs 5 times: 5 times 5 is 25.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "In the double loop, `n` goes from 10 to 20. By what factor does the work grow?",
+      "choices": [
+        "2",
+        "4",
+        "20"
+      ],
+      "answerIndex": 1,
+      "explanation": "100 steps become 400 steps. Squaring the size means doubling n multiplies the work by 4.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "We measure how the number of steps grows as the input size \\_\\_ grows.",
+      "choices": [
+        "`n`",
+        "`i`",
+        "`int`"
+      ],
+      "answerIndex": 0,
+      "explanation": "The letter n stands for the input size, for example the length of an array.",
+      "id": "q5"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each loop to the number of times its body runs.",
+      "pairs": [
+        [
+          "one loop to `n`",
+          "$n$"
+        ],
+        [
+          "two nested loops to `n`",
+          "$n^2$"
+        ],
+        [
+          "`for (i = 0; i < 7; i++)`",
+          "7"
+        ],
+        [
+          "loop that runs 3 times, nested in a loop of 4",
+          "12"
+        ]
+      ],
+      "explanation": "Nested loops multiply, and one loop adds up to its limit.",
+      "id": "q6"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "A loop runs the body 1000 times for n = 1000. What is the most likely step count for n = 2000?",
+      "choices": [
+        "2000",
+        "1000",
+        "4000"
+      ],
+      "answerIndex": 0,
+      "explanation": "The count grows in step with n, so it doubles.",
+      "id": "q7"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "cg-search-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Searching: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Searching finds where a value is, or that it is missing. Linear search checks every item. Binary search needs sorted data and halves the problem each step."
+    },
+    {
+      "id": "compare",
+      "kind": "list",
+      "title": "Linear versus binary",
+      "items": [
+        "Linear: any order, worst case $O(n)$",
+        "Binary: sorted only, worst case $O(\\log n)$",
+        "Both return an index, or -1 if not found",
+        "1,000,000 items: binary needs at most 20 looks"
+      ]
+    },
+    {
+      "id": "lin",
+      "kind": "code",
+      "title": "Linear search",
+      "code": "int linear(int a[], int n, int t) {\n    for (int i = 0; i < n; i++) {\n        if (a[i] == t) {\n            return i;\n        }\n    }\n    return -1;\n}",
+      "language": "c"
+    },
+    {
+      "id": "bin",
+      "kind": "code",
+      "title": "Binary search",
+      "code": "int binary(int a[], int n, int t) {\n    int lo = 0, hi = n - 1;\n    while (lo <= hi) {\n        int mid = lo + (hi - lo) / 2;\n        if (a[mid] == t) return mid;\n        if (a[mid] < t) lo = mid + 1;\n        else hi = mid - 1;\n    }\n    return -1;\n}",
+      "language": "c"
+    },
+    {
+      "id": "str",
+      "kind": "list",
+      "title": "Strings and structs",
+      "items": [
+        "Compare strings with `strcmp(a, b) == 0`",
+        "Never compare strings with `==`",
+        "For a struct, pick a key field to compare"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Move `lo` and `hi` past `mid`, not onto it. Use `lo + (hi - lo) / 2` to avoid overflow."
+    }
+  ]
+}

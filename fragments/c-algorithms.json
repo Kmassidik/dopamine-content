@@ -1,0 +1,51 @@
+{
+  "course": {
+    "id": "c-algorithms",
+    "categoryId": "swe",
+    "title": "Algorithms in C",
+    "description": "Analyse, search, sort and recurse with algorithms written in C",
+    "order": 3,
+    "dir": "swe/c-algorithms",
+    "overview": {
+      "summary": "Learn how to describe and compare algorithms with big O, then write searching, sorting and recursive algorithms in C and see why some are faster.",
+      "outcomes": [
+        "Count steps and describe growth with big O",
+        "Explain best, worst and average case",
+        "Write linear and binary search in C",
+        "Write bubble, selection, insertion and merge steps",
+        "Trace recursive functions and spot base cases",
+        "Explain divide and conquer and stable sorting"
+      ],
+      "requirements": [
+        "C Fundamentals and Arrays: loops, functions and arrays"
+      ],
+      "minutes": 110
+    },
+    "units": [
+      {
+        "id": "cg-analysis",
+        "title": "Thinking About Algorithms",
+        "order": 1,
+        "dir": "analysis"
+      },
+      {
+        "id": "cg-search",
+        "title": "Searching",
+        "order": 2,
+        "dir": "searching"
+      },
+      {
+        "id": "cg-sort",
+        "title": "Sorting",
+        "order": 3,
+        "dir": "sorting"
+      },
+      {
+        "id": "cg-recursion",
+        "title": "Recursion",
+        "order": 4,
+        "dir": "recursion"
+      }
+    ]
+  }
+}

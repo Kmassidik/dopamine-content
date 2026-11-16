@@ -1,0 +1,133 @@
+{
+  "id": "cg-search-02",
+  "version": 1,
+  "minApp": 2,
+  "title": "Binary search",
+  "xp": 15,
+  "tags": [
+    "c",
+    "searching",
+    "sorted"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Halving the problem",
+      "body": "If the array is sorted, you can do much better. Look at the middle item. If it is the target, you are done. If the target is bigger, everything left of the middle is too small, so throw that half away. If smaller, throw the right half away. Repeat."
+    },
+    {
+      "id": "run",
+      "kind": "example",
+      "title": "Find 11 in {1, 3, 5, 7, 9, 11, 13}",
+      "body": "Indexes 0 to 6. Keep a low end `lo` and a high end `hi`.",
+      "steps": [
+        "`lo` 0, `hi` 6, middle index 3 holds 7. 7 is less than 11, so `lo` moves to 4",
+        "`lo` 4, `hi` 6, middle index 5 holds 11",
+        "That is the target, so it is found at index 5 after 2 looks",
+        "Linear search would have needed 6 looks"
+      ]
+    },
+    {
+      "id": "miss",
+      "kind": "text",
+      "title": "When the target is missing",
+      "body": "Search for 4 in the same array. The middle 7 is too big, so keep the left side. Then 3 is too small, so keep the right of it. Then 5 is too big. Now nothing is left: the two ends have crossed. That is how binary search learns that 4 is missing, after 3 looks."
+    },
+    {
+      "id": "need",
+      "kind": "text",
+      "title": "The sorted requirement",
+      "body": "Binary search only works on sorted data. Throwing half away is only safe because everything on that side is known to be smaller or larger. On an unsorted array the target could be in the half you threw away."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Each look removes half of what remains. That is why the cost grows so slowly: $O(\\log n)$."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What must be true before you use binary search?",
+      "choices": [
+        "The array is sorted",
+        "The array has an even length",
+        "The array has no repeats"
+      ],
+      "answerIndex": 0,
+      "explanation": "Without order you can not tell which half to discard.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "`{1, 3, 5, 7, 9, 11, 13}`, target 11. After looking at the middle, 7, which part do you keep?",
+      "choices": [
+        "The right part",
+        "The left part",
+        "Neither"
+      ],
+      "answerIndex": 0,
+      "explanation": "11 is bigger than 7, so it can only be to the right.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "In `{1, 3, 5, 7, 9, 11, 13}` the middle index is 3. Which value is stored there?",
+      "accepted": [
+        "7"
+      ],
+      "keypad": "numeric",
+      "explanation": "Indexes 0 to 6 hold 1, 3, 5, 7, 9, 11, 13. Index 3 holds 7.",
+      "id": "q3"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "Each look in binary search throws away about \\_\\_ of the remaining items.",
+      "choices": [
+        "half",
+        "one item",
+        "a tenth"
+      ],
+      "answerIndex": 0,
+      "explanation": "Halving is the whole idea, and gives the log n cost.",
+      "id": "q4"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put one round of binary search in order.",
+      "steps": [
+        "Find the middle item",
+        "Compare it with the target",
+        "Discard the half that can not hold the target",
+        "Repeat on the half that is left"
+      ],
+      "explanation": "Look, decide, discard, repeat.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Searching for 4 in `{1, 3, 5, 7, 9, 11, 13}`, how does binary search know 4 is missing?",
+      "choices": [
+        "No items remain to look at",
+        "It reaches the end of the array",
+        "It finds a negative number"
+      ],
+      "answerIndex": 0,
+      "explanation": "The low and high ends cross, so nothing is left. Then it reports not found.",
+      "id": "q6"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Why can binary search not be used on `{7, 3, 9, 1, 5}`?",
+      "choices": [
+        "It is not sorted",
+        "It is too short",
+        "It has 5 items"
+      ],
+      "answerIndex": 0,
+      "explanation": "With no order, the middle value tells you nothing about where the target is.",
+      "id": "q7"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "cg-analysis-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Thinking about algorithms: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "An algorithm is a finite list of exact steps. To compare algorithms we count steps as the input size n grows, not seconds, and describe the shape of that growth."
+    },
+    {
+      "id": "growth",
+      "kind": "list",
+      "title": "Common growth, slow to fast",
+      "items": [
+        "$O(1)$ constant: `a[0]`",
+        "$O(\\log n)$: halving again and again",
+        "$O(n)$: one loop over the data",
+        "$O(n \\log n)$: halve, then do n work per level",
+        "$O(n^2)$: a loop inside a loop"
+      ]
+    },
+    {
+      "id": "rules",
+      "kind": "list",
+      "title": "Big O rules",
+      "items": [
+        "Drop constant factors: $3n$ is $O(n)$",
+        "Keep the fastest growing term only",
+        "Nested loops multiply, separate loops add"
+      ]
+    },
+    {
+      "id": "bounds",
+      "kind": "list",
+      "title": "Three bounds",
+      "items": [
+        "$O$: grows at most this fast",
+        "$\\Omega$: grows at least this fast",
+        "$\\Theta$: both, so the exact shape"
+      ]
+    },
+    {
+      "id": "count",
+      "kind": "code",
+      "title": "Counting a double loop",
+      "code": "int count = 0;\nfor (int i = 0; i < n; i++) {\n    for (int j = 0; j < n; j++) {\n        count++;\n    }\n}",
+      "language": "c"
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Best and worst case describe the input. O, omega and theta describe growth. Plan with the worst case."
+    }
+  ]
+}
