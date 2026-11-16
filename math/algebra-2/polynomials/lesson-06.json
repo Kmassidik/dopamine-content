@@ -1,0 +1,151 @@
+{
+  "id": "a2-polynomials-06",
+  "version": 1,
+  "title": "Solving polynomial equations",
+  "xp": 18,
+  "tags": [
+    "algebra",
+    "polynomials"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Tools you already have",
+      "body": "To solve a polynomial equation, move everything to one side so it equals 0, then factor. Use common factors, grouping, or a substitution. When factoring fails on a quadratic, use the quadratic formula, which may give complex answers."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Solve $x^3-4x=0$",
+      "body": "Factor out the common factor.",
+      "steps": [
+        "$x(x^2-4)=0$",
+        "$x(x-2)(x+2)=0$",
+        "The solutions are $x=0,\\ 2,\\ -2$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Solve $x^4-5x^2+4=0$",
+      "body": "It looks like a quadratic in $x^2$. Let $u=x^2$.",
+      "steps": [
+        "$u^2-5u+4=0$, so $(u-1)(u-4)=0$",
+        "$u=1$ or $u=4$",
+        "$x^2=1$ gives $x=\\pm 1$, and $x^2=4$ gives $x=\\pm 2$"
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Solve $x^2+2x+5=0$",
+      "body": "The discriminant is $b^2-4ac=4-20=-16<0$.",
+      "steps": [
+        "Formula: $x=\\frac{-2\\pm\\sqrt{-16}}{2}$",
+        "$\\sqrt{-16}=4i$",
+        "$x=-1\\pm 2i$"
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "tip",
+      "body": "A polynomial of degree $n$ has exactly $n$ solutions if you count complex ones and repeats."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Solve $x^3-4x=0$.",
+      "choices": [
+        "$x=2,\\ -2$",
+        "$x=0,\\ 2,\\ -2$",
+        "$x=4$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Factor $x(x-2)(x+2)=0$. Do not divide by $x$, or you lose the solution $x=0$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "How many solutions (real and complex) does $x^4=16$ have?",
+      "accepted": [
+        "4"
+      ],
+      "keypad": "numeric",
+      "explanation": "The degree is 4, so there are 4: $2,\\ -2,\\ 2i,\\ -2i$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Which substitution helps with $x^4-5x^2+4=0$?",
+      "choices": [
+        "$u=x^4$",
+        "$u=x+4$",
+        "$u=x^2$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Since $x^4=(x^2)^2$, the equation becomes $u^2-5u+4=0$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Solve $x^2+2x+5=0$.",
+      "choices": [
+        "$x=1\\pm 2i$",
+        "$x=-1\\pm 2i$",
+        "$x=-1\\pm 4i$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$x=\\frac{-2\\pm\\sqrt{-16}}{2}=\\frac{-2\\pm 4i}{2}=-1\\pm 2i$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "What is the discriminant $b^2-4ac$ of $x^2+2x+5$?",
+      "accepted": [
+        "-16",
+        "−16"
+      ],
+      "keypad": "numeric",
+      "explanation": "$4-4\\cdot 1\\cdot 5=-16$. A negative value means complex solutions."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Factor by grouping: $x^3+2x^2-9x-18=0$ has solutions",
+      "choices": [
+        "$2,\\ 3,\\ -3$",
+        "$-2,\\ 9,\\ -9$",
+        "$-2,\\ 3,\\ -3$"
+      ],
+      "answerIndex": 2,
+      "explanation": "$x^2(x+2)-9(x+2)=(x+2)(x-3)(x+3)$."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "After $u^2=9$ with $u=x^2$ gives $x^2=9$, the real solutions are $x=\\_\\_$",
+      "choices": [
+        "$3$",
+        "$\\pm 3$",
+        "$9$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Both $3$ and $-3$ square to 9."
+    },
+    {
+      "id": "q8",
+      "type": "order_steps",
+      "prompt": "Put the steps for $x^4-5x^2+4=0$ in order.",
+      "steps": [
+        "Let $u=x^2$ and write $u^2-5u+4=0$",
+        "Factor and solve: $u=1$ or $u=4$",
+        "Replace $u$ with $x^2$",
+        "Take square roots: $x=\\pm 1,\\ \\pm 2$"
+      ],
+      "explanation": "Solve in $u$ first, then undo the substitution."
+    }
+  ]
+}

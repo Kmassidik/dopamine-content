@@ -1,0 +1,145 @@
+{
+  "id": "a2-polynomials-02",
+  "version": 1,
+  "title": "The remainder and factor theorems",
+  "xp": 15,
+  "tags": [
+    "algebra",
+    "polynomials"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "A shortcut for remainders",
+      "body": "Dividing $P(x)$ by $x-a$ leaves a remainder, and the Remainder Theorem says it equals $P(a)$. No long division needed: just substitute $a$ into the polynomial."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Remainder of $x^3-4x^2+5x-7$ divided by $x-2$",
+      "body": "Here $a=2$.",
+      "steps": [
+        "The remainder is $P(2)$",
+        "$P(2)=8-16+10-7$",
+        "$P(2)=-5$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "The Factor Theorem",
+      "body": "If the remainder is 0, the division is exact. So $x-a$ is a factor of $P(x)$ exactly when $P(a)=0$. This turns factor hunting into substitution: test a value, and if you get 0, you have found a factor."
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Is $x-3$ a factor of $x^3-2x^2-5x+6$?",
+      "body": "Test $a=3$.",
+      "steps": [
+        "$P(3)=27-18-15+6$",
+        "$P(3)=0$",
+        "So $x-3$ is a factor"
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "tip",
+      "body": "For a factor like $x+2$, rewrite it as $x-(-2)$ and test $a=-2$. The sign flips."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "Find the remainder when $x^2+3x+1$ is divided by $x-2$.",
+      "accepted": [
+        "11"
+      ],
+      "keypad": "numeric",
+      "explanation": "$P(2)=4+6+1=11$."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What is the remainder of $x^3-2x+5$ divided by $x+1$?",
+      "choices": [
+        "$4$",
+        "$-1$",
+        "$6$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Here $a=-1$: $P(-1)=-1+2+5=6$."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "$x-a$ is a factor of $P(x)$ exactly when $P(a)=\\_\\_$",
+      "choices": [
+        "$1$",
+        "$0$",
+        "$a$"
+      ],
+      "answerIndex": 1,
+      "explanation": "A zero remainder means the division is exact, so $x-a$ is a factor."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Which is a factor of $x^3-2x^2-5x+6$?",
+      "choices": [
+        "$x-1$",
+        "$x+1$",
+        "$x-2$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$P(1)=1-2-5+6=0$. For $x+1$ the value is $P(-1)=8$, and for $x-2$ it is $P(2)=-4$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "For what value of $k$ is $x-2$ a factor of $x^3+kx-10$?",
+      "accepted": [
+        "1"
+      ],
+      "keypad": "numeric",
+      "explanation": "We need $P(2)=8+2k-10=0$, so $2k=2$ and $k=1$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "$P(x)=2x^2-5x+3$ and $P(1)=0$. What is the other factor besides $x-1$?",
+      "choices": [
+        "$2x+3$",
+        "$2x-3$",
+        "$x-3$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$(x-1)(2x-3)=2x^2-5x+3$. Check by expanding."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Is $x+3$ a factor of $x^3+27$?",
+      "choices": [
+        "Yes, because $P(-3)=0$",
+        "No, because $P(3)\\ne 0$",
+        "No, because 27 is odd"
+      ],
+      "answerIndex": 0,
+      "explanation": "Test $a=-3$: $(-3)^3+27=0$. The sign of $a$ is opposite to the sign in the factor."
+    },
+    {
+      "id": "q8",
+      "type": "order_steps",
+      "prompt": "Put the steps for testing a factor in order.",
+      "steps": [
+        "Write the factor as $x-a$",
+        "Evaluate $P(a)$",
+        "Check whether the result is 0",
+        "If yes, $x-a$ is a factor"
+      ],
+      "explanation": "The test is substitution: a zero result means a factor."
+    }
+  ]
+}
