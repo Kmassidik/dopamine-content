@@ -1,0 +1,139 @@
+{
+  "id": "pa-expressions-01",
+  "version": 1,
+  "title": "Variables and expressions",
+  "xp": 10,
+  "tags": [
+    "algebra",
+    "expressions"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Letters for unknown numbers",
+      "body": "A variable is a letter, like $n$ or $x$, that stands for a number that can change or is not known yet. An expression is a mix of numbers, variables and operations, like $3n+5$. An expression has no equals sign."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "Parts of an expression",
+      "body": "In $3n+5$ there are two terms, $3n$ and $5$, separated by the plus sign. The number multiplying the variable (3) is the coefficient. A term with no variable (5) is a constant. We write $3n$ instead of $3\\times n$."
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Words into symbols",
+      "body": "\"5 more than $n$\" is $n+5$. \"3 less than $x$\" is $x-3$, with the order reversed. \"Twice a number\" is $2n$. \"The quotient of $y$ and 4\" is $\\frac{y}{4}$. Look for words like sum, difference, product and quotient."
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Write an expression",
+      "body": "Pens cost $p$ dollars each. You buy 3 pens and a 2 dollar notebook.",
+      "steps": [
+        "The 3 pens cost $3\\times p=3p$ dollars.",
+        "Add the notebook: $3p+2$.",
+        "If $p=1$ dollar, the total is $3+2=5$ dollars."
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "tip",
+      "body": "\"Less than\" flips the order. \"3 less than $x$\" is $x-3$, not $3-x$."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which expression means \"5 more than $n$\"?",
+      "choices": [
+        "$5n$",
+        "$n+5$",
+        "$n-5$"
+      ],
+      "answerIndex": 1,
+      "explanation": "\"More than\" means add. $n+5$ is $n$ with 5 added."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "In $3n+5$, what is the coefficient of $n$?",
+      "choices": [
+        "$5$",
+        "$n$",
+        "$3$"
+      ],
+      "answerIndex": 2,
+      "explanation": "The coefficient is the number multiplying the variable."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "\"Twice a number\" is written \\_\\_.",
+      "choices": [
+        "$n+2$",
+        "$2n$",
+        "$n^2$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Twice means two times, so $2\\times n=2n$. $n^2$ would mean $n\\times n$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Which expression means \"3 less than $x$\"?",
+      "choices": [
+        "$x-3$",
+        "$3-x$",
+        "$3x$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Start with $x$ and take 3 away: $x-3$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which is a constant term in $4x+7$?",
+      "choices": [
+        "$4$",
+        "$4x$",
+        "$7$"
+      ],
+      "answerIndex": 2,
+      "explanation": "A constant has no variable. 4 is the coefficient and $4x$ is the variable term."
+    },
+    {
+      "id": "q6",
+      "type": "match_pairs",
+      "prompt": "Match each phrase with its expression.",
+      "pairs": [
+        [
+          "the sum of $a$ and 6",
+          "$a+6$"
+        ],
+        [
+          "the product of 6 and $a$",
+          "$6a$"
+        ],
+        [
+          "$a$ divided by 6",
+          "$\\frac{a}{6}$"
+        ]
+      ],
+      "explanation": "Sum means add, product means multiply, divided by means a fraction bar."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Write the cost of 3 pens at $p$ dollars each plus a 2 dollar notebook.",
+      "steps": [
+        "Pens cost 3 times $p$",
+        "Write the pens as $3p$",
+        "Add the notebook: $3p+2$"
+      ],
+      "explanation": "Build the expression one piece at a time, then join the parts."
+    }
+  ]
+}

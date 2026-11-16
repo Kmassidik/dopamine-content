@@ -1,0 +1,134 @@
+{
+  "id": "pa-ratios-02",
+  "version": 1,
+  "title": "Unit rates",
+  "xp": 10,
+  "tags": [
+    "rates",
+    "unit rate"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "What is a rate?",
+      "body": "A rate compares two quantities with different units, such as miles and hours, or dollars and kilograms. If a car travels 150 miles in 3 hours, the rate is 150 miles per 3 hours."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "The unit rate",
+      "body": "A unit rate has 1 in the denominator. Divide to find it: $150\\div 3=50$ miles per hour. This is the speed. The word per means divided by, so miles per hour is miles $\\div$ hours."
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Which is the better buy?",
+      "body": "A small jar has 12 ounces for 3 dollars. A large jar has 20 ounces for 4.20 dollars.",
+      "steps": [
+        "Small jar: $3\\div 12=0.25$ dollars per ounce.",
+        "Large jar: $4.20\\div 20=0.21$ dollars per ounce.",
+        "The large jar costs less per ounce, so it is the better buy."
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "text",
+      "title": "Using a unit rate",
+      "body": "Once you know the unit rate, finding any amount is a single multiplication. At 50 miles per hour, 2.5 hours covers $50\\times 2.5=125$ miles. To find the time for a distance, divide the distance by the rate."
+    },
+    {
+      "id": "p5",
+      "kind": "tip",
+      "body": "Always compare unit rates when you compare prices. Put the same unit on the bottom for both items."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "A car drives 150 miles in 3 hours. What is its speed?",
+      "choices": [
+        "450 miles per hour",
+        "30 miles per hour",
+        "50 miles per hour"
+      ],
+      "answerIndex": 2,
+      "explanation": "Divide distance by time: $150\\div 3=50$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Typing 240 words in 6 minutes is how many words per minute?",
+      "accepted": [
+        "40"
+      ],
+      "keypad": "numeric",
+      "explanation": "$240\\div 6=40$ words per minute."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "A rate of 4 dollars for 8 apples is \\_\\_ dollars per apple.",
+      "choices": [
+        "$2$",
+        "$32$",
+        "$0.5$"
+      ],
+      "answerIndex": 2,
+      "explanation": "$4\\div 8=0.5$ dollars per apple."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Which is the better buy?",
+      "choices": [
+        "20 ounces for 4.20 dollars",
+        "12 ounces for 3 dollars",
+        "They cost the same"
+      ],
+      "answerIndex": 0,
+      "explanation": "The large jar costs 0.21 dollars per ounce and the small jar costs 0.25 dollars per ounce."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "At 90 miles per hour, how many miles in 2.5 hours?",
+      "accepted": [
+        "225"
+      ],
+      "keypad": "numeric",
+      "explanation": "Multiply the rate by the time: $90\\times 2.5=225$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "A tap fills 48 litres in 16 minutes. How many litres per minute?",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "$48\\div 16=3$ litres per minute."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each situation with its unit rate.",
+      "pairs": [
+        [
+          "60 miles in 2 hours",
+          "30 miles per hour"
+        ],
+        [
+          "10 dollars for 4 kilograms",
+          "2.5 dollars per kilogram"
+        ],
+        [
+          "200 words in 5 minutes",
+          "40 words per minute"
+        ]
+      ],
+      "explanation": "Divide the first amount by the second: $60\\div 2=30$, $10\\div 4=2.5$, $200\\div 5=40$."
+    }
+  ]
+}

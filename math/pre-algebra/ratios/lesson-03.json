@@ -1,0 +1,125 @@
+{
+  "id": "pa-ratios-03",
+  "version": 1,
+  "title": "Proportions",
+  "xp": 10,
+  "tags": [
+    "proportions"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Two equal ratios",
+      "body": "A proportion says two ratios are equal, such as $\\frac{3}{4}=\\frac{9}{12}$. Proportions appear whenever things scale together: recipes, speed, prices. If you know three of the four numbers, you can find the fourth."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "The multiplier",
+      "body": "Look at how one ratio becomes the other. In $\\frac{3}{4}=\\frac{x}{12}$ the bottom goes from 4 to 12, which is times 3. So the top must also be times 3: $x=3\\times 3=9$."
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Scale a recipe",
+      "body": "2 cups of rice make 6 servings. How many cups make 15 servings?",
+      "steps": [
+        "Set up $\\frac{2}{6}=\\frac{x}{15}$.",
+        "The multiplier is $15\\div 6=2.5$.",
+        "$x=2\\times 2.5=5$ cups."
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "text",
+      "title": "Checking with cross products",
+      "body": "In a true proportion the cross products are equal. For $\\frac{2}{6}=\\frac{5}{15}$ we get $2\\times 15=30$ and $6\\times 5=30$. If the two products differ, the ratios are not equal."
+    },
+    {
+      "id": "p5",
+      "kind": "tip",
+      "body": "Keep the same quantity on top on both sides. Cups over servings on the left means cups over servings on the right."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which proportion is true?",
+      "choices": [
+        "$\\frac{3}{4}=\\frac{9}{16}$",
+        "$\\frac{3}{4}=\\frac{9}{12}$",
+        "$\\frac{3}{4}=\\frac{6}{12}$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cross products: $3\\times 12=36$ and $4\\times 9=36$. The others do not match."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "$\\frac{3}{4}=\\frac{x}{12}$. What is $x$?",
+      "accepted": [
+        "9"
+      ],
+      "keypad": "numeric",
+      "explanation": "The bottom is multiplied by 3, so the top is too: $3\\times 3=9$."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "$\\frac{5}{15}=\\frac{1}{\\_\\_}$",
+      "choices": [
+        "$3$",
+        "$5$",
+        "$10$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Divide both parts of $\\frac{5}{15}$ by 5 to get $\\frac{1}{3}$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "2 cups of rice make 6 servings. How many cups for 15 servings?",
+      "accepted": [
+        "5",
+        "5.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Each serving needs $\\frac{2}{6}=\\frac{1}{3}$ cup, so 15 servings need 5 cups."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "$\\frac{x}{5}=\\frac{12}{20}$. What is $x$?",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "The bottom is divided by 4 (from 20 to 5), so $x=12\\div 4=3$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "A printer prints 30 pages in 2 minutes. How many pages in 5 minutes at the same rate?",
+      "choices": [
+        "60",
+        "75",
+        "150"
+      ],
+      "answerIndex": 1,
+      "explanation": "The multiplier is 2.5, so $30\\times 2.5=75$."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Solve $\\frac{2}{3}=\\frac{x}{12}$. Put the steps in order.",
+      "steps": [
+        "Find the multiplier: $12\\div 3=4$",
+        "Multiply the top: $2\\times 4$",
+        "State that $x=8$"
+      ],
+      "explanation": "The same multiplier applies to the top and the bottom."
+    }
+  ]
+}

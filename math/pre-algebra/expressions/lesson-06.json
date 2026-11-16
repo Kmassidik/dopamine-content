@@ -1,0 +1,140 @@
+{
+  "id": "pa-expressions-06",
+  "version": 1,
+  "title": "An introduction to inequalities",
+  "xp": 10,
+  "tags": [
+    "algebra",
+    "inequalities"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Not always equal",
+      "body": "An inequality compares two expressions that are not necessarily equal. The symbols are $<$ (less than), $>$ (greater than), $\\le$ (less than or equal to) and $\\ge$ (greater than or equal to). The open end of the symbol points to the larger number."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "Many solutions",
+      "body": "An equation like $x+2=7$ has one solution. The inequality $x+2<7$ has many: any number below 5 works. The solutions are $x<5$. On the number line we show this with an open circle at 5 and an arrow to the left. A closed circle means the number is included."
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Solve $x+2<7$",
+      "body": "Solve it like an equation: subtract 2 from both sides.",
+      "steps": [
+        "Subtract 2: $x<5$.",
+        "Test $x=4$: $4+2=6$, which is less than 7. True.",
+        "Test $x=5$: $7<7$ is false, so 5 is not included."
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Solve $2x\\ge 8$",
+      "body": "Divide both sides by 2.",
+      "steps": [
+        "Divide by 2: $x\\ge 4$.",
+        "Test $x=4$: $8\\ge 8$ is true, so 4 is included.",
+        "Test $x=3$: $6\\ge 8$ is false."
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "text",
+      "title": "The one new rule",
+      "body": "When you multiply or divide both sides by a negative number, flip the inequality sign. From $-2x<6$ we divide by $-2$ and get $x>-3$. Check $x=0$: $0<6$ is true, and $0>-3$ is true."
+    },
+    {
+      "id": "p6",
+      "kind": "tip",
+      "body": "Test a number to check your answer. A value inside the solution should make the original inequality true."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which symbol means \"greater than or equal to\"?",
+      "choices": [
+        "$>$",
+        "$\\le$",
+        "$\\ge$"
+      ],
+      "answerIndex": 2,
+      "explanation": "$\\ge$ combines greater than with the equals bar underneath."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Is $x=4$ a solution of $x+2<7$?",
+      "choices": [
+        "No, $6>7$",
+        "Yes, $6<7$",
+        "Only if $x=5$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$4+2=6$, and 6 is less than 7."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "The solution of $x+2<7$ is $x\\ \\_\\_\\ 5$.",
+      "choices": [
+        "$<$",
+        "$>$",
+        "$=$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Subtract 2 from both sides: $x<5$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "Solve $2x\\ge 8$. What is the smallest whole number that works?",
+      "accepted": [
+        "4"
+      ],
+      "keypad": "numeric",
+      "explanation": "$x\\ge 4$, so 4 is included and is the smallest whole number."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Is $x=5$ a solution of $x+2<7$?",
+      "choices": [
+        "Yes",
+        "Yes, because 5 is small",
+        "No, since $7<7$ is false"
+      ],
+      "answerIndex": 2,
+      "explanation": "$5+2=7$, and 7 is not less than 7. The boundary is not included."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Solve $-2x<6$.",
+      "choices": [
+        "$x<-3$",
+        "$x>3$",
+        "$x>-3$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Dividing by a negative number flips the sign: $x>-3$."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Solve $3x-1>8$. Put the steps in order.",
+      "steps": [
+        "Add 1 to both sides: $3x>9$",
+        "Divide both sides by 3",
+        "State $x>3$"
+      ],
+      "explanation": "Solve like an equation. The sign stays the same because we divide by a positive number."
+    }
+  ]
+}

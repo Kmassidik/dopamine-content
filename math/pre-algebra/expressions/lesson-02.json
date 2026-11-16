@@ -1,0 +1,143 @@
+{
+  "id": "pa-expressions-02",
+  "version": 1,
+  "title": "Evaluating and simplifying",
+  "xp": 10,
+  "tags": [
+    "algebra",
+    "expressions"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Evaluating",
+      "body": "To evaluate an expression, replace each variable with its value, then follow the order of operations. This is called substitution. Use brackets around a negative value so the sign stays attached."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Evaluate $3x+2$ when $x=4$",
+      "body": "Replace $x$ with 4.",
+      "steps": [
+        "Substitute: $3\\times 4+2$.",
+        "Multiply first: $12+2$.",
+        "Add: $14$."
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Evaluate $x^2+1$ when $x=-3$",
+      "body": "Brackets matter with negative values.",
+      "steps": [
+        "Substitute: $(-3)^2+1$.",
+        "Square: $(-3)\\times(-3)=9$.",
+        "Add: $9+1=10$."
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "text",
+      "title": "Like terms",
+      "body": "Like terms have the same variable part. $4x$ and $3x$ are like terms, and you can add them: $4x+3x=7x$. Terms like $4x$ and $3$ are not alike, so they stay separate. Think of $x$ as an apple: 4 apples and 3 apples make 7 apples."
+    },
+    {
+      "id": "p5",
+      "kind": "example",
+      "title": "Simplify $5a+2-2a+7$",
+      "body": "Group the like terms, then combine them.",
+      "steps": [
+        "Gather the $a$ terms: $5a-2a=3a$.",
+        "Gather the constants: $2+7=9$.",
+        "Result: $3a+9$."
+      ]
+    },
+    {
+      "id": "p6",
+      "kind": "tip",
+      "body": "To check a simplified expression, try a number. With $a=2$, both $5a+2-2a+7$ and $3a+9$ give 15."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "Evaluate $3x+2$ when $x=4$.",
+      "accepted": [
+        "14"
+      ],
+      "keypad": "numeric",
+      "explanation": "$3\\times 4+2=12+2=14$."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Evaluate $x^2+1$ when $x=-3$.",
+      "choices": [
+        "$-8$",
+        "$-10$",
+        "$10$"
+      ],
+      "answerIndex": 2,
+      "explanation": "$(-3)^2=9$, because a negative times a negative is positive. Then $9+1=10$."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "$4x+3x=\\_\\_$",
+      "choices": [
+        "$7x$",
+        "$7x^2$",
+        "$12x$"
+      ],
+      "answerIndex": 0,
+      "explanation": "The terms are alike, so add the coefficients: $4+3=7$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Simplify $5a+2-2a+7$.",
+      "choices": [
+        "$3a+5$",
+        "$3a+9$",
+        "$7a+9$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Combine $5a-2a=3a$ and $2+7=9$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "Evaluate $2x-3$ when $x=5$.",
+      "accepted": [
+        "7"
+      ],
+      "keypad": "numeric",
+      "explanation": "$2\\times 5-3=10-3=7$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which expression cannot be simplified further?",
+      "choices": [
+        "$4x+3$",
+        "$4x+3x$",
+        "$4x+x$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$4x$ and $3$ are not like terms. The others combine into $7x$ and $5x$."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Evaluate $2x+3$ when $x=-1$. Put the steps in order.",
+      "steps": [
+        "Substitute: $2\\times(-1)+3$",
+        "Multiply: $-2+3$",
+        "Add to get 1"
+      ],
+      "explanation": "Replace the variable, follow the order of operations, and keep the sign."
+    }
+  ]
+}

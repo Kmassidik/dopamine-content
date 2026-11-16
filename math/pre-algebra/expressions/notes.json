@@ -1,0 +1,63 @@
+{
+  "id": "pa-expressions-notes",
+  "version": 1,
+  "title": "Expressions and equations: cheat sheet",
+  "blocks": [
+    {
+      "id": "b1",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A variable is a letter for a number. Expressions combine variables and numbers, and equations say two expressions are equal. Solving means undoing operations step by step to get the variable alone."
+    },
+    {
+      "id": "b2",
+      "kind": "list",
+      "title": "Words and symbols",
+      "items": [
+        "Sum or more than: add",
+        "Difference or less than: subtract",
+        "Product or twice: multiply, $2n$",
+        "Quotient: divide, $\\frac{y}{4}$"
+      ]
+    },
+    {
+      "id": "b3",
+      "kind": "formula",
+      "title": "Distributive property",
+      "body": "$a(b+c)=ab+ac$"
+    },
+    {
+      "id": "b4",
+      "kind": "list",
+      "title": "Parts of an expression",
+      "items": [
+        "Term: a piece separated by $+$ or $-$",
+        "Coefficient: the number multiplying a variable",
+        "Constant: a term with no variable",
+        "Like terms have the same variable part"
+      ]
+    },
+    {
+      "id": "b5",
+      "kind": "formula",
+      "title": "Solving two-step equations",
+      "body": "$ax+b=c\\ \\Rightarrow\\ x=\\dfrac{c-b}{a}$"
+    },
+    {
+      "id": "b6",
+      "kind": "list",
+      "title": "Inequalities",
+      "items": [
+        "$<$ less than, $>$ greater than",
+        "$\\le$ at most, $\\ge$ at least",
+        "Solve like an equation",
+        "Flip the sign if you multiply or divide by a negative"
+      ]
+    },
+    {
+      "id": "b7",
+      "kind": "tip",
+      "body": "Check your answer by substituting it into the original equation or inequality."
+    }
+  ]
+}

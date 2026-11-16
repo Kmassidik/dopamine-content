@@ -1,0 +1,53 @@
+{
+  "id": "pa-ratios-notes",
+  "version": 1,
+  "title": "Ratios, rates and proportions: cheat sheet",
+  "blocks": [
+    {
+      "id": "b1",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A ratio compares two amounts. A rate compares amounts with different units. A proportion says two ratios are equal, so you can scale one to find a missing number."
+    },
+    {
+      "id": "b2",
+      "kind": "list",
+      "title": "Ratios",
+      "items": [
+        "Order matters: boys to girls is not girls to boys",
+        "Simplify by dividing both parts by their GCF",
+        "Add the parts to get the whole",
+        "Share by finding the size of one part"
+      ]
+    },
+    {
+      "id": "b3",
+      "kind": "formula",
+      "title": "Unit rate",
+      "body": "$\\text{unit rate}=\\dfrac{\\text{amount}}{\\text{number of units}}$, such as miles $\\div$ hours"
+    },
+    {
+      "id": "b4",
+      "kind": "formula",
+      "title": "Proportion",
+      "body": "$\\dfrac{a}{b}=\\dfrac{c}{d}$ is true when $a\\times d=b\\times c$"
+    },
+    {
+      "id": "b5",
+      "kind": "formula",
+      "title": "Real distance from a map",
+      "body": "$\\text{real}=\\text{drawing}\\times\\text{scale}$"
+    },
+    {
+      "id": "b6",
+      "kind": "formula",
+      "title": "Percent change",
+      "body": "$\\dfrac{\\text{new}-\\text{old}}{\\text{old}}\\times 100\\%$"
+    },
+    {
+      "id": "b7",
+      "kind": "tip",
+      "body": "Put the same quantity on top on both sides of a proportion, and divide by the old value for percent change."
+    }
+  ]
+}
