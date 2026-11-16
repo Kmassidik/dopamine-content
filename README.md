@@ -1,22 +1,67 @@
 # dopamine-content
 
-Lesson content for the [Dopamine](https://github.com/Kmassidik/dopamine) Android app. **Data only. No code from here ever runs in the app.**
+[![validate](https://github.com/Kmassidik/dopamine-content/actions/workflows/validate.yml/badge.svg)](https://github.com/Kmassidik/dopamine-content/actions/workflows/validate.yml)
 
-The app fetches `manifest.json` from this repo (raw URL on `main`) when the user taps *Update content* in Settings, downloads only the lessons whose version or hash changed, verifies them, and swaps them in atomically. A bundled copy of this repo's content ships inside the app as the first-launch seed.
+The lessons behind [Dopamine](https://github.com/Kmassidik/dopamine), a private, offline Android learning app with no ads, no accounts and no tracking. **241 lessons in 13 courses**, all plain JSON that anyone can read, fix or extend.
+
+**Data only. No code from this repository ever runs in the app.**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Kmassidik/dopamine/main/docs/screenshots/subjects.png" width="200" alt="Subjects in the app">
+  <img src="https://raw.githubusercontent.com/Kmassidik/dopamine/main/docs/screenshots/diagram.png" width="200" alt="A lesson with a diagram">
+  <img src="https://raw.githubusercontent.com/Kmassidik/dopamine/main/docs/screenshots/code.png" width="200" alt="A lesson with a code block">
+</p>
+
+## What is inside
+
+| Subject | Courses | Lessons |
+|---|---|---|
+| **Math** | Pre-Algebra (23), Algebra 1 (28), Geometry (28), Algebra 2 (22), Precalculus (22) | 123 |
+| **Programming** | C Fundamentals (23), Arrays, Strings and Debugging (21), Algorithms in C (21), Memory and Pointers (22), Data Structures in C (21), Programming Basics in Python (4) | 112 |
+| **Science** | Science Basics | 2 |
+| **Electronics** | Electronics Basics | 4 |
+
+Every unit has a cheat sheet (`notes.json`) and an app-generated unit quiz. Every lesson is a few short reading pages followed by practice. See [ROADMAP.md](ROADMAP.md) for what is planned next.
+
+## Add your own course
+
+Want to learn something that is not here yet (a language, a tool, an idea like software architecture)? **[AUTHORING.md](AUTHORING.md)** is a step-by-step recipe for making a whole course on any topic, by hand or with an AI agent, including a copy-paste prompt. The result appears in the app after **Settings, Update content**. No app release is needed.
+
+The layout is enforced by tools and CI, so a new course always looks and behaves like the rest. The rules are in **[STANDARD.md](STANDARD.md)**.
+
+## How it reaches the phone
+
+```
+ you edit JSON  ->  build_manifest.py  ->  git push main  ->  Settings, Update content
+                     (manifest.json:        (raw GitHub)        downloads only what changed,
+                      hashes + sizes)                           verifies every file, then swaps
+```
+
+The app fetches `manifest.json` from this repo's raw URL on `main`, downloads only the lessons whose version or hash changed, checks size, hash and schema, and swaps them in atomically. If anything fails, nothing changes. A bundled copy of this content also ships inside the app as the first-launch seed.
+
+Removing a course from the manifest hides it in the app after the next update (the files stay on the phone but are never shown).
 
 ## Layout
 
 ```
-catalog.json                      categories, courses, units (hand edited)
+catalog.json                                categories, courses, units (hand edited)
 <category>/<course>/<unit>/lesson-NN.json   lessons (NN sets the order)
-images/*.svg                      diagrams referenced by lessons
-manifest.json                     GENERATED. Never edit by hand.
-schema/                           JSON Schemas (manifest, lesson)
-tools/build_manifest.py           generates manifest.json (stdlib only)
-tools/validate.py                 schema + semantic checks (needs `pip install jsonschema`)
+<category>/<course>/<unit>/notes.json       the unit's cheat sheet
+images/*.svg                                diagrams referenced by lessons
+manifest.json                               GENERATED. Never edit by hand
+contract.json                               GENERATED. What the app must understand
+schema/                                     JSON Schemas (manifest, lesson)
+tools/                                      build_manifest, validate, standard, svgcheck, tests
+ROADMAP.md                                  GENERATED coverage and plan
 ```
 
-Current content: 241 lessons in 13 courses (Math: 5 courses from Pre-Algebra to Precalculus; Programming: a 5-course C track plus Python basics; Science Basics; Electronics Basics). See [ROADMAP.md](ROADMAP.md).**The layout is enforced: read [STANDARD.md](STANDARD.md) before contributing.**
+## Documents
+
+| File | Read it for |
+|---|---|
+| [AUTHORING.md](AUTHORING.md) | Make a new course on any topic, step by step, for people and AI agents |
+| [STANDARD.md](STANDARD.md) | The enforced rules (lesson shape, lengths, SVG subset) and why |
+| [ROADMAP.md](ROADMAP.md) | What exists and what is planned |
 
 ## Publish an update
 
@@ -29,7 +74,7 @@ CI (`.github/workflows/validate.yml`) fails when `manifest.json` is stale or any
 
 ## Add a course, unit or category
 
-Edit `catalog.json`: add the category (`id`, `name`, `icon`, `color` hex, `order`), course (`id`, `categoryId`, `title`, `description`, `order`, `dir`) or unit (`id`, `title`, `order`, `dir`), create the folder, add lessons, regenerate the manifest. Icon names the app knows: `ic_math`, `ic_science`, `ic_english`, `ic_swe`, `ic_electronics`; unknown names fall back to a default icon.
+Follow [AUTHORING.md](AUTHORING.md). In short: edit `catalog.json` to add the category (`id`, `name`, `icon`, `color` hex, `order`), course (`id`, `categoryId`, `title`, `description`, `order`, `dir`, `overview`) or unit (`id`, `title`, `order`, `dir`), create the folder, add lessons and notes, regenerate the manifest. Icon names the app knows: `ic_math`, `ic_science`, `ic_english`, `ic_swe`, `ic_electronics`; unknown names fall back to a default icon.
 
 ## Lesson file
 
