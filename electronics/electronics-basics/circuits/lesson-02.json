@@ -1,6 +1,6 @@
 {
   "id": "circuits-02",
-  "version": 1,
+  "version": 2,
   "title": "Parallel circuits",
   "xp": 10,
   "tags": [
@@ -23,6 +23,7 @@
     {
       "id": "example-parallel",
       "kind": "example",
+      "image": "images/parallel-circuit.svg",
       "title": "Two branches",
       "body": "6 ohms and 3 ohms are in parallel across 12 V.",
       "steps": [

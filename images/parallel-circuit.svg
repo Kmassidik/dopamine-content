@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 220" width="340" height="220">
+  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="70,110 70,40 270,40 270,80"/>
+    <polyline points="70,126 70,180 270,180 270,140"/>
+    <polyline points="170,40 170,80"/>
+    <polyline points="170,140 170,180"/>
+    <line x1="52" y1="110" x2="88" y2="110"/>
+    <line x1="60" y1="126" x2="80" y2="126" stroke-width="6"/>
+  </g>
+  <g fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <polyline stroke="#FFC93C" points="170,80 170,88 156,94 184,106 156,118 184,130 170,136 170,140"/>
+    <polyline stroke="#FF7FAE" points="270,80 270,88 256,94 284,106 256,118 284,130 270,136 270,140"/>
+  </g>
+  <g fill="currentColor">
+    <circle cx="170" cy="40" r="5"/>
+    <circle cx="170" cy="180" r="5"/>
+  </g>
+  <g fill="currentColor" font-size="16" font-weight="bold">
+    <text x="192" y="116">6 Ω</text>
+    <text x="292" y="116">3 Ω</text>
+    <text x="46" y="124" text-anchor="end" font-size="18">12 V</text>
+    <text x="96" y="108" font-size="20">+</text>
+  </g>
+</svg>

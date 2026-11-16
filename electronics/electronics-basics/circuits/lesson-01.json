@@ -1,6 +1,6 @@
 {
   "id": "circuits-01",
-  "version": 1,
+  "version": 2,
   "title": "Series circuits",
   "xp": 10,
   "tags": [
@@ -23,6 +23,7 @@
     {
       "id": "example-series",
       "kind": "example",
+      "image": "images/series-circuit.svg",
       "title": "A 9 V series circuit",
       "body": "A 9 V battery drives a 100 ohm and a 200 ohm resistor in series.",
       "steps": [

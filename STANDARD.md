@@ -61,6 +61,34 @@ Page kinds: `code` (title, optional `body`, a `code` string and an optional `lan
 
 The numbers live in one place, the `RULES` dictionary in `tools/standard.py`. If you change a number, change it here too. `python3 tools/test_standard.py` proves the checks catch bad content, and CI runs it.
 
+## Images (SVG)
+
+Questions and learn pages may have an `image` (a relative `.svg` under `images/`). The app draws it with a small native renderer, so images must stay inside a strict subset. `tools/svgcheck.py` enforces it (the numbers live in its `SVG` dictionary, exported to `contract.json` under `"svg"`).
+
+- Root `<svg>` with a required `viewBox="0 0 W H"` (W and H from 20 to 2000). `width`, `height` and `xmlns` on the root are ignored. Aim for about 340 wide for a phone.
+- Elements: `svg g line rect circle ellipse polyline polygon path text`. Comments are fine. Nothing else (no style, script, image, use, defs, gradients, filter, clipPath, foreignObject, tspan, title, desc).
+- Attributes: `id x y x1 y1 x2 y2 cx cy r rx ry width height points d fill stroke stroke-width stroke-linecap stroke-linejoin stroke-dasharray opacity font-size font-weight text-anchor`. No `transform`, `style`, `class`, `href`, event handlers or `url(...)`.
+- Path `d` uses only `M m L l H h V v C c Q q Z z` (no arcs).
+- Colours (`fill`, `stroke`): `none`, `currentColor`, or one palette hex: #FFFFFF #14201A #4F5D55 #E4EAE6 #35C46F #17803F #E4F8EC #22994F #FFC93C #8A5F00 #FFF3CC #D9A21B #FF7FAE #B8305F #FFE4EE #DB5A8A. Set `fill` explicitly on every shape and text (or on a parent `g`), because SVG defaults to black.
+- `text` holds plain characters only, `font-size` 10 to 48, `text-anchor` start, middle or end, `font-weight` normal or bold.
+- Limits: 6144 bytes, 80 elements, nesting depth 4, no DOCTYPE, ENTITY or processing instructions (only the XML declaration).
+
+| Rule id | What must be true |
+|---|---|
+| IMAGE-XML | Well-formed UTF-8 XML, no DOCTYPE/ENTITY/processing instructions |
+| IMAGE-ELEMENT | Only the allowed elements |
+| IMAGE-ATTR | Only the allowed attributes, plain values, no `url()` |
+| IMAGE-PATH | Path commands from the allowed list only |
+| IMAGE-COLOR | Colours from the palette, `none` or `currentColor` |
+| IMAGE-FILL | Explicit `fill` on every shape and text |
+| IMAGE-SIZE | File size, element count and nesting limits |
+| IMAGE-VIEWBOX | A valid `viewBox` of 20 to 2000 per side |
+| IMAGE-TEXT | Plain text, font size 10 to 48, valid anchor and weight |
+
+Tip: draw lines and labels in `currentColor`. The app paints it in the theme's ink colour, so the diagram stays readable in light and dark mode.
+
+Apps older than the one that added the renderer do not show questions that have an `image`. They skip them and count them, so nothing is hidden silently.
+
 ## Why these numbers
 
 Short and specific on purpose: the app is for a few minutes a day, so every lesson is small.

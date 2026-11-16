@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 200" width="340" height="200">
+  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="70,108 70,64 100,64"/>
+    <polyline points="160,64 210,64"/>
+    <polyline points="270,64 310,64 310,176 70,176 70,124"/>
+    <line x1="52" y1="108" x2="88" y2="108"/>
+    <line x1="60" y1="124" x2="80" y2="124" stroke-width="6"/>
+  </g>
+  <g fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <polyline stroke="#FFC93C" points="100,64 108,64 114,50 126,78 138,50 150,78 156,64 160,64"/>
+    <polyline stroke="#FF7FAE" points="210,64 218,64 224,50 236,78 248,50 260,78 266,64 270,64"/>
+  </g>
+  <g fill="currentColor" font-size="16" font-weight="bold">
+    <text x="130" y="36" text-anchor="middle">100 Ω</text>
+    <text x="240" y="36" text-anchor="middle">200 Ω</text>
+    <text x="46" y="122" text-anchor="end" font-size="18">9 V</text>
+    <text x="96" y="106" font-size="20">+</text>
+  </g>
+</svg>

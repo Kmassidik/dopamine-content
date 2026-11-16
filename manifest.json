@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.11.16+4",
+  "contentVersion": "2026.11.16+5",
   "minAppVersion": 1,
   "categories": [
     {
@@ -284,18 +284,18 @@
               "id": "circuits-01",
               "title": "Series circuits",
               "path": "electronics/electronics-basics/circuits/lesson-01.json",
-              "version": 1,
-              "sha256": "ee178cb9d5526f4e9e6373e8b76ce7720d438fb1a1835cfc2606fc2b184f483e",
-              "sizeBytes": 3746,
+              "version": 2,
+              "sha256": "ded5ac9cf9c010e8d2050ca3b6df46dffb261ff24376106b9360c0f04507c0b4",
+              "sizeBytes": 3790,
               "order": 1
             },
             {
               "id": "circuits-02",
               "title": "Parallel circuits",
               "path": "electronics/electronics-basics/circuits/lesson-02.json",
-              "version": 1,
-              "sha256": "a9d16bab621db4692c4371afa4e00376a8951153f0b7de587a40b849d02ba146",
-              "sizeBytes": 3674,
+              "version": 2,
+              "sha256": "e9adea77cf8b91a7d8bd6412520333b80230ebbbf568cb3aeafb82a38b66c6dc",
+              "sizeBytes": 3720,
               "order": 2
             }
           ],
@@ -327,8 +327,18 @@
   "images": [
     {
       "path": "images/number-line.svg",
-      "sha256": "69f1ff6bef33841bbfd9e09d21b97c0ab570c288af5d63ea15bb1249b88604c3",
-      "sizeBytes": 842
+      "sha256": "b3ae72e03796e4387275129bd2a823769cdc4db150d99660944f69bc4aa35387",
+      "sizeBytes": 832
+    },
+    {
+      "path": "images/parallel-circuit.svg",
+      "sha256": "063f21280d5157faae01edf8ea631f8ded9136017a7f35de93825cae94374a6b",
+      "sizeBytes": 1167
+    },
+    {
+      "path": "images/series-circuit.svg",
+      "sha256": "8c2224890d570ee099cd0284a1f8307a67dffa8aecca24b835e5f04ef64f7e91",
+      "sizeBytes": 1050
     }
   ]
 }
