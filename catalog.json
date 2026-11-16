@@ -36,29 +36,56 @@
       "id": "algebra-1",
       "categoryId": "math",
       "title": "Algebra 1",
-      "description": "Equations, expressions, and functions",
-      "order": 1,
+      "description": "From one-step equations to quadratics, one short lesson at a time.",
+      "order": 2,
       "dir": "math/algebra-1",
+      "overview": {
+        "summary": "Build algebra from the ground up: equations, lines and functions, inequalities and systems, exponents and polynomials, and quadratics. Short lessons with worked examples and practice.",
+        "outcomes": [
+          "Solve linear equations, including brackets, fractions and word problems",
+          "Graph lines and write their equations in several forms",
+          "Solve inequalities and systems of equations",
+          "Use exponent rules and scientific notation",
+          "Add, multiply and factor polynomials",
+          "Solve quadratic equations by factoring or the formula"
+        ],
+        "requirements": [
+          "Pre-Algebra: fractions, integers and one-step equations"
+        ],
+        "minutes": 160
+      },
       "units": [
         {
           "id": "linear-eq",
           "title": "Linear Equations",
           "order": 1,
           "dir": "linear-eq"
+        },
+        {
+          "id": "a1-functions",
+          "title": "Linear Functions and Graphs",
+          "order": 2,
+          "dir": "functions"
+        },
+        {
+          "id": "a1-systems",
+          "title": "Inequalities and Systems",
+          "order": 3,
+          "dir": "systems"
+        },
+        {
+          "id": "a1-polynomials",
+          "title": "Exponents and Polynomials",
+          "order": 4,
+          "dir": "polynomials"
+        },
+        {
+          "id": "a1-quadratics",
+          "title": "Quadratics",
+          "order": 5,
+          "dir": "quadratics"
         }
-      ],
-      "overview": {
-        "summary": "Learn to solve equations step by step. Each lesson starts with a short reading, then you practise.",
-        "outcomes": [
-          "Solve one-step and two-step equations",
-          "Understand why doing the same thing to both sides works",
-          "Read common math notation like squares, roots and absolute value"
-        ],
-        "requirements": [
-          "Basic arithmetic: add, subtract, multiply, divide"
-        ],
-        "minutes": 10
-      }
+      ]
     },
     {
       "id": "science-basics",
@@ -93,7 +120,7 @@
       "categoryId": "swe",
       "title": "Programming Basics",
       "description": "Learn to think in code with Python",
-      "order": 1,
+      "order": 6,
       "dir": "swe/programming-basics",
       "units": [
         {
@@ -157,6 +184,453 @@
         ],
         "minutes": 20
       }
+    },
+    {
+      "id": "algebra-2",
+      "categoryId": "math",
+      "title": "Algebra 2",
+      "description": "Functions, polynomials, logarithms, sequences and the normal curve",
+      "order": 4,
+      "dir": "math/algebra-2",
+      "overview": {
+        "summary": "Go beyond Algebra 1 with functions, polynomials, complex numbers, exponentials, logarithms, sequences and probability. Short readings, then practice.",
+        "outcomes": [
+          "Use function notation, compose and invert functions, and transform graphs",
+          "Divide, factor and solve polynomial equations, including complex solutions",
+          "Model growth and decay with exponentials and solve them with logarithms",
+          "Simplify and solve rational expressions and equations",
+          "Work with arithmetic and geometric sequences and series",
+          "Find simple probabilities and read the normal curve"
+        ],
+        "requirements": [
+          "Algebra 1: equations, graphs, factoring and quadratics"
+        ],
+        "minutes": 120
+      },
+      "units": [
+        {
+          "id": "a2-functions",
+          "title": "Functions and Transformations",
+          "order": 1,
+          "dir": "functions"
+        },
+        {
+          "id": "a2-polynomials",
+          "title": "Polynomials and Complex Numbers",
+          "order": 2,
+          "dir": "polynomials"
+        },
+        {
+          "id": "a2-exponentials",
+          "title": "Exponentials and Logarithms",
+          "order": 3,
+          "dir": "exponentials"
+        },
+        {
+          "id": "a2-rational",
+          "title": "Rational Functions and Sequences",
+          "order": 4,
+          "dir": "rational"
+        }
+      ]
+    },
+    {
+      "id": "c-algorithms",
+      "categoryId": "swe",
+      "title": "Algorithms in C",
+      "description": "Analyse, search, sort and recurse with algorithms written in C",
+      "order": 3,
+      "dir": "swe/c-algorithms",
+      "overview": {
+        "summary": "Learn how to describe and compare algorithms with big O, then write searching, sorting and recursive algorithms in C and see why some are faster.",
+        "outcomes": [
+          "Count steps and describe growth with big O",
+          "Explain best, worst and average case",
+          "Write linear and binary search in C",
+          "Write bubble, selection, insertion and merge steps",
+          "Trace recursive functions and spot base cases",
+          "Explain divide and conquer and stable sorting"
+        ],
+        "requirements": [
+          "C Fundamentals and Arrays: loops, functions and arrays"
+        ],
+        "minutes": 110
+      },
+      "units": [
+        {
+          "id": "cg-analysis",
+          "title": "Thinking About Algorithms",
+          "order": 1,
+          "dir": "analysis"
+        },
+        {
+          "id": "cg-search",
+          "title": "Searching",
+          "order": 2,
+          "dir": "searching"
+        },
+        {
+          "id": "cg-sort",
+          "title": "Sorting",
+          "order": 3,
+          "dir": "sorting"
+        },
+        {
+          "id": "cg-recursion",
+          "title": "Recursion",
+          "order": 4,
+          "dir": "recursion"
+        }
+      ]
+    },
+    {
+      "id": "c-arrays",
+      "categoryId": "swe",
+      "title": "Arrays, Strings and Debugging",
+      "description": "Build, debug and work with arrays and strings in C",
+      "order": 2,
+      "dir": "swe/c-arrays",
+      "overview": {
+        "summary": "See how C source becomes a program, learn to find bugs with warnings, prints, a debugger and asserts, then master arrays, strings and the command line.",
+        "outcomes": [
+          "Explain preprocessing, compiling, assembling and linking",
+          "Build a program from several files with make",
+          "Debug with warnings, printf, a debugger and assert",
+          "Use one- and two-dimensional arrays safely",
+          "Handle strings with string.h, ctype.h and fgets",
+          "Read command-line arguments with argc and argv"
+        ],
+        "requirements": [
+          "C Fundamentals: variables, loops and functions"
+        ],
+        "minutes": 130
+      },
+      "units": [
+        {
+          "id": "ca-build",
+          "title": "How C Becomes a Program",
+          "order": 1,
+          "dir": "build"
+        },
+        {
+          "id": "ca-debug",
+          "title": "Debugging",
+          "order": 2,
+          "dir": "debugging"
+        },
+        {
+          "id": "ca-arrays",
+          "title": "Arrays",
+          "order": 3,
+          "dir": "arrays"
+        },
+        {
+          "id": "ca-strings",
+          "title": "Strings and the Command Line",
+          "order": 4,
+          "dir": "strings"
+        }
+      ]
+    },
+    {
+      "id": "c-data-structures",
+      "categoryId": "swe",
+      "title": "Data Structures in C",
+      "description": "Stacks, queues, linked lists, hash tables, trees and tries, built from scratch in C",
+      "order": 5,
+      "dir": "swe/c-data-structures",
+      "overview": {
+        "summary": "Build the classic data structures in C using pointers and malloc: stacks and queues, linked lists, hash tables, binary search trees and tries, and learn when to pick each.",
+        "outcomes": [
+          "Explain what an abstract data type is",
+          "Build stacks and queues in C",
+          "Create, walk, insert into and delete from linked lists",
+          "Build a hash table with separate chaining",
+          "Search, insert and traverse a binary search tree",
+          "Choose the right structure for a task"
+        ],
+        "requirements": [
+          "Memory and Pointers: pointers, malloc and structs"
+        ],
+        "minutes": 100
+      },
+      "units": [
+        {
+          "id": "cd-adt",
+          "title": "Abstract Data Types",
+          "order": 1,
+          "dir": "adt"
+        },
+        {
+          "id": "cd-lists",
+          "title": "Linked Lists",
+          "order": 2,
+          "dir": "linked-lists"
+        },
+        {
+          "id": "cd-hash",
+          "title": "Hash Tables",
+          "order": 3,
+          "dir": "hash-tables"
+        },
+        {
+          "id": "cd-trees",
+          "title": "Trees and Tries",
+          "order": 4,
+          "dir": "trees"
+        }
+      ]
+    },
+    {
+      "id": "c-fundamentals",
+      "categoryId": "swe",
+      "title": "C Fundamentals",
+      "description": "Learn C from scratch: variables, decisions, loops and functions.",
+      "order": 1,
+      "dir": "swe/c-fundamentals",
+      "overview": {
+        "summary": "Write, compile and run your first C programs. Learn variables, types, conditions, loops and functions, then solve small problems step by step.",
+        "outcomes": [
+          "Write, compile and run a C program",
+          "Use variables, types and operators correctly",
+          "Make decisions with if, else and switch",
+          "Repeat work with while and for loops",
+          "Write functions with arguments and return values",
+          "Break a small problem into steps and code it"
+        ],
+        "requirements": [
+          "None. No coding experience needed",
+          "A computer with a C compiler helps but is not required"
+        ],
+        "minutes": 150
+      },
+      "units": [
+        {
+          "id": "cf-first",
+          "title": "Your First Programs",
+          "order": 1,
+          "dir": "first-programs"
+        },
+        {
+          "id": "cf-data",
+          "title": "Variables, Types and Operators",
+          "order": 2,
+          "dir": "data"
+        },
+        {
+          "id": "cf-control",
+          "title": "Conditions and Loops",
+          "order": 3,
+          "dir": "control"
+        },
+        {
+          "id": "cf-functions",
+          "title": "Functions and Problem Solving",
+          "order": 4,
+          "dir": "functions"
+        }
+      ]
+    },
+    {
+      "id": "c-memory",
+      "categoryId": "swe",
+      "title": "Memory and Pointers",
+      "description": "See how C stores data in bytes, then master pointers, the heap and files.",
+      "order": 4,
+      "dir": "swe/c-memory",
+      "overview": {
+        "summary": "Learn how memory really works in C: bytes, hex and addresses, pointers, malloc and free, structs and files, with every example tested.",
+        "outcomes": [
+          "Read bytes and hexadecimal numbers",
+          "Use addresses, pointers and pointer arithmetic",
+          "Pass pointers to functions and avoid NULL crashes",
+          "Allocate, grow and free heap memory safely",
+          "Spot leaks, use after free and overflows",
+          "Read and write text and binary files"
+        ],
+        "requirements": [
+          "Course C Fundamentals and Arrays: functions, arrays and strings"
+        ],
+        "minutes": 110
+      },
+      "units": [
+        {
+          "id": "cm-hex",
+          "title": "Bytes, Hex and Addresses",
+          "order": 1,
+          "dir": "addresses"
+        },
+        {
+          "id": "cm-pointers",
+          "title": "Pointers",
+          "order": 2,
+          "dir": "pointers"
+        },
+        {
+          "id": "cm-heap",
+          "title": "Dynamic Memory",
+          "order": 3,
+          "dir": "heap"
+        },
+        {
+          "id": "cm-files",
+          "title": "Structs and Files",
+          "order": 4,
+          "dir": "files"
+        }
+      ]
+    },
+    {
+      "id": "geometry",
+      "categoryId": "math",
+      "title": "Geometry",
+      "description": "Shapes, angles, triangles, circles and solids, with proofs and trigonometry",
+      "order": 3,
+      "dir": "math/geometry",
+      "overview": {
+        "summary": "Learn how shapes work, from points and angles to triangles, circles and solids. Each lesson is a short reading followed by practice, and every result comes with a reason.",
+        "outcomes": [
+          "Find unknown angles using angle pairs and parallel lines",
+          "Use triangle rules, congruence and the Pythagorean theorem",
+          "Use similar triangles and right-triangle trigonometry",
+          "Calculate areas, circle measures and angles in polygons",
+          "Find volume and surface area of common solids",
+          "Move shapes with reflections, rotations and dilations"
+        ],
+        "requirements": [
+          "Algebra 1: solving equations and the coordinate plane"
+        ],
+        "minutes": 150
+      },
+      "units": [
+        {
+          "id": "geo-basics",
+          "title": "Points, Lines and Angles",
+          "order": 1,
+          "dir": "basics"
+        },
+        {
+          "id": "geo-triangles",
+          "title": "Triangles",
+          "order": 2,
+          "dir": "triangles"
+        },
+        {
+          "id": "geo-similar",
+          "title": "Similarity and Right-Triangle Trig",
+          "order": 3,
+          "dir": "similarity"
+        },
+        {
+          "id": "geo-polygons",
+          "title": "Polygons, Circles and Area",
+          "order": 4,
+          "dir": "polygons"
+        },
+        {
+          "id": "geo-solids",
+          "title": "Solids and Transformations",
+          "order": 5,
+          "dir": "solids"
+        }
+      ]
+    },
+    {
+      "id": "pre-algebra",
+      "categoryId": "math",
+      "title": "Pre-Algebra",
+      "description": "Build the number skills you need before algebra.",
+      "order": 1,
+      "dir": "math/pre-algebra",
+      "overview": {
+        "summary": "Work with negatives, fractions, decimals, percents and ratios, then take your first steps with variables, equations and inequalities.",
+        "outcomes": [
+          "Calculate with negative numbers and exponents",
+          "Follow the order of operations",
+          "Add, subtract, multiply and divide fractions",
+          "Convert between fractions, decimals and percents",
+          "Solve ratio, rate, proportion and percent problems",
+          "Solve one-step and two-step equations"
+        ],
+        "requirements": [
+          "Basic arithmetic: add, subtract, multiply, divide"
+        ],
+        "minutes": 120
+      },
+      "units": [
+        {
+          "id": "pa-integers",
+          "title": "Integers and Operations",
+          "order": 1,
+          "dir": "integers"
+        },
+        {
+          "id": "pa-fractions",
+          "title": "Fractions, Decimals and Percents",
+          "order": 2,
+          "dir": "fractions"
+        },
+        {
+          "id": "pa-ratios",
+          "title": "Ratios, Rates and Proportions",
+          "order": 3,
+          "dir": "ratios"
+        },
+        {
+          "id": "pa-expressions",
+          "title": "Expressions and Equations",
+          "order": 4,
+          "dir": "expressions"
+        }
+      ]
+    },
+    {
+      "id": "precalculus",
+      "categoryId": "math",
+      "title": "Precalculus",
+      "description": "Functions, trigonometry and the ideas that lead to calculus",
+      "order": 5,
+      "dir": "math/precalculus",
+      "overview": {
+        "summary": "Build the toolkit for calculus: function families, trigonometry, applications of trig and the first ideas of limits and derivatives. Short readings, then practice.",
+        "outcomes": [
+          "Describe polynomial, rational, exponential and log functions",
+          "Use radians, the unit circle and trig graphs",
+          "Solve triangles with the laws of sines and cosines",
+          "Convert between polar and rectangular forms",
+          "Understand limits and the derivative as an instant rate"
+        ],
+        "requirements": [
+          "Algebra 2: functions, logarithms and sequences"
+        ],
+        "minutes": 120
+      },
+      "units": [
+        {
+          "id": "pc-functions",
+          "title": "Function Families",
+          "order": 1,
+          "dir": "functions"
+        },
+        {
+          "id": "pc-trig",
+          "title": "Trigonometry",
+          "order": 2,
+          "dir": "trigonometry"
+        },
+        {
+          "id": "pc-applications",
+          "title": "Applications of Trigonometry",
+          "order": 3,
+          "dir": "applications"
+        },
+        {
+          "id": "pc-calculus",
+          "title": "Toward Calculus",
+          "order": 4,
+          "dir": "toward-calculus"
+        }
+      ]
     }
   ]
 }

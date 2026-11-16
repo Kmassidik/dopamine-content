@@ -58,6 +58,7 @@ NOTE_KINDS = {"text": 1, "formula": 1, "list": 1, "tip": 1, "code": 2}
 INLINE_CODE_APP = 2   # `inline code` in any text needs app version 2
 CONTRACT_VERSION = 1
 
+HTML_TAG = re.compile(r"</?(a|b|i|u|p|br|hr|div|span|script|style|img|table|tr|td|ul|ol|li|em|strong|code|pre|iframe|svg|html|body|head|link|meta|h[1-6])(\s|/|>)", re.I)
 MATH_RE = re.compile(r"\$(.*?)\$", re.S)
 
 
@@ -106,7 +107,7 @@ def check_text(rep, where, s):
         rep.fail("TEXT-MATH-BALANCE", where, "odd number of $ signs")
     if s != s.strip() or "  " in s or "\t" in s or "\n" in s:
         rep.fail("TEXT-CLEAN", where, "no leading/trailing/double spaces, tabs or newlines")
-    if re.search(r"<[a-zA-Z/]", s) or "TODO" in s or "FIXME" in s:
+    if HTML_TAG.search(s) or "TODO" in s or "FIXME" in s:
         rep.fail("TEXT-CLEAN", where, "no HTML tags and no TODO/FIXME")
     if s.count("`") % 2:
         rep.fail("TEXT-CODE-BALANCE", where, "odd number of backticks")

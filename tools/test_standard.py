@@ -155,6 +155,14 @@ class StandardTest(unittest.TestCase):
         self.edit_lesson(f)
         self.assertIn("IMAGE-ALT", self.rules())
 
+    def test_angle_brackets_are_fine_but_html_is_not(self):
+        def ok(d): d["questions"][0]["explanation"] = "Use $a<b$ and the line #include <stdio.h> here."
+        self.edit_lesson(ok)
+        self.assertNotIn("TEXT-CLEAN", self.rules())
+        def bad(d): d["questions"][0]["explanation"] = "Click <b>here</b> now."
+        self.edit_lesson(bad)
+        self.assertIn("TEXT-CLEAN", self.rules())
+
     def test_course_without_overview_fails(self):
         cat = json.loads((self.tmp / "catalog.json").read_text(encoding="utf-8"))
         del cat["courses"][0]["overview"]

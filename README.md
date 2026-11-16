@@ -16,7 +16,7 @@ tools/build_manifest.py           generates manifest.json (stdlib only)
 tools/validate.py                 schema + semantic checks (needs `pip install jsonschema`)
 ```
 
-Current content: Math / Algebra 1 / Linear Equations (2 lessons), Science / Science Basics / Matter (2 lessons), Programming / Programming Basics (Python: Variables and Types, Decisions; 4 lessons), Electronics / Electronics Basics (Voltage, Current, Resistance; Simple Circuits; 4 lessons). Every lesson has reading pages (`learn`) before its practice questions, and every course has an `overview`. **The layout is enforced: read [STANDARD.md](STANDARD.md) before contributing.**
+Current content: 241 lessons in 13 courses (Math: 5 courses from Pre-Algebra to Precalculus; Programming: a 5-course C track plus Python basics; Science Basics; Electronics Basics). See [ROADMAP.md](ROADMAP.md).**The layout is enforced: read [STANDARD.md](STANDARD.md) before contributing.**
 
 ## Publish an update
 
