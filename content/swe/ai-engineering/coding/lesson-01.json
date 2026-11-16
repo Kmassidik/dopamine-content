@@ -1,0 +1,144 @@
+{
+  "id": "aie-coding-01",
+  "version": 1,
+  "title": "Turn an Idea into a Specification",
+  "xp": 10,
+  "tags": [
+    "specifications",
+    "requirements",
+    "habit-tracker"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Agree before building",
+      "body": "An idea names a possibility; a specification describes the software well enough to judge the result. Write it before asking AI to code. This gives both of you a shared target and makes omissions easier to spot while they are still cheap to change."
+    },
+    {
+      "id": "user-story",
+      "kind": "text",
+      "title": "Start with a person",
+      "body": "A user story connects a person, a need and a reason: as a habit tracker user, I want to check off a habit so that I can see today's progress. It describes value, not a button layout or a database choice. Add other stories only when they serve a distinct need."
+    },
+    {
+      "id": "scope-data",
+      "kind": "text",
+      "title": "Set boundaries and define data",
+      "body": "List what is in scope, what is explicitly out of scope and what information must be stored. A first version might include habits and one completion per calendar date, while excluding accounts, syncing and reminders. Clear non-goals stop a small request from becoming an unplanned product."
+    },
+    {
+      "id": "edges-acceptance",
+      "kind": "text",
+      "title": "Decide what done means",
+      "body": "Discuss edge cases before implementation: a repeated tap, an empty habit name, a new calendar day or unavailable storage. Then write acceptance criteria as observable outcomes. For example, after checking off Read and reopening the app, Read appears complete for that same date."
+    },
+    {
+      "id": "worked-example",
+      "kind": "example",
+      "title": "Specify the first habit check-off",
+      "body": "Turn the broad idea of a personal habit tracker into one buildable slice.",
+      "steps": [
+        "Idea: help me follow a few daily habits without making setup complicated.",
+        "Story: as a user, I want to check off a habit so that I can see today's progress.",
+        "Scope and data: store a habit name and completions by date; exclude accounts, syncing and reminders.",
+        "Edges: a second tap does not duplicate completion, blank names are rejected and a new day starts incomplete.",
+        "Acceptance: after I check off Read and reopen the app, that date still shows Read complete exactly once."
+      ]
+    },
+    {
+      "id": "human-decisions",
+      "kind": "tip",
+      "body": "Ask AI to identify assumptions and unanswered questions in your draft. You choose the answers: a fluent specification can still describe the wrong product."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which detail belongs in an initial specification?",
+      "choices": [
+        "The observable result the user should get",
+        "A guarantee that generated code will be correct",
+        "The exact wording the AI must use in its reply"
+      ],
+      "answerIndex": 0,
+      "explanation": "A specification defines the desired behavior and constraints. It is a target for building and checking, not a guarantee about generated code."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A \\_\\_ connects a person, a need and a reason.",
+      "choices": [
+        "user story",
+        "Git diff",
+        "error trace"
+      ],
+      "answerIndex": 0,
+      "explanation": "A user story explains who needs something and why. This keeps the work focused on user value rather than jumping straight to implementation."
+    },
+    {
+      "id": "q3",
+      "type": "match_pairs",
+      "prompt": "Match each specification part to its job.",
+      "pairs": [
+        [
+          "User story",
+          "Explains who benefits and why"
+        ],
+        [
+          "Non-goal",
+          "States what this version will not include"
+        ],
+        [
+          "Data definition",
+          "Says what information is stored"
+        ],
+        [
+          "Acceptance criterion",
+          "Describes an observable result to check"
+        ]
+      ],
+      "explanation": "These parts answer different questions: value, boundaries, stored information and evidence of completion. Together they reduce ambiguity."
+    },
+    {
+      "id": "q4",
+      "type": "order_steps",
+      "prompt": "Put this early design process in a useful order.",
+      "steps": [
+        "State the idea and intended user value",
+        "Set scope and define the necessary data",
+        "Decide how important edge cases should behave",
+        "Write observable acceptance criteria",
+        "Request an implementation for the agreed slice"
+      ],
+      "explanation": "Behavior and acceptance criteria give implementation a target. Deciding them after coding makes it easier to mistake convenient output for intended behavior."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "What is the two-word term for observable statements used to decide whether a requirement is done?",
+      "accepted": [
+        "acceptance criteria",
+        "Acceptance criteria",
+        "acceptance criterion",
+        "Acceptance criterion"
+      ],
+      "keypad": "full",
+      "explanation": "Acceptance criteria state outcomes that can be observed and checked. They make done a shared decision rather than a matter of confidence."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "The draft says users can check off a habit but says nothing about repeated taps. What should happen before coding?",
+      "choices": [
+        "Decide and record whether repeated taps create one completion or several",
+        "Let the AI choose silently because repeated taps are an implementation detail",
+        "Add social accounts so there is a more complete first release",
+        "Wait until users report a problem before discussing the case"
+      ],
+      "answerIndex": 0,
+      "explanation": "Repeated taps affect stored data and visible behavior. The specification should resolve this edge case so the implementation and checks share the same expectation."
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "id": "aie-context-02",
+  "version": 1,
+  "title": "Split Big Work into Slices",
+  "xp": 10,
+  "tags": [
+    "decomposition",
+    "interfaces"
+  ],
+  "learn": [
+    {
+      "id": "small-deliverables",
+      "kind": "text",
+      "title": "Small, complete deliverables",
+      "body": "A large request hides many decisions and is hard to review. Split it into slices that each produce a useful result, such as one calculation, one screen or one storage change. A slice should have a clear done condition."
+    },
+    {
+      "id": "explicit-interfaces",
+      "kind": "text",
+      "title": "Agree on interfaces",
+      "body": "An interface is the agreement where two parts meet. It names the inputs, outputs and expected behavior. For example, a streak function might accept completed dates and return a number. Clear interfaces let slices fit together without guesswork."
+    },
+    {
+      "id": "independence",
+      "kind": "text",
+      "title": "Look for independence",
+      "body": "Independent slices can proceed without constantly waiting for each other's unfinished work or editing the same area. They still serve one product goal. Shared sample data and an agreed interface can let one part be checked before another is complete."
+    },
+    {
+      "id": "streak-slicing-example",
+      "kind": "example",
+      "title": "Slice a streak feature",
+      "body": "A habit tracker needs a streak number on its summary screen.",
+      "steps": [
+        "Agree that the calculation accepts completed dates and returns a streak count.",
+        "Build and test the calculation with today, gaps and duplicate dates.",
+        "Build the summary display using the agreed calculation and sample dates.",
+        "Connect the real stored dates to the same interface.",
+        "Review each result, then check the complete feature together."
+      ]
+    },
+    {
+      "id": "slice-boundaries",
+      "kind": "text",
+      "title": "Slice by boundaries, not arbitrary size",
+      "body": "Counting lines or files does not make tasks independent. If two slices repeatedly change the same logic or need answers from each other, combine them or clarify their contract. Keep integration as an explicit final task."
+    },
+    {
+      "id": "reviewable-slices",
+      "kind": "tip",
+      "body": "Ask for a result you can inspect and test before starting the next dependent slice. Small changes make misunderstandings cheaper to correct."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What makes a work slice useful?",
+      "choices": [
+        "It has a clear result and done condition",
+        "It contains as many features as possible",
+        "It avoids defining expected behavior",
+        "It always changes exactly one file"
+      ],
+      "answerIndex": 0,
+      "explanation": "A useful slice produces something reviewable and has a clear finish. File counts are not a reliable boundary, and vague behavior invites rework."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "Smaller slices are easier to \\_\\_ before more work builds on them.",
+      "choices": [
+        "review",
+        "hide",
+        "multiply"
+      ],
+      "answerIndex": 0,
+      "explanation": "A small, defined result can be inspected and tested early. This helps catch a misunderstanding before dependent work spreads it."
+    },
+    {
+      "id": "q3",
+      "type": "match_pairs",
+      "prompt": "Match each slice to a clear deliverable for a habit tracker.",
+      "pairs": [
+        [
+          "Streak calculation",
+          "A tested count for sample dates"
+        ],
+        [
+          "Summary display",
+          "A screen showing the returned count"
+        ],
+        [
+          "Storage connection",
+          "Real entries supplied through the interface"
+        ],
+        [
+          "Integration check",
+          "The parts working together"
+        ]
+      ],
+      "explanation": "Each slice produces an observable result. The interface lets the calculation, display and storage fit together before the final combined check."
+    },
+    {
+      "id": "q4",
+      "type": "order_steps",
+      "prompt": "Put this slicing workflow in order.",
+      "steps": [
+        "Define the overall outcome",
+        "Identify deliverables and their interfaces",
+        "Complete and review independent slices",
+        "Integrate the parts and test the whole result"
+      ],
+      "explanation": "Define the destination first, agree on boundaries next, then review the parts before integration. The whole feature still needs a final check."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which pair is most suitable for independent work after an interface is agreed?",
+      "choices": [
+        "A date calculation and a display that uses its result with sample data",
+        "Two people rewriting the same saving logic in different ways",
+        "A data format and another task that keeps changing that format",
+        "Two tasks with no defined inputs or outputs"
+      ],
+      "answerIndex": 0,
+      "explanation": "The calculation and display can use the same agreed interface and sample data. Shared rewrites and unstable formats create interference rather than independence."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "What word names the agreement that specifies how two software parts connect?",
+      "accepted": [
+        "interface",
+        "Interface",
+        "INTERFACE",
+        "contract",
+        "Contract"
+      ],
+      "keypad": "full",
+      "explanation": "An interface, or contract, records the expected inputs, outputs and behavior at a boundary. It reduces assumptions between slices."
+    }
+  ]
+}

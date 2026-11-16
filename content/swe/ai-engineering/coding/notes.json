@@ -1,0 +1,92 @@
+{
+  "id": "aie-coding-notes",
+  "version": 1,
+  "title": "AI-Assisted Coding: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "AI can propose and modify code, but fluent output is not ownership or evidence. Define the result, bound each change, inspect reality and keep the human responsible for understanding, integration and release."
+    },
+    {
+      "id": "specification",
+      "kind": "list",
+      "title": "Before coding",
+      "items": [
+        "User story: who needs what, and why",
+        "Scope: included work and explicit non-goals",
+        "Data: information and important definitions",
+        "Edges: repeated actions, empty values and failures",
+        "Acceptance criteria: observable outcomes to check"
+      ]
+    },
+    {
+      "id": "changes",
+      "kind": "list",
+      "title": "Reviewable changes",
+      "items": [
+        "Checkpoint the intended current Git state",
+        "Match batch size to risk and review capacity",
+        "Keep unrelated rewrites out of the change",
+        "Read every relevant part of the actual diff",
+        "Accept only code you can explain"
+      ]
+    },
+    {
+      "id": "debugging",
+      "kind": "list",
+      "title": "Evidence loop",
+      "items": [
+        "Reproduce with starting state and exact actions",
+        "Record expected and actual results",
+        "Preserve the full error and its location",
+        "Reduce the case while retaining the failure",
+        "Test one hypothesis and rerun the same case",
+        "Revert a change unsupported by the evidence"
+      ]
+    },
+    {
+      "id": "testing",
+      "kind": "list",
+      "title": "Useful checks",
+      "items": [
+        "Behavior: an ordinary required outcome",
+        "Boundary: edges and transitions between states",
+        "Failure: rejected input or unavailable resources",
+        "Regression: the conditions of a previous bug",
+        "Run tests and inspect actual output",
+        "Call tests unrun when execution did not happen"
+      ]
+    },
+    {
+      "id": "security",
+      "kind": "list",
+      "title": "Final review",
+      "items": [
+        "Keep secrets out of code, logs, prompts and Git",
+        "Revoke or rotate exposed secrets",
+        "Treat user, network, file and AI content as untrusted",
+        "Separate data from queries, commands and displays",
+        "Review permissions and sensitive-data handling"
+      ]
+    },
+    {
+      "id": "dependencies",
+      "kind": "list",
+      "title": "Dependency questions",
+      "items": [
+        "Is this package necessary for the agreed outcome?",
+        "Can existing project or platform support do the job?",
+        "Are its source, maintenance and permissions acceptable?",
+        "Are its license terms compatible with project policy?",
+        "Can unused or duplicate dependencies be removed?"
+      ]
+    },
+    {
+      "id": "human-owner",
+      "kind": "tip",
+      "body": "Tests provide evidence only for exercised cases. AI summaries do not replace diffs, execution or security review. The human owns secrets, permissions and the final decision."
+    }
+  ]
+}

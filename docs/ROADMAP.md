@@ -48,7 +48,7 @@ _Build the toolkit for calculus: function families, trigonometry, applications o
 - **Applications of Trigonometry** (5): The law of sines, The law of cosines, Vectors as arrows, Polar coordinates, Complex numbers in polar form
 - **Toward Calculus** (5): Conic sections, Sequences and series, The idea of a limit, Rates of change, The derivative idea
 
-## Programming (the C track follows the weekly order of Harvard's CS50x: C, arrays, algorithms, memory, data structures; then a short Python course)
+## Programming (the C track follows the weekly order of Harvard's CS50x: C, arrays, algorithms, memory, data structures; then Python and AI-assisted engineering)
 
 ### 1. C Fundamentals  (23 lessons, about 150 min)
 _Write, compile and run your first C programs. Learn variables, types, conditions, loops and functions, then solve small problems step by step._
@@ -96,6 +96,15 @@ _Learn to think in code with Python. Start with variables and types, then teach 
 - **Variables and Types** (2): Variables, Numbers and text
 - **Decisions** (2): If and else, Comparing values
 
+### 7. AI Engineering  (25 lessons, about 180 min)
+_Learn to build software with AI without giving up engineering judgment. Progress from clear prompts and useful context to tested code, safe tools and coordinated agents._
+
+- **AI Foundations** (5): What a Language Model Does, Tokens and Context Windows, Fluent Does Not Mean Correct, Privacy and Safe Sharing, Choose the Right Level of AI
+- **Prompt Engineering** (5): Start with the Goal, Add Context and Constraints, Show Examples and Output Shape, Define Done and Verification, Debug a Weak Prompt
+- **Context and Knowledge** (5): Give the Right Context, Split Big Work into Slices, Ground Answers in Sources, Write a Useful Handoff, Create a Project Brief
+- **AI-Assisted Coding** (5): Turn an Idea into a Specification, Make Small Reviewable Changes, Debug with Evidence, Tests Catch Confident Mistakes, Review Security and Dependencies
+- **Agents and Multi-Agent Systems** (5): What Makes an Agent, Start with One Agent, Design Tools and Permissions, Coordinate Parallel Agents, Integrate and Evaluate Agent Work
+
 ## Science
 
 ### 1. Science Basics  (2 lessons, about 8 min)
@@ -111,4 +120,4 @@ _Understand what voltage, current and resistance are, use Ohm's law, and work ou
 - **Voltage, Current, Resistance** (2): Voltage and current, Resistance and Ohm's law
 - **Simple Circuits** (2): Series circuits, Parallel circuits
 
-**Total: 241 lessons.**
+**Total: 266 lessons.**

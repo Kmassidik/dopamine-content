@@ -1,0 +1,54 @@
+{
+  "id": "aie-prompting-notes",
+  "version": 1,
+  "title": "Prompt engineering: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Make the task and its finish line clear, then check the response against what you actually needed. Good prompting is iterative communication and verification, not a set of magic words."
+    },
+    {
+      "id": "ingredients",
+      "kind": "list",
+      "title": "A flexible checklist",
+      "items": [
+        "Goal: one task and intended outcome",
+        "Context: relevant audience, environment, and current behavior",
+        "Constraints: limits, requirements, and non-goals",
+        "Examples: representative inputs and outputs",
+        "Done: observable acceptance criteria",
+        "Verify: checks, actual evidence, and uncertainty"
+      ]
+    },
+    {
+      "id": "output",
+      "kind": "list",
+      "title": "Check output twice",
+      "items": [
+        "Structure: required fields, order, and allowed values",
+        "Semantics: whether the content correctly completes the task",
+        "Examples guide behavior but do not guarantee it",
+        "A schema-valid answer can still contain false content"
+      ]
+    },
+    {
+      "id": "debugging",
+      "kind": "list",
+      "title": "Debug systematically",
+      "items": [
+        "Compare the response with the prompt",
+        "Find missing information or contradictory instructions",
+        "Change one likely cause at a time",
+        "Reuse the same test case and compare results",
+        "Keep or revert the change based on evidence"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Use only the ingredients that address the task. Their best order and wording can vary, and no prompt removes the need for human review."
+    }
+  ]
+}

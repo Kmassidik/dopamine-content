@@ -1,0 +1,121 @@
+{
+  "id": "aie-agents-03",
+  "version": 1,
+  "title": "Design Tools and Permissions",
+  "xp": 15,
+  "tags": ["agents", "security", "tools"],
+  "learn": [
+    {
+      "id": "tool-contracts",
+      "kind": "text",
+      "title": "Tools need clear contracts",
+      "body": "Each tool should have a distinct purpose, typed inputs, a predictable output and useful errors. A read-habits tool is easier to control than a general command runner. Too many overlapping tools also make the model's choice harder."
+    },
+    {
+      "id": "validation",
+      "kind": "text",
+      "title": "Validate in application code",
+      "body": "Types describe fields such as a date, a small integer or one allowed export format. The application must still validate values, paths and state before acting. A well-formed request can ask for the wrong thing; a prompt alone cannot enforce safety."
+    },
+    {
+      "id": "least-privilege",
+      "kind": "text",
+      "title": "Least privilege and sandboxes",
+      "body": "Grant only the access needed for the current task. Prefer read-only access and a limited workspace, separating read, write, network and external-sharing powers. Sandboxes can restrict available resources. Humans control credentials, and secrets should not be placed in prompts or artifacts."
+    },
+    {
+      "id": "approval-gates",
+      "kind": "text",
+      "title": "Approval for consequential actions",
+      "body": "Deleting data, changing permissions, sending messages, purchasing and deploying deserve explicit human approval appropriate to the risk. Show the exact action and target. A denial should return a clear result, not trigger silent retries or escalation to a more powerful tool."
+    },
+    {
+      "id": "permission-example",
+      "kind": "example",
+      "title": "Share a weekly habit summary",
+      "body": "Separate the powers needed for one request.",
+      "steps": [
+        "Allow reading only the selected week's habit records.",
+        "Validate the date range and reject malformed or impossible dates.",
+        "Allow writing the summary only inside the designated export folder.",
+        "Keep network sharing unavailable while the agent prepares a preview.",
+        "Let a human inspect the recipients and content, then approve or deny sharing.",
+        "Return the actual outcome and stop if permission is denied."
+      ]
+    },
+    {
+      "id": "tool-design-tip",
+      "kind": "tip",
+      "body": "Evaluate tools with valid, invalid and boundary requests. High-signal errors help recovery, while narrow defaults limit the damage a wrong model request can cause."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which tool offers least privilege for reading one week's habits?",
+      "choices": [
+        "Read habits for a validated date range",
+        "Run any command with full disk access",
+        "Read or delete any user file",
+        "Export all account data to any destination"
+      ],
+      "answerIndex": 0,
+      "explanation": "The date-range tool exposes only the necessary operation and data. The other options grant unrelated or destructive powers."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "The \\_\\_, not the model's promise, must validate arguments and enforce permissions.",
+      "choices": ["application", "summary", "prompt wording", "agent tone"],
+      "answerIndex": 0,
+      "explanation": "Application code is the enforcement boundary. Model instructions can guide behavior but cannot guarantee that every request is safe."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Name the principle that grants only the minimum access a task requires.",
+      "accepted": ["least privilege", "the principle of least privilege", "minimum privilege"],
+      "keypad": "full",
+      "explanation": "Least privilege reduces available data and capabilities, limiting both accidental and malicious effects."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each action to an appropriate control.",
+      "pairs": [
+        ["Read a selected habit", "Read-only access to that record"],
+        ["Write a new export", "Write access to one export folder"],
+        ["Send the export to another person", "Human approval for the external action"],
+        ["Request an impossible date", "Argument validation and rejection"]
+      ],
+      "explanation": "Permissions should be separated by capability and scope, while validation and approval address different kinds of risk."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put an external-sharing request in a safe order.",
+      "steps": [
+        "The agent prepares a sharing request with content and recipients.",
+        "The application validates the request and current permissions.",
+        "A human reviews the exact external action.",
+        "The application acts only if approval is granted.",
+        "The actual outcome or denial is recorded and returned."
+      ],
+      "explanation": "Preparation does not imply permission. Validation and human approval precede the external effect, and the final observation describes what really happened."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "An agent's write is denied because the path is outside its workspace. What should happen next?",
+      "choices": [
+        "Return the denial and stop or choose an allowed safe alternative",
+        "Retry through a tool with broader permissions",
+        "Hide the denial and report that the write succeeded",
+        "Ask the model to approve its own request"
+      ],
+      "answerIndex": 0,
+      "explanation": "A denial is a guardrail working as intended. The system must not bypass it, disguise it or delegate approval to the requesting model."
+    }
+  ]
+}

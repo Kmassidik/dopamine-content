@@ -1,0 +1,142 @@
+{
+  "id": "aie-context-01",
+  "version": 1,
+  "title": "Give the Right Context",
+  "xp": 10,
+  "tags": [
+    "context",
+    "prompting"
+  ],
+  "learn": [
+    {
+      "id": "available-context",
+      "kind": "text",
+      "title": "The available context",
+      "body": "AI answers using the information available to it for the current task. That context is finite. Include the facts needed now instead of assuming the model can see every earlier chat, file or requirement."
+    },
+    {
+      "id": "choose-signal",
+      "kind": "text",
+      "title": "Choose signal",
+      "body": "Signal is information that changes the answer. For a coding task, useful signal includes the goal, expected behavior, relevant requirements, the current error and the files involved. Add constraints that rule out unwanted solutions."
+    },
+    {
+      "id": "recognize-noise",
+      "kind": "text",
+      "title": "Recognize noise",
+      "body": "Noise is extra material with little connection to the task. Unrelated files, old errors and repeated instructions can bury the useful details. A larger context window can hold more text, but it does not ensure that every detail receives attention. More material is not automatically better material."
+    },
+    {
+      "id": "new-conversation",
+      "kind": "text",
+      "title": "Do not assume memory",
+      "body": "A basic API call does not inherently remember another conversation. An application may supply history or use a state mechanism. When starting fresh work, restate the essential goal and facts rather than relying on what seems familiar to you."
+    },
+    {
+      "id": "habit-save-example",
+      "kind": "example",
+      "title": "Context for a saving bug",
+      "body": "A habit tracker does not save a completed day. Prepare a focused request.",
+      "steps": [
+        "State the goal: make a completed day remain after reopening the app.",
+        "Give the rule: each habit can have one completion per calendar day.",
+        "Include the current result and the full saving error.",
+        "Provide the saving function and the small data model it uses.",
+        "Leave out unrelated screens and an old styling discussion."
+      ]
+    },
+    {
+      "id": "context-check",
+      "kind": "tip",
+      "body": "Before sending, ask whether each included item could change the solution or its verification. If not, it is probably noise."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which context is most useful for fixing a habit-saving error?",
+      "choices": [
+        "The full current error and the saving function",
+        "Every conversation about the app",
+        "A list of unrelated features",
+        "Only the app's name"
+      ],
+      "answerIndex": 0,
+      "explanation": "The current error and saving function bear directly on the failure. Broad history and unrelated features add noise without explaining this bug."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A model's working context is \\_\\_, so relevant details should be selected carefully.",
+      "choices": [
+        "finite",
+        "unlimited",
+        "always accurate"
+      ],
+      "answerIndex": 0,
+      "explanation": "Context has a limit. Even when that limit is large, selecting relevant material helps keep important details visible and reduces distraction."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What one word names information that is relevant enough to change the answer?",
+      "accepted": [
+        "signal",
+        "Signal",
+        "SIGNAL"
+      ],
+      "keypad": "full",
+      "explanation": "Signal is useful, task-relevant information. Noise is material that distracts from the goal without helping solve it."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each item to its likely role in a request about a login failure.",
+      "pairs": [
+        [
+          "The complete current login error",
+          "Diagnostic evidence"
+        ],
+        [
+          "The requirement for password rules",
+          "Relevant requirement"
+        ],
+        [
+          "Last year's color palette",
+          "Stale design detail"
+        ],
+        [
+          "An unrelated recipe",
+          "Irrelevant material"
+        ]
+      ],
+      "explanation": "The error and password rules can affect the diagnosis. Old colors and recipes cannot help with this login failure."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put these context-building actions in a practical order.",
+      "steps": [
+        "State the task and expected result",
+        "Add the relevant requirements and constraints",
+        "Attach current evidence and involved files",
+        "Remove material that cannot affect the answer"
+      ],
+      "explanation": "Start with the outcome, add boundaries and evidence, then prune. This produces a focused request without assuming prior knowledge."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "What should you assume about a new, basic API conversation?",
+      "choices": [
+        "It remembers every previous API call",
+        "It remembers only conversations with similar wording",
+        "Relevant history must be supplied by the application or restated",
+        "A large context window creates permanent memory"
+      ],
+      "answerIndex": 2,
+      "explanation": "Basic API calls do not inherently retain conversation state. Applications can supply history or use state features, but context size and memory are different concerns."
+    }
+  ]
+}

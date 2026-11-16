@@ -1,0 +1,76 @@
+{
+  "id": "aie-agents-notes",
+  "version": 1,
+  "title": "Agents: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "An agent combines a model, application-controlled tools, an observation-and-action loop and state. Use the simplest design that meets the goal. Tool use and coordination do not guarantee correct results."
+    },
+    {
+      "id": "control-levels",
+      "kind": "list",
+      "title": "Choose the control level",
+      "items": [
+        "Direct edit: a small, clear change",
+        "Workflow: predefined paths for a known sequence",
+        "One agent: bounded decisions for an uncertain path",
+        "Parallel agents: independent slices with explicit contracts"
+      ]
+    },
+    {
+      "id": "tool-safety",
+      "kind": "list",
+      "title": "Tool and permission rules",
+      "items": [
+        "The model requests; application code executes or denies",
+        "Use narrow tools with typed inputs and clear outputs",
+        "Validate values, paths and state before acting",
+        "Grant least privilege and sandbox the working area",
+        "Require human approval for destructive or external actions"
+      ]
+    },
+    {
+      "id": "coordination",
+      "kind": "list",
+      "title": "Coordinate independent work",
+      "items": [
+        "Define objectives, interfaces, outputs and done evidence",
+        "Assign one writer per file or separate working areas",
+        "Let builders produce and reviewers inspect",
+        "Give shared integration files to the orchestrator",
+        "Sequence work when decisions remain tightly dependent"
+      ]
+    },
+    {
+      "id": "shared-results",
+      "kind": "list",
+      "title": "Experimental shared artifacts",
+      "items": [
+        "Task records: decisions, artifacts, checks and open questions",
+        "Negative results: failed approaches with useful evidence",
+        "Optional commit DAG: parent lineage for related attempts",
+        "Lineage and notes do not prove correctness or compatibility"
+      ]
+    },
+    {
+      "id": "evaluation",
+      "kind": "list",
+      "title": "Evaluate the whole system",
+      "items": [
+        "Outcomes: inspect real environment changes",
+        "Traces: inspect requests, decisions, results and errors",
+        "Cases: cover typical, boundary and adversarial behavior",
+        "Integration: rerun the full relevant suite",
+        "Trials: repeat variable runs and preserve failures"
+      ]
+    },
+    {
+      "id": "release",
+      "kind": "tip",
+      "body": "Finish the capstone with a human release or hold decision based on outcomes, checks, traces, permissions and remaining risks. Agent self-reports are not release evidence."
+    }
+  ]
+}

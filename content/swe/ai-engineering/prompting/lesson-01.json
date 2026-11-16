@@ -1,0 +1,123 @@
+{
+  "id": "aie-prompting-01",
+  "version": 1,
+  "title": "Start with the Goal",
+  "xp": 10,
+  "tags": ["prompting", "goals"],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Name the result",
+      "body": "A prompt should make the intended result clear. A topic tells the model what to discuss; a goal tells it what to produce for you. Start with one objective so the response has a clear job."
+    },
+    {
+      "id": "task-outcome",
+      "kind": "text",
+      "title": "Task and outcome",
+      "body": "Write about habits names a topic. Draft a 100-word welcome message for a new habit tracker names a task and a usable outcome. The second request gives the model a finish line without pretending the wording guarantees a perfect answer."
+    },
+    {
+      "id": "one-objective",
+      "kind": "text",
+      "title": "Keep one main objective",
+      "body": "A request to design a screen, write its code, and plan a launch mixes different outcomes. Split unrelated goals into separate requests. A single goal can still have several requirements, such as a length and an audience."
+    },
+    {
+      "id": "worked-example",
+      "kind": "example",
+      "title": "From vague to useful",
+      "body": "Turn a broad habit-tracker request into one clear objective.",
+      "steps": [
+        "Weak start: Help with my habit app.",
+        "Choose the task: draft the welcome message.",
+        "Name the outcome: one message of at most 60 words.",
+        "Final goal: Draft one welcoming message of at most 60 words for someone starting a personal habit tracker."
+      ]
+    },
+    {
+      "id": "goal-check",
+      "kind": "text",
+      "title": "Check before sending",
+      "body": "Ask whether you could recognize a useful response without interpreting several competing requests. If the goal is still improve everything or make it better, choose the particular result you want first."
+    },
+    {
+      "id": "your-judgment",
+      "kind": "text",
+      "title": "You choose the objective",
+      "body": "The model can help phrase a goal, but it cannot know which result matters to you unless you decide. Choosing between a name, a message, and a plan is product judgment. Clear prompting starts with that human choice."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "A clear goal guides the response; it does not remove the need to review what comes back."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which request has the clearest goal?",
+      "choices": [
+        "Talk about productivity",
+        "Write three names for a habit tracker",
+        "Make my app idea good",
+        "Do something with habits"
+      ],
+      "answerIndex": 1,
+      "explanation": "It names one task, writing names, and a concrete outcome, three names. The other requests leave the intended result unclear."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A useful prompt begins with one clear \\_\\_.",
+      "choices": ["objective", "conversation", "apology"],
+      "answerIndex": 0,
+      "explanation": "One clear objective tells the model what the response should accomplish. Extra conversation or politeness cannot replace that direction."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Complete the advice with one word: A goal names the intended ___.",
+      "accepted": ["outcome", "result", "Outcome", "Result"],
+      "keypad": "full",
+      "explanation": "The intended outcome or result is what you want to receive, such as a 60-word welcome message."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each vague topic to a focused goal.",
+      "pairs": [
+        ["Reminders", "Draft two gentle reminder messages"],
+        ["Habit names", "Suggest five names for a reading habit"],
+        ["First screen", "List three labels for the check-in screen"]
+      ],
+      "explanation": "Each focused goal names a particular deliverable and amount, rather than asking for general discussion."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put this prompt revision in a sensible order.",
+      "steps": [
+        "Notice that Help with my tracker has no clear result",
+        "Choose one task, such as drafting a welcome message",
+        "Specify the desired outcome, including its length",
+        "Review whether the request still has one main objective"
+      ],
+      "explanation": "First identify the gap, then choose the task and outcome. A final check catches competing objectives before you send the prompt."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "You need both a privacy summary and five reminder messages. What best preserves one clear objective per prompt?",
+      "choices": [
+        "Ask for both in one request with no priorities",
+        "Start two separate requests, one for each deliverable",
+        "Replace both goals with Improve my app",
+        "Ask only which goal the model prefers"
+      ],
+      "answerIndex": 1,
+      "explanation": "The deliverables are unrelated, so separate requests keep each objective clear. The model should not choose your product goal for you."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "aie-foundations-notes",
+  "version": 1,
+  "title": "AI Foundations: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Language models generate useful drafts and suggestions, but fluent output is not guaranteed to be correct. Supply relevant context, verify important results, protect sensitive data and choose the simplest suitable level of AI."
+    },
+    {
+      "id": "generation",
+      "kind": "list",
+      "title": "Generation and context",
+      "items": [
+        "Models generate responses one token at a time",
+        "Tokens are pieces of text, not always whole words",
+        "Context windows have finite token capacity",
+        "Long context can still miss relevant details",
+        "Later work may need a compact, explicit handoff"
+      ]
+    },
+    {
+      "id": "verification",
+      "kind": "list",
+      "title": "Verify before relying",
+      "items": [
+        "Check facts against reliable sources",
+        "Confirm citations exist and support the claim",
+        "Inspect generated code and run relevant tests",
+        "Recompute totals with explicit rules",
+        "Label unsupported claims as unverified"
+      ]
+    },
+    {
+      "id": "privacy",
+      "kind": "list",
+      "title": "Share safely",
+      "items": [
+        "Remove passwords, access keys and other secrets",
+        "Replace personal details with synthetic examples",
+        "Share only the material the task needs",
+        "Check current provider and organizational rules",
+        "Revoke or rotate exposed secrets appropriately"
+      ]
+    },
+    {
+      "id": "levels",
+      "kind": "list",
+      "title": "Choose a level",
+      "items": [
+        "No AI: direct work or deterministic tools",
+        "Chat: ideas, explanations and suggestions",
+        "Coding agent: permitted multi-step tool use",
+        "More capability adds oversight, cost and delay"
+      ]
+    },
+    {
+      "id": "handoff",
+      "kind": "list",
+      "title": "A compact handoff",
+      "items": [
+        "Goal: the intended outcome",
+        "Current state: what already exists",
+        "Decisions: rules and choices to preserve",
+        "Next task: the immediate work",
+        "Checks: evidence needed before acceptance"
+      ]
+    },
+    {
+      "id": "responsibility",
+      "kind": "tip",
+      "body": "The human remains responsible for requirements, secrets, permissions, integration and release."
+    }
+  ]
+}

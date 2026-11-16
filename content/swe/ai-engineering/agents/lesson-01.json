@@ -1,0 +1,119 @@
+{
+  "id": "aie-agents-01",
+  "version": 1,
+  "title": "What Makes an Agent",
+  "xp": 12,
+  "tags": ["agents", "tools"],
+  "learn": [
+    {
+      "id": "agent-loop",
+      "kind": "text",
+      "title": "A loop around a model",
+      "body": "Ordinary chat produces a response from the conversation it receives. A tool-using agent adds a loop: the model chooses a next step, the application provides a tool result, and the model continues or stops. The agent is the whole system, not just the model."
+    },
+    {
+      "id": "four-parts",
+      "kind": "text",
+      "title": "Four working parts",
+      "body": "The model proposes reasoning and actions. Tools are capabilities supplied by the application. The loop repeats observation, decision and action. State tracks the goal, useful history, artifacts and progress. Changing any part can change how the agent behaves."
+    },
+    {
+      "id": "request-execution",
+      "kind": "text",
+      "title": "A request is not an action",
+      "body": "A model can request a file read, but it does not perform that read itself. Application code checks the request and executes it or refuses it. The resulting content or error becomes a new observation for the model."
+    },
+    {
+      "id": "habit-example",
+      "kind": "example",
+      "title": "Inspect a habit tracker",
+      "body": "Follow one bounded agent cycle.",
+      "steps": [
+        "The goal is to find where weekly habit totals are calculated.",
+        "The model requests a read of the likely source file.",
+        "The application validates the path, reads the file and returns its contents.",
+        "The model observes the code and requests a focused search for related tests.",
+        "After receiving the results, the agent stops with findings and uncertainties."
+      ]
+    },
+    {
+      "id": "state-stopping",
+      "kind": "text",
+      "title": "State and stopping",
+      "body": "Useful state can include the original requirement, tool results, changed files and unfinished questions. Context is finite, so the application must choose what to retain. Stop conditions can cover completion, a budget, missing permission or repeated failure."
+    },
+    {
+      "id": "agent-tip",
+      "kind": "tip",
+      "body": "Tool use adds the ability to affect an environment through application code. It does not make every decision, action or final summary correct. Clear stop conditions and useful state keep the loop bounded and reviewable."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which feature most clearly distinguishes a tool-using agent from ordinary chat?",
+      "choices": [
+        "A loop that lets the model request tools and receive results",
+        "A friendlier writing style in every response",
+        "A longer response with more headings",
+        "A larger font in the conversation"
+      ],
+      "answerIndex": 0,
+      "explanation": "The agent loop connects model decisions to application-mediated tools and feeds observations back for another decision."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "The model issues a tool \\_\\_; the application decides whether to execute it.",
+      "choices": ["request", "guarantee", "permission", "result"],
+      "answerIndex": 0,
+      "explanation": "A tool call begins as a model request. Application code mediates validation, permission and execution."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What part of an agent holds the goal, useful history and progress?",
+      "accepted": ["state", "agent state", "the state"],
+      "keypad": "full",
+      "explanation": "State is the information the system carries forward, such as requirements, observations, artifacts and unfinished work."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each agent component to its main job.",
+      "pairs": [
+        ["Model", "Propose the next reasoning step or action"],
+        ["Tool", "Provide an application-controlled capability"],
+        ["Loop", "Repeat decisions using new observations"],
+        ["State", "Carry useful goals and progress forward"]
+      ],
+      "explanation": "An agent combines all four parts. A capable model alone does not supply tools, retain every detail or run the control loop."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put one safe tool cycle in order.",
+      "steps": [
+        "The model requests a read with a file path.",
+        "The application validates the request and permissions.",
+        "The application reads the file or returns an error.",
+        "The model receives the observation and chooses what to do next."
+      ],
+      "explanation": "Execution belongs to the application between the model's request and the observation returned to the model."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "An agent says a habit was saved, but the user cannot see it. What should be checked first?",
+      "choices": [
+        "The actual stored habit and the tool result trace",
+        "Whether the final sentence sounds confident",
+        "Whether the agent used more headings",
+        "Whether another agent can repeat the claim"
+      ],
+      "answerIndex": 0,
+      "explanation": "A success message is only a claim. Inspect the environment and execution evidence to learn whether the requested change actually happened."
+    }
+  ]
+}

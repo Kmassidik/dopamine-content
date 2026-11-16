@@ -1,0 +1,145 @@
+{
+  "id": "aie-foundations-04",
+  "version": 1,
+  "title": "Privacy and Safe Sharing",
+  "xp": 15,
+  "tags": [
+    "privacy",
+    "security"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Treat prompts as data sharing",
+      "body": "Prompts, uploaded files and code can contain sensitive information. Secrets include passwords and access keys. Personal data can identify or concern people. Proprietary code and documents may be restricted by your organization or agreements."
+    },
+    {
+      "id": "minimum",
+      "kind": "text",
+      "title": "Share the minimum necessary",
+      "body": "Before sharing, decide what the task actually needs. Remove secrets and unrelated personal or confidential material. Use synthetic examples when possible. Redaction can help, but removing a name does not necessarily make the remaining data anonymous."
+    },
+    {
+      "id": "policies",
+      "kind": "text",
+      "title": "Check current rules and settings",
+      "body": "Storage, access and data use can vary by provider, product, plan and settings. Check the provider's current policies and your organization's rules before sharing sensitive material. A setting or deletion control is not a reason to share data you were required to keep private."
+    },
+    {
+      "id": "safe-example",
+      "kind": "example",
+      "title": "Sanitize a habit-tracker error",
+      "body": "An error log contains a user's email address and an access key.",
+      "steps": [
+        "Stop before posting the original log.",
+        "Remove the access key and replace personal details with invented values.",
+        "Keep only the error and surrounding details needed to reproduce it.",
+        "Review the sanitized text for other secrets or identifying details.",
+        "If a real secret was exposed, follow the appropriate process to revoke or rotate it."
+      ]
+    },
+    {
+      "id": "code-sharing",
+      "kind": "text",
+      "title": "Be careful with code and files",
+      "body": "Code can reveal credentials, customer information or confidential designs even when the visible task seems harmless. Use a minimal synthetic reproduction instead of an entire private project when you can. Make sure you have permission for any material you provide."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "If you are unsure whether information is safe to share, do not share it until you have checked the applicable rules."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "How should you handle an access key in an error log you want AI help with?",
+      "choices": [
+        "Remove it before sharing and use a safe placeholder if needed",
+        "Include it so the model can inspect the real key",
+        "Hide only the first character",
+        "Share it if the log also contains useful code"
+      ],
+      "answerIndex": 0,
+      "explanation": "A real access key is a secret and is not needed to explain most errors. Remove it and preserve only safe details relevant to the problem."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "When possible, replace real personal details with \\_\\_ examples.",
+      "choices": [
+        "synthetic",
+        "identifiable",
+        "confidential",
+        "unchanged"
+      ],
+      "answerIndex": 0,
+      "explanation": "Synthetic examples can preserve the shape of a problem without exposing a real person's information. They should not contain copied private details."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What kind of invented data can replace real personal data in a debugging example?",
+      "accepted": [
+        "synthetic data",
+        "synthetic",
+        "fake data",
+        "dummy data",
+        "invented data",
+        "fabricated data"
+      ],
+      "explanation": "Use invented synthetic data that illustrates the issue without identifying a real person. Review the whole example for other sensitive details."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each item to a safe-sharing action.",
+      "pairs": [
+        [
+          "Access key",
+          "Remove it before sharing"
+        ],
+        [
+          "Customer email",
+          "Replace it with an invented value"
+        ],
+        [
+          "Proprietary project",
+          "Use a minimal permitted excerpt or reproduction"
+        ],
+        [
+          "Provider data policy",
+          "Check its current terms for your situation"
+        ]
+      ],
+      "explanation": "Different sensitive items need appropriate handling. Remove secrets, avoid real personal details, limit proprietary material and consult current policies."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put the safe sharing of a private error log in order.",
+      "steps": [
+        "Identify what is needed to reproduce the error",
+        "Remove secrets and unrelated sensitive material",
+        "Replace necessary personal details with synthetic values",
+        "Review the sanitized log before sharing it"
+      ],
+      "explanation": "First limit the material to the problem, then remove or replace sensitive content. A final review helps catch details missed during redaction."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "What is the best approach before uploading proprietary code to an AI service?",
+      "choices": [
+        "Check organizational rules and current provider terms, then share only permitted necessary material",
+        "Assume every provider setting makes sharing acceptable",
+        "Upload the whole project so no context is missing",
+        "Remove only the project's name and share everything else"
+      ],
+      "answerIndex": 0,
+      "explanation": "Permission, organizational rules and current provider terms all matter. Even when sharing is allowed, minimize the code and sensitive information provided."
+    }
+  ]
+}

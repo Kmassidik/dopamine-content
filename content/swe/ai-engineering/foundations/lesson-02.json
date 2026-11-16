@@ -1,0 +1,145 @@
+{
+  "id": "aie-foundations-02",
+  "version": 1,
+  "title": "Tokens and Context Windows",
+  "xp": 10,
+  "tags": [
+    "tokens",
+    "context"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Text becomes tokens",
+      "body": "Before processing text, a language model system splits it into tokens. A token may be a word, part of a word or punctuation. The exact split depends on the model, so tokens are not simply a count of words."
+    },
+    {
+      "id": "finite-window",
+      "kind": "text",
+      "title": "A finite working context",
+      "body": "The context is the information available for generating a response, such as instructions, conversation history and supplied material. A context window is its finite token capacity. Its size and the way a product manages it depend on the model and application."
+    },
+    {
+      "id": "missing-details",
+      "kind": "text",
+      "title": "Available is not always used",
+      "body": "Even when information fits, a model can miss or misuse a relevant detail. When the context grows or a new session begins, earlier requirements may no longer be present. Do not assume that a model remembers everything you previously discussed."
+    },
+    {
+      "id": "handoff-example",
+      "kind": "example",
+      "title": "Continue a habit-tracker task",
+      "body": "Restore the useful context instead of copying an entire old conversation.",
+      "steps": [
+        "State the goal: add a weekly summary to the habit tracker.",
+        "Give the current state: daily entries already save correctly.",
+        "Include the decision: a week starts on Monday.",
+        "Ask for the next result: propose the summary logic and acceptance checks."
+      ]
+    },
+    {
+      "id": "restore-context",
+      "kind": "text",
+      "title": "Build a compact handoff",
+      "body": "For later work, restate the goal, relevant facts, decisions and next task. Include only material that helps with that task. Some applications supply conversation history or another state mechanism, but a basic request does not magically retain every earlier exchange."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "If an answer ignores an old requirement, check whether that requirement is present and easy to find in the current context."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which statement about tokens is correct?",
+      "choices": [
+        "They are pieces of text, not always whole words",
+        "Every word always becomes exactly one token",
+        "They are only punctuation marks",
+        "Their meaning is identical across every model"
+      ],
+      "answerIndex": 0,
+      "explanation": "Tokenization can split a word into parts or treat a short word as one token. The exact result depends on the model."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A context window has a \\_\\_ token capacity.",
+      "choices": [
+        "finite",
+        "unlimited",
+        "permanent",
+        "self-checking"
+      ],
+      "answerIndex": 0,
+      "explanation": "A context window is finite. The application and model determine its capacity and how earlier material is managed."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What should you restore when continuing earlier work in a fresh session?",
+      "accepted": [
+        "relevant context",
+        "the relevant context",
+        "important context",
+        "the important context",
+        "relevant details",
+        "the relevant details",
+        "context"
+      ],
+      "explanation": "Restore the relevant goal, facts, decisions and next task. A fresh session should not be treated as though it automatically knows the earlier discussion."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each handoff item to its purpose.",
+      "pairs": [
+        [
+          "Goal",
+          "States the intended outcome"
+        ],
+        [
+          "Current state",
+          "Says what already exists"
+        ],
+        [
+          "Decision",
+          "Preserves a chosen rule"
+        ],
+        [
+          "Next task",
+          "Defines the immediate work"
+        ]
+      ],
+      "explanation": "A compact handoff separates the outcome, existing state, chosen rules and immediate work. Together they restore useful context without unrelated history."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put the preparation of a new-session handoff in order.",
+      "steps": [
+        "Identify the next task",
+        "Select the goal, current state and decisions it needs",
+        "Remove unrelated conversation details",
+        "Provide the compact context with the request"
+      ],
+      "explanation": "Start from the next task so you can select only useful information. Then remove noise and supply the resulting context explicitly."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "A model misses a requirement even though it appears in a long supplied document. What is the best response?",
+      "choices": [
+        "Restate the relevant requirement clearly and check the new answer",
+        "Assume the requirement was followed because it fit",
+        "Add unrelated history until the window is full",
+        "Treat the long document as proof the answer is correct"
+      ],
+      "answerIndex": 0,
+      "explanation": "Fitting inside a context window does not guarantee that a model will use a detail correctly. Make the relevant requirement easy to find and evaluate the response."
+    }
+  ]
+}

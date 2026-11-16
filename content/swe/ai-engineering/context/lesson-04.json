@@ -1,0 +1,145 @@
+{
+  "id": "aie-context-04",
+  "version": 1,
+  "title": "Write a Useful Handoff",
+  "xp": 10,
+  "tags": [
+    "handoffs",
+    "evidence"
+  ],
+  "learn": [
+    {
+      "id": "continue-without-guessing",
+      "kind": "text",
+      "title": "Let someone continue",
+      "body": "A handoff is a compact record that lets another person or AI continue work without reconstructing it. State the goal, current status and next action. Include only context that changes what the receiver should do."
+    },
+    {
+      "id": "record-decisions",
+      "kind": "text",
+      "title": "Record decisions and changes",
+      "body": "List changed files or areas and explain important decisions, not every keystroke. Use exact names so the receiver can find them. Mention rejected approaches when they prevent repeated mistakes. If a requirement remains undecided, mark it as open rather than presenting a choice as settled."
+    },
+    {
+      "id": "report-evidence",
+      "kind": "text",
+      "title": "Report evidence honestly",
+      "body": "For each check, give the command actually run and its observed result. Distinguish passing, failing and not run. A successful message or a planned test is not evidence. Passing checks support only the behavior they exercised."
+    },
+    {
+      "id": "streak-handoff-example",
+      "kind": "example",
+      "title": "Hand off a streak change",
+      "body": "A teammate will continue a habit-tracker update.",
+      "steps": [
+        "Goal and state: streak calculation works for sample dates; storage connection remains.",
+        "Changes: streak calculation and its tests; decision: use local calendar dates.",
+        "Evidence: ran npm test -- streak; observed four passing tests.",
+        "Not run: the full test suite and a manual check with real stored entries.",
+        "Next and risk: connect storage, then inspect behavior around month boundaries."
+      ]
+    },
+    {
+      "id": "remaining-risks",
+      "kind": "text",
+      "title": "Name remaining risks",
+      "body": "End with unresolved failures, untested cases and assumptions that could change the next step. Point to the exact error or source when possible. This helps the receiver choose verification instead of trusting an overly tidy summary."
+    },
+    {
+      "id": "handoff-check",
+      "kind": "tip",
+      "body": "Read the handoff as the receiver. Could you find the changes, reproduce each reported check and identify what remains uncertain?"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is the main purpose of a handoff?",
+      "choices": [
+        "Let someone continue with the current facts and next action",
+        "Prove that every possible test passed",
+        "Replace all source files with a summary",
+        "Hide unresolved problems until release"
+      ],
+      "answerIndex": 0,
+      "explanation": "A handoff transfers useful state, evidence and uncertainty. It supports continuation; it is not proof of completeness or a substitute for the work itself."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "List only commands you \\_\\_ ran, together with their observed results.",
+      "choices": [
+        "actually",
+        "never",
+        "hoped to"
+      ],
+      "answerIndex": 0,
+      "explanation": "Evidence comes from commands actually executed and observed. Planned commands belong under next steps or not run, not under passing checks."
+    },
+    {
+      "id": "q3",
+      "type": "match_pairs",
+      "prompt": "Match each handoff field to a useful entry.",
+      "pairs": [
+        [
+          "Current state",
+          "Calculation finished; storage remains"
+        ],
+        [
+          "Changed areas",
+          "Streak logic and its tests"
+        ],
+        [
+          "Evidence",
+          "Command run and observed result"
+        ],
+        [
+          "Remaining risk",
+          "Month boundary not checked"
+        ]
+      ],
+      "explanation": "State separates finished and unfinished work, changed areas guide inspection, evidence supports claims, and risks direct the next checks."
+    },
+    {
+      "id": "q4",
+      "type": "order_steps",
+      "prompt": "Put these handoff-writing actions in a practical order.",
+      "steps": [
+        "Summarize the goal and current state",
+        "List important changes and decisions",
+        "Record commands run and observed evidence",
+        "Add remaining risks and the next action"
+      ],
+      "explanation": "Orient the receiver first, then identify what changed, support progress claims and finish with uncertainty plus a concrete next step."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which handoff statement provides the strongest testing evidence?",
+      "choices": [
+        "Ran npm test -- streak; four tests passed",
+        "The tests should pass",
+        "Testing is probably fine",
+        "All possible behavior is guaranteed"
+      ],
+      "answerIndex": 0,
+      "explanation": "The first statement names the executed command and observed outcome. It makes a bounded, checkable claim without promising untested behavior."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "What two-word label should a handoff use for a check that has not been executed?",
+      "accepted": [
+        "not run",
+        "Not run",
+        "Not Run",
+        "NOT RUN",
+        "not-run",
+        "Not-run"
+      ],
+      "keypad": "full",
+      "explanation": "Label the check not run. This distinguishes a missing check from both passing and failing evidence and tells the receiver what remains."
+    }
+  ]
+}

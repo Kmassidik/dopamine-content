@@ -1,0 +1,75 @@
+{
+  "id": "aie-context-notes",
+  "version": 1,
+  "title": "Context and Knowledge: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Give each task relevant context, clear boundaries and checkable evidence. Context is finite, and a larger window does not ensure attention to every detail. Basic API calls do not inherently remember earlier conversations."
+    },
+    {
+      "id": "context-checklist",
+      "kind": "list",
+      "title": "Focused context",
+      "items": [
+        "Goal and expected result",
+        "Relevant requirements and constraints",
+        "Current errors and observed behavior",
+        "Involved files or source passages",
+        "Remove unrelated history and stale details"
+      ]
+    },
+    {
+      "id": "slicing-checklist",
+      "kind": "list",
+      "title": "Reviewable slices",
+      "items": [
+        "Give each slice a deliverable and done condition",
+        "Agree on inputs, outputs and behavior at interfaces",
+        "Separate work that can proceed independently",
+        "Review parts before integrating and checking the whole"
+      ]
+    },
+    {
+      "id": "source-labels",
+      "kind": "list",
+      "title": "Grounding labels",
+      "items": [
+        "Source: stated or shown in supplied evidence",
+        "Inference: a reasoned conclusion, with its reasoning",
+        "Unknown: support is missing or insufficient",
+        "Citation: an inspectable source and location"
+      ]
+    },
+    {
+      "id": "handoff-fields",
+      "kind": "list",
+      "title": "Useful handoff",
+      "items": [
+        "Goal, current state and next action",
+        "Changed files or areas and important decisions",
+        "Commands actually run and observed results",
+        "Checks not run, unresolved failures and remaining risks"
+      ]
+    },
+    {
+      "id": "brief-fields",
+      "kind": "list",
+      "title": "Current project brief",
+      "items": [
+        "User goal, scope and non-goals",
+        "Architecture, layout and conventions",
+        "Exact setup and verification commands",
+        "Observable acceptance checks",
+        "Revise entries when decisions or commands change"
+      ]
+    },
+    {
+      "id": "evidence-tip",
+      "kind": "tip",
+      "body": "Do not turn a fluent answer, retrieved passage, planned test or passing check into proof beyond its evidence. Inspect sources and keep uncertainty visible."
+    }
+  ]
+}

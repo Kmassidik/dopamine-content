@@ -1,0 +1,154 @@
+{
+  "id": "aie-coding-05",
+  "version": 1,
+  "title": "Review Security and Dependencies",
+  "xp": 15,
+  "tags": [
+    "security",
+    "dependencies",
+    "licenses",
+    "habit-tracker"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Review beyond the happy path",
+      "body": "Working features and passing tests do not make generated code safe to adopt. Review what the code trusts, what it exposes and what it adds to the project. The aim is not to spot every possible attack, but to make deliberate decisions about clear risks before acceptance."
+    },
+    {
+      "id": "secrets",
+      "kind": "text",
+      "title": "Keep secrets out of code",
+      "body": "Passwords, API keys and tokens do not belong in source, committed configuration, logs or prompts. Use the project's approved secret-storage mechanism and grant only needed access. If a secret is exposed, revoke or rotate it; deleting the visible line alone does not remove copies or Git history."
+    },
+    {
+      "id": "untrusted-input",
+      "kind": "text",
+      "title": "Keep data away from commands",
+      "body": "Treat user text, files, network responses and AI output as untrusted input. Validate for the expected use and keep data separate from commands and queries. Parameterized database queries and safe display APIs help prevent injection; the right validation and output encoding depend on context."
+    },
+    {
+      "id": "dependencies",
+      "kind": "text",
+      "title": "Adopt dependencies deliberately",
+      "body": "Each dependency adds code, update work and supply-chain exposure. Prefer existing project or platform capabilities when they meet the need, and remove unused packages. Before adopting one, inspect its purpose, source, maintenance, requested permissions and license terms, including compatibility with project policy."
+    },
+    {
+      "id": "worked-example",
+      "kind": "example",
+      "title": "Review generated habit notes",
+      "body": "AI adds free-text habit notes, database search and a new display package in one proposal.",
+      "steps": [
+        "Scan source, configuration, logs and the diff for embedded tokens or private note contents; stop and rotate any exposed secret.",
+        "Treat note text as untrusted: use parameterized search queries and display it as text rather than executable markup.",
+        "Question the display package; if plain text satisfies the specification, use existing display support instead of adding a dependency.",
+        "For any package still justified, review its source, maintenance, permissions, license obligations and recorded dependency versions.",
+        "Review permissions and failure handling, run relevant security and behavior checks, then make a human accept, revise or reject decision."
+      ]
+    },
+    {
+      "id": "ownership",
+      "kind": "tip",
+      "body": "Ask AI to list security assumptions and every added dependency, then verify against the actual diff. You own secrets, permissions and the release decision."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "You find a live API token in generated source. What is the safest response?",
+      "choices": [
+        "Remove it, revoke or rotate it, and use approved secret storage",
+        "Rename the token variable so it is harder to recognize",
+        "Keep it if the repository is currently private",
+        "Only delete the line and assume all copies are gone"
+      ],
+      "answerIndex": 0,
+      "explanation": "An exposed token may already have been copied. Revocation or rotation addresses the exposed credential, while proper storage and removal reduce further exposure."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "Use \\_\\_ database queries to keep user values separate from query structure.",
+      "choices": [
+        "parameterized",
+        "concatenated",
+        "unreviewed"
+      ],
+      "answerIndex": 0,
+      "explanation": "Parameterized queries pass values separately instead of merging them into query text. This helps prevent user input from changing the query's meaning."
+    },
+    {
+      "id": "q3",
+      "type": "match_pairs",
+      "prompt": "Match each review finding to the best response.",
+      "pairs": [
+        [
+          "Token embedded in source",
+          "Remove and rotate it; store its replacement securely"
+        ],
+        [
+          "User text merged into a query",
+          "Use a parameterized query"
+        ],
+        [
+          "AI output treated as a command",
+          "Treat it as untrusted data and validate its use"
+        ],
+        [
+          "Package with no necessary purpose",
+          "Remove it rather than carry extra risk"
+        ]
+      ],
+      "explanation": "Different findings need different controls. Secrets require credential handling, injection requires separation from commands, and unused dependencies should be removed."
+    },
+    {
+      "id": "q4",
+      "type": "order_steps",
+      "prompt": "Put this final dependency and security review in order.",
+      "steps": [
+        "Inspect the diff for secrets and sensitive logging",
+        "Trace untrusted input into queries, commands and displays",
+        "Justify each new dependency and check its license",
+        "Review permissions and run relevant checks",
+        "Make a human accept, revise or reject decision"
+      ],
+      "explanation": "A final review connects concrete code findings with controls and checks. The human decision comes after inspection, not before it."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "What legal terms should you check for compatibility before adopting a third-party package?",
+      "accepted": [
+        "license",
+        "License",
+        "licence",
+        "Licence",
+        "license terms",
+        "License terms",
+        "licence terms",
+        "Licence terms",
+        "its license",
+        "Its license",
+        "its licence",
+        "Its licence"
+      ],
+      "keypad": "full",
+      "explanation": "A package's license states conditions for use and distribution. Check those terms and project policy rather than assuming every available package is suitable."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "AI adds three packages for plain-text habit notes, but existing display support already meets the specification. What is the best review decision?",
+      "choices": [
+        "Use existing support and omit the unnecessary packages",
+        "Keep all three because more dependencies always improve security",
+        "Add another package to check the first three",
+        "Ignore the packages because dependency choice is never part of code review"
+      ],
+      "answerIndex": 0,
+      "explanation": "Unneeded dependencies add maintenance and exposure without user value. Existing support is sufficient here, so the minimal solution better fits the agreed scope."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "aie-prompting-05",
+  "version": 1,
+  "title": "Debug a Weak Prompt",
+  "xp": 15,
+  "tags": ["prompting", "debugging", "iteration"],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Diagnose before rewriting",
+      "body": "When a response misses the mark, compare it with your request. Look for a missing goal, absent context, unclear output shape, or uncheckable completion criteria. Goal, Context, Constraints, Examples, Done, and Verify are diagnostic prompts, not a magic formula."
+    },
+    {
+      "id": "contradictions",
+      "kind": "text",
+      "title": "Find gaps and contradictions",
+      "body": "A request can omit information the task needs or contain instructions that cannot both be followed. Answer in at most 10 words and use at least 300 words conflict. Resolve the contradiction yourself; do not make the model guess which requirement matters."
+    },
+    {
+      "id": "one-change",
+      "kind": "text",
+      "title": "Change one cause at a time",
+      "body": "Choose one likely cause and revise that part. Keep the same test input, then compare the new response with the old one. If you change the audience, length, and format together, you cannot tell which change helped."
+    },
+    {
+      "id": "worked-example",
+      "kind": "example",
+      "title": "Repair a broad request",
+      "body": "The prompt Make my habit tracker better produced account ideas, but you want only calmer wording.",
+      "steps": [
+        "Record the failure: the response proposes unwanted account features.",
+        "Diagnose one gap: the request has no specific goal.",
+        "Change only the goal: Suggest three calmer wordings for the check-in reminder.",
+        "Try the same task again and compare whether the suggestions now concern wording.",
+        "If feature ideas still appear, next test a clear non-goal that excludes accounts."
+      ]
+    },
+    {
+      "id": "avoid-rephrasing",
+      "kind": "text",
+      "title": "Stop endless rephrasing",
+      "body": "Repeating similar wording without a diagnosis adds effort but little information. Test a meaningful change, note the result, and keep or revert it based on evidence. If missing facts are the cause, supply them rather than searching for perfect phrasing."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "A better response after one change is a clue, not proof. Recheck representative cases before trusting the revised prompt. New wording alone is not a diagnosis."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "A response misses your goal. What is a useful first debugging step?",
+      "choices": [
+        "Compare the response with the information in your prompt",
+        "Add several unrelated requirements",
+        "Repeat the same words with more enthusiasm",
+        "Assume every future response will fail"
+      ],
+      "answerIndex": 0,
+      "explanation": "Comparing request and response can reveal missing or conflicting instructions. Random additions and repetition do not diagnose the cause."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "To learn what improved a response, change one likely \\_\\_ at a time.",
+      "choices": ["cause", "model", "application"],
+      "answerIndex": 0,
+      "explanation": "Changing one suspected cause isolates its effect. Switching models or applications adds a different change and confuses the comparison."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What term describes two instructions that cannot both be followed?",
+      "accepted": ["contradiction", "conflict", "Contradiction", "Conflict"],
+      "keypad": "full",
+      "explanation": "A contradiction or conflict, such as at most 10 words and at least 300 words, needs a decision about which requirement to keep."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each observed failure to a targeted prompt change.",
+      "pairs": [
+        ["Unwanted account features", "Add a non-goal excluding accounts"],
+        ["Wrong reading level", "Specify the intended audience"],
+        ["Missing required fields", "Show the output shape"],
+        ["No evidence for completion", "Request checks and actual results"]
+      ],
+      "explanation": "Each revision addresses one observed gap. The following test should show whether that particular change improved the response."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put the prompt-debugging loop in order.",
+      "steps": [
+        "Compare the weak response with the prompt",
+        "Identify one likely missing or conflicting instruction",
+        "Revise only that part of the prompt",
+        "Rerun the same case and compare the responses",
+        "Record whether to keep or revert the change"
+      ],
+      "explanation": "This loop turns debugging into a controlled comparison. Diagnosis and single changes make the resulting evidence easier to interpret."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "The output ignores length and uses the wrong audience. Which experiment best isolates one change?",
+      "choices": [
+        "Add an audience statement and keep the length instruction unchanged",
+        "Change the audience, length, goal, and output format together",
+        "Delete the goal and all constraints",
+        "Keep rephrasing every sentence until the answer changes"
+      ],
+      "answerIndex": 0,
+      "explanation": "Adding only the audience statement tests that suspected cause. The unchanged length instruction gives a cleaner basis for comparison."
+    }
+  ]
+}

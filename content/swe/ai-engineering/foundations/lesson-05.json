@@ -1,0 +1,143 @@
+{
+  "id": "aie-foundations-05",
+  "version": 1,
+  "title": "Choose the Right Level of AI",
+  "xp": 15,
+  "tags": [
+    "ai-workflows",
+    "coding-agents"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Start with the task",
+      "body": "You can work without AI, use ordinary chat for generated suggestions or give a coding agent tools to act in a project. None is always best. Choose by considering the task, risk, need for control and verification available."
+    },
+    {
+      "id": "no-ai",
+      "kind": "text",
+      "title": "No AI: direct and predictable",
+      "body": "Use an existing deterministic tool or make a straightforward change yourself when that is simplest and reliable. Exact calculations, a known one-line edit or work that must not share sensitive material may not benefit from generation."
+    },
+    {
+      "id": "chat",
+      "kind": "text",
+      "title": "Chat: suggestions under your control",
+      "body": "Ordinary chat suits brainstorming, explanations, rewrites and small code suggestions. You decide what to provide and what to apply. This keeps actions manual, but you still need to verify the answer and integrate any changes yourself."
+    },
+    {
+      "id": "agent",
+      "kind": "text",
+      "title": "Coding agent: useful tool access",
+      "body": "A coding agent can use tools in a loop to inspect files, make edits and run checks within its permissions. This can help with multi-step coding tasks, but adds cost, delay and possible compounding errors. Give clear boundaries and review its work."
+    },
+    {
+      "id": "level-example",
+      "kind": "example",
+      "title": "Choose for three tracker tasks",
+      "body": "Match the approach to the work rather than using the most capable option everywhere.",
+      "steps": [
+        "For an exact total from known entries, use ordinary arithmetic without AI.",
+        "For five possible names for a reminder, use chat and select a suitable suggestion.",
+        "For an export feature touching several files, consider a coding agent with tests and a review.",
+        "In each case, keep the human responsible for accepting the result."
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Use the simplest approach that can complete the task safely. Add AI capability only when its benefit justifies the extra oversight."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which approach is usually best for adding two known numbers exactly?",
+      "choices": [
+        "A deterministic calculator without AI",
+        "A coding agent with project access",
+        "A chat request for a plausible estimate",
+        "Several agents repeating the same addition"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ordinary arithmetic is exact, simple and easy to control. Generation or agent tools add unnecessary variation and overhead to this task."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A coding \\_\\_ can use tools to inspect files and make edits within its permissions.",
+      "choices": [
+        "agent",
+        "calculator",
+        "citation",
+        "token"
+      ],
+      "answerIndex": 0,
+      "explanation": "A coding agent combines model-directed decisions with tool access and feedback. Its permissions and resulting changes still need oversight."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Which AI level fits brainstorming reminder names without changing project files: chat or coding agent?",
+      "accepted": [
+        "chat",
+        "ordinary chat",
+        "ai chat",
+        "plain chat"
+      ],
+      "explanation": "Chat is enough for generating name ideas. A coding agent's file and tool access would add capability and overhead that this task does not need."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each task to a reasonable starting level.",
+      "pairs": [
+        [
+          "Make a known one-character label fix",
+          "No AI"
+        ],
+        [
+          "Explain an unfamiliar error message",
+          "Chat for explanation"
+        ],
+        [
+          "Draft three onboarding sentences",
+          "Chat for drafting"
+        ],
+        [
+          "Implement and test a change across several files",
+          "Coding agent"
+        ]
+      ],
+      "explanation": "Direct work suits a known tiny edit. Chat suits explanations and drafts. A coding agent may help when coordinated edits and checks justify its overhead."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put this approach-selection process in order.",
+      "steps": [
+        "Define the outcome, risk and available verification",
+        "Check whether direct work or a deterministic tool is enough",
+        "Use chat if you only need suggestions or explanations",
+        "Consider a coding agent when tool actions justify the overhead",
+        "Review the result before accepting or releasing it"
+      ],
+      "explanation": "Start with the task and its risks, then choose the simplest sufficient level. Regardless of that choice, review the result before acceptance or release."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "A coding agent reports that it finished a tracker feature and ran tests. What should happen before release?",
+      "choices": [
+        "A human reviews the changes and verification evidence, then makes the release decision",
+        "The success message automatically proves the feature is ready",
+        "Release occurs without inspecting the changed files",
+        "Tests replace the need to review requirements and security"
+      ],
+      "answerIndex": 0,
+      "explanation": "Agent reports and tests provide evidence, not proof of every requirement. Human review covers the changes, checks and remaining risks before release."
+    }
+  ]
+}

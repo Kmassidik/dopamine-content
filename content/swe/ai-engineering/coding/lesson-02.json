@@ -1,0 +1,140 @@
+{
+  "id": "aie-coding-02",
+  "version": 1,
+  "title": "Make Small Reviewable Changes",
+  "xp": 10,
+  "tags": [
+    "git",
+    "diffs",
+    "code-review",
+    "habit-tracker"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "One understandable batch",
+      "body": "Ask for a change that delivers one coherent part of the specification. A small batch has fewer interactions to inspect and is easier to explain, test and undo. Small is not a fixed line count: the batch must fit its risks and the review attention actually available."
+    },
+    {
+      "id": "checkpoint",
+      "kind": "text",
+      "title": "Keep a way back",
+      "body": "Before AI edits, establish a Git checkpoint, often a commit of the intended current work. It preserves a known state to inspect or return to if the new approach fails. A checkpoint is not proof that the state works, so record the checks that support it and avoid overwriting unrelated work."
+    },
+    {
+      "id": "right-size",
+      "kind": "text",
+      "title": "Match size to risk",
+      "body": "A wording change with a clear check may fit in a larger batch than a change to stored completions, login or permissions. Increase scrutiny when a mistake could lose data or expose information. Split work when you cannot comfortably explain its files, behavior and tradeoffs in one review."
+    },
+    {
+      "id": "diff-review",
+      "kind": "text",
+      "title": "Read the actual difference",
+      "body": "A diff shows additions, removals and modifications rather than a summary of intent. Compare it with the request and acceptance criteria. Check every changed file, question unrelated renames or formatting, and inspect surrounding code when context matters. AI's summary is a guide, not a substitute for the diff."
+    },
+    {
+      "id": "worked-example",
+      "kind": "example",
+      "title": "Review one habit tracker change",
+      "body": "The agreed slice adds check-off behavior without redesigning the habit tracker.",
+      "steps": [
+        "Record the current checks and make a Git checkpoint before requesting edits.",
+        "Request only same-day habit completion, leaving reminders and visual redesign out of scope.",
+        "Open the diff and map each changed file to storage, the completion control or its check.",
+        "Notice an unrelated rename of existing habit fields; remove it rather than accepting extra migration risk.",
+        "Check the final behavior and diff, explain why each edit belongs, then commit only the accepted change."
+      ]
+    },
+    {
+      "id": "ownership",
+      "kind": "tip",
+      "body": "Do not accept a diff you cannot explain. Ask for a walkthrough, split the work or discard the attempt. AI can propose code; the human retains understanding and ownership."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is the main purpose of a Git checkpoint before AI edits?",
+      "choices": [
+        "Preserve a known state that can be inspected or restored",
+        "Prove that every current feature works correctly",
+        "Make all later generated edits safe automatically"
+      ],
+      "answerIndex": 0,
+      "explanation": "A checkpoint gives you a reference and a way back. It does not verify the saved state or make later changes correct."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A \\_\\_ shows the additions, removals and modifications made to files.",
+      "choices": [
+        "diff",
+        "user story",
+        "license"
+      ],
+      "answerIndex": 0,
+      "explanation": "A diff exposes the actual edits. Reviewing it helps you find unexpected files and unrelated changes that a short summary might omit."
+    },
+    {
+      "id": "q3",
+      "type": "match_pairs",
+      "prompt": "Match each proposed batch to the most suitable response.",
+      "pairs": [
+        [
+          "Fix one label with a clear check",
+          "A small batch is likely reviewable"
+        ],
+        [
+          "Change completion storage and add accounts",
+          "Split into separately reviewable outcomes"
+        ],
+        [
+          "Large edit you cannot explain",
+          "Pause, reduce scope or request a walkthrough"
+        ]
+      ],
+      "explanation": "Batch size depends on coupling, risk and your capacity to review. Unrelated outcomes and unexplained edits need clearer boundaries, not blind acceptance."
+    },
+    {
+      "id": "q4",
+      "type": "order_steps",
+      "prompt": "Put a reviewable AI-assisted change in order.",
+      "steps": [
+        "Checkpoint the intended current state",
+        "Request one bounded change",
+        "Inspect the complete diff and relevant context",
+        "Check behavior against the acceptance criteria",
+        "Accept and commit only edits you understand"
+      ],
+      "explanation": "A checkpoint protects the starting point. Review and behavioral checks come before accepting the new state; a generated summary cannot replace either."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "What three-letter word names the file-by-file comparison you inspect before accepting generated edits?",
+      "accepted": [
+        "diff",
+        "Diff",
+        "DIFF"
+      ],
+      "keypad": "full",
+      "explanation": "The diff is the concrete record of what changed. Inspecting it supports deliberate acceptance instead of trusting a description of the work."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "AI adds habit check-off behavior and also rewrites unrelated storage code. Tests for check-off pass. What is the best response?",
+      "choices": [
+        "Review the rewrite separately and remove or defer it if it is unnecessary",
+        "Accept everything because one passing check covers all changed code",
+        "Keep the rewrite hidden so the diff stays short",
+        "Add another unrelated feature to make the batch worthwhile"
+      ],
+      "answerIndex": 0,
+      "explanation": "The extra rewrite expands risk beyond the agreed outcome. A passing check-off test does not establish the safety of unrelated storage changes."
+    }
+  ]
+}

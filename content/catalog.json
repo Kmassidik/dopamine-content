@@ -151,6 +151,61 @@
       }
     },
     {
+      "id": "ai-engineering",
+      "categoryId": "swe",
+      "title": "AI Engineering",
+      "description": "From clear prompts to verified software and coordinated agents",
+      "order": 7,
+      "dir": "swe/ai-engineering",
+      "units": [
+        {
+          "id": "aie-foundations",
+          "title": "AI Foundations",
+          "order": 1,
+          "dir": "foundations"
+        },
+        {
+          "id": "aie-prompting",
+          "title": "Prompt Engineering",
+          "order": 2,
+          "dir": "prompting"
+        },
+        {
+          "id": "aie-context",
+          "title": "Context and Knowledge",
+          "order": 3,
+          "dir": "context"
+        },
+        {
+          "id": "aie-coding",
+          "title": "AI-Assisted Coding",
+          "order": 4,
+          "dir": "coding"
+        },
+        {
+          "id": "aie-agents",
+          "title": "Agents and Multi-Agent Systems",
+          "order": 5,
+          "dir": "agents"
+        }
+      ],
+      "overview": {
+        "summary": "Learn to build software with AI without giving up engineering judgment. Progress from clear prompts and useful context to tested code, safe tools and coordinated agents.",
+        "outcomes": [
+          "Write prompts with clear goals, context and acceptance criteria",
+          "Ground AI answers in relevant sources and project knowledge",
+          "Turn an idea into a small, reviewable software change",
+          "Verify generated code with tests, evidence and security review",
+          "Coordinate tool-using agents and evaluate their final work"
+        ],
+        "requirements": [
+          "Basic computer and internet use",
+          "No programming experience is required"
+        ],
+        "minutes": 180
+      }
+    },
+    {
       "id": "electronics-basics",
       "categoryId": "electronics",
       "title": "Electronics Basics",

@@ -1,0 +1,143 @@
+{
+  "id": "aie-context-03",
+  "version": 1,
+  "title": "Ground Answers in Sources",
+  "xp": 10,
+  "tags": [
+    "sources",
+    "verification"
+  ],
+  "learn": [
+    {
+      "id": "source-grounding",
+      "kind": "text",
+      "title": "Start with supplied sources",
+      "body": "Grounding means tying claims to material you can inspect, such as a project brief, documentation or an error log. Tell the AI which sources to use and ask it to identify the support for important claims."
+    },
+    {
+      "id": "fact-and-inference",
+      "kind": "text",
+      "title": "Separate fact from inference",
+      "body": "A source fact is stated or directly shown in the material. An inference is a conclusion drawn from it. Inferences can be useful, but they need a label and a reason. Do not let a plausible conclusion masquerade as a quotation."
+    },
+    {
+      "id": "retrieval-limits",
+      "kind": "text",
+      "title": "Retrieval has limits",
+      "body": "Retrieval selects possibly relevant material; it does not guarantee complete or correct evidence. A search can miss the right passage or return something outdated. If the needed source is absent, say that the claim is unsupported instead of inventing support."
+    },
+    {
+      "id": "habit-rule-example",
+      "kind": "example",
+      "title": "Trace a habit rule",
+      "body": "The supplied brief says: A habit can be completed once per calendar day.",
+      "steps": [
+        "Source fact: each habit has at most one completion for a calendar day.",
+        "Inference: saving should check for an existing completion on that date.",
+        "Reason: the check would enforce the stated rule during saving.",
+        "Unsupported addition: the brief says nothing about cloud sync, so do not claim it is required."
+      ]
+    },
+    {
+      "id": "useful-citations",
+      "kind": "text",
+      "title": "Make support checkable",
+      "body": "A useful citation points to a source and location you can open, with a short exact quote when helpful. Then read the passage yourself. A polished link or confident citation is not proof that the source says what the answer claims."
+    },
+    {
+      "id": "label-uncertainty",
+      "kind": "tip",
+      "body": "Use labels such as Source, Inference and Unknown. They show what is evidenced, what is reasoned and what still needs information."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which statement is a source fact if the brief says: Show the seven most recent entries?",
+      "choices": [
+        "The brief requests seven recent entries",
+        "The app must use a remote database",
+        "Every user wants weekly reports",
+        "The entries are encrypted"
+      ],
+      "answerIndex": 0,
+      "explanation": "The number and recency requirement are stated in the brief. The other claims add topics that the quoted requirement does not address."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A conclusion drawn from source material, rather than stated directly, is an \\_\\_.",
+      "choices": [
+        "inference",
+        "exact quotation",
+        "error log"
+      ],
+      "answerIndex": 0,
+      "explanation": "An inference is reasoning based on evidence. Label it so readers can distinguish the conclusion from what the source explicitly says."
+    },
+    {
+      "id": "q3",
+      "type": "match_pairs",
+      "prompt": "Match each answer component to its best label.",
+      "pairs": [
+        [
+          "The brief requires one completion per day",
+          "Source fact"
+        ],
+        [
+          "A duplicate check could enforce the rule",
+          "Inference"
+        ],
+        [
+          "No backup requirement was supplied",
+          "Unknown"
+        ],
+        [
+          "The exact sentence beside its document name",
+          "Citation support"
+        ]
+      ],
+      "explanation": "Facts come from the source, inferences draw conclusions, unknowns lack evidence, and citations let someone inspect the supporting passage."
+    },
+    {
+      "id": "q4",
+      "type": "order_steps",
+      "prompt": "Put these source-checking actions in order.",
+      "steps": [
+        "Identify the claim that needs support",
+        "Locate the relevant supplied passage",
+        "Compare the claim with the passage",
+        "Label the claim as supported, inferred or unsupported"
+      ],
+      "explanation": "Start with a specific claim, inspect the actual evidence and compare carefully. Label the relationship only after reading the passage."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Retrieval returns no passage about a required backup feature. What is the best response?",
+      "choices": [
+        "State that support was not found and request the relevant source",
+        "Invent a likely backup requirement",
+        "Claim the feature exists without evidence",
+        "Treat an unrelated passage as proof"
+      ],
+      "answerIndex": 0,
+      "explanation": "Missing evidence should remain visible. Retrieval can miss material, so requesting the right source is safer than fabricating an answer or stretching unrelated text."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "What label fits a reasoned conclusion that is not stated directly in a source?",
+      "accepted": [
+        "inference",
+        "Inference",
+        "INFERENCE",
+        "inferred",
+        "Inferred"
+      ],
+      "keypad": "full",
+      "explanation": "Call it an inference and explain the reasoning. This keeps a plausible conclusion separate from a directly supported source fact."
+    }
+  ]
+}

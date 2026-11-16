@@ -1,0 +1,128 @@
+{
+  "id": "aie-agents-04",
+  "version": 1,
+  "title": "Coordinate Parallel Agents",
+  "xp": 15,
+  "tags": ["agents", "coordination", "parallelism"],
+  "learn": [
+    {
+      "id": "independence-first",
+      "kind": "text",
+      "title": "Parallel work needs independence",
+      "body": "Multiple agents are not automatically faster or better. They fit work that can proceed independently with clear outputs. Heavy dependencies, shared mutable files and duplicated context create conflicts, coverage gaps and extra review. Compare their cost with one agent."
+    },
+    {
+      "id": "task-contract",
+      "kind": "text",
+      "title": "Give every slice a contract",
+      "body": "A task contract states the objective, output shape, shared interfaces, allowed tools or sources, non-goals and evidence required. An interface might define fields in a habit record. Clear contracts help separately built artifacts fit together without each agent guessing."
+    },
+    {
+      "id": "ownership",
+      "kind": "text",
+      "title": "Set ownership boundaries",
+      "body": "Give each file one writer, or use separate working areas that an integrator later combines. Do not assign overlapping edits to parallel agents. The orchestrator owns assignments and shared integration files. If one slice depends on another's unfinished decisions, sequence the work instead."
+    },
+    {
+      "id": "builder-reviewer",
+      "kind": "text",
+      "title": "Separate building and reviewing",
+      "body": "A builder produces its assigned artifact and checks. A reviewer compares the result with requirements and evidence, reporting specific issues rather than quietly rewriting another agent's files. The orchestrator stops redundant workers and routes findings to the right owner."
+    },
+    {
+      "id": "shared-artifacts",
+      "kind": "text",
+      "title": "Share evidence, including failures",
+      "body": "An experimental coordination pattern uses shared task records, decisions, artifacts and results. Negative results matter: a failed approach with its evidence can prevent another agent repeating it. Records need ownership and freshness checks; an unreviewed note is not established fact."
+    },
+    {
+      "id": "commit-lineage",
+      "kind": "text",
+      "title": "Optional commit lineage",
+      "body": "Some experiments let agents choose work from a commit DAG and record parent commits, results and discussion. This lineage can show what each attempt built on and reduce duplication. It does not prove correctness or merge compatibility, and it is not an official Karpathy or Anthropic method."
+    },
+    {
+      "id": "parallel-example",
+      "kind": "example",
+      "title": "Split two capstone changes",
+      "body": "The orchestrator protects independence and integration.",
+      "steps": [
+        "Define the shared habit-record fields and completion evidence before assigning work.",
+        "Give one agent a streak helper and its tests; give another a separate export module and its tests.",
+        "Reserve application wiring and shared files for the integration owner.",
+        "Have builders save diffs, check results and negative results to the task record.",
+        "Have a reviewer inspect both artifacts against the contract without editing their files.",
+        "Stop both assignments when evidence is sufficient, then hand the artifacts to integration."
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which pair is the best candidate for parallel agents?",
+      "choices": [
+        "Two independent modules with separate files and a stable shared interface",
+        "Two agents rewriting the same function with different designs",
+        "Two tasks where each needs the other's unfinished decisions",
+        "Two agents making uncoordinated changes to one configuration file"
+      ],
+      "answerIndex": 0,
+      "explanation": "Separate ownership and a stable interface reduce interference. The other pairs have shared writes or dependencies that undermine independent progress."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "Give each file one \\_\\_ so parallel agents do not overwrite one another.",
+      "choices": ["writer", "reviewer", "reader", "observer"],
+      "answerIndex": 0,
+      "explanation": "One writer per file creates a clear ownership boundary. Reviewers and readers can inspect without competing to modify the same file."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What role assigns bounded slices and owns their later coordination?",
+      "accepted": ["orchestrator", "the orchestrator", "coordinator", "the coordinator"],
+      "keypad": "full",
+      "explanation": "The orchestrator coordinates objectives, ownership, progress and handoffs. Integration still needs explicit checks and human oversight."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each coordination element to its purpose.",
+      "pairs": [
+        ["Builder", "Produce an assigned artifact and checks"],
+        ["Reviewer", "Compare evidence with the contract"],
+        ["Orchestrator", "Assign work and manage handoffs"],
+        ["Negative result", "Record a failed approach and its evidence"]
+      ],
+      "explanation": "Distinct roles clarify responsibility, while preserving negative results helps the team avoid repeated unproductive work."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put a parallel coding assignment in order.",
+      "steps": [
+        "Define shared interfaces, outputs and completion evidence.",
+        "Assign independent slices with nonoverlapping file ownership.",
+        "Let builders work and save artifacts, checks and failures.",
+        "Have reviewers inspect results against the contracts.",
+        "Route accepted artifacts and unresolved findings to the integration owner."
+      ],
+      "explanation": "Contracts and ownership come before parallel work. Evidence and review then support a deliberate integration handoff."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "What can an experimental commit DAG contribute to agent coordination?",
+      "choices": [
+        "Lineage showing which parent attempts and results informed new work",
+        "Proof that every descendant commit is correct",
+        "Automatic resolution of all semantic merge conflicts",
+        "A guarantee that multiple agents outperform one agent"
+      ],
+      "answerIndex": 0,
+      "explanation": "Commit lineage can organize experiments and expose prior results. It does not replace outcome evaluation, review or conflict resolution."
+    }
+  ]
+}

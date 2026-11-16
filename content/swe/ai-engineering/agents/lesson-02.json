@@ -1,0 +1,119 @@
+{
+  "id": "aie-agents-02",
+  "version": 1,
+  "title": "Start with One Agent",
+  "xp": 12,
+  "tags": ["agents", "workflows"],
+  "learn": [
+    {
+      "id": "simplest-system",
+      "kind": "text",
+      "title": "Begin with the simplest design",
+      "body": "Many useful tasks need ordinary code, a fixed workflow or one bounded agent. Start there and observe real failures before adding autonomy or more agents. Extra moving parts also add cost, delay and new failure modes."
+    },
+    {
+      "id": "workflow-agent",
+      "kind": "text",
+      "title": "Workflow or agent",
+      "body": "A workflow follows predefined code paths, even if one path includes a model. Its control flow is fixed, though generated content can still vary. An agent lets the model choose later steps from observations, which helps when the route cannot be known in advance."
+    },
+    {
+      "id": "choose-control",
+      "kind": "text",
+      "title": "Match control to uncertainty",
+      "body": "Use a workflow for a known sequence such as validating habit data, running checks and reporting results. Consider one agent for an unclear streak bug where the next file or experiment depends on what earlier inspection reveals."
+    },
+    {
+      "id": "level-example",
+      "kind": "example",
+      "title": "Choose a level for the capstone",
+      "body": "Three habit-tracker tasks need different control.",
+      "steps": [
+        "For a one-line wording change, edit and check it directly; no agent is necessary.",
+        "For the same weekly export every day, use a fixed workflow with validated inputs.",
+        "For an intermittent streak error, give one agent a failing example and narrow tools.",
+        "Require the agent to stop at its budget and return changes, evidence and open questions."
+      ]
+    },
+    {
+      "id": "autonomy-tradeoffs",
+      "kind": "text",
+      "title": "Autonomy has a price",
+      "body": "Each model-directed cycle can consume time and resources, and an early mistake can influence later steps. Bound the goal, tools, runtime and scope of changes. Compare results with a simpler alternative instead of assuming autonomy is better."
+    },
+    {
+      "id": "single-agent-tip",
+      "kind": "tip",
+      "body": "Increase autonomy only when evidence shows a need that a fixed path cannot handle well. A human still owns requirements, sensitive permissions and release. Measure whether it improves outcomes and review quality before keeping it."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which task is the best fit for a fixed workflow?",
+      "choices": [
+        "Validate a habit entry, save it and run the same checks",
+        "Investigate an unfamiliar failure with no useful logs",
+        "Decide which files matter in an unexplored project",
+        "Choose a new diagnosis after every surprising observation"
+      ],
+      "answerIndex": 0,
+      "explanation": "The validation, storage and checking sequence is known in advance, so predefined paths provide useful control without agent-directed routing."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "Start with the \\_\\_ system that can satisfy the task and its safety requirements.",
+      "choices": ["simplest", "most autonomous", "most expensive", "largest"],
+      "answerIndex": 0,
+      "explanation": "A simple design is easier to measure and control. Complexity should solve an observed problem rather than serve as a default goal."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What do we call a design whose application follows predefined code paths?",
+      "accepted": ["workflow", "a workflow", "deterministic workflow", "fixed workflow"],
+      "keypad": "full",
+      "explanation": "A workflow has predefined control paths. Any model-generated content inside it can still vary."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each capstone need to a reasonable starting level.",
+      "pairs": [
+        ["Run the same checks after each edit", "Fixed workflow"],
+        ["Diagnose a bug through changing clues", "One bounded agent"],
+        ["Approve publishing personal habit data", "Human decision"],
+        ["Change one obvious label", "Direct edit"]
+      ],
+      "explanation": "Known sequences suit workflows, uncertain investigation can justify one agent, and sensitive release or sharing stays with a human."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put a bounded single-agent task in a sensible order.",
+      "steps": [
+        "Define the goal, scope and evidence needed for completion.",
+        "Provide relevant context and only the necessary tools.",
+        "Set budgets and conditions that stop the agent.",
+        "Inspect the changes and evidence after the agent stops.",
+        "Let a human decide what happens next."
+      ],
+      "explanation": "Boundaries come before execution, and human review follows the run. The agent does not grant itself more scope or approve its own release."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "When is added agent autonomy most defensible?",
+      "choices": [
+        "Tests show that varying investigation paths need it and the benefits justify the tradeoffs",
+        "A more autonomous system is assumed to be better at every task",
+        "The team wants to avoid defining completion",
+        "The task already works reliably as a short fixed workflow"
+      ],
+      "answerIndex": 0,
+      "explanation": "Autonomy should address measured limitations of a simpler design while its cost, latency and failure behavior remain acceptable."
+    }
+  ]
+}

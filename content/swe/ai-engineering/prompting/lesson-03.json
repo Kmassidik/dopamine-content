@@ -1,0 +1,126 @@
+{
+  "id": "aie-prompting-03",
+  "version": 1,
+  "title": "Show Examples and Output Shape",
+  "xp": 15,
+  "tags": ["prompting", "examples", "structured-output"],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Demonstrate what you mean",
+      "body": "Examples show the kind of input and response you expect. A requested output shape names how to organize the response, such as a list, table, or set of fields. Both can make a goal easier to follow."
+    },
+    {
+      "id": "examples",
+      "kind": "text",
+      "title": "Use a representative example",
+      "body": "Choose a small, realistic example and explain any important choice. If every check-in becomes done, the model may miss how to handle a missed day. Examples guide behavior, but they do not guarantee the same treatment for new inputs."
+    },
+    {
+      "id": "output-shape",
+      "kind": "text",
+      "title": "Describe the output shape",
+      "body": "Ask for the fields, order, and allowed values you need. For a check-in summary, you might request Day, Habit, and Status, with Status limited to done or missed. This is a schema: a description of the expected structure."
+    },
+    {
+      "id": "schema-semantics",
+      "kind": "text",
+      "title": "Shape is not correctness",
+      "body": "An answer can contain every required field and still be wrong. If the source says stretching but the Habit field says reading, the schema is satisfied while the meaning is not. Check semantic correctness: whether the content accurately completes the task."
+    },
+    {
+      "id": "worked-example",
+      "kind": "example",
+      "title": "Specify fields and meaning",
+      "body": "Turn one check-in note into a structured summary.",
+      "steps": [
+        "Goal: Convert the note into a check-in record.",
+        "Output shape: Include Day, Habit, and Status.",
+        "Allowed value: Status must be done or missed.",
+        "Example input: Tuesday, stretching, completed.",
+        "Example output: Day Tuesday; Habit stretching; Status done.",
+        "Check both the required fields and whether they preserve the note's meaning."
+      ]
+    },
+    {
+      "id": "examples-not-tests",
+      "kind": "text",
+      "title": "Examples are not enough tests",
+      "body": "One example cannot show every boundary. After demonstrating the pattern, try an empty note, a missed check-in, or an unfamiliar habit. Review whether each response follows the shape and preserves the source meaning."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Use examples and structure as guides, then test typical and unusual inputs instead of assuming the pattern will always hold."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is the main purpose of an exemplar in a prompt?",
+      "choices": [
+        "To demonstrate the desired pattern",
+        "To prove every future answer is correct",
+        "To replace the goal entirely",
+        "To hide the intended output"
+      ],
+      "answerIndex": 0,
+      "explanation": "An exemplar demonstrates a pattern for input and output. It guides the model but cannot guarantee every later response."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A description of required fields and allowed values is an output \\_\\_.",
+      "choices": ["schema", "secret", "audience"],
+      "answerIndex": 0,
+      "explanation": "A schema describes expected structure, including fields and allowed values. It does not establish the audience or supply private information."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Complete with one word: A schema can check output structure, but not semantic ___.",
+      "accepted": ["correctness", "accuracy", "Correctness", "Accuracy"],
+      "keypad": "full",
+      "explanation": "Semantic correctness or accuracy concerns whether the content faithfully completes the task, not merely whether fields are present."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each request to what it specifies.",
+      "pairs": [
+        ["Include Day and Habit", "Required fields"],
+        ["Status is done or missed", "Allowed values"],
+        ["Tuesday stretching completed becomes Status done", "Input-output example"],
+        ["Habit reading for a stretching note", "Semantic error"]
+      ],
+      "explanation": "Fields and values define structure, an exemplar shows a transformation, and a false source-to-output match is a semantic error."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put the design of a structured check-in response in order.",
+      "steps": [
+        "State that the goal is a check-in summary",
+        "Request Day, Habit, and Status fields",
+        "Provide a realistic input-output example",
+        "Check new outputs for both structure and meaning"
+      ],
+      "explanation": "The goal comes first, followed by structure and an example. New outputs still need review because a valid shape does not ensure correct content."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "The schema requires Habit as text and Minutes as a number. The note says 20 minutes of stretching. The output says Habit reading and Minutes 20. What is the problem?",
+      "choices": [
+        "The output shape is missing",
+        "The output is semantically wrong",
+        "Minutes must be text",
+        "Every schema requires a Status field"
+      ],
+      "answerIndex": 1,
+      "explanation": "Both fields have the requested types, but reading contradicts the source note. Structural validity and semantic correctness are separate checks."
+    }
+  ]
+}

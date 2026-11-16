@@ -1,0 +1,144 @@
+{
+  "id": "aie-foundations-03",
+  "version": 1,
+  "title": "Fluent Does Not Mean Correct",
+  "xp": 15,
+  "tags": [
+    "hallucination",
+    "verification"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Plausible can still be false",
+      "body": "A hallucination is generated content that is false or unsupported but may sound plausible. It can appear as an invented fact, a citation that does not exist or code that uses a nonexistent feature. Clear language is not proof of accuracy."
+    },
+    {
+      "id": "why-errors",
+      "kind": "text",
+      "title": "Why confident mistakes happen",
+      "body": "A language model produces likely continuations from patterns and context. That process does not automatically check every claim against reality. A confident tone, detailed explanation or neatly structured answer can therefore accompany a mistake."
+    },
+    {
+      "id": "verification",
+      "kind": "text",
+      "title": "Match the check to the claim",
+      "body": "Check an important factual claim against reliable sources. For a citation, confirm both that the source exists and that it supports the claim. For code, inspect it and run appropriate tests. For a calculation, recompute it with explicit rules."
+    },
+    {
+      "id": "code-example",
+      "kind": "example",
+      "title": "Check a suggested habit method",
+      "body": "A model suggests a library method for calculating a habit streak, but you do not recognize it.",
+      "steps": [
+        "Pause instead of adding the unfamiliar method to the tracker.",
+        "Check the library's current official documentation for the version you use.",
+        "If the method exists, test its behavior with a short known streak.",
+        "If you cannot verify it, choose a supported approach or ask for clarification."
+      ]
+    },
+    {
+      "id": "uncertainty",
+      "kind": "text",
+      "title": "Treat uncertainty honestly",
+      "body": "You can ask a model to identify uncertainty or provide sources, but neither request guarantees a reliable result. If supporting evidence is missing, label the claim unverified. Avoid acting on it or passing it on as established fact."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Spend more verification effort when a mistake could affect safety, money, privacy or someone's work."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is a hallucination in a language model's answer?",
+      "choices": [
+        "False or unsupported content that may sound plausible",
+        "Any answer with short sentences",
+        "A verified quotation from a real source",
+        "A request for more context"
+      ],
+      "answerIndex": 0,
+      "explanation": "Hallucinated content can be detailed and fluent. Its style does not reveal whether it is supported, so important claims need evidence."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A real citation is useful evidence only when its source also \\_\\_ the claim.",
+      "choices": [
+        "supports",
+        "formats",
+        "shortens",
+        "generates"
+      ],
+      "answerIndex": 0,
+      "explanation": "A source must do more than exist. Read the relevant material and confirm that it actually supports the specific claim being made."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What should you do with a confident but unfamiliar citation before trusting it?",
+      "accepted": [
+        "verify it",
+        "check it",
+        "check the source",
+        "verify the source",
+        "check the citation",
+        "verify the citation"
+      ],
+      "explanation": "Verify that the citation exists and that its contents support the claim. Confidence and a realistic citation format are not enough."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each AI output to an appropriate check.",
+      "pairs": [
+        [
+          "A historical claim",
+          "Consult reliable sources"
+        ],
+        [
+          "A code suggestion",
+          "Inspect it and run relevant tests"
+        ],
+        [
+          "A weekly total",
+          "Recompute it from the records"
+        ],
+        [
+          "A quoted passage",
+          "Compare it with the original source"
+        ]
+      ],
+      "explanation": "Verification should test the particular kind of output. Sources support facts and quotations, while tests and explicit calculations provide different evidence."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put the response to an unfamiliar generated code feature in order.",
+      "steps": [
+        "Pause before integrating the suggestion",
+        "Check documentation for the version in use",
+        "Test the feature on a small known case",
+        "Integrate only if the evidence supports it"
+      ],
+      "explanation": "Avoid letting fluent code straight into the project. Check that the feature exists for your version, test its behavior and integrate only with supporting evidence."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "A generated citation points to a real article, but the article does not discuss the claim. What is the claim's status?",
+      "choices": [
+        "Unverified by this citation",
+        "Proven because the article exists",
+        "Correct because the wording is fluent",
+        "Correct if the citation has a formal style"
+      ],
+      "answerIndex": 0,
+      "explanation": "The article's existence alone does not support the claim. The claim remains unverified by this citation and needs other suitable evidence."
+    }
+  ]
+}

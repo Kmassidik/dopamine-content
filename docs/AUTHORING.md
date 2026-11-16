@@ -22,7 +22,7 @@ A lesson is 5 to 10 minutes on a phone. Learners **read first, then practise**. 
 ```bash
 git clone https://github.com/Kmassidik/dopamine-content && cd dopamine-content
 pip install jsonschema          # the only dependency
-python3 tools/validate.py       # should print: ok: 241 lessons, 7 images
+python3 tools/validate.py       # should print: ok: 266 lessons, 7 images
 ```
 
 ### 2. Plan the course on paper first

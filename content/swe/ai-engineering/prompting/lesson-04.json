@@ -1,0 +1,125 @@
+{
+  "id": "aie-prompting-04",
+  "version": 1,
+  "title": "Define Done and Verification",
+  "xp": 15,
+  "tags": ["prompting", "acceptance-criteria", "verification"],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Describe the finish line",
+      "body": "A goal names the desired work. Acceptance criteria describe what must be true for that work to be acceptable. Verification explains how to check those criteria. Add both so done means more than producing a response."
+    },
+    {
+      "id": "criteria",
+      "kind": "text",
+      "title": "Make criteria observable",
+      "body": "Works well is hard to check. The Today view shows only today's check-ins describes behavior you can observe. Include important boundaries, such as what appears when there are no check-ins, and state behavior that must remain unchanged."
+    },
+    {
+      "id": "verification",
+      "kind": "text",
+      "title": "Ask for evidence",
+      "body": "Request the checks to perform and the evidence to report. For code, that may include tests and their actual results. For writing, it may be a length and source-fidelity check. A claim that something should work is not evidence that it was checked."
+    },
+    {
+      "id": "uncertainty",
+      "kind": "text",
+      "title": "Require honest uncertainty",
+      "body": "Ask the model to identify assumptions, unrun checks, and remaining uncertainty. This does not make an answer reliable by itself. It helps you decide what to inspect or test next instead of mistaking silence for certainty."
+    },
+    {
+      "id": "worked-example",
+      "kind": "example",
+      "title": "Define done for a small change",
+      "body": "Specify a Today filter for a personal habit tracker.",
+      "steps": [
+        "Goal: Add a view that shows only today's check-ins.",
+        "Done when: Today's entries appear and entries from other dates do not.",
+        "Boundary: With no entries today, show a clear empty message.",
+        "Verify: Check one entry from today, one from yesterday, and an empty day.",
+        "Report: List checks actually run, their outcomes, and anything still uncertain."
+      ]
+    },
+    {
+      "id": "matching-checks",
+      "kind": "text",
+      "title": "Match checks to criteria",
+      "body": "Each criterion needs a check that could reveal failure. A word count says nothing about whether a message is welcoming, and one successful test says nothing about an untested empty state. Combine checks instead of relying on a single reassuring result."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Passing the requested checks is evidence for those cases, not proof that every requirement or risk has been covered."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which is the clearest acceptance criterion for a habit-tracker Today view?",
+      "choices": [
+        "The view feels polished",
+        "The view shows only check-ins dated today",
+        "The model is confident about the view",
+        "The view uses modern technology"
+      ],
+      "answerIndex": 1,
+      "explanation": "The date behavior can be observed and checked. Polish, confidence, and modernity do not state the required result precisely."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A report should list checks actually run and their actual \\_\\_.",
+      "choices": ["outcomes", "promises", "popularity"],
+      "answerIndex": 0,
+      "explanation": "Actual outcomes show what happened during verification. Promises or popularity cannot establish that a check passed."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Complete the term: Observable requirements for accepting work are called ___ criteria.",
+      "accepted": ["acceptance", "Acceptance"],
+      "keypad": "full",
+      "explanation": "Acceptance criteria state the observable requirements that the finished work must satisfy."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each requirement with a useful check.",
+      "pairs": [
+        ["Only today's entries appear", "Compare today and yesterday examples"],
+        ["An empty day has a message", "Check a day with no entries"],
+        ["Other dates stay unchanged", "Review an existing date view"],
+        ["Message is at most 60 words", "Count the words"]
+      ],
+      "explanation": "Each check supplies evidence for one specific requirement instead of relying on a general claim that the work is done."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put the completion process in order.",
+      "steps": [
+        "State the goal and observable acceptance criteria",
+        "Choose checks for typical and boundary cases",
+        "Run the checks and record actual outcomes",
+        "Report remaining uncertainty and review the evidence"
+      ],
+      "explanation": "Define expected behavior before checking it. Actual results then support a report that distinguishes verified behavior from open questions."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "A model could not run the requested tests. Which response best follows the prompt's verification requirements?",
+      "choices": [
+        "All tests passed",
+        "The code must be correct",
+        "Tests were not run; this behavior still needs verification",
+        "No need to mention the tests"
+      ],
+      "answerIndex": 2,
+      "explanation": "The response discloses the unrun checks and remaining uncertainty. Confidence or silence would falsely hide missing evidence."
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "aie-coding-03",
+  "version": 1,
+  "title": "Debug with Evidence",
+  "xp": 10,
+  "tags": [
+    "debugging",
+    "reproduction",
+    "habit-tracker"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Replace guessing with a loop",
+      "body": "Debugging is a search for the cause of an observed difference between expected and actual behavior. Random AI-suggested rewrites can hide the original fault and create new ones. Instead, gather evidence, form one hypothesis and use an experiment to support or reject it."
+    },
+    {
+      "id": "reproduce",
+      "kind": "text",
+      "title": "Make the failure repeatable",
+      "body": "Record the starting state, exact actions, expected result and actual result. Preserve the full error message or stack trace, including where it occurred, rather than only saying that the app broke. If the failure is intermittent, record changing conditions and do not pretend it is reliably reproduced."
+    },
+    {
+      "id": "minimal-repro",
+      "kind": "text",
+      "title": "Shrink the investigation",
+      "body": "A minimal reproduction keeps the failure while removing unrelated screens, data and steps. It helps separate the suspicious path from background complexity. Do not simplify so far that the failure disappears; compare the smallest failing case with a similar working case to reveal a useful difference."
+    },
+    {
+      "id": "one-fix",
+      "kind": "text",
+      "title": "Test one hypothesis",
+      "body": "A useful hypothesis predicts what evidence you should see. Give AI the reproduction, full error and only the relevant code, then ask for plausible causes and a discriminating check. Change one suspected cause at a time and rerun the same case. If the evidence does not improve, revert that attempt."
+    },
+    {
+      "id": "worked-example",
+      "kind": "example",
+      "title": "Investigate a lost completion",
+      "body": "A checked-off habit becomes incomplete after the habit tracker reloads.",
+      "steps": [
+        "Reproduce: start with one habit named Read, tap complete and reload; expected complete, actual incomplete.",
+        "Preserve the full log entry: SAVE_FAILED: storage unavailable. Record that the tap appears to work before reload.",
+        "Reduce the case to one habit and one completion view while keeping the same failure; remove styling and unrelated habits.",
+        "Hypothesize that the display changes before a successful save. Check the save result rather than rewriting the display and storage together.",
+        "Make one evidence-based save correction, rerun the identical steps and keep it only if the completion persists without a new failure."
+      ]
+    },
+    {
+      "id": "evidence-handoff",
+      "kind": "tip",
+      "body": "Keep notes on failed hypotheses as well as successful ones. A clean new error is new evidence, not permission to stack untested fixes."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is the best first response to a reported software bug?",
+      "choices": [
+        "Reproduce it and record expected and actual behavior",
+        "Rewrite every file that might be involved",
+        "Ask AI for a fix without providing observations"
+      ],
+      "answerIndex": 0,
+      "explanation": "A reproducible observation establishes the problem to investigate. Rewriting first can destroy useful evidence and introduce unrelated changes."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "When reporting a failure, preserve the \\_\\_ error rather than only a vague summary.",
+      "choices": [
+        "full",
+        "shortest",
+        "imagined"
+      ],
+      "answerIndex": 0,
+      "explanation": "The complete error and its location can contain evidence needed to identify the failing path. A vague summary may discard the most useful clues."
+    },
+    {
+      "id": "q3",
+      "type": "match_pairs",
+      "prompt": "Match each debugging artifact to its purpose.",
+      "pairs": [
+        [
+          "Reproduction steps",
+          "Make the same failure observable again"
+        ],
+        [
+          "Minimal reproduction",
+          "Remove unrelated complexity while retaining failure"
+        ],
+        [
+          "Hypothesis",
+          "Propose a cause that an experiment can test"
+        ],
+        [
+          "Full error",
+          "Preserve exact details from the failure"
+        ]
+      ],
+      "explanation": "Each artifact supports a different part of evidence-based debugging. Together they narrow the search without relying on confident guesses."
+    },
+    {
+      "id": "q4",
+      "type": "order_steps",
+      "prompt": "Put the evidence-based debugging loop in order.",
+      "steps": [
+        "Reproduce and record the failure",
+        "Preserve the full error and reduce the case",
+        "Form a hypothesis with a predicted observation",
+        "Change one suspected cause",
+        "Rerun the same case and keep or revert based on evidence"
+      ],
+      "explanation": "Stable observations make the experiment meaningful. Changing one cause and repeating the case helps connect the outcome to that change."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "What two-word term, or its common abbreviation, means the smallest example that still demonstrates a bug?",
+      "accepted": [
+        "minimal reproduction",
+        "Minimal reproduction",
+        "minimal repro",
+        "Minimal repro",
+        "minimum reproduction",
+        "Minimum reproduction"
+      ],
+      "keypad": "full",
+      "explanation": "A minimal reproduction removes irrelevant details but preserves the bug. It makes the failing behavior easier to inspect and retest."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "AI offers three possible causes and proposes changing all three at once. What should you ask for instead?",
+      "choices": [
+        "A check that distinguishes the causes, followed by one testable change",
+        "All three changes plus a redesign so none of the causes remains",
+        "A claim of certainty before any evidence is collected",
+        "Deletion of the original error because it may confuse the fix"
+      ],
+      "answerIndex": 0,
+      "explanation": "Separate hypotheses need discriminating evidence. Testing one cause at a time makes the result interpretable and limits unrelated regressions."
+    }
+  ]
+}

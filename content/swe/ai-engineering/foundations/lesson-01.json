@@ -1,0 +1,148 @@
+{
+  "id": "aie-foundations-01",
+  "version": 1,
+  "title": "What a Language Model Does",
+  "xp": 10,
+  "tags": [
+    "language-models",
+    "ai-foundations"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Text, one piece at a time",
+      "body": "A language model generates text by continuing from the text it receives. It can answer questions, draft explanations and suggest code. Its output is a generated response to a context, not a guaranteed statement of fact."
+    },
+    {
+      "id": "next-token",
+      "kind": "text",
+      "title": "Predicting a next token",
+      "body": "At a high level, the model estimates possible next tokens, which are pieces of text, and produces one. It repeats this process to form a response. Learned patterns help it create new combinations of words; the process is more than looking up a memorized sentence."
+    },
+    {
+      "id": "variation",
+      "kind": "text",
+      "title": "Generation is not calculation",
+      "body": "A deterministic calculation follows fixed rules, so the same input gives the same result. Language generation can vary with context and settings, and different responses can follow from the same prompt. Neither fluent wording nor repeated wording proves that an answer is correct."
+    },
+    {
+      "id": "habit-example",
+      "kind": "example",
+      "title": "Summarize a habit record",
+      "body": "Use a language model for wording while keeping the arithmetic explicit.",
+      "steps": [
+        "Record three days: Monday complete, Tuesday incomplete, Wednesday complete.",
+        "Calculate the total with a rule: 1 + 0 + 1 = 2 completed days.",
+        "Ask the model to turn the checked result into a friendly weekly update.",
+        "Compare the update with the records before saving or sharing it."
+      ]
+    },
+    {
+      "id": "useful-draft",
+      "kind": "text",
+      "title": "A useful drafting partner",
+      "body": "Language models are useful for drafting, rewriting, brainstorming and explaining. They can also propose code or calculations, but those results still need appropriate checks. Use the output as material to evaluate, not as an authority that removes your judgment."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "For a consequential answer, verify the facts, sources and calculations before you rely on them."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What does a language model do at a high level?",
+      "choices": [
+        "Generates a next piece of text from the context",
+        "Returns only sentences stored in a database",
+        "Guarantees that each generated statement is true",
+        "Always gives one fixed answer to a prompt"
+      ],
+      "answerIndex": 0,
+      "explanation": "A language model generates text token by token using learned patterns and the supplied context. This does not limit it to memorized sentences or guarantee correctness."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A language model builds a response by predicting the next \\_\\_.",
+      "choices": [
+        "token",
+        "verified fact",
+        "source document",
+        "calculation rule"
+      ],
+      "answerIndex": 0,
+      "explanation": "A token is a piece of text. Repeating next-token generation produces the response, but generation itself does not verify facts."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What should you do with an AI-generated total before relying on it?",
+      "accepted": [
+        "check it",
+        "verify it",
+        "check the total",
+        "verify the total",
+        "check the calculation",
+        "verify the calculation",
+        "check the arithmetic",
+        "verify the arithmetic",
+        "recalculate it",
+        "check my math"
+      ],
+      "explanation": "Check the total against the original records or a deterministic calculation. Fluent presentation is not evidence that the arithmetic is right."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each task to the most suitable approach.",
+      "pairs": [
+        [
+          "Draft a friendly reminder",
+          "Drafting prose"
+        ],
+        [
+          "Add 17 and 25 exactly",
+          "Exact arithmetic"
+        ],
+        [
+          "Brainstorm names for a habit",
+          "Name ideation"
+        ],
+        [
+          "Check a total against records",
+          "Record comparison"
+        ]
+      ],
+      "explanation": "Generation suits drafts and ideas. Exact arithmetic and record checks should follow explicit rules, even if a model helps present the result."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put a safe AI-assisted habit summary in order.",
+      "steps": [
+        "Gather the original habit records",
+        "Calculate the totals with explicit rules",
+        "Ask the model to draft a clear summary",
+        "Compare the draft with the records and totals"
+      ],
+      "explanation": "Start with the evidence and checked calculations, then use generation for wording. A final comparison catches changes or unsupported details in the draft."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "The same prompt produces two different but reasonable drafts. What is the best interpretation?",
+      "choices": [
+        "Language generation can vary, so evaluate both drafts",
+        "One draft must contain a hallucination",
+        "The model has memorized only one correct sentence",
+        "The prompt has become a deterministic calculation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Generative systems can vary. Variation alone does not identify which draft is better or whether either is correct; evaluate their content."
+    }
+  ]
+}

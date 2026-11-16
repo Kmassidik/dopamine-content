@@ -1,0 +1,127 @@
+{
+  "id": "aie-agents-05",
+  "version": 1,
+  "title": "Integrate and Evaluate Agent Work",
+  "xp": 15,
+  "tags": ["agents", "evaluation", "integration"],
+  "learn": [
+    {
+      "id": "integration-owner",
+      "kind": "text",
+      "title": "Integrate deliberately",
+      "body": "An integration owner combines artifacts, checks shared contracts and inspects the complete diff. Work that passed alone can fail after integration through conflicting assumptions or missing wiring. Agent summaries guide inspection but do not replace it; a human remains accountable for release."
+    },
+    {
+      "id": "outcomes-traces",
+      "kind": "text",
+      "title": "Evaluate outcomes and traces",
+      "body": "An outcome evaluation checks what actually changed in the environment, such as whether a saved habit survives reload. A trace records requests, decisions, tool results and errors along the way. Outcomes show whether the task worked; traces help explain how and where behavior went wrong."
+    },
+    {
+      "id": "evaluation-cases",
+      "kind": "text",
+      "title": "Use cases, not vibes",
+      "body": "Build task-specific typical, boundary and adversarial cases in a stable test environment. Use code-based checks for exact behavior and human judgment for qualities that need interpretation. Because runs vary, repeated trials can expose flaky behavior. Model-based grading also needs calibration and review."
+    },
+    {
+      "id": "full-suite",
+      "kind": "text",
+      "title": "Run checks after integration",
+      "body": "Run the full relevant suite, not only each builder's selected tests. Add checks for new requirements and inspect security, privacy and unintended scope. Tests provide evidence for tested behavior, not proof of every quality. Preserve failed outputs and traces as useful negative results."
+    },
+    {
+      "id": "trace-failures",
+      "kind": "text",
+      "title": "Diagnose before changing the system",
+      "body": "A trace can reveal ambiguous requirements, missing context, poor tool contracts, permission denials, weak stop rules or integration conflicts. Change one supported cause, then rerun the failed case and the broader evaluation. Do not hide a failure or judge success from one lucky run."
+    },
+    {
+      "id": "release-example",
+      "kind": "example",
+      "title": "Finish the habit-tracker capstone",
+      "body": "Turn coordinated work into an evidence-based decision.",
+      "steps": [
+        "The integration owner combines the streak and export changes and reviews the whole diff.",
+        "The owner runs the full suite plus cases for no habits, one habit and many habits.",
+        "Outcome checks inspect real saved data and exported content, not agent success messages.",
+        "A trace reveals repeated writes after a denial; the owner records the negative result, fixes the stop rule and reruns evaluation.",
+        "A human reviews permissions, privacy, remaining risks and any checks that could not run.",
+        "The human releases only if the evidence supports it; otherwise they hold or revert and record why."
+      ]
+    },
+    {
+      "id": "release-tip",
+      "kind": "tip",
+      "body": "The capstone ends with a human decision supported by outcomes, checks, traces and known limitations. Holding a risky release is a valid result, not an agent failure to conceal."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which is the strongest evidence that a habit-saving task worked?",
+      "choices": [
+        "A check confirms that the saved habit survives a reload",
+        "The agent writes that everything is complete",
+        "Several agents repeat the same success message",
+        "The trace contains many tool requests"
+      ],
+      "answerIndex": 0,
+      "explanation": "The check observes the required environment outcome. Messages and busy traces do not establish that the habit was stored correctly."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A \\_\\_ records the agent's tool requests, decisions, results and errors.",
+      "choices": ["trace", "release", "workflow", "permission"],
+      "answerIndex": 0,
+      "explanation": "A trace preserves the process leading to an outcome, making failures and inefficient behavior easier to diagnose."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Who must make the final decision to release or hold the capstone?",
+      "accepted": ["human", "a human", "the human", "human reviewer", "release owner", "human release owner"],
+      "keypad": "full",
+      "explanation": "A human owns the release decision after weighing evidence and residual risk. The agent cannot approve its own work for release."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each evaluation artifact to its main contribution.",
+      "pairs": [
+        ["Outcome evaluation", "Check the real environment result"],
+        ["Trace", "Expose decisions and tool behavior"],
+        ["Full-suite run", "Check combined behavior after integration"],
+        ["Negative result", "Preserve a failure and what it revealed"]
+      ],
+      "explanation": "These artifacts answer different questions. A reliable review considers both final behavior and the process that produced it."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put final integration and release in order.",
+      "steps": [
+        "Combine the accepted artifacts and inspect the integrated diff.",
+        "Run the full suite and task-specific outcome cases.",
+        "Inspect failures and traces, fix supported causes and rerun checks.",
+        "Review security, privacy, uncertainty and remaining risks.",
+        "Have a human record an evidence-based release or hold decision."
+      ],
+      "explanation": "Integration precedes system-level evaluation. Failures inform another evaluation cycle, and the human decision comes after the available evidence is reviewed."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "One of several evaluation trials fails intermittently. What is the best response?",
+      "choices": [
+        "Preserve the failed trace, investigate and rerun after a supported fix",
+        "Ignore it because another trial passed",
+        "Remove the failing case without understanding it",
+        "Let the agent declare the result successful"
+      ],
+      "answerIndex": 0,
+      "explanation": "Intermittent failure is evidence of risk. Repeated trials and traces help characterize it; selective reporting would overstate reliability."
+    }
+  ]
+}

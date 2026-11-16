@@ -1,0 +1,146 @@
+{
+  "id": "aie-context-05",
+  "version": 1,
+  "title": "Create a Project Brief",
+  "xp": 10,
+  "tags": [
+    "project-brief",
+    "documentation"
+  ],
+  "learn": [
+    {
+      "id": "persistent-guidance",
+      "kind": "text",
+      "title": "Persistent project guidance",
+      "body": "A project brief records the shared facts that future tasks should reuse. It keeps goals and decisions visible beyond one request. A tool may load a brief automatically, but a basic API chat does not inherently remember it; make the relevant guidance available."
+    },
+    {
+      "id": "brief-contents",
+      "kind": "text",
+      "title": "What to include",
+      "body": "Record the user goal, scope and non-goals. Add a simple architecture map, naming and style conventions, project layout, setup and verification commands, and acceptance checks. Keep entries specific enough to guide a decision or check a result."
+    },
+    {
+      "id": "living-document",
+      "kind": "text",
+      "title": "Keep it current",
+      "body": "A brief is useful only while it matches the project. Update it when a requirement, command or architectural decision changes. Remove stale instructions and resolve contradictions. A brief should guide work, not preserve every abandoned idea."
+    },
+    {
+      "id": "habit-brief-example",
+      "kind": "example",
+      "title": "Draft a habit-tracker brief",
+      "body": "Turn scattered early decisions into reusable guidance.",
+      "steps": [
+        "Goal: one person records daily habits and reviews recent progress.",
+        "Scope: local entries and a summary; non-goals: accounts and social sharing.",
+        "Architecture: screens call habit logic; storage owns saved entries.",
+        "Conventions and checks: use calendar dates; list the exact setup and test commands.",
+        "Acceptance: a saved completion remains after reopening and appears in recent history."
+      ]
+    },
+    {
+      "id": "right-level",
+      "kind": "text",
+      "title": "Keep guidance actionable",
+      "body": "Do not turn the brief into a diary or a dump of the entire repository. Link to detailed sources when needed and summarize stable decisions here. For a small task, supply the brief alongside the specific goal and current evidence."
+    },
+    {
+      "id": "brief-review",
+      "kind": "tip",
+      "body": "After a meaningful change, ask whether the brief's goal, boundaries, commands or acceptance checks still describe the real project."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is the main purpose of a project brief?",
+      "choices": [
+        "Reuse current goals, decisions and checks across tasks",
+        "Store every conversation word for word",
+        "Guarantee correct AI output",
+        "Replace task-specific requirements"
+      ],
+      "answerIndex": 0,
+      "explanation": "A brief provides durable shared guidance. Each task still needs its own goal and evidence, and no document can guarantee a correct answer."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "Update the brief whenever a project decision or command becomes \\_\\_.",
+      "choices": [
+        "outdated",
+        "longer",
+        "private"
+      ],
+      "answerIndex": 0,
+      "explanation": "Outdated guidance can send later work in the wrong direction. Revise or remove entries when the real project changes."
+    },
+    {
+      "id": "q3",
+      "type": "match_pairs",
+      "prompt": "Match each brief section to a suitable habit-tracker entry.",
+      "pairs": [
+        [
+          "Goal",
+          "Record and review daily habits"
+        ],
+        [
+          "Non-goal",
+          "No social sharing"
+        ],
+        [
+          "Architecture",
+          "Storage owns saved entries"
+        ],
+        [
+          "Acceptance check",
+          "A completion remains after reopening"
+        ]
+      ],
+      "explanation": "Each section answers a different question: why the project exists, what it excludes, how parts connect and what observable result counts as done."
+    },
+    {
+      "id": "q4",
+      "type": "order_steps",
+      "prompt": "Put these brief-maintenance actions in order.",
+      "steps": [
+        "Record the current goal, scope and architecture",
+        "Add conventions, commands and acceptance checks",
+        "Use the brief with a specific task",
+        "Revise entries when project decisions change"
+      ],
+      "explanation": "Establish the core direction, add working guidance, apply it to real tasks and maintain it as decisions evolve."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which change requires a project-brief update?",
+      "choices": [
+        "The project replaces its test command and adds user accounts",
+        "A developer fixes a typo in their personal notes",
+        "The same requirement is restated in a task",
+        "A test is run again without any project change"
+      ],
+      "answerIndex": 0,
+      "explanation": "New commands and a changed account scope affect future work and verification. The brief should reflect both changes rather than retaining stale guidance."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "What term describes the observable conditions a result must meet to count as done?",
+      "accepted": [
+        "acceptance criteria",
+        "Acceptance criteria",
+        "Acceptance Criteria",
+        "acceptance checks",
+        "Acceptance checks",
+        "acceptance check",
+        "Acceptance check"
+      ],
+      "keypad": "full",
+      "explanation": "Acceptance criteria, or acceptance checks, describe observable conditions for done. They give builders and reviewers a shared result to verify."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.11.16+8",
+  "contentVersion": "2026.11.16+11",
   "minAppVersion": 1,
   "categories": [
     {
@@ -530,6 +530,330 @@
           "None. No coding experience needed"
         ],
         "minutes": 20
+      }
+    },
+    {
+      "id": "ai-engineering",
+      "categoryId": "swe",
+      "title": "AI Engineering",
+      "description": "From clear prompts to verified software and coordinated agents",
+      "order": 7,
+      "units": [
+        {
+          "id": "aie-foundations",
+          "title": "AI Foundations",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "aie-foundations-01",
+              "title": "What a Language Model Does",
+              "path": "content/swe/ai-engineering/foundations/lesson-01.json",
+              "version": 1,
+              "sha256": "be3170aff1c317b374342f6ba7f9aa48499342bd00bfc34f6572f96672d3ec7b",
+              "sizeBytes": 5913,
+              "order": 1
+            },
+            {
+              "id": "aie-foundations-02",
+              "title": "Tokens and Context Windows",
+              "path": "content/swe/ai-engineering/foundations/lesson-02.json",
+              "version": 1,
+              "sha256": "65d4f671f7727f1112a6caa90b58ae4ba72e33758c60e4b7274eb260d8f42170",
+              "sizeBytes": 5697,
+              "order": 2
+            },
+            {
+              "id": "aie-foundations-03",
+              "title": "Fluent Does Not Mean Correct",
+              "path": "content/swe/ai-engineering/foundations/lesson-03.json",
+              "version": 1,
+              "sha256": "c5c9f1146ba7de83d9b2499c2f8817915df22ad09e84dd99839cef4feb43b3ac",
+              "sizeBytes": 5770,
+              "order": 3
+            },
+            {
+              "id": "aie-foundations-04",
+              "title": "Privacy and Safe Sharing",
+              "path": "content/swe/ai-engineering/foundations/lesson-04.json",
+              "version": 1,
+              "sha256": "8870e571c031b0c68023a07577acdb800db589fb8a0d787bf44eec6f9af92873",
+              "sizeBytes": 6049,
+              "order": 4
+            },
+            {
+              "id": "aie-foundations-05",
+              "title": "Choose the Right Level of AI",
+              "path": "content/swe/ai-engineering/foundations/lesson-05.json",
+              "version": 1,
+              "sha256": "9c4645c4f36964119bb29cbde58be75e88673bbae470b212802eabf49dc069ac",
+              "sizeBytes": 6007,
+              "order": 5
+            }
+          ],
+          "notes": {
+            "id": "aie-foundations-notes",
+            "title": "AI Foundations: cheat sheet",
+            "path": "content/swe/ai-engineering/foundations/notes.json",
+            "version": 1,
+            "sha256": "ab239b3d0bd1c813e25310cd388c7060c6239d4464355dd65167b6f437d1fe72",
+            "sizeBytes": 2500
+          }
+        },
+        {
+          "id": "aie-prompting",
+          "title": "Prompt Engineering",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "aie-prompting-01",
+              "title": "Start with the Goal",
+              "path": "content/swe/ai-engineering/prompting/lesson-01.json",
+              "version": 1,
+              "sha256": "6c106dee64d67efe564472c015e0670760ac5ed1c83f78c90fe08e30c070707d",
+              "sizeBytes": 5300,
+              "order": 1
+            },
+            {
+              "id": "aie-prompting-02",
+              "title": "Add Context and Constraints",
+              "path": "content/swe/ai-engineering/prompting/lesson-02.json",
+              "version": 1,
+              "sha256": "c4dda9152d788f6651d6e84c1c5a734230a27318bc20518c517d9f0ee4bf85c2",
+              "sizeBytes": 5567,
+              "order": 2
+            },
+            {
+              "id": "aie-prompting-03",
+              "title": "Show Examples and Output Shape",
+              "path": "content/swe/ai-engineering/prompting/lesson-03.json",
+              "version": 1,
+              "sha256": "c440918b259099f3b1c3ce5772060177ace7bd5b385aea447a9689c9132e8d91",
+              "sizeBytes": 5777,
+              "order": 3
+            },
+            {
+              "id": "aie-prompting-04",
+              "title": "Define Done and Verification",
+              "path": "content/swe/ai-engineering/prompting/lesson-04.json",
+              "version": 1,
+              "sha256": "5b121a8db19eadfdf2e12e0c0e5422289311c46f8e86c0ced08ab45fef0f4026",
+              "sizeBytes": 5698,
+              "order": 4
+            },
+            {
+              "id": "aie-prompting-05",
+              "title": "Debug a Weak Prompt",
+              "path": "content/swe/ai-engineering/prompting/lesson-05.json",
+              "version": 1,
+              "sha256": "1d280fc503111775a126e3727a8ad1d2c0a31faa65583ac5fcfe3ad5cd6a42c6",
+              "sizeBytes": 5743,
+              "order": 5
+            }
+          ],
+          "notes": {
+            "id": "aie-prompting-notes",
+            "title": "Prompt engineering: cheat sheet",
+            "path": "content/swe/ai-engineering/prompting/notes.json",
+            "version": 1,
+            "sha256": "22381980da3a56bb129f9cb251ff08b038205c08ca15cd1523505f671127e1cd",
+            "sizeBytes": 1849
+          }
+        },
+        {
+          "id": "aie-context",
+          "title": "Context and Knowledge",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "aie-context-01",
+              "title": "Give the Right Context",
+              "path": "content/swe/ai-engineering/context/lesson-01.json",
+              "version": 1,
+              "sha256": "0e6668dabb426484cd7f90282a71c55f27a2c5e072abb6da4274927b2ab7ad07",
+              "sizeBytes": 5672,
+              "order": 1
+            },
+            {
+              "id": "aie-context-02",
+              "title": "Split Big Work into Slices",
+              "path": "content/swe/ai-engineering/context/lesson-02.json",
+              "version": 1,
+              "sha256": "0bda3be6f4d734a1cd833801d550b4befd1aebf1c16fb4ed2a9209fee89f9585",
+              "sizeBytes": 5791,
+              "order": 2
+            },
+            {
+              "id": "aie-context-03",
+              "title": "Ground Answers in Sources",
+              "path": "content/swe/ai-engineering/context/lesson-03.json",
+              "version": 1,
+              "sha256": "1984fc630ddf9e7f16f87317946d5a8faba22e3ed99b6d46de6e27ae677ccc16",
+              "sizeBytes": 5710,
+              "order": 3
+            },
+            {
+              "id": "aie-context-04",
+              "title": "Write a Useful Handoff",
+              "path": "content/swe/ai-engineering/context/lesson-04.json",
+              "version": 1,
+              "sha256": "177d73936b4ac1ac293c2c0c0514ed32f1fa07198e6eeba91be564359be32f23",
+              "sizeBytes": 5700,
+              "order": 4
+            },
+            {
+              "id": "aie-context-05",
+              "title": "Create a Project Brief",
+              "path": "content/swe/ai-engineering/context/lesson-05.json",
+              "version": 1,
+              "sha256": "9a15106eadb8acfa0f18db9922789611f156921e13c1e4389c6132a24424972c",
+              "sizeBytes": 5821,
+              "order": 5
+            }
+          ],
+          "notes": {
+            "id": "aie-context-notes",
+            "title": "Context and Knowledge: cheat sheet",
+            "path": "content/swe/ai-engineering/context/notes.json",
+            "version": 1,
+            "sha256": "3116bac2bd170cf7f8f7ba891278aeddaf090c1d9b46c312b9a3a8d5e8551048",
+            "sizeBytes": 2476
+          }
+        },
+        {
+          "id": "aie-coding",
+          "title": "AI-Assisted Coding",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "aie-coding-01",
+              "title": "Turn an Idea into a Specification",
+              "path": "content/swe/ai-engineering/coding/lesson-01.json",
+              "version": 1,
+              "sha256": "65ff5c513073abb34550f389f548bd76a6b774af0419a4f0c5672429bcdac9f2",
+              "sizeBytes": 6258,
+              "order": 1
+            },
+            {
+              "id": "aie-coding-02",
+              "title": "Make Small Reviewable Changes",
+              "path": "content/swe/ai-engineering/coding/lesson-02.json",
+              "version": 1,
+              "sha256": "1c0d50814cf1a64529e28a34fdb16388397bfe32e1b16f34780b7da0c83385d0",
+              "sizeBytes": 6241,
+              "order": 2
+            },
+            {
+              "id": "aie-coding-03",
+              "title": "Debug with Evidence",
+              "path": "content/swe/ai-engineering/coding/lesson-03.json",
+              "version": 1,
+              "sha256": "647c8118286f8c60578e6f260e1ac6d4ba2ca2f48965b9c48b3b729d22535aff",
+              "sizeBytes": 6527,
+              "order": 3
+            },
+            {
+              "id": "aie-coding-04",
+              "title": "Tests Catch Confident Mistakes",
+              "path": "content/swe/ai-engineering/coding/lesson-04.json",
+              "version": 1,
+              "sha256": "e799419cc242bc3a0ab5aa509e959dfd39b89bf582bfe197734b53c3c1327c2e",
+              "sizeBytes": 6336,
+              "order": 4
+            },
+            {
+              "id": "aie-coding-05",
+              "title": "Review Security and Dependencies",
+              "path": "content/swe/ai-engineering/coding/lesson-05.json",
+              "version": 1,
+              "sha256": "b7d5d2f109920944de005ead77f1d755bc2715d71042de452629828875e719b8",
+              "sizeBytes": 7045,
+              "order": 5
+            }
+          ],
+          "notes": {
+            "id": "aie-coding-notes",
+            "title": "AI-Assisted Coding: cheat sheet",
+            "path": "content/swe/ai-engineering/coding/notes.json",
+            "version": 1,
+            "sha256": "f55e2f6a07411d19344ecd9b99b61d845446c3f91d49fb12c207a5710ccae028",
+            "sizeBytes": 3182
+          }
+        },
+        {
+          "id": "aie-agents",
+          "title": "Agents and Multi-Agent Systems",
+          "order": 5,
+          "lessons": [
+            {
+              "id": "aie-agents-01",
+              "title": "What Makes an Agent",
+              "path": "content/swe/ai-engineering/agents/lesson-01.json",
+              "version": 1,
+              "sha256": "265524eac70386d8de7e45294c93976dbb7f0c74843444e5aeb348634c287cca",
+              "sizeBytes": 5509,
+              "order": 1
+            },
+            {
+              "id": "aie-agents-02",
+              "title": "Start with One Agent",
+              "path": "content/swe/ai-engineering/agents/lesson-02.json",
+              "version": 1,
+              "sha256": "4073541ac3b16563e601544f38a40b4fe379fd037d9318c25435e929c8c07085",
+              "sizeBytes": 5771,
+              "order": 2
+            },
+            {
+              "id": "aie-agents-03",
+              "title": "Design Tools and Permissions",
+              "path": "content/swe/ai-engineering/agents/lesson-03.json",
+              "version": 1,
+              "sha256": "f00f810a3e9ae53eb0a6949f11d83f280fa738fc132d47bb68592fd10a21a336",
+              "sizeBytes": 5904,
+              "order": 3
+            },
+            {
+              "id": "aie-agents-04",
+              "title": "Coordinate Parallel Agents",
+              "path": "content/swe/ai-engineering/agents/lesson-04.json",
+              "version": 1,
+              "sha256": "cf6a6c8c772f50b6a72763ff4dbbf374033f76608cc0562820b2990d043d3f3c",
+              "sizeBytes": 6764,
+              "order": 4
+            },
+            {
+              "id": "aie-agents-05",
+              "title": "Integrate and Evaluate Agent Work",
+              "path": "content/swe/ai-engineering/agents/lesson-05.json",
+              "version": 1,
+              "sha256": "c2e0940b5d95416cd8b067614c4277a86cac8b60533de66991ac2a2af7f66392",
+              "sizeBytes": 6700,
+              "order": 5
+            }
+          ],
+          "notes": {
+            "id": "aie-agents-notes",
+            "title": "Agents: cheat sheet",
+            "path": "content/swe/ai-engineering/agents/notes.json",
+            "version": 1,
+            "sha256": "ea6f5979199a1b4adc02a4ddecb421b6666f3589cbb99a5bfea2f8a27d22b686",
+            "sizeBytes": 2769
+          }
+        }
+      ],
+      "overview": {
+        "summary": "Learn to build software with AI without giving up engineering judgment. Progress from clear prompts and useful context to tested code, safe tools and coordinated agents.",
+        "outcomes": [
+          "Write prompts with clear goals, context and acceptance criteria",
+          "Ground AI answers in relevant sources and project knowledge",
+          "Turn an idea into a small, reviewable software change",
+          "Verify generated code with tests, evidence and security review",
+          "Coordinate tool-using agents and evaluate their final work"
+        ],
+        "requirements": [
+          "Basic computer and internet use",
+          "No programming experience is required"
+        ],
+        "minutes": 180
       }
     },
     {

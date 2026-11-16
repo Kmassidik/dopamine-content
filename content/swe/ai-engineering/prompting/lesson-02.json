@@ -1,0 +1,124 @@
+{
+  "id": "aie-prompting-02",
+  "version": 1,
+  "title": "Add Context and Constraints",
+  "xp": 10,
+  "tags": ["prompting", "context", "constraints"],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Supply the situation",
+      "body": "A goal says what you want. Context explains the situation around the task, and constraints set boundaries for the answer. Together they help the model make choices that fit your actual needs."
+    },
+    {
+      "id": "useful-context",
+      "kind": "text",
+      "title": "Choose relevant context",
+      "body": "Useful context can include the audience, current behavior, environment, or existing code. For a habit tracker, knowing that it is for one person and already saves check-ins is more useful than a long history of every idea you considered."
+    },
+    {
+      "id": "limits",
+      "kind": "text",
+      "title": "State limits and non-goals",
+      "body": "Constraints are requirements such as a word limit, a supported device, or no new accounts. A non-goal names work to leave out, such as changing the database. Clear boundaries reduce unwanted changes, but you still need to inspect the result."
+    },
+    {
+      "id": "worked-example",
+      "kind": "example",
+      "title": "Add only what matters",
+      "body": "Improve a request for three reminder-screen suggestions.",
+      "steps": [
+        "Goal: Suggest three wording changes for the reminder screen.",
+        "Context: The user is building a first habit and often forgets evening check-ins.",
+        "Constraints: Keep each suggestion under 12 words and use a calm tone.",
+        "Non-goal: Do not propose accounts, notifications, or database changes."
+      ]
+    },
+    {
+      "id": "signal-noise",
+      "kind": "text",
+      "title": "More detail is not always better",
+      "body": "Extra background can hide the facts that matter. Include details that change the answer, and leave out unrelated history. Never paste secrets or private data just to make a prompt longer."
+    },
+    {
+      "id": "current-context",
+      "kind": "text",
+      "title": "Keep context current",
+      "body": "Context should describe the situation now, not an abandoned version of it. If the tracker once used accounts but no longer does, say so. Mark uncertainties instead of presenting guesses as facts, and remove details that no longer affect the task."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "If a detail would change your own review of the answer, it probably belongs in the prompt."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which context is most relevant when asking for a beginner-friendly habit-tracker explanation?",
+      "choices": [
+        "The reader is new to software",
+        "The app icon was once blue",
+        "You considered the idea last winter",
+        "Your friend likes another app"
+      ],
+      "answerIndex": 0,
+      "explanation": "The reader's experience should change the explanation's wording and assumptions. The other details do not help fit it to a beginner."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A rule such as Use no more than 80 words is a \\_\\_.",
+      "choices": ["constraint", "source", "example answer"],
+      "answerIndex": 0,
+      "explanation": "The word limit constrains the response. It sets a boundary rather than supplying background or an exemplar."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What term names work that is explicitly outside this request?",
+      "accepted": ["non-goal", "non goal", "nongoal", "Non-goal", "Non goal"],
+      "keypad": "full",
+      "explanation": "A non-goal identifies work to leave out, such as changing the database when only screen wording is requested."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each prompt detail to its role.",
+      "pairs": [
+        ["The reader is a new user", "Audience context"],
+        ["The app already saves dates", "Existing behavior"],
+        ["Do not add accounts", "Non-goal"],
+        ["Use at most 60 words", "Constraint"]
+      ],
+      "explanation": "Audience and current behavior explain the situation. Non-goals exclude work, while constraints set explicit limits."
+    },
+    {
+      "id": "q5",
+      "type": "order_steps",
+      "prompt": "Put these prompt-building decisions in order.",
+      "steps": [
+        "State the goal of three reminder-wording suggestions",
+        "Add the user's evening check-in difficulty as context",
+        "Set a calm tone and a 12-word limit",
+        "Exclude accounts and database changes as non-goals"
+      ],
+      "explanation": "Starting with the goal makes it easier to select relevant context. Limits and exclusions then clarify the boundaries of that task."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which revision best adds context and constraints to Suggest a reminder message?",
+      "choices": [
+        "Suggest a reminder message and make it amazing",
+        "Suggest one calm evening reminder under 15 words for someone building a first habit; do not mention rewards",
+        "Suggest every possible reminder for every kind of person",
+        "Suggest a reminder after reading my whole project history"
+      ],
+      "answerIndex": 1,
+      "explanation": "It keeps one goal, supplies relevant audience and timing, and adds clear length, tone, and content boundaries."
+    }
+  ]
+}

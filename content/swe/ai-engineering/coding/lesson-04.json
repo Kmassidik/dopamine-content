@@ -1,0 +1,146 @@
+{
+  "id": "aie-coding-04",
+  "version": 1,
+  "title": "Tests Catch Confident Mistakes",
+  "xp": 15,
+  "tags": [
+    "testing",
+    "verification",
+    "habit-tracker"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Confidence is not a check",
+      "body": "Generated code can sound well reasoned and still be wrong. A test compares actual behavior with an expected outcome under stated conditions. Passing tests provide evidence for the cases exercised; they do not prove every requirement, security property or future input correct."
+    },
+    {
+      "id": "test-types",
+      "kind": "text",
+      "title": "Cover three kinds of risk",
+      "body": "A behavior test checks an ordinary user outcome. A boundary test probes an edge such as an empty name, a repeated tap or the change between dates. A failure test checks what happens when storage is unavailable or input is rejected. Include all three when those risks matter."
+    },
+    {
+      "id": "test-structure",
+      "kind": "text",
+      "title": "Make expectations observable",
+      "body": "For each test, set up known data, perform one action and state the expected result before running it. Check visible behavior and important stored effects, not merely the absence of a crash. When a bug is fixed, add a regression test that recreates its original failure conditions."
+    },
+    {
+      "id": "run-tests",
+      "kind": "text",
+      "title": "Require real execution",
+      "body": "Run the relevant tests after the change and inspect their actual output, including failures and the number run. Keep the command or procedure with the results. Never accept AI's claim that tests pass when it did not run them; label such tests unrun and arrange execution or report the limitation."
+    },
+    {
+      "id": "worked-example",
+      "kind": "example",
+      "title": "Check habit completion from several angles",
+      "body": "Turn the check-off specification into concrete checks without relying on one happy path.",
+      "steps": [
+        "Behavior: with Walk incomplete on 10 March, tap complete and reopen; Walk should remain complete for that date.",
+        "Boundary: tap the same habit twice on 10 March; exactly one completion should remain for that habit and date.",
+        "Boundary: inspect 11 March after completing 10 March; the new date should begin incomplete.",
+        "Failure: reject the storage write during a tap; the app should report the failure rather than claim a saved completion.",
+        "Run each check, record actual outcomes and investigate every mismatch; retain the original reload case as a regression check."
+      ]
+    },
+    {
+      "id": "risk-coverage",
+      "kind": "tip",
+      "body": "Choose tests from requirements and likely failure costs, not from a desire for a reassuring number. One carefully chosen failure case can reveal more than many near-duplicates."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which is a behavior test for a habit tracker?",
+      "choices": [
+        "Checking that a completed habit stays complete after reopening",
+        "Reading AI's explanation that completion should work",
+        "Counting how many files the implementation changed"
+      ],
+      "answerIndex": 0,
+      "explanation": "A behavior test compares an ordinary user outcome with the specification. Explanations and file counts do not exercise that outcome."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "A \\_\\_ test probes an edge such as a repeated tap or an empty habit name.",
+      "choices": [
+        "boundary",
+        "summary",
+        "formatting"
+      ],
+      "answerIndex": 0,
+      "explanation": "Boundary tests examine edges where assumptions often break. They complement ordinary behavior checks and deliberate failure cases."
+    },
+    {
+      "id": "q3",
+      "type": "match_pairs",
+      "prompt": "Match each habit tracker check to its main test type.",
+      "pairs": [
+        [
+          "Save one ordinary completion",
+          "Behavior"
+        ],
+        [
+          "Tap twice on the same date",
+          "Boundary"
+        ],
+        [
+          "Reject the storage write",
+          "Failure"
+        ],
+        [
+          "Repeat a previously fixed reload bug",
+          "Regression"
+        ]
+      ],
+      "explanation": "These checks exercise normal behavior, an edge, a failing dependency and a past defect. Each protects a different expectation."
+    },
+    {
+      "id": "q4",
+      "type": "order_steps",
+      "prompt": "Put a simple test in order.",
+      "steps": [
+        "Set up a known habit and date",
+        "Define the expected observable outcome",
+        "Perform the completion action",
+        "Run the test and inspect the actual outcome",
+        "Record the result and investigate any mismatch"
+      ],
+      "explanation": "Known setup and a prior expectation make the result meaningful. Execution and inspection provide evidence; an unexamined result does not close the loop."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "AI writes tests and says they all pass, but provides no execution because no test runner was available. How should you treat the claim?",
+      "choices": [
+        "Treat the tests as unrun and do not report a pass",
+        "Report a pass because the generated tests look plausible",
+        "Delete the tests because unrun tests have no potential value",
+        "Assume only the first test would pass"
+      ],
+      "answerIndex": 0,
+      "explanation": "An unrun test can still describe useful expectations, but it provides no execution evidence. Run it when possible and disclose any remaining limitation."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "What kind of test repeats the conditions of an old bug to help prevent it from returning?",
+      "accepted": [
+        "regression test",
+        "Regression test",
+        "regression",
+        "Regression",
+        "regression check",
+        "Regression check"
+      ],
+      "keypad": "full",
+      "explanation": "A regression test preserves the failure scenario that motivated a fix. It checks later changes for a return of that specific defect."
+    }
+  ]
+}

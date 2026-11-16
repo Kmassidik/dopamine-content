@@ -2,7 +2,7 @@
 
 [![validate](https://github.com/Kmassidik/dopamine-content/actions/workflows/validate.yml/badge.svg)](https://github.com/Kmassidik/dopamine-content/actions/workflows/validate.yml)
 
-The lessons behind [Dopamine](https://github.com/Kmassidik/dopamine), a private, offline Android learning app with no ads, no accounts and no tracking. **241 lessons in 13 courses**, all plain JSON that anyone can read, fix or extend.
+The lessons behind [Dopamine](https://github.com/Kmassidik/dopamine), a private, offline Android learning app with no ads, no accounts and no tracking. **266 lessons in 14 courses**, all plain JSON that anyone can read, fix or extend.
 
 **Data only. No code from this repository ever runs in the app.**
 
@@ -17,7 +17,7 @@ The lessons behind [Dopamine](https://github.com/Kmassidik/dopamine), a private,
 | Subject | Courses | Lessons |
 |---|---|---|
 | **Math** | Pre-Algebra (23), Algebra 1 (28), Geometry (28), Algebra 2 (22), Precalculus (22) | 123 |
-| **Programming** | C Fundamentals (23), Arrays, Strings and Debugging (21), Algorithms in C (21), Memory and Pointers (22), Data Structures in C (21), Programming Basics in Python (4) | 112 |
+| **Programming** | C Fundamentals (23), Arrays, Strings and Debugging (21), Algorithms in C (21), Memory and Pointers (22), Data Structures in C (21), Programming Basics in Python (4), AI Engineering (25) | 137 |
 | **Science** | Science Basics | 2 |
 | **Electronics** | Electronics Basics | 4 |
 
