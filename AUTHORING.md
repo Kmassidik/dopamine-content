@@ -131,7 +131,7 @@ Writing rules that the validator cannot judge for you:
 - **Accept every reasonable spelling** in `type_answer.accepted`, including the decimal form of numbers.
 - **Math** uses `$...$` with only the LaTeX commands the app can draw (`LATEX_OK` in `tools/standard.py`). Backslashes are doubled in JSON: `"$\\frac{a}{b}$"`.
 - **Code** uses a `code` page (at most 12 lines of 40 characters, 4-space indent) and the lesson must declare `"minApp": 2`. Python is highlighted; other languages show plain.
-- **Pictures** are optional hand-written SVG in the strict subset (STANDARD.md, "Images"), at most 6 KB, with `alt` text.
+- **Pictures** are optional hand-written SVG in the strict subset, at most 6 KB, with `alt` text. [SVG.md](SVG.md) has the template, the flow and the common errors.
 
 ### 6. Check the facts
 

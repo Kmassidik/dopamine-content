@@ -39,6 +39,10 @@ The layout is enforced by tools and CI, so a new course always looks and behaves
 
 The app fetches `manifest.json` from this repo's raw URL on `main`, downloads only the lessons whose version or hash changed, checks size, hash and schema, and swaps them in atomically. If anything fails, nothing changes. A bundled copy of this content also ships inside the app as the first-launch seed.
 
+Pictures take the same road. **[SVG.md](SVG.md)** shows the whole journey of a diagram, from drawing it to the learner's screen:
+
+[![How a diagram reaches the screen](docs/content-flow.svg)](SVG.md)
+
 Removing a course from the manifest hides it in the app after the next update (the files stay on the phone but are never shown).
 
 ## Layout
@@ -60,6 +64,7 @@ ROADMAP.md                                  GENERATED coverage and plan
 | File | Read it for |
 |---|---|
 | [AUTHORING.md](AUTHORING.md) | Make a new course on any topic, step by step, for people and AI agents |
+| [SVG.md](SVG.md) | How diagrams work end to end: draw, check, publish, render, with a flow diagram |
 | [STANDARD.md](STANDARD.md) | The enforced rules (lesson shape, lengths, SVG subset) and why |
 | [ROADMAP.md](ROADMAP.md) | What exists and what is planned |
 

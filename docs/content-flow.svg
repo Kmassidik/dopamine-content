@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" font-family="Nunito, Helvetica, Arial, sans-serif">
+<title>How an SVG diagram gets from the content repo to a learner's screen</title>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#4F5D55"/></marker></defs>
+<rect x="1" y="1" width="998" height="558" rx="24" fill="#FFFFFF" stroke="#E4EAE6" stroke-width="2"/>
+<text x="40" y="52" font-size="24" font-weight="800" fill="#14201A">How a diagram reaches the screen</text>
+<text x="40" y="76" font-size="14" fill="#4F5D55">Same files and same checks on your computer and in the app.</text>
+<text x="40" y="94" font-size="12" font-weight="800" letter-spacing="1.5" fill="#17803F">ON YOUR COMPUTER</text>
+<text x="175" y="338" font-size="12" font-weight="800" letter-spacing="1.5" fill="#B8305F">THEN ON THE PHONE</text>
+<rect x="40" y="100" width="200" height="150" rx="18" fill="#E4F8EC" stroke="#35C46F" stroke-width="2.5"/>
+<circle cx="70" cy="130" r="15" fill="#35C46F"/>
+<text x="70" y="136" font-size="16" font-weight="800" text-anchor="middle" fill="#14201A">1</text>
+<text x="94" y="136" font-size="16" font-weight="800" fill="#14201A">Draw</text>
+<text x="58" y="170" font-size="13" fill="#14201A">Write a small SVG</text>
+<text x="58" y="194" font-size="11.5" font-family="Menlo, Consolas, monospace" fill="#4F5D55">images/geo-triangle.svg</text>
+<text x="58" y="218" font-size="13" fill="#4F5D55">strict subset, 6 KB max</text>
+<rect x="280" y="100" width="200" height="150" rx="18" fill="#E4F8EC" stroke="#35C46F" stroke-width="2.5"/>
+<circle cx="310" cy="130" r="15" fill="#35C46F"/>
+<text x="310" y="136" font-size="16" font-weight="800" text-anchor="middle" fill="#14201A">2</text>
+<text x="334" y="136" font-size="16" font-weight="800" fill="#14201A">Use it in a lesson</text>
+<text x="298" y="170" font-size="11.5" font-family="Menlo, Consolas, monospace" fill="#14201A">"image": "images/x.svg"</text>
+<text x="298" y="194" font-size="11.5" font-family="Menlo, Consolas, monospace" fill="#4F5D55">"alt": "what it shows"</text>
+<text x="298" y="218" font-size="13" fill="#4F5D55">alt text is required</text>
+<rect x="520" y="100" width="200" height="150" rx="18" fill="#FFF3CC" stroke="#FFC93C" stroke-width="2.5"/>
+<circle cx="550" cy="130" r="15" fill="#FFC93C"/>
+<text x="550" y="136" font-size="16" font-weight="800" text-anchor="middle" fill="#14201A">3</text>
+<text x="574" y="136" font-size="16" font-weight="800" fill="#14201A">Check</text>
+<text x="538" y="170" font-size="13" fill="#14201A">svgcheck.py + validate.py</text>
+<text x="538" y="194" font-size="13" fill="#4F5D55">A wrong shape gives you</text>
+<text x="538" y="218" font-size="13" fill="#4F5D55">a rule id and the file</text>
+<rect x="760" y="100" width="200" height="150" rx="18" fill="#FFF3CC" stroke="#FFC93C" stroke-width="2.5"/>
+<circle cx="790" cy="130" r="15" fill="#FFC93C"/>
+<text x="790" y="136" font-size="16" font-weight="800" text-anchor="middle" fill="#14201A">4</text>
+<text x="814" y="136" font-size="16" font-weight="800" fill="#14201A">Build</text>
+<text x="778" y="170" font-size="13" fill="#14201A">build_manifest.py</text>
+<text x="778" y="194" font-size="13" fill="#4F5D55">adds sha256 and size</text>
+<text x="778" y="218" font-size="13" fill="#4F5D55">to manifest.json</text>
+<rect x="40" y="350" width="200" height="150" rx="18" fill="#FFE4EE" stroke="#FF7FAE" stroke-width="2.5"/>
+<circle cx="70" cy="380" r="15" fill="#FF7FAE"/>
+<text x="70" y="386" font-size="16" font-weight="800" text-anchor="middle" fill="#14201A">5</text>
+<text x="94" y="386" font-size="16" font-weight="800" fill="#14201A">Publish</text>
+<text x="58" y="420" font-size="13" fill="#14201A">git push to main</text>
+<text x="58" y="444" font-size="13" fill="#4F5D55">GitHub serves the raw</text>
+<text x="58" y="468" font-size="13" fill="#4F5D55">files over https</text>
+<rect x="280" y="350" width="200" height="150" rx="18" fill="#FFE4EE" stroke="#FF7FAE" stroke-width="2.5"/>
+<circle cx="310" cy="380" r="15" fill="#FF7FAE"/>
+<text x="310" y="386" font-size="16" font-weight="800" text-anchor="middle" fill="#14201A">6</text>
+<text x="334" y="386" font-size="16" font-weight="800" fill="#14201A">Update content</text>
+<text x="298" y="420" font-size="13" fill="#14201A">Learner taps the button</text>
+<text x="298" y="444" font-size="13" fill="#4F5D55">Only changed files</text>
+<text x="298" y="468" font-size="13" fill="#4F5D55">are downloaded</text>
+<rect x="520" y="350" width="200" height="150" rx="18" fill="#FFE4EE" stroke="#FF7FAE" stroke-width="2.5"/>
+<circle cx="550" cy="380" r="15" fill="#FF7FAE"/>
+<text x="550" y="386" font-size="16" font-weight="800" text-anchor="middle" fill="#14201A">7</text>
+<text x="574" y="386" font-size="16" font-weight="800" fill="#14201A">Verify</text>
+<text x="538" y="420" font-size="13" fill="#14201A">Size and sha256 must</text>
+<text x="538" y="444" font-size="13" fill="#4F5D55">match the manifest,</text>
+<text x="538" y="468" font-size="13" fill="#4F5D55">else nothing changes</text>
+<rect x="760" y="350" width="200" height="150" rx="18" fill="#FFE4EE" stroke="#FF7FAE" stroke-width="2.5"/>
+<circle cx="790" cy="380" r="15" fill="#FF7FAE"/>
+<text x="790" y="386" font-size="16" font-weight="800" text-anchor="middle" fill="#14201A">8</text>
+<text x="814" y="386" font-size="16" font-weight="800" fill="#14201A">Native render</text>
+<text x="778" y="420" font-size="13" fill="#14201A">App parses the SVG and</text>
+<text x="778" y="444" font-size="13" fill="#4F5D55">draws it on a canvas</text>
+<text x="778" y="468" font-size="13" fill="#4F5D55">in the theme colors</text>
+<line x1="244" y1="175" x2="276" y2="175" stroke="#4F5D55" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="484" y1="175" x2="516" y2="175" stroke="#4F5D55" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="724" y1="175" x2="756" y2="175" stroke="#4F5D55" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="244" y1="425" x2="276" y2="425" stroke="#4F5D55" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="484" y1="425" x2="516" y2="425" stroke="#4F5D55" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="724" y1="425" x2="756" y2="425" stroke="#4F5D55" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M860 254 L860 290 L140 290 L140 344" fill="none" stroke="#4F5D55" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<text x="40" y="528" font-size="13" fill="#4F5D55"><tspan font-weight="800" fill="#14201A">File missing or unreadable?</tspan> The app shows the alt text instead.   <tspan font-weight="800" fill="#14201A">Older app?</tspan> It skips questions with pictures and counts them.</text>
+</svg>
