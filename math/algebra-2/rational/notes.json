@@ -1,0 +1,64 @@
+{
+  "id": "a2-rational-notes",
+  "version": 1,
+  "title": "Rational functions and sequences: cheat sheet",
+  "blocks": [
+    {
+      "id": "b1",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Rational expressions are fractions of polynomials. Sequences list numbers with a pattern, and series add them. Probability and the normal curve measure chance and spread."
+    },
+    {
+      "id": "b2",
+      "kind": "list",
+      "title": "Rational expressions",
+      "items": [
+        "Factor, then cancel common factors",
+        "Never allow a zero denominator",
+        "Add using a common denominator",
+        "Check solutions: reject extraneous ones"
+      ]
+    },
+    {
+      "id": "b3",
+      "kind": "formula",
+      "title": "Arithmetic sequence",
+      "body": "$a_n=a_1+(n-1)d$"
+    },
+    {
+      "id": "b4",
+      "kind": "formula",
+      "title": "Geometric sequence",
+      "body": "$a_n=a_1\\cdot r^{n-1}$"
+    },
+    {
+      "id": "b5",
+      "kind": "formula",
+      "title": "Arithmetic series",
+      "body": "$S_n=\\frac{n(a_1+a_n)}{2}$"
+    },
+    {
+      "id": "b6",
+      "kind": "formula",
+      "title": "Geometric series",
+      "body": "$S_n=\\frac{a_1(1-r^n)}{1-r}$, and $\\frac{a_1}{1-r}$ if $|r|<1$"
+    },
+    {
+      "id": "b7",
+      "kind": "list",
+      "title": "Probability and the normal curve",
+      "items": [
+        "$P=\\frac{\\text{favourable}}{\\text{total}}$, between 0 and 1",
+        "Independent: $P(A\\text{ and }B)=P(A)P(B)$",
+        "68%, 95%, 99.7% within 1, 2, 3 $\\sigma$",
+        "$z=\\frac{x-\\mu}{\\sigma}$"
+      ]
+    },
+    {
+      "id": "b8",
+      "kind": "tip",
+      "body": "Complement trick: for 'at least one', compute $1-P(\\text{none})$."
+    }
+  ]
+}

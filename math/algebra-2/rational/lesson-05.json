@@ -1,0 +1,138 @@
+{
+  "id": "a2-rational-05",
+  "version": 1,
+  "title": "Series and sigma notation",
+  "xp": 18,
+  "tags": [
+    "algebra",
+    "sequences",
+    "series"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Adding up a sequence",
+      "body": "A series is the sum of the terms of a sequence. Sigma notation writes it compactly: $\\sum_{k=1}^{5}(2k+1)$ means plug in $k=1,2,3,4,5$ and add: $3+5+7+9+11=35$."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Arithmetic series",
+      "body": "The sum of the first $n$ terms is $S_n=\\frac{n(a_1+a_n)}{2}$.",
+      "steps": [
+        "Add $1+2+\\cdots+100$: pair first and last",
+        "$S_{100}=\\frac{100(1+100)}{2}=5050$",
+        "For $5,8,\\ldots$ ten terms: $a_{10}=32$",
+        "$S_{10}=\\frac{10(5+32)}{2}=185$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Geometric series",
+      "body": "The sum of the first $n$ terms is $S_n=\\frac{a_1(1-r^n)}{1-r}$.",
+      "steps": [
+        "For $2,6,18,54,162$: $a_1=2$, $r=3$, $n=5$",
+        "$S_5=\\frac{2(1-3^5)}{1-3}$",
+        "$=\\frac{2(-242)}{-2}=242$"
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "text",
+      "title": "Infinite geometric series",
+      "body": "If $|r|<1$ the terms shrink and the total settles to $\\frac{a_1}{1-r}$. For $6+3+1.5+\\cdots$ this is $\\frac{6}{1-0.5}=12$. If $|r|\\ge 1$ the sum grows without limit."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "$1+2+3+\\cdots+10=$ ?",
+      "accepted": [
+        "55"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac{10\\cdot 11}{2}=55$."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What does $\\sum_{k=1}^{3}2k$ equal?",
+      "choices": [
+        "$6$",
+        "$8$",
+        "$12$"
+      ],
+      "answerIndex": 2,
+      "explanation": "$2+4+6=12$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Find $\\sum_{k=1}^{4}k^2$.",
+      "accepted": [
+        "30"
+      ],
+      "keypad": "numeric",
+      "explanation": "$1+4+9+16=30$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "Sum the first 10 terms of $5,8,11,\\ldots$ (the 10th term is 32).",
+      "accepted": [
+        "185"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac{10(5+32)}{2}=185$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "Sum the first 4 terms of $3,6,12,24,\\ldots$",
+      "accepted": [
+        "45"
+      ],
+      "keypad": "numeric",
+      "explanation": "$3+6+12+24=45$. The formula gives $\\frac{3(1-2^4)}{1-2}=45$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "What is $6+3+1.5+0.75+\\cdots$ (forever)?",
+      "choices": [
+        "$24$",
+        "$12$",
+        "No limit"
+      ],
+      "answerIndex": 1,
+      "explanation": "$r=\\frac{1}{2}$, so the sum is $\\frac{6}{1-0.5}=12$."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Does $2+4+8+16+\\cdots$ have a finite sum?",
+      "choices": [
+        "No, because $r=2$ is not less than 1 in size",
+        "Yes, 32",
+        "Yes, 62"
+      ],
+      "answerIndex": 0,
+      "explanation": "The terms keep growing, so the total grows without limit."
+    },
+    {
+      "id": "q8",
+      "type": "fill_blank",
+      "prompt": "A sum written with $\\Sigma$ is called a \\_\\_",
+      "choices": [
+        "sequence",
+        "ratio",
+        "series"
+      ],
+      "answerIndex": 2,
+      "explanation": "A sequence is the list of terms. The series is their sum."
+    }
+  ]
+}

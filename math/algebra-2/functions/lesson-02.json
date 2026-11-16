@@ -1,0 +1,142 @@
+{
+  "id": "a2-functions-02",
+  "version": 1,
+  "title": "Composition and inverse functions",
+  "xp": 15,
+  "tags": [
+    "algebra",
+    "functions"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Functions in a chain",
+      "body": "Composition feeds the output of one function into another. $(f\\circ g)(x)$ means $f(g(x))$: do $g$ first, then $f$. The order matters, so $f(g(x))$ and $g(f(x))$ usually differ."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Compose $f(x)=2x+1$ and $g(x)=x^2$",
+      "body": "Work from the inside out.",
+      "steps": [
+        "$g(3)=9$, then $f(9)=19$, so $f(g(3))=19$",
+        "$f(3)=7$, then $g(7)=49$, so $g(f(3))=49$",
+        "Same inputs, different order, different answers",
+        "In general $f(g(x))=2x^2+1$ and $g(f(x))=(2x+1)^2$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "The inverse undoes a function",
+      "body": "The inverse $f^{-1}$ reverses $f$: if $f(a)=b$ then $f^{-1}(b)=a$. So $f(f^{-1}(x))=x$. Its graph is the mirror image of $f$ in the line $y=x$. Only a function that gives each output once can have an inverse function."
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Find the inverse of $f(x)=2x+1$",
+      "body": "Swap $x$ and $y$, then solve for $y$.",
+      "steps": [
+        "Write $y=2x+1$",
+        "Swap: $x=2y+1$",
+        "Subtract 1: $x-1=2y$",
+        "Divide: $y=\\frac{x-1}{2}$, so $f^{-1}(x)=\\frac{x-1}{2}$"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "$f(x)=x+3$ and $g(x)=2x$. What is $f(g(4))$?",
+      "choices": [
+        "$14$",
+        "$11$",
+        "$8$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$g(4)=8$, then $f(8)=11$. The inside function goes first."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "$f(x)=x+3$ and $g(x)=2x$. Find $g(f(4))$.",
+      "accepted": [
+        "14"
+      ],
+      "keypad": "numeric",
+      "explanation": "$f(4)=7$, then $g(7)=14$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "For $f(x)=2x+1$ and $g(x)=x^2$, what is $f(g(x))$?",
+      "choices": [
+        "$(2x+1)^2$",
+        "$2x^2+2x$",
+        "$2x^2+1$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Put $g(x)=x^2$ into $f$: $2(x^2)+1$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "$f(x)=x+7$. Find $f^{-1}(10)$.",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "The inverse subtracts 7: $10-7=3$. Check: $f(3)=10$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What is the inverse of $f(x)=3x-6$?",
+      "choices": [
+        "$\\frac{x+6}{3}$",
+        "$\\frac{x-6}{3}$",
+        "$\\frac{x}{3}+6$"
+      ],
+      "answerIndex": 0,
+      "explanation": "From $x=3y-6$ we get $3y=x+6$, so $y=\\frac{x+6}{3}$."
+    },
+    {
+      "id": "q6",
+      "type": "order_steps",
+      "prompt": "Put the steps for finding an inverse in order.",
+      "steps": [
+        "Write $y=f(x)$",
+        "Swap $x$ and $y$",
+        "Solve for $y$",
+        "Write $f^{-1}(x)=y$"
+      ],
+      "explanation": "Swapping the roles of input and output is what undoes the function. Then solve for the new output."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "$f(f^{-1}(x))=\\_\\_$",
+      "choices": [
+        "$1$",
+        "$x$",
+        "$f(x)$"
+      ],
+      "answerIndex": 1,
+      "explanation": "An inverse undoes the function, so doing both returns the original input $x$."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "Why does $f(x)=x^2$ (all reals) have no inverse function?",
+      "choices": [
+        "Two inputs, like 2 and $-2$, give the same output 4",
+        "It is a line",
+        "Its domain is empty"
+      ],
+      "answerIndex": 0,
+      "explanation": "An inverse would have to send 4 back to both 2 and $-2$, which is not one output."
+    }
+  ]
+}

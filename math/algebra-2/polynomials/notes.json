@@ -1,0 +1,59 @@
+{
+  "id": "a2-polynomials-notes",
+  "version": 1,
+  "title": "Polynomials and complex numbers: cheat sheet",
+  "blocks": [
+    {
+      "id": "b1",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Polynomials can be added, multiplied and divided. Zeros of a polynomial match its factors, and complex numbers make every polynomial solvable."
+    },
+    {
+      "id": "b2",
+      "kind": "formula",
+      "title": "Remainder theorem",
+      "body": "$P(x)\\div(x-a)$ has remainder $P(a)$"
+    },
+    {
+      "id": "b3",
+      "kind": "formula",
+      "title": "Factor theorem",
+      "body": "$x-a$ is a factor when $P(a)=0$"
+    },
+    {
+      "id": "b4",
+      "kind": "formula",
+      "title": "Rational root candidates",
+      "body": "$\\pm\\frac{p}{q}$: $p$ divides the constant, $q$ divides the leading coefficient"
+    },
+    {
+      "id": "b5",
+      "kind": "list",
+      "title": "Complex numbers",
+      "items": [
+        "$i^2=-1$ and $\\sqrt{-9}=3i$",
+        "$(a+bi)(a-bi)=a^2+b^2$",
+        "$|a+bi|=\\sqrt{a^2+b^2}$",
+        "$i$ powers repeat: $i,\\ -1,\\ -i,\\ 1$"
+      ]
+    },
+    {
+      "id": "b6",
+      "kind": "formula",
+      "title": "Vertex form",
+      "body": "$y=a(x-h)^2+k$, vertex $(h,k)$"
+    },
+    {
+      "id": "b7",
+      "kind": "formula",
+      "title": "Quadratic formula",
+      "body": "$x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}$"
+    },
+    {
+      "id": "b8",
+      "kind": "tip",
+      "body": "A degree-$n$ polynomial has $n$ zeros counting complex ones and repeats."
+    }
+  ]
+}

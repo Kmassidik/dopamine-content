@@ -1,0 +1,54 @@
+{
+  "id": "a2-functions-notes",
+  "version": 1,
+  "title": "Functions and transformations: cheat sheet",
+  "blocks": [
+    {
+      "id": "b1",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A function turns each input into exactly one output. You can combine functions, undo them, move their graphs, and rewrite roots as powers."
+    },
+    {
+      "id": "b2",
+      "kind": "formula",
+      "title": "Composition",
+      "body": "$(f\\circ g)(x)=f(g(x))$"
+    },
+    {
+      "id": "b3",
+      "kind": "formula",
+      "title": "Inverse",
+      "body": "$f(f^{-1}(x))=x$"
+    },
+    {
+      "id": "b4",
+      "kind": "list",
+      "title": "Graph transformations",
+      "items": [
+        "$f(x)+k$: up $k$",
+        "$f(x-h)$: right $h$",
+        "$-f(x)$: flip over the $x$-axis",
+        "$f(-x)$: flip over the $y$-axis",
+        "$a\\,f(x)$: vertical stretch by $a$"
+      ]
+    },
+    {
+      "id": "b5",
+      "kind": "formula",
+      "title": "Absolute value vertex",
+      "body": "$y=|x-h|+k$ has its vertex at $(h,k)$"
+    },
+    {
+      "id": "b6",
+      "kind": "formula",
+      "title": "Rational exponents",
+      "body": "$x^{m/n}=\\left(\\sqrt[n]{x}\\right)^m$"
+    },
+    {
+      "id": "b7",
+      "kind": "tip",
+      "body": "Domain checks: no zero in a denominator, no negative inside a square root."
+    }
+  ]
+}

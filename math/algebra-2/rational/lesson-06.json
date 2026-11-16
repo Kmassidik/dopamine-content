@@ -1,0 +1,137 @@
+{
+  "id": "a2-rational-06",
+  "version": 1,
+  "title": "Probability basics and the normal curve",
+  "xp": 20,
+  "tags": [
+    "algebra",
+    "probability",
+    "statistics"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Measuring chance",
+      "body": "The probability of an event is $P=\\frac{\\text{favourable outcomes}}{\\text{all equally likely outcomes}}$. It is always between 0 (impossible) and 1 (certain). The probability that something does not happen is $1-P$."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Two dice",
+      "body": "What is the chance that the sum is 7?",
+      "steps": [
+        "There are $6\\cdot 6=36$ equally likely outcomes",
+        "Sum 7: $1+6,\\ 2+5,\\ 3+4,\\ 4+3,\\ 5+2,\\ 6+1$, so 6 outcomes",
+        "$P=\\frac{6}{36}=\\frac{1}{6}$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Independent events",
+      "body": "If one event does not affect the other, multiply: $P(A\\text{ and }B)=P(A)\\cdot P(B)$. Two heads in a row: $\\frac{1}{2}\\cdot\\frac{1}{2}=\\frac{1}{4}$. For at least one head in 3 flips, use the complement: $1-\\left(\\frac{1}{2}\\right)^3=\\frac{7}{8}$."
+    },
+    {
+      "id": "p4",
+      "kind": "text",
+      "title": "The normal curve",
+      "body": "Many measurements make a bell-shaped curve centred on the mean $\\mu$, with spread measured by the standard deviation $\\sigma$. About 68% lie within 1 $\\sigma$ of the mean, 95% within 2 $\\sigma$ and 99.7% within 3 $\\sigma$. The z-score $z=\\frac{x-\\mu}{\\sigma}$ counts how many $\\sigma$ a value is from the mean."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "What is the probability of rolling an even number on one die? Give a fraction.",
+      "accepted": [
+        "1/2",
+        "0.5",
+        "3/6"
+      ],
+      "keypad": "numeric",
+      "explanation": "Three of the six outcomes (2, 4, 6) are even: $\\frac{3}{6}=\\frac{1}{2}$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Two dice are rolled. What is the probability that the sum is 7?",
+      "accepted": [
+        "1/6",
+        "6/36",
+        "0.167",
+        "0.17"
+      ],
+      "keypad": "numeric",
+      "explanation": "6 of the 36 outcomes sum to 7, so $\\frac{6}{36}=\\frac{1}{6}$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What is the probability of two heads in two fair coin flips?",
+      "accepted": [
+        "1/4",
+        "0.25"
+      ],
+      "keypad": "numeric",
+      "explanation": "The flips are independent: $\\frac{1}{2}\\cdot\\frac{1}{2}=\\frac{1}{4}$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "The chance of rain is 0.3. What is the chance of no rain?",
+      "accepted": [
+        "0.7",
+        "7/10"
+      ],
+      "keypad": "numeric",
+      "explanation": "The complement is $1-0.3=0.7$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What is the chance of at least one head in 3 fair flips?",
+      "choices": [
+        "$\\frac{7}{8}$",
+        "$\\frac{1}{8}$",
+        "$\\frac{3}{8}$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Only TTT has no head, with probability $\\frac{1}{8}$. So the answer is $1-\\frac{1}{8}=\\frac{7}{8}$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Scores have mean 100 and standard deviation 15. About what percent lie between 85 and 115?",
+      "choices": [
+        "95%",
+        "99.7%",
+        "68%"
+      ],
+      "answerIndex": 2,
+      "explanation": "85 and 115 are 1 standard deviation either side of the mean, which covers about 68%."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "Scores have mean 100 and $\\sigma=15$. What is the z-score of 130?",
+      "accepted": [
+        "2"
+      ],
+      "keypad": "numeric",
+      "explanation": "$z=\\frac{130-100}{15}=2$."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "Same scores. About what percent lie above 115?",
+      "choices": [
+        "16%",
+        "32%",
+        "2.5%"
+      ],
+      "answerIndex": 0,
+      "explanation": "68% lie within 1 $\\sigma$, so 32% lie outside, split evenly: about 16% above."
+    }
+  ]
+}
