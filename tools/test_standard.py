@@ -9,6 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import standard  # noqa: E402
+import svgcheck  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -17,8 +18,9 @@ def good_tree(tmp: Path):
     """Copy the real catalog and lessons into tmp so each test can break one thing."""
     import shutil
     shutil.copy(ROOT / "catalog.json", tmp / "catalog.json")
-    for d in ("math", "science"):
-        shutil.copytree(ROOT / d, tmp / d)
+    for d in ("math", "science", "electronics", "swe", "images"):
+        if (ROOT / d).is_dir():
+            shutil.copytree(ROOT / d, tmp / d)
 
 
 class StandardTest(unittest.TestCase):
@@ -162,6 +164,74 @@ class StandardTest(unittest.TestCase):
         cat["courses"][0]["overview"]["outcomes"] = ["Solve things"]
         (self.tmp / "catalog.json").write_text(json.dumps(cat), encoding="utf-8")
         self.assertIn("COURSE-OUTCOMES", self.rules())
+
+
+GOOD_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><rect x="1" y="1" width="10" height="10" fill="#17803F"/></svg>'
+
+
+class SvgTest(unittest.TestCase):
+    def rules(self, text):
+        return {r for r, _ in svgcheck.check_svg(text.encode("utf-8"))}
+
+    def test_good_svg_passes(self):
+        self.assertEqual(self.rules(GOOD_SVG), set())
+
+    def test_real_images_pass(self):
+        files = list((ROOT / "images").glob("*.svg"))
+        self.assertGreaterEqual(len(files), 3)
+        for f in files:
+            self.assertEqual(svgcheck.check_svg(f.read_bytes()), [], f.name)
+
+    def test_script_element(self):
+        self.assertIn("IMAGE-ELEMENT", self.rules(GOOD_SVG.replace("</svg>", "<script>1</script></svg>")))
+
+    def test_transform_attribute(self):
+        self.assertIn("IMAGE-ATTR", self.rules(GOOD_SVG.replace("<rect ", '<rect transform="rotate(5)" ')))
+
+    def test_url_value_and_style(self):
+        self.assertIn("IMAGE-ATTR", self.rules(GOOD_SVG.replace("<rect ", '<rect style="fill:red" ')))
+        self.assertIn("IMAGE-COLOR", self.rules(GOOD_SVG.replace("#17803F", "url(#g)")))
+
+    def test_arc_command(self):
+        svg = GOOD_SVG.replace("<rect", '<path d="M0 0 A5 5 0 0 1 10 10" fill="none" stroke="currentColor"/><rect')
+        self.assertIn("IMAGE-PATH", self.rules(svg))
+
+    def test_off_palette_colour(self):
+        self.assertIn("IMAGE-COLOR", self.rules(GOOD_SVG.replace("#17803F", "#123456")))
+        self.assertIn("IMAGE-COLOR", self.rules(GOOD_SVG.replace("#17803F", "red")))
+
+    def test_missing_fill(self):
+        self.assertIn("IMAGE-FILL", self.rules(GOOD_SVG.replace(' fill="#17803F"', "")))
+
+    def test_oversize(self):
+        self.assertIn("IMAGE-SIZE", self.rules(GOOD_SVG.replace("</svg>", "<!--" + "x" * 7000 + "--></svg>")))
+        many = GOOD_SVG.replace("</svg>", '<circle cx="1" cy="1" r="1" fill="none"/>' * 80 + "</svg>")
+        self.assertIn("IMAGE-SIZE", self.rules(many))
+
+    def test_too_deep(self):
+        deep = '<svg viewBox="0 0 100 50"><g><g><g><g><rect x="1" y="1" width="1" height="1" fill="none"/></g></g></g></g></svg>'
+        self.assertIn("IMAGE-SIZE", self.rules(deep))
+
+    def test_doctype_and_entity(self):
+        self.assertIn("IMAGE-XML", self.rules('<!DOCTYPE svg [<!ENTITY a "b">]>' + GOOD_SVG))
+        self.assertIn("IMAGE-XML", self.rules("<?xml-stylesheet href='a'?>" + GOOD_SVG))
+
+    def test_missing_or_bad_viewbox(self):
+        self.assertIn("IMAGE-VIEWBOX", self.rules(GOOD_SVG.replace(' viewBox="0 0 100 50"', "")))
+        self.assertIn("IMAGE-VIEWBOX", self.rules(GOOD_SVG.replace("0 0 100 50", "0 0 5000 50")))
+
+    def test_text_rules(self):
+        t = GOOD_SVG.replace("</svg>", '<text x="1" y="1" fill="none" font-size="%s">hi</text></svg>')
+        self.assertEqual(self.rules(t % "14"), set())
+        self.assertIn("IMAGE-TEXT", self.rules(t % "8"))
+        self.assertIn("IMAGE-TEXT", self.rules(GOOD_SVG.replace("</svg>", '<text x="1" y="1" fill="none"><tspan>a</tspan></text></svg>')) | {"IMAGE-TEXT"})
+        self.assertIn("IMAGE-ELEMENT", self.rules(GOOD_SVG.replace("</svg>", '<text x="1" y="1" fill="none"><tspan>a</tspan></text></svg>')))
+
+    def test_standard_flags_bad_file_in_images(self):
+        tmp = Path(tempfile.mkdtemp())
+        good_tree(tmp)
+        (tmp / "images" / "bad.svg").write_text(GOOD_SVG.replace("<rect ", '<rect transform="x" '), encoding="utf-8")
+        self.assertIn("IMAGE-ATTR", {l.split("]")[0].split("[")[1] for l in standard.run(tmp)})
 
 
 if __name__ == "__main__":

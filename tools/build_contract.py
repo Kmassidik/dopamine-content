@@ -14,6 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import standard  # noqa: E402
+import svgcheck  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "contract.json"
@@ -21,6 +22,23 @@ OUT = ROOT / "contract.json"
 
 def load(name):
     return json.loads((ROOT / "schema" / name).read_text(encoding="utf-8"))
+
+
+def svg_block() -> dict:
+    s = svgcheck.SVG
+    return {
+        "elements": sorted(s["elements"]),
+        "attributes": sorted(s["attributes"]),
+        "pathCommands": s["pathCommands"],
+        "colors": sorted(s["colors"]),
+        "maxBytes": s["maxBytes"],
+        "maxElements": s["maxElements"],
+        "maxDepth": s["maxDepth"],
+        "viewBoxMin": s["viewBoxMin"],
+        "viewBoxMax": s["viewBoxMax"],
+        "fontSizeMin": s["fontSizeMin"],
+        "fontSizeMax": s["fontSizeMax"],
+    }
 
 
 def build() -> dict:
@@ -70,6 +88,7 @@ def build() -> dict:
         "noteKinds": standard.NOTE_KINDS,
         "latexCommands": sorted(standard.LATEX_OK),
         "limits": limits,
+        "svg": svg_block(),
     }
 
 

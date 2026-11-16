@@ -11,6 +11,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import svgcheck  # noqa: E402
 
 # ---- The numbers (keep STANDARD.md in sync) ---------------------------------
 RULES = {
@@ -306,6 +308,11 @@ def run(root: Path = ROOT) -> list:
             else:
                 check_notes(rep, nf.relative_to(root).as_posix(), json.loads(nf.read_text(encoding="utf-8")))
         check_course(rep, course, by_unit)
+    imgs = root / "images"
+    if imgs.is_dir():
+        for f in sorted(imgs.rglob("*.svg")):
+            for rule, msg in svgcheck.check_svg(f.read_bytes()):
+                rep.fail(rule, f.relative_to(root).as_posix(), msg)
     return rep.items
 
 
