@@ -1,0 +1,58 @@
+{
+  "id": "cg-recursion-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Recursion: cheat sheet",
+  "blocks": [
+    {
+      "id": "big-idea",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A recursive function solves a problem by calling itself on a smaller version. It needs a base case that stops it and a recursive case that moves toward it."
+    },
+    {
+      "id": "parts",
+      "kind": "list",
+      "title": "Checklist",
+      "items": [
+        "Is there a base case that returns directly?",
+        "Does every call get closer to the base case?",
+        "Trust the smaller call to be correct"
+      ]
+    },
+    {
+      "id": "sum",
+      "kind": "code",
+      "title": "Base and recursive case",
+      "code": "int sum(int n) {\n    if (n == 1) {\n        return 1;\n    }\n    return n + sum(n - 1);\n}",
+      "language": "c"
+    },
+    {
+      "id": "facts",
+      "kind": "list",
+      "title": "Facts to remember",
+      "items": [
+        "5! is 120 and 12! fits in an int, 13! does not",
+        "fib(10) is 55; naive fib(10) makes 177 calls",
+        "A missing base case usually crashes the program",
+        "Deep recursion uses stack memory"
+      ]
+    },
+    {
+      "id": "dc",
+      "kind": "list",
+      "title": "Divide and conquer",
+      "items": [
+        "Divide the problem into smaller pieces",
+        "Conquer each piece with the same method",
+        "Combine the answers",
+        "Halving gives about $\\log n$ levels"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Use a loop when it is just as clear. Use recursion when the problem splits into smaller copies of itself."
+    }
+  ]
+}
