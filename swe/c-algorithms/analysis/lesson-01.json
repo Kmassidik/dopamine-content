@@ -1,0 +1,152 @@
+{
+  "id": "cg-analysis-01",
+  "version": 1,
+  "minApp": 2,
+  "title": "What an algorithm is",
+  "xp": 15,
+  "tags": [
+    "c",
+    "algorithms"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "A recipe for a computer",
+      "body": "An algorithm is a clear list of steps that solves a problem and always finishes. You already wrote some in C Fundamentals. Now we look at them more closely: how to describe them, and how to tell a good one from a slow one."
+    },
+    {
+      "id": "props",
+      "kind": "text",
+      "title": "What makes an algorithm",
+      "body": "It takes an input, such as an array. It follows steps that are exact, with nothing left to guess. It stops after a finite number of steps. And it produces an output, such as the largest number or a yes or no."
+    },
+    {
+      "id": "max",
+      "kind": "code",
+      "title": "Finding the largest value",
+      "body": "Start with the first item as the best so far. Look at each other item and keep the bigger one.",
+      "code": "int a[] = {4, 9, 2, 7};\nint n = 4;\nint max = a[0];\nfor (int i = 1; i < n; i++) {\n    if (a[i] > max) {\n        max = a[i];\n    }\n}\nprintf(\"%d\\n\", max);",
+      "language": "c"
+    },
+    {
+      "id": "trace",
+      "kind": "example",
+      "title": "Tracing the steps",
+      "body": "Follow the loop for {4, 9, 2, 7}. Each line shows what `max` is after that item.",
+      "steps": [
+        "Start: `max` is 4, the first item",
+        "`a[1]` is 9, which beats 4, so `max` becomes 9",
+        "`a[2]` is 2 and `a[3]` is 7, neither beats 9",
+        "The loop ends and it prints 9"
+      ]
+    },
+    {
+      "id": "many",
+      "kind": "text",
+      "title": "Many algorithms, one problem",
+      "body": "The same problem can have several algorithms. You could find the largest value by sorting the whole array first, then reading the last item. That works, but it does far more work. Comparing algorithms is the main skill of this course."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Before you code, say the steps in plain words. If you can not describe them clearly, the code will not be clear either."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "Which is NOT needed for something to be an algorithm?",
+      "choices": [
+        "It must finish after a finite number of steps",
+        "It must be written in C",
+        "Its steps must be exact"
+      ],
+      "answerIndex": 1,
+      "explanation": "An algorithm is an idea. You can write it in C, in another language, or in plain words.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "In the max-finding code, what is `max` before the loop starts?",
+      "choices": [
+        "0",
+        "`a[0]`",
+        "The last item"
+      ],
+      "answerIndex": 1,
+      "explanation": "We start with the first item as the best so far, then improve it.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "`a = {4, 9, 2, 7}`. What does the max-finding code print?",
+      "accepted": [
+        "9"
+      ],
+      "keypad": "numeric",
+      "explanation": "9 is the biggest item. `max` changes from 4 to 9 and then never changes again.",
+      "id": "q3"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "A list of exact steps that solves a problem and finishes is called an \\_\\_.",
+      "choices": [
+        "algorithm",
+        "variable",
+        "compiler"
+      ],
+      "answerIndex": 0,
+      "explanation": "That is the definition of an algorithm.",
+      "id": "q4"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each word to its role in the max-finding code.",
+      "pairs": [
+        [
+          "`a`",
+          "the input array"
+        ],
+        [
+          "`max`",
+          "the best value so far"
+        ],
+        [
+          "`printf`",
+          "shows the output"
+        ],
+        [
+          "`for` loop",
+          "visits each item"
+        ]
+      ],
+      "explanation": "An algorithm turns an input into an output, one step at a time.",
+      "id": "q5"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put the max-finding steps in order.",
+      "steps": [
+        "Set `max` to the first item",
+        "Look at the next item",
+        "If it is bigger, update `max`",
+        "After the last item, report `max`"
+      ],
+      "explanation": "Start with a guess, improve it item by item, then report.",
+      "id": "q6"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Two different algorithms solve the same problem and both give correct answers. Which should you prefer?",
+      "choices": [
+        "The one that does less work",
+        "The one with more lines",
+        "The one written first"
+      ],
+      "answerIndex": 0,
+      "explanation": "Both are correct, so the cost is what separates them. That is what we measure next.",
+      "id": "q7"
+    }
+  ]
+}

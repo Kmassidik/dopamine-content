@@ -1,0 +1,152 @@
+{
+  "id": "cg-analysis-03",
+  "version": 1,
+  "minApp": 2,
+  "title": "Big O notation",
+  "xp": 15,
+  "tags": [
+    "c",
+    "algorithms",
+    "big-o"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "A shorthand for growth",
+      "body": "Counting steps gives exact formulas like $3n + 5$. For large n only the biggest term matters, and constant factors depend on the machine. Big O keeps just the shape of the growth. We write $3n + 5$ as $O(n)$, said big O of n."
+    },
+    {
+      "id": "rules",
+      "kind": "text",
+      "title": "Two rules",
+      "body": "Rule 1: drop constant factors, so $3n$ becomes $n$. Rule 2: keep only the fastest growing term, so $n^2 + n$ becomes $n^2$. Big O is an upper bound: it says the work grows no faster than this shape."
+    },
+    {
+      "id": "shapes",
+      "kind": "code",
+      "title": "Three loops, three shapes",
+      "body": "The first line is one step. The loop is about n steps. The nested loops are about n times n.",
+      "code": "x = a[0];\nfor (i = 0; i < n; i++)\n    s += a[i];\nfor (i = 0; i < n; i++)\n    for (j = 0; j < n; j++)\n        s += a[i] * a[j];",
+      "language": "c"
+    },
+    {
+      "id": "combine",
+      "kind": "example",
+      "title": "Combine the parts",
+      "body": "The code above takes about $1 + n + n^2$ steps.",
+      "steps": [
+        "Add the steps: $1 + n + n^2$",
+        "Drop the lower terms $1$ and $n$",
+        "What is left is $n^2$, so the code is $O(n^2)$"
+      ]
+    },
+    {
+      "id": "common",
+      "kind": "text",
+      "title": "Common growth rates",
+      "body": "From slowest growing to fastest: $O(1)$ constant, $O(\\log n)$ logarithmic, $O(n)$ linear, $O(n \\log n)$, $O(n^2)$ quadratic. Reading `a[0]` is $O(1)$. A single loop is $O(n)$. Two nested loops are $O(n^2)$. Halving the input again and again is $O(\\log n)$."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Big O ignores small inputs. An $O(n)$ code can be slower than an $O(n^2)$ code for tiny n, but as n grows the shape always wins."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What is $3n + 5$ in big O?",
+      "choices": [
+        "$O(n)$",
+        "$O(3n)$",
+        "$O(5)$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Drop the constant factor 3 and the lower term 5, leaving $n$.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What is $n^2 + n$ in big O?",
+      "choices": [
+        "$O(n)$",
+        "$O(n^2)$",
+        "$O(2n)$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$n^2$ grows faster than $n$, so it is the only term that matters for large n.",
+      "id": "q2"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "Reading one item with `a[0]` takes \\_\\_ time.",
+      "choices": [
+        "$O(1)$",
+        "$O(n)$",
+        "$O(n^2)$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Reading by index takes the same single step however long the array is.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which is the slowest growing?",
+      "choices": [
+        "$O(n)$",
+        "$O(n^2)$",
+        "$O(\\log n)$"
+      ],
+      "answerIndex": 2,
+      "explanation": "A logarithm grows very slowly. $\\log n$ is smaller than $n$, which is smaller than $n^2$.",
+      "id": "q4"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each code to its big O.",
+      "pairs": [
+        [
+          "read `a[5]`",
+          "$O(1)$"
+        ],
+        [
+          "one loop over the array",
+          "$O(n)$"
+        ],
+        [
+          "loop in a loop over the array",
+          "$O(n^2)$"
+        ],
+        [
+          "halve `n` until it reaches 0",
+          "$O(\\log n)$"
+        ]
+      ],
+      "explanation": "Count how the work grows with n, then keep the shape only.",
+      "id": "q5"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put the order from slowest growing to fastest growing.",
+      "steps": [
+        "$O(1)$",
+        "$O(\\log n)$",
+        "$O(n)$",
+        "$O(n^2)$"
+      ],
+      "explanation": "Constant is flattest, then logarithmic, linear and quadratic.",
+      "id": "q6"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "Code takes $4n^2 + 10n + 7$ steps. Its big O is $O(n^k)$. What is k?",
+      "accepted": [
+        "2"
+      ],
+      "keypad": "numeric",
+      "explanation": "The $n^2$ term dominates. After dropping 4, 10n and 7 you get $O(n^2)$.",
+      "id": "q7"
+    }
+  ]
+}
