@@ -1,0 +1,153 @@
+{
+  "id": "ca-build-05",
+  "version": 2,
+  "minApp": 2,
+  "title": "Multiple files and make",
+  "xp": 15,
+  "tags": [
+    "c",
+    "make"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "One program, many files",
+      "body": "Real programs are split across files. Each `.c` file is compiled to its own `.o`, then the linker joins them. If you change one file, only that one needs compiling again."
+    },
+    {
+      "id": "twice-c",
+      "kind": "code",
+      "title": "twice.c",
+      "body": "The definition of `twice`. It includes its own header to stay consistent.",
+      "code": "#include \"twice.h\"\n\nint twice(int n) {\n    return n * 2;\n}",
+      "language": "c"
+    },
+    {
+      "id": "main-c",
+      "kind": "code",
+      "title": "main.c",
+      "body": "`main` includes the header and calls `twice`. Together with `twice.h` from the last lesson it prints 42.",
+      "code": "#include <stdio.h>\n#include \"twice.h\"\n\nint main(void) {\n    printf(\"%d\\n\", twice(21));\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "build",
+      "kind": "code",
+      "title": "Build by hand",
+      "body": "Compile each file, link the objects, run.",
+      "code": "cc -c main.c\ncc -c twice.c\ncc main.o twice.o -o prog\n./prog",
+      "language": "sh"
+    },
+    {
+      "id": "makefile",
+      "kind": "code",
+      "title": "A Makefile",
+      "body": "`make` reads rules: a target, a colon, what it depends on, then a command. The commands must start with a tab, not spaces (shown here as spaces).",
+      "code": "prog: main.o twice.o\n    cc main.o twice.o -o prog\nmain.o: main.c twice.h\n    cc -c main.c\ntwice.o: twice.c twice.h\n    cc -c twice.c",
+      "language": "sh"
+    },
+    {
+      "id": "rebuild",
+      "kind": "example",
+      "title": "What make does",
+      "body": "You edit only `twice.c`, then run `make`.",
+      "steps": [
+        "`make` sees `twice.c` is newer than `twice.o`",
+        "It runs `cc -c twice.c`",
+        "`main.o` is up to date, so it is skipped",
+        "It relinks `prog`; a second `make` says it is up to date"
+      ]
+    },
+    {
+      "id": "quick",
+      "kind": "tip",
+      "body": "For one file, `make hello` builds `hello` from `hello.c` with no Makefile at all."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What does `cc -c main.c` produce?",
+      "choices": [
+        "`main.o`",
+        "`main`",
+        "`a.out`"
+      ],
+      "answerIndex": 0,
+      "explanation": "`-c` stops before linking, so you get an object file."
+    },
+    {
+      "id": "q2",
+      "type": "order_steps",
+      "prompt": "Put the manual build in order.",
+      "steps": [
+        "Compile main.c to main.o",
+        "Compile twice.c to twice.o",
+        "Link main.o and twice.o into prog",
+        "Run ./prog"
+      ],
+      "explanation": "Both objects must exist before the linker can join them."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What program reads a Makefile and rebuilds only what changed? Type its name.",
+      "accepted": [
+        "make",
+        "`make`"
+      ],
+      "keypad": "full",
+      "explanation": "`make` compares file times and runs only the needed commands."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "You change only `twice.c`. What does `make` recompile?",
+      "choices": [
+        "Every file",
+        "Only `twice.c`, then it relinks",
+        "Only `main.c`"
+      ],
+      "answerIndex": 1,
+      "explanation": "`main.o` is still up to date, so it is skipped."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "Each command line in a real Makefile must start with a \\_\\_ character.",
+      "choices": [
+        "`space`",
+        "`#`",
+        "`tab`"
+      ],
+      "answerIndex": 2,
+      "explanation": "`make` insists on a tab there, which is a common trap."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "What does the line `prog: main.o twice.o` mean?",
+      "choices": [
+        "`prog` is built from `main.o` and `twice.o`",
+        "`prog` is a header file",
+        "`main.o` is built from `prog`"
+      ],
+      "answerIndex": 0,
+      "explanation": "Before the colon is the target, after it are the things it depends on."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Why split a program into several files?",
+      "choices": [
+        "The program runs faster",
+        "Changing one file means recompiling only that file",
+        "The linker is not needed then"
+      ],
+      "answerIndex": 1,
+      "explanation": "Splitting also keeps related code together and easier to read."
+    }
+  ]
+}

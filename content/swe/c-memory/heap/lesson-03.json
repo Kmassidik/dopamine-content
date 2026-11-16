@@ -1,0 +1,139 @@
+{
+  "id": "cm-heap-03",
+  "version": 2,
+  "minApp": 2,
+  "title": "free",
+  "xp": 15,
+  "tags": [
+    "c",
+    "free",
+    "heap"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Giving memory back",
+      "body": "`free(p)` returns a block to the heap so it can be reused. Pass it exactly the pointer that `malloc` gave you. The rule is one `free` for every successful `malloc`. Forgetting leaks memory, and freeing twice is a bug."
+    },
+    {
+      "id": "demo",
+      "kind": "code",
+      "title": "Copying a string",
+      "body": "This prints `memory Memory`. We need `strlen + 1` bytes: the extra byte is for the ending 0. After `free`, `copy` still holds the old address, so we set it to `NULL`.",
+      "code": "char *copy = malloc(strlen(src) + 1);\nif (copy == NULL)\n    return 1;\nstrcpy(copy, src);\ncopy[0] = 'M';\nprintf(\"%s %s\\n\", src, copy);\nfree(copy);\ncopy = NULL;",
+      "language": "c"
+    },
+    {
+      "id": "dangling",
+      "kind": "text",
+      "title": "Dangling pointers",
+      "body": "After `free(p)`, the variable `p` still holds the old address, but the memory is no longer yours. Using it is a bug. Setting `p = NULL;` right after is a cheap safety habit, and `free(NULL)` does nothing, so it is always safe."
+    },
+    {
+      "id": "ex-count",
+      "kind": "example",
+      "title": "Counting the bytes for a copy",
+      "body": "How much space does a copy of `\"memory\"` need?",
+      "steps": [
+        "The text has 6 letters",
+        "The ending 0 byte adds 1",
+        "So `strlen(src) + 1` is 7 bytes",
+        "`malloc(strlen(src))` would be one byte short"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Whoever allocates should decide who frees. Write that down in a comment when a function hands a heap pointer to its caller."
+    }
+  ],
+  "questions": [
+    {
+      "type": "type_answer",
+      "prompt": "How many bytes does a copy of `\"memory\"` need?",
+      "accepted": [
+        "7"
+      ],
+      "keypad": "numeric",
+      "explanation": "Six letters plus the ending 0 byte.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does `free(NULL)` do?",
+      "choices": [
+        "Nothing, it is safe",
+        "Crashes",
+        "Frees everything",
+        "Returns an error code"
+      ],
+      "answerIndex": 0,
+      "explanation": "`free(NULL)` is defined to do nothing.",
+      "id": "q2"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "After `free(p)`, the pointer `p` is \\_\\_.",
+      "choices": [
+        "dangling",
+        "valid",
+        "zero"
+      ],
+      "answerIndex": 0,
+      "explanation": "It still holds the old address, but that memory is no longer yours.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What is a good habit right after `free(p)`?",
+      "choices": [
+        "Set `p = NULL;`",
+        "Call `free(p)` again",
+        "Print `p`",
+        "Add 1 to `p`"
+      ],
+      "answerIndex": 0,
+      "explanation": "A null pointer is easy to test and harmless to free.",
+      "id": "q4"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "How many `free` calls does one successful `malloc` need?",
+      "choices": [
+        "Exactly one",
+        "Two",
+        "None",
+        "As many as you like"
+      ],
+      "answerIndex": 0,
+      "explanation": "One free per malloc: not zero (leak), not two (double free).",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Why is `malloc(strlen(src))` too small for a copy?",
+      "choices": [
+        "It leaves no room for the ending 0",
+        "`strlen` is negative",
+        "It returns NULL",
+        "`malloc` needs even sizes"
+      ],
+      "answerIndex": 0,
+      "explanation": "`strlen` does not count the 0 byte that ends the string.",
+      "id": "q6"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put these in the safest order.",
+      "steps": [
+        "`malloc` the block",
+        "Use the block",
+        "`free` the block",
+        "Set the pointer to `NULL`"
+      ],
+      "explanation": "Freeing then clearing the pointer prevents accidental reuse.",
+      "id": "q7"
+    }
+  ]
+}

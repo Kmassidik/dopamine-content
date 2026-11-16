@@ -1,0 +1,134 @@
+{
+  "id": "pa-expressions-03",
+  "version": 2,
+  "title": "The distributive property",
+  "xp": 10,
+  "tags": [
+    "algebra",
+    "distributive"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Share the multiplier",
+      "body": "The distributive property says that multiplying a sum is the same as multiplying each part: $a(b+c)=ab+ac$. Test it with numbers: $3(2+5)=3\\times 7=21$, and $3\\times 2+3\\times 5=6+15=21$. Same result."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Expand $3(x+4)$",
+      "body": "Multiply every term inside the brackets by 3.",
+      "steps": [
+        "$3\\times x=3x$.",
+        "$3\\times 4=12$.",
+        "$3(x+4)=3x+12$."
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Subtraction and negatives",
+      "body": "It works with subtraction too: $2(5-y)=10-2y$. When the multiplier is negative, be careful with the signs. $-2(x-3)$ gives $-2x$, and $-2\\times(-3)=+6$, so the result is $-2x+6$."
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Simplify $2(x+3)+4x$",
+      "body": "Expand first, then combine like terms.",
+      "steps": [
+        "Expand: $2x+6+4x$.",
+        "Combine: $2x+4x=6x$.",
+        "Result: $6x+6$."
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "tip",
+      "body": "Every term inside gets multiplied, including the last one. $5(2x+1)=10x+5$, not $10x+1$."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is $3(x+4)$ expanded?",
+      "choices": [
+        "$3x+4$",
+        "$3x+12$",
+        "$x+12$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Both $x$ and 4 are multiplied by 3."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What is $2(5-y)$ expanded?",
+      "choices": [
+        "$10-y$",
+        "$7-2y$",
+        "$10-2y$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Multiply both terms by 2: $2\\times 5=10$ and $2\\times y=2y$."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "$-2(x-3)=-2x\\ \\_\\_$",
+      "choices": [
+        "$-6$",
+        "$+6$",
+        "$-3$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$-2\\times(-3)=6$, so the sign is plus."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "What is the coefficient of $x$ in $2(x+3)+4x$ after simplifying?",
+      "accepted": [
+        "6"
+      ],
+      "keypad": "numeric",
+      "explanation": "$2x+6+4x=6x+6$, so the coefficient is 6."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which equals $5(2x+1)$?",
+      "choices": [
+        "$10x+5$",
+        "$10x+1$",
+        "$7x+6$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Multiply both terms by 5: $5\\times 2x=10x$ and $5\\times 1=5$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which is a correct way to compute $4\\times 13$?",
+      "choices": [
+        "$4\\times 10+3$",
+        "$4+10\\times 3$",
+        "$4\\times 10+4\\times 3$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Split 13 into $10+3$ and multiply each part: $40+12=52$."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Simplify $3(x+2)+x$. Put the steps in order.",
+      "steps": [
+        "Expand: $3x+6+x$",
+        "Combine like terms: $3x+x=4x$",
+        "Write the result $4x+6$"
+      ],
+      "explanation": "Expand first, then combine."
+    }
+  ]
+}

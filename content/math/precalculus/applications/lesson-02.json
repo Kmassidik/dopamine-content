@@ -1,0 +1,157 @@
+{
+  "id": "pc-applications-02",
+  "version": 2,
+  "title": "The law of cosines",
+  "xp": 20,
+  "tags": [
+    "precalculus",
+    "trigonometry",
+    "triangles"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "When there is no matching pair",
+      "body": "If you know three sides, or two sides and the angle between them, you cannot start with the law of sines. The law of cosines is the Pythagorean theorem with a correction."
+    },
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "The law",
+      "body": "$c^2=a^2+b^2-2ab\\cos C$. If $C=90^\\circ$ then $\\cos C=0$ and you get $c^2=a^2+b^2$. Rearranged to find an angle: $\\cos C=\\frac{a^2+b^2-c^2}{2ab}$."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Find side $c$",
+      "body": "Given $a=7$, $b=9$, $C=50^\\circ$.",
+      "steps": [
+        "$c^2=49+81-2\\cdot7\\cdot9\\cos50^\\circ$",
+        "$\\cos50^\\circ\\approx0.6428$, so $c^2\\approx130-80.99=49.01$",
+        "$c\\approx 7.00$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Find an angle",
+      "body": "Sides $5$, $6$, $7$. Find the angle opposite $7$.",
+      "steps": [
+        "$\\cos C=\\frac{25+36-49}{2\\cdot5\\cdot6}=\\frac{12}{60}=0.2$",
+        "$C=\\cos^{-1}0.2$",
+        "$C\\approx 78.46^\\circ$"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which situation calls for the law of cosines?",
+      "choices": [
+        "Two angles and a side",
+        "Three sides known",
+        "A right triangle",
+        "Only angles"
+      ],
+      "answerIndex": 1,
+      "explanation": "No side-angle matching pair exists, so the law of sines fails."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What does the law of cosines become when $C=90^\\circ$?",
+      "choices": [
+        "$c^2=a^2-b^2$",
+        "$c=a+b$",
+        "$c^2=a^2+b^2$",
+        "$c^2=2ab$"
+      ],
+      "answerIndex": 2,
+      "explanation": "$\\cos90^\\circ=0$ removes the last term."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "A triangle has $a=3$, $b=4$ and $C=90^\\circ$. Find $c$.",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "$c^2=9+16-0=25$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "Sides $5$, $6$, $7$. What is $\\cos C$ for the angle opposite $7$?",
+      "accepted": [
+        "0.2",
+        "1/5"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\cos C=\\frac{25+36-49}{60}=0.2$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "Sides $5$, $8$, $7$. Find the angle opposite $7$ in degrees.",
+      "accepted": [
+        "60"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\cos C=\\frac{25+64-49}{80}=0.5$, so $C=60^\\circ$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "For $a=7$, $b=9$, $C=50^\\circ$, side $c$ is closest to:",
+      "choices": [
+        "9.0",
+        "12.0",
+        "5.0",
+        "7.0"
+      ],
+      "answerIndex": 3,
+      "explanation": "$c^2\\approx49.01$, so $c\\approx7.0$."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "The law of cosines is the Pythagorean theorem plus the term \\_\\_.",
+      "choices": [
+        "$-2ab\\cos C$",
+        "$+2ab\\sin C$",
+        "$-ab$",
+        "$+c^2$"
+      ],
+      "answerIndex": 0,
+      "explanation": "That term vanishes when $C=90^\\circ$."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "If angle $C$ is obtuse, $\\cos C$ is:",
+      "choices": [
+        "positive",
+        "negative, so $c^2$ is larger than $a^2+b^2$",
+        "zero",
+        "undefined"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cosine is negative for angles between $90^\\circ$ and $180^\\circ$, which adds to $c^2$."
+    },
+    {
+      "id": "q9",
+      "type": "order_steps",
+      "prompt": "Find an angle from three sides. Put the steps in order.",
+      "steps": [
+        "Pick the angle and its opposite side $c$",
+        "Compute $\\frac{a^2+b^2-c^2}{2ab}$",
+        "Take the inverse cosine",
+        "Read the angle in degrees"
+      ],
+      "explanation": "Rearranging the law gives $\\cos C$ directly."
+    }
+  ]
+}

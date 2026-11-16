@@ -1,0 +1,153 @@
+{
+  "id": "ca-debug-05",
+  "version": 2,
+  "minApp": 2,
+  "title": "Assertions and testing",
+  "xp": 15,
+  "tags": [
+    "c",
+    "testing"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Let the program check itself",
+      "body": "An assertion is a claim you make in code: this must be true here. If it is false, the program stops at once and tells you which claim failed, instead of carrying a wrong value onward."
+    },
+    {
+      "id": "assert",
+      "kind": "code",
+      "title": "assert in action",
+      "body": "`assert` comes from the header `assert.h`. All three claims hold, so it prints `all passed`. A false one would stop the program with a message naming the expression, file and line.",
+      "code": "#include <assert.h>\n#include <stdio.h>\n\nint twice(int n) { return n * 2; }\n\nint main(void) {\n    assert(twice(2) == 4);\n    assert(twice(-3) == -6);\n    assert(twice(0) == 0);\n    puts(\"all passed\");\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "fail",
+      "kind": "text",
+      "title": "When it fails",
+      "body": "A failing `assert` prints something like `Assertion failed: (twice(5) == 11), file a.c, line 7` and aborts. The exact wording depends on your system. Build with `-DNDEBUG` and every assert is removed."
+    },
+    {
+      "id": "tests",
+      "kind": "text",
+      "title": "Choose good test cases",
+      "body": "Test a normal case, then the edges: zero, a negative number, the biggest and smallest allowed value. Bugs like to hide at the edges. Write the expected answer by hand first, not by running your code."
+    },
+    {
+      "id": "plan",
+      "kind": "example",
+      "title": "Test a function",
+      "body": "Test `twice`.",
+      "steps": [
+        "Normal: `twice(2)` should be 4",
+        "Zero: `twice(0)` should be 0",
+        "Negative: `twice(-3)` should be -6",
+        "Add one assert per case and run after every change"
+      ]
+    },
+    {
+      "id": "not-input",
+      "kind": "tip",
+      "body": "Use assert for your own mistakes, not for checking user input, which must always be handled."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What does `assert(x > 0)` do when `x` is 5?",
+      "choices": [
+        "Nothing, the program goes on",
+        "Prints 5",
+        "Stops the program"
+      ],
+      "answerIndex": 0,
+      "explanation": "A true assertion has no visible effect."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What happens when an assertion is false?",
+      "choices": [
+        "It silently continues",
+        "The program stops with a message",
+        "It fixes the value"
+      ],
+      "answerIndex": 1,
+      "explanation": "The message names the expression, the file and the line."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "`assert` is declared in the header \\_\\_.",
+      "choices": [
+        "`stdio.h`",
+        "`debug.h`",
+        "`assert.h`"
+      ],
+      "answerIndex": 2,
+      "explanation": "Include the header `assert.h` to use it."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "Which flag removes every assert from the build? Type it.",
+      "accepted": [
+        "-DNDEBUG",
+        "`-DNDEBUG`"
+      ],
+      "keypad": "full",
+      "explanation": "`-DNDEBUG` defines `NDEBUG`, so `assert` compiles to nothing."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which test is an edge case for `twice`?",
+      "choices": [
+        "`twice(0)`",
+        "`twice(2)`",
+        "`twice(10)`"
+      ],
+      "answerIndex": 0,
+      "explanation": "Zero sits at the boundary between positive and negative."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Where should you get the expected answers for your tests?",
+      "choices": [
+        "Run the code and copy its output",
+        "Work them out by hand first",
+        "Guess"
+      ],
+      "answerIndex": 1,
+      "explanation": "Copying the output only proves the code agrees with itself."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each test to what it checks.",
+      "pairs": [
+        [
+          "`twice(2)`",
+          "A normal case"
+        ],
+        [
+          "`twice(0)`",
+          "An edge case"
+        ],
+        [
+          "`twice(-3)`",
+          "A negative input"
+        ],
+        [
+          "`-DNDEBUG`",
+          "Turns asserts off"
+        ]
+      ],
+      "explanation": "Good tests cover normal, edge and odd inputs."
+    }
+  ]
+}

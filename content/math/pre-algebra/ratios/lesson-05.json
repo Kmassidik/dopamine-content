@@ -1,0 +1,140 @@
+{
+  "id": "pa-ratios-05",
+  "version": 2,
+  "title": "Percent change",
+  "xp": 10,
+  "tags": [
+    "percents",
+    "change"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "How much did it change?",
+      "body": "A price goes from 40 to 50. The change is 10, but is that big or small? Percent change compares the change with the starting amount. It tells you how large the change is relative to where you began."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "The formula",
+      "body": "$\\text{percent change}=\\dfrac{\\text{new}-\\text{old}}{\\text{old}}\\times 100\\%$. A positive result is an increase. A negative result is a decrease. Always divide by the old value, the one you started from."
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "From 40 to 50",
+      "body": "Find the percent change.",
+      "steps": [
+        "Change: $50-40=10$.",
+        "Divide by the old value: $10\\div 40=0.25$.",
+        "Multiply by 100: a 25% increase."
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "From 80 to 60",
+      "body": "The new value is smaller, so we expect a decrease.",
+      "steps": [
+        "Change: $60-80=-20$.",
+        "Divide by the old value: $-20\\div 80=-0.25$.",
+        "It is a 25% decrease."
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "text",
+      "title": "Up then down",
+      "body": "A 20% rise followed by a 20% fall does not bring you back. Start at 100. A 20% rise gives 120. A 20% fall is taken from 120: $120\\times 0.8=96$. The second change is from a different starting amount."
+    },
+    {
+      "id": "p6",
+      "kind": "tip",
+      "body": "Percent change is not symmetric. Going from 40 to 50 is up 25%, but going from 50 back to 40 is down 20%."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "A price rises from 40 to 50. What is the percent change?",
+      "choices": [
+        "10% increase",
+        "20% increase",
+        "25% increase"
+      ],
+      "answerIndex": 2,
+      "explanation": "The change is 10 and the old value is 40, so $10\\div 40=25\\%$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "A value drops from 80 to 60. By what percent did it fall?",
+      "accepted": [
+        "25",
+        "25%"
+      ],
+      "keypad": "numeric",
+      "explanation": "The change is 20 and the old value is 80, so $20\\div 80=0.25$, which is 25%."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "Percent change is divided by the \\_\\_ value.",
+      "choices": [
+        "old",
+        "new",
+        "larger"
+      ],
+      "answerIndex": 0,
+      "explanation": "The old value is the starting point, so the change is measured against it."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "A price of 100 rises 20%, then falls 20%. What is the final price?",
+      "choices": [
+        "100",
+        "96",
+        "104"
+      ],
+      "answerIndex": 1,
+      "explanation": "After the rise it is 120. A 20% fall of 120 is 24, so $120-24=96$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "A class grows from 20 to 24 students. What is the percent increase?",
+      "accepted": [
+        "20",
+        "20%"
+      ],
+      "keypad": "numeric",
+      "explanation": "The change is 4, and $4\\div 20=0.2$, which is 20%."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "A jacket costs 120 and then 90. What is the percent change?",
+      "choices": [
+        "25% decrease",
+        "30% decrease",
+        "33% decrease"
+      ],
+      "answerIndex": 0,
+      "explanation": "The change is $-30$, and $-30\\div 120=-0.25$."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Find the percent change from 40 to 50. Put the steps in order.",
+      "steps": [
+        "Subtract: $50-40=10$",
+        "Divide by the old value: $10\\div 40=0.25$",
+        "Multiply by 100 to get 25%"
+      ],
+      "explanation": "Change, divided by the old value, then convert to a percent."
+    }
+  ]
+}

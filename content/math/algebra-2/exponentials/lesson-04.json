@@ -1,0 +1,130 @@
+{
+  "id": "a2-exponentials-04",
+  "version": 2,
+  "title": "Properties of logarithms",
+  "xp": 18,
+  "tags": [
+    "algebra",
+    "logarithms"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Logs turn multiplying into adding",
+      "body": "Because logs are exponents, exponent rules become log rules. Product: $\\log_b(MN)=\\log_b M+\\log_b N$. Quotient: $\\log_b\\frac{M}{N}=\\log_b M-\\log_b N$. Power: $\\log_b(M^p)=p\\log_b M$."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Combine into one log",
+      "body": "Use the rules in either direction.",
+      "steps": [
+        "$\\log_2 40-\\log_2 5=\\log_2\\frac{40}{5}$",
+        "$=\\log_2 8=3$",
+        "Likewise $\\log 2+\\log 50=\\log 100=2$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Change of base",
+      "body": "A calculator may only have $\\log$ and $\\ln$. To reach any base, use $\\log_b x=\\frac{\\log x}{\\log b}$. So $\\log_2 5=\\frac{\\log 5}{\\log 2}\\approx 2.32$. Also beware: $\\log(a+b)$ is not $\\log a+\\log b$. There is no rule for a sum inside a log."
+    },
+    {
+      "id": "p4",
+      "kind": "tip",
+      "body": "Power rule example: $\\log_2 8^2=2\\log_2 8=2\\cdot 3=6$, and indeed $2^6=64=8^2$."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "$\\log 2+\\log 50=$ ? (base 10)",
+      "accepted": [
+        "2"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\log(2\\cdot 50)=\\log 100=2$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "$\\log_2 40-\\log_2 5=$ ?",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\log_2\\frac{40}{5}=\\log_2 8=3$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Use the power rule: $\\log_2(8^2)=$ ?",
+      "accepted": [
+        "6"
+      ],
+      "keypad": "numeric",
+      "explanation": "$2\\log_2 8=2\\cdot 3=6$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Condense $2\\log_3 x+\\log_3 5$.",
+      "choices": [
+        "$\\log_3(5x^2)$",
+        "$\\log_3(10x)$",
+        "$\\log_3(5x)^2$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Power rule: $2\\log_3 x=\\log_3 x^2$. Product rule then gives $\\log_3(5x^2)$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which statement is false?",
+      "choices": [
+        "$\\log(ab)=\\log a+\\log b$",
+        "$\\log\\frac{a}{b}=\\log a-\\log b$",
+        "$\\log(a+b)=\\log a+\\log b$"
+      ],
+      "answerIndex": 2,
+      "explanation": "There is no rule that splits a sum. Try $a=b=10$: $\\log 20\\ne 2$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Expand $\\log_b(x^3y)$.",
+      "choices": [
+        "$3\\log_b(x+y)$",
+        "$3\\log_b x+\\log_b y$",
+        "$\\log_b x^3\\cdot\\log_b y$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Product rule splits it into $\\log_b x^3+\\log_b y$, then the power rule brings down 3."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "Using change of base, $\\log_2 5\\approx$ ? (2 decimals)",
+      "accepted": [
+        "2.32"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac{\\log 5}{\\log 2}\\approx\\frac{0.699}{0.301}\\approx 2.32$."
+    },
+    {
+      "id": "q8",
+      "type": "fill_blank",
+      "prompt": "$\\log_b\\frac{M}{N}=\\log_b M\\ \\_\\_\\ \\log_b N$",
+      "choices": [
+        "$+$",
+        "$\\cdot$",
+        "$-$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Dividing inside the log subtracts the logs."
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "cm-pointers-05",
+  "version": 2,
+  "minApp": 2,
+  "title": "Strings as char pointers",
+  "xp": 15,
+  "tags": [
+    "c",
+    "pointers",
+    "strings"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "A string is a char array",
+      "body": "A C string is a row of `char` bytes ending with a 0 byte, written `'\\0'`. There is no string type. A `char *` pointing at the first letter is how code usually holds a string. Everything you learned about pointers applies."
+    },
+    {
+      "id": "walk",
+      "kind": "code",
+      "title": "Walking to the end",
+      "body": "This prints `5 5`. `p` moves one char at a time until it meets the 0 byte. The count and the pointer difference both give the length. The 0 byte is not counted, so the string uses 6 bytes.",
+      "code": "char *s = \"hello\";\nint len = 0;\nchar *p = s;\nwhile (*p != '\\0') {\n    p++;\n    len++;\n}\nprintf(\"%d %td\\n\", len, p - s);",
+      "language": "c"
+    },
+    {
+      "id": "ex-trace",
+      "kind": "example",
+      "title": "Tracing the loop",
+      "body": "The string is `\"hi\"`, stored as h, i, 0.",
+      "steps": [
+        "`p` starts at h, which is not 0, so `p++`, length 1",
+        "`p` is at i, not 0, so `p++`, length 2",
+        "`p` is at the 0 byte, so the loop stops",
+        "The length is 2"
+      ]
+    },
+    {
+      "id": "literal",
+      "kind": "text",
+      "title": "Literals are read-only",
+      "body": "`char *s = \"hello\";` points at text stored by the program. Changing it with `s[0] = 'J';` is undefined behavior and often crashes. To get a copy you may change, use an array: `char t[] = \"hello\";`. Then `t[0] = 'J';` is fine and gives `Jello`."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "`strlen` from `string.h` does the walk for you and does not count the 0 byte. For `\"hello\"` it returns 5, while `sizeof` of the array is 6."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What byte ends every C string?",
+      "choices": [
+        "0, written '\\0'",
+        "The letter z",
+        "A newline",
+        "A space"
+      ],
+      "answerIndex": 0,
+      "explanation": "The 0 byte tells code where the string stops.",
+      "id": "q1"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "How many bytes does the array holding `\"hello\"` use, including the end byte?",
+      "accepted": [
+        "6"
+      ],
+      "keypad": "numeric",
+      "explanation": "Five letters plus the 0 byte make 6.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "What does `strlen(\"hello\")` return?",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "`strlen` counts the letters before the 0 byte.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does `char *s = \"hello\";` store in `s`?",
+      "choices": [
+        "The address of the first letter",
+        "The five letters themselves",
+        "The length 5",
+        "A copy of the text"
+      ],
+      "answerIndex": 0,
+      "explanation": "`s` is a pointer to the first char.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "Changing text through `char *s = \"hello\";` is \\_\\_ behavior.",
+      "choices": [
+        "undefined",
+        "required",
+        "fast"
+      ],
+      "answerIndex": 0,
+      "explanation": "String literals should be treated as read-only.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which gives you text you can safely change?",
+      "choices": [
+        "`char t[] = \"hello\";`",
+        "`char *s = \"hello\";`",
+        "Both are always safe",
+        "Neither can be changed"
+      ],
+      "answerIndex": 0,
+      "explanation": "The array form makes your own writable copy of the bytes.",
+      "id": "q6"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put the steps of finding a string's length in order.",
+      "steps": [
+        "Point `p` at the first char",
+        "Check whether `*p` is the 0 byte",
+        "If not, move `p` forward and count 1",
+        "Stop at the 0 byte and report the count"
+      ],
+      "explanation": "Repeat the check and move steps until the 0 byte appears.",
+      "id": "q7"
+    }
+  ]
+}

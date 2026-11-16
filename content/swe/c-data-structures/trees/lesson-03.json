@@ -1,0 +1,130 @@
+{
+  "id": "cd-trees-03",
+  "version": 2,
+  "minApp": 2,
+  "title": "Searching and inserting",
+  "xp": 20,
+  "tags": [
+    "c",
+    "bst",
+    "recursion"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Recursion fits trees",
+      "body": "A tree is a node with smaller trees below it. So functions on trees are often recursive: handle the node, then call yourself on a subtree. The base case is NULL, an empty tree."
+    },
+    {
+      "id": "find",
+      "kind": "code",
+      "title": "Search",
+      "code": "int contains(tnode *t, int v) {\n    if (t == NULL)\n        return 0;\n    if (v == t->value)\n        return 1;\n    if (v < t->value)\n        return contains(t->left, v);\n    return contains(t->right, v);\n}",
+      "language": "c",
+      "body": "Returns 1 when v is found. Each call goes one level deeper in one direction only."
+    },
+    {
+      "id": "ins",
+      "kind": "code",
+      "title": "Insert",
+      "code": "tnode *insert(tnode *t, int v) {\n    if (t == NULL)\n        return new_node(v);\n    if (v < t->value)\n        t->left = insert(t->left, v);\n    else if (v > t->value)\n        t->right = insert(t->right, v);\n    return t;\n}",
+      "language": "c",
+      "body": "Returns the root of the tree. When it reaches NULL, it makes the new node there. Equal values are ignored."
+    },
+    {
+      "id": "ex-ins",
+      "kind": "example",
+      "title": "Inserting 6 into the tree",
+      "body": "The tree has 5, 3, 8, 1, 4.",
+      "steps": [
+        "6 is greater than 5, so go right to 8",
+        "6 is less than 8, so go left",
+        "8's left is NULL, so a new node 6 is created there",
+        "Each parent pointer is reassigned to itself, so the tree stays linked"
+      ]
+    },
+    {
+      "id": "shape",
+      "kind": "text",
+      "title": "Shape matters",
+      "body": "Searching takes a number of steps equal to the levels it passes. If values arrive already sorted, every insert goes right, and the tree becomes a chain as slow as a list. Random order usually gives a bushy tree."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What is the base case of the recursive search?",
+      "choices": [
+        "v equals 0",
+        "t is NULL",
+        "the tree has 5 nodes",
+        "t is the root"
+      ],
+      "answerIndex": 1,
+      "explanation": "An empty tree cannot contain anything, so the answer is 0.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Why does `insert` return the node pointer?",
+      "choices": [
+        "To free it",
+        "To print it",
+        "So the parent can store the possibly new child",
+        "Because void is not allowed"
+      ],
+      "answerIndex": 2,
+      "explanation": "If t was NULL, the new node must be attached by the caller: `t->left = insert(t->left, v)`.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "Insert 6 into the tree with 5, 3, 8, 1, 4. Which value is its parent?",
+      "accepted": [
+        "8"
+      ],
+      "keypad": "numeric",
+      "explanation": "6 goes right of 5, then left of 8, becoming 8's left child.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What do you get by inserting 1, 2, 3, 4, 5 in that order?",
+      "choices": [
+        "A balanced tree",
+        "A chain going left",
+        "Two equal branches",
+        "A chain going right"
+      ],
+      "answerIndex": 3,
+      "explanation": "Each value is larger than all before, so it always goes right.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "Searching a BST looks at one \\_\\_ per level.",
+      "choices": [
+        "node",
+        "leaf",
+        "tree",
+        "array"
+      ],
+      "answerIndex": 0,
+      "explanation": "At each node it compares once and moves to one child.",
+      "id": "q5"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Order the steps of `insert(t, v)` when t is not NULL.",
+      "steps": [
+        "Compare v with t->value",
+        "Choose the left or right child",
+        "Call insert on that child",
+        "Store the result in the child pointer"
+      ],
+      "explanation": "The recursion returns the subtree's root, which goes back into the child pointer.",
+      "id": "q6"
+    }
+  ]
+}

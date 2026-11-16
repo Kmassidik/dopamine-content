@@ -1,0 +1,154 @@
+{
+  "id": "cm-hex-04",
+  "version": 2,
+  "minApp": 2,
+  "title": "The address-of operator",
+  "xp": 15,
+  "tags": [
+    "c",
+    "address"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Asking where a variable lives",
+      "body": "Every variable sits somewhere in memory. In C you can ask for that location with the `&` operator. Writing `&n` means the address of `n`. It is not the value in `n`: it is where `n` is kept."
+    },
+    {
+      "id": "print",
+      "kind": "code",
+      "title": "Printing an address",
+      "body": "`%p` prints an address in hex and expects a `void *`, so we cast. The number you see is different on different machines and even between runs. Never rely on a specific address.",
+      "code": "int n = 7;\nprintf(\"%p\\n\", (void *)&n);",
+      "language": "c"
+    },
+    {
+      "id": "next",
+      "kind": "text",
+      "title": "Neighbours in memory",
+      "body": "Array items sit side by side. The address of `a[1]` is exactly one `int` after the address of `a[0]`, which is 4 bytes. For a `char` array it is just 1 byte. You can see this by subtracting the addresses."
+    },
+    {
+      "id": "diff",
+      "kind": "code",
+      "title": "Measuring the gap",
+      "body": "This prints 4, then 1. `uintptr_t` from `stdint.h` is an integer type big enough to hold an address, so we can subtract.",
+      "code": "int a[3] = {5, 6, 7};\nchar c[3] = {'x', 'y', 'z'};\nuintptr_t i0 = (uintptr_t)&a[0];\nuintptr_t i1 = (uintptr_t)&a[1];\nprintf(\"%ju\\n\", (uintmax_t)(i1 - i0));\nuintptr_t c0 = (uintptr_t)&c[0];\nuintptr_t c1 = (uintptr_t)&c[1];\nprintf(\"%ju\\n\", (uintmax_t)(c1 - c0));",
+      "language": "c"
+    },
+    {
+      "id": "ex-read",
+      "kind": "example",
+      "title": "Reading it back",
+      "body": "Use the output 4 and 1 from the program above.",
+      "steps": [
+        "Items of an `int` array are 4 bytes apart",
+        "Items of a `char` array are 1 byte apart",
+        "The gap equals the size of one item"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Do not print addresses in your tests and expect the same text. Use them to understand your program, not as stable values."
+    }
+  ],
+  "questions": [
+    {
+      "type": "fill_blank",
+      "prompt": "The \\_\\_ operator gives the address of a variable.",
+      "choices": [
+        "&",
+        "*",
+        "#"
+      ],
+      "answerIndex": 0,
+      "explanation": "`&n` is the address of `n`.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does `&n` mean?",
+      "choices": [
+        "The address of n",
+        "The value of n",
+        "n multiplied by itself",
+        "The size of n"
+      ],
+      "answerIndex": 0,
+      "explanation": "`&` asks where the variable is stored.",
+      "id": "q2"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Will `printf(\"%p\\n\", (void *)&n);` print the same address every run?",
+      "choices": [
+        "Not guaranteed, it can change",
+        "Always the same",
+        "Always 0x1000",
+        "Always 0"
+      ],
+      "answerIndex": 0,
+      "explanation": "The system may place variables in different spots, so never depend on an address.",
+      "id": "q3"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "`int a[3]` is stored in a row. How many bytes apart are `&a[0]` and `&a[1]`?",
+      "accepted": [
+        "4"
+      ],
+      "keypad": "numeric",
+      "explanation": "Each `int` is 4 bytes, so the next item starts 4 bytes later.",
+      "id": "q4"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "`char c[3]` is stored in a row. How many bytes apart are `&c[0]` and `&c[1]`?",
+      "accepted": [
+        "1"
+      ],
+      "keypad": "numeric",
+      "explanation": "A `char` is one byte.",
+      "id": "q5"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each piece to what it does.",
+      "pairs": [
+        [
+          "`&n`",
+          "address of n"
+        ],
+        [
+          "`n`",
+          "value stored in n"
+        ],
+        [
+          "`%p`",
+          "prints an address"
+        ],
+        [
+          "`uintptr_t`",
+          "integer big enough for an address"
+        ]
+      ],
+      "explanation": "These four pieces are the toolkit for looking at addresses.",
+      "id": "q6"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which lets you subtract two addresses as plain integers?",
+      "choices": [
+        "Cast both to `uintptr_t`",
+        "Add them first",
+        "Print them with `%d`",
+        "Use `&&`"
+      ],
+      "answerIndex": 0,
+      "explanation": "`uintptr_t` is made to hold an address as an integer.",
+      "id": "q7"
+    }
+  ]
+}

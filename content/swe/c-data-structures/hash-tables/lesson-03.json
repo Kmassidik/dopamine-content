@@ -1,0 +1,139 @@
+{
+  "id": "cd-hash-03",
+  "version": 2,
+  "minApp": 2,
+  "title": "Collisions",
+  "xp": 15,
+  "tags": [
+    "c",
+    "hash-table",
+    "collision"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Two keys, one slot",
+      "body": "A collision happens when two different keys hash to the same slot. They cannot be avoided: with more keys than slots, some slot must hold two. Even with fewer keys, collisions come sooner than you expect."
+    },
+    {
+      "id": "how",
+      "kind": "text",
+      "title": "Why sooner",
+      "body": "Think of 23 people in a room. The chance that two share a birthday among 365 days is about one half. Hash tables behave the same way, so any table must have a plan for collisions."
+    },
+    {
+      "id": "plans",
+      "kind": "text",
+      "title": "Two plans",
+      "body": "Open addressing keeps everything in the array. On a collision, try the next slot, and the next, until one is free. Separate chaining lets each slot hold a small list of items. The next lessons cover chaining in detail."
+    },
+    {
+      "id": "probe",
+      "kind": "code",
+      "title": "Linear probing",
+      "code": "int table[5] = {-1, -1, -1, -1, -1};\nint keys[] = {12, 22, 7};\nfor (int k = 0; k < 3; k++) {\n    int i = keys[k] % 5;\n    while (table[i] != -1)\n        i = (i + 1) % 5;\n    table[i] = keys[k];\n}\nfor (int i = 0; i < 5; i++)\n    printf(\"%d \", table[i]);\nprintf(\"\\n\");",
+      "language": "c",
+      "body": "Slots hold -1 when empty. Keys 12, 22 and 7 all hash to slot 2 with size 5, so two of them move on."
+    },
+    {
+      "id": "ex-probe",
+      "kind": "example",
+      "title": "Placing 22",
+      "body": "12 already sits in slot 2.",
+      "steps": [
+        "22 % 5 is 2, but slot 2 is taken",
+        "Try slot 3. It is empty, so 22 goes there",
+        "Then 7 % 5 is 2 as well, so it tries 2, 3, then 4"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What is a collision?",
+      "choices": [
+        "A key with no value",
+        "A table that is full",
+        "Two keys hashing to the same slot",
+        "A crash inside malloc"
+      ],
+      "answerIndex": 2,
+      "explanation": "Different keys can produce the same index.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Can collisions be avoided completely when there are more keys than slots?",
+      "choices": [
+        "Yes, with a better function",
+        "Yes, with a bigger int",
+        "Only on 64-bit machines",
+        "No"
+      ],
+      "answerIndex": 3,
+      "explanation": "With more keys than slots, at least two keys must share a slot.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "With size 5 the keys 12, 22 and 7 all start at which slot?",
+      "accepted": [
+        "2"
+      ],
+      "keypad": "numeric",
+      "explanation": "12 % 5, 22 % 5 and 7 % 5 all equal 2.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "In linear probing, a key finds its slot taken. What does it do?",
+      "choices": [
+        "Tries the next slot",
+        "Overwrites the old key",
+        "Is discarded",
+        "Doubles the table"
+      ],
+      "answerIndex": 0,
+      "explanation": "It moves forward one slot at a time, wrapping around at the end.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "Giving each slot its own list of items is called separate \\_\\_.",
+      "choices": [
+        "probing",
+        "chaining",
+        "hashing",
+        "sorting"
+      ],
+      "answerIndex": 1,
+      "explanation": "Each slot is the head of a chain of items.",
+      "id": "q5"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each plan to its idea.",
+      "pairs": [
+        [
+          "Linear probing",
+          "Try the next slot"
+        ],
+        [
+          "Separate chaining",
+          "A list in each slot"
+        ],
+        [
+          "Collision",
+          "Two keys, one slot"
+        ],
+        [
+          "Table size",
+          "Number of slots"
+        ]
+      ],
+      "explanation": "Both plans deal with collisions in different ways.",
+      "id": "q6"
+    }
+  ]
+}

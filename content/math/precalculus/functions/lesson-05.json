@@ -1,0 +1,166 @@
+{
+  "id": "pc-functions-05",
+  "version": 2,
+  "title": "Modeling with functions",
+  "xp": 20,
+  "tags": [
+    "precalculus",
+    "modeling"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Choose the family from the data",
+      "body": "Look at how the output changes when the input goes up by 1. A constant difference points to a linear model. A constant ratio points to an exponential model. A constant second difference points to a quadratic."
+    },
+    {
+      "id": "p1",
+      "kind": "example",
+      "title": "Linear or exponential?",
+      "body": "Data: $x=0,1,2,3$ gives $y=5,8,11,14$.",
+      "steps": [
+        "Differences: $3,3,3$, so it is linear",
+        "Slope 3 and start 5: $y=5+3x$",
+        "Predict $x=10$: $y=35$"
+      ]
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "An exponential table",
+      "body": "Data: $x=0,1,2,3$ gives $y=4,8,16,32$.",
+      "steps": [
+        "Ratios: $2,2,2$, so it is exponential",
+        "Start 4, factor 2: $y=4\\cdot 2^x$",
+        "Check $x=3$: $4\\cdot 8=32$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Use and question the model",
+      "body": "Squares $1,4,9,16$ have differences $3,5,7$ and second differences $2,2$, so they are quadratic. A model only works inside the range of its data. A tank cannot hold negative water, so always ask what the numbers mean."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Data: $y=7,10,13,16$ for $x=0,1,2,3$. Which model fits?",
+      "choices": [
+        "Exponential: $y=7\\cdot 3^x$",
+        "Quadratic",
+        "None",
+        "Linear: $y=7+3x$"
+      ],
+      "answerIndex": 3,
+      "explanation": "The differences are all 3, which means linear."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Data: $y=3,6,12,24$. Which model fits?",
+      "choices": [
+        "$y=3\\cdot 2^x$",
+        "$y=3+3x$",
+        "$y=3x^2$",
+        "$y=3\\cdot 3^x$"
+      ],
+      "answerIndex": 0,
+      "explanation": "The ratios are all 2, so each step doubles."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "A pool has 12 cm of water and gains 3 cm per hour. How many cm after 5 hours?",
+      "accepted": [
+        "27"
+      ],
+      "keypad": "numeric",
+      "explanation": "$12+3\\cdot 5=27$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "A tank holds 200 L and loses 10 percent each hour, $V=200(0.9)^t$. How many liters after 2 hours?",
+      "accepted": [
+        "162",
+        "162.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$200\\cdot 0.81=162$."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "A constant \\_\\_ between outputs suggests an exponential model.",
+      "choices": [
+        "difference",
+        "ratio",
+        "sum",
+        "product of inputs"
+      ],
+      "answerIndex": 1,
+      "explanation": "Multiplying by the same factor each step is exponential."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "The values $1,4,9,16$ have second differences of:",
+      "choices": [
+        "1 and 1",
+        "3 and 3",
+        "2 and 2",
+        "5 and 7"
+      ],
+      "answerIndex": 2,
+      "explanation": "First differences are $3,5,7$, and those differ by $2,2$. So it is quadratic."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match the pattern to the model.",
+      "pairs": [
+        [
+          "Same difference each step",
+          "linear"
+        ],
+        [
+          "Same ratio each step",
+          "exponential"
+        ],
+        [
+          "Same second difference",
+          "quadratic"
+        ]
+      ],
+      "explanation": "Each family has its own signature in the data."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "A model fitted to ages 10 to 20 predicts for age 90. What should you do?",
+      "choices": [
+        "Trust it fully",
+        "Round the answer",
+        "Use a different unit",
+        "Be cautious, it is far outside the data"
+      ],
+      "answerIndex": 3,
+      "explanation": "Predictions far outside the fitted range are unreliable."
+    },
+    {
+      "id": "q9",
+      "type": "order_steps",
+      "prompt": "Build a model from a table. Put the steps in order.",
+      "steps": [
+        "Compute differences and ratios",
+        "Choose the family that matches",
+        "Find the constants from the data",
+        "Check against a data point"
+      ],
+      "explanation": "Look at the pattern first, then fit and check."
+    }
+  ]
+}

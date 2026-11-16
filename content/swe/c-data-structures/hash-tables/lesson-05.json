@@ -1,0 +1,169 @@
+{
+  "id": "cd-hash-05",
+  "version": 2,
+  "minApp": 2,
+  "title": "Building a hash table in C",
+  "xp": 25,
+  "tags": [
+    "c",
+    "hash-table",
+    "project"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "String keys, int values",
+      "body": "Now we build a small table that maps a word to a number. The pieces: an entry type, the hash from earlier, `put` to store, `get` to look up, and a way to free everything. The table has 8 slots."
+    },
+    {
+      "id": "types",
+      "kind": "code",
+      "title": "The entry and the table",
+      "code": "#define SIZE 8\ntypedef struct entry {\n    char *key;\n    int value;\n    struct entry *next;\n} entry;\nentry *table[SIZE];",
+      "language": "c",
+      "body": "Each entry owns a copy of its key. The global array starts all NULL."
+    },
+    {
+      "id": "hash",
+      "kind": "code",
+      "title": "The hash function",
+      "code": "unsigned hash(const char *s) {\n    unsigned h = 0;\n    for (; *s; s++)\n        h = h * 31 + (unsigned char)*s;\n    return h % SIZE;\n}",
+      "language": "c",
+      "body": "The multiplier hash again. The result is always from 0 to 7."
+    },
+    {
+      "id": "put",
+      "kind": "code",
+      "title": "Storing a pair",
+      "code": "void put(const char *k, int v) {\n    entry *e = malloc(sizeof *e);\n    e->key = malloc(strlen(k) + 1);\n    strcpy(e->key, k);\n    e->value = v;\n    unsigned i = hash(k);\n    e->next = table[i];\n    table[i] = e;\n}",
+      "language": "c",
+      "body": "The key is copied with malloc and strcpy, so the table does not depend on the caller's string. NULL checks are left out here."
+    },
+    {
+      "id": "get",
+      "kind": "code",
+      "title": "Looking up",
+      "code": "int get(const char *k, int *out) {\n    entry *e = table[hash(k)];\n    for (; e; e = e->next)\n        if (strcmp(e->key, k) == 0) {\n            *out = e->value;\n            return 1;\n        }\n    return 0;\n}",
+      "language": "c",
+      "body": "Returns 1 and fills `*out` when found, or returns 0 when the key is missing."
+    },
+    {
+      "id": "ex-run",
+      "kind": "example",
+      "title": "Four puts, then gets",
+      "body": "Keys cat, act, tac and pear are stored in that order.",
+      "steps": [
+        "cat, tac and pear all hash to slot 6, and act to slot 2",
+        "Slot 6 becomes a chain of three, with pear first",
+        "`get(\"tac\", &v)` walks that chain with `strcmp` and finds 3",
+        "`get(\"dog\", &v)` finds nothing and returns 0"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Free every key and every entry when done: walk each slot, save next, free the key, then free the entry. Putting the same key twice adds a second entry, and get finds the newer one first."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "Why does `put` copy the key with malloc and strcpy?",
+      "choices": [
+        "strcmp needs it",
+        "To make the hash faster",
+        "Keys must be uppercase",
+        "So the table owns its own copy"
+      ],
+      "answerIndex": 3,
+      "explanation": "If the table stored the caller's pointer, the string could change or vanish later.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does `get` return when the key is missing?",
+      "choices": [
+        "0",
+        "1",
+        "NULL pointer to a node",
+        "The last value stored"
+      ],
+      "answerIndex": 0,
+      "explanation": "It returns 1 for found and 0 for missing, with the value delivered through `out`.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "With size 8, the hash of pear is 6. What slot does the word pear use?",
+      "accepted": [
+        "6"
+      ],
+      "keypad": "numeric",
+      "explanation": "The final `% SIZE` makes the slot 6.",
+      "id": "q3"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "To compare two C strings for equality, use \\_\\_.",
+      "choices": [
+        "==",
+        "strcmp",
+        "strlen",
+        "strcpy"
+      ],
+      "answerIndex": 1,
+      "explanation": "`==` compares addresses. strcmp returns 0 when the characters match.",
+      "id": "q4"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "To free the table, which must be freed for each entry?",
+      "choices": [
+        "Only the entry",
+        "Only the key",
+        "The key copy and the entry",
+        "Only the table array"
+      ],
+      "answerIndex": 2,
+      "explanation": "The key was allocated separately from the entry, so it needs its own free.",
+      "id": "q5"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Order the steps of `get`.",
+      "steps": [
+        "Hash the key to find a slot",
+        "Start at that slot's first entry",
+        "Compare each entry's key with strcmp",
+        "Return the value or report missing"
+      ],
+      "explanation": "Hash first, then walk only that chain.",
+      "id": "q6"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each function to its job.",
+      "pairs": [
+        [
+          "hash",
+          "Turns a key into a slot"
+        ],
+        [
+          "put",
+          "Adds a pair at the front of a chain"
+        ],
+        [
+          "get",
+          "Walks a chain to find a key"
+        ],
+        [
+          "free_table",
+          "Releases every key and entry"
+        ]
+      ],
+      "explanation": "Together these four make a working table.",
+      "id": "q7"
+    }
+  ]
+}

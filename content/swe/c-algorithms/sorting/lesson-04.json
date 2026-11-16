@@ -1,0 +1,136 @@
+{
+  "id": "cg-sort-04",
+  "version": 2,
+  "minApp": 2,
+  "title": "The idea of merge sort",
+  "xp": 15,
+  "tags": [
+    "c",
+    "sorting",
+    "merge-sort"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Divide, sort, combine",
+      "body": "The three sorts so far are all $O(n^2)$ in the worst case. Merge sort does better with a different idea. Split the array in half, sort each half, then merge the two sorted halves into one sorted array."
+    },
+    {
+      "id": "merge",
+      "kind": "text",
+      "title": "Merging is easy",
+      "body": "Merging two sorted lists is cheap. Look at the front item of each list and take the smaller one. Repeat. For {1, 4, 7} and {2, 3, 9} you take 1, 2, 3, 4, 7 and then 9. One pass, no backtracking."
+    },
+    {
+      "id": "split",
+      "kind": "example",
+      "title": "Splitting 8 items",
+      "body": "Keep halving until each piece has 1 item. A single item is already sorted.",
+      "steps": [
+        "8 items split into 4 and 4",
+        "Each 4 splits into 2 and 2, so we have four pieces of 2",
+        "Each 2 splits into 1 and 1, giving eight pieces of 1",
+        "That is 3 levels of splitting. Then merge back up, level by level"
+      ]
+    },
+    {
+      "id": "cost",
+      "kind": "text",
+      "title": "Why it is fast",
+      "body": "Splitting n items in half reaches single items after about $\\log n$ levels. Merging at each level touches every item once, which is about n work. Total: $n \\cdot \\log n$ steps. For n = 8 that is 8 times 3 = 24."
+    },
+    {
+      "id": "scale",
+      "kind": "text",
+      "title": "How big is the saving",
+      "body": "For n = 1024, $n \\log_2 n$ is 1024 times 10, which is 10,240 steps. Compare that with $n^2$, which is 1,048,576. Merge sort is about 100 times less work at that size. The gap keeps widening as n grows."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Merge sort sorts by solving a smaller version of the same problem. The next unit explores that idea, called recursion."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What are the three parts of merge sort?",
+      "choices": [
+        "Split, sort each half, merge",
+        "Compare, swap, repeat",
+        "Search, halve, return"
+      ],
+      "answerIndex": 0,
+      "explanation": "It divides the problem, solves the halves and combines the answers.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Merging {1, 4, 7} and {2, 3, 9}. Which item is taken first?",
+      "choices": [
+        "1",
+        "2",
+        "4"
+      ],
+      "answerIndex": 0,
+      "explanation": "Compare the fronts 1 and 2 and take the smaller, 1.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "How many levels of splitting does an array of 8 items need to reach single items?",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "8 becomes 4, then 2, then 1. That is 3 halvings.",
+      "id": "q3"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "Merge sort takes about $n \\log n$ steps, which is far fewer than \\_\\_ for large n.",
+      "choices": [
+        "$n^2$",
+        "$n$",
+        "$\\log n$"
+      ],
+      "answerIndex": 0,
+      "explanation": "The quadratic sorts do work that grows like $n^2$.",
+      "id": "q4"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "For n = 8, how many steps is $n \\log_2 n$?",
+      "accepted": [
+        "24"
+      ],
+      "keypad": "numeric",
+      "explanation": "log base 2 of 8 is 3, and 8 times 3 is 24.",
+      "id": "q5"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put the merge sort stages in order.",
+      "steps": [
+        "Split the array in half",
+        "Sort each half",
+        "Merge the sorted halves into one"
+      ],
+      "explanation": "The halves must be sorted before they can be merged.",
+      "id": "q6"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Why is merging two sorted lists quick?",
+      "choices": [
+        "Only the front items need comparing",
+        "It sorts each list again",
+        "It uses nested loops"
+      ],
+      "answerIndex": 0,
+      "explanation": "The smallest remaining item is always at the front of one of the two lists.",
+      "id": "q7"
+    }
+  ]
+}

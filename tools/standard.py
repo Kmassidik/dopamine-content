@@ -11,6 +11,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+CONTENT = ROOT / "content"
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import svgcheck  # noqa: E402
 
@@ -295,7 +296,7 @@ def check_course(rep, course, lessons_by_unit):
             rep.fail("UNIT-SIZE", f"{where} unit {unit['id']}", f"needs {a} to {b} lessons, has {n}")
 
 
-def run(root: Path = ROOT) -> list:
+def run(root: Path = CONTENT) -> list:
     rep = Report()
     catalog = json.loads((root / "catalog.json").read_text(encoding="utf-8"))
     for course in catalog["courses"]:

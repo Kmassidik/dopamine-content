@@ -1,0 +1,134 @@
+{
+  "id": "a2-polynomials-04",
+  "version": 2,
+  "title": "Complex numbers",
+  "xp": 18,
+  "tags": [
+    "algebra",
+    "complex"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "A number for $\\sqrt{-1}$",
+      "body": "No real number squares to $-1$, so we define one: $i=\\sqrt{-1}$, with $i^2=-1$. A complex number looks like $a+bi$, with a real part $a$ and an imaginary part $b$. For example $\\sqrt{-9}=3i$."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Add and multiply",
+      "body": "Treat $i$ like a variable, then replace $i^2$ with $-1$.",
+      "steps": [
+        "$(3+2i)+(1-4i)=4-2i$",
+        "$(2+3i)(1-i)=2-2i+3i-3i^2$",
+        "$i^2=-1$, so $-3i^2=+3$",
+        "Total: $5+i$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Conjugates and division",
+      "body": "The conjugate of $a+bi$ is $a-bi$. Multiplying them gives a real number: $(3+2i)(3-2i)=9+4=13$. To divide, multiply top and bottom by the conjugate of the bottom. The modulus $|a+bi|=\\sqrt{a^2+b^2}$ is the distance from 0, so $|3+4i|=5$."
+    },
+    {
+      "id": "p4",
+      "kind": "tip",
+      "body": "Powers of $i$ repeat every 4: $i,\\ -1,\\ -i,\\ 1$. Divide the exponent by 4 and use the remainder."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is $\\sqrt{-25}$?",
+      "choices": [
+        "$-5$",
+        "$25i$",
+        "$5i$"
+      ],
+      "answerIndex": 2,
+      "explanation": "$\\sqrt{-25}=\\sqrt{25}\\cdot\\sqrt{-1}=5i$."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What is $(3+2i)+(1-4i)$?",
+      "choices": [
+        "$4+6i$",
+        "$4-2i$",
+        "$2-2i$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Add the real parts $3+1=4$ and the imaginary parts $2-4=-2$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "What is $(2+3i)(1-i)$?",
+      "choices": [
+        "$5+i$",
+        "$-1+i$",
+        "$2-3i$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$2-2i+3i-3i^2=2+i+3=5+i$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "$i^{10}=$ ?",
+      "accepted": [
+        "-1",
+        "−1"
+      ],
+      "keypad": "numeric",
+      "explanation": "10 divided by 4 leaves remainder 2, and $i^2=-1$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "$(4+i)(4-i)=$ ?",
+      "accepted": [
+        "17"
+      ],
+      "keypad": "numeric",
+      "explanation": "A number times its conjugate is $a^2+b^2=16+1=17$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "$|6+8i|=$ ?",
+      "accepted": [
+        "10"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\sqrt{36+64}=\\sqrt{100}=10$."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "What is $i^{27}$?",
+      "choices": [
+        "$i$",
+        "$-1$",
+        "$-i$"
+      ],
+      "answerIndex": 2,
+      "explanation": "27 leaves remainder 3 when divided by 4, and $i^3=-i$."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "What is $\\frac{1+2i}{3-i}$?",
+      "choices": [
+        "$\\frac{1-7i}{10}$",
+        "$\\frac{1+7i}{10}$",
+        "$\\frac{3+2i}{4}$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Multiply top and bottom by $3+i$: top $1+7i$, bottom $9+1=10$."
+    }
+  ]
+}

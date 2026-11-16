@@ -1,0 +1,141 @@
+{
+  "id": "pa-ratios-04",
+  "version": 2,
+  "title": "Scale drawings and maps",
+  "xp": 10,
+  "tags": [
+    "scale",
+    "maps"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "What a scale means",
+      "body": "A scale drawing is a smaller (or larger) copy of something real. The scale gives the proportion. On a map with scale $1\\text{ cm}:5\\text{ km}$, every centimetre on paper stands for 5 kilometres on the ground."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Find a real distance",
+      "body": "Two towns are 4.5 cm apart on the map. The scale is $1\\text{ cm}:5\\text{ km}$.",
+      "steps": [
+        "Each centimetre is 5 km.",
+        "Multiply: $4.5\\times 5=22.5$.",
+        "The towns are 22.5 km apart."
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Find a drawing length",
+      "body": "A road is 35 km long. How long is it on the same map?",
+      "steps": [
+        "Divide by the scale: $35\\div 5$.",
+        "$35\\div 5=7$.",
+        "The road is 7 cm on the map."
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "text",
+      "title": "Scales without units",
+      "body": "A scale like $1:50$ has no units, so both sides can be any matching unit. A model at $1:50$ is 50 times smaller. A real length of 3 m is 300 cm, and $300\\div 50=6$ cm on the model."
+    },
+    {
+      "id": "p5",
+      "kind": "tip",
+      "body": "Convert to a single unit before you scale. 1 m is 100 cm and 1 km is 1000 m."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "The scale is $1\\text{ cm}:5\\text{ km}$. What does 1 cm represent?",
+      "choices": [
+        "1 km",
+        "5 cm",
+        "5 km"
+      ],
+      "answerIndex": 2,
+      "explanation": "The first number is the drawing, the second is real life, so 1 cm is 5 km."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "The scale is $1\\text{ cm}:5\\text{ km}$. Two towns are 4.5 cm apart. How many km apart are they?",
+      "accepted": [
+        "22.5"
+      ],
+      "keypad": "numeric",
+      "explanation": "$4.5\\times 5=22.5$ km."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "The scale is $1\\text{ cm}:5\\text{ km}$. A road is 35 km. How many cm on the map?",
+      "accepted": [
+        "7"
+      ],
+      "keypad": "numeric",
+      "explanation": "$35\\div 5=7$ cm."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "To find a real length from a drawing, \\_\\_ by the scale factor.",
+      "choices": [
+        "divide",
+        "multiply",
+        "add"
+      ],
+      "answerIndex": 1,
+      "explanation": "The drawing is smaller than reality, so multiply to get back to the real size."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "A model is built at scale $1:50$. A real wall is 3 m long. How long is it on the model?",
+      "choices": [
+        "6 cm",
+        "150 cm",
+        "6 m"
+      ],
+      "answerIndex": 0,
+      "explanation": "3 m is 300 cm, and $300\\div 50=6$ cm."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "On a floor plan, 1 cm is 2 m. A room is 8 m wide. How wide is it on the plan?",
+      "choices": [
+        "16 cm",
+        "6 cm",
+        "4 cm"
+      ],
+      "answerIndex": 2,
+      "explanation": "$8\\div 2=4$ cm."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each scale and drawing length with the real length.",
+      "pairs": [
+        [
+          "1 cm : 10 km, 3 cm",
+          "30 km"
+        ],
+        [
+          "1 cm : 2 m, 6 cm",
+          "12 m"
+        ],
+        [
+          "1 cm : 100 km, 2.5 cm",
+          "250 km"
+        ]
+      ],
+      "explanation": "Multiply the drawing length by the number of real units per centimetre."
+    }
+  ]
+}

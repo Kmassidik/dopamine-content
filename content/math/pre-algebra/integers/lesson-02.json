@@ -1,0 +1,135 @@
+{
+  "id": "pa-integers-02",
+  "version": 2,
+  "title": "Adding and subtracting integers",
+  "xp": 10,
+  "tags": [
+    "integers",
+    "addition"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Moving on the number line",
+      "body": "Adding a positive number moves you right. Adding a negative number moves you left. Start at 2 and add $-5$: you move 5 steps left and land on $-3$. So $2+(-5)=-3$."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "Same signs, different signs",
+      "body": "Same signs: add the sizes and keep the sign, so $-3+(-5)=-8$. Different signs: subtract the smaller size from the larger and keep the sign of the larger one, so $7+(-10)=-3$ (10 is bigger, and it is negative)."
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Subtracting is adding the opposite",
+      "body": "To subtract a number, add its opposite instead. $4-(-6)$ becomes $4+6=10$. And $-2-5$ becomes $-2+(-5)=-7$. This one trick turns every subtraction into an addition."
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Work out $-4-(-7)$",
+      "body": "Turn the subtraction into an addition, then use the sign rules.",
+      "steps": [
+        "Add the opposite: $-4+7$.",
+        "Different signs, so subtract the sizes: $7-4=3$.",
+        "The larger size (7) is positive, so the answer is $3$."
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "tip",
+      "body": "Two minus signs in a row make a plus. $5-(-2)$ is the same as $5+2$."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is $-3+(-5)$?",
+      "choices": [
+        "$8$",
+        "$-2$",
+        "$-8$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Same signs: add the sizes, 3 and 5 make 8, and keep the minus sign."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "What is $5-8$?",
+      "accepted": [
+        "-3"
+      ],
+      "keypad": "numeric",
+      "explanation": "$5-8=5+(-8)$. Different signs, so $8-5=3$, and the larger size is negative: $-3$."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "$4-(-6)=4+\\_\\_$",
+      "choices": [
+        "$-6$",
+        "$4$",
+        "$6$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Subtracting $-6$ is the same as adding its opposite, $6$. So $4+6=10$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "What is $-12+(-8)$?",
+      "accepted": [
+        "-20"
+      ],
+      "keypad": "numeric",
+      "explanation": "Same signs: $12+8=20$, and both are negative, so $-20$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What is $-4-(-7)$?",
+      "choices": [
+        "$3$",
+        "$-11$",
+        "$-3$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$-4-(-7)=-4+7=3$."
+    },
+    {
+      "id": "q6",
+      "type": "match_pairs",
+      "prompt": "Match each sum with its value.",
+      "pairs": [
+        [
+          "$-6+9$",
+          "3"
+        ],
+        [
+          "$7+(-10)$",
+          "-3"
+        ],
+        [
+          "$-2-5$",
+          "-7"
+        ]
+      ],
+      "explanation": "Check the signs first. Same signs add the sizes; different signs subtract them."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Work out $8-(-3)$. Put the steps in order.",
+      "steps": [
+        "Rewrite subtraction as adding the opposite",
+        "Write $8+3$",
+        "Add to get 11"
+      ],
+      "explanation": "Subtracting a negative is the same as adding a positive."
+    }
+  ]
+}

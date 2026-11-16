@@ -1,0 +1,133 @@
+{
+  "id": "cg-search-01",
+  "version": 2,
+  "minApp": 2,
+  "title": "Linear search",
+  "xp": 15,
+  "tags": [
+    "c",
+    "searching"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Look at every item",
+      "body": "Searching means finding where a value sits in a collection, or learning that it is not there. The simplest way is linear search: start at the first item and check each one in turn until you find it or run out."
+    },
+    {
+      "id": "lin",
+      "kind": "code",
+      "title": "Linear search in C",
+      "body": "It returns the index of the target, or -1 when the target is missing. An index is never negative, so -1 is a safe signal for not found.",
+      "code": "int linear(int a[], int n, int t) {\n    for (int i = 0; i < n; i++) {\n        if (a[i] == t) {\n            return i;\n        }\n    }\n    return -1;\n}",
+      "language": "c"
+    },
+    {
+      "id": "run",
+      "kind": "example",
+      "title": "Searching {7, 3, 9, 1, 5} for 5",
+      "body": "Call `linear(a, 5, 5)`.",
+      "steps": [
+        "`i` is 0: 7 is not 5, move on",
+        "`i` is 1, 2 and 3: 3, 9 and 1 are not 5",
+        "`i` is 4: `a[4]` is 5, so return 4",
+        "Searching for 4 would check all five items and return -1"
+      ]
+    },
+    {
+      "id": "cost",
+      "kind": "text",
+      "title": "What it costs",
+      "body": "In the worst case linear search checks all n items, so it is $O(n)$. In the best case the target is first, so it is $O(1)$. It works on any array, sorted or not, and that is its strength."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Return inside the loop as soon as you find the target. Do not report -1 until the whole loop has finished."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What does `linear` return when the target is not in the array?",
+      "choices": [
+        "-1",
+        "0",
+        "`n`"
+      ],
+      "answerIndex": 0,
+      "explanation": "-1 can never be a valid index, so it signals not found. 0 would look like the first item.",
+      "id": "q1"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "`a = {7, 3, 9, 1, 5}`. What does `linear(a, 5, 9)` return?",
+      "accepted": [
+        "2"
+      ],
+      "keypad": "numeric",
+      "explanation": "9 sits at index 2, counting from 0.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "`a = {7, 3, 9, 1, 5}`. What does `linear(a, 5, 4)` return?",
+      "accepted": [
+        "-1"
+      ],
+      "keypad": "numeric",
+      "explanation": "4 is not in the array, so the loop ends and the function returns -1.",
+      "id": "q3"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "In the worst case linear search makes \\_\\_ comparisons for n items.",
+      "choices": [
+        "$n$",
+        "1",
+        "$\\log n$"
+      ],
+      "answerIndex": 0,
+      "explanation": "It might have to look at every item.",
+      "id": "q4"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Does linear search need the array to be sorted?",
+      "choices": [
+        "No, it works on any order",
+        "Yes, always",
+        "Only for numbers"
+      ],
+      "answerIndex": 0,
+      "explanation": "It checks items one by one, so the order does not matter.",
+      "id": "q5"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put the steps of linear search in order.",
+      "steps": [
+        "Start at index 0",
+        "Compare the item with the target",
+        "If equal, return the index",
+        "Move to the next index",
+        "After the last item, return -1"
+      ],
+      "explanation": "Check each item, stop on a match, and only give up at the end.",
+      "id": "q6"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "If the target is the first item, how many comparisons does linear search make?",
+      "choices": [
+        "1",
+        "n",
+        "$\\log n$"
+      ],
+      "answerIndex": 0,
+      "explanation": "It stops straight away. That is the best case.",
+      "id": "q7"
+    }
+  ]
+}

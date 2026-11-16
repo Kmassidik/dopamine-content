@@ -1,0 +1,149 @@
+{
+  "id": "cm-files-01",
+  "version": 2,
+  "minApp": 2,
+  "title": "Structs",
+  "xp": 15,
+  "tags": [
+    "c",
+    "structs"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Grouping values",
+      "body": "So far each variable held one value. A struct groups several values, called fields, into one new type. A point has an x and a y, a person has a name and an age. The fields sit next to each other in memory."
+    },
+    {
+      "id": "def",
+      "kind": "code",
+      "title": "Defining and copying",
+      "body": "This prints `3 4` and then `3 9`. A dot reaches a field. Assigning `b = a` copies every field, so changing `b.y` leaves `a` alone.",
+      "code": "struct point {\n    int x;\n    int y;\n};\nstruct point a = {3, 4};\nstruct point b = a;\nb.y = 9;\nprintf(\"%d %d\\n\", a.x, a.y);\nprintf(\"%d %d\\n\", b.x, b.y);",
+      "language": "c"
+    },
+    {
+      "id": "arrow",
+      "kind": "code",
+      "title": "Through a pointer",
+      "body": "With a pointer to a struct, use the arrow `->`. `p->x` means `(*p).x`. This function changes the caller's struct, so calling `shift(&a)` makes `a.x` 13.",
+      "code": "void shift(struct point *p) {\n    p->x += 10;\n}\n// in main, a is {3, 4}\nshift(&a);\nprintf(\"%d\\n\", a.x);",
+      "language": "c"
+    },
+    {
+      "id": "ex-size",
+      "kind": "example",
+      "title": "Size of a struct",
+      "body": "`struct point` holds two ints. How big is it here?",
+      "steps": [
+        "One `int` is 4 bytes",
+        "Two fields: 4 + 4",
+        "`sizeof a` printed 8 on our platform",
+        "Some structs get padding bytes, so use `sizeof`"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Passing a struct to a function copies all of it. Passing a pointer copies only the address, which is cheaper for big structs."
+    }
+  ],
+  "questions": [
+    {
+      "type": "fill_blank",
+      "prompt": "Use the \\_\\_ operator to reach a field of a struct variable.",
+      "choices": [
+        "dot (.)",
+        "star (*)",
+        "ampersand (&)"
+      ],
+      "answerIndex": 0,
+      "explanation": "`a.x` reads the field x of the struct variable a.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which reaches a field through a pointer `p`?",
+      "choices": [
+        "`p->x`",
+        "`p.x`",
+        "`*p->x`",
+        "`p&x`"
+      ],
+      "answerIndex": 0,
+      "explanation": "The arrow follows the pointer and picks the field.",
+      "id": "q2"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "`struct point b = a;` then `b.y = 9;`. What happens to `a.y`?",
+      "choices": [
+        "It stays 4",
+        "It becomes 9",
+        "It becomes 0",
+        "It is undefined"
+      ],
+      "answerIndex": 0,
+      "explanation": "`b` is a separate copy, so a is unchanged.",
+      "id": "q3"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "`struct point` has two ints. How many bytes is it on our platform?",
+      "accepted": [
+        "8"
+      ],
+      "keypad": "numeric",
+      "explanation": "4 + 4 = 8 bytes.",
+      "id": "q4"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "`a.x` is 3 and we call `shift(&a)` which adds 10. What is `a.x`?",
+      "accepted": [
+        "13"
+      ],
+      "keypad": "numeric",
+      "explanation": "The function changes the caller's struct through the pointer.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What is `p->x` the same as?",
+      "choices": [
+        "`(*p).x`",
+        "`*(p.x)`",
+        "`&p.x`",
+        "`p * x`"
+      ],
+      "answerIndex": 0,
+      "explanation": "Dereference the pointer first, then pick the field.",
+      "id": "q6"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each piece to its meaning.",
+      "pairs": [
+        [
+          "`struct`",
+          "groups fields into one type"
+        ],
+        [
+          "`a.x`",
+          "field of a variable"
+        ],
+        [
+          "`p->x`",
+          "field through a pointer"
+        ],
+        [
+          "`b = a`",
+          "copies all fields"
+        ]
+      ],
+      "explanation": "Structs act like single values with parts inside.",
+      "id": "q7"
+    }
+  ]
+}

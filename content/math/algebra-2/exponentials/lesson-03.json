@@ -1,0 +1,145 @@
+{
+  "id": "a2-exponentials-03",
+  "version": 2,
+  "title": "Logarithms",
+  "xp": 18,
+  "tags": [
+    "algebra",
+    "logarithms"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "The question a log asks",
+      "body": "A logarithm is the inverse of an exponential. $\\log_b x=y$ means $b^y=x$. It asks: what power of $b$ gives $x$? For example $\\log_2 8=3$ because $2^3=8$."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Evaluate three logs",
+      "body": "Rewrite each as a power question.",
+      "steps": [
+        "$\\log_{10}1000=3$ since $10^3=1000$",
+        "$\\log_5\\frac{1}{25}=-2$ since $5^{-2}=\\frac{1}{25}$",
+        "$\\log_9 3=\\frac{1}{2}$ since $9^{1/2}=3$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Special values",
+      "body": "$\\log_b 1=0$ because $b^0=1$. $\\log_b b=1$ because $b^1=b$. The natural log $\\ln x$ is $\\log_e x$. The common log $\\log x$ means base 10. You can only take the log of a positive number, since $b^y$ is never zero or negative."
+    },
+    {
+      "id": "p4",
+      "kind": "tip",
+      "body": "When stuck, convert: $\\log_b x=y$ and $b^y=x$ are the same fact written two ways."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "$\\log_2 32=$ ?",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "$2^5=32$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "$\\log_3 81=$ ?",
+      "accepted": [
+        "4"
+      ],
+      "keypad": "numeric",
+      "explanation": "$3^4=81$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "$\\log_{10}0.01=$ ?",
+      "accepted": [
+        "-2",
+        "−2"
+      ],
+      "keypad": "numeric",
+      "explanation": "$10^{-2}=0.01$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What is $\\log_4 2$?",
+      "choices": [
+        "$2$",
+        "$8$",
+        "$\\frac{1}{2}$"
+      ],
+      "answerIndex": 2,
+      "explanation": "$4^{1/2}=2$, so the power is $\\frac{1}{2}$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Write $5^3=125$ as a logarithm.",
+      "choices": [
+        "$\\log_3 125=5$",
+        "$\\log_5 125=3$",
+        "$\\log_{125}5=3$"
+      ],
+      "answerIndex": 1,
+      "explanation": "The base 5 stays the base, the power 3 is the answer, and 125 goes inside."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "$\\log_b 1=\\_\\_$",
+      "choices": [
+        "$0$",
+        "$1$",
+        "$b$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$b^0=1$ for any base, so the log is 0."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Why is $\\log_2(-4)$ undefined?",
+      "choices": [
+        "Because 4 is not a power of 2",
+        "Because the base is too small",
+        "No power of 2 gives a negative number"
+      ],
+      "answerIndex": 2,
+      "explanation": "$2^y$ is always positive, so no $y$ gives $-4$."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each log to its value.",
+      "pairs": [
+        [
+          "$\\log_2 8$",
+          "$3$"
+        ],
+        [
+          "$\\log_5 25$",
+          "$2$"
+        ],
+        [
+          "$\\log_{10}0.1$",
+          "$-1$"
+        ],
+        [
+          "$\\ln e$",
+          "$1$"
+        ]
+      ],
+      "explanation": "$2^3=8$, $5^2=25$, $10^{-1}=0.1$ and $e^1=e$."
+    }
+  ]
+}

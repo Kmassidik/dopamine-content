@@ -1,0 +1,132 @@
+{
+  "id": "geo-triangles-05",
+  "version": 2,
+  "title": "The Pythagorean theorem",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "triangles",
+    "pythagoras"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "A rule for right triangles",
+      "body": "In a right triangle the two sides that meet at the right angle are the legs. The side across from the right angle, and the longest one, is the hypotenuse. One equation connects all three sides."
+    },
+    {
+      "id": "theorem",
+      "kind": "text",
+      "title": "The theorem",
+      "body": "If the legs are $a$ and $b$ and the hypotenuse is $c$, then $a^2+b^2=c^2$. The triangle shown has legs 3 and 4: $9+16=25$, so $c=5$. It works only for right triangles.",
+      "image": "content/images/geo-right-triangle.svg",
+      "alt": "A right triangle with a short vertical leg labelled a equals 3, a horizontal leg labelled b equals 4, and the slanted side labelled c."
+    },
+    {
+      "id": "solve",
+      "kind": "example",
+      "title": "Find a side",
+      "body": "Use $a^2+b^2=c^2$.",
+      "steps": [
+        "Legs 6 and 8: $c^2=36+64=100$, so $c=10$.",
+        "Hypotenuse 13, leg 5: $b^2=169-25=144$, so $b=12$.",
+        "Legs 1 and 1: $c^2=2$, so $c=\\sqrt{2}\\approx1.41$."
+      ]
+    },
+    {
+      "id": "converse",
+      "kind": "text",
+      "title": "The converse",
+      "body": "If the sides of a triangle satisfy $a^2+b^2=c^2$ with $c$ the longest, then the triangle is a right triangle. Test $7,24,25$: $49+576=625=25^2$. Yes, it is a right triangle."
+    },
+    {
+      "id": "remember",
+      "kind": "tip",
+      "body": "Add the squares of the legs to find the hypotenuse. Subtract to find a leg. The hypotenuse is always the longest side."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "Legs of a right triangle are 6 and 8. Find the hypotenuse.",
+      "accepted": [
+        "10"
+      ],
+      "keypad": "numeric",
+      "explanation": "$6^2+8^2=100$ and $\\sqrt{100}=10$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "The hypotenuse is 13 and one leg is 5. Find the other leg.",
+      "accepted": [
+        "12"
+      ],
+      "keypad": "numeric",
+      "explanation": "$b^2=13^2-5^2=169-25=144$, so $b=12$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Which is the hypotenuse of a right triangle?",
+      "choices": [
+        "The side opposite the right angle",
+        "The shortest side",
+        "Any side next to the right angle",
+        "The side at the bottom"
+      ],
+      "answerIndex": 0,
+      "explanation": "The hypotenuse faces the right angle, and it is the longest side."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Legs of a right triangle are 1 and 1. What is the hypotenuse?",
+      "choices": [
+        "$2$",
+        "$\\sqrt{2}$",
+        "$1$",
+        "$\\sqrt{3}$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$c^2=1+1=2$, so $c=\\sqrt{2}$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which set of side lengths forms a right triangle?",
+      "choices": [
+        "$4,5,6$",
+        "$5,6,7$",
+        "$9,12,15$",
+        "$7,8,12$"
+      ],
+      "answerIndex": 2,
+      "explanation": "$81+144=225=15^2$. The others fail the test."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "In $a^2+b^2=c^2$, the letter $c$ is the \\_\\_.",
+      "choices": [
+        "shortest leg",
+        "hypotenuse",
+        "perimeter"
+      ],
+      "answerIndex": 1,
+      "explanation": "$c$ is the side opposite the right angle."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "A ladder 10 feet long leans against a wall with its foot 6 feet from the wall. How high up the wall does it reach, in feet?",
+      "accepted": [
+        "8"
+      ],
+      "keypad": "numeric",
+      "explanation": "The wall and ground form the legs: $h^2=100-36=64$, so $h=8$."
+    }
+  ]
+}

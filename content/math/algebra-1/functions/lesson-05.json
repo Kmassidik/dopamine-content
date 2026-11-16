@@ -1,0 +1,143 @@
+{
+  "id": "a1-functions-05",
+  "version": 2,
+  "title": "Point-slope and standard form",
+  "xp": 20,
+  "tags": [
+    "algebra",
+    "functions"
+  ],
+  "learn": [
+    {
+      "id": "point-slope",
+      "kind": "text",
+      "title": "Point-slope form",
+      "body": "If you know the slope $m$ and one point $(x_1,y_1)$, write $y-y_1=m(x-x_1)$. It is a fast way to build an equation without finding $b$ first."
+    },
+    {
+      "id": "example-point-slope",
+      "kind": "example",
+      "title": "Slope 2 through $(3,1)$",
+      "body": "Put the numbers in, then tidy up.",
+      "steps": [
+        "Write $y-1=2(x-3)$",
+        "Distribute: $y-1=2x-6$",
+        "Add 1: $y=2x-5$"
+      ]
+    },
+    {
+      "id": "example-two-points",
+      "kind": "example",
+      "title": "Line through $(1,2)$ and $(3,8)$",
+      "body": "Two points first give the slope.",
+      "steps": [
+        "Slope: $\\frac{8-2}{3-1}=3$",
+        "Point-slope with $(1,2)$: $y-2=3(x-1)$",
+        "Simplify: $y=3x-1$"
+      ]
+    },
+    {
+      "id": "standard",
+      "kind": "text",
+      "title": "Standard form",
+      "body": "Standard form is $Ax+By=C$. For $y=2x-5$ move the $x$ term: $2x-y=5$. It is handy for intercepts."
+    },
+    {
+      "id": "intercepts-fast",
+      "kind": "tip",
+      "body": "In $2x+3y=12$ set $y=0$ for the $x$-intercept (6) and $x=0$ for the $y$-intercept (4)."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "A line has slope 4 and passes through $(2,5)$. Which is its point-slope equation?",
+      "choices": [
+        "$y-2=4(x-5)$",
+        "$y-5=4(x-2)$",
+        "$y+5=4(x+2)$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Point-slope form is $y-y_1=m(x-x_1)$, with $(x_1,y_1)=(2,5)$."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "In $y-y_1=m(x-x_1)$ the letter $m$ is the \\_\\_",
+      "choices": [
+        "intercept",
+        "point",
+        "slope"
+      ],
+      "answerIndex": 2,
+      "explanation": "It is the same slope as in slope-intercept form."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "A line has slope 2 and passes through $(3,1)$. What is its $y$-intercept?",
+      "accepted": [
+        "-5"
+      ],
+      "keypad": "numeric",
+      "explanation": "$y-1=2(x-3)$ gives $y=2x-5$, so $b=-5$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "A line passes through $(1,2)$ and $(3,8)$. What is $y$ when $x=0$?",
+      "accepted": [
+        "-1",
+        "-1.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Slope is 3. $y-2=3(x-1)$ gives $y=3x-1$, so at $x=0$, $y=-1$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which is $y=2x-5$ in standard form?",
+      "choices": [
+        "$2x+y=5$",
+        "$x-2y=5$",
+        "$2x-y=5$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Subtract $y$ and add 5 to both sides: $2x-y=5$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "Find the $x$-intercept of $2x+3y=12$.",
+      "accepted": [
+        "6",
+        "6.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Set $y=0$: $2x=12$, so $x=6$."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "Find the $y$-intercept of $2x+3y=12$.",
+      "accepted": [
+        "4",
+        "4.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Set $x=0$: $3y=12$, so $y=4$."
+    },
+    {
+      "id": "q8",
+      "type": "order_steps",
+      "prompt": "Find the line through $(1,2)$ and $(3,8)$. Put the steps in order.",
+      "steps": [
+        "Find the slope: $m=3$",
+        "Use point-slope: $y-2=3(x-1)$",
+        "Simplify: $y=3x-1$"
+      ],
+      "explanation": "Slope first, then one point in point-slope form, then tidy up."
+    }
+  ]
+}

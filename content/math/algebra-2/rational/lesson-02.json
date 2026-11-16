@@ -1,0 +1,136 @@
+{
+  "id": "a2-rational-02",
+  "version": 2,
+  "title": "Rational equations",
+  "xp": 18,
+  "tags": [
+    "algebra",
+    "rational"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Clear the fractions",
+      "body": "To solve an equation with fractions in $x$, multiply both sides by the common denominator. That removes every fraction and leaves an ordinary equation. Then solve and check, because multiplying can introduce answers that do not belong."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Solve $\\frac{1}{x}+\\frac{1}{3}=\\frac{1}{2}$",
+      "body": "The common denominator is $6x$.",
+      "steps": [
+        "Multiply every term by $6x$: $6+2x=3x$",
+        "Subtract $2x$: $x=6$",
+        "Check: $\\frac{1}{6}+\\frac{1}{3}=\\frac{1}{2}$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Solve $\\frac{x^2}{x-2}=\\frac{4}{x-2}$",
+      "body": "Multiply both sides by $x-2$.",
+      "steps": [
+        "$x^2=4$, so $x=2$ or $x=-2$",
+        "$x=2$ makes the original denominator 0. Reject it",
+        "The only solution is $x=-2$"
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "tip",
+      "body": "An extraneous solution makes a denominator zero in the original equation. Always test your answers there."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "Solve $\\frac{12}{x}=3$.",
+      "accepted": [
+        "4"
+      ],
+      "keypad": "numeric",
+      "explanation": "Multiply by $x$: $12=3x$, so $x=4$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Solve $\\frac{2}{x+1}=1$.",
+      "accepted": [
+        "1"
+      ],
+      "keypad": "numeric",
+      "explanation": "$2=x+1$, so $x=1$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Solve $\\frac{1}{x}+\\frac{1}{3}=\\frac{1}{2}$.",
+      "accepted": [
+        "6"
+      ],
+      "keypad": "numeric",
+      "explanation": "Multiply by $6x$: $6+2x=3x$, so $x=6$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "Solve $\\frac{6}{x-1}=\\frac{3}{x}$.",
+      "accepted": [
+        "-1",
+        "−1"
+      ],
+      "keypad": "numeric",
+      "explanation": "Cross-multiply: $6x=3x-3$, so $3x=-3$ and $x=-1$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What is the common denominator of $\\frac{1}{x}$ and $\\frac{1}{x+2}$?",
+      "choices": [
+        "$x+2$",
+        "$x$",
+        "$x(x+2)$"
+      ],
+      "answerIndex": 2,
+      "explanation": "The common denominator holds each factor once: $x(x+2)$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Solve $\\frac{x^2}{x-2}=\\frac{4}{x-2}$.",
+      "choices": [
+        "$x=2$ and $x=-2$",
+        "$x=-2$ only",
+        "$x=2$ only"
+      ],
+      "answerIndex": 1,
+      "explanation": "$x=2$ is extraneous because it makes the denominator zero."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Solve $\\frac{5}{x}=x-4$. Which are the solutions?",
+      "choices": [
+        "$x=5$ and $x=-1$",
+        "$x=5$ only",
+        "$x=1$ and $x=-5$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$5=x^2-4x$ gives $(x-5)(x+1)=0$. Both work: $\\frac{5}{5}=1=5-4$ and $\\frac{5}{-1}=-5=-1-4$."
+    },
+    {
+      "id": "q8",
+      "type": "order_steps",
+      "prompt": "Put the steps for solving a rational equation in order.",
+      "steps": [
+        "Find the common denominator",
+        "Multiply every term by it",
+        "Solve the resulting equation",
+        "Check each answer in the original"
+      ],
+      "explanation": "The check catches extraneous solutions that would divide by zero."
+    }
+  ]
+}

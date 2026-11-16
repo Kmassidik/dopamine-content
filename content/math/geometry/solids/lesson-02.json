@@ -1,0 +1,127 @@
+{
+  "id": "geo-solids-02",
+  "version": 2,
+  "title": "Pyramids, cones and spheres",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "solids",
+    "volume"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Solids that come to a point",
+      "body": "A pyramid has a polygon base and triangular sides meeting at one point, the apex. A cone is the round version, with a circle for a base. A sphere is a ball: all points at one distance from the centre."
+    },
+    {
+      "id": "pointed",
+      "kind": "text",
+      "title": "One third of the prism",
+      "body": "A pyramid holds exactly one third of the prism with the same base and height. So $V=\\frac13Bh$. A cone holds one third of the cylinder with the same base and height, so $V=\\frac13\\pi r^2h$."
+    },
+    {
+      "id": "sphere",
+      "kind": "text",
+      "title": "The sphere",
+      "body": "The volume of a sphere with radius $r$ is $V=\\frac43\\pi r^3$. It depends on the radius cubed. Doubling the radius makes the volume eight times as large."
+    },
+    {
+      "id": "use",
+      "kind": "example",
+      "title": "Compute volumes",
+      "body": "Find each volume.",
+      "steps": [
+        "Square pyramid, base side 6, height 5: $\\frac13\\cdot36\\cdot5=60$.",
+        "Cone, $r=3$, $h=4$: $\\frac13\\pi\\cdot9\\cdot4=12\\pi\\approx37.7$.",
+        "Sphere, $r=3$: $\\frac43\\pi\\cdot27=36\\pi\\approx113.1$."
+      ]
+    },
+    {
+      "id": "vertical",
+      "kind": "tip",
+      "body": "Use the vertical height from the apex to the base, not the slant height along a face."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "A square pyramid has base side 6 and height 5. Find its volume.",
+      "accepted": [
+        "60"
+      ],
+      "keypad": "numeric",
+      "explanation": "$B=36$ and $V=\\frac13\\cdot36\\cdot5=60$."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "A cone and a cylinder have the same base and height. How do their volumes compare?",
+      "choices": [
+        "The cone has one third of the volume",
+        "The cone has half the volume",
+        "They are equal",
+        "The cone has twice the volume"
+      ],
+      "answerIndex": 0,
+      "explanation": "The cone is $\\frac13$ of the cylinder."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "A cone has radius 3 and height 4. Its volume is $k\\pi$. Find $k$.",
+      "accepted": [
+        "12"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac13\\cdot9\\cdot4=12$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "A sphere has radius 3. Its volume is $k\\pi$. Find $k$.",
+      "accepted": [
+        "36"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac43\\cdot27=36$."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "The volume of a pyramid is \\_\\_ of the matching prism.",
+      "choices": [
+        "one half",
+        "one quarter",
+        "one third"
+      ],
+      "answerIndex": 2,
+      "explanation": "Three pyramids fill a prism with the same base and height."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "A sphere's radius doubles. What happens to its volume?",
+      "choices": [
+        "It doubles",
+        "It becomes 4 times as large",
+        "It becomes 8 times as large",
+        "It becomes 6 times as large"
+      ],
+      "answerIndex": 2,
+      "explanation": "Volume depends on $r^3$, and $2^3=8$."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "A sphere has radius 6. Its volume is $k\\pi$. Find $k$.",
+      "accepted": [
+        "288"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac43\\cdot216=288$."
+    }
+  ]
+}

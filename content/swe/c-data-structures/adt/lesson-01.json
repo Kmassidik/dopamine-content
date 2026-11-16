@@ -1,0 +1,139 @@
+{
+  "id": "cd-adt-01",
+  "version": 2,
+  "minApp": 2,
+  "title": "What is an abstract data type?",
+  "xp": 10,
+  "tags": [
+    "c",
+    "adt"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Use it without knowing how",
+      "body": "An abstract data type, or ADT, describes what a container does, not how it is built. You use it through a few operations. Behind them, the data can be stored in different ways. This course builds the common ones in C."
+    },
+    {
+      "id": "interface",
+      "kind": "text",
+      "title": "Interface and implementation",
+      "body": "The interface is the list of operations and what each one promises. The implementation is the code and memory layout behind it. Code that only uses the interface keeps working when you swap the implementation for a better one."
+    },
+    {
+      "id": "iface-code",
+      "kind": "code",
+      "title": "An interface in C",
+      "code": "void push(int x);\nint pop(void);\nint is_empty(void);",
+      "language": "c",
+      "body": "These declarations are an interface for a stack of ints. They say nothing about arrays or pointers."
+    },
+    {
+      "id": "ex-stack",
+      "kind": "example",
+      "title": "Using only the interface",
+      "body": "A stack: push adds, pop removes the newest item.",
+      "steps": [
+        "Start empty, then call `push(1)`",
+        "Call `push(2)`. The stack now holds 1 and 2",
+        "Call `pop()`. It returns 2, the newest",
+        "Whether an array or a list sits behind it does not matter"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "An ADT is a contract. Array, list and tree are ways to build things that keep the contract."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What does an abstract data type describe?",
+      "choices": [
+        "What operations a container offers",
+        "How its bytes are laid out in memory",
+        "Which C compiler to use",
+        "How fast the CPU is"
+      ],
+      "answerIndex": 0,
+      "explanation": "An ADT is defined by its operations and their promises, not by memory layout.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which part is the interface of a stack?",
+      "choices": [
+        "An array of 100 ints",
+        "push, pop and is_empty",
+        "A pointer named top",
+        "A call to malloc"
+      ],
+      "answerIndex": 1,
+      "explanation": "The interface is the set of operations. Arrays, pointers and malloc are implementation details.",
+      "id": "q2"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "The code and memory layout behind the operations is the \\_\\_.",
+      "choices": [
+        "interface",
+        "contract",
+        "implementation",
+        "header"
+      ],
+      "answerIndex": 2,
+      "explanation": "The implementation is how the promises are kept. The interface is what the caller sees.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "A stack is built with an array. Later you switch to a linked list. Code that uses only `push` and `pop`...",
+      "choices": [
+        "must be rewritten",
+        "stops compiling",
+        "can no longer call pop",
+        "keeps working unchanged"
+      ],
+      "answerIndex": 3,
+      "explanation": "That is the benefit of hiding the implementation: callers depend only on the interface.",
+      "id": "q4"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        [
+          "Interface",
+          "What operations exist"
+        ],
+        [
+          "Implementation",
+          "How they are coded"
+        ],
+        [
+          "ADT",
+          "A container defined by operations"
+        ],
+        [
+          "Caller",
+          "Code that uses the operations"
+        ]
+      ],
+      "explanation": "Callers use the interface. The implementation hides behind it.",
+      "id": "q5"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "In one word, what kind of data type is a stack when defined only by push and pop? (abstract / concrete)",
+      "accepted": [
+        "abstract",
+        "Abstract"
+      ],
+      "keypad": "full",
+      "explanation": "Defined by behaviour alone, it is an abstract data type.",
+      "id": "q6"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "id": "cd-hash-04",
+  "version": 2,
+  "minApp": 2,
+  "title": "Separate chaining",
+  "xp": 15,
+  "tags": [
+    "c",
+    "hash-table",
+    "linked-list"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Slots that hold lists",
+      "body": "In separate chaining the table is an array of list heads. Each slot starts as NULL, an empty list. A key goes into the list of its slot, so colliding keys simply share a short list."
+    },
+    {
+      "id": "reuse",
+      "kind": "text",
+      "title": "Using what you know",
+      "body": "Remember the node from the linked lists unit. Adding to a chain is just adding at the front of one list, and searching a chain is just walking it. The hash only decides which list to use."
+    },
+    {
+      "id": "chain",
+      "kind": "code",
+      "title": "Chains in a table",
+      "code": "node *table[5] = {NULL};\nint keys[] = {12, 22, 7};\nfor (int k = 0; k < 3; k++) {\n    node *n = malloc(sizeof(node));\n    n->value = keys[k];\n    int i = keys[k] % 5;\n    n->next = table[i];\n    table[i] = n;\n}\nshow(table[2]);\nfree_list(table[2]);",
+      "language": "c",
+      "body": "Keys 12, 22 and 7 go into slot 2. We skip NULL checks to keep the code short."
+    },
+    {
+      "id": "ex-find",
+      "kind": "example",
+      "title": "Looking up 22",
+      "body": "The table is built as above.",
+      "steps": [
+        "22 % 5 is 2, so go to slot 2",
+        "Walk its chain: 7 does not match, 22 matches",
+        "Chains are short, so the walk is quick",
+        "If the end of the chain is reached, the key is absent"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "If the table grows crowded, chains get long. Real tables resize and rehash all keys into a bigger array."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "In separate chaining, what does each slot hold?",
+      "choices": [
+        "One integer",
+        "A copy of the table",
+        "The head of a linked list",
+        "A hash function"
+      ],
+      "answerIndex": 2,
+      "explanation": "Colliding keys share a chain of nodes.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "How do you search for a key?",
+      "choices": [
+        "Walk every slot",
+        "Sort first",
+        "Use realloc",
+        "Hash it, then walk that slot's chain"
+      ],
+      "answerIndex": 3,
+      "explanation": "Only the chain in the key's slot can contain it.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "Keys 12, 22 and 7 are added at the front of slot 2 in that order. Which comes first in the chain?",
+      "accepted": [
+        "7"
+      ],
+      "keypad": "numeric",
+      "explanation": "The last key added is the head of the chain.",
+      "id": "q3"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "An empty slot in the table is \\_\\_.",
+      "choices": [
+        "NULL",
+        "0 bytes",
+        "-1 nodes",
+        "free"
+      ],
+      "answerIndex": 0,
+      "explanation": "An empty list is a NULL head pointer.",
+      "id": "q4"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What happens to lookup speed if every key lands in one slot?",
+      "choices": [
+        "It stays instant",
+        "It becomes a slow walk of one long list",
+        "It crashes",
+        "It becomes faster"
+      ],
+      "answerIndex": 1,
+      "explanation": "That slot's chain holds everything, so the table is no better than one linked list.",
+      "id": "q5"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Order the steps to add a key.",
+      "steps": [
+        "Compute the key's slot",
+        "Make a new node for the key",
+        "Point the node at the slot's head",
+        "Make the slot point at the node"
+      ],
+      "explanation": "This is the add-at-front pattern from linked lists.",
+      "id": "q6"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Why use a linked list in each slot instead of one value?",
+      "choices": [
+        "Lists are always faster",
+        "malloc requires it",
+        "Several keys may share a slot",
+        "Ints cannot be stored"
+      ],
+      "answerIndex": 2,
+      "explanation": "A list can grow to hold every key that collides there.",
+      "id": "q7"
+    }
+  ]
+}

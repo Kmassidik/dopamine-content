@@ -1,0 +1,160 @@
+{
+  "id": "cf-first-05",
+  "version": 2,
+  "minApp": 2,
+  "title": "Comments, pseudocode, errors",
+  "xp": 15,
+  "tags": [
+    "c",
+    "comments",
+    "errors"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Notes for people",
+      "body": "A comment is text the compiler ignores. It is a note for human readers, including you next week. Good comments explain why code does something, not just what it does."
+    },
+    {
+      "id": "comments",
+      "kind": "code",
+      "title": "Two kinds of comment",
+      "body": "`//` runs to the end of the line. `/* ... */` can span many lines.",
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    // print a greeting\n    printf(\"hi\\n\");\n    /* two\n       lines */\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "pseudo",
+      "kind": "text",
+      "title": "Pseudocode",
+      "body": "Pseudocode is a plan written in plain words before you write real code. For example: ask for a name, then greet that person. It helps you think about the steps without worrying about syntax."
+    },
+    {
+      "id": "errors",
+      "kind": "text",
+      "title": "Compiler errors",
+      "body": "If your code breaks the rules, the compiler reports an error and builds nothing. The message shows the file, line number and a short reason. Read the first error first, because later ones are often caused by it."
+    },
+    {
+      "id": "fix",
+      "kind": "example",
+      "title": "Fixing a missing semicolon",
+      "body": "The line `printf(\"hi\")` has no semicolon.",
+      "steps": [
+        "The compiler says: error: expected ';' after expression",
+        "The message points at the line with `printf`",
+        "Add `;` at the end of that line and compile again"
+      ]
+    },
+    {
+      "id": "wording",
+      "kind": "tip",
+      "body": "Exact wording differs between clang and gcc, but the file, line and reason are always there."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What does the compiler do with a comment?",
+      "choices": [
+        "Ignores it",
+        "Prints it",
+        "Runs it as code",
+        "Reports an error"
+      ],
+      "answerIndex": 0,
+      "explanation": "Comments are only for people reading the code."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Which line starts a one-line comment in C?",
+      "choices": [
+        "`# remember to test`",
+        "`// remember to test`",
+        "`-- remember to test`",
+        "`; remember to test`"
+      ],
+      "answerIndex": 1,
+      "explanation": "C uses `//` for one-line comments and `/* */` for longer ones."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "A comment that can span many lines starts with \\_\\_.",
+      "choices": [
+        "`//`",
+        "`#`",
+        "`/*`",
+        "`<!--`"
+      ],
+      "answerIndex": 2,
+      "explanation": "`/* ... */` can hold several lines."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "A plan written in plain words before coding is called \\_\\_.",
+      "choices": [
+        "machine code",
+        "a compiler",
+        "a header",
+        "pseudocode"
+      ],
+      "answerIndex": 3,
+      "explanation": "Pseudocode lets you plan the steps first."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "The compiler reports several errors. Which should you fix first?",
+      "choices": [
+        "The first one",
+        "The last one",
+        "The longest one",
+        "Any, the order is random"
+      ],
+      "answerIndex": 0,
+      "explanation": "Later errors are often side effects of the first one."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "What character is usually missing when the compiler says expected ';'? Type it.",
+      "accepted": [
+        ";",
+        "semicolon",
+        "a semicolon"
+      ],
+      "keypad": "full",
+      "explanation": "The compiler expected a semicolon to end the instruction."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Put the steps of fixing an error in order.",
+      "steps": [
+        "Compile and see the error",
+        "Read the line number and message",
+        "Edit the code",
+        "Compile again"
+      ],
+      "explanation": "Read the message first, then fix, then check that it is gone."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "Which is the better comment?",
+      "choices": [
+        "`// this is a line`",
+        "`// skip the header row`",
+        "`// code`",
+        "`// ok`"
+      ],
+      "answerIndex": 1,
+      "explanation": "A good comment tells the reader why, not just that something is here."
+    }
+  ]
+}

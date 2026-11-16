@@ -1,0 +1,156 @@
+{
+  "id": "ca-arrays-03",
+  "version": 2,
+  "minApp": 2,
+  "title": "Arrays and functions",
+  "xp": 15,
+  "tags": [
+    "c",
+    "arrays",
+    "functions"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Passing an array",
+      "body": "You can give an array to a function. Write the parameter with empty brackets, `int a[]`. The function does not get a copy. It gets the address of the first element, so it works on the caller's real array."
+    },
+    {
+      "id": "fill",
+      "kind": "code",
+      "title": "The function changes the original",
+      "body": "`fill` sets every element to 7. After `fill(v, 3, 7)` on `int v[3]`, `main` sees 7 7 7, because no copy was made.",
+      "code": "void fill(int a[], int n, int x) {\n    for (int i = 0; i < n; i++) {\n        a[i] = x;\n    }\n}",
+      "language": "c"
+    },
+    {
+      "id": "length",
+      "kind": "text",
+      "title": "Pass the length too",
+      "body": "An array does not carry its length into a function. The function only knows where it starts. So pass the length as a second argument, as `fill` does with `n`."
+    },
+    {
+      "id": "sizeof",
+      "kind": "code",
+      "title": "sizeof inside a function",
+      "body": "Inside `f`, `a` is just an address, so `sizeof a` is 8 on a 64-bit machine, not 40. The compiler warns about it, which is a useful hint.",
+      "code": "#include <stdio.h>\n\nvoid f(int a[]) {\n    printf(\"%zu\\n\", sizeof a);\n}\n\nint main(void) {\n    int v[10] = {0};\n    printf(\"%zu\\n\", sizeof v);\n    f(v);\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "const",
+      "kind": "text",
+      "title": "Promise not to change",
+      "body": "Write `const int a[]` when a function should only read the array. Then the compiler rejects any attempt to assign to `a[i]` inside it, which protects the caller's data."
+    },
+    {
+      "id": "sumf",
+      "kind": "example",
+      "title": "A reusable sum",
+      "body": "Write `int sum(const int a[], int n)`.",
+      "steps": [
+        "Make `s` start at 0",
+        "Loop `i` from 0 while `i < n`",
+        "Add `a[i]` to `s` each time",
+        "Return `s`; call it as `sum(v, 4)`"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "When you pass an array to a function, what does the function receive?",
+      "choices": [
+        "A full copy",
+        "Only the first element",
+        "The address of the first element"
+      ],
+      "answerIndex": 2,
+      "explanation": "No copy is made, so changes inside the function affect the caller's array."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "After `fill(v, 3, 7)` the caller's array...",
+      "choices": [
+        "Holds the new values",
+        "Is unchanged",
+        "Is deleted"
+      ],
+      "answerIndex": 0,
+      "explanation": "The function worked on the same memory."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "A function cannot know an array's length, so you pass it as an \\_\\_ argument.",
+      "choices": [
+        "`optional`",
+        "`extra`",
+        "`hidden`"
+      ],
+      "answerIndex": 1,
+      "explanation": "Pass `n` yourself, for example `sum(v, 4)`."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "In a function with parameter `int a[]`, what does `sizeof a` give on a 64-bit machine? Type the number.",
+      "accepted": [
+        "8"
+      ],
+      "keypad": "numeric",
+      "explanation": "`a` is an address there, and an address takes 8 bytes on 64-bit systems."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What does `const int a[]` do?",
+      "choices": [
+        "Makes the array longer",
+        "Makes the function faster",
+        "Stops the function changing the elements"
+      ],
+      "answerIndex": 2,
+      "explanation": "The compiler refuses assignments to `a[i]`."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which call is right for `int sum(const int a[], int n)`?",
+      "choices": [
+        "`sum(v, 4)`",
+        "`sum(v[], 4)`",
+        "`sum(4, v)`"
+      ],
+      "answerIndex": 0,
+      "explanation": "Pass the array name and the length, in that order."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each part of the call `sum(v, 4)` to its role.",
+      "pairs": [
+        [
+          "`v`",
+          "The array, passed by address"
+        ],
+        [
+          "`4`",
+          "The number of elements"
+        ],
+        [
+          "`const`",
+          "Read only"
+        ],
+        [
+          "`n`",
+          "The length parameter"
+        ]
+      ],
+      "explanation": "These four ideas explain every array function in this course."
+    }
+  ]
+}

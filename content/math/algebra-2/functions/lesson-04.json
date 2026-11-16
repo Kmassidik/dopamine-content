@@ -1,0 +1,132 @@
+{
+  "id": "a2-functions-04",
+  "version": 2,
+  "title": "Piecewise and absolute value functions",
+  "xp": 15,
+  "tags": [
+    "algebra",
+    "functions"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Functions with more than one rule",
+      "body": "A piecewise function uses different rules on different parts of the domain. Example: use $x+1$ when $x<0$ and use $x^2$ when $x\\ge 0$. To evaluate, first decide which part the input belongs to, then use only that rule."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "Absolute value",
+      "body": "$|x|$ is the distance from 0, so it is never negative: $|-5|=5$. The graph of $y=|x|$ is a V with its corner at the origin. For $y=|x-h|+k$ the corner (vertex) is at $(h,k)$, using the same shifts as before."
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Solve $|2x-1|=7$",
+      "body": "A distance of 7 means the inside is 7 or $-7$.",
+      "steps": [
+        "Case 1: $2x-1=7$, so $x=4$",
+        "Case 2: $2x-1=-7$, so $x=-3$",
+        "Check: $|2\\cdot 4-1|=7$ and $|2(-3)-1|=7$",
+        "The solutions are $x=4$ and $x=-3$"
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "tip",
+      "body": "$|x|=-3$ has no solution, because a distance cannot be negative. Isolate the absolute value first, then split into two cases."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "$|3-8|=$ ?",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "$3-8=-5$ and the distance from 0 is 5."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Use $x+4$ when $x<1$ and $3x$ when $x\\ge 1$. What is the value at $x=1$?",
+      "choices": [
+        "$5$",
+        "$4$",
+        "$3$"
+      ],
+      "answerIndex": 2,
+      "explanation": "$x=1$ is not less than 1, so use $3x$: $3\\cdot 1=3$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Same rule: $x+4$ when $x<1$, $3x$ when $x\\ge 1$. Find the value at $x=-2$.",
+      "accepted": [
+        "2"
+      ],
+      "keypad": "numeric",
+      "explanation": "$-2<1$, so use $x+4=2$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "Same rule again. Find the value at $x=4$.",
+      "accepted": [
+        "12"
+      ],
+      "keypad": "numeric",
+      "explanation": "$4\\ge 1$, so use $3x=12$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Solve $|x-3|=5$.",
+      "choices": [
+        "$x=8$ only",
+        "$x=2$ or $x=-8$",
+        "$x=8$ or $x=-2$"
+      ],
+      "answerIndex": 2,
+      "explanation": "$x-3=5$ gives 8 and $x-3=-5$ gives $-2$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Solve $|x|=-4$.",
+      "choices": [
+        "$x=4$",
+        "No solution",
+        "$x=\\pm 4$"
+      ],
+      "answerIndex": 1,
+      "explanation": "An absolute value is never negative, so it cannot equal $-4$."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Where is the vertex of $y=|x+2|-3$?",
+      "choices": [
+        "$(-2,-3)$",
+        "$(2,-3)$",
+        "$(-2,3)$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$|x+2|$ is $|x-(-2)|$, so the shift is left 2. The $-3$ moves it down 3."
+    },
+    {
+      "id": "q8",
+      "type": "order_steps",
+      "prompt": "Solve $|x-1|=6$. Put the steps in order.",
+      "steps": [
+        "Write $x-1=6$ and $x-1=-6$",
+        "Solve each: $x=7$ and $x=-5$",
+        "Check both in the original equation"
+      ],
+      "explanation": "An absolute value equation splits into two cases. Checking guards against slips."
+    }
+  ]
+}

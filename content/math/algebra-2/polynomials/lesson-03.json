@@ -1,0 +1,147 @@
+{
+  "id": "a2-polynomials-03",
+  "version": 2,
+  "title": "Zeros and the rational root theorem",
+  "xp": 18,
+  "tags": [
+    "algebra",
+    "polynomials"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Finding zeros",
+      "body": "A zero of $P$ is an input where $P(x)=0$. It is also an $x$-intercept of the graph. Guessing zeros blindly is slow, so the Rational Root Theorem gives a short list of candidates."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "The candidate list",
+      "body": "If a polynomial with whole-number coefficients has a rational zero $\\frac{p}{q}$ in lowest terms, then $p$ divides the constant term and $q$ divides the leading coefficient. List every $\\pm\\frac{p}{q}$, then test them with substitution."
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Zeros of $2x^3-3x^2-11x+6$",
+      "body": "Constant 6, leading 2.",
+      "steps": [
+        "$p\\in\\{1,2,3,6\\}$ and $q\\in\\{1,2\\}$",
+        "Test $x=3$: $54-27-33+6=0$, so $x-3$ is a factor",
+        "Divide: $2x^3-3x^2-11x+6=(x-3)(2x^2+3x-2)$",
+        "Factor again: $(x-3)(2x-1)(x+2)$, so the zeros are $3,\\ \\frac{1}{2},\\ -2$"
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "tip",
+      "body": "The theorem only lists possibilities. Zeros can also be irrational or complex, so a failed list does not mean there are no zeros."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which could NOT be a rational zero of $3x^3+x^2-5x+4$?",
+      "choices": [
+        "$\\frac{2}{3}$",
+        "$\\frac{3}{4}$",
+        "$\\frac{4}{3}$"
+      ],
+      "answerIndex": 1,
+      "explanation": "The numerator must divide 4 and the denominator must divide 3. $\\frac{3}{4}$ has numerator 3, which does not divide 4."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Is 2 a zero of $x^3-7x+6$?",
+      "choices": [
+        "Yes, $P(2)=0$",
+        "No, $P(2)=4$",
+        "No, $P(2)=-4$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$8-14+6=0$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "The zeros of $(x-3)(2x-1)(x+2)$ are $3$, $\\frac{1}{2}$ and $-2$. What is the largest?",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "Compare $3$, $0.5$ and $-2$. The largest is 3."
+    },
+    {
+      "id": "q4",
+      "type": "match_pairs",
+      "prompt": "Match each factor to its zero.",
+      "pairs": [
+        [
+          "$x-4$",
+          "$4$"
+        ],
+        [
+          "$x+1$",
+          "$-1$"
+        ],
+        [
+          "$2x-1$",
+          "$\\frac{1}{2}$"
+        ],
+        [
+          "$3x+6$",
+          "$-2$"
+        ]
+      ],
+      "explanation": "Set each factor to 0: $2x-1=0$ gives $x=\\frac{1}{2}$, and $3x+6=0$ gives $x=-2$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "How many zeros does $(x-2)^2(x+1)$ have, counting repeats?",
+      "choices": [
+        "Three: 2, 2 and $-1$",
+        "Two: 2 and $-1$ only, repeats are not counted",
+        "Three: 2, $-2$ and 1"
+      ],
+      "answerIndex": 0,
+      "explanation": "The factor $(x-2)^2$ gives the zero 2 twice. Counting repeats, a degree-3 polynomial has 3 zeros."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "A cubic has the zeros 1, 2 and 3. What is the value of $(x-1)(x-2)(x-3)$ at $x=4$?",
+      "accepted": [
+        "6"
+      ],
+      "keypad": "numeric",
+      "explanation": "$(4-1)(4-2)(4-3)=3\\cdot 2\\cdot 1=6$. At a zero the product would be 0, but 4 is not a zero."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "To find rational zeros of $4x^2-9$, the numerator $p$ must divide \\_\\_",
+      "choices": [
+        "$4$",
+        "$9$",
+        "$13$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$p$ divides the constant term $-9$, and $q$ divides the leading coefficient 4."
+    },
+    {
+      "id": "q8",
+      "type": "order_steps",
+      "prompt": "Put the steps for finding all zeros in order.",
+      "steps": [
+        "List candidates $\\pm\\frac{p}{q}$",
+        "Test candidates until one gives 0",
+        "Divide to get a lower-degree polynomial",
+        "Repeat or solve the quadratic that remains"
+      ],
+      "explanation": "Each zero you find lets you divide and reduce the problem."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Strict SVG subset checker. The app draws images with a small native renderer that understands
-only this subset, so every .svg under images/ must stay inside it. STANDARD.md explains it.
+only this subset, so every .svg under content/images/ must stay inside it. STANDARD.md explains it.
 
 Used by tools/standard.py. Run alone with: python3 tools/svgcheck.py [file.svg ...]
 The SVG dict below is the single source of truth; tools/build_contract.py exports it.
@@ -167,7 +167,7 @@ def check_svg(data: bytes):
 
 if __name__ == "__main__":
     bad = 0
-    for p in sys.argv[1:] or sorted(str(f) for f in (Path(__file__).resolve().parent.parent / "images").glob("*.svg")):
+    for p in sys.argv[1:] or sorted(str(f) for f in (Path(__file__).resolve().parent.parent / "content" / "images").glob("*.svg")):
         for rule, msg in check_svg(Path(p).read_bytes()):
             print(f"FAIL [{rule}] {p}: {msg}")
             bad += 1

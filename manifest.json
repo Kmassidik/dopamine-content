@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.11.16+7",
+  "contentVersion": "2026.11.16+8",
   "minAppVersion": 1,
   "categories": [
     {
@@ -48,54 +48,54 @@
             {
               "id": "linear-eq-01",
               "title": "One-step equations",
-              "path": "math/algebra-1/linear-eq/lesson-01.json",
-              "version": 3,
-              "sha256": "0c501cc5ef5063914ad4a19b73b2fe9bcd9ee16a4847e5755f76528b807c4f74",
-              "sizeBytes": 4148,
+              "path": "content/math/algebra-1/linear-eq/lesson-01.json",
+              "version": 4,
+              "sha256": "35b9e4fae3d3c1bde2b7e16762974c00cba599a719720442b3a786eab7f6cddf",
+              "sizeBytes": 4156,
               "order": 1
             },
             {
               "id": "linear-eq-02",
               "title": "Two-step equations",
-              "path": "math/algebra-1/linear-eq/lesson-02.json",
-              "version": 2,
-              "sha256": "7d055153890481f1d366dc9bea82db49286ed64cb6f6e8bb75a36fa8a86d63e5",
+              "path": "content/math/algebra-1/linear-eq/lesson-02.json",
+              "version": 3,
+              "sha256": "675b08089e9ad9ee9a9613b66e2dffb18dbc5c0b71044323f10d28d721a7a8f1",
               "sizeBytes": 2094,
               "order": 2
             },
             {
               "id": "linear-eq-03",
               "title": "Variables on both sides",
-              "path": "math/algebra-1/linear-eq/lesson-03.json",
-              "version": 1,
-              "sha256": "ae5fca407722f5e9b7d96c15257eb60fd1a0dc1faf7c86cbb974c8026fa36979",
+              "path": "content/math/algebra-1/linear-eq/lesson-03.json",
+              "version": 2,
+              "sha256": "76e56d12cd9bec301c2358c46034dd96332b61c5ff3179bce39a884105faa05c",
               "sizeBytes": 4265,
               "order": 3
             },
             {
               "id": "linear-eq-04",
               "title": "Brackets and fractions",
-              "path": "math/algebra-1/linear-eq/lesson-04.json",
-              "version": 1,
-              "sha256": "a9cbb1e09bdb5944fed190cf486f4e74bdab9f091a24e5d3496ef0bc74c705d4",
+              "path": "content/math/algebra-1/linear-eq/lesson-04.json",
+              "version": 2,
+              "sha256": "bec0936f456057fdfe24306d63d5d89db50b4d40d4226da2eec9388145f7c937",
               "sizeBytes": 4225,
               "order": 4
             },
             {
               "id": "linear-eq-05",
               "title": "Formulas and literal equations",
-              "path": "math/algebra-1/linear-eq/lesson-05.json",
-              "version": 1,
-              "sha256": "27a3b35599578124813efec6f65fb5a2204519fb3e699cded9a02df3c060e23a",
+              "path": "content/math/algebra-1/linear-eq/lesson-05.json",
+              "version": 2,
+              "sha256": "8c8054fa68b0e46cc495badf1544faaa26dc2c2985ffedfe867aab985e95b920",
               "sizeBytes": 4123,
               "order": 5
             },
             {
               "id": "linear-eq-06",
               "title": "Word problems with equations",
-              "path": "math/algebra-1/linear-eq/lesson-06.json",
-              "version": 1,
-              "sha256": "ba5d9233935cce35a918ec8b0a68c62d630001039d35b8e6c3228579025b5e8f",
+              "path": "content/math/algebra-1/linear-eq/lesson-06.json",
+              "version": 2,
+              "sha256": "f0c261db83c919087490f2b413f32f871bff8a191290fac03d47173166c13bb8",
               "sizeBytes": 4170,
               "order": 6
             }
@@ -103,7 +103,7 @@
           "notes": {
             "id": "linear-eq-notes",
             "title": "Linear equations: cheat sheet",
-            "path": "math/algebra-1/linear-eq/notes.json",
+            "path": "content/math/algebra-1/linear-eq/notes.json",
             "version": 2,
             "sha256": "111cee1f717f319690af79e6c12d370fb4518a8c4b174273434174a759ef79e6",
             "sizeBytes": 2439
@@ -117,54 +117,54 @@
             {
               "id": "a1-functions-01",
               "title": "Relations and functions",
-              "path": "math/algebra-1/functions/lesson-01.json",
-              "version": 1,
-              "sha256": "0f7cc749ea3b82248d22d61603cf21ad68584a062a1eab96877c91f64e812294",
+              "path": "content/math/algebra-1/functions/lesson-01.json",
+              "version": 2,
+              "sha256": "1856eff8ee83c184c5a95daa195ab66da8cd63334ae32c4fb5d47f77f116248a",
               "sizeBytes": 4412,
               "order": 1
             },
             {
               "id": "a1-functions-02",
               "title": "Slope",
-              "path": "math/algebra-1/functions/lesson-02.json",
-              "version": 1,
-              "sha256": "0bd6adef12fb0b5a4228a1c5459a86efce7c9c0df338db171e060a71b3bd2d52",
+              "path": "content/math/algebra-1/functions/lesson-02.json",
+              "version": 2,
+              "sha256": "9e5f81105cac0159009012d88b80b3fd10f2fb9df0b89e7b338ec5756ab16ea3",
               "sizeBytes": 4090,
               "order": 2
             },
             {
               "id": "a1-functions-03",
               "title": "Slope-intercept form",
-              "path": "math/algebra-1/functions/lesson-03.json",
-              "version": 1,
-              "sha256": "2908b818153f79eb9439f753f7ec944db729973e35c2871cf09104ae177ef9ce",
+              "path": "content/math/algebra-1/functions/lesson-03.json",
+              "version": 2,
+              "sha256": "9c615739f0cf1a0dd3b46adb36dc2a402dd1d36a12d02ac88c028cb5d2a82b81",
               "sizeBytes": 3834,
               "order": 3
             },
             {
               "id": "a1-functions-04",
               "title": "Graphing lines",
-              "path": "math/algebra-1/functions/lesson-04.json",
-              "version": 1,
-              "sha256": "fa36d12389d1306365c0397b5d74fb97ded23e6e683a4e2f8336cf1a38d434f0",
+              "path": "content/math/algebra-1/functions/lesson-04.json",
+              "version": 2,
+              "sha256": "4199c0b9018d5d3b064a2bef9437e52400aa7e766a0c6ee183a29eaa7142a86e",
               "sizeBytes": 4023,
               "order": 4
             },
             {
               "id": "a1-functions-05",
               "title": "Point-slope and standard form",
-              "path": "math/algebra-1/functions/lesson-05.json",
-              "version": 1,
-              "sha256": "da687bb87942ea85e2a38b65652f910dab0f97ccb90ccd141922565ea915227b",
+              "path": "content/math/algebra-1/functions/lesson-05.json",
+              "version": 2,
+              "sha256": "18dfabd85ff22569e10b03caa7d2039ff30844ce466048ef7bd19e56becde0e4",
               "sizeBytes": 3860,
               "order": 5
             },
             {
               "id": "a1-functions-06",
               "title": "Parallel and perpendicular lines",
-              "path": "math/algebra-1/functions/lesson-06.json",
-              "version": 1,
-              "sha256": "08c3e676835fb5ce9c917ae3f59f795d6e8335159411478f825680506d7238f7",
+              "path": "content/math/algebra-1/functions/lesson-06.json",
+              "version": 2,
+              "sha256": "b8ae8f55a75b1a87e2c9057c626b57d8e583afd85b06fd59c59267c63da7ad26",
               "sizeBytes": 4636,
               "order": 6
             }
@@ -172,7 +172,7 @@
           "notes": {
             "id": "a1-functions-notes",
             "title": "Linear functions: cheat sheet",
-            "path": "math/algebra-1/functions/notes.json",
+            "path": "content/math/algebra-1/functions/notes.json",
             "version": 1,
             "sha256": "d80671e28e3661157fc589d77f76e5f726a32e7e33c4d6e36967cc7d6215c18a",
             "sizeBytes": 1292
@@ -186,45 +186,45 @@
             {
               "id": "a1-systems-01",
               "title": "Solving inequalities",
-              "path": "math/algebra-1/systems/lesson-01.json",
-              "version": 1,
-              "sha256": "ab3ce1ef534b8058c655b70909d8f55d43dab964ca97cd6ae6c344911b0ea91d",
+              "path": "content/math/algebra-1/systems/lesson-01.json",
+              "version": 2,
+              "sha256": "a9cc401c15eec89b89fa9b10b3e4620141b198f652e852c5b6baf2cc63335a20",
               "sizeBytes": 4458,
               "order": 1
             },
             {
               "id": "a1-systems-02",
               "title": "Compound and absolute value",
-              "path": "math/algebra-1/systems/lesson-02.json",
-              "version": 1,
-              "sha256": "127c828ca66026d4035b352cf0d4b13685a5c50c3dab19fb0256aed6aa5345ec",
+              "path": "content/math/algebra-1/systems/lesson-02.json",
+              "version": 2,
+              "sha256": "fd5cf1d79ed1b5eb8c65ad3c2763ef146dc0f2f0ba5a66f4e1c541374e5212f8",
               "sizeBytes": 4023,
               "order": 2
             },
             {
               "id": "a1-systems-03",
               "title": "Systems by graphing",
-              "path": "math/algebra-1/systems/lesson-03.json",
-              "version": 1,
-              "sha256": "088bf97262e091aa724d1626a997d32a1df83f4f01d532bfa71eac8e22e0dcd8",
+              "path": "content/math/algebra-1/systems/lesson-03.json",
+              "version": 2,
+              "sha256": "069c9b13cdccc7669bef3c7c570c71d6d509903eabd181e66d115aeaf05c42d9",
               "sizeBytes": 4500,
               "order": 3
             },
             {
               "id": "a1-systems-04",
               "title": "Systems by substitution",
-              "path": "math/algebra-1/systems/lesson-04.json",
-              "version": 1,
-              "sha256": "a718e7f067826f2bb9d04be9795aace0b132ea954b850332b6a37b26ad41658f",
+              "path": "content/math/algebra-1/systems/lesson-04.json",
+              "version": 2,
+              "sha256": "048b54bd61415879d7ce7a5288f6005181ec032b4e60a512f54b7a4a5cbf6278",
               "sizeBytes": 4160,
               "order": 4
             },
             {
               "id": "a1-systems-05",
               "title": "Systems by elimination",
-              "path": "math/algebra-1/systems/lesson-05.json",
-              "version": 1,
-              "sha256": "853678b6587c60c464f39f18ba7cd298b173b6ad65437b9058498127250a0381",
+              "path": "content/math/algebra-1/systems/lesson-05.json",
+              "version": 2,
+              "sha256": "dcd97090d885683e5cc6a26a9e32fd0395bc93a033a717506a0e32e64b6b67c0",
               "sizeBytes": 4279,
               "order": 5
             }
@@ -232,7 +232,7 @@
           "notes": {
             "id": "a1-systems-notes",
             "title": "Inequalities and systems: cheat sheet",
-            "path": "math/algebra-1/systems/notes.json",
+            "path": "content/math/algebra-1/systems/notes.json",
             "version": 1,
             "sha256": "59c7b7dc0e244bc5f5c3579c04cd0ab9dbba2999bc2ad416d3ebbcfb88a7326c",
             "sizeBytes": 1368
@@ -246,54 +246,54 @@
             {
               "id": "a1-polynomials-01",
               "title": "Exponent rules",
-              "path": "math/algebra-1/polynomials/lesson-01.json",
-              "version": 1,
-              "sha256": "a682bf119168f6331385982f25c8373ca6054895e1e112a8fa5d22e1db660094",
+              "path": "content/math/algebra-1/polynomials/lesson-01.json",
+              "version": 2,
+              "sha256": "1285a60cdef8fa4fe299d0b03b9bfd27ffb6cbf33320787f03e69c9517ce2b41",
               "sizeBytes": 3985,
               "order": 1
             },
             {
               "id": "a1-polynomials-02",
               "title": "Zero and negative exponents",
-              "path": "math/algebra-1/polynomials/lesson-02.json",
-              "version": 1,
-              "sha256": "1eb0bec46aac7b4a3dc91d834dc22858e8b7c04a988cf910b0ae9ea4234d77a0",
+              "path": "content/math/algebra-1/polynomials/lesson-02.json",
+              "version": 2,
+              "sha256": "c481f26d8692adc3ac7bd74c28930b1cbfb7e32b53231db6c7e1f0d7153fa159",
               "sizeBytes": 3684,
               "order": 2
             },
             {
               "id": "a1-polynomials-03",
               "title": "Scientific notation",
-              "path": "math/algebra-1/polynomials/lesson-03.json",
-              "version": 1,
-              "sha256": "b00fff3c978e515e812759c0a0f568b085059c78732af6a5b575c0863feb75e6",
+              "path": "content/math/algebra-1/polynomials/lesson-03.json",
+              "version": 2,
+              "sha256": "a4005949e968443e33109a66be9d09db0c713c8fa6a650ad742ebfccde18a9b6",
               "sizeBytes": 3911,
               "order": 3
             },
             {
               "id": "a1-polynomials-04",
               "title": "Adding and subtracting polynomials",
-              "path": "math/algebra-1/polynomials/lesson-04.json",
-              "version": 1,
-              "sha256": "75a93dc24dfd2f363803e107ad7e1a4fc6f51db0b216723e560dee09170a25f3",
+              "path": "content/math/algebra-1/polynomials/lesson-04.json",
+              "version": 2,
+              "sha256": "12ab52e6ffb572ab5f15810b39e8dbcaff1867bec016f9662db2f9cc38428f9e",
               "sizeBytes": 3882,
               "order": 4
             },
             {
               "id": "a1-polynomials-05",
               "title": "Multiplying polynomials",
-              "path": "math/algebra-1/polynomials/lesson-05.json",
-              "version": 1,
-              "sha256": "181810b26fbd2acfff28c2b8d4f5861fcb1e5bf93f8a2754ee19e013e03bbbac",
+              "path": "content/math/algebra-1/polynomials/lesson-05.json",
+              "version": 2,
+              "sha256": "64592a7bae831cdb8ea5ef55156cec9bc426f4b89e14a58789e0d14b7184147d",
               "sizeBytes": 4047,
               "order": 5
             },
             {
               "id": "a1-polynomials-06",
               "title": "Factoring polynomials",
-              "path": "math/algebra-1/polynomials/lesson-06.json",
-              "version": 1,
-              "sha256": "b804fbdcca98ab907c8350de7bbbde988a91c9d5afcf1074cfc4a67527e86cee",
+              "path": "content/math/algebra-1/polynomials/lesson-06.json",
+              "version": 2,
+              "sha256": "426a3929b58bfb74eafb85801b1812ddae33ce6b70d9e2893355a64fd4a05832",
               "sizeBytes": 4519,
               "order": 6
             }
@@ -301,7 +301,7 @@
           "notes": {
             "id": "a1-polynomials-notes",
             "title": "Exponents and polynomials: cheat sheet",
-            "path": "math/algebra-1/polynomials/notes.json",
+            "path": "content/math/algebra-1/polynomials/notes.json",
             "version": 1,
             "sha256": "96e657581a254b8bebe7f57e6d5417fb8720c85323f72d0e5369927d03d202ac",
             "sizeBytes": 1424
@@ -315,45 +315,45 @@
             {
               "id": "a1-quadratics-01",
               "title": "Parabolas and quadratic functions",
-              "path": "math/algebra-1/quadratics/lesson-01.json",
-              "version": 1,
-              "sha256": "124a6e9853e8ec6c5a15f1f50031d6cbb9dbfc40df0696c0185237295b5b44fd",
+              "path": "content/math/algebra-1/quadratics/lesson-01.json",
+              "version": 2,
+              "sha256": "103574d3c5073edc2d6e0c862820eecafd6df9f34e9ffeca60f7fd8afb3e8076",
               "sizeBytes": 4338,
               "order": 1
             },
             {
               "id": "a1-quadratics-02",
               "title": "Solving by factoring",
-              "path": "math/algebra-1/quadratics/lesson-02.json",
-              "version": 1,
-              "sha256": "b2d4b15d5f2ad7f075b3c71b4a57f8762e5cbef2c1b4beb1d5c0bc4942029efd",
+              "path": "content/math/algebra-1/quadratics/lesson-02.json",
+              "version": 2,
+              "sha256": "3fd3cc77910bfdfa106b8abf7f8b5b48a26dab9588a92d0071c021a04fd839f5",
               "sizeBytes": 3882,
               "order": 2
             },
             {
               "id": "a1-quadratics-03",
               "title": "Square roots and completing the square",
-              "path": "math/algebra-1/quadratics/lesson-03.json",
-              "version": 1,
-              "sha256": "c6f555f48d34ac92713eff2d1a5517a2b0222bca707572affe7c58cf73953b2e",
+              "path": "content/math/algebra-1/quadratics/lesson-03.json",
+              "version": 2,
+              "sha256": "104abcd7d418507360d3b5ac593458835b240c2de4687396a42602db49d259d6",
               "sizeBytes": 4175,
               "order": 3
             },
             {
               "id": "a1-quadratics-04",
               "title": "The quadratic formula",
-              "path": "math/algebra-1/quadratics/lesson-04.json",
-              "version": 1,
-              "sha256": "683d21b8d13947af326e9e7caca07b406a8bfaeb3839000f3e666ba72252b331",
+              "path": "content/math/algebra-1/quadratics/lesson-04.json",
+              "version": 2,
+              "sha256": "ecea01775f1f43b866a9018e665f2832781c9cb921dc83f1189815ce0fd45074",
               "sizeBytes": 4158,
               "order": 4
             },
             {
               "id": "a1-quadratics-05",
               "title": "The discriminant and applications",
-              "path": "math/algebra-1/quadratics/lesson-05.json",
-              "version": 1,
-              "sha256": "8d0b22d00aaa956e2d0a746b974cb9dc32c264bab98722d60748d3f06987547e",
+              "path": "content/math/algebra-1/quadratics/lesson-05.json",
+              "version": 2,
+              "sha256": "14f8b2b91bc361ed1ee8b4ba13ad9f428e14087de4dd3f2055492ac07f5ee1a6",
               "sizeBytes": 4702,
               "order": 5
             }
@@ -361,7 +361,7 @@
           "notes": {
             "id": "a1-quadratics-notes",
             "title": "Quadratics: cheat sheet",
-            "path": "math/algebra-1/quadratics/notes.json",
+            "path": "content/math/algebra-1/quadratics/notes.json",
             "version": 1,
             "sha256": "b0b22f23d0862ffcb6fff73afa6dfff5eb2d376fd765fa56dc8905daa13e613b",
             "sizeBytes": 1460
@@ -399,18 +399,18 @@
             {
               "id": "matter-01",
               "title": "States of matter",
-              "path": "science/basics/matter/lesson-01.json",
-              "version": 2,
-              "sha256": "bd9387bef8be24672b95a517594fa373a2c8ec9ed8c990c12b4a20dfbb55b2c2",
+              "path": "content/science/basics/matter/lesson-01.json",
+              "version": 3,
+              "sha256": "63da5c3b4c144f7cb1b71a47b29f553016c33c37ae584dac0203370466cc4757",
               "sizeBytes": 3959,
               "order": 1
             },
             {
               "id": "matter-02",
               "title": "Atoms and molecules",
-              "path": "science/basics/matter/lesson-02.json",
-              "version": 2,
-              "sha256": "a757cb2d6efdf411bb5e0352aee9d0dc2bc45ebc91dc1115e7b3225ab73ebc6c",
+              "path": "content/science/basics/matter/lesson-02.json",
+              "version": 3,
+              "sha256": "0de1410d6c8f6b8eaaadd53dfc4072760d05555889724fdebd402a116deb964d",
               "sizeBytes": 2426,
               "order": 2
             }
@@ -418,7 +418,7 @@
           "notes": {
             "id": "matter-notes",
             "title": "Matter: cheat sheet",
-            "path": "science/basics/matter/notes.json",
+            "path": "content/science/basics/matter/notes.json",
             "version": 1,
             "sha256": "6966ffee90ac86f24eab873faa9016a8e57562c90129a3d89167a8dd1897740a",
             "sizeBytes": 1471
@@ -453,9 +453,9 @@
             {
               "id": "variables-01",
               "title": "Variables",
-              "path": "swe/programming-basics/variables/lesson-01.json",
-              "version": 1,
-              "sha256": "b2a726c7729e82bb369bc5ec11e958206a277643de397cfbf942278633561b1f",
+              "path": "content/swe/programming-basics/variables/lesson-01.json",
+              "version": 2,
+              "sha256": "e80a6b2a272f072a58ad22554fe0a712abac1e8a88ed83582f9120e24dabb603",
               "sizeBytes": 3713,
               "order": 1,
               "minApp": 2
@@ -463,9 +463,9 @@
             {
               "id": "variables-02",
               "title": "Numbers and text",
-              "path": "swe/programming-basics/variables/lesson-02.json",
-              "version": 1,
-              "sha256": "5ab4331f01eddc4c1f96b3abee61e666799271cf71f2b8ca57f52426c5bdd85d",
+              "path": "content/swe/programming-basics/variables/lesson-02.json",
+              "version": 2,
+              "sha256": "d95c010b271d6c080869d1997718b3e3da3e1dbc571d7168d72570ab1de6931d",
               "sizeBytes": 4008,
               "order": 2,
               "minApp": 2
@@ -474,7 +474,7 @@
           "notes": {
             "id": "variables-notes",
             "title": "Variables and types: cheat sheet",
-            "path": "swe/programming-basics/variables/notes.json",
+            "path": "content/swe/programming-basics/variables/notes.json",
             "version": 1,
             "sha256": "41951fb32445619fefe67b474821cf24239f4d65444da7c0059f569d9b9c1469",
             "sizeBytes": 1476,
@@ -489,9 +489,9 @@
             {
               "id": "decisions-01",
               "title": "If and else",
-              "path": "swe/programming-basics/decisions/lesson-01.json",
-              "version": 1,
-              "sha256": "f4dc9900619fa2b26ba7895c25a1b14bd7392f8d4bde49e5d98cc4a7d48fd10c",
+              "path": "content/swe/programming-basics/decisions/lesson-01.json",
+              "version": 2,
+              "sha256": "778a2064f56b63476073496a5fb8fac17dbe9be76395e634544e1c63eaeb6e30",
               "sizeBytes": 4007,
               "order": 1,
               "minApp": 2
@@ -499,9 +499,9 @@
             {
               "id": "decisions-02",
               "title": "Comparing values",
-              "path": "swe/programming-basics/decisions/lesson-02.json",
-              "version": 1,
-              "sha256": "e739bfa81f22b185403855da27f2e1fe342d45a526af00b0564a7cf7d6c01346",
+              "path": "content/swe/programming-basics/decisions/lesson-02.json",
+              "version": 2,
+              "sha256": "912194a9e62e95740f9100bddbbf44bce40239758ffd13fa24b390ed71f26903",
               "sizeBytes": 3929,
               "order": 2,
               "minApp": 2
@@ -510,7 +510,7 @@
           "notes": {
             "id": "decisions-notes",
             "title": "Decisions: cheat sheet",
-            "path": "swe/programming-basics/decisions/notes.json",
+            "path": "content/swe/programming-basics/decisions/notes.json",
             "version": 1,
             "sha256": "0bda458336a634e091cb14f3cca8fb94d7d9fedbc37169dbe3ae932d536bbb14",
             "sizeBytes": 1181,
@@ -547,18 +547,18 @@
             {
               "id": "ohms-law-01",
               "title": "Voltage and current",
-              "path": "electronics/electronics-basics/ohms-law/lesson-01.json",
-              "version": 1,
-              "sha256": "55715b76b175a4e1280fd2f3223808ec5f53f0e4a65a1900b1e584ee39b8fdb0",
+              "path": "content/electronics/electronics-basics/ohms-law/lesson-01.json",
+              "version": 2,
+              "sha256": "3c2689c5935540d84349cd1b3cc2d01ff11fed6e51e0aa2f61d386ab138acc72",
               "sizeBytes": 3803,
               "order": 1
             },
             {
               "id": "ohms-law-02",
               "title": "Resistance and Ohm's law",
-              "path": "electronics/electronics-basics/ohms-law/lesson-02.json",
-              "version": 1,
-              "sha256": "b3d0ef37a74b589d7c04d7ed73a7d74e4961dee085f1fd4dbae4c64e02eb11d0",
+              "path": "content/electronics/electronics-basics/ohms-law/lesson-02.json",
+              "version": 2,
+              "sha256": "35195e2a13502596154bd6edd8b06a8a5241ca4bc02b5e62fcdde0d9e01b5735",
               "sizeBytes": 4058,
               "order": 2
             }
@@ -566,7 +566,7 @@
           "notes": {
             "id": "ohms-law-notes",
             "title": "Voltage, current, resistance: cheat sheet",
-            "path": "electronics/electronics-basics/ohms-law/notes.json",
+            "path": "content/electronics/electronics-basics/ohms-law/notes.json",
             "version": 1,
             "sha256": "28d06e2750c6ed0224ff7931e0aae85194693e9710de58e2615fbe06a4ab4147",
             "sizeBytes": 1184
@@ -580,26 +580,26 @@
             {
               "id": "circuits-01",
               "title": "Series circuits",
-              "path": "electronics/electronics-basics/circuits/lesson-01.json",
-              "version": 3,
-              "sha256": "b5ac38d25a5d8a26be25004336a908823caea47e391e278bd40dcf80c001687a",
-              "sizeBytes": 3927,
+              "path": "content/electronics/electronics-basics/circuits/lesson-01.json",
+              "version": 4,
+              "sha256": "7ea754d478a0b39cb47b2384fad8adbaec664887e65a36fea66f1d4e1609dbb7",
+              "sizeBytes": 3935,
               "order": 1
             },
             {
               "id": "circuits-02",
               "title": "Parallel circuits",
-              "path": "electronics/electronics-basics/circuits/lesson-02.json",
-              "version": 3,
-              "sha256": "303b99d066dae3facc48a8e94f1b8b69ee1d85706c715125df2820ccdff98699",
-              "sizeBytes": 3866,
+              "path": "content/electronics/electronics-basics/circuits/lesson-02.json",
+              "version": 4,
+              "sha256": "e15795674ca9dfe0bc9a50751cc4ab4d6e0d03ee74ee4c4a4f92029550838306",
+              "sizeBytes": 3874,
               "order": 2
             }
           ],
           "notes": {
             "id": "circuits-notes",
             "title": "Simple circuits: cheat sheet",
-            "path": "electronics/electronics-basics/circuits/notes.json",
+            "path": "content/electronics/electronics-basics/circuits/notes.json",
             "version": 1,
             "sha256": "17e6b8e0f6f8e5502bb833a02f97d897c2e47e3c704454f989900993c44b9490",
             "sizeBytes": 1249
@@ -635,45 +635,45 @@
             {
               "id": "a2-functions-01",
               "title": "Function notation, domain and range",
-              "path": "math/algebra-2/functions/lesson-01.json",
-              "version": 1,
-              "sha256": "306a41789786de318f8e27cf6146dd33581a69f696c9e9095a2a88b1aee8c848",
+              "path": "content/math/algebra-2/functions/lesson-01.json",
+              "version": 2,
+              "sha256": "e7c91a397cb00460604c5a2a57ce097cb46007fbbd8f899ec872908781917db0",
               "sizeBytes": 4149,
               "order": 1
             },
             {
               "id": "a2-functions-02",
               "title": "Composition and inverse functions",
-              "path": "math/algebra-2/functions/lesson-02.json",
-              "version": 1,
-              "sha256": "15747bb6a7e679ea5b13bcdef66ebdf2b4688cc09ad8f15becb00f094ec803a2",
+              "path": "content/math/algebra-2/functions/lesson-02.json",
+              "version": 2,
+              "sha256": "de94eb508856152b529cacd0e929e0616cfba570460550f09d96c5de864efe49",
               "sizeBytes": 4091,
               "order": 2
             },
             {
               "id": "a2-functions-03",
               "title": "Transformations of graphs",
-              "path": "math/algebra-2/functions/lesson-03.json",
-              "version": 1,
-              "sha256": "94b53d2c33e9c68fc336292d0d6ba766df5dab6368e0e0a43ff785f0cb8536e8",
+              "path": "content/math/algebra-2/functions/lesson-03.json",
+              "version": 2,
+              "sha256": "d6cc0ddbb910d13fee0fb96b87f19fb860d43c43262f035b5d7076bcd9d273bc",
               "sizeBytes": 4562,
               "order": 3
             },
             {
               "id": "a2-functions-04",
               "title": "Piecewise and absolute value functions",
-              "path": "math/algebra-2/functions/lesson-04.json",
-              "version": 1,
-              "sha256": "1621748281a6e60a6ccd30b886cd3ab9758a35e4dbb79e2864293c68197012b8",
+              "path": "content/math/algebra-2/functions/lesson-04.json",
+              "version": 2,
+              "sha256": "da8f4d02d81dadf6f4a77eba53cb46bf73215c413a70ac3bd2923351f88bc1c1",
               "sizeBytes": 3747,
               "order": 4
             },
             {
               "id": "a2-functions-05",
               "title": "Radicals and rational exponents",
-              "path": "math/algebra-2/functions/lesson-05.json",
-              "version": 1,
-              "sha256": "58004c75aefe1582f4c31ff2d4e92e9939feeae2d4b48fc06150893ec395e37f",
+              "path": "content/math/algebra-2/functions/lesson-05.json",
+              "version": 2,
+              "sha256": "273f79fb3d64c83af69859a4f2fca531a4986058779ce3667ca1e7839dc874b4",
               "sizeBytes": 3619,
               "order": 5
             }
@@ -681,7 +681,7 @@
           "notes": {
             "id": "a2-functions-notes",
             "title": "Functions and transformations: cheat sheet",
-            "path": "math/algebra-2/functions/notes.json",
+            "path": "content/math/algebra-2/functions/notes.json",
             "version": 1,
             "sha256": "6cd15578657f9cddcb4e7e54990b4008e1b0eb3ae6f16204f704ed6c4bca014f",
             "sizeBytes": 1355
@@ -695,54 +695,54 @@
             {
               "id": "a2-polynomials-01",
               "title": "Polynomial arithmetic and long division",
-              "path": "math/algebra-2/polynomials/lesson-01.json",
-              "version": 1,
-              "sha256": "01fbcdc73a05dde1cf89d3897bc6bfea880c315a3bb510c31619157380a2862d",
+              "path": "content/math/algebra-2/polynomials/lesson-01.json",
+              "version": 2,
+              "sha256": "d4276d9263576d3bc4401c1e48d726ed968bf541673e01f00de35cf39fef1307",
               "sizeBytes": 4055,
               "order": 1
             },
             {
               "id": "a2-polynomials-02",
               "title": "The remainder and factor theorems",
-              "path": "math/algebra-2/polynomials/lesson-02.json",
-              "version": 1,
-              "sha256": "161a5933f0895894ee58c7abe49e35a9577a68ea8ec9acb0eb694367deea93db",
+              "path": "content/math/algebra-2/polynomials/lesson-02.json",
+              "version": 2,
+              "sha256": "8a722e3c5b11668542d7808e88af32416c14d0442e9bd90b06352cd240d32c0a",
               "sizeBytes": 3952,
               "order": 2
             },
             {
               "id": "a2-polynomials-03",
               "title": "Zeros and the rational root theorem",
-              "path": "math/algebra-2/polynomials/lesson-03.json",
-              "version": 1,
-              "sha256": "a6dfce76d46514665e2b89374ae0a39f1148667b85ce06ac31537c9d2ce74555",
+              "path": "content/math/algebra-2/polynomials/lesson-03.json",
+              "version": 2,
+              "sha256": "09417eae5d694fd857ebd13ab65e6467be2c1e558ed3ef56dac8baf454795a2d",
               "sizeBytes": 4464,
               "order": 3
             },
             {
               "id": "a2-polynomials-04",
               "title": "Complex numbers",
-              "path": "math/algebra-2/polynomials/lesson-04.json",
-              "version": 1,
-              "sha256": "5a64e3d68164515f1438e41b57f64924a0fc62ff4d7a3d8c7c78e46da12e3eb3",
+              "path": "content/math/algebra-2/polynomials/lesson-04.json",
+              "version": 2,
+              "sha256": "0db4fb0d745f85ba8112d38ea46a55e267c352477448350656ef7eda903df760",
               "sizeBytes": 3463,
               "order": 4
             },
             {
               "id": "a2-polynomials-05",
               "title": "Quadratics in vertex form",
-              "path": "math/algebra-2/polynomials/lesson-05.json",
-              "version": 1,
-              "sha256": "bd22f7c57bc1e846ae9d7ae4ace350542f8e70e317d06434d61c8f27b764b693",
+              "path": "content/math/algebra-2/polynomials/lesson-05.json",
+              "version": 2,
+              "sha256": "e2a5bd6b6f5a25f4afe2d7ab59ce84ebc4d2ee8fd262c397503e2071664f8bc6",
               "sizeBytes": 3795,
               "order": 5
             },
             {
               "id": "a2-polynomials-06",
               "title": "Solving polynomial equations",
-              "path": "math/algebra-2/polynomials/lesson-06.json",
-              "version": 1,
-              "sha256": "b5b56f7504eecb57e917e53be8aa82022c7bd15277266233406aac8e96056fa2",
+              "path": "content/math/algebra-2/polynomials/lesson-06.json",
+              "version": 2,
+              "sha256": "22e776dba5f63abdabbef2c89c9e817ad59409d12459bd92df75f3772f52769d",
               "sizeBytes": 4128,
               "order": 6
             }
@@ -750,7 +750,7 @@
           "notes": {
             "id": "a2-polynomials-notes",
             "title": "Polynomials and complex numbers: cheat sheet",
-            "path": "math/algebra-2/polynomials/notes.json",
+            "path": "content/math/algebra-2/polynomials/notes.json",
             "version": 1,
             "sha256": "2655da08b625d20f2a2452cbb5f9ab561fba405411087949611bb13eee02d9ec",
             "sizeBytes": 1542
@@ -764,45 +764,45 @@
             {
               "id": "a2-exponentials-01",
               "title": "Exponential growth and decay",
-              "path": "math/algebra-2/exponentials/lesson-01.json",
-              "version": 1,
-              "sha256": "5bf2733e4e43c38dd2844a5a084ebd4ac7f7b7d75b9f8eb718f0f787549c0ce5",
+              "path": "content/math/algebra-2/exponentials/lesson-01.json",
+              "version": 2,
+              "sha256": "0e6b914be5b2f98e92a224162243d5962f028303219df6c1ec45f66b75db03e7",
               "sizeBytes": 3700,
               "order": 1
             },
             {
               "id": "a2-exponentials-02",
               "title": "Compound interest and the number e",
-              "path": "math/algebra-2/exponentials/lesson-02.json",
-              "version": 1,
-              "sha256": "fb81c25f49bff2561f043d707ff04b80d80d71d3ad1645f95c4aefe2709e25c8",
+              "path": "content/math/algebra-2/exponentials/lesson-02.json",
+              "version": 2,
+              "sha256": "d35b4356ba127ee4decd421b9da09c36d7450d135e3e37361d214cb38f760b7b",
               "sizeBytes": 4028,
               "order": 2
             },
             {
               "id": "a2-exponentials-03",
               "title": "Logarithms",
-              "path": "math/algebra-2/exponentials/lesson-03.json",
-              "version": 1,
-              "sha256": "3e8142f678406073c2e495b8fef39ffa7993273b81fa37ebddbb40d5ec5fbd02",
+              "path": "content/math/algebra-2/exponentials/lesson-03.json",
+              "version": 2,
+              "sha256": "b5bb47abfe15c582855b952fe0712c4f5a0aafc7882bfeedf23f820185d078f9",
               "sizeBytes": 3575,
               "order": 3
             },
             {
               "id": "a2-exponentials-04",
               "title": "Properties of logarithms",
-              "path": "math/algebra-2/exponentials/lesson-04.json",
-              "version": 1,
-              "sha256": "4cb1a664ee6cbe62f1a484abfb6b2b11d69ed7ded9719e9e2071742126dc764c",
+              "path": "content/math/algebra-2/exponentials/lesson-04.json",
+              "version": 2,
+              "sha256": "db4b270b9835424fb2867b4398d9cd5e44f887146c318547c416f511f850fff3",
               "sizeBytes": 3705,
               "order": 4
             },
             {
               "id": "a2-exponentials-05",
               "title": "Solving exponential and log equations",
-              "path": "math/algebra-2/exponentials/lesson-05.json",
-              "version": 1,
-              "sha256": "825042a5072a6cdc02bf3de52773ddeffce2340273391e6b80f818cfbc9a2d3f",
+              "path": "content/math/algebra-2/exponentials/lesson-05.json",
+              "version": 2,
+              "sha256": "0d4a590a7463c6475bea5c21fc42bafdeaeddafb469583595531b44c675f66a8",
               "sizeBytes": 3852,
               "order": 5
             }
@@ -810,7 +810,7 @@
           "notes": {
             "id": "a2-exponentials-notes",
             "title": "Exponentials and logarithms: cheat sheet",
-            "path": "math/algebra-2/exponentials/notes.json",
+            "path": "content/math/algebra-2/exponentials/notes.json",
             "version": 1,
             "sha256": "eaf25984f205d2dc95e733446a7f23119b45fa064f6df018ce4a34cde822af53",
             "sizeBytes": 1359
@@ -824,54 +824,54 @@
             {
               "id": "a2-rational-01",
               "title": "Rational expressions",
-              "path": "math/algebra-2/rational/lesson-01.json",
-              "version": 1,
-              "sha256": "d8d164ed05f5bb471a7dc8b7f757cdb14a910b6fed81ae29f458d840bf682605",
+              "path": "content/math/algebra-2/rational/lesson-01.json",
+              "version": 2,
+              "sha256": "0dae88150be6c713ea1cc4d337ad542340ca15c0fd16a21c7ed63fa3e08392f6",
               "sizeBytes": 4072,
               "order": 1
             },
             {
               "id": "a2-rational-02",
               "title": "Rational equations",
-              "path": "math/algebra-2/rational/lesson-02.json",
-              "version": 1,
-              "sha256": "4313450d17c0ed9bba09ab9482efbb4e250be964b00b02660aa7d17d1cc3b441",
+              "path": "content/math/algebra-2/rational/lesson-02.json",
+              "version": 2,
+              "sha256": "c37ec3ebb1c7aeb55f752edbedca490400614b520f1e6b116e080f517363f71e",
               "sizeBytes": 3784,
               "order": 2
             },
             {
               "id": "a2-rational-03",
               "title": "Arithmetic sequences",
-              "path": "math/algebra-2/rational/lesson-03.json",
-              "version": 1,
-              "sha256": "413e05ad6f25768a9b4a8dc537488dc4ee324d08b1d46be9b463d3ee91c1ee29",
+              "path": "content/math/algebra-2/rational/lesson-03.json",
+              "version": 2,
+              "sha256": "b8c2ecfc46a77bc978d97bed501769cbd761a16903a43da5c47e4008569af69c",
               "sizeBytes": 3705,
               "order": 3
             },
             {
               "id": "a2-rational-04",
               "title": "Geometric sequences",
-              "path": "math/algebra-2/rational/lesson-04.json",
-              "version": 1,
-              "sha256": "84c938d4c4e0e9d362ff569df1b6e3cace896bf3674884b3ea2c87a9ffb6bdb9",
+              "path": "content/math/algebra-2/rational/lesson-04.json",
+              "version": 2,
+              "sha256": "a7087e97a6e938f9f18299afbe35c6bddec705471cf0b0c69881c57299b6a96a",
               "sizeBytes": 3559,
               "order": 4
             },
             {
               "id": "a2-rational-05",
               "title": "Series and sigma notation",
-              "path": "math/algebra-2/rational/lesson-05.json",
-              "version": 1,
-              "sha256": "9e87bd92954b6798f263b33147bb29050f604ac359748accd39391b60948284a",
+              "path": "content/math/algebra-2/rational/lesson-05.json",
+              "version": 2,
+              "sha256": "c6ba1acdbdebafcf0bd47c4764a885666edc7d14f8953c4a6d5a88f6c4cfe65e",
               "sizeBytes": 3672,
               "order": 5
             },
             {
               "id": "a2-rational-06",
               "title": "Probability basics and the normal curve",
-              "path": "math/algebra-2/rational/lesson-06.json",
-              "version": 1,
-              "sha256": "79577c811a0bb599e480fed8fb40eda1cf40993e252b074bce9e4dba9df5a465",
+              "path": "content/math/algebra-2/rational/lesson-06.json",
+              "version": 2,
+              "sha256": "956baee6cbb1c954b5059ca3b54d8285e396d47e6970f555b22973df6c4ad5f4",
               "sizeBytes": 4337,
               "order": 6
             }
@@ -879,7 +879,7 @@
           "notes": {
             "id": "a2-rational-notes",
             "title": "Rational functions and sequences: cheat sheet",
-            "path": "math/algebra-2/rational/notes.json",
+            "path": "content/math/algebra-2/rational/notes.json",
             "version": 1,
             "sha256": "426a1c01fefc83d2ba56a577b35ad8cf7c83143c44be8ba4ea63002c1fe812c2",
             "sizeBytes": 1743
@@ -917,9 +917,9 @@
             {
               "id": "cg-analysis-01",
               "title": "What an algorithm is",
-              "path": "swe/c-algorithms/analysis/lesson-01.json",
-              "version": 1,
-              "sha256": "026bd6d22e11f73ce6b208da97399644239df5b991ae242aa5e70947b8326ea9",
+              "path": "content/swe/c-algorithms/analysis/lesson-01.json",
+              "version": 2,
+              "sha256": "5e7db67cba6d0b8937fac65bda1808a26fcfe16c5d8add860fa0ed09cadbbf17",
               "sizeBytes": 4985,
               "order": 1,
               "minApp": 2
@@ -927,9 +927,9 @@
             {
               "id": "cg-analysis-02",
               "title": "Counting steps",
-              "path": "swe/c-algorithms/analysis/lesson-02.json",
-              "version": 1,
-              "sha256": "0811a54706b1e06c1fc86c83a487ed25da60d2405ac50351b5d19adea1646888",
+              "path": "content/swe/c-algorithms/analysis/lesson-02.json",
+              "version": 2,
+              "sha256": "82139052b5684c93f7af0038f62691279a2519d327d0619e0d1e6dc6d76b648f",
               "sizeBytes": 4864,
               "order": 2,
               "minApp": 2
@@ -937,9 +937,9 @@
             {
               "id": "cg-analysis-03",
               "title": "Big O notation",
-              "path": "swe/c-algorithms/analysis/lesson-03.json",
-              "version": 1,
-              "sha256": "bf243b02db53449774fa461d90c9d7866fb1dbc20755331bc74578c26d974834",
+              "path": "content/swe/c-algorithms/analysis/lesson-03.json",
+              "version": 2,
+              "sha256": "5792695c76917e16410990f9473e291b005b5b7ab00860c23234728b2060de59",
               "sizeBytes": 4565,
               "order": 3,
               "minApp": 2
@@ -947,9 +947,9 @@
             {
               "id": "cg-analysis-04",
               "title": "Omega and theta",
-              "path": "swe/c-algorithms/analysis/lesson-04.json",
-              "version": 1,
-              "sha256": "c7f3fb2b8925073e70a0f3c44e2897038432ea6337fcd2194982161b94e5afbe",
+              "path": "content/swe/c-algorithms/analysis/lesson-04.json",
+              "version": 2,
+              "sha256": "bb89e0e5be2ea3827dfcc021f849846da3ee8fa1a2fb0b0ff49d9833b2021003",
               "sizeBytes": 4318,
               "order": 4,
               "minApp": 2
@@ -957,9 +957,9 @@
             {
               "id": "cg-analysis-05",
               "title": "Best and worst case",
-              "path": "swe/c-algorithms/analysis/lesson-05.json",
-              "version": 1,
-              "sha256": "ac2890537a0470abb0085a758fd08d53a686de383fca8ccafa2e007b0213d76c",
+              "path": "content/swe/c-algorithms/analysis/lesson-05.json",
+              "version": 2,
+              "sha256": "03822377f6a42a105c31fb699e21a043d68b9a4dd50f64df131ca525971ae1aa",
               "sizeBytes": 4768,
               "order": 5,
               "minApp": 2
@@ -968,7 +968,7 @@
           "notes": {
             "id": "cg-analysis-notes",
             "title": "Thinking about algorithms: cheat sheet",
-            "path": "swe/c-algorithms/analysis/notes.json",
+            "path": "content/swe/c-algorithms/analysis/notes.json",
             "version": 1,
             "sha256": "4df4c2db5d71006c670e8a8562f3e314a58f1cac6f3dddb0440b03bd68d12e95",
             "sizeBytes": 1675,
@@ -983,9 +983,9 @@
             {
               "id": "cg-search-01",
               "title": "Linear search",
-              "path": "swe/c-algorithms/searching/lesson-01.json",
-              "version": 1,
-              "sha256": "5bf3189001f85b9243dc63ff78e653f3acffafce7f08252faa38ede25d73fca8",
+              "path": "content/swe/c-algorithms/searching/lesson-01.json",
+              "version": 2,
+              "sha256": "b2a930cfb092133b3e5e416c273f2a9bd2eb54bfacd6004e9fa5c28bcd8bae45",
               "sizeBytes": 4103,
               "order": 1,
               "minApp": 2
@@ -993,9 +993,9 @@
             {
               "id": "cg-search-02",
               "title": "Binary search",
-              "path": "swe/c-algorithms/searching/lesson-02.json",
-              "version": 1,
-              "sha256": "09e92b8ebdae73967662b412c48555a325d24f15da0d9a0fa6f304c26eb0f46b",
+              "path": "content/swe/c-algorithms/searching/lesson-02.json",
+              "version": 2,
+              "sha256": "2f6a96f3b5a28ec6bbcc3c8d65f2f75ed430cc4e9a49d918b56fedc844dff9f7",
               "sizeBytes": 4444,
               "order": 2,
               "minApp": 2
@@ -1003,9 +1003,9 @@
             {
               "id": "cg-search-03",
               "title": "Binary search in C",
-              "path": "swe/c-algorithms/searching/lesson-03.json",
-              "version": 1,
-              "sha256": "349542c374d032a7b7938dc893dcad8e6108c1bbeb150c52c34de724108c7c98",
+              "path": "content/swe/c-algorithms/searching/lesson-03.json",
+              "version": 2,
+              "sha256": "b1cb475cb5ffa36e200690278487e52ac01d3678ab8876d0e1e9f29187cda830",
               "sizeBytes": 4515,
               "order": 3,
               "minApp": 2
@@ -1013,9 +1013,9 @@
             {
               "id": "cg-search-04",
               "title": "Comparing searches",
-              "path": "swe/c-algorithms/searching/lesson-04.json",
-              "version": 1,
-              "sha256": "e4e8c4a626e656c5b1a340d9c6257786149053b245805090b6419763e532bc02",
+              "path": "content/swe/c-algorithms/searching/lesson-04.json",
+              "version": 2,
+              "sha256": "97e5c416f2c0c35f7ec0195bf90c447ddcdcc36d7154786abafe8c15c31808bf",
               "sizeBytes": 4321,
               "order": 4,
               "minApp": 2
@@ -1023,9 +1023,9 @@
             {
               "id": "cg-search-05",
               "title": "Searching strings and structs",
-              "path": "swe/c-algorithms/searching/lesson-05.json",
-              "version": 1,
-              "sha256": "1e6453ef4cd3a3da368267b9f9ad4337a467e41baf4644a8ab08df3c1e25be1d",
+              "path": "content/swe/c-algorithms/searching/lesson-05.json",
+              "version": 2,
+              "sha256": "3ca05f9db9bc6ea33799440745aba371b20b43fcf21cebe976c98a8b8a0206e3",
               "sizeBytes": 5077,
               "order": 5,
               "minApp": 2
@@ -1034,7 +1034,7 @@
           "notes": {
             "id": "cg-search-notes",
             "title": "Searching: cheat sheet",
-            "path": "swe/c-algorithms/searching/notes.json",
+            "path": "content/swe/c-algorithms/searching/notes.json",
             "version": 1,
             "sha256": "3ff60f56884995abc50bc6c68fdc4748ded833a366b5d99198888377d2a459c5",
             "sizeBytes": 1799,
@@ -1049,9 +1049,9 @@
             {
               "id": "cg-sort-01",
               "title": "Bubble sort",
-              "path": "swe/c-algorithms/sorting/lesson-01.json",
-              "version": 1,
-              "sha256": "7f0382c54990891bab20c9daf9aa18e81a1dacfd3dca22863d79a5ff5172d1dd",
+              "path": "content/swe/c-algorithms/sorting/lesson-01.json",
+              "version": 2,
+              "sha256": "587dffcac73a803c159ae38ca562d00c90ec3e79fd25a892ef3b72d9c66817f7",
               "sizeBytes": 4652,
               "order": 1,
               "minApp": 2
@@ -1059,9 +1059,9 @@
             {
               "id": "cg-sort-02",
               "title": "Selection sort",
-              "path": "swe/c-algorithms/sorting/lesson-02.json",
-              "version": 1,
-              "sha256": "ecb2c1e1d9e4ba22dccc02bf392914deb7cda979c433b34adc63afab291dc3fe",
+              "path": "content/swe/c-algorithms/sorting/lesson-02.json",
+              "version": 2,
+              "sha256": "5e37ccac430c7c339d29d7474bd11fc91b19aa57fbc0edbcaddc426a9ee14dbe",
               "sizeBytes": 4351,
               "order": 2,
               "minApp": 2
@@ -1069,9 +1069,9 @@
             {
               "id": "cg-sort-03",
               "title": "Insertion sort",
-              "path": "swe/c-algorithms/sorting/lesson-03.json",
-              "version": 1,
-              "sha256": "fa826651e2a9b4a3878dbbdb0b44e5206eadea5a81cd91d80fea357bc4213c0e",
+              "path": "content/swe/c-algorithms/sorting/lesson-03.json",
+              "version": 2,
+              "sha256": "627b493639cf43c10b0ad796cf88696ac347bde0e0ec6215e96d5511cf7e2710",
               "sizeBytes": 4266,
               "order": 3,
               "minApp": 2
@@ -1079,9 +1079,9 @@
             {
               "id": "cg-sort-04",
               "title": "The idea of merge sort",
-              "path": "swe/c-algorithms/sorting/lesson-04.json",
-              "version": 1,
-              "sha256": "aed62d70cf71e6a0d921230932d9963bb3a621cac04945447aef926f20120fbf",
+              "path": "content/swe/c-algorithms/sorting/lesson-04.json",
+              "version": 2,
+              "sha256": "1c0f5710f8fa5632f619534ffad06063eca66c7d774b8ac954547a167ed8b772",
               "sizeBytes": 4381,
               "order": 4,
               "minApp": 2
@@ -1089,9 +1089,9 @@
             {
               "id": "cg-sort-05",
               "title": "Merging in C",
-              "path": "swe/c-algorithms/sorting/lesson-05.json",
-              "version": 1,
-              "sha256": "5f06d51283a5a61031e9b3b927b9715884a016708e18f70eeddfb80df608ad84",
+              "path": "content/swe/c-algorithms/sorting/lesson-05.json",
+              "version": 2,
+              "sha256": "b1f953de7c48ae0a9ce8e3189ba2940511cd399a04325302c0095bce866db58e",
               "sizeBytes": 4833,
               "order": 5,
               "minApp": 2
@@ -1099,9 +1099,9 @@
             {
               "id": "cg-sort-06",
               "title": "Comparing sorts",
-              "path": "swe/c-algorithms/sorting/lesson-06.json",
-              "version": 1,
-              "sha256": "dacb0a01152c690b6c18d1cf823244cb515b40f5b56f3a46da1c4ff57394e07e",
+              "path": "content/swe/c-algorithms/sorting/lesson-06.json",
+              "version": 2,
+              "sha256": "a715e788a37ed7dc3102390aed72ae8d06606f207afbfba06f8de3520298b8c5",
               "sizeBytes": 5081,
               "order": 6,
               "minApp": 2
@@ -1110,7 +1110,7 @@
           "notes": {
             "id": "cg-sort-notes",
             "title": "Sorting: cheat sheet",
-            "path": "swe/c-algorithms/sorting/notes.json",
+            "path": "content/swe/c-algorithms/sorting/notes.json",
             "version": 1,
             "sha256": "37ecbe40fe6a60ef392a9ed552156df45f24a030145bf89fc3dfaa244ddf969a",
             "sizeBytes": 1917,
@@ -1125,9 +1125,9 @@
             {
               "id": "cg-recursion-01",
               "title": "The idea of recursion",
-              "path": "swe/c-algorithms/recursion/lesson-01.json",
-              "version": 1,
-              "sha256": "9ade7adbd01b4dbd80e9601fec19c6fc5e49e74cec01915b01446a6ef49a7cea",
+              "path": "content/swe/c-algorithms/recursion/lesson-01.json",
+              "version": 2,
+              "sha256": "c8c151ad8ae67977dcafe60543dee01d574687994ec4c07ed8c3cd826f864421",
               "sizeBytes": 4248,
               "order": 1,
               "minApp": 2
@@ -1135,9 +1135,9 @@
             {
               "id": "cg-recursion-02",
               "title": "Base and recursive cases",
-              "path": "swe/c-algorithms/recursion/lesson-02.json",
-              "version": 1,
-              "sha256": "62e8a87276ca63e6e355cc4fcc90e0a328319135cba22c3faf231e883a628850",
+              "path": "content/swe/c-algorithms/recursion/lesson-02.json",
+              "version": 2,
+              "sha256": "3db5e9d07ae5a10913bf5a7a99ddd1dee82019617d233ce0ee361f875fdcd3ac",
               "sizeBytes": 4158,
               "order": 2,
               "minApp": 2
@@ -1145,9 +1145,9 @@
             {
               "id": "cg-recursion-03",
               "title": "Factorial and Fibonacci",
-              "path": "swe/c-algorithms/recursion/lesson-03.json",
-              "version": 1,
-              "sha256": "daab86826fdb56ff00f3df97eccca60f2a6c61354d172ec19328a342b4bd7720",
+              "path": "content/swe/c-algorithms/recursion/lesson-03.json",
+              "version": 2,
+              "sha256": "2a7334e640de9d2b3acda4fe503de9681fe27d4f1c138e691919ce930c5d8f54",
               "sizeBytes": 4304,
               "order": 3,
               "minApp": 2
@@ -1155,9 +1155,9 @@
             {
               "id": "cg-recursion-04",
               "title": "Recursion versus loops",
-              "path": "swe/c-algorithms/recursion/lesson-04.json",
-              "version": 1,
-              "sha256": "006abcd8c6a2bf3958c52d7d328885e0e9aef8bf8bf5e445adcca112e45678d9",
+              "path": "content/swe/c-algorithms/recursion/lesson-04.json",
+              "version": 2,
+              "sha256": "d1ce48a6cb21e147f14aebc1079bc467afc56261ea3438a7450ac3712724716a",
               "sizeBytes": 4843,
               "order": 4,
               "minApp": 2
@@ -1165,9 +1165,9 @@
             {
               "id": "cg-recursion-05",
               "title": "Divide and conquer",
-              "path": "swe/c-algorithms/recursion/lesson-05.json",
-              "version": 1,
-              "sha256": "8ad2c215c4a65d731cdaa90609de0439c2755126fcada6c8be91f51a398c2098",
+              "path": "content/swe/c-algorithms/recursion/lesson-05.json",
+              "version": 2,
+              "sha256": "5efabd2a76a40cd6d526dd5af724e360452ade7924b398e23337cfb5c8b51286",
               "sizeBytes": 4699,
               "order": 5,
               "minApp": 2
@@ -1176,7 +1176,7 @@
           "notes": {
             "id": "cg-recursion-notes",
             "title": "Recursion: cheat sheet",
-            "path": "swe/c-algorithms/recursion/notes.json",
+            "path": "content/swe/c-algorithms/recursion/notes.json",
             "version": 1,
             "sha256": "c4812b28c54bd52a0107d2a37862b5f3b4c969b10adf37dbbbd58e8d81068241",
             "sizeBytes": 1677,
@@ -1215,9 +1215,9 @@
             {
               "id": "ca-build-01",
               "title": "The preprocessor",
-              "path": "swe/c-arrays/build/lesson-01.json",
-              "version": 1,
-              "sha256": "22d88294fc0b7edf5ff979564b68bac7236ab85931900c531cee1599cf24132d",
+              "path": "content/swe/c-arrays/build/lesson-01.json",
+              "version": 2,
+              "sha256": "5c36d536c6aa7ba46a4bd2e3f32074f0b2b7da1e1074d139e0cd4de12309416c",
               "sizeBytes": 4737,
               "order": 1,
               "minApp": 2
@@ -1225,9 +1225,9 @@
             {
               "id": "ca-build-02",
               "title": "The compiler",
-              "path": "swe/c-arrays/build/lesson-02.json",
-              "version": 1,
-              "sha256": "a7aad3eea4df9e61e635238046a69813bc80e20978f63f351600cbbf2e124aff",
+              "path": "content/swe/c-arrays/build/lesson-02.json",
+              "version": 2,
+              "sha256": "67d53b74efe31ee4d4c9e6a8b6ecd820aa3ec368b8d3c8d66252deff60cb0998",
               "sizeBytes": 4676,
               "order": 2,
               "minApp": 2
@@ -1235,9 +1235,9 @@
             {
               "id": "ca-build-03",
               "title": "Assembling and linking",
-              "path": "swe/c-arrays/build/lesson-03.json",
-              "version": 1,
-              "sha256": "76d38395fb95ba6c19964e80dcb3f9f5a2bafd60299ab364a343638c8522a6f5",
+              "path": "content/swe/c-arrays/build/lesson-03.json",
+              "version": 2,
+              "sha256": "35f42c69634c3d35a0379f0d6864319229a29c4603c400a2fe631f8f1447d114",
               "sizeBytes": 4472,
               "order": 3,
               "minApp": 2
@@ -1245,9 +1245,9 @@
             {
               "id": "ca-build-04",
               "title": "Headers and #include",
-              "path": "swe/c-arrays/build/lesson-04.json",
-              "version": 1,
-              "sha256": "448ac41aba9facad8e220de3e52bac376a8c754c363ec9f645750ab0c9cbe55b",
+              "path": "content/swe/c-arrays/build/lesson-04.json",
+              "version": 2,
+              "sha256": "7ffa9c68f0366197499baf7dd6339e3c67444e7d963cb678eadfcf6990fba5d8",
               "sizeBytes": 4718,
               "order": 4,
               "minApp": 2
@@ -1255,9 +1255,9 @@
             {
               "id": "ca-build-05",
               "title": "Multiple files and make",
-              "path": "swe/c-arrays/build/lesson-05.json",
-              "version": 1,
-              "sha256": "cb2f252bcd65ba4a195e6cf2965df7b7fe58869d060001f3bbcc454d09354466",
+              "path": "content/swe/c-arrays/build/lesson-05.json",
+              "version": 2,
+              "sha256": "ec43cf23253c43f8c0e793a701b7ecc037003a1b2cdff8def777ca3824d7eefe",
               "sizeBytes": 4796,
               "order": 5,
               "minApp": 2
@@ -1266,7 +1266,7 @@
           "notes": {
             "id": "ca-build-notes",
             "title": "How C becomes a program: cheat sheet",
-            "path": "swe/c-arrays/build/notes.json",
+            "path": "content/swe/c-arrays/build/notes.json",
             "version": 1,
             "sha256": "bec2ed6ec221ea10a47946568ba14e319c78e80e79f56921f479a62cf938d7dc",
             "sizeBytes": 1740,
@@ -1281,9 +1281,9 @@
             {
               "id": "ca-debug-01",
               "title": "Kinds of bugs",
-              "path": "swe/c-arrays/debugging/lesson-01.json",
-              "version": 1,
-              "sha256": "3ca7089760721e0360d5026fab6b96f91fe3e8b5576ce2ca0237315ec804fc68",
+              "path": "content/swe/c-arrays/debugging/lesson-01.json",
+              "version": 2,
+              "sha256": "a86e91800142a40949e15207800763fd3a9de7f296f7fea33c14a6f5f64a6865",
               "sizeBytes": 4797,
               "order": 1,
               "minApp": 2
@@ -1291,9 +1291,9 @@
             {
               "id": "ca-debug-02",
               "title": "Compiler messages and warnings",
-              "path": "swe/c-arrays/debugging/lesson-02.json",
-              "version": 1,
-              "sha256": "52df1da7071eddcb21db6565e72090f2e455bfaab9b500a692e4dff74e53a30a",
+              "path": "content/swe/c-arrays/debugging/lesson-02.json",
+              "version": 2,
+              "sha256": "5b67e2b9a9d318cc2686ab3573c82d72c129d4b752357b76e2a35730c0210001",
               "sizeBytes": 4660,
               "order": 2,
               "minApp": 2
@@ -1301,9 +1301,9 @@
             {
               "id": "ca-debug-03",
               "title": "printf debugging",
-              "path": "swe/c-arrays/debugging/lesson-03.json",
-              "version": 1,
-              "sha256": "34eea6bc62639e1fb52fab26fcc647dc1e93cf83a194383b64af3b3486835728",
+              "path": "content/swe/c-arrays/debugging/lesson-03.json",
+              "version": 2,
+              "sha256": "fc1a02f21cf690a738847f59786fdd1a073cd26510a7ae38b7be311132c87665",
               "sizeBytes": 4303,
               "order": 3,
               "minApp": 2
@@ -1311,9 +1311,9 @@
             {
               "id": "ca-debug-04",
               "title": "Using a debugger",
-              "path": "swe/c-arrays/debugging/lesson-04.json",
-              "version": 1,
-              "sha256": "56f4567c4d0cdf162e53fff41d5e6779f765949401619e1950f02734e2e97708",
+              "path": "content/swe/c-arrays/debugging/lesson-04.json",
+              "version": 2,
+              "sha256": "c796d4ac32ab1e59c54ba042cdaf7129b8a7db5eab77b075669eb69b935fab53",
               "sizeBytes": 4503,
               "order": 4,
               "minApp": 2
@@ -1321,9 +1321,9 @@
             {
               "id": "ca-debug-05",
               "title": "Assertions and testing",
-              "path": "swe/c-arrays/debugging/lesson-05.json",
-              "version": 1,
-              "sha256": "25de25fb34c6b5dc96b855920e528a905f0dbc3277ce1d080648b27c40e5f23d",
+              "path": "content/swe/c-arrays/debugging/lesson-05.json",
+              "version": 2,
+              "sha256": "5c793dc06503eca459a48ac1c977b48c865ec6313fe669b494ee022fe7a67e51",
               "sizeBytes": 4669,
               "order": 5,
               "minApp": 2
@@ -1332,7 +1332,7 @@
           "notes": {
             "id": "ca-debug-notes",
             "title": "Debugging: cheat sheet",
-            "path": "swe/c-arrays/debugging/notes.json",
+            "path": "content/swe/c-arrays/debugging/notes.json",
             "version": 1,
             "sha256": "0db687a076796558be5c38fed446ac7087d55a5c860c0946cdfd1e236e2e52ab",
             "sizeBytes": 1707,
@@ -1347,9 +1347,9 @@
             {
               "id": "ca-arrays-01",
               "title": "Declaring and indexing",
-              "path": "swe/c-arrays/arrays/lesson-01.json",
-              "version": 1,
-              "sha256": "18ca7f69fb6cd6efb8ff1d2e00abe8b5151e54fbe5492f504d97442fd37915ce",
+              "path": "content/swe/c-arrays/arrays/lesson-01.json",
+              "version": 2,
+              "sha256": "8580e55945de0bddbda08e919365fd9741d292c48c97b036b59d2ff3c563e584",
               "sizeBytes": 5482,
               "order": 1,
               "minApp": 2
@@ -1357,9 +1357,9 @@
             {
               "id": "ca-arrays-02",
               "title": "Loops over arrays",
-              "path": "swe/c-arrays/arrays/lesson-02.json",
-              "version": 1,
-              "sha256": "022a09cc1c9659480ecca18fdefe16ddae76c8b58be38ccc8e6057a9ac20a26b",
+              "path": "content/swe/c-arrays/arrays/lesson-02.json",
+              "version": 2,
+              "sha256": "66f6bfc8b7815939b69f0169c3e7fb08ec1e7721a589a57568839dd5b9ecad37",
               "sizeBytes": 4391,
               "order": 2,
               "minApp": 2
@@ -1367,9 +1367,9 @@
             {
               "id": "ca-arrays-03",
               "title": "Arrays and functions",
-              "path": "swe/c-arrays/arrays/lesson-03.json",
-              "version": 1,
-              "sha256": "8ebee0abb1f450fe9cb6c8d7ec30d1f8e2dae31316afda7bc6ee81fd2065acee",
+              "path": "content/swe/c-arrays/arrays/lesson-03.json",
+              "version": 2,
+              "sha256": "cd0c28f0ee122b85ce1558aa0b2139cf10aa30a0d7d4fb8fc52c0588b9df994d",
               "sizeBytes": 4868,
               "order": 3,
               "minApp": 2
@@ -1377,9 +1377,9 @@
             {
               "id": "ca-arrays-04",
               "title": "Two-dimensional arrays",
-              "path": "swe/c-arrays/arrays/lesson-04.json",
-              "version": 1,
-              "sha256": "e94efe314820a08dd6456580c3e49b6c39d21d4cfe0ca86a000dd9762191028b",
+              "path": "content/swe/c-arrays/arrays/lesson-04.json",
+              "version": 2,
+              "sha256": "f55acc2644fc1b67bcaedce47a4802d50cb95d2e2221d26c7e7e35e05133c5e0",
               "sizeBytes": 4863,
               "order": 4,
               "minApp": 2
@@ -1387,9 +1387,9 @@
             {
               "id": "ca-arrays-05",
               "title": "Going out of bounds",
-              "path": "swe/c-arrays/arrays/lesson-05.json",
-              "version": 1,
-              "sha256": "82177fddf2457afac868d042c88d74328e9311584dcd1f2333d0354fd7e2eb90",
+              "path": "content/swe/c-arrays/arrays/lesson-05.json",
+              "version": 2,
+              "sha256": "1ac8c96791abe84319338f67652391d82139a963fcbb4564046bf7875e475843",
               "sizeBytes": 5523,
               "order": 5,
               "minApp": 2
@@ -1398,7 +1398,7 @@
           "notes": {
             "id": "ca-arrays-notes",
             "title": "Arrays: cheat sheet",
-            "path": "swe/c-arrays/arrays/notes.json",
+            "path": "content/swe/c-arrays/arrays/notes.json",
             "version": 1,
             "sha256": "ca6a6cf206e635b0e907a805078148e839ba823e32946881d0e96288b136205b",
             "sizeBytes": 1734,
@@ -1413,9 +1413,9 @@
             {
               "id": "ca-strings-01",
               "title": "Strings as char arrays",
-              "path": "swe/c-arrays/strings/lesson-01.json",
-              "version": 1,
-              "sha256": "cdd79a12de598b683c118933a7d6f679740d06aca7d0ba6ecb52ad2f9f6bc3e5",
+              "path": "content/swe/c-arrays/strings/lesson-01.json",
+              "version": 2,
+              "sha256": "af3acaede77e094aea4c0c5056a3ad354145e0f142c6fcd901c8157f46fee0fe",
               "sizeBytes": 4899,
               "order": 1,
               "minApp": 2
@@ -1423,9 +1423,9 @@
             {
               "id": "ca-strings-02",
               "title": "The string.h library",
-              "path": "swe/c-arrays/strings/lesson-02.json",
-              "version": 1,
-              "sha256": "0fe7cc9b546717013090f6a23baa568fc6d6660762092d45ffe2f0a172f7af98",
+              "path": "content/swe/c-arrays/strings/lesson-02.json",
+              "version": 2,
+              "sha256": "008a51ed541d86c171c036cf4ec624dd0841e13050f2efa6a94e6287aac1b5f6",
               "sizeBytes": 5333,
               "order": 2,
               "minApp": 2
@@ -1433,9 +1433,9 @@
             {
               "id": "ca-strings-03",
               "title": "The ctype.h library",
-              "path": "swe/c-arrays/strings/lesson-03.json",
-              "version": 1,
-              "sha256": "52c1ab254f36a6caecb3400adf94563116891754cec1e05e66cba8f1e0c1b992",
+              "path": "content/swe/c-arrays/strings/lesson-03.json",
+              "version": 2,
+              "sha256": "35f0b85b1c43993dedf67483fa55b155e7b943a08960564b27456db175c6d6c1",
               "sizeBytes": 4881,
               "order": 3,
               "minApp": 2
@@ -1443,9 +1443,9 @@
             {
               "id": "ca-strings-04",
               "title": "argc and argv",
-              "path": "swe/c-arrays/strings/lesson-04.json",
-              "version": 1,
-              "sha256": "2d4880e2b1627f88e1acb9901c1064a408134d3f2bbc37db9d354e99bccceb7a",
+              "path": "content/swe/c-arrays/strings/lesson-04.json",
+              "version": 2,
+              "sha256": "40ff7e0c530ee2ddc92dedd3907f4cb7eb99a1557c7a07405ddfdb41f839cd08",
               "sizeBytes": 5031,
               "order": 4,
               "minApp": 2
@@ -1453,9 +1453,9 @@
             {
               "id": "ca-strings-05",
               "title": "Reading input with fgets",
-              "path": "swe/c-arrays/strings/lesson-05.json",
-              "version": 1,
-              "sha256": "c4f20ca001cae6a30a05dd7a9d737a5e65c516242fae1cdd645645011fe62ff1",
+              "path": "content/swe/c-arrays/strings/lesson-05.json",
+              "version": 2,
+              "sha256": "fc11142ca30b44716bafb8027899d5ce2c82610eb1a4be7d20b8decb4f08be4f",
               "sizeBytes": 5261,
               "order": 5,
               "minApp": 2
@@ -1463,9 +1463,9 @@
             {
               "id": "ca-strings-06",
               "title": "Mini challenges",
-              "path": "swe/c-arrays/strings/lesson-06.json",
-              "version": 1,
-              "sha256": "0eeacd2e461c3c4fda3403fb5c7715050014cb0e972907a3eef62c9d96c7465f",
+              "path": "content/swe/c-arrays/strings/lesson-06.json",
+              "version": 2,
+              "sha256": "8471f32f1ee1faa5669e80be19e73a1ce0c5cc205031db535669d08507a25625",
               "sizeBytes": 6308,
               "order": 6,
               "minApp": 2
@@ -1474,7 +1474,7 @@
           "notes": {
             "id": "ca-strings-notes",
             "title": "Strings and the command line: cheat sheet",
-            "path": "swe/c-arrays/strings/notes.json",
+            "path": "content/swe/c-arrays/strings/notes.json",
             "version": 1,
             "sha256": "2910b8886f2a240a40ce252411a559f1222e31d3539f276977b23701a38e5604",
             "sizeBytes": 1968,
@@ -1513,9 +1513,9 @@
             {
               "id": "cd-adt-01",
               "title": "What is an abstract data type?",
-              "path": "swe/c-data-structures/adt/lesson-01.json",
-              "version": 1,
-              "sha256": "5030dd631ce8782f470c66de7f48ce2ef446dfc7029d0c872bb57dfbbb01ca9b",
+              "path": "content/swe/c-data-structures/adt/lesson-01.json",
+              "version": 2,
+              "sha256": "0b6e6652d72ae4e60ba7d1621e2ab5d37221224c0217d736b0649323058a9ef5",
               "sizeBytes": 4376,
               "order": 1,
               "minApp": 2
@@ -1523,9 +1523,9 @@
             {
               "id": "cd-adt-02",
               "title": "Arrays and dynamic arrays",
-              "path": "swe/c-data-structures/adt/lesson-02.json",
-              "version": 1,
-              "sha256": "fecdfe7da0b2cc038969e25a910148e2505e3adc5cd6881e452c9309622bb862",
+              "path": "content/swe/c-data-structures/adt/lesson-02.json",
+              "version": 2,
+              "sha256": "d4f6f4a9c856efcfd2900237ef98225d1d0af6083bca4737155b98a1c42c312b",
               "sizeBytes": 4097,
               "order": 2,
               "minApp": 2
@@ -1533,9 +1533,9 @@
             {
               "id": "cd-adt-03",
               "title": "Stacks",
-              "path": "swe/c-data-structures/adt/lesson-03.json",
-              "version": 1,
-              "sha256": "e9babf4f4174cc5867b897966838547fb1ea80ff55d9e721e840a124d827d975",
+              "path": "content/swe/c-data-structures/adt/lesson-03.json",
+              "version": 2,
+              "sha256": "58de7a2547a28ff9397a47cf078a623c3e4a69672abb75a0199ac90acb123224",
               "sizeBytes": 3818,
               "order": 3,
               "minApp": 2
@@ -1543,9 +1543,9 @@
             {
               "id": "cd-adt-04",
               "title": "Queues",
-              "path": "swe/c-data-structures/adt/lesson-04.json",
-              "version": 1,
-              "sha256": "e3f818fe62b8759577a77d7f771e0e56916278ec690aac0a1ce1c104a7ab2ef9",
+              "path": "content/swe/c-data-structures/adt/lesson-04.json",
+              "version": 2,
+              "sha256": "5d9d1fe5550b26e85221aad8177caf7d64c43c233b1e0e4f7edd7cadc3c2994d",
               "sizeBytes": 4737,
               "order": 4,
               "minApp": 2
@@ -1554,7 +1554,7 @@
           "notes": {
             "id": "cd-adt-notes",
             "title": "Abstract data types: cheat sheet",
-            "path": "swe/c-data-structures/adt/notes.json",
+            "path": "content/swe/c-data-structures/adt/notes.json",
             "version": 1,
             "sha256": "414f598b7ca1dda40683cd3214e12dc95f0945daea675aba786762972e64f043",
             "sizeBytes": 1280,
@@ -1569,9 +1569,9 @@
             {
               "id": "cd-lists-01",
               "title": "Nodes",
-              "path": "swe/c-data-structures/linked-lists/lesson-01.json",
-              "version": 1,
-              "sha256": "b2fd77a96703b095ab8e4caffde1f328694fbb7af112a958f263cbef203bdcd9",
+              "path": "content/swe/c-data-structures/linked-lists/lesson-01.json",
+              "version": 2,
+              "sha256": "adde6b4987f404bc227dbc30e450b4c00d9877b95fc153a8c6112a2b5bc5aaa5",
               "sizeBytes": 4127,
               "order": 1,
               "minApp": 2
@@ -1579,9 +1579,9 @@
             {
               "id": "cd-lists-02",
               "title": "Building a list",
-              "path": "swe/c-data-structures/linked-lists/lesson-02.json",
-              "version": 1,
-              "sha256": "ee0d4b471c2210fe5dab70bd2b907a6227230e1afd56cf3d6242e810e9167385",
+              "path": "content/swe/c-data-structures/linked-lists/lesson-02.json",
+              "version": 2,
+              "sha256": "95bc96601dbaef1f99359a362097f5a6565b8c3e1d3905a03ce66f367e652b9d",
               "sizeBytes": 3945,
               "order": 2,
               "minApp": 2
@@ -1589,9 +1589,9 @@
             {
               "id": "cd-lists-03",
               "title": "Traversing a list",
-              "path": "swe/c-data-structures/linked-lists/lesson-03.json",
-              "version": 1,
-              "sha256": "fc42b66723b9d446b9aced640c5aa528b5651e62a8b273b27e14e2bf0a4cc4b8",
+              "path": "content/swe/c-data-structures/linked-lists/lesson-03.json",
+              "version": 2,
+              "sha256": "a2d6f7e9e49416c1d8b852cf1687b58e724c0c86ee2d37c10862949f03127e0a",
               "sizeBytes": 4375,
               "order": 3,
               "minApp": 2
@@ -1599,9 +1599,9 @@
             {
               "id": "cd-lists-04",
               "title": "Inserting into a list",
-              "path": "swe/c-data-structures/linked-lists/lesson-04.json",
-              "version": 1,
-              "sha256": "a4e937ea289717ff817af82399c8003d14dbb406fce4831f67ee353519da31c2",
+              "path": "content/swe/c-data-structures/linked-lists/lesson-04.json",
+              "version": 2,
+              "sha256": "a3f3cbb1589852b132e57f0d077f8e25fe38970b1ec80c9053078ec374598886",
               "sizeBytes": 3932,
               "order": 4,
               "minApp": 2
@@ -1609,9 +1609,9 @@
             {
               "id": "cd-lists-05",
               "title": "Deleting from a list",
-              "path": "swe/c-data-structures/linked-lists/lesson-05.json",
-              "version": 1,
-              "sha256": "2d322af6c9273863de1766fd2d9381810fa55ccb2bf8d7ceccca80b62f242d23",
+              "path": "content/swe/c-data-structures/linked-lists/lesson-05.json",
+              "version": 2,
+              "sha256": "143cc52a46d0da894c5a73aa693c21a3cb9fdeb0f77e119bb3e1dfb6c91c7ea4",
               "sizeBytes": 4229,
               "order": 5,
               "minApp": 2
@@ -1619,9 +1619,9 @@
             {
               "id": "cd-lists-06",
               "title": "Trade-offs and doubly linked lists",
-              "path": "swe/c-data-structures/linked-lists/lesson-06.json",
-              "version": 1,
-              "sha256": "73834c7ffbcc7ed3e14a4becd7d4878dadd13d5c4bb410240167c9de7a37fde5",
+              "path": "content/swe/c-data-structures/linked-lists/lesson-06.json",
+              "version": 2,
+              "sha256": "338e2fd926217331b7a87a09d924d8248d92ee4c1c649674f8c7dfb1b15025f9",
               "sizeBytes": 4979,
               "order": 6,
               "minApp": 2
@@ -1630,7 +1630,7 @@
           "notes": {
             "id": "cd-lists-notes",
             "title": "Linked lists: cheat sheet",
-            "path": "swe/c-data-structures/linked-lists/notes.json",
+            "path": "content/swe/c-data-structures/linked-lists/notes.json",
             "version": 1,
             "sha256": "3c0a82fc46b81a6c11b50fbdc5ef68e87c5fd74337989095abed3ef66ff6833c",
             "sizeBytes": 1519,
@@ -1645,9 +1645,9 @@
             {
               "id": "cd-hash-01",
               "title": "The idea of hashing",
-              "path": "swe/c-data-structures/hash-tables/lesson-01.json",
-              "version": 1,
-              "sha256": "6310e56011b270f3a8987b67789ab926f61735b54e6aca4132a544c428c2188c",
+              "path": "content/swe/c-data-structures/hash-tables/lesson-01.json",
+              "version": 2,
+              "sha256": "1faf60d8da8a047e900819e5d19e58ba14378e9031d7953590868698c993ae50",
               "sizeBytes": 4002,
               "order": 1,
               "minApp": 2
@@ -1655,9 +1655,9 @@
             {
               "id": "cd-hash-02",
               "title": "Hash functions",
-              "path": "swe/c-data-structures/hash-tables/lesson-02.json",
-              "version": 1,
-              "sha256": "61ad07ad43fa27ebba4e0822b8ee59c277cd7277b8078dc96f9bc8a971b8570c",
+              "path": "content/swe/c-data-structures/hash-tables/lesson-02.json",
+              "version": 2,
+              "sha256": "ce9747992e1c68004ad40a7f492902cdec690e2343a3a968d33c9bdb090d3ef4",
               "sizeBytes": 4140,
               "order": 2,
               "minApp": 2
@@ -1665,9 +1665,9 @@
             {
               "id": "cd-hash-03",
               "title": "Collisions",
-              "path": "swe/c-data-structures/hash-tables/lesson-03.json",
-              "version": 1,
-              "sha256": "99d6f1c6086dd9158dd6512e8f427c1d3fb7e8fb20193866bc50c07f7f009899",
+              "path": "content/swe/c-data-structures/hash-tables/lesson-03.json",
+              "version": 2,
+              "sha256": "80f7d7cc6d004591d055112deab639d7b50d05f6f12d81c2152df23876be27c2",
               "sizeBytes": 4253,
               "order": 3,
               "minApp": 2
@@ -1675,9 +1675,9 @@
             {
               "id": "cd-hash-04",
               "title": "Separate chaining",
-              "path": "swe/c-data-structures/hash-tables/lesson-04.json",
-              "version": 1,
-              "sha256": "e58dcc47cced9804d1822db633b85b9f4705603f8c19e111ba227f0422edc561",
+              "path": "content/swe/c-data-structures/hash-tables/lesson-04.json",
+              "version": 2,
+              "sha256": "d9544f0556c1fb4d9ffc6f455fa40ae7bab0e312009a2f6e1a1f4bda720df38d",
               "sizeBytes": 4362,
               "order": 4,
               "minApp": 2
@@ -1685,9 +1685,9 @@
             {
               "id": "cd-hash-05",
               "title": "Building a hash table in C",
-              "path": "swe/c-data-structures/hash-tables/lesson-05.json",
-              "version": 1,
-              "sha256": "5a78c561bb3da1fcae4d2c73db9da3e1289d1877bf44bcd07219c48814ab74a8",
+              "path": "content/swe/c-data-structures/hash-tables/lesson-05.json",
+              "version": 2,
+              "sha256": "625e678d087a651b4784405e55aef1c289b7c631bd69e058bb1838aca5b2dfc6",
               "sizeBytes": 5570,
               "order": 5,
               "minApp": 2
@@ -1696,7 +1696,7 @@
           "notes": {
             "id": "cd-hash-notes",
             "title": "Hash tables: cheat sheet",
-            "path": "swe/c-data-structures/hash-tables/notes.json",
+            "path": "content/swe/c-data-structures/hash-tables/notes.json",
             "version": 1,
             "sha256": "1e9632c8b7b9afed5e2ae7716306494a8f42fd3a9f34f6defd665670316fb766",
             "sizeBytes": 1535,
@@ -1711,9 +1711,9 @@
             {
               "id": "cd-trees-01",
               "title": "Trees",
-              "path": "swe/c-data-structures/trees/lesson-01.json",
-              "version": 1,
-              "sha256": "c294552a56fff136e6ebf3b12044e85be96b9f2e2a650157fd5a8bc74422512b",
+              "path": "content/swe/c-data-structures/trees/lesson-01.json",
+              "version": 2,
+              "sha256": "87ae224036143c40d848d3a0d1fbe8eaf85d4b575d0aea9feb0b253a7bd9f760",
               "sizeBytes": 4544,
               "order": 1,
               "minApp": 2
@@ -1721,9 +1721,9 @@
             {
               "id": "cd-trees-02",
               "title": "Binary search trees",
-              "path": "swe/c-data-structures/trees/lesson-02.json",
-              "version": 1,
-              "sha256": "fb33dc4a12aa62378abd86aa3aebd4e63ba069b0a020ba63e12c332f6d02efa3",
+              "path": "content/swe/c-data-structures/trees/lesson-02.json",
+              "version": 2,
+              "sha256": "fe3eacf56d65dc1919955293445c1242485d6c92949ffabbd025d6fa4d6dc178",
               "sizeBytes": 3887,
               "order": 2,
               "minApp": 2
@@ -1731,9 +1731,9 @@
             {
               "id": "cd-trees-03",
               "title": "Searching and inserting",
-              "path": "swe/c-data-structures/trees/lesson-03.json",
-              "version": 1,
-              "sha256": "b3b5501b836034dc8f5c39e8fa5dc9a6770c49a991809d62c43bcad53ea60ae4",
+              "path": "content/swe/c-data-structures/trees/lesson-03.json",
+              "version": 2,
+              "sha256": "4cf4a1902d5d00bea8b7c25606d7f749d8a624e67eeee2ff85005f0be0fc0099",
               "sizeBytes": 4348,
               "order": 3,
               "minApp": 2
@@ -1741,9 +1741,9 @@
             {
               "id": "cd-trees-04",
               "title": "Tree traversals",
-              "path": "swe/c-data-structures/trees/lesson-04.json",
-              "version": 1,
-              "sha256": "540da82967e4e2e6ab7d929946499f4b8d299197db8c8ecb1684584ff92f3144",
+              "path": "content/swe/c-data-structures/trees/lesson-04.json",
+              "version": 2,
+              "sha256": "70964aaa38b9581332a5efae0b04eca8ea2693e571a84015b8459c0b0b52c909",
               "sizeBytes": 4521,
               "order": 4,
               "minApp": 2
@@ -1751,9 +1751,9 @@
             {
               "id": "cd-trees-05",
               "title": "Tries",
-              "path": "swe/c-data-structures/trees/lesson-05.json",
-              "version": 1,
-              "sha256": "fb6f7745c923c072cb92929d110350287107b3a398895337e8ced252cd267e1b",
+              "path": "content/swe/c-data-structures/trees/lesson-05.json",
+              "version": 2,
+              "sha256": "6568ae08af8da531b74bc1ce5d4a098afbdfe45c24590b3301a2fbdd3eb0d3d0",
               "sizeBytes": 4759,
               "order": 5,
               "minApp": 2
@@ -1761,9 +1761,9 @@
             {
               "id": "cd-trees-06",
               "title": "Choosing a data structure",
-              "path": "swe/c-data-structures/trees/lesson-06.json",
-              "version": 1,
-              "sha256": "11e0d65fc843150969cfd60e194712f3854fc7fd9cb9fc93f8eb48f62079f350",
+              "path": "content/swe/c-data-structures/trees/lesson-06.json",
+              "version": 2,
+              "sha256": "6afca9a09be5c627b2ffd72d82f9bdb47715dd65ff3d901efcc4e0f70f30ad9c",
               "sizeBytes": 4180,
               "order": 6,
               "minApp": 2
@@ -1772,7 +1772,7 @@
           "notes": {
             "id": "cd-trees-notes",
             "title": "Trees and tries: cheat sheet",
-            "path": "swe/c-data-structures/trees/notes.json",
+            "path": "content/swe/c-data-structures/trees/notes.json",
             "version": 1,
             "sha256": "f3de87e3c3316454e0edcfc8d20ca83aa5a83bc13f16d5577c86845c19405914",
             "sizeBytes": 1670,
@@ -1811,9 +1811,9 @@
             {
               "id": "cf-first-01",
               "title": "What programming is",
-              "path": "swe/c-fundamentals/first-programs/lesson-01.json",
-              "version": 1,
-              "sha256": "145a90646d83772486624eb0e6777e429b9833af044b2cbc5b39e84205f8d29e",
+              "path": "content/swe/c-fundamentals/first-programs/lesson-01.json",
+              "version": 2,
+              "sha256": "64f096f0a1165e9d60b3e9719a52592e85d3ca7438c2d80cc68ad6571cc44cea",
               "sizeBytes": 4836,
               "order": 1,
               "minApp": 2
@@ -1821,9 +1821,9 @@
             {
               "id": "cf-first-02",
               "title": "Hello, world and main",
-              "path": "swe/c-fundamentals/first-programs/lesson-02.json",
-              "version": 1,
-              "sha256": "771a965ce8fd284e1c43e98ea3cedf4235d9aad7b89c86036475749b905be964",
+              "path": "content/swe/c-fundamentals/first-programs/lesson-02.json",
+              "version": 2,
+              "sha256": "eebad9ebc389d13d519d8ad3621399be3f1556c4ee5f310c67d8ba48097af8f7",
               "sizeBytes": 4670,
               "order": 2,
               "minApp": 2
@@ -1831,9 +1831,9 @@
             {
               "id": "cf-first-03",
               "title": "Compiling and running",
-              "path": "swe/c-fundamentals/first-programs/lesson-03.json",
-              "version": 1,
-              "sha256": "146ee104b9fb0c5bad182840bb09a7ac3ee8d3c0919597838fcefd949897ff99",
+              "path": "content/swe/c-fundamentals/first-programs/lesson-03.json",
+              "version": 2,
+              "sha256": "8c0fa64b4cd002152562a35e75e564198fda1c1cda07564cd976da0c0a96fe41",
               "sizeBytes": 4368,
               "order": 3,
               "minApp": 2
@@ -1841,9 +1841,9 @@
             {
               "id": "cf-first-04",
               "title": "printf and escape sequences",
-              "path": "swe/c-fundamentals/first-programs/lesson-04.json",
-              "version": 1,
-              "sha256": "ac1f358598fe4742906e97209e95ab32683cb941670ea1ce92b17d40a6bf9059",
+              "path": "content/swe/c-fundamentals/first-programs/lesson-04.json",
+              "version": 2,
+              "sha256": "69596144f42bda7cfcebf7bcdb91d5f307cfbdc75816bc0938bd3134df3c0b98",
               "sizeBytes": 4708,
               "order": 4,
               "minApp": 2
@@ -1851,9 +1851,9 @@
             {
               "id": "cf-first-05",
               "title": "Comments, pseudocode, errors",
-              "path": "swe/c-fundamentals/first-programs/lesson-05.json",
-              "version": 1,
-              "sha256": "53939e11c14838a6ea1333541e6148bbaaad8cf4015998fb1ee13c59d6b3ed94",
+              "path": "content/swe/c-fundamentals/first-programs/lesson-05.json",
+              "version": 2,
+              "sha256": "2a833bd08e211a7cc55a387c18303e272a6d1dfd00a4267a63178aabbe720028",
               "sizeBytes": 4837,
               "order": 5,
               "minApp": 2
@@ -1862,7 +1862,7 @@
           "notes": {
             "id": "cf-first-notes",
             "title": "Your first programs: cheat sheet",
-            "path": "swe/c-fundamentals/first-programs/notes.json",
+            "path": "content/swe/c-fundamentals/first-programs/notes.json",
             "version": 1,
             "sha256": "d40406b72d3a218a9a59f328750f28037a4f9e75c7e6678482d0d5c84891353a",
             "sizeBytes": 1344,
@@ -1877,9 +1877,9 @@
             {
               "id": "cf-data-01",
               "title": "Variables and int",
-              "path": "swe/c-fundamentals/data/lesson-01.json",
-              "version": 1,
-              "sha256": "15271f1c444fcadaef52abf9353d058be4f91ef640a0440f175fe63da7ca87e6",
+              "path": "content/swe/c-fundamentals/data/lesson-01.json",
+              "version": 2,
+              "sha256": "392d96468cc5326bad70d8e2071e51ef2faac14c6cc37b8e25948a42282e643c",
               "sizeBytes": 5214,
               "order": 1,
               "minApp": 2
@@ -1887,9 +1887,9 @@
             {
               "id": "cf-data-02",
               "title": "char, float and double",
-              "path": "swe/c-fundamentals/data/lesson-02.json",
-              "version": 1,
-              "sha256": "4d3d5dfba1210713b4b7f0328558434375b60ca8b9a434db6807e685b2c0fafc",
+              "path": "content/swe/c-fundamentals/data/lesson-02.json",
+              "version": 2,
+              "sha256": "57a79dc02984b91d53c3417f705b551d30c637f5c2bda7244784294474d0dbf2",
               "sizeBytes": 5319,
               "order": 2,
               "minApp": 2
@@ -1897,9 +1897,9 @@
             {
               "id": "cf-data-03",
               "title": "printf and scanf formats",
-              "path": "swe/c-fundamentals/data/lesson-03.json",
-              "version": 1,
-              "sha256": "a6aef026a8074106b1db279ad0d954d0125569edfe4af2cffc06e65d9b27e77d",
+              "path": "content/swe/c-fundamentals/data/lesson-03.json",
+              "version": 2,
+              "sha256": "3a39946ab566559fc30247a8a5f9e5960d9ff6d745632e13b5bacbd538a69de6",
               "sizeBytes": 5086,
               "order": 3,
               "minApp": 2
@@ -1907,9 +1907,9 @@
             {
               "id": "cf-data-04",
               "title": "Arithmetic operators",
-              "path": "swe/c-fundamentals/data/lesson-04.json",
-              "version": 1,
-              "sha256": "3b2a6974623bbd30c59d4babbe7c9d067d7d8880da36cb44a8e18798d07506b6",
+              "path": "content/swe/c-fundamentals/data/lesson-04.json",
+              "version": 2,
+              "sha256": "92e7aabc88992f664b4ae3c1fc551615e7da5c0a0539efefe896644fd607a490",
               "sizeBytes": 4414,
               "order": 4,
               "minApp": 2
@@ -1917,9 +1917,9 @@
             {
               "id": "cf-data-05",
               "title": "Integer division and modulo",
-              "path": "swe/c-fundamentals/data/lesson-05.json",
-              "version": 1,
-              "sha256": "08cd73c7c829952bb2b9ba5aab1f55c14beeda59bd078e5595acbe474cca24d0",
+              "path": "content/swe/c-fundamentals/data/lesson-05.json",
+              "version": 2,
+              "sha256": "1835a540ee9684b4890106c0ed1c57002a9381b8d18333d130bdf5a86efab9d3",
               "sizeBytes": 4552,
               "order": 5,
               "minApp": 2
@@ -1927,9 +1927,9 @@
             {
               "id": "cf-data-06",
               "title": "Overflow and float surprises",
-              "path": "swe/c-fundamentals/data/lesson-06.json",
-              "version": 1,
-              "sha256": "86c328b7805c0536fc473ec1b945c001b9c0acc1e2c61a1b54b46a91930049e7",
+              "path": "content/swe/c-fundamentals/data/lesson-06.json",
+              "version": 2,
+              "sha256": "47de063ba7a393cf4d111ca341ff82b5bbc204470e8bc910719f61c6497a85a5",
               "sizeBytes": 5740,
               "order": 6,
               "minApp": 2
@@ -1938,7 +1938,7 @@
           "notes": {
             "id": "cf-data-notes",
             "title": "Data and operators: cheat sheet",
-            "path": "swe/c-fundamentals/data/notes.json",
+            "path": "content/swe/c-fundamentals/data/notes.json",
             "version": 1,
             "sha256": "b830d3f6c64d594254b6f885d9445830a0f6cfaa4f6e73e9186b4365c9431c5a",
             "sizeBytes": 1617,
@@ -1953,9 +1953,9 @@
             {
               "id": "cf-control-01",
               "title": "if and else",
-              "path": "swe/c-fundamentals/control/lesson-01.json",
-              "version": 1,
-              "sha256": "4cce70fca019fd87663bd8a56a1cc4f906ac1e3577a63172fe6765548ded405e",
+              "path": "content/swe/c-fundamentals/control/lesson-01.json",
+              "version": 2,
+              "sha256": "49a1dd00954a4e9ff2de78cbf03d7a2ea8774c3d6c2d0cc2b0b9e9ecc5b92ff5",
               "sizeBytes": 4291,
               "order": 1,
               "minApp": 2
@@ -1963,9 +1963,9 @@
             {
               "id": "cf-control-02",
               "title": "Relational and logical operators",
-              "path": "swe/c-fundamentals/control/lesson-02.json",
-              "version": 1,
-              "sha256": "691a0eb1aded1ad9dbf4192394395ef85d7f86b69f4e6b2d260da92782ceb1fd",
+              "path": "content/swe/c-fundamentals/control/lesson-02.json",
+              "version": 2,
+              "sha256": "eff52f055766a1b3959ae32600e50a7fab64787a52a06052685d6c09cd0add08",
               "sizeBytes": 4808,
               "order": 2,
               "minApp": 2
@@ -1973,9 +1973,9 @@
             {
               "id": "cf-control-03",
               "title": "else if and switch",
-              "path": "swe/c-fundamentals/control/lesson-03.json",
-              "version": 1,
-              "sha256": "b4a843a43ce7c54ec9a6485f3fa03dd266c48f7c068545fc6e9229b0d763a794",
+              "path": "content/swe/c-fundamentals/control/lesson-03.json",
+              "version": 2,
+              "sha256": "20ea121c71be235d2d5ce6747b2ceccde414040db9261096d8c00246bd7d21d7",
               "sizeBytes": 5494,
               "order": 3,
               "minApp": 2
@@ -1983,9 +1983,9 @@
             {
               "id": "cf-control-04",
               "title": "while loops",
-              "path": "swe/c-fundamentals/control/lesson-04.json",
-              "version": 1,
-              "sha256": "b0497eebc7fc7b3b22693d1cd91d90263a9b1f603cc2dcb8754cb97f6574a2d0",
+              "path": "content/swe/c-fundamentals/control/lesson-04.json",
+              "version": 2,
+              "sha256": "9bba1f2855c61ba39d87e8783709b986a411680ac45130c2fff0da1b4c963631",
               "sizeBytes": 4626,
               "order": 4,
               "minApp": 2
@@ -1993,9 +1993,9 @@
             {
               "id": "cf-control-05",
               "title": "for loops",
-              "path": "swe/c-fundamentals/control/lesson-05.json",
-              "version": 1,
-              "sha256": "041396486ba87dd28c15399c74cffbb2278144a1250b86834632f4846dd377d1",
+              "path": "content/swe/c-fundamentals/control/lesson-05.json",
+              "version": 2,
+              "sha256": "940e525f1dc5250b4810df59890a38f35d7f992cab2d55d5c50f8de8864a5d0f",
               "sizeBytes": 5189,
               "order": 5,
               "minApp": 2
@@ -2003,9 +2003,9 @@
             {
               "id": "cf-control-06",
               "title": "Nested loops and do while",
-              "path": "swe/c-fundamentals/control/lesson-06.json",
-              "version": 1,
-              "sha256": "2345afbacc38497ed23df845f0fc666a258b316ae70f8fd6f664a563c0cfa202",
+              "path": "content/swe/c-fundamentals/control/lesson-06.json",
+              "version": 2,
+              "sha256": "c52d8e28902c90d62bc400fe96eb2f152a6353c84b0e3f052102d1703a3e5407",
               "sizeBytes": 5327,
               "order": 6,
               "minApp": 2
@@ -2014,7 +2014,7 @@
           "notes": {
             "id": "cf-control-notes",
             "title": "Conditions and loops: cheat sheet",
-            "path": "swe/c-fundamentals/control/notes.json",
+            "path": "content/swe/c-fundamentals/control/notes.json",
             "version": 1,
             "sha256": "59a8358e5537c3ed52ae2b5bb3897d2415f457c48b0b318f5ea3051c859dd4f2",
             "sizeBytes": 1525,
@@ -2029,9 +2029,9 @@
             {
               "id": "cf-functions-01",
               "title": "Defining and calling functions",
-              "path": "swe/c-fundamentals/functions/lesson-01.json",
-              "version": 1,
-              "sha256": "4a510ef023dcb5edc30d92cc74880c6847ca01106c8fa5c3e0a0a8ec8d0a8e79",
+              "path": "content/swe/c-fundamentals/functions/lesson-01.json",
+              "version": 2,
+              "sha256": "7fa1ea22df4d029bfcc5a1dd77eb9220989ea2bcbc2bc49e244d73c016db1583",
               "sizeBytes": 4885,
               "order": 1,
               "minApp": 2
@@ -2039,9 +2039,9 @@
             {
               "id": "cf-functions-02",
               "title": "Arguments and return values",
-              "path": "swe/c-fundamentals/functions/lesson-02.json",
-              "version": 1,
-              "sha256": "414fb214841cf257c157364d498e1396fc5b6d2ffd7a59566862c8d938c25364",
+              "path": "content/swe/c-fundamentals/functions/lesson-02.json",
+              "version": 2,
+              "sha256": "3050f9c764f674a83aa3cb306eefd737e6fe1683daa7d4510d44c463d21311d9",
               "sizeBytes": 5467,
               "order": 2,
               "minApp": 2
@@ -2049,9 +2049,9 @@
             {
               "id": "cf-functions-03",
               "title": "Prototypes and scope",
-              "path": "swe/c-fundamentals/functions/lesson-03.json",
-              "version": 1,
-              "sha256": "f346de33482e62c2f373a700d012d9a5a6d68b54ba906511d69b728a4f610689",
+              "path": "content/swe/c-fundamentals/functions/lesson-03.json",
+              "version": 2,
+              "sha256": "c2b40482949478b9a4804268c0b6725bbc892e813d197fe7e83e835ff7804ed2",
               "sizeBytes": 5414,
               "order": 3,
               "minApp": 2
@@ -2059,9 +2059,9 @@
             {
               "id": "cf-functions-04",
               "title": "Constants and macros",
-              "path": "swe/c-fundamentals/functions/lesson-04.json",
-              "version": 1,
-              "sha256": "c73b1ad4f4417395c330bd02bf6a276894d9012182c805a766d3899c777fcab0",
+              "path": "content/swe/c-fundamentals/functions/lesson-04.json",
+              "version": 2,
+              "sha256": "368211e738aef3ec85569f29c33dc7e179f255fa679d44d8dcee0d0ce0eeadac",
               "sizeBytes": 5364,
               "order": 4,
               "minApp": 2
@@ -2069,9 +2069,9 @@
             {
               "id": "cf-functions-05",
               "title": "Breaking a problem into steps",
-              "path": "swe/c-fundamentals/functions/lesson-05.json",
-              "version": 1,
-              "sha256": "0346814522cb626e068c7495556a9d1e288fe0dfe1dc96180154e3c4105f07f1",
+              "path": "content/swe/c-fundamentals/functions/lesson-05.json",
+              "version": 2,
+              "sha256": "e06de6860af69ae8ef89802491f4d7106d0334ed15548f54a60976415cf3eff7",
               "sizeBytes": 5055,
               "order": 5,
               "minApp": 2
@@ -2079,9 +2079,9 @@
             {
               "id": "cf-functions-06",
               "title": "Mini challenges",
-              "path": "swe/c-fundamentals/functions/lesson-06.json",
-              "version": 1,
-              "sha256": "43a6c6bb2c24315d6573da2cc7e12fc31169d27b976f5ad6505fc3009532c9a7",
+              "path": "content/swe/c-fundamentals/functions/lesson-06.json",
+              "version": 2,
+              "sha256": "07b0099b2c5fa11d83b49118cc1a0b246a428b1c215d2f1d3920b2baa8124f8f",
               "sizeBytes": 6048,
               "order": 6,
               "minApp": 2
@@ -2090,7 +2090,7 @@
           "notes": {
             "id": "cf-functions-notes",
             "title": "Functions and problem solving: cheat sheet",
-            "path": "swe/c-fundamentals/functions/notes.json",
+            "path": "content/swe/c-fundamentals/functions/notes.json",
             "version": 1,
             "sha256": "c05ffff070bd1f4ef2b6214afc2511886231c53c24fe455a770a7bd40dc49116",
             "sizeBytes": 1759,
@@ -2130,9 +2130,9 @@
             {
               "id": "cm-hex-01",
               "title": "Bits and bytes",
-              "path": "swe/c-memory/addresses/lesson-01.json",
-              "version": 1,
-              "sha256": "4e06bfb639f1dd0201ede2bf06101558771175dcb51c43311e8d4ce704b79c29",
+              "path": "content/swe/c-memory/addresses/lesson-01.json",
+              "version": 2,
+              "sha256": "aa02f7882f05d073f670c21a353e1a75f69a4e7a4fb867ac305675f94a1accf7",
               "sizeBytes": 4055,
               "order": 1,
               "minApp": 2
@@ -2140,9 +2140,9 @@
             {
               "id": "cm-hex-02",
               "title": "Hexadecimal",
-              "path": "swe/c-memory/addresses/lesson-02.json",
-              "version": 1,
-              "sha256": "7cb0d8d9023763f83216bca4275aeda5259541618be4035d077b569232265d05",
+              "path": "content/swe/c-memory/addresses/lesson-02.json",
+              "version": 2,
+              "sha256": "04c8343524b8de0a7ea5b409d0727b30e7baacb8f23f6418df4df0c077601b24",
               "sizeBytes": 3690,
               "order": 2,
               "minApp": 2
@@ -2150,9 +2150,9 @@
             {
               "id": "cm-hex-03",
               "title": "Memory as numbered bytes",
-              "path": "swe/c-memory/addresses/lesson-03.json",
-              "version": 1,
-              "sha256": "c4c90d6ff2b5f766e49b83b75133d4ec681f3742a0472063da47069804d58b0f",
+              "path": "content/swe/c-memory/addresses/lesson-03.json",
+              "version": 2,
+              "sha256": "35f661c5e37a32c170b9cdac2e95a03a098f57a3c674352443e38ac117d82727",
               "sizeBytes": 4196,
               "order": 3,
               "minApp": 2
@@ -2160,9 +2160,9 @@
             {
               "id": "cm-hex-04",
               "title": "The address-of operator",
-              "path": "swe/c-memory/addresses/lesson-04.json",
-              "version": 1,
-              "sha256": "06bcd53a423a3cba74a8c0c7485de2fa4e65902bfd9de15f700a8f63ebed207a",
+              "path": "content/swe/c-memory/addresses/lesson-04.json",
+              "version": 2,
+              "sha256": "a890f0d9125567b0e1698b32ce0e767876684ad85cb07e75cbbcad15e8fca01e",
               "sizeBytes": 4747,
               "order": 4,
               "minApp": 2
@@ -2170,9 +2170,9 @@
             {
               "id": "cm-hex-05",
               "title": "sizeof and types",
-              "path": "swe/c-memory/addresses/lesson-05.json",
-              "version": 1,
-              "sha256": "56262dffecc41835635e68f4eba3f9bb9d5d0c8e044ea3c66d82f28012349bde",
+              "path": "content/swe/c-memory/addresses/lesson-05.json",
+              "version": 2,
+              "sha256": "fbe8776d3f395703a5ba95b26886ac09e5ae82624668a50c6903e502527daf29",
               "sizeBytes": 4281,
               "order": 5,
               "minApp": 2
@@ -2181,7 +2181,7 @@
           "notes": {
             "id": "cm-hex-notes",
             "title": "Bytes, Hex and Addresses: cheat sheet",
-            "path": "swe/c-memory/addresses/notes.json",
+            "path": "content/swe/c-memory/addresses/notes.json",
             "version": 1,
             "sha256": "172386d715d0c6deca17361a731644f65cbe243347e3d08d4057275aa5ab9337",
             "sizeBytes": 1505,
@@ -2196,9 +2196,9 @@
             {
               "id": "cm-pointers-01",
               "title": "Declaring pointers",
-              "path": "swe/c-memory/pointers/lesson-01.json",
-              "version": 1,
-              "sha256": "851f22aee16758ba0ccd8298167f49fd5b60f348f9b024006eef02b35e78ec94",
+              "path": "content/swe/c-memory/pointers/lesson-01.json",
+              "version": 2,
+              "sha256": "ce6cf5594260d82286a64220458648359305f1d22174b9ea8155427504a65589",
               "sizeBytes": 4298,
               "order": 1,
               "minApp": 2
@@ -2206,9 +2206,9 @@
             {
               "id": "cm-pointers-02",
               "title": "Dereferencing",
-              "path": "swe/c-memory/pointers/lesson-02.json",
-              "version": 1,
-              "sha256": "c2060e41b11e65c760defd1683b1dbba2c52c5a7847dcf7cb5127b7439a074d3",
+              "path": "content/swe/c-memory/pointers/lesson-02.json",
+              "version": 2,
+              "sha256": "95485da4edc14fb0c9d752da16d2afed563e7fb8aeb9704d63435b9a083fded3",
               "sizeBytes": 4144,
               "order": 2,
               "minApp": 2
@@ -2216,9 +2216,9 @@
             {
               "id": "cm-pointers-03",
               "title": "Pointers and arrays",
-              "path": "swe/c-memory/pointers/lesson-03.json",
-              "version": 1,
-              "sha256": "291ae4dc986b899960b174c91bc96a8c54c187df6e7abaee90798a8d7df2b38c",
+              "path": "content/swe/c-memory/pointers/lesson-03.json",
+              "version": 2,
+              "sha256": "0bbef77b79eb430953167ffd794d4e61d58c30ce3b46868a359f03ff5ac9fd68",
               "sizeBytes": 4460,
               "order": 3,
               "minApp": 2
@@ -2226,9 +2226,9 @@
             {
               "id": "cm-pointers-04",
               "title": "Pointer arithmetic",
-              "path": "swe/c-memory/pointers/lesson-04.json",
-              "version": 1,
-              "sha256": "2c247a35c8f68d2a060598402aac16f0dfac0863ec7dbf3ce35d8353323d2e95",
+              "path": "content/swe/c-memory/pointers/lesson-04.json",
+              "version": 2,
+              "sha256": "eb8bd85e399f6ac5572784faafab3557d4ca354e2bc1d61610246265f9e9cabd",
               "sizeBytes": 4279,
               "order": 4,
               "minApp": 2
@@ -2236,9 +2236,9 @@
             {
               "id": "cm-pointers-05",
               "title": "Strings as char pointers",
-              "path": "swe/c-memory/pointers/lesson-05.json",
-              "version": 1,
-              "sha256": "07545e8afbd295f331f59e74845862c7f2dba2313e2db3ef1e8551c1849efce1",
+              "path": "content/swe/c-memory/pointers/lesson-05.json",
+              "version": 2,
+              "sha256": "a890c2aa3e4992a8ff04aecd7d8d64827d08353f74e5430d0cb7bd0673ecbb42",
               "sizeBytes": 4337,
               "order": 5,
               "minApp": 2
@@ -2246,9 +2246,9 @@
             {
               "id": "cm-pointers-06",
               "title": "Pointers in functions, NULL",
-              "path": "swe/c-memory/pointers/lesson-06.json",
-              "version": 1,
-              "sha256": "64172798777b12665da88d1a11c3adfde95147adf18fbb91c4a778c74859269f",
+              "path": "content/swe/c-memory/pointers/lesson-06.json",
+              "version": 2,
+              "sha256": "c9dea23414230a9a6c71be6e3dd623e7f968f3d3ffb11cb3c60d612cea2c67a0",
               "sizeBytes": 4704,
               "order": 6,
               "minApp": 2
@@ -2257,7 +2257,7 @@
           "notes": {
             "id": "cm-pointers-notes",
             "title": "Pointers: cheat sheet",
-            "path": "swe/c-memory/pointers/notes.json",
+            "path": "content/swe/c-memory/pointers/notes.json",
             "version": 1,
             "sha256": "c8453e15aad9ba6de6b433c54b6c2c4ac00923a5f7903e9327d96f7293918b65",
             "sizeBytes": 1564,
@@ -2272,9 +2272,9 @@
             {
               "id": "cm-heap-01",
               "title": "The stack and the heap",
-              "path": "swe/c-memory/heap/lesson-01.json",
-              "version": 1,
-              "sha256": "9f2275ed9736abade63aa2b7a32970f108425873ac4b9ea5361fc881685bef58",
+              "path": "content/swe/c-memory/heap/lesson-01.json",
+              "version": 2,
+              "sha256": "70dc4f49ada305bb1ad8f2ed18a03882c0a7de6f398191a0db2a5a1d099b11a5",
               "sizeBytes": 4582,
               "order": 1,
               "minApp": 2
@@ -2282,9 +2282,9 @@
             {
               "id": "cm-heap-02",
               "title": "malloc",
-              "path": "swe/c-memory/heap/lesson-02.json",
-              "version": 1,
-              "sha256": "0578cd3549a0974f39cb280dfbc1077bd9764d4f835c488aa810a15c6ed52cd5",
+              "path": "content/swe/c-memory/heap/lesson-02.json",
+              "version": 2,
+              "sha256": "259674a4a582c280563df69a521624d7946ebb20472b85f526790ec7292710a5",
               "sizeBytes": 3890,
               "order": 2,
               "minApp": 2
@@ -2292,9 +2292,9 @@
             {
               "id": "cm-heap-03",
               "title": "free",
-              "path": "swe/c-memory/heap/lesson-03.json",
-              "version": 1,
-              "sha256": "3d0b073e22b9cdc91eef8178115305e107fa4f3e7e9a195a8ec17664f4b3f9a4",
+              "path": "content/swe/c-memory/heap/lesson-03.json",
+              "version": 2,
+              "sha256": "421a19c130d12b478028c89538d1e08b501b2786402dad1d7806ec41ef705a3d",
               "sizeBytes": 4253,
               "order": 3,
               "minApp": 2
@@ -2302,9 +2302,9 @@
             {
               "id": "cm-heap-04",
               "title": "Memory leaks and Valgrind",
-              "path": "swe/c-memory/heap/lesson-04.json",
-              "version": 1,
-              "sha256": "0b0bec8b90edceb108a082a605aac6a520b2f6938136ef281777ca735f0ed133",
+              "path": "content/swe/c-memory/heap/lesson-04.json",
+              "version": 2,
+              "sha256": "6b64363297eed4c1adab41e22e63d8b6eb9d3a23b5b9c5561e14fa65f53fadbf",
               "sizeBytes": 4629,
               "order": 4,
               "minApp": 2
@@ -2312,9 +2312,9 @@
             {
               "id": "cm-heap-05",
               "title": "realloc and growing arrays",
-              "path": "swe/c-memory/heap/lesson-05.json",
-              "version": 1,
-              "sha256": "6ec33ad956e5ef03d3d4ae41e2477c44350a066b25839bc9f612746d990e9ba6",
+              "path": "content/swe/c-memory/heap/lesson-05.json",
+              "version": 2,
+              "sha256": "e11c553cd8998da9d8a44238119bf59448df2337668b2dbbe5b58c3f39db325d",
               "sizeBytes": 4303,
               "order": 5,
               "minApp": 2
@@ -2322,9 +2322,9 @@
             {
               "id": "cm-heap-06",
               "title": "Common memory bugs",
-              "path": "swe/c-memory/heap/lesson-06.json",
-              "version": 1,
-              "sha256": "7b4b6b61e996bc1d41926de63741fb317054f85a393346a3b6fda8f827949c36",
+              "path": "content/swe/c-memory/heap/lesson-06.json",
+              "version": 2,
+              "sha256": "8f83075cd5bc5614fe9d0b3455c415ba0bd4b20b60add386c1e2043ed25fe6c4",
               "sizeBytes": 4547,
               "order": 6,
               "minApp": 2
@@ -2333,7 +2333,7 @@
           "notes": {
             "id": "cm-heap-notes",
             "title": "Dynamic Memory: cheat sheet",
-            "path": "swe/c-memory/heap/notes.json",
+            "path": "content/swe/c-memory/heap/notes.json",
             "version": 1,
             "sha256": "c084f954135ef7977ec1399c6b3541a1eec15bafa8de93283430cf1ed717be5c",
             "sizeBytes": 1568,
@@ -2348,9 +2348,9 @@
             {
               "id": "cm-files-01",
               "title": "Structs",
-              "path": "swe/c-memory/files/lesson-01.json",
-              "version": 1,
-              "sha256": "1fbcdcc0be9bccba2d50ee46124499cde32441149ec44cc1e96db603a2ad4be5",
+              "path": "content/swe/c-memory/files/lesson-01.json",
+              "version": 2,
+              "sha256": "349df49c6c725e67b1572ed1661ab692913311b5f26935b850a1915b3bc875de",
               "sizeBytes": 4282,
               "order": 1,
               "minApp": 2
@@ -2358,9 +2358,9 @@
             {
               "id": "cm-files-02",
               "title": "typedef",
-              "path": "swe/c-memory/files/lesson-02.json",
-              "version": 1,
-              "sha256": "ea788ed8435df28e42a77d7e53201d5441c47de28251a2f9598a135baf957510",
+              "path": "content/swe/c-memory/files/lesson-02.json",
+              "version": 2,
+              "sha256": "543aa9725c6c419995f118e74d2bdd33e0ab4f0ca996653e292df7a10a893604",
               "sizeBytes": 4681,
               "order": 2,
               "minApp": 2
@@ -2368,9 +2368,9 @@
             {
               "id": "cm-files-03",
               "title": "fopen and fclose",
-              "path": "swe/c-memory/files/lesson-03.json",
-              "version": 1,
-              "sha256": "9998c0116dd9e9d600a8def5ab01d37ad8f8ba6f716532463dcceea3daa7f37d",
+              "path": "content/swe/c-memory/files/lesson-03.json",
+              "version": 2,
+              "sha256": "f39339e630cc4cf85e42722c9a5b271f90cb9c79ad0dbc3331a41423fb98de79",
               "sizeBytes": 4071,
               "order": 3,
               "minApp": 2
@@ -2378,9 +2378,9 @@
             {
               "id": "cm-files-04",
               "title": "Reading and writing text files",
-              "path": "swe/c-memory/files/lesson-04.json",
-              "version": 1,
-              "sha256": "a5ee316de4cbf7d401bc202c196a97b232731f294a0292f43b3b769d8aa2c550",
+              "path": "content/swe/c-memory/files/lesson-04.json",
+              "version": 2,
+              "sha256": "ea18a190debcca82eb2d1d30542da99fde55329762b61f029108c81ae5f386ab",
               "sizeBytes": 4621,
               "order": 4,
               "minApp": 2
@@ -2388,9 +2388,9 @@
             {
               "id": "cm-files-05",
               "title": "Bytes, binary files and images",
-              "path": "swe/c-memory/files/lesson-05.json",
-              "version": 1,
-              "sha256": "4f3ab6effb03aa85ad23abfdc64f8f75bd54f84d17323fa36f8b1900df2ac591",
+              "path": "content/swe/c-memory/files/lesson-05.json",
+              "version": 2,
+              "sha256": "7d5f29d9086478ec5998ee63a3e6c5d7c608c21a26793487a0acc535278e54dd",
               "sizeBytes": 4982,
               "order": 5,
               "minApp": 2
@@ -2399,7 +2399,7 @@
           "notes": {
             "id": "cm-files-notes",
             "title": "Structs and Files: cheat sheet",
-            "path": "swe/c-memory/files/notes.json",
+            "path": "content/swe/c-memory/files/notes.json",
             "version": 1,
             "sha256": "4098139dcc9eae36145ba590f8cbcf89c3c14b8503da9fd989d6fd5955432819",
             "sizeBytes": 1574,
@@ -2438,54 +2438,54 @@
             {
               "id": "geo-basics-01",
               "title": "Points, lines and planes",
-              "path": "math/geometry/basics/lesson-01.json",
-              "version": 1,
-              "sha256": "601311c7cf5f15370f9a0575cbee120e55e88b8ae7f8ca9e2b088528342a365b",
+              "path": "content/math/geometry/basics/lesson-01.json",
+              "version": 2,
+              "sha256": "d3796d2e91b253b7b3a9648c9144a901ec4682097834d7d17da00b6dfd32d42b",
               "sizeBytes": 4255,
               "order": 1
             },
             {
               "id": "geo-basics-02",
               "title": "Measuring angles",
-              "path": "math/geometry/basics/lesson-02.json",
-              "version": 1,
-              "sha256": "aedbb992091ff7e8e172561e0ef4fa1eb93a2bc313831b5080b1f4ff79264293",
+              "path": "content/math/geometry/basics/lesson-02.json",
+              "version": 2,
+              "sha256": "893e43654dabd7b275cd14426292d873f7c929bd97c6e5453d9c4b85f420750a",
               "sizeBytes": 3906,
               "order": 2
             },
             {
               "id": "geo-basics-03",
               "title": "Angle pairs",
-              "path": "math/geometry/basics/lesson-03.json",
-              "version": 1,
-              "sha256": "1932739cd21df71b2db65b4052a0c5b16bae2be80015695d1e7db883327c7457",
+              "path": "content/math/geometry/basics/lesson-03.json",
+              "version": 2,
+              "sha256": "b7fc85fbb5bd5404bcb428f2acff8e42d765e1ee1bd7ddf27b2465e736d5b1e0",
               "sizeBytes": 4164,
               "order": 3
             },
             {
               "id": "geo-basics-04",
               "title": "Parallel lines and transversals",
-              "path": "math/geometry/basics/lesson-04.json",
-              "version": 1,
-              "sha256": "beb09f8313447e4f1e267d83d6f3c818d1891d418eb843e7282b76c31a416127",
-              "sizeBytes": 4982,
+              "path": "content/math/geometry/basics/lesson-04.json",
+              "version": 2,
+              "sha256": "021b48860f8d2359ec881a02400670d3a51f10f40bb7702eabab0761edda3554",
+              "sizeBytes": 5006,
               "order": 4
             },
             {
               "id": "geo-basics-05",
               "title": "Distance and midpoint",
-              "path": "math/geometry/basics/lesson-05.json",
-              "version": 1,
-              "sha256": "8bf4657569eb0751abe2d190f547a567b8cac8cac9e6180611b24d38f40b6670",
+              "path": "content/math/geometry/basics/lesson-05.json",
+              "version": 2,
+              "sha256": "5566580a362620ac78139c3f298fe02e8c41891269c7241ef9bd79fe21ebebad",
               "sizeBytes": 4138,
               "order": 5
             },
             {
               "id": "geo-basics-06",
               "title": "Reasoning and simple proofs",
-              "path": "math/geometry/basics/lesson-06.json",
-              "version": 1,
-              "sha256": "98bbb5e4026984b8dabcb2cbd9ad9db3fec6e6ffec045ace48e6ed0855bbcaaf",
+              "path": "content/math/geometry/basics/lesson-06.json",
+              "version": 2,
+              "sha256": "9b9e2d1c492d1ad4604057be84801da84bd41e1d24c0db4e45317990f95d7b50",
               "sizeBytes": 4968,
               "order": 6
             }
@@ -2493,7 +2493,7 @@
           "notes": {
             "id": "geo-basics-notes",
             "title": "Points, Lines and Angles: cheat sheet",
-            "path": "math/geometry/basics/notes.json",
+            "path": "content/math/geometry/basics/notes.json",
             "version": 1,
             "sha256": "5673f4980d6c2f6b7f694f514fe13e462669e177cfe25747ff02a905d2b98206",
             "sizeBytes": 1884
@@ -2507,54 +2507,54 @@
             {
               "id": "geo-triangles-01",
               "title": "Classifying triangles",
-              "path": "math/geometry/triangles/lesson-01.json",
-              "version": 1,
-              "sha256": "d4e5541a094120d130d163c75623b545a7726e3dcf6d5a315bad95c5399ea675",
+              "path": "content/math/geometry/triangles/lesson-01.json",
+              "version": 2,
+              "sha256": "610ec51ab4bb1e67c3be950366455cbf02e145f81088902d34bd752c45f178db",
               "sizeBytes": 4517,
               "order": 1
             },
             {
               "id": "geo-triangles-02",
               "title": "Angle sum and exterior angles",
-              "path": "math/geometry/triangles/lesson-02.json",
-              "version": 1,
-              "sha256": "8e92531630d78d88cddf26fb039c2092b04a23763e4329ed5663b5c4f6afef93",
+              "path": "content/math/geometry/triangles/lesson-02.json",
+              "version": 2,
+              "sha256": "cffd668f6e2c937abf527ebad895ddf8f446c62a37930bdeafac48b67ce825e1",
               "sizeBytes": 4309,
               "order": 2
             },
             {
               "id": "geo-triangles-03",
               "title": "Congruent triangles",
-              "path": "math/geometry/triangles/lesson-03.json",
-              "version": 1,
-              "sha256": "e3e055a1478ee6e13c620d776820117965a767e17f884e28e3240a5d72a80918",
+              "path": "content/math/geometry/triangles/lesson-03.json",
+              "version": 2,
+              "sha256": "8bb3053380a732cd97cfd8701d967dcf961320c670f03a27bb2579be869cfd1e",
               "sizeBytes": 4635,
               "order": 3
             },
             {
               "id": "geo-triangles-04",
               "title": "Isosceles and equilateral triangles",
-              "path": "math/geometry/triangles/lesson-04.json",
-              "version": 1,
-              "sha256": "973e24443d8084a611750dfd1cbebb0d121a6c3b3e03d4954895b4c30cc36832",
+              "path": "content/math/geometry/triangles/lesson-04.json",
+              "version": 2,
+              "sha256": "11b50fa2e394e91b909368dbee550479e189e3d101efa4bbd59ce30199e31893",
               "sizeBytes": 3973,
               "order": 4
             },
             {
               "id": "geo-triangles-05",
               "title": "The Pythagorean theorem",
-              "path": "math/geometry/triangles/lesson-05.json",
-              "version": 1,
-              "sha256": "a5c9fa9b1d6d537e6710f9c2331a14964110a9d42d1c0dc8aa8d388c70d9619c",
-              "sizeBytes": 4061,
+              "path": "content/math/geometry/triangles/lesson-05.json",
+              "version": 2,
+              "sha256": "c3de5651f66cfe84674d38a87e78012a03a00c3059ef56c21d72281f807378dc",
+              "sizeBytes": 4069,
               "order": 5
             },
             {
               "id": "geo-triangles-06",
               "title": "Special right triangles",
-              "path": "math/geometry/triangles/lesson-06.json",
-              "version": 1,
-              "sha256": "32969d707d3a8bf5c4f5fdc885668c81c4db5d290795d9cacb82c8f59aa2083d",
+              "path": "content/math/geometry/triangles/lesson-06.json",
+              "version": 2,
+              "sha256": "e249dcd6ddca16dbe5945020a4c80eee31b912a35d3cc8e1177310754b4fc9d2",
               "sizeBytes": 4246,
               "order": 6
             }
@@ -2562,7 +2562,7 @@
           "notes": {
             "id": "geo-triangles-notes",
             "title": "Triangles: cheat sheet",
-            "path": "math/geometry/triangles/notes.json",
+            "path": "content/math/geometry/triangles/notes.json",
             "version": 1,
             "sha256": "bcf5077cbdd3d06d7c80e66bdce3737a88af44e819e6be1e210d074ecd8b9075",
             "sizeBytes": 1617
@@ -2576,45 +2576,45 @@
             {
               "id": "geo-similar-01",
               "title": "Similar figures and scale factor",
-              "path": "math/geometry/similarity/lesson-01.json",
-              "version": 1,
-              "sha256": "d7f058b81b1177373e3f2da7d739b66c9c48eb29acdd5e9a04fe1acb19f4096b",
+              "path": "content/math/geometry/similarity/lesson-01.json",
+              "version": 2,
+              "sha256": "54818aed1589201308055196e0a6175a6cbf153a1f78cbc06aa2b3fa1b3d07ef",
               "sizeBytes": 4200,
               "order": 1
             },
             {
               "id": "geo-similar-02",
               "title": "Proving similarity",
-              "path": "math/geometry/similarity/lesson-02.json",
-              "version": 1,
-              "sha256": "f7a3fa2d094daff1395e5edc6107a479804252fa90ff8ad83773ac6907be27b0",
+              "path": "content/math/geometry/similarity/lesson-02.json",
+              "version": 2,
+              "sha256": "27bc584f42510010adc94721a12e4678d0a9926a2934eb3ed6d43341b3a1e25c",
               "sizeBytes": 4520,
               "order": 2
             },
             {
               "id": "geo-similar-03",
               "title": "Proportional parts",
-              "path": "math/geometry/similarity/lesson-03.json",
-              "version": 1,
-              "sha256": "3fcb11f78511eb80b857778f9b43259a51cf8214c8472d109515037e9e65836b",
+              "path": "content/math/geometry/similarity/lesson-03.json",
+              "version": 2,
+              "sha256": "20f67c95f517c86b0572a22432a386ab5ad967c12940bdfe48011215c8639b20",
               "sizeBytes": 4132,
               "order": 3
             },
             {
               "id": "geo-similar-04",
               "title": "Sine, cosine and tangent",
-              "path": "math/geometry/similarity/lesson-04.json",
-              "version": 1,
-              "sha256": "a99c3dbaef052cef39f5d0d67b637a3df3474f01c8aab1087792206c158f45e4",
-              "sizeBytes": 4497,
+              "path": "content/math/geometry/similarity/lesson-04.json",
+              "version": 2,
+              "sha256": "f7be402603e9364886d4106e5d6dc5fdd66e634ef7453b6551dd9b42bb6851b2",
+              "sizeBytes": 4505,
               "order": 4
             },
             {
               "id": "geo-similar-05",
               "title": "Solving right triangles",
-              "path": "math/geometry/similarity/lesson-05.json",
-              "version": 1,
-              "sha256": "3f4dc7b6441102b9af14c752f2ec8f6f60e83a16ab594899c7ec2080e2f93433",
+              "path": "content/math/geometry/similarity/lesson-05.json",
+              "version": 2,
+              "sha256": "c15672bd230e7eedd74e96246b2d7d97f3d03e66c129a7129baad45dca3605f7",
               "sizeBytes": 4458,
               "order": 5
             }
@@ -2622,7 +2622,7 @@
           "notes": {
             "id": "geo-similar-notes",
             "title": "Similarity and Right-Triangle Trig: cheat sheet",
-            "path": "math/geometry/similarity/notes.json",
+            "path": "content/math/geometry/similarity/notes.json",
             "version": 1,
             "sha256": "7a62fe6c0374e79184134a75123af7cecc58825d830b468505c42ea4ae50fc55",
             "sizeBytes": 1594
@@ -2636,54 +2636,54 @@
             {
               "id": "geo-polygons-01",
               "title": "Quadrilaterals",
-              "path": "math/geometry/polygons/lesson-01.json",
-              "version": 1,
-              "sha256": "d50af188aed73b5a40f0dd12eaadeb28482636c46f19b80bf39a19663c4fe4a5",
+              "path": "content/math/geometry/polygons/lesson-01.json",
+              "version": 2,
+              "sha256": "5d0299ec234067c325c09b39658042320af54a455a61538c6accd65b4f652ed7",
               "sizeBytes": 4714,
               "order": 1
             },
             {
               "id": "geo-polygons-02",
               "title": "Angles of polygons",
-              "path": "math/geometry/polygons/lesson-02.json",
-              "version": 1,
-              "sha256": "75f135c4508d40afc0411b5d7fb31d849423d811bb9b6ea1cfe8f05312358476",
+              "path": "content/math/geometry/polygons/lesson-02.json",
+              "version": 2,
+              "sha256": "59a3985a5c60056c717e5d1da37f43fa3d07f4a2b89541d608bb42e1bac1513e",
               "sizeBytes": 4271,
               "order": 2
             },
             {
               "id": "geo-polygons-03",
               "title": "Perimeter and area",
-              "path": "math/geometry/polygons/lesson-03.json",
-              "version": 1,
-              "sha256": "7c1a727fe7bafdfa4f22b9203112d167ed0fd6f38d847e4622fba54ae8fadc64",
+              "path": "content/math/geometry/polygons/lesson-03.json",
+              "version": 2,
+              "sha256": "4b2df95e93562e781d014d9c3dff73a10402f69c31604563a8c3f594f311d7c8",
               "sizeBytes": 4064,
               "order": 3
             },
             {
               "id": "geo-polygons-04",
               "title": "Circles: circumference and area",
-              "path": "math/geometry/polygons/lesson-04.json",
-              "version": 1,
-              "sha256": "ac2f1bfda125a9a0f00d3d5f44f8438490fd244a182858acd1dc4df20107dfe6",
+              "path": "content/math/geometry/polygons/lesson-04.json",
+              "version": 2,
+              "sha256": "fb0142df312fe3e58c7387d78ab98572752286f9ebeae850d5379397bc6c63ec",
               "sizeBytes": 3718,
               "order": 4
             },
             {
               "id": "geo-polygons-05",
               "title": "Arcs, chords and inscribed angles",
-              "path": "math/geometry/polygons/lesson-05.json",
-              "version": 1,
-              "sha256": "20bb23cfeb55264f8e7fefcb745207527217ff2aae661ffc7aa3dfb2849313e7",
-              "sizeBytes": 4346,
+              "path": "content/math/geometry/polygons/lesson-05.json",
+              "version": 2,
+              "sha256": "56968592434c70fd54ae9c3d6d17a3f293263b26d30ba8547834bbe488cbf544",
+              "sizeBytes": 4354,
               "order": 5
             },
             {
               "id": "geo-polygons-06",
               "title": "Sector area and arc length",
-              "path": "math/geometry/polygons/lesson-06.json",
-              "version": 1,
-              "sha256": "e4deed6815c31ac4e6a70aa213cfe42b8dfebb5ed0ee17f7d6fd88c7bc20da23",
+              "path": "content/math/geometry/polygons/lesson-06.json",
+              "version": 2,
+              "sha256": "703c1cd8e740da971a1b02a93d19856decf681c0a2cdcab1d346e11745059bad",
               "sizeBytes": 3869,
               "order": 6
             }
@@ -2691,7 +2691,7 @@
           "notes": {
             "id": "geo-polygons-notes",
             "title": "Polygons, Circles and Area: cheat sheet",
-            "path": "math/geometry/polygons/notes.json",
+            "path": "content/math/geometry/polygons/notes.json",
             "version": 1,
             "sha256": "b623e8b0be64239312ce025b4432c0b36643acde57b30225db62bba85d547560",
             "sizeBytes": 1928
@@ -2705,45 +2705,45 @@
             {
               "id": "geo-solids-01",
               "title": "Prisms and cylinders",
-              "path": "math/geometry/solids/lesson-01.json",
-              "version": 1,
-              "sha256": "b1812da5df4d796265f2ec9b2537ca2f2d4a66252736702364f0b3da1ffba3e2",
+              "path": "content/math/geometry/solids/lesson-01.json",
+              "version": 2,
+              "sha256": "9bf46094456e87e8d4c3c34acc6cffa9daea7461fe35dfc93a5b9f4700f7666b",
               "sizeBytes": 3861,
               "order": 1
             },
             {
               "id": "geo-solids-02",
               "title": "Pyramids, cones and spheres",
-              "path": "math/geometry/solids/lesson-02.json",
-              "version": 1,
-              "sha256": "4cd0e74cc977cfafe522da903f85de79db4418df76590339dc9294807219d11e",
+              "path": "content/math/geometry/solids/lesson-02.json",
+              "version": 2,
+              "sha256": "11daa908dca8dd9a1411ff59831194a163feddc2be39f7566e05a55fb8aa2c49",
               "sizeBytes": 3824,
               "order": 2
             },
             {
               "id": "geo-solids-03",
               "title": "Surface area",
-              "path": "math/geometry/solids/lesson-03.json",
-              "version": 1,
-              "sha256": "4dc72b049556cb4d487531969e47336e5d3d2d245aa1511ee45cbeafd1c3f5ca",
+              "path": "content/math/geometry/solids/lesson-03.json",
+              "version": 2,
+              "sha256": "80df06bdc4d4b965e819875560bd0646a340a1aca7e3413e62fb54fcb0425b58",
               "sizeBytes": 3648,
               "order": 3
             },
             {
               "id": "geo-solids-04",
               "title": "Reflections, rotations, translations",
-              "path": "math/geometry/solids/lesson-04.json",
-              "version": 1,
-              "sha256": "0a6a5b8efcae51e0d06864d32cfb6e49560924c700f6aea271bd33832726f110",
+              "path": "content/math/geometry/solids/lesson-04.json",
+              "version": 2,
+              "sha256": "cb764bd2d40eba462498cd9a918f8645f0bcf9aac75e8b1581d290b8917245ca",
               "sizeBytes": 4053,
               "order": 4
             },
             {
               "id": "geo-solids-05",
               "title": "Dilations and symmetry",
-              "path": "math/geometry/solids/lesson-05.json",
-              "version": 1,
-              "sha256": "bcc52c1aa740b86ea89f610ed26096bf11f39df4e7df37ccb22d43126f356eef",
+              "path": "content/math/geometry/solids/lesson-05.json",
+              "version": 2,
+              "sha256": "ea327987ced4d8bc4b30f795c73ed146078b47918d13ea7f319b03bc81395f25",
               "sizeBytes": 4199,
               "order": 5
             }
@@ -2751,7 +2751,7 @@
           "notes": {
             "id": "geo-solids-notes",
             "title": "Solids and Transformations: cheat sheet",
-            "path": "math/geometry/solids/notes.json",
+            "path": "content/math/geometry/solids/notes.json",
             "version": 1,
             "sha256": "58b574758019544793ef5b4ff22108b655452e2494b916b58ae0097ca21b3490",
             "sizeBytes": 1547
@@ -2789,54 +2789,54 @@
             {
               "id": "pa-integers-01",
               "title": "Negative numbers and the number line",
-              "path": "math/pre-algebra/integers/lesson-01.json",
-              "version": 1,
-              "sha256": "cbd55c9b01f7c4c3d94e2ed361c549a59e971d9c6e254c367fdd1a3fa149a48a",
+              "path": "content/math/pre-algebra/integers/lesson-01.json",
+              "version": 2,
+              "sha256": "f612f7f132b51394a112894f340a6ab0ec12dde42cbc20538c8209b5a696d8b9",
               "sizeBytes": 4135,
               "order": 1
             },
             {
               "id": "pa-integers-02",
               "title": "Adding and subtracting integers",
-              "path": "math/pre-algebra/integers/lesson-02.json",
-              "version": 1,
-              "sha256": "f057497170aa3b1cfef941316268eee944f94ff59c6379b1a2de4a4bb97e5619",
+              "path": "content/math/pre-algebra/integers/lesson-02.json",
+              "version": 2,
+              "sha256": "99dedeb236d069da9696fc31cb7fb16a173d6d281645649023ce9aed19e5b515",
               "sizeBytes": 3649,
               "order": 2
             },
             {
               "id": "pa-integers-03",
               "title": "Multiplying and dividing integers",
-              "path": "math/pre-algebra/integers/lesson-03.json",
-              "version": 1,
-              "sha256": "1ee92e6add3efa7aa8b6dc243b758ec1f8bc4e546e6e68dae095fc3f068faab7",
+              "path": "content/math/pre-algebra/integers/lesson-03.json",
+              "version": 2,
+              "sha256": "3ed0c355a390ea1f70bae25bd762fa53098e27c942c4ddb14deea45a9bb20d4b",
               "sizeBytes": 3775,
               "order": 3
             },
             {
               "id": "pa-integers-04",
               "title": "Exponents and powers",
-              "path": "math/pre-algebra/integers/lesson-04.json",
-              "version": 1,
-              "sha256": "3e1b2e10cfd0c144f50700e4b8d0a99440d38408d69fb227c9aa9382bc3ae75b",
+              "path": "content/math/pre-algebra/integers/lesson-04.json",
+              "version": 2,
+              "sha256": "f558dc9b6d457f023458f9c9fac02f6e3a1003d29e8a7289bdb9d3a0a8171d03",
               "sizeBytes": 3775,
               "order": 4
             },
             {
               "id": "pa-integers-05",
               "title": "Order of operations",
-              "path": "math/pre-algebra/integers/lesson-05.json",
-              "version": 1,
-              "sha256": "88b56b8017c39707c6be0372bff29257d9fedc5073c88109a707a4f47d85f21b",
+              "path": "content/math/pre-algebra/integers/lesson-05.json",
+              "version": 2,
+              "sha256": "d6102b47064a54bfb937071ebab5f7886886dca1895f58ffbda6c7c19cdc105b",
               "sizeBytes": 4054,
               "order": 5
             },
             {
               "id": "pa-integers-06",
               "title": "Factors, multiples and primes",
-              "path": "math/pre-algebra/integers/lesson-06.json",
-              "version": 1,
-              "sha256": "d90710b0e6ba170b7785ef73c23e538f2bd20212938a475c606530441e1c4355",
+              "path": "content/math/pre-algebra/integers/lesson-06.json",
+              "version": 2,
+              "sha256": "2274d2d8bb5ad98d32f4d6741cc76ffd24c7c2eee548477123509c471ac98399",
               "sizeBytes": 4218,
               "order": 6
             }
@@ -2844,7 +2844,7 @@
           "notes": {
             "id": "pa-integers-notes",
             "title": "Integers and operations: cheat sheet",
-            "path": "math/pre-algebra/integers/notes.json",
+            "path": "content/math/pre-algebra/integers/notes.json",
             "version": 1,
             "sha256": "43cc2aeb717c0833401d417decdc00d1389b2dc9590843d7d38633f2a17c7694",
             "sizeBytes": 1800
@@ -2858,54 +2858,54 @@
             {
               "id": "pa-fractions-01",
               "title": "Fractions and equivalent fractions",
-              "path": "math/pre-algebra/fractions/lesson-01.json",
-              "version": 1,
-              "sha256": "5dab0f2be7b5832ec5c7d7ce837a56cfa1d4e67cff5d669612bcb8ab3479d70a",
+              "path": "content/math/pre-algebra/fractions/lesson-01.json",
+              "version": 2,
+              "sha256": "e90a6fc5a42231a5bdecc26e7f751253fe6aa837ad7bf44edcca83350dfadfc4",
               "sizeBytes": 4621,
               "order": 1
             },
             {
               "id": "pa-fractions-02",
               "title": "Adding and subtracting fractions",
-              "path": "math/pre-algebra/fractions/lesson-02.json",
-              "version": 1,
-              "sha256": "5d67d75cf7a6709740191c5615d846fb7346207bfb63f9537ede31ba648bf257",
+              "path": "content/math/pre-algebra/fractions/lesson-02.json",
+              "version": 2,
+              "sha256": "011fb9cc4b200feffc1cd1d15ddd4c9c8aa53e8baadc7c8c4ee7c8111ba77cea",
               "sizeBytes": 4355,
               "order": 2
             },
             {
               "id": "pa-fractions-03",
               "title": "Multiplying and dividing fractions",
-              "path": "math/pre-algebra/fractions/lesson-03.json",
-              "version": 1,
-              "sha256": "52cc6554a5c013bd99ff9847b93ffbb849cfd5cc70bfd8c294efef0a6d2da956",
+              "path": "content/math/pre-algebra/fractions/lesson-03.json",
+              "version": 2,
+              "sha256": "e366b3a148acaa9ea8aac0db4c8bcf8578657e9afc71d4753f68f34d78c28976",
               "sizeBytes": 4376,
               "order": 3
             },
             {
               "id": "pa-fractions-04",
               "title": "Decimals and rounding",
-              "path": "math/pre-algebra/fractions/lesson-04.json",
-              "version": 1,
-              "sha256": "4b3463531f788225828f9af65b4865c7a9769038846cefd12ffcd798248d1cf5",
+              "path": "content/math/pre-algebra/fractions/lesson-04.json",
+              "version": 2,
+              "sha256": "320184e808498cf46bdaadeee3358cccfb79984f5d16c8924bff5f800b8472a5",
               "sizeBytes": 3895,
               "order": 4
             },
             {
               "id": "pa-fractions-05",
               "title": "Percents",
-              "path": "math/pre-algebra/fractions/lesson-05.json",
-              "version": 1,
-              "sha256": "a691836736c864f921866b46872766d45b855ca9202fc7ed261e9c8afe79a1f5",
+              "path": "content/math/pre-algebra/fractions/lesson-05.json",
+              "version": 2,
+              "sha256": "f8cb5d69663850f801e35e2022eed4270c071acebcd68b7d5bc1c064bd8a6eda",
               "sizeBytes": 3528,
               "order": 5
             },
             {
               "id": "pa-fractions-06",
               "title": "Percent applications",
-              "path": "math/pre-algebra/fractions/lesson-06.json",
-              "version": 1,
-              "sha256": "a2a5bf9d29148a9ccada03233cfed064c3e11cad1c185641fce8c9e7173594ca",
+              "path": "content/math/pre-algebra/fractions/lesson-06.json",
+              "version": 2,
+              "sha256": "b836925ec21c657b41b2331555219cc32973992b7382804818f9f84260b78272",
               "sizeBytes": 4056,
               "order": 6
             }
@@ -2913,7 +2913,7 @@
           "notes": {
             "id": "pa-fractions-notes",
             "title": "Fractions, decimals and percents: cheat sheet",
-            "path": "math/pre-algebra/fractions/notes.json",
+            "path": "content/math/pre-algebra/fractions/notes.json",
             "version": 1,
             "sha256": "5c487082eadb75bab19a1e10902f7fe12746ca472bc562d8e215591721a00868",
             "sizeBytes": 1655
@@ -2927,45 +2927,45 @@
             {
               "id": "pa-ratios-01",
               "title": "Ratios",
-              "path": "math/pre-algebra/ratios/lesson-01.json",
-              "version": 1,
-              "sha256": "f08ea93bcbcff62bdd7358109ab73cd483fd14bb042a7cd568352664877a30e0",
+              "path": "content/math/pre-algebra/ratios/lesson-01.json",
+              "version": 2,
+              "sha256": "da7da9ff92797abae053614cb395197b2671748c3ab7ef7e39deb2044e79886c",
               "sizeBytes": 3963,
               "order": 1
             },
             {
               "id": "pa-ratios-02",
               "title": "Unit rates",
-              "path": "math/pre-algebra/ratios/lesson-02.json",
-              "version": 1,
-              "sha256": "82967f061c9565bcef81421f79d03b38a3be6f4a7e4aad319e343391f981ebee",
+              "path": "content/math/pre-algebra/ratios/lesson-02.json",
+              "version": 2,
+              "sha256": "e32c255fee3fc8e71ab0e590760b01eb1c6c6eeff3e76f6b27f0dd5fd685b4d6",
               "sizeBytes": 3973,
               "order": 2
             },
             {
               "id": "pa-ratios-03",
               "title": "Proportions",
-              "path": "math/pre-algebra/ratios/lesson-03.json",
-              "version": 1,
-              "sha256": "52b1966c876cdc4d1b0b60fa5e7102ac9148feb8aa0c56ff202283ca27ab0461",
+              "path": "content/math/pre-algebra/ratios/lesson-03.json",
+              "version": 2,
+              "sha256": "41eb8bd5e10cf5a1e3f836b7a7a3d63f20fb1e0a8d15aabe8f8f24a9cdd3f9c5",
               "sizeBytes": 3808,
               "order": 3
             },
             {
               "id": "pa-ratios-04",
               "title": "Scale drawings and maps",
-              "path": "math/pre-algebra/ratios/lesson-04.json",
-              "version": 1,
-              "sha256": "04e5c1c5548c50af3b15c487aa7f8c3a90e50f0e7689884e05adbf42dbe9fc1e",
+              "path": "content/math/pre-algebra/ratios/lesson-04.json",
+              "version": 2,
+              "sha256": "422ec7b98c2190b167f615425b6002b6346c306d13234bc846ebdd336cbe573e",
               "sizeBytes": 3930,
               "order": 4
             },
             {
               "id": "pa-ratios-05",
               "title": "Percent change",
-              "path": "math/pre-algebra/ratios/lesson-05.json",
-              "version": 1,
-              "sha256": "8a7432944ab895b599d7fb455f87e342fe16b5d26cbc07bb78c30464ae3f9313",
+              "path": "content/math/pre-algebra/ratios/lesson-05.json",
+              "version": 2,
+              "sha256": "3c74017ee50eb1ae6def68edcec0438987e833307ed21108ebfa248701a5bc61",
               "sizeBytes": 4196,
               "order": 5
             }
@@ -2973,7 +2973,7 @@
           "notes": {
             "id": "pa-ratios-notes",
             "title": "Ratios, rates and proportions: cheat sheet",
-            "path": "math/pre-algebra/ratios/notes.json",
+            "path": "content/math/pre-algebra/ratios/notes.json",
             "version": 1,
             "sha256": "8d5e4bbd7456c4c3bd8dcac2035fa6893cc3cd022d86830a61e893e1dfdb4b30",
             "sizeBytes": 1569
@@ -2987,54 +2987,54 @@
             {
               "id": "pa-expressions-01",
               "title": "Variables and expressions",
-              "path": "math/pre-algebra/expressions/lesson-01.json",
-              "version": 1,
-              "sha256": "7aa198398ecdc16100cf06afb12dadb82b3f8f2107f40db4bdae35374cb9f674",
+              "path": "content/math/pre-algebra/expressions/lesson-01.json",
+              "version": 2,
+              "sha256": "34112c75afa7daa04403d0f3c056dd794f0f81dde1f7ce65160b3a4978eb3135",
               "sizeBytes": 4012,
               "order": 1
             },
             {
               "id": "pa-expressions-02",
               "title": "Evaluating and simplifying",
-              "path": "math/pre-algebra/expressions/lesson-02.json",
-              "version": 1,
-              "sha256": "c1afc12cce073edf7207349ccd6c3fec3a60e42cbcb0aed1186d19112ff01e34",
+              "path": "content/math/pre-algebra/expressions/lesson-02.json",
+              "version": 2,
+              "sha256": "8568727c7340ec0dbd13d107b6c90317d3a0322c0649f9c07ffb6d3440083e76",
               "sizeBytes": 3777,
               "order": 2
             },
             {
               "id": "pa-expressions-03",
               "title": "The distributive property",
-              "path": "math/pre-algebra/expressions/lesson-03.json",
-              "version": 1,
-              "sha256": "4bb467e7b8ace49a278d9351d38f5a3a3eb8b05eebc21210694eac4d7929f170",
+              "path": "content/math/pre-algebra/expressions/lesson-03.json",
+              "version": 2,
+              "sha256": "452f65b38963edcccff7cc1efd2baf5e5bf547b1d1976832488a149587e35e1a",
               "sizeBytes": 3549,
               "order": 3
             },
             {
               "id": "pa-expressions-04",
               "title": "One-step equations",
-              "path": "math/pre-algebra/expressions/lesson-04.json",
-              "version": 1,
-              "sha256": "8a607f5c7672232c6e1fb5e6ba51ab6321c6456ba74ca60bc4c80be507948e3e",
+              "path": "content/math/pre-algebra/expressions/lesson-04.json",
+              "version": 2,
+              "sha256": "4ac6658e423e9d81438c0445f3199c92005a406fea93a680bf499f6c7dacb5eb",
               "sizeBytes": 3799,
               "order": 4
             },
             {
               "id": "pa-expressions-05",
               "title": "Two-step equations",
-              "path": "math/pre-algebra/expressions/lesson-05.json",
-              "version": 1,
-              "sha256": "79276dbd28f1aa356ae6ae690effb6766f58e25c9bb2bef5bb8345f7e00b1087",
+              "path": "content/math/pre-algebra/expressions/lesson-05.json",
+              "version": 2,
+              "sha256": "07871d432088c302191a3283b88dde8534120bd64f60fefab7e3ecbb4f7259bf",
               "sizeBytes": 3622,
               "order": 5
             },
             {
               "id": "pa-expressions-06",
               "title": "An introduction to inequalities",
-              "path": "math/pre-algebra/expressions/lesson-06.json",
-              "version": 1,
-              "sha256": "f0c6d891c9bba886a732c47009dd177d67ec51f564ab138d6e1b3dce61359917",
+              "path": "content/math/pre-algebra/expressions/lesson-06.json",
+              "version": 2,
+              "sha256": "0484bc62a3006f6b6b857eacd7ec6872d424e5f68fbeebe6b1e638be1d5c3aad",
               "sizeBytes": 4145,
               "order": 6
             }
@@ -3042,7 +3042,7 @@
           "notes": {
             "id": "pa-expressions-notes",
             "title": "Expressions and equations: cheat sheet",
-            "path": "math/pre-algebra/expressions/notes.json",
+            "path": "content/math/pre-algebra/expressions/notes.json",
             "version": 1,
             "sha256": "76df819303338973f569d76166ee4ef0acec5dc25f5fa98fb776900157fb64d7",
             "sizeBytes": 1747
@@ -3080,45 +3080,45 @@
             {
               "id": "pc-functions-01",
               "title": "Polynomial end behavior and zeros",
-              "path": "math/precalculus/functions/lesson-01.json",
-              "version": 1,
-              "sha256": "cb43dceb2b6928ac525670fd300898dded451d0368d4ec874d088ef95bc7706b",
+              "path": "content/math/precalculus/functions/lesson-01.json",
+              "version": 2,
+              "sha256": "208a69a6d33bfc0cef1df4b7439c643d06e5fccd64bb5b0f72fe350edcff4346",
               "sizeBytes": 5267,
               "order": 1
             },
             {
               "id": "pc-functions-02",
               "title": "Rational functions and asymptotes",
-              "path": "math/precalculus/functions/lesson-02.json",
-              "version": 1,
-              "sha256": "5471db4e41d66bb4ffff2799522bbca24f1d388e905988407814c77b6ec7adc8",
+              "path": "content/math/precalculus/functions/lesson-02.json",
+              "version": 2,
+              "sha256": "12de27162a6043c03efdaf71a4a7226a413ab8beb60e637efc9c453e08a9cb54",
               "sizeBytes": 5146,
               "order": 2
             },
             {
               "id": "pc-functions-03",
               "title": "Exponential and logarithmic models",
-              "path": "math/precalculus/functions/lesson-03.json",
-              "version": 1,
-              "sha256": "73e3400b60ca33fee4a764685a0920b42d9cafe5b7c50111b759e503bbef8e77",
+              "path": "content/math/precalculus/functions/lesson-03.json",
+              "version": 2,
+              "sha256": "95bcb730bf961aceb623fc5c6f56cc6f8d8aa06a6282d3f4c3f71bdd1e160a41",
               "sizeBytes": 4418,
               "order": 3
             },
             {
               "id": "pc-functions-04",
               "title": "Inverse functions revisited",
-              "path": "math/precalculus/functions/lesson-04.json",
-              "version": 1,
-              "sha256": "c0bea879c23ba43f62ca3a219d027e42df5b29231aaf4c188fa5d3cd5d4f5c44",
+              "path": "content/math/precalculus/functions/lesson-04.json",
+              "version": 2,
+              "sha256": "eb9becdd4333b3dbec4f2c8ce0ceb83b54382c8e537764f0b59ec36ba1159a06",
               "sizeBytes": 4389,
               "order": 4
             },
             {
               "id": "pc-functions-05",
               "title": "Modeling with functions",
-              "path": "math/precalculus/functions/lesson-05.json",
-              "version": 1,
-              "sha256": "a16f7d7f55cfb49f6f4dc97c632143cd260669c5988d17f8021bd91aa35af8dd",
+              "path": "content/math/precalculus/functions/lesson-05.json",
+              "version": 2,
+              "sha256": "6c0a933422c79d5e6c0df6878857a20078812b809646b2a555589002000fcffe",
               "sizeBytes": 4711,
               "order": 5
             }
@@ -3126,7 +3126,7 @@
           "notes": {
             "id": "pc-functions-notes",
             "title": "Function families: cheat sheet",
-            "path": "math/precalculus/functions/notes.json",
+            "path": "content/math/precalculus/functions/notes.json",
             "version": 1,
             "sha256": "0151c38fd561d8462f9c8709fffcf1d907ed2574067f17e7dc4f9a3a23fe4366",
             "sizeBytes": 1778
@@ -3140,63 +3140,63 @@
             {
               "id": "pc-trig-01",
               "title": "Radians and angle measure",
-              "path": "math/precalculus/trigonometry/lesson-01.json",
-              "version": 1,
-              "sha256": "8625e0c49cb782dbb1b874a0c15c3cd7db5231b793a7f98ac9881f0fb3accb79",
+              "path": "content/math/precalculus/trigonometry/lesson-01.json",
+              "version": 2,
+              "sha256": "d9bcfce278926956a15439ae63c583aa523e8817da22386b0d2862108052e216",
               "sizeBytes": 4726,
               "order": 1
             },
             {
               "id": "pc-trig-02",
               "title": "The unit circle",
-              "path": "math/precalculus/trigonometry/lesson-02.json",
-              "version": 1,
-              "sha256": "a815fd381db4259f427d57c36101ed4d6b890d6883c141b539fae24e05c1a4e9",
+              "path": "content/math/precalculus/trigonometry/lesson-02.json",
+              "version": 2,
+              "sha256": "798084bac2d4688213e4e47e0a7f65189b9e2f5779faf3c715d5a17c5119db9d",
               "sizeBytes": 5004,
               "order": 2
             },
             {
               "id": "pc-trig-03",
               "title": "Graphs of sine and cosine",
-              "path": "math/precalculus/trigonometry/lesson-03.json",
-              "version": 1,
-              "sha256": "c3ef07233288d042d396ecdc8ff2d75bfdf1469a5f28ec868248bf8d58b681d5",
+              "path": "content/math/precalculus/trigonometry/lesson-03.json",
+              "version": 2,
+              "sha256": "1be77cc973074715007bf9cdf0d291b6b2bdf06153c43eb38fd5f3dc4fca3735",
               "sizeBytes": 4713,
               "order": 3
             },
             {
               "id": "pc-trig-04",
               "title": "Tangent and other trig graphs",
-              "path": "math/precalculus/trigonometry/lesson-04.json",
-              "version": 1,
-              "sha256": "511ee397c3f1f2f34b150f7390b9e466c5d68a7b509141254f13ce6fac1b0502",
+              "path": "content/math/precalculus/trigonometry/lesson-04.json",
+              "version": 2,
+              "sha256": "ce42c4ec68f78020fb7dc59a95a421e4ab4031cf8ffa7ffe15d9226710babb25",
               "sizeBytes": 4879,
               "order": 4
             },
             {
               "id": "pc-trig-05",
               "title": "Inverse trig functions",
-              "path": "math/precalculus/trigonometry/lesson-05.json",
-              "version": 1,
-              "sha256": "85242c8df244664ba806da2bfc09564c0faa4cacb05b73674a3c9d13c85a889c",
+              "path": "content/math/precalculus/trigonometry/lesson-05.json",
+              "version": 2,
+              "sha256": "2c8cbb254d6f3c40c84b3cc06d42f7bb1dcfc93db2dd14a108c243a06ca26566",
               "sizeBytes": 4899,
               "order": 5
             },
             {
               "id": "pc-trig-06",
               "title": "Trig identities",
-              "path": "math/precalculus/trigonometry/lesson-06.json",
-              "version": 1,
-              "sha256": "7eb80dc44bc768c791deec49d429609b3be6adbe1b31eb5591aedfffac3b5328",
+              "path": "content/math/precalculus/trigonometry/lesson-06.json",
+              "version": 2,
+              "sha256": "3fd0d24bcdd1f0f12ff036b784cbdd3f3fe179924a70658cd931692870708d0b",
               "sizeBytes": 4934,
               "order": 6
             },
             {
               "id": "pc-trig-07",
               "title": "Solving trig equations",
-              "path": "math/precalculus/trigonometry/lesson-07.json",
-              "version": 1,
-              "sha256": "ab1276c04740aea7532cc8328a25ab5065a432798d02127620064a483627fcbf",
+              "path": "content/math/precalculus/trigonometry/lesson-07.json",
+              "version": 2,
+              "sha256": "0a8aaf31d157fefccb317e58f8c0dd93fe276d85ceb0bffd5d3e1b34b1ee1f08",
               "sizeBytes": 5040,
               "order": 7
             }
@@ -3204,7 +3204,7 @@
           "notes": {
             "id": "pc-trig-notes",
             "title": "Trigonometry: cheat sheet",
-            "path": "math/precalculus/trigonometry/notes.json",
+            "path": "content/math/precalculus/trigonometry/notes.json",
             "version": 1,
             "sha256": "b2ff10673ffc04699fe7b38f3a7ef54e8dc79dce0a3f64dd7b709ef6c19d4cdc",
             "sizeBytes": 1752
@@ -3218,45 +3218,45 @@
             {
               "id": "pc-applications-01",
               "title": "The law of sines",
-              "path": "math/precalculus/applications/lesson-01.json",
-              "version": 1,
-              "sha256": "65254ba752ad0e5c7711ac015a7cf002bf25abc7be7337a2400478d897eed650",
+              "path": "content/math/precalculus/applications/lesson-01.json",
+              "version": 2,
+              "sha256": "f9d70fc0f15b31b20ff43b7fb5661b24ba6386e9e9fd55d78590f1b1b2f3be3a",
               "sizeBytes": 4753,
               "order": 1
             },
             {
               "id": "pc-applications-02",
               "title": "The law of cosines",
-              "path": "math/precalculus/applications/lesson-02.json",
-              "version": 1,
-              "sha256": "2543f8c9d7bba64a95ce4815c7dc8442767c88c12a9807c0effdc763f37a548d",
+              "path": "content/math/precalculus/applications/lesson-02.json",
+              "version": 2,
+              "sha256": "dcb339e066f91c543060f72f754e4efea3e5378764a8bb0f97ad01c1e95e9443",
               "sizeBytes": 4378,
               "order": 2
             },
             {
               "id": "pc-applications-03",
               "title": "Vectors as arrows",
-              "path": "math/precalculus/applications/lesson-03.json",
-              "version": 1,
-              "sha256": "5ccd6b68b8d62ec095bf8c593880ebf47f6af020f4bdfa812c44e7721b667f81",
+              "path": "content/math/precalculus/applications/lesson-03.json",
+              "version": 2,
+              "sha256": "48cec99af14da582ef76a8b37e04bab085ecee3d603fa2db604af46ae5f5e37c",
               "sizeBytes": 4602,
               "order": 3
             },
             {
               "id": "pc-applications-04",
               "title": "Polar coordinates",
-              "path": "math/precalculus/applications/lesson-04.json",
-              "version": 1,
-              "sha256": "9527ac6fc38ef10fa0474f3a4cf4a59535c54655ce9dea28804742ff4de51529",
+              "path": "content/math/precalculus/applications/lesson-04.json",
+              "version": 2,
+              "sha256": "1fb74b9089e145d49fe22c7e1d4360cee29084b78a60eb1fc7031e49891cc33d",
               "sizeBytes": 4713,
               "order": 4
             },
             {
               "id": "pc-applications-05",
               "title": "Complex numbers in polar form",
-              "path": "math/precalculus/applications/lesson-05.json",
-              "version": 1,
-              "sha256": "2c33be321e7fe86ff7ba05fa6b4848ca23a41f5a9124a557f09837f014af10ad",
+              "path": "content/math/precalculus/applications/lesson-05.json",
+              "version": 2,
+              "sha256": "c64156e1390f57e93ba7dc69bd9c8c9bfdac2d7f3ea631abdc15c2c8dacc3001",
               "sizeBytes": 4618,
               "order": 5
             }
@@ -3264,7 +3264,7 @@
           "notes": {
             "id": "pc-applications-notes",
             "title": "Applications of trig: cheat sheet",
-            "path": "math/precalculus/applications/notes.json",
+            "path": "content/math/precalculus/applications/notes.json",
             "version": 1,
             "sha256": "89b18a588213d577b1cbfcab2206ceb7ffb3bfdf3144d22830c95ffae45f6fbc",
             "sizeBytes": 1440
@@ -3278,45 +3278,45 @@
             {
               "id": "pc-calculus-01",
               "title": "Conic sections",
-              "path": "math/precalculus/toward-calculus/lesson-01.json",
-              "version": 1,
-              "sha256": "b3dbcde945db2ae30531f24fa7f115520ffe29bcf2af21e55e22bbff77e63fec",
+              "path": "content/math/precalculus/toward-calculus/lesson-01.json",
+              "version": 2,
+              "sha256": "b7c3b0ae9c6a18c69bc8851735a7e521e255e10a63a8316251d6c0a6335fa99a",
               "sizeBytes": 4697,
               "order": 1
             },
             {
               "id": "pc-calculus-02",
               "title": "Sequences and series",
-              "path": "math/precalculus/toward-calculus/lesson-02.json",
-              "version": 1,
-              "sha256": "958812e3f9d8ca1489a684a8922388076e64a198299bfd291199436fc2915df6",
+              "path": "content/math/precalculus/toward-calculus/lesson-02.json",
+              "version": 2,
+              "sha256": "aff92936adc88425027ff00dfbfaf1bab00053c7ba74c689f6b852f7626b0070",
               "sizeBytes": 4363,
               "order": 2
             },
             {
               "id": "pc-calculus-03",
               "title": "The idea of a limit",
-              "path": "math/precalculus/toward-calculus/lesson-03.json",
-              "version": 1,
-              "sha256": "38c2a8dfcff75a3f28ea7cf0d4af687a34fcc2daaa36ca0905d9f0d9126712a7",
+              "path": "content/math/precalculus/toward-calculus/lesson-03.json",
+              "version": 2,
+              "sha256": "697a1746bdb846d6a0a39ce0d2d0e411a943bf42fc274af598d6e8c10703d49a",
               "sizeBytes": 4392,
               "order": 3
             },
             {
               "id": "pc-calculus-04",
               "title": "Rates of change",
-              "path": "math/precalculus/toward-calculus/lesson-04.json",
-              "version": 1,
-              "sha256": "ada2420d08840e4eddf4335dba0c1d2d9acfabfc02fabe0581c8b9da78767591",
+              "path": "content/math/precalculus/toward-calculus/lesson-04.json",
+              "version": 2,
+              "sha256": "39604d6ff8a9b52bd12f0e4a17ac3dfcc6db0eb510c6b5cbf429c0ca47b58be2",
               "sizeBytes": 4445,
               "order": 4
             },
             {
               "id": "pc-calculus-05",
               "title": "The derivative idea",
-              "path": "math/precalculus/toward-calculus/lesson-05.json",
-              "version": 1,
-              "sha256": "13c0c99d9d36ec01c0efb9049f1ab9261f2201cdf94ae663bb3bccef84534792",
+              "path": "content/math/precalculus/toward-calculus/lesson-05.json",
+              "version": 2,
+              "sha256": "0ee3818b093eec51b00624a42c753cc95be13a40f851ec43466110a4c04127ce",
               "sizeBytes": 4540,
               "order": 5
             }
@@ -3324,7 +3324,7 @@
           "notes": {
             "id": "pc-calculus-notes",
             "title": "Toward calculus: cheat sheet",
-            "path": "math/precalculus/toward-calculus/notes.json",
+            "path": "content/math/precalculus/toward-calculus/notes.json",
             "version": 1,
             "sha256": "4cc12bdb2c30973587d9eee06f66056a14c2dc0fc4d6c99a6e6ce6445d375502",
             "sizeBytes": 1553
@@ -3349,37 +3349,37 @@
   ],
   "images": [
     {
-      "path": "images/geo-circle-parts.svg",
+      "path": "content/images/geo-circle-parts.svg",
       "sha256": "e778a237f078c927b79c5ad60eace43ae62deaa1a59764bb022a644159561a9d",
       "sizeBytes": 716
     },
     {
-      "path": "images/geo-right-triangle.svg",
+      "path": "content/images/geo-right-triangle.svg",
       "sha256": "6ceeb3f5a7f5debfafe26c162883e44890abbf08a5cc1ac3eae44d0a7c56f379",
       "sizeBytes": 463
     },
     {
-      "path": "images/geo-transversal.svg",
+      "path": "content/images/geo-transversal.svg",
       "sha256": "781fe9d9920010762b68bd4704a3c927f20c390b879b8d5ea92c5b75d39cfdad",
       "sizeBytes": 499
     },
     {
-      "path": "images/geo-trig-sides.svg",
+      "path": "content/images/geo-trig-sides.svg",
       "sha256": "7ee5db77c526b8efe096599cd4abe51ac8b3e832d2991dd7f56102d77161b9eb",
       "sizeBytes": 707
     },
     {
-      "path": "images/number-line.svg",
+      "path": "content/images/number-line.svg",
       "sha256": "b3ae72e03796e4387275129bd2a823769cdc4db150d99660944f69bc4aa35387",
       "sizeBytes": 832
     },
     {
-      "path": "images/parallel-circuit.svg",
+      "path": "content/images/parallel-circuit.svg",
       "sha256": "063f21280d5157faae01edf8ea631f8ded9136017a7f35de93825cae94374a6b",
       "sizeBytes": 1167
     },
     {
-      "path": "images/series-circuit.svg",
+      "path": "content/images/series-circuit.svg",
       "sha256": "8c2224890d570ee099cd0284a1f8307a67dffa8aecca24b835e5f04ef64f7e91",
       "sizeBytes": 1050
     }

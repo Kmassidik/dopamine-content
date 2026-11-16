@@ -1,0 +1,136 @@
+{
+  "id": "cm-heap-05",
+  "version": 2,
+  "minApp": 2,
+  "title": "realloc and growing arrays",
+  "xp": 15,
+  "tags": [
+    "c",
+    "realloc",
+    "arrays"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Arrays that grow",
+      "body": "A normal array has a fixed size. With the heap you can start small and grow when you run out. `realloc(ptr, newSize)` changes the size of a heap block and keeps the old contents. It may move the block, so always use the pointer it returns."
+    },
+    {
+      "id": "grow",
+      "kind": "code",
+      "title": "Doubling when full",
+      "body": "Start with room for 2 ints and add 10, 20, 30, 40, 50. Each time `n == cap`, double the capacity. The program prints `5 8 50`: five items, capacity 8, last value 50. The loop is not shown here.",
+      "code": "if (n == cap) {\n    cap *= 2;\n    size_t bytes = cap * sizeof *a;\n    int *t = realloc(a, bytes);\n    if (t == NULL) {\n        free(a);\n        return 1;\n    }\n    a = t;\n}\na[n++] = v * 10;",
+      "language": "c"
+    },
+    {
+      "id": "why",
+      "kind": "text",
+      "title": "Why the extra variable",
+      "body": "If `realloc` fails it returns `NULL` but leaves the old block untouched. Writing `a = realloc(a, ...)` would overwrite your only pointer to that block and leak it. Store the result in `t`, check it, then copy it into `a`."
+    },
+    {
+      "id": "ex-cap",
+      "kind": "example",
+      "title": "Following the capacity",
+      "body": "Trace the capacity as items 1 to 5 are added, starting at 2.",
+      "steps": [
+        "Items 1 and 2 fit, `n` reaches 2",
+        "Item 3: full, capacity becomes 4",
+        "Items 3 and 4 fit",
+        "Item 5: full again, capacity becomes 8"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Doubling means fewer calls and fewer copies than growing by one each time. Free the final block once, at the end."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What does `realloc` do?",
+      "choices": [
+        "Resizes a heap block and keeps its contents",
+        "Frees a block",
+        "Zeroes a block",
+        "Prints a block"
+      ],
+      "answerIndex": 0,
+      "explanation": "It grows or shrinks a block, copying the old data if it must move.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Why use a temporary pointer `t`?",
+      "choices": [
+        "`realloc` may fail and return NULL",
+        "`t` is faster",
+        "`a` is const",
+        "It saves memory"
+      ],
+      "answerIndex": 0,
+      "explanation": "With `a = realloc(a, ...)` a failure would lose the old pointer.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "Start with capacity 2 and double it twice. What is the capacity?",
+      "accepted": [
+        "8"
+      ],
+      "keypad": "numeric",
+      "explanation": "2 becomes 4 and then 8.",
+      "id": "q3"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "What does the example print as the last value?",
+      "accepted": [
+        "50"
+      ],
+      "keypad": "numeric",
+      "explanation": "The fifth item is 5 * 10 = 50.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "After a successful `realloc`, use the \\_\\_ pointer.",
+      "choices": [
+        "returned",
+        "old",
+        "original"
+      ],
+      "answerIndex": 0,
+      "explanation": "The block may have moved, so the old pointer can no longer be trusted.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "How many times should the final block be freed?",
+      "choices": [
+        "Once",
+        "Once per growth",
+        "Never",
+        "Twice"
+      ],
+      "answerIndex": 0,
+      "explanation": "`realloc` already released the old blocks. Free the final one once.",
+      "id": "q6"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put the steps of adding to a full array in order.",
+      "steps": [
+        "Notice that `n == cap`",
+        "Double `cap`",
+        "`realloc` into a temporary pointer",
+        "Check it is not `NULL`, then store it in `a`"
+      ],
+      "explanation": "Check before you replace your only pointer.",
+      "id": "q7"
+    }
+  ]
+}

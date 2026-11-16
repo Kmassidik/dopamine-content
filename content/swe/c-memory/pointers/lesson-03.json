@@ -1,0 +1,151 @@
+{
+  "id": "cm-pointers-03",
+  "version": 2,
+  "minApp": 2,
+  "title": "Pointers and arrays",
+  "xp": 15,
+  "tags": [
+    "c",
+    "pointers",
+    "arrays"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "The name of an array",
+      "body": "In most expressions, an array's name turns into the address of its first item. So with `int a[3]`, writing `a` gives the same address as `&a[0]`. That is why you can store an array name in a pointer: `int *p = a;`."
+    },
+    {
+      "id": "demo",
+      "kind": "code",
+      "title": "Two ways to reach an item",
+      "body": "This prints `10 20 30`, then 1, then 99. `p[2]` is the third item, and `*(p + 1)` is the second. `a[1] == *(a + 1)` is true: square brackets are just a shorthand for this.",
+      "code": "int a[3] = {10, 20, 30};\nint *p = a;\nprintf(\"%d %d %d\\n\",\n       *p, *(p + 1), p[2]);\nprintf(\"%d\\n\", a[1] == *(a + 1));\np[0] = 99;\nprintf(\"%d\\n\", a[0]);",
+      "language": "c"
+    },
+    {
+      "id": "ex-eq",
+      "kind": "example",
+      "title": "Same thing",
+      "body": "With the array above, what are `a[2]` and `*(a + 2)`?",
+      "steps": [
+        "`a + 2` is the address two items after the start",
+        "`*(a + 2)` is the value stored there",
+        "That is the third item, 30",
+        "So `a[2]` and `*(a + 2)` are the same"
+      ]
+    },
+    {
+      "id": "param",
+      "kind": "text",
+      "title": "Arrays in functions",
+      "body": "When you pass an array to a function, the function receives only a pointer to its first item. Inside the function, `sizeof` gives the size of a pointer, 8 bytes here, not the array. So pass the length as a second argument."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "`p` and `a` can both reach the same bytes. Writing `p[0] = 99` changed `a[0]`, because there is only one array."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "With `int a[3] = {10, 20, 30};` and `int *p = a;`, what is `*(p + 1)`?",
+      "choices": [
+        "20",
+        "10",
+        "30",
+        "The address of a[1]"
+      ],
+      "answerIndex": 0,
+      "explanation": "`p + 1` points at the second item, which holds 20.",
+      "id": "q1"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "With `int a[3] = {10, 20, 30};` and `int *p = a;`, what is `p[2]`?",
+      "accepted": [
+        "30"
+      ],
+      "keypad": "numeric",
+      "explanation": "`p[2]` is the third item.",
+      "id": "q2"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "`int *p = a;` then `p[0] = 99;`. What is `a[0]`?",
+      "choices": [
+        "99",
+        "10",
+        "0",
+        "Unchanged but undefined"
+      ],
+      "answerIndex": 0,
+      "explanation": "`p` points at the array's first item, so the write changes the array.",
+      "id": "q3"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "In most expressions, an array name becomes a \\_\\_ to its first item.",
+      "choices": [
+        "pointer",
+        "copy",
+        "number"
+      ],
+      "answerIndex": 0,
+      "explanation": "The array name decays to a pointer to its first element.",
+      "id": "q4"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "A function receives `int a[]`. What does `sizeof a` give inside it?",
+      "choices": [
+        "The size of a pointer",
+        "The size of the whole array",
+        "Zero",
+        "The number of items"
+      ],
+      "answerIndex": 0,
+      "explanation": "The parameter is really a pointer, so you must pass the length separately.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which is the same as `a[3]`?",
+      "choices": [
+        "`*(a + 3)`",
+        "`*a + 3`",
+        "`&a + 3`",
+        "`a * 3`"
+      ],
+      "answerIndex": 0,
+      "explanation": "Add 3 items to the address, then dereference it.",
+      "id": "q6"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each expression to the same meaning.",
+      "pairs": [
+        [
+          "`a`",
+          "address of first item"
+        ],
+        [
+          "`a[0]`",
+          "first item"
+        ],
+        [
+          "`&a[1]`",
+          "address of second item"
+        ],
+        [
+          "`*(a + 1)`",
+          "second item"
+        ]
+      ],
+      "explanation": "Brackets and pointer arithmetic describe the same positions.",
+      "id": "q7"
+    }
+  ]
+}

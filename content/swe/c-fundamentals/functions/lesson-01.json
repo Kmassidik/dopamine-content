@@ -1,0 +1,152 @@
+{
+  "id": "cf-functions-01",
+  "version": 2,
+  "minApp": 2,
+  "title": "Defining and calling functions",
+  "xp": 15,
+  "tags": [
+    "c",
+    "functions"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Naming a piece of code",
+      "body": "A function is a named block of code that you can run whenever you want. You have already used some: `printf` is a function someone else wrote, and `main` is a function you write. Now you will write your own."
+    },
+    {
+      "id": "def",
+      "kind": "code",
+      "title": "Define, then call",
+      "body": "`greet` is defined once and called twice. The include line is left out here to save space.",
+      "code": "void greet(void)\n{\n    printf(\"Hello!\\n\");\n}\n\nint main(void)\n{\n    greet();\n    greet();\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "define",
+      "kind": "text",
+      "title": "Defining",
+      "body": "A definition has a return type, a name, parentheses and a body in braces. `void` as the return type means the function gives nothing back. `void` in the parentheses means it takes no input. The body holds the instructions to run."
+    },
+    {
+      "id": "call",
+      "kind": "text",
+      "title": "Calling",
+      "body": "To run a function, write its name with parentheses and a semicolon: `greet();`. The program jumps into the function, runs its body, then comes back to the next line after the call."
+    },
+    {
+      "id": "why",
+      "kind": "text",
+      "title": "Why bother",
+      "body": "A function stops you repeating yourself. Write the code once, call it anywhere, and fix a bug in a single place. It also gives a name to an idea, which makes the program easier to read."
+    },
+    {
+      "id": "trace",
+      "kind": "example",
+      "title": "Order of events",
+      "body": "Follow the program from `main`.",
+      "steps": [
+        "`main` starts and reaches `greet();`",
+        "The program jumps into `greet`, which prints Hello!",
+        "It returns to `main` and runs the second `greet();`",
+        "It prints Hello! again, and then `main` ends"
+      ]
+    },
+    {
+      "id": "order",
+      "kind": "tip",
+      "body": "The compiler reads top to bottom, so define a function above the place where you call it. Prototypes, in a later lesson, remove that rule."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What does `void` mean as a function's return type?",
+      "choices": [
+        "It gives nothing back",
+        "It returns zero",
+        "It is not allowed",
+        "It returns text"
+      ],
+      "answerIndex": 0,
+      "explanation": "A `void` function does work but returns no value."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "How do you run a function named `greet` that takes nothing?",
+      "choices": [
+        "`run greet;`",
+        "`greet();`",
+        "`greet;`",
+        "`call greet`"
+      ],
+      "answerIndex": 1,
+      "explanation": "Write its name, parentheses and a semicolon."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "`greet();` is called twice. How many times does Hello! print? Type the number.",
+      "accepted": [
+        "2",
+        "two"
+      ],
+      "keypad": "full",
+      "explanation": "Each call runs the body once, so it prints twice."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "A function body goes between \\_\\_.",
+      "choices": [
+        "square brackets",
+        "quotes",
+        "curly braces",
+        "angle brackets"
+      ],
+      "answerIndex": 2,
+      "explanation": "The braces `{` and `}` mark the body."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which is a benefit of functions?",
+      "choices": [
+        "Programs run without a compiler",
+        "Variables never change",
+        "No more errors",
+        "Write code once and reuse it"
+      ],
+      "answerIndex": 3,
+      "explanation": "A function avoids repeating the same lines."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Where does a C program always begin?",
+      "choices": [
+        "In `main`",
+        "In the first function written",
+        "In `printf`",
+        "In the shortest function"
+      ],
+      "answerIndex": 0,
+      "explanation": "`main` is the entry point, and it can call other functions."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Put these in order for a program with a `greet` function.",
+      "steps": [
+        "Define `greet` above `main`",
+        "`main` starts",
+        "`main` calls `greet();`",
+        "`greet` prints, then control returns to `main`"
+      ],
+      "explanation": "The definition is read first, then main runs and calls it."
+    }
+  ]
+}

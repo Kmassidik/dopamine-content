@@ -1,0 +1,127 @@
+{
+  "id": "cd-adt-02",
+  "version": 2,
+  "minApp": 2,
+  "title": "Arrays and dynamic arrays",
+  "xp": 15,
+  "tags": [
+    "c",
+    "arrays",
+    "malloc"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "A fixed size is a limit",
+      "body": "A C array like `int a[3]` has a size fixed when you write the program. If you need room for a number of items known only at run time, ask the heap with `malloc`. That gives a dynamic array you can resize."
+    },
+    {
+      "id": "heap",
+      "kind": "text",
+      "title": "Allocating on the heap",
+      "body": "`malloc(n * sizeof *a)` returns space for n ints, or NULL on failure. `realloc` resizes the block and may move it, so always store its result. When you finish, call `free` exactly once on the pointer."
+    },
+    {
+      "id": "grow",
+      "kind": "code",
+      "title": "Growing by doubling",
+      "code": "int cap = 2, len = 0;\nint *a = malloc(cap * sizeof *a);\nfor (int i = 0; i < 5; i++) {\n    if (len == cap) {\n        cap *= 2;\n        a = realloc(a, cap * sizeof *a);\n    }\n    a[len++] = i * 10;\n}\nprintf(\"%d %d\\n\", len, cap);\nfree(a);",
+      "language": "c",
+      "body": "When the array is full, double its capacity. Real code also checks malloc and realloc for NULL."
+    },
+    {
+      "id": "ex-grow",
+      "kind": "example",
+      "title": "Tracing the growth",
+      "body": "Start with cap 2 and add five values.",
+      "steps": [
+        "Values 0 and 10 fit. len is 2, cap is 2",
+        "Adding 20 finds the array full, so cap becomes 4",
+        "Adding 30 fits. Adding 40 needs cap 8",
+        "It ends with len 5 and cap 8"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Doubling means copies are rare. Most appends just write one slot."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "Which is a limit of `int a[3]`?",
+      "choices": [
+        "Its size is fixed in the program",
+        "It cannot hold ints",
+        "It must be freed",
+        "It lives only on the heap"
+      ],
+      "answerIndex": 0,
+      "explanation": "A plain array has a size set at compile time. A malloc'd block can be sized at run time.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Why store the result of `realloc` in the pointer?",
+      "choices": [
+        "It always returns NULL",
+        "The block may have moved",
+        "It frees the old block twice",
+        "It changes the type"
+      ],
+      "answerIndex": 1,
+      "explanation": "realloc may move the data to a new place, so the old address can become invalid.",
+      "id": "q2"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "Memory from `malloc` must be released with \\_\\_.",
+      "choices": [
+        "delete",
+        "release",
+        "free",
+        "realloc(0)"
+      ],
+      "answerIndex": 2,
+      "explanation": "Every successful malloc should be matched by exactly one free.",
+      "id": "q3"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "A dynamic array has cap 2 and doubles when full. What cap does it have after holding 5 items?",
+      "accepted": [
+        "8"
+      ],
+      "keypad": "numeric",
+      "explanation": "2 becomes 4 at the third item, then 8 at the fifth item.",
+      "id": "q4"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does `malloc` return when it cannot get memory?",
+      "choices": [
+        "0 bytes of memory",
+        "A pointer to the stack",
+        "The program exits at once",
+        "NULL"
+      ],
+      "answerIndex": 3,
+      "explanation": "Check for NULL before using the pointer.",
+      "id": "q5"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Order the steps to grow a full dynamic array.",
+      "steps": [
+        "Notice len equals cap",
+        "Double cap",
+        "Call realloc with the new size",
+        "Store the new item"
+      ],
+      "explanation": "Make room first, then store. Using the slot before realloc would write past the end.",
+      "id": "q6"
+    }
+  ]
+}

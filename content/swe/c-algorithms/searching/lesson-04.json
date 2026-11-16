@@ -1,0 +1,144 @@
+{
+  "id": "cg-search-04",
+  "version": 2,
+  "minApp": 2,
+  "title": "Comparing searches",
+  "xp": 15,
+  "tags": [
+    "c",
+    "searching",
+    "big-o"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "How much faster",
+      "body": "Linear search is $O(n)$ and binary search is $O(\\log n)$. For small arrays the difference is tiny. For large ones it is huge. To see why, count how many times you can halve n before reaching nothing."
+    },
+    {
+      "id": "halve",
+      "kind": "code",
+      "title": "Counting halvings",
+      "body": "The worst case for binary search is about this many looks. With n of 1000 it prints 10.",
+      "code": "int steps = 0;\nwhile (n > 0) {\n    n = n / 2;\n    steps++;\n}\nprintf(\"%d\\n\", steps);",
+      "language": "c"
+    },
+    {
+      "id": "table",
+      "kind": "example",
+      "title": "Worst-case looks",
+      "body": "Run the halving loop for bigger sizes.",
+      "steps": [
+        "n = 7 needs at most 3 looks",
+        "n = 1000 needs at most 10 looks",
+        "n = 1,000,000 needs at most 20 looks",
+        "n = 1,000,000,000 needs at most 30 looks"
+      ]
+    },
+    {
+      "id": "cost",
+      "kind": "text",
+      "title": "Sorting has a price",
+      "body": "A billion items cost a linear search up to a billion looks, but a binary search only 30. Yet binary search needs sorted data. Sorting costs work too. If you search once, linear may be cheaper. If you search many times, sort once and then use binary search."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Doubling the array adds only one more look to binary search. Compare that with linear search, which doubles."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "About how many looks does binary search need at worst for 1000 items?",
+      "choices": [
+        "10",
+        "500",
+        "1000"
+      ],
+      "answerIndex": 0,
+      "explanation": "1000 can be halved about 10 times before nothing is left.",
+      "id": "q1"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "About how many looks at most for 1,000,000 items?",
+      "accepted": [
+        "20",
+        "20 looks"
+      ],
+      "keypad": "numeric",
+      "explanation": "One million halves about 20 times. Linear search could need a million.",
+      "id": "q2"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "An array grows from 1000 to 2000 items. How does binary search's worst case change?",
+      "choices": [
+        "It grows by 1 look",
+        "It doubles",
+        "It stays at 10"
+      ],
+      "answerIndex": 0,
+      "explanation": "Halving 2000 takes one more step than halving 1000. 10 becomes 11.",
+      "id": "q3"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "Linear search is $O(n)$ and binary search is \\_\\_.",
+      "choices": [
+        "$O(\\log n)$",
+        "$O(1)$",
+        "$O(n^2)$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Halving gives logarithmic growth.",
+      "id": "q4"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each search to what it needs.",
+      "pairs": [
+        [
+          "linear search",
+          "works on any order"
+        ],
+        [
+          "binary search",
+          "sorted data"
+        ],
+        [
+          "both",
+          "return an index or -1"
+        ]
+      ],
+      "explanation": "Binary search trades a stricter requirement for speed.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "You search an unsorted array of 5 items just once. Which is the better choice?",
+      "choices": [
+        "Linear search",
+        "Sort it, then binary search",
+        "Neither works"
+      ],
+      "answerIndex": 0,
+      "explanation": "Sorting costs more than one linear pass, so a single search is cheaper without it.",
+      "id": "q6"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "You must run a million searches on the same fixed array. What is smart?",
+      "choices": [
+        "Sort once, then use binary search",
+        "Linear search every time",
+        "Sort before every search"
+      ],
+      "answerIndex": 0,
+      "explanation": "Sorting once is paid back by the very cheap searches that follow.",
+      "id": "q7"
+    }
+  ]
+}

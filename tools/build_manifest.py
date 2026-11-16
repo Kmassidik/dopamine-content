@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Generate manifest.json from catalog.json and the lesson files.
+"""Generate manifest.json from content/catalog.json and the lesson files.
+
+Paths in the manifest are relative to the repo root (for example content/math/geometry/triangles/lesson-01.json),
+because the app downloads <raw base url> + path.
 
 Usage:
   python3 tools/build_manifest.py           write manifest.json
@@ -13,7 +16,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-MANIFEST = ROOT / "manifest.json"
+CONTENT = ROOT / "content"   # lessons, notes, images and catalog.json live here
+MANIFEST = ROOT / "manifest.json"   # stays at the repo root: the app fetches it from there
 ORDER_RE = re.compile(r"lesson-(\d+)\.json$")
 
 
@@ -22,13 +26,13 @@ def sha256(path: Path) -> str:
 
 
 def build(content_version: str) -> dict:
-    catalog = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
+    catalog = json.loads((CONTENT / "catalog.json").read_text(encoding="utf-8"))
     used_images = set()
     courses = []
     for course in catalog["courses"]:
         units = []
         for unit in course["units"]:
-            unit_dir = ROOT / course["dir"] / unit["dir"]
+            unit_dir = CONTENT / course["dir"] / unit["dir"]
             lessons = []
             for f in sorted(unit_dir.glob("lesson-*.json")):
                 m = ORDER_RE.search(f.name)

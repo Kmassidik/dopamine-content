@@ -1,0 +1,151 @@
+{
+  "id": "variables-02",
+  "version": 2,
+  "minApp": 2,
+  "title": "Numbers and text",
+  "xp": 10,
+  "tags": [
+    "python",
+    "types"
+  ],
+  "learn": [
+    {
+      "id": "types",
+      "kind": "text",
+      "title": "Types of values",
+      "body": "Every value has a type. Whole numbers are `int`, numbers with a decimal point are `float`, and text is `str` (a string). Text goes inside quotes, like `\"hello\"`."
+    },
+    {
+      "id": "number-math",
+      "kind": "code",
+      "title": "Math with numbers",
+      "body": "It prints 9, 3.5, 3 and 1. `/` always gives a `float`, `//` drops the decimals and `%` gives the remainder.",
+      "code": "a = 7\nb = 2\nprint(a + b)\nprint(a / b)\nprint(a // b)\nprint(a % b)",
+      "language": "python"
+    },
+    {
+      "id": "text-ops",
+      "kind": "code",
+      "title": "Working with text",
+      "body": "It prints Hi, Ada then AdaAdaAda then 3. `+` joins text, `*` repeats it and `len` counts characters.",
+      "code": "name = \"Ada\"\nprint(\"Hi, \" + name)\nprint(name * 3)\nprint(len(name))",
+      "language": "python"
+    },
+    {
+      "id": "example-type",
+      "kind": "example",
+      "title": "Which type is it?",
+      "body": "Look for quotes and a decimal point.",
+      "steps": [
+        "`7` has no point, so it is an `int`",
+        "`7.0` has a point, so it is a `float`",
+        "`\"7\"` is in quotes, so it is a `str`"
+      ]
+    },
+    {
+      "id": "mixing",
+      "kind": "text",
+      "title": "Mixing types",
+      "body": "You cannot add a number to text: `\"age \" + 5` is an error. Convert first with `str(5)`. Quotes change the meaning: `\"5\" + \"5\"` gives `\"55\"`, but `5 + 5` gives `10`."
+    },
+    {
+      "id": "see-type",
+      "kind": "tip",
+      "body": "Not sure of a type? Run `print(type(x))` and Python tells you."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What type is `3.0`?",
+      "choices": [
+        "`int`",
+        "`float`",
+        "`str`"
+      ],
+      "answerIndex": 1,
+      "explanation": "It has a decimal point, so it is a `float`."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "What does `print(17 % 5)` show?",
+      "accepted": [
+        "2"
+      ],
+      "keypad": "numeric",
+      "explanation": "17 = 3 x 5 + 2, so the remainder is 2."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What does `print(\"ab\" * 3)` show?",
+      "accepted": [
+        "ababab"
+      ],
+      "keypad": "full",
+      "explanation": "`*` repeats the text three times."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What does `print(7 // 2)` show?",
+      "choices": [
+        "3.5",
+        "3",
+        "4"
+      ],
+      "answerIndex": 1,
+      "explanation": "`//` divides and drops the decimals: 7 / 2 is 3.5, so it gives 3."
+    },
+    {
+      "id": "q5",
+      "type": "match_pairs",
+      "prompt": "Match each expression to its result.",
+      "pairs": [
+        [
+          "`\"5\" + \"5\"`",
+          "`\"55\"`"
+        ],
+        [
+          "`5 + 5`",
+          "`10`"
+        ],
+        [
+          "`len(\"hey\")`",
+          "`3`"
+        ],
+        [
+          "`\"hi\" * 2`",
+          "`\"hihi\"`"
+        ]
+      ],
+      "explanation": "Quotes make text, so `+` joins it. Without quotes `+` adds."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "To turn the number 5 into text, call \\_\\_(5).",
+      "choices": [
+        "`str`",
+        "`int`",
+        "`len`"
+      ],
+      "answerIndex": 0,
+      "explanation": "`str(5)` gives the text `\"5\"`."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Which line causes an error?",
+      "choices": [
+        "`\"a\" + \"b\"`",
+        "`\"a\" + 1`",
+        "`\"a\" * 2`"
+      ],
+      "answerIndex": 1,
+      "explanation": "You cannot add text and a number. Use `\"a\" + str(1)` instead."
+    }
+  ]
+}

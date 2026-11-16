@@ -1,0 +1,155 @@
+{
+  "id": "cm-hex-05",
+  "version": 2,
+  "minApp": 2,
+  "title": "sizeof and types",
+  "xp": 15,
+  "tags": [
+    "c",
+    "sizeof"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "How big is a type?",
+      "body": "`sizeof` tells you how many bytes a type or a variable takes. It is worked out when the program is compiled. Knowing sizes matters once you start handling memory yourself, because you must ask for the right number of bytes."
+    },
+    {
+      "id": "sizes",
+      "kind": "code",
+      "title": "Common sizes",
+      "body": "On the 64-bit platforms this course uses, this prints `1 4 8`, then `8 8`. Sizes can differ on other systems, so use `sizeof` rather than guessing. `%zu` prints a size.",
+      "code": "printf(\"%zu %zu %zu\\n\",\n       sizeof(char), sizeof(int),\n       sizeof(long));\nprintf(\"%zu %zu\\n\", sizeof(double),\n       sizeof(char *));",
+      "language": "c"
+    },
+    {
+      "id": "arrays",
+      "kind": "text",
+      "title": "sizeof and arrays",
+      "body": "For an array variable, `sizeof` gives the total bytes. `int nums[10]` is 10 * 4 = 40 bytes. Dividing by the size of one item gives the item count."
+    },
+    {
+      "id": "count",
+      "kind": "code",
+      "title": "Counting the items",
+      "body": "This prints 40, then 10. The trick works only on a real array variable in the same scope, not on a pointer. You will see why soon.",
+      "code": "int nums[10];\nprintf(\"%zu\\n\", sizeof nums);\nprintf(\"%zu\\n\",\n       sizeof nums / sizeof nums[0]);",
+      "language": "c"
+    },
+    {
+      "id": "ex-calc",
+      "kind": "example",
+      "title": "Sizing an array",
+      "body": "How many bytes is `double d[5]`?",
+      "steps": [
+        "One `double` is 8 bytes",
+        "There are 5 of them",
+        "5 * 8 = 40 bytes",
+        "`sizeof d / sizeof d[0]` gives back 5"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "`sizeof` returns the type `size_t`, an unsigned whole number. Print it with `%zu`, not `%d`."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "How many bytes is a `char`?",
+      "choices": [
+        "1",
+        "2",
+        "4",
+        "8"
+      ],
+      "answerIndex": 0,
+      "explanation": "`char` is always 1 byte.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "On the 64-bit platforms used here, how many bytes is an `int`?",
+      "choices": [
+        "2",
+        "4",
+        "8",
+        "16"
+      ],
+      "answerIndex": 1,
+      "explanation": "An `int` is 4 bytes, 32 bits.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "`int nums[10];` What is `sizeof nums` in bytes?",
+      "accepted": [
+        "40"
+      ],
+      "keypad": "numeric",
+      "explanation": "10 items * 4 bytes = 40.",
+      "id": "q3"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "`double d[5];` What is `sizeof d` in bytes?",
+      "accepted": [
+        "40"
+      ],
+      "keypad": "numeric",
+      "explanation": "5 * 8 = 40.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "To get the item count of an array, divide `sizeof` the array by \\_\\_.",
+      "choices": [
+        "sizeof of one item",
+        "the address",
+        "2"
+      ],
+      "answerIndex": 0,
+      "explanation": "Total bytes divided by bytes per item gives the count.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does `%zu` print?",
+      "choices": [
+        "A size_t value",
+        "A string",
+        "An address",
+        "A float"
+      ],
+      "answerIndex": 0,
+      "explanation": "`size_t` is the type of `sizeof` results and `%zu` prints it.",
+      "id": "q6"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each type to its size on a 64-bit platform.",
+      "pairs": [
+        [
+          "`char`",
+          "1"
+        ],
+        [
+          "`int`",
+          "4"
+        ],
+        [
+          "`double`",
+          "8"
+        ],
+        [
+          "`char *`",
+          "8 bytes, an address"
+        ]
+      ],
+      "explanation": "A pointer holds an address, which is 8 bytes on a 64-bit platform.",
+      "id": "q7"
+    }
+  ]
+}

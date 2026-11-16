@@ -1,0 +1,136 @@
+{
+  "id": "pa-fractions-05",
+  "version": 2,
+  "title": "Percents",
+  "xp": 10,
+  "tags": [
+    "percents"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Per hundred",
+      "body": "Percent means per hundred. 25% means 25 out of 100, which is $\\frac{25}{100}=\\frac{1}{4}$, or $0.25$. A percent is just a fraction with denominator 100, so you already know how to work with it."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "Converting",
+      "body": "Percent to decimal: divide by 100, which moves the point two places left, so $35\\%=0.35$. Decimal to percent: multiply by 100, so $0.07=7\\%$. Fraction to percent: make the denominator 100. $\\frac{3}{5}=\\frac{60}{100}=60\\%$."
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Percent of a number",
+      "body": "To find a percent of a number, turn the percent into a decimal and multiply. Half of 50 is 25, and $50\\%=0.5$, so $0.5\\times 50=25$ agrees. Easy ones: 50% is half, 25% is a quarter, 10% is one tenth."
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Find 35% of 80",
+      "body": "Write 35% as a decimal, then multiply.",
+      "steps": [
+        "$35\\%=0.35$.",
+        "$0.35\\times 80=28$.",
+        "So 35% of 80 is 28."
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "tip",
+      "body": "To find 10% of a number, move the point one place left. 10% of 200 is 20. Then build up: 5% is half of that, 15% is 10% plus 5%."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is 25% as a fraction in simplest form?",
+      "choices": [
+        "$\\frac{1}{4}$",
+        "$\\frac{1}{25}$",
+        "$\\frac{1}{2}$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$25\\%=\\frac{25}{100}=\\frac{1}{4}$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Write $0.07$ as a percent. Give the number only.",
+      "accepted": [
+        "7",
+        "7%"
+      ],
+      "keypad": "numeric",
+      "explanation": "Multiply by 100: $0.07\\times 100=7$, so 7%."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "$\\frac{3}{5}=\\_\\_\\%$",
+      "choices": [
+        "$35$",
+        "$60$",
+        "$30$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$\\frac{3}{5}=\\frac{60}{100}=60\\%$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "What is 35% of 80?",
+      "accepted": [
+        "28"
+      ],
+      "keypad": "numeric",
+      "explanation": "$0.35\\times 80=28$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What is 10% of 200?",
+      "choices": [
+        "$2$",
+        "$100$",
+        "$20$"
+      ],
+      "answerIndex": 2,
+      "explanation": "10% is one tenth, and $200\\div 10=20$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which is the same as 50%?",
+      "choices": [
+        "$0.05$",
+        "$0.5$",
+        "$5$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$50\\div 100=0.5$, which is one half."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each percent with its decimal.",
+      "pairs": [
+        [
+          "5%",
+          "0.05"
+        ],
+        [
+          "50%",
+          "0.5"
+        ],
+        [
+          "125%",
+          "1.25"
+        ]
+      ],
+      "explanation": "Divide by 100. A percent over 100 gives a decimal over 1."
+    }
+  ]
+}

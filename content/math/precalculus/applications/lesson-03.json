@@ -1,0 +1,169 @@
+{
+  "id": "pc-applications-03",
+  "version": 2,
+  "title": "Vectors as arrows",
+  "xp": 20,
+  "tags": [
+    "precalculus",
+    "vectors"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Size and direction",
+      "body": "A vector is an arrow. Its length is the magnitude and its angle is the direction. Speed is just a number, but a velocity of 10 m/s at $30^\\circ$ is a vector. We write a vector by its steps, such as $(3,4)$: 3 right, 4 up."
+    },
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Magnitude and angle",
+      "body": "The magnitude of $(x,y)$ is $\\sqrt{x^2+y^2}$. The angle from the positive $x$-axis comes from $\\tan^{-1}\\frac{y}{x}$, adjusted for the quadrant. Going the other way: $x=r\\cos\\theta$ and $y=r\\sin\\theta$."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Components of 10 at $30^\\circ$",
+      "body": "Use cosine and sine.",
+      "steps": [
+        "$x=10\\cos30^\\circ\\approx 8.66$",
+        "$y=10\\sin30^\\circ=5$",
+        "The vector is about $(8.66,5)$."
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Magnitude and direction of $(5,12)$",
+      "body": "Use the Pythagorean theorem.",
+      "steps": [
+        "Magnitude: $\\sqrt{25+144}=13$",
+        "Angle: $\\tan^{-1}\\frac{12}{5}\\approx 67.4^\\circ$"
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "text",
+      "title": "Adding and scaling",
+      "body": "Add vectors component by component, which is the same as placing arrows tip to tail: $(3,4)+(1,-2)=(4,2)$. Scaling multiplies each part: $2(3,4)=(6,8)$ is twice as long, in the same direction."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "What is the magnitude of the vector $(3,4)$?",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\sqrt{9+16}=5$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "What is the magnitude of $(5,12)$?",
+      "accepted": [
+        "13"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\sqrt{25+144}=13$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "What is $(3,4)+(1,-2)$?",
+      "choices": [
+        "$(2,6)$",
+        "$(4,6)$",
+        "$(4,2)$",
+        "$(3,-8)$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Add the first parts and add the second parts."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What is $2(3,4)$?",
+      "choices": [
+        "$(5,6)$",
+        "$(6,4)$",
+        "$(9,16)$",
+        "$(6,8)$"
+      ],
+      "answerIndex": 3,
+      "explanation": "Multiply both parts by 2."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "A force of 20 acts at $120^\\circ$. What is its $x$-component? Give a number.",
+      "accepted": [
+        "-10",
+        "−10"
+      ],
+      "keypad": "numeric",
+      "explanation": "$20\\cos120^\\circ=20\\cdot(-0.5)=-10$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "The vector $(3,4)$ points at about what angle?",
+      "choices": [
+        "$53.1^\\circ$",
+        "$36.9^\\circ$",
+        "$45^\\circ$",
+        "$75^\\circ$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$\\tan^{-1}\\frac43\\approx 53.13^\\circ$."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "Adding vectors by placing arrows is called \\_\\_ addition.",
+      "choices": [
+        "head to head",
+        "tip to tail",
+        "side by side",
+        "tail to tail"
+      ],
+      "answerIndex": 1,
+      "explanation": "Put the start of the second arrow at the end of the first."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each idea to its formula.",
+      "pairs": [
+        [
+          "Magnitude of $(x,y)$",
+          "$\\sqrt{x^2+y^2}$"
+        ],
+        [
+          "$x$-component",
+          "$r\\cos\\theta$"
+        ],
+        [
+          "$y$-component",
+          "$r\\sin\\theta$"
+        ]
+      ],
+      "explanation": "Components come from a right triangle."
+    },
+    {
+      "id": "q9",
+      "type": "multiple_choice",
+      "prompt": "Two vectors have the same magnitude but different directions. Are they equal?",
+      "choices": [
+        "Yes",
+        "Only if added",
+        "No, equal vectors need the same size and direction",
+        "Only in the first quadrant"
+      ],
+      "answerIndex": 2,
+      "explanation": "A vector is defined by both."
+    }
+  ]
+}

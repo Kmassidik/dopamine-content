@@ -1,0 +1,166 @@
+{
+  "id": "cf-functions-03",
+  "version": 2,
+  "minApp": 2,
+  "title": "Prototypes and scope",
+  "xp": 15,
+  "tags": [
+    "c",
+    "functions",
+    "scope"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Main first",
+      "body": "The compiler reads from top to bottom. If `main` calls a function the compiler has not seen yet, it complains. A prototype solves this: a one-line promise that the function exists, with the same type information as the definition."
+    },
+    {
+      "id": "proto",
+      "kind": "code",
+      "title": "A prototype",
+      "body": "The prototype is the line ending in a semicolon, above `main`.",
+      "code": "int twice(int n);\n\nint main(void)\n{\n    printf(\"%d\\n\", twice(4));\n    return 0;\n}\n\nint twice(int n)\n{\n    return n * 2;\n}",
+      "language": "c"
+    },
+    {
+      "id": "why",
+      "kind": "text",
+      "title": "Why use them",
+      "body": "With prototypes at the top, you can put `main` first, so the reader sees the story before the details. A prototype is the definition's first line with a semicolon instead of a body. Parameter names are optional in it, but keep them for clarity."
+    },
+    {
+      "id": "scope",
+      "kind": "text",
+      "title": "Scope",
+      "body": "A variable only exists inside the braces where it is declared. This is its scope. A variable declared in a function is local to that function and disappears when the function ends. Other functions cannot see it."
+    },
+    {
+      "id": "local",
+      "kind": "code",
+      "title": "Two different n",
+      "body": "Each function has its own `n`, so they do not clash.",
+      "code": "void show(void)\n{\n    int n = 2;\n    printf(\"%d\\n\", n);\n}\nint main(void)\n{\n    int n = 1;\n    show();\n    printf(\"%d\\n\", n);\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "trace",
+      "kind": "example",
+      "title": "Reading the program",
+      "body": "Both functions declare a variable called `n`.",
+      "steps": [
+        "`main` creates its own `n` holding 1",
+        "`show()` creates a separate `n` holding 2, and prints 2",
+        "Back in `main`, its `n` is still 1, so it prints 1"
+      ]
+    },
+    {
+      "id": "global",
+      "kind": "tip",
+      "body": "A variable declared outside every function is global and visible everywhere. Avoid globals. They make bugs hard to find."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is a prototype?",
+      "choices": [
+        "A copy of main",
+        "A kind of loop",
+        "A one-line declaration of a function before its definition",
+        "A comment"
+      ],
+      "answerIndex": 2,
+      "explanation": "It tells the compiler the name, parameters and return type."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "How does a prototype end?",
+      "choices": [
+        "With a colon",
+        "With braces",
+        "With a period",
+        "With a semicolon"
+      ],
+      "answerIndex": 3,
+      "explanation": "A prototype has no body, so it ends with `;`."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "The part of a program where a variable exists is called its \\_\\_.",
+      "choices": [
+        "scope",
+        "type",
+        "size",
+        "format"
+      ],
+      "answerIndex": 0,
+      "explanation": "Scope is set by the braces around the declaration."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "In the two-`n` program, what does the second line print, from `main`? Type the number.",
+      "accepted": [
+        "1"
+      ],
+      "keypad": "full",
+      "explanation": "`main`'s own `n` was never changed, so it is still 1."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Can `main` use a variable declared inside `show`?",
+      "choices": [
+        "Yes, always",
+        "No, it is local to `show`",
+        "Yes, if it is an int",
+        "Yes, after `show()` is called"
+      ],
+      "answerIndex": 1,
+      "explanation": "Local variables are invisible outside their function."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Why would you add a prototype above `main`?",
+      "choices": [
+        "To make the program run faster",
+        "To avoid using `return`",
+        "To define the functions below `main`",
+        "To skip the compiler"
+      ],
+      "answerIndex": 2,
+      "explanation": "The compiler learns the function exists before main calls it."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "What does the prototype `int twice(int n);` say?",
+      "choices": [
+        "twice prints an int",
+        "twice returns nothing",
+        "twice takes no input",
+        "twice takes an int and returns an int"
+      ],
+      "answerIndex": 3,
+      "explanation": "The first `int` is the return type and the one in parentheses is the parameter."
+    },
+    {
+      "id": "q8",
+      "type": "order_steps",
+      "prompt": "Put the pieces of a program in order.",
+      "steps": [
+        "The `#include` line",
+        "Prototype `int twice(int n);`",
+        "`int main(void)` calling `twice`",
+        "Definition of `twice`"
+      ],
+      "explanation": "Includes, then prototypes, then main, then the definitions."
+    }
+  ]
+}

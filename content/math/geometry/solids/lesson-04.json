@@ -1,0 +1,144 @@
+{
+  "id": "geo-solids-04",
+  "version": 2,
+  "title": "Reflections, rotations, translations",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "transformations"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Moving shapes",
+      "body": "A transformation moves a figure. Three kinds keep the size and shape exactly the same: a translation slides it, a reflection flips it over a line, and a rotation turns it around a point. The new figure is congruent to the old one."
+    },
+    {
+      "id": "rules",
+      "kind": "text",
+      "title": "Rules on the coordinate plane",
+      "body": "Translation by $(a,b)$: $(x,y)\\to(x+a,y+b)$. Reflection over the $x$-axis: $(x,y)\\to(x,-y)$. Reflection over the $y$-axis: $(x,y)\\to(-x,y)$. Reflection over the line $y=x$: $(x,y)\\to(y,x)$."
+    },
+    {
+      "id": "rotations",
+      "kind": "text",
+      "title": "Rotations about the origin",
+      "body": "Counterclockwise $90^\\circ$: $(x,y)\\to(-y,x)$. Clockwise $90^\\circ$: $(x,y)\\to(y,-x)$. Half turn $180^\\circ$: $(x,y)\\to(-x,-y)$. A rotation keeps every point the same distance from the centre."
+    },
+    {
+      "id": "use",
+      "kind": "example",
+      "title": "Move the point $(3,2)$",
+      "body": "Apply each transformation to $P=(3,2)$.",
+      "steps": [
+        "Translate by $(-4,5)$: $(-1,7)$.",
+        "Reflect over the $x$-axis: $(3,-2)$.",
+        "Rotate $90^\\circ$ counterclockwise: $(-2,3)$.",
+        "Rotate $180^\\circ$: $(-3,-2)$."
+      ]
+    },
+    {
+      "id": "distance",
+      "kind": "tip",
+      "body": "All three keep distances and angles unchanged, so the image is congruent to the original."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "Translate $(1,1)$ by $(2,3)$. What is the new $x$-coordinate?",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "$(1+2,1+3)=(3,4)$."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Reflect $(3,2)$ over the $x$-axis.",
+      "choices": [
+        "$(-3,2)$",
+        "$(2,3)$",
+        "$(3,-2)$",
+        "$(-3,-2)$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Over the $x$-axis only the $y$-sign changes."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Rotate $(3,2)$ by $90^\\circ$ counterclockwise about the origin.",
+      "choices": [
+        "$(2,-3)$",
+        "$(-3,-2)$",
+        "$(3,-2)$",
+        "$(-2,3)$"
+      ],
+      "answerIndex": 3,
+      "explanation": "The rule is $(x,y)\\to(-y,x)$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Rotate $(3,2)$ by $180^\\circ$ about the origin.",
+      "choices": [
+        "$(-3,-2)$",
+        "$(3,-2)$",
+        "$(-3,2)$",
+        "$(2,3)$"
+      ],
+      "answerIndex": 0,
+      "explanation": "A half turn changes both signs."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "Reflect $(5,-1)$ over the $y$-axis. What is the new $x$-coordinate?",
+      "accepted": [
+        "-5"
+      ],
+      "keypad": "full",
+      "explanation": "$(x,y)\\to(-x,y)$ gives $(-5,-1)$."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "A reflection, rotation or translation produces a \\_\\_ figure.",
+      "choices": [
+        "similar but larger",
+        "congruent",
+        "smaller"
+      ],
+      "answerIndex": 1,
+      "explanation": "These moves keep size and shape, so the image is congruent."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each move to its rule.",
+      "pairs": [
+        [
+          "Translate by $(a,b)$",
+          "$(x+a,y+b)$"
+        ],
+        [
+          "Reflect over $x$-axis",
+          "$(x,-y)$"
+        ],
+        [
+          "Rotate $180^\\circ$",
+          "$(-x,-y)$"
+        ],
+        [
+          "Reflect over $y=x$",
+          "$(y,x)$"
+        ]
+      ],
+      "explanation": "Each rule changes the coordinates in a fixed way."
+    }
+  ]
+}

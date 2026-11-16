@@ -21,13 +21,56 @@ The lessons behind [Dopamine](https://github.com/Kmassidik/dopamine), a private,
 | **Science** | Science Basics | 2 |
 | **Electronics** | Electronics Basics | 4 |
 
-Every unit has a cheat sheet (`notes.json`) and an app-generated unit quiz. Every lesson is a few short reading pages followed by practice. See [ROADMAP.md](ROADMAP.md) for what is planned next.
+Every unit has a cheat sheet (`notes.json`) and an app-generated unit quiz. Every lesson is a few short reading pages followed by practice. See [docs/ROADMAP.md](docs/ROADMAP.md) for what is planned next.
+
+## Repository map
+
+```
+README.md          you are here
+manifest.json      GENERATED. The app fetches this file first. Never edit by hand
+contract.json      GENERATED. What the app must understand (question types, LaTeX, SVG limits)
+
+content/           ALL the learning material (the only folder the app downloads lessons from)
+  catalog.json       categories, courses and units (hand edited)
+  math/  swe/  science/  electronics/
+    <course>/<unit>/lesson-NN.json    the lessons (NN sets the order)
+    <course>/<unit>/notes.json        the unit's cheat sheet
+  images/            SVG diagrams used by lessons
+
+docs/              guides for people and AI agents
+  AUTHORING.md       make a new course on any topic, step by step
+  SVG.md             how diagrams work end to end (with the flow diagram)
+  STANDARD.md        the enforced rules and why
+  ROADMAP.md         GENERATED coverage and plan
+
+tools/             build_manifest, validate, standard, svgcheck, build_contract, tests
+schema/            JSON Schemas (manifest, lesson)
+.github/           CI that runs the same checks on every push
+```
+
+## If you are an AI agent
+
+Read in this order, then work only inside `content/` (plus the generated files below):
+
+1. [docs/AUTHORING.md](docs/AUTHORING.md): the workflow for adding or changing a course, and a prompt template.
+2. [docs/STANDARD.md](docs/STANDARD.md): the rules the validators enforce. `tools/standard.py` holds the numbers.
+3. [docs/SVG.md](docs/SVG.md): only if you draw a diagram.
+4. Look at one finished course (`content/math/geometry`) for tone and shape.
+
+Rules that are easy to forget:
+
+- **Never edit `manifest.json` or `contract.json` by hand.** Run `python3 tools/build_manifest.py` after any change under `content/`.
+- **Bump a lesson's `version`** whenever you change it, or the app will not download it again.
+- **Never rename or reuse an id.** Learners' progress is stored against it.
+- **Moving or renaming a lesson file changes its path.** Apps up to 0.3.0 only notice a change by `version` or hash, so also bump `version` when you move a file.
+- **Run before you finish:** `python3 tools/build_manifest.py && python3 tools/build_contract.py --check && python3 tools/standard.py && python3 tools/validate.py && python3 tools/test_standard.py` (`validate.py` needs `pip install jsonschema`).
+- Verify facts by running something (a script, the code you show). Write in your own words. Commit with a plain message and no AI attribution lines.
 
 ## Add your own course
 
-Want to learn something that is not here yet (a language, a tool, an idea like software architecture)? **[AUTHORING.md](AUTHORING.md)** is a step-by-step recipe for making a whole course on any topic, by hand or with an AI agent, including a copy-paste prompt. The result appears in the app after **Settings, Update content**. No app release is needed.
+Want to learn something that is not here yet (a language, a tool, an idea like software architecture)? **[docs/AUTHORING.md](docs/AUTHORING.md)** is a step-by-step recipe for making a whole course on any topic, by hand or with an AI agent, including a copy-paste prompt. The result appears in the app after **Settings, Update content**. No app release is needed.
 
-The layout is enforced by tools and CI, so a new course always looks and behaves like the rest. The rules are in **[STANDARD.md](STANDARD.md)**.
+The layout is enforced by tools and CI, so a new course always looks and behaves like the rest. The rules are in **[docs/STANDARD.md](docs/STANDARD.md)**.
 
 ## How it reaches the phone
 
@@ -37,36 +80,13 @@ The layout is enforced by tools and CI, so a new course always looks and behaves
                       hashes + sizes)                           verifies every file, then swaps
 ```
 
-The app fetches `manifest.json` from this repo's raw URL on `main`, downloads only the lessons whose version or hash changed, checks size, hash and schema, and swaps them in atomically. If anything fails, nothing changes. A bundled copy of this content also ships inside the app as the first-launch seed.
+The app fetches `manifest.json` from this repo's raw URL on `main`, downloads only the lessons whose version or hash changed, checks size, hash and schema, and swaps them in atomically. If anything fails, nothing changes. Every path in the manifest starts with `content/`. A small bundled sample of this content also ships inside the app as the first-launch seed.
 
-Pictures take the same road. **[SVG.md](SVG.md)** shows the whole journey of a diagram, from drawing it to the learner's screen:
+Pictures take the same road. **[docs/SVG.md](docs/SVG.md)** shows the whole journey of a diagram, from drawing it to the learner's screen:
 
-[![How a diagram reaches the screen](docs/content-flow.svg)](SVG.md)
+[![How a diagram reaches the screen](docs/content-flow.svg)](docs/SVG.md)
 
-Removing a course from the manifest hides it in the app after the next update (the files stay on the phone but are never shown).
-
-## Layout
-
-```
-catalog.json                                categories, courses, units (hand edited)
-<category>/<course>/<unit>/lesson-NN.json   lessons (NN sets the order)
-<category>/<course>/<unit>/notes.json       the unit's cheat sheet
-images/*.svg                                diagrams referenced by lessons
-manifest.json                               GENERATED. Never edit by hand
-contract.json                               GENERATED. What the app must understand
-schema/                                     JSON Schemas (manifest, lesson)
-tools/                                      build_manifest, validate, standard, svgcheck, tests
-ROADMAP.md                                  GENERATED coverage and plan
-```
-
-## Documents
-
-| File | Read it for |
-|---|---|
-| [AUTHORING.md](AUTHORING.md) | Make a new course on any topic, step by step, for people and AI agents |
-| [SVG.md](SVG.md) | How diagrams work end to end: draw, check, publish, render, with a flow diagram |
-| [STANDARD.md](STANDARD.md) | The enforced rules (lesson shape, lengths, SVG subset) and why |
-| [ROADMAP.md](ROADMAP.md) | What exists and what is planned |
+Removing a course from the manifest hides it in the app after the next update.
 
 ## Publish an update
 
@@ -75,11 +95,11 @@ ROADMAP.md                                  GENERATED coverage and plan
 3. `pip install jsonschema && python3 tools/validate.py`
 4. Commit and push to `main`. In the app: Settings, Update content.
 
-CI (`.github/workflows/validate.yml`) fails when `manifest.json` is stale or any file is invalid. If the bundled seed in the app should include new lessons, also copy `manifest.json`, the lesson folders and `images/` into the app repo's `app/src/main/assets/content/`.
+CI (`.github/workflows/validate.yml`) fails when `manifest.json` is stale or any file is invalid. The app repo keeps a small bundled sample (the first-launch seed) that is refreshed separately, only when the sample should change.
 
 ## Add a course, unit or category
 
-Follow [AUTHORING.md](AUTHORING.md). In short: edit `catalog.json` to add the category (`id`, `name`, `icon`, `color` hex, `order`), course (`id`, `categoryId`, `title`, `description`, `order`, `dir`, `overview`) or unit (`id`, `title`, `order`, `dir`), create the folder, add lessons and notes, regenerate the manifest. Icon names the app knows: `ic_math`, `ic_science`, `ic_english`, `ic_swe`, `ic_electronics`; unknown names fall back to a default icon.
+Follow [docs/AUTHORING.md](docs/AUTHORING.md). In short: edit `content/catalog.json` to add the category (`id`, `name`, `icon`, `color` hex, `order`), course (`id`, `categoryId`, `title`, `description`, `order`, `dir`, `overview`) or unit (`id`, `title`, `order`, `dir`), create the folder under `content/`, add lessons and notes, regenerate the manifest. Icon names the app knows: `ic_math`, `ic_science`, `ic_english`, `ic_swe`, `ic_electronics`; unknown names fall back to a default icon.
 
 ## Lesson file
 

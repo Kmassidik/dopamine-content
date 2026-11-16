@@ -1,0 +1,147 @@
+{
+  "id": "a2-functions-05",
+  "version": 2,
+  "title": "Radicals and rational exponents",
+  "xp": 15,
+  "tags": [
+    "algebra",
+    "exponents"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Roots as exponents",
+      "body": "A fractional exponent is a root. $x^{1/2}=\\sqrt{x}$ and $x^{1/3}=\\sqrt[3]{x}$. In general $x^{m/n}=\\left(\\sqrt[n]{x}\\right)^m$: take the root, then the power. A negative exponent flips: $x^{-n}=\\frac{1}{x^n}$."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Evaluate $8^{2/3}$",
+      "body": "The denominator 3 is the root, the numerator 2 is the power.",
+      "steps": [
+        "Take the cube root: $\\sqrt[3]{8}=2$",
+        "Square it: $2^2=4$",
+        "So $8^{2/3}=4$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Simplify $\\sqrt{72}$",
+      "body": "Pull out the biggest perfect square factor.",
+      "steps": [
+        "$72=36\\cdot 2$",
+        "$\\sqrt{72}=\\sqrt{36}\\cdot\\sqrt{2}$",
+        "$=6\\sqrt{2}$"
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "tip",
+      "body": "Root first keeps numbers small: $16^{3/4}$ is $(\\sqrt[4]{16})^3=2^3=8$, much easier than cubing 16 first."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "$25^{1/2}=$ ?",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "The exponent $\\frac{1}{2}$ means square root, and $\\sqrt{25}=5$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "$27^{1/3}=$ ?",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "The cube root of 27 is 3, since $3^3=27$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "$8^{2/3}=$ ?",
+      "accepted": [
+        "4"
+      ],
+      "keypad": "numeric",
+      "explanation": "Cube root of 8 is 2, and $2^2=4$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "$16^{3/4}=$ ?",
+      "accepted": [
+        "8"
+      ],
+      "keypad": "numeric",
+      "explanation": "Fourth root of 16 is 2, and $2^3=8$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which equals $\\sqrt{72}$?",
+      "choices": [
+        "$6\\sqrt{2}$",
+        "$36\\sqrt{2}$",
+        "$12\\sqrt{3}$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$72=36\\cdot 2$, so $\\sqrt{72}=6\\sqrt{2}$. The others are too big."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "What is $9^{-1/2}$?",
+      "choices": [
+        "$-3$",
+        "$-\\frac{1}{3}$",
+        "$\\frac{1}{3}$"
+      ],
+      "answerIndex": 2,
+      "explanation": "The negative flips it to $\\frac{1}{9^{1/2}}=\\frac{1}{3}$. A negative exponent does not make the value negative."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "$x^{1/3}=\\sqrt[\\_\\_]{x}$",
+      "choices": [
+        "$2$",
+        "$3$",
+        "$6$"
+      ],
+      "answerIndex": 1,
+      "explanation": "The denominator of the exponent is the index of the root."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each power to its value.",
+      "pairs": [
+        [
+          "$4^{1/2}$",
+          "$2$"
+        ],
+        [
+          "$125^{1/3}$",
+          "$5$"
+        ],
+        [
+          "$9^{3/2}$",
+          "$27$"
+        ],
+        [
+          "$4^{-1}$",
+          "$\\frac{1}{4}$"
+        ]
+      ],
+      "explanation": "$9^{3/2}=(\\sqrt{9})^3=27$, and $4^{-1}=\\frac{1}{4}$."
+    }
+  ]
+}

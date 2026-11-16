@@ -1,0 +1,130 @@
+{
+  "id": "cd-hash-02",
+  "version": 2,
+  "minApp": 2,
+  "title": "Hash functions",
+  "xp": 15,
+  "tags": [
+    "c",
+    "hash-table",
+    "strings"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "What makes a good hash",
+      "body": "A good hash function is fast, gives the same result for the same key, and spreads keys evenly over the table. If many keys land in the same slots, the table slows down. Keys that are strings must first be turned into numbers."
+    },
+    {
+      "id": "sum",
+      "kind": "code",
+      "title": "Add up the letters",
+      "code": "unsigned sum_hash(const char *s) {\n    unsigned h = 0;\n    while (*s)\n        h += (unsigned char)*s++;\n    return h % 8;\n}",
+      "language": "c",
+      "body": "A first try: add the character codes. Easy, but anagrams add up to the same number."
+    },
+    {
+      "id": "mul",
+      "kind": "code",
+      "title": "Mix with a multiplier",
+      "code": "unsigned hash(const char *s) {\n    unsigned h = 0;\n    for (; *s; s++)\n        h = h * 31 + (unsigned char)*s;\n    return h % 8;\n}",
+      "language": "c",
+      "body": "Multiplying by 31 before adding makes position matter. Unsigned arithmetic wraps around, which is fine here."
+    },
+    {
+      "id": "ex-cat",
+      "kind": "example",
+      "title": "Hashing cat by hand",
+      "body": "The multiplier version, before the final `% 8`.",
+      "steps": [
+        "Codes are c 99, a 97, t 116",
+        "h after c is 99. After a, 99 x 31 + 97 = 3166",
+        "After t, 3166 x 31 + 116 = 98262",
+        "98262 % 8 is 6, so cat goes in slot 6"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Never use the memory address of a string as its hash. Two equal strings at different addresses would hash differently."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "Which is a property of a good hash function?",
+      "choices": [
+        "It returns a different number each call",
+        "It spreads keys evenly",
+        "It sorts the keys",
+        "It always returns 0"
+      ],
+      "answerIndex": 1,
+      "explanation": "Even spread keeps slots lightly filled.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Why is adding up letters a weak hash for words?",
+      "choices": [
+        "It needs floating point",
+        "It is too slow",
+        "Anagrams get the same value",
+        "It can be negative"
+      ],
+      "answerIndex": 2,
+      "explanation": "Order is ignored, so cat, act and tac all add up to 312.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "The sum hash adds character codes. cat adds up to 312. What is 312 % 8?",
+      "accepted": [
+        "0"
+      ],
+      "keypad": "numeric",
+      "explanation": "312 is 39 times 8, so the remainder is 0.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does multiplying by 31 each step add?",
+      "choices": [
+        "It makes the hash smaller",
+        "It removes collisions",
+        "It converts to lowercase",
+        "Position in the word affects the result"
+      ],
+      "answerIndex": 3,
+      "explanation": "The same letters in different order produce different totals.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "The same key must always give the same hash, so the function must be \\_\\_.",
+      "choices": [
+        "deterministic",
+        "random",
+        "slow",
+        "secret"
+      ],
+      "answerIndex": 0,
+      "explanation": "Determinism lets you find again what you stored.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "In the multiplier version, cat hashes to 6 with table size 8. What is the table size's job?",
+      "choices": [
+        "It sets the multiplier",
+        "It limits the index to 0 through 7",
+        "It sorts the letters",
+        "It counts the letters"
+      ],
+      "answerIndex": 1,
+      "explanation": "The final % 8 reduces any large number into a valid slot.",
+      "id": "q6"
+    }
+  ]
+}

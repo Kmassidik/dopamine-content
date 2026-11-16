@@ -1,0 +1,153 @@
+{
+  "id": "a1-polynomials-01",
+  "version": 2,
+  "title": "Exponent rules",
+  "xp": 15,
+  "tags": [
+    "algebra",
+    "polynomials"
+  ],
+  "learn": [
+    {
+      "id": "power",
+      "kind": "text",
+      "title": "What an exponent does",
+      "body": "An exponent says how many times to multiply a base by itself: $x^3=x\\cdot x\\cdot x$. Three simple rules let you simplify without writing everything out."
+    },
+    {
+      "id": "example-product",
+      "kind": "example",
+      "title": "Product rule",
+      "body": "Same base, multiplying: add the exponents.",
+      "steps": [
+        "$x^2\\cdot x^3=(x\\cdot x)(x\\cdot x\\cdot x)=x^5$",
+        "So $x^a\\cdot x^b=x^{a+b}$",
+        "Numbers multiply as usual: $3x^2\\cdot4x^5=12x^7$"
+      ]
+    },
+    {
+      "id": "example-quotient",
+      "kind": "example",
+      "title": "Quotient rule",
+      "body": "Same base, dividing: subtract the exponents.",
+      "steps": [
+        "$\\frac{x^5}{x^2}=\\frac{x\\cdot x\\cdot x\\cdot x\\cdot x}{x\\cdot x}=x^3$",
+        "So $\\frac{x^a}{x^b}=x^{a-b}$"
+      ]
+    },
+    {
+      "id": "power-power",
+      "kind": "text",
+      "title": "Powers of powers",
+      "body": "For $(x^3)^2$ you have $x^3$ twice, so $x^3\\cdot x^3=x^6$. In general $(x^a)^b=x^{ab}$. Also $(xy)^n=x^ny^n$, so $(2x)^3=8x^3$."
+    },
+    {
+      "id": "not-adding",
+      "kind": "tip",
+      "body": "The rules need the same base. $x^2\\cdot y^3$ cannot be combined, and $x^2+x^3$ is not $x^5$."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Simplify $x^2\\cdot x^3$",
+      "choices": [
+        "$x^6$",
+        "$x^5$",
+        "$2x^5$"
+      ],
+      "answerIndex": 1,
+      "explanation": "When you multiply powers with the same base, add the exponents: $2+3=5$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "$2^3\\cdot2^2=2^n$. Find $n$.",
+      "accepted": [
+        "5",
+        "5.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Add exponents: $3+2=5$. Indeed $8\\cdot4=32=2^5$."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "$\\frac{x^6}{x^2}=x^{\\_\\_}$",
+      "choices": [
+        "4",
+        "8",
+        "3"
+      ],
+      "answerIndex": 0,
+      "explanation": "When dividing powers with the same base, subtract the exponents: $6-2=4$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Simplify $(x^3)^2$",
+      "choices": [
+        "$x^5$",
+        "$x^6$",
+        "$x^9$"
+      ],
+      "answerIndex": 1,
+      "explanation": "A power of a power multiplies the exponents: $3\\cdot2=6$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "$(2x)^3=ax^3$. Find $a$.",
+      "accepted": [
+        "8",
+        "8.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "The power applies to both factors: $2^3x^3=8x^3$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Simplify $3x^2\\cdot4x^5$",
+      "choices": [
+        "$12x^7$",
+        "$12x^{10}$",
+        "$7x^7$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Multiply the numbers: $3\\cdot4=12$. Add the exponents: $2+5=7$."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each rule with an example.",
+      "pairs": [
+        [
+          "product rule",
+          "$x^2\\cdot x^3=x^5$"
+        ],
+        [
+          "quotient rule",
+          "$\\frac{x^5}{x^2}=x^3$"
+        ],
+        [
+          "power rule",
+          "$(x^2)^3=x^6$"
+        ]
+      ],
+      "explanation": "Products add exponents, quotients subtract them, and powers of powers multiply them."
+    },
+    {
+      "id": "q8",
+      "type": "type_answer",
+      "prompt": "$(x^2)^4\\cdot x=x^n$. Find $n$.",
+      "accepted": [
+        "9",
+        "9.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$(x^2)^4=x^8$, and $x=x^1$, so $x^8\\cdot x^1=x^9$."
+    }
+  ]
+}

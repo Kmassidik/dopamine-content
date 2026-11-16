@@ -1,0 +1,152 @@
+{
+  "id": "a2-functions-01",
+  "version": 2,
+  "title": "Function notation, domain and range",
+  "xp": 15,
+  "tags": [
+    "algebra",
+    "functions"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "What a function is",
+      "body": "A function gives exactly one output for each input. We write $f(x)$, read \"f of x\". If $f(x)=2x+3$, then $f(4)=2\\cdot 4+3=11$. The set of allowed inputs is the domain. The set of outputs that actually occur is the range."
+    },
+    {
+      "id": "p2",
+      "kind": "example",
+      "title": "Evaluate $f(x)=x^2-3x$ at $-2$",
+      "body": "Replace every $x$ with $-2$, using brackets.",
+      "steps": [
+        "Substitute: $f(-2)=(-2)^2-3(-2)$",
+        "Square first: $(-2)^2=4$",
+        "Multiply: $-3(-2)=6$",
+        "Add: $f(-2)=4+6=10$"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Find a domain",
+      "body": "Two things break a formula: dividing by zero and taking the square root of a negative number.",
+      "steps": [
+        "For $\\frac{1}{x-3}$ the bottom cannot be 0, so $x\\ne 3$",
+        "For $\\sqrt{x-2}$ we need $x-2\\ge 0$, so $x\\ge 2$",
+        "A plain polynomial like $2x+1$ accepts every real number"
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "tip",
+      "body": "The range of $y=x^2$ is $y\\ge 0$, because a square is never negative. To find a range, ask which outputs are really possible."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "If $f(x)=3x-1$, what is $f(4)$?",
+      "choices": [
+        "$11$",
+        "$13$",
+        "$9$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Substitute: $3\\cdot 4-1=12-1=11$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "If $f(x)=x^2+2x$, then $f(3)=$ ?",
+      "accepted": [
+        "15"
+      ],
+      "keypad": "numeric",
+      "explanation": "$3^2+2\\cdot 3=9+6=15$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "What is the domain of $f(x)=\\frac{1}{x+5}$?",
+      "choices": [
+        "All real numbers except $x=5$",
+        "All real numbers except $x=-5$",
+        "$x\\ge -5$"
+      ],
+      "answerIndex": 1,
+      "explanation": "The bottom is zero when $x+5=0$, that is $x=-5$. Every other number works."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "The domain of $\\sqrt{x-4}$ is $x\\ge \\_\\_$",
+      "choices": [
+        "$4$",
+        "$-4$",
+        "$0$"
+      ],
+      "answerIndex": 0,
+      "explanation": "We need $x-4\\ge 0$, so $x\\ge 4$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "If $f(x)=x^2-3x$, then $f(-2)=$ ?",
+      "accepted": [
+        "10"
+      ],
+      "keypad": "numeric",
+      "explanation": "$(-2)^2-3(-2)=4+6=10$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "What is the range of $f(x)=x^2+1$?",
+      "choices": [
+        "$y\\ge 0$",
+        "$y\\ge 1$",
+        "All real numbers"
+      ],
+      "answerIndex": 1,
+      "explanation": "$x^2$ is at least 0, so $x^2+1$ is at least 1. The smallest output is 1."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each function to its domain.",
+      "pairs": [
+        [
+          "$\\sqrt{x}$",
+          "$x\\ge 0$"
+        ],
+        [
+          "$\\frac{1}{x}$",
+          "$x\\ne 0$"
+        ],
+        [
+          "$2x+1$",
+          "All reals"
+        ],
+        [
+          "$\\sqrt{x+3}$",
+          "$x\\ge -3$"
+        ]
+      ],
+      "explanation": "Square roots need a non-negative inside. Fractions need a non-zero bottom. Lines accept everything."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "Which table is NOT a function?",
+      "choices": [
+        "Input 1 gives 4, input 2 gives 4, input 3 gives 5",
+        "Input 1 gives 3, input 2 gives 6",
+        "Input 2 gives both 5 and 7"
+      ],
+      "answerIndex": 2,
+      "explanation": "A function gives one output per input. Input 2 giving both 5 and 7 breaks that rule."
+    }
+  ]
+}

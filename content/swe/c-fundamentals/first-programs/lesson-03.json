@@ -1,0 +1,146 @@
+{
+  "id": "cf-first-03",
+  "version": 2,
+  "minApp": 2,
+  "title": "Compiling and running",
+  "xp": 15,
+  "tags": [
+    "c",
+    "compiler",
+    "terminal"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Turning source into a program",
+      "body": "To run hello.c you use a terminal and a compiler. Common compilers are `clang` and `gcc`. Most systems also give you the short name `cc`. A compiler checks your code and, if it is valid, writes a runnable file."
+    },
+    {
+      "id": "compile",
+      "kind": "code",
+      "title": "Compile and run",
+      "body": "Type these two lines in the terminal, in the folder with hello.c.",
+      "code": "clang hello.c -o hello\n./hello",
+      "language": "c"
+    },
+    {
+      "id": "flags",
+      "kind": "text",
+      "title": "Reading the command",
+      "body": "`clang` is the compiler. `hello.c` is the file to compile. `-o hello` means name the result `hello`. Without `-o`, the program is usually called `a.out`. The `./` means run the file from this folder."
+    },
+    {
+      "id": "warn",
+      "kind": "text",
+      "title": "Ask for warnings",
+      "body": "Add `-std=c11 -Wall -Wextra` to see more helpful warnings and to use the C11 standard. Warnings are not errors, but they often point at real bugs, so read them."
+    },
+    {
+      "id": "edit",
+      "kind": "example",
+      "title": "Changing the program",
+      "body": "Say you edit hello.c to print something else.",
+      "steps": [
+        "Save the file in your editor",
+        "Run the compile command again",
+        "Run `./hello` to see the new output"
+      ]
+    },
+    {
+      "id": "recompile",
+      "kind": "tip",
+      "body": "The old program does not change by itself. After every edit, compile again before you run."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What does `clang hello.c -o hello` do?",
+      "choices": [
+        "Runs the program hello",
+        "Deletes hello.c",
+        "Prints hello.c on screen",
+        "Compiles hello.c into a program named hello"
+      ],
+      "answerIndex": 3,
+      "explanation": "The compiler reads hello.c and writes the runnable result to hello."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What does `./hello` do?",
+      "choices": [
+        "Runs the program named hello in this folder",
+        "Compiles hello.c",
+        "Opens the file in an editor",
+        "Lists all files"
+      ],
+      "answerIndex": 0,
+      "explanation": "The `./` says the program is in the current folder."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "The `-o` flag sets the \\_\\_ of the compiled program.",
+      "choices": [
+        "speed",
+        "name",
+        "language",
+        "colour"
+      ],
+      "answerIndex": 1,
+      "explanation": "`-o hello` names the output file hello."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "If you leave out `-o`, the program is usually named \\_\\_.",
+      "choices": [
+        "`main`",
+        "`hello`",
+        "`a.out`",
+        "`run`"
+      ],
+      "answerIndex": 2,
+      "explanation": "Most compilers default to `a.out`."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "Which flag turns on extra warnings? Type it, including the dash.",
+      "accepted": [
+        "-Wall",
+        "-wall"
+      ],
+      "keypad": "full",
+      "explanation": "`-Wall` turns on a large set of useful warnings. `-Wextra` adds more."
+    },
+    {
+      "id": "q6",
+      "type": "order_steps",
+      "prompt": "Put the steps in order after editing your code.",
+      "steps": [
+        "Save the file",
+        "Compile again",
+        "Run the program",
+        "Check the output"
+      ],
+      "explanation": "You must recompile after a change, otherwise you run the old version."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "You change hello.c and run `./hello` without compiling. What do you see?",
+      "choices": [
+        "The new output",
+        "An error from the editor",
+        "Nothing, the file is deleted",
+        "The output of the old version"
+      ],
+      "answerIndex": 3,
+      "explanation": "The program file only changes when you compile again."
+    }
+  ]
+}

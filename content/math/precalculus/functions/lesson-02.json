@@ -1,0 +1,173 @@
+{
+  "id": "pc-functions-02",
+  "version": 2,
+  "title": "Rational functions and asymptotes",
+  "xp": 15,
+  "tags": [
+    "precalculus",
+    "rational-functions"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "A fraction of polynomials",
+      "body": "A rational function is a polynomial divided by a polynomial, like $f(x)=\\frac{2x+1}{x-3}$. Dividing by something that can be zero creates breaks in the graph, and the graph often hugs invisible lines called asymptotes."
+    },
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Vertical asymptotes and holes",
+      "body": "Set the denominator to zero. If a factor does not cancel, the graph has a vertical asymptote there. For $\\frac{2x+1}{x-3}$ it is $x=3$. If the factor cancels with the numerator, you get a hole, a single missing point."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "Horizontal asymptotes",
+      "body": "Compare degrees. Bigger degree on the bottom: $y=0$. Equal degrees: $y$ equals the ratio of leading coefficients. Bigger degree on top: no horizontal asymptote."
+    },
+    {
+      "id": "p3",
+      "kind": "example",
+      "title": "Asymptotes of $f(x)=\\frac{x^2-1}{x^2-4}$",
+      "body": "Factor the top and the bottom.",
+      "steps": [
+        "Bottom: $(x-2)(x+2)$, nothing cancels, so $x=2$ and $x=-2$ are vertical asymptotes",
+        "Equal degrees, leading coefficients $1$ and $1$: horizontal asymptote $y=1$",
+        "Zeros of the top: $x=1$ and $x=-1$"
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "A hole: $\\frac{x^2-4}{x-2}$",
+      "body": "The factor $x-2$ cancels.",
+      "steps": [
+        "Factor: $\\frac{(x-2)(x+2)}{x-2}$",
+        "Cancel to get $x+2$, valid for $x\\ne 2$",
+        "Put $x=2$ in $x+2$: the hole is at $(2,4)$"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is the vertical asymptote of $\\frac{1}{x+4}$?",
+      "choices": [
+        "$x=4$",
+        "$x=-4$",
+        "$y=-4$",
+        "$x=0$"
+      ],
+      "answerIndex": 1,
+      "explanation": "The denominator is zero when $x=-4$, and nothing cancels."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "For $f(x)=\\frac{3x}{x+1}$, the horizontal asymptote is $y=$ ?",
+      "accepted": [
+        "3",
+        "y=3"
+      ],
+      "keypad": "algebra",
+      "explanation": "Equal degrees, so divide leading coefficients: $3\\div 1=3$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "What is the horizontal asymptote of $\\frac{5x^2+1}{x^3-2}$?",
+      "choices": [
+        "$y=5$",
+        "$y=1$",
+        "$y=0$",
+        "There is none"
+      ],
+      "answerIndex": 2,
+      "explanation": "The bottom has the larger degree, so the graph flattens toward $y=0$."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "What is the horizontal asymptote of $\\frac{4x^2-1}{2x^2+7}$? Give $y$.",
+      "accepted": [
+        "2",
+        "y=2"
+      ],
+      "keypad": "algebra",
+      "explanation": "Equal degrees: $4\\div 2=2$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Where is the hole in $\\frac{x^2-9}{x-3}$?",
+      "choices": [
+        "$(3,0)$",
+        "$(-3,6)$",
+        "$(3,3)$",
+        "$(3,6)$"
+      ],
+      "answerIndex": 3,
+      "explanation": "It simplifies to $x+3$ with $x\\ne3$. At $x=3$ that gives $y=6$."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "A factor that cancels from top and bottom makes a \\_\\_.",
+      "choices": [
+        "hole",
+        "vertical asymptote",
+        "horizontal asymptote",
+        "zero"
+      ],
+      "answerIndex": 0,
+      "explanation": "The point is missing from the graph but nothing blows up, so it is a hole."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each case to the horizontal asymptote.",
+      "pairs": [
+        [
+          "Degree of top is smaller",
+          "$y=0$"
+        ],
+        [
+          "Degrees are equal",
+          "ratio of leading coefficients"
+        ],
+        [
+          "Degree of top is larger",
+          "none"
+        ]
+      ],
+      "explanation": "These are the three degree-comparison rules."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "How many vertical asymptotes does $\\frac{x}{(x-1)(x+2)}$ have?",
+      "choices": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ],
+      "answerIndex": 1,
+      "explanation": "The denominator is zero at $x=1$ and $x=-2$, and neither cancels."
+    },
+    {
+      "id": "q9",
+      "type": "order_steps",
+      "prompt": "Find the asymptotes of $\\frac{x}{x-5}$. Put the steps in order.",
+      "steps": [
+        "Factor top and bottom",
+        "Cancel any common factors",
+        "Set the denominator to zero for the vertical asymptote",
+        "Compare degrees for the horizontal asymptote"
+      ],
+      "explanation": "Cancel first so you do not mistake a hole for an asymptote."
+    }
+  ]
+}

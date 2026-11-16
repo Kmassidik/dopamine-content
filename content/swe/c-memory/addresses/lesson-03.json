@@ -1,0 +1,136 @@
+{
+  "id": "cm-hex-03",
+  "version": 2,
+  "minApp": 2,
+  "title": "Memory as numbered bytes",
+  "xp": 15,
+  "tags": [
+    "c",
+    "memory"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Memory is a long row of bytes",
+      "body": "Your program's data lives in memory (RAM). Picture memory as a very long row of bytes. Every byte has its own number, called its address, starting from a low number and counting upward. An address is how a program says where something is."
+    },
+    {
+      "id": "types",
+      "kind": "text",
+      "title": "Bigger values use several bytes",
+      "body": "A `char` fits in one byte. An `int` is 4 bytes on the platforms this course uses, stored side by side. The value's address is the address of its first byte. An array is just many values in a row, one after another."
+    },
+    {
+      "id": "string",
+      "kind": "code",
+      "title": "A string is bytes in a row",
+      "body": "This prints `0: 104`, `1: 105`, `2: 0`. The letters h and i are the byte values 104 and 105, and a final 0 byte ends the string.",
+      "code": "char s[] = \"hi\";\nfor (int i = 0; i < 3; i++)\n    printf(\"%d: %d\\n\", i, s[i]);",
+      "language": "c"
+    },
+    {
+      "id": "ex-addr",
+      "kind": "example",
+      "title": "Imagining addresses",
+      "body": "Pretend a 3-byte array starts at address 0x100. These addresses are made up, only to show the idea.",
+      "steps": [
+        "The first byte is at 0x100",
+        "The next byte is at 0x101",
+        "The last byte is at 0x102",
+        "Real addresses differ every machine and run"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Addresses are usually written in hex. A byte is two hex digits, and addresses line up neatly with bytes."
+    }
+  ],
+  "questions": [
+    {
+      "type": "fill_blank",
+      "prompt": "Every byte in memory has its own \\_\\_.",
+      "choices": [
+        "address",
+        "color",
+        "name"
+      ],
+      "answerIndex": 0,
+      "explanation": "The address is the byte's number.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "A `char` array starts at address 0x100. Where is its second byte?",
+      "choices": [
+        "0x101",
+        "0x102",
+        "0x104",
+        "0x200"
+      ],
+      "answerIndex": 0,
+      "explanation": "Consecutive bytes have consecutive addresses.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "How many bytes does `char s[] = \"hi\";` use, counting the ending 0?",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "Two letters plus the ending 0 byte make 3.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does the last line, `2: 0`, show?",
+      "choices": [
+        "The 0 byte that ends the string",
+        "The letter zero",
+        "An error",
+        "The address of the string"
+      ],
+      "answerIndex": 0,
+      "explanation": "Strings end with a byte of value 0 so code knows where they stop.",
+      "id": "q4"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "An `int` is 4 bytes and starts at 0x200. What is the address of its last byte? Write it with 0x.",
+      "accepted": [
+        "0x203",
+        "203"
+      ],
+      "keypad": "full",
+      "explanation": "The bytes are 0x200, 0x201, 0x202 and 0x203.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What is the address of a value that takes several bytes?",
+      "choices": [
+        "The address of its first byte",
+        "The address of its last byte",
+        "The sum of its bytes",
+        "There is none"
+      ],
+      "answerIndex": 0,
+      "explanation": "A multi-byte value is named by where it starts.",
+      "id": "q6"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put these in order, from smallest to largest.",
+      "steps": [
+        "A bit",
+        "A byte",
+        "An int (4 bytes)",
+        "An array of 10 ints"
+      ],
+      "explanation": "A bit is one switch, a byte is 8 bits, an int is 4 bytes and 10 ints are 40 bytes.",
+      "id": "q7"
+    }
+  ]
+}

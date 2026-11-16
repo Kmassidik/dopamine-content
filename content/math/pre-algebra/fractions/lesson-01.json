@@ -1,0 +1,142 @@
+{
+  "id": "pa-fractions-01",
+  "version": 2,
+  "title": "Fractions and equivalent fractions",
+  "xp": 10,
+  "tags": [
+    "fractions"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Parts of a whole",
+      "body": "A fraction names equal parts of a whole. In $\\frac{3}{4}$ the denominator (4) says the whole is cut into 4 equal parts, and the numerator (3) says we take 3 of them. A fraction is also a division: $\\frac{3}{4}=3\\div 4$."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "Equivalent fractions",
+      "body": "Different fractions can name the same amount. Multiply the top and bottom by the same number and the value does not change: $\\frac{3}{4}=\\frac{3\\times 2}{4\\times 2}=\\frac{6}{8}$. Both fractions cover the same part of the whole."
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Simplifying",
+      "body": "To simplify, divide the top and bottom by a common factor. A fraction is in simplest form when the GCF of the top and bottom is 1. Remember the GCF from the last unit: it gives the fastest route."
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Simplify $\\frac{18}{24}$",
+      "body": "Find the GCF of 18 and 24, then divide both by it.",
+      "steps": [
+        "The GCF of 18 and 24 is 6.",
+        "Divide the top and bottom by 6: $\\frac{18\\div 6}{24\\div 6}$.",
+        "The result is $\\frac{3}{4}$."
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "text",
+      "title": "Improper fractions and mixed numbers",
+      "body": "If the top is bigger than the bottom, the fraction is more than 1. $\\frac{7}{3}$ means 7 thirds. Three thirds make 1 whole, so it is 2 wholes and 1 third left: $2\\frac{1}{3}$. A number like that is a mixed number."
+    },
+    {
+      "id": "p6",
+      "kind": "tip",
+      "body": "To compare fractions, give them the same denominator. $\\frac{4}{5}=\\frac{16}{20}$ and $\\frac{3}{4}=\\frac{15}{20}$, so $\\frac{4}{5}$ is greater."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which fraction equals $\\frac{3}{4}$?",
+      "choices": [
+        "$\\frac{6}{12}$",
+        "$\\frac{9}{12}$",
+        "$\\frac{3}{8}$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Multiply top and bottom by 3: $\\frac{9}{12}$. The others have a different value."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "$\\frac{10}{15}=\\frac{2}{\\ ?\\ }$. What is the missing number?",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "Divide top and bottom by 5: $\\frac{10}{15}=\\frac{2}{3}$."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "$\\frac{6}{8}$ in simplest form is $\\frac{\\_\\_}{4}$.",
+      "choices": [
+        "$2$",
+        "$6$",
+        "$3$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Divide both parts by 2 to get $\\frac{3}{4}$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Which is the simplest form of $\\frac{18}{24}$?",
+      "choices": [
+        "$\\frac{9}{12}$",
+        "$\\frac{3}{4}$",
+        "$\\frac{6}{8}$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Both other choices still have a common factor of 2 or 3. The GCF is 6, which gives $\\frac{3}{4}$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which fraction is greater?",
+      "choices": [
+        "$\\frac{4}{5}$",
+        "$\\frac{3}{4}$",
+        "They are equal"
+      ],
+      "answerIndex": 0,
+      "explanation": "$\\frac{4}{5}=\\frac{16}{20}$ and $\\frac{3}{4}=\\frac{15}{20}$, so $\\frac{4}{5}$ is greater."
+    },
+    {
+      "id": "q6",
+      "type": "match_pairs",
+      "prompt": "Match each improper fraction with its mixed number.",
+      "pairs": [
+        [
+          "$\\frac{7}{3}$",
+          "$2\\frac{1}{3}$"
+        ],
+        [
+          "$\\frac{9}{4}$",
+          "$2\\frac{1}{4}$"
+        ],
+        [
+          "$\\frac{11}{5}$",
+          "$2\\frac{1}{5}$"
+        ]
+      ],
+      "explanation": "Divide the top by the bottom. The quotient is the whole part and the remainder is the new top."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Simplify $\\frac{12}{18}$. Put the steps in order.",
+      "steps": [
+        "Find the GCF of 12 and 18, which is 6",
+        "Divide the top and bottom by 6",
+        "Write the result, $\\frac{2}{3}$"
+      ],
+      "explanation": "Dividing both parts by the GCF gives the simplest form in one step."
+    }
+  ]
+}

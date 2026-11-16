@@ -1,0 +1,147 @@
+{
+  "id": "cm-hex-01",
+  "version": 2,
+  "minApp": 2,
+  "title": "Bits and bytes",
+  "xp": 15,
+  "tags": [
+    "c",
+    "binary"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Everything is bytes",
+      "body": "A computer stores everything as bits, tiny switches that are either 0 or 1. Eight bits make one byte. Text, numbers, photos and programs are all long rows of bytes. To understand memory in C, you first need to read a byte."
+    },
+    {
+      "id": "place",
+      "kind": "text",
+      "title": "Binary place values",
+      "body": "Binary works like decimal, but each place is worth double the one before: 1, 2, 4, 8, 16 and so on. The binary number 1101 means 8 + 4 + 0 + 1, which is 13. Each place is either used (1) or not (0)."
+    },
+    {
+      "id": "ex-bin",
+      "kind": "example",
+      "title": "Converting both ways",
+      "body": "Turn 13 into binary, then 10110 into decimal.",
+      "steps": [
+        "Place values: 8, 4, 2, 1",
+        "13 = 8 + 4 + 1, so use the 8, 4 and 1 places: 1101",
+        "For 10110 the places are 16, 8, 4, 2, 1",
+        "Used places: 16 + 4 + 2 = 22"
+      ]
+    },
+    {
+      "id": "wrap",
+      "kind": "code",
+      "title": "A byte has a limit",
+      "body": "One byte holds 256 different values, 0 to 255 when unsigned. Adding 1 to 255 in an `unsigned char` wraps around to 0. For unsigned types this is defined behavior. The second line shows that the byte 65 is the letter A.",
+      "code": "unsigned char c = 255;\nc = c + 1;\nprintf(\"%d\\n\", c);\nprintf(\"%d %c\\n\", 'A', 65);",
+      "language": "c"
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "The program prints 0 and then 65 A. A byte does not know whether it is a number or a letter. The meaning comes from how your program uses it."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "How many different values can one byte hold?",
+      "choices": [
+        "128",
+        "255",
+        "256",
+        "512"
+      ],
+      "answerIndex": 2,
+      "explanation": "Eight bits give 2 to the power 8, which is 256 values: 0 up to 255.",
+      "id": "q1"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "A byte is made of \\_\\_ bits.",
+      "choices": [
+        "8",
+        "4",
+        "16"
+      ],
+      "answerIndex": 0,
+      "explanation": "One byte is 8 bits.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "What decimal number is the binary number 101?",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "4 + 0 + 1 = 5.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which binary number is 8?",
+      "choices": [
+        "100",
+        "1000",
+        "1010",
+        "10000"
+      ],
+      "answerIndex": 1,
+      "explanation": "The fourth place from the right is worth 8, so 8 is 1000.",
+      "id": "q4"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "What is the largest value an `unsigned char` can hold?",
+      "accepted": [
+        "255"
+      ],
+      "keypad": "numeric",
+      "explanation": "All 8 bits set to 1 gives 128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "`unsigned char c = 255;` then `c = c + 1;`. What does `printf(\"%d\\n\", c)` print?",
+      "choices": [
+        "0",
+        "256",
+        "255",
+        "1"
+      ],
+      "answerIndex": 0,
+      "explanation": "A byte cannot hold 256, so an unsigned byte wraps around to 0.",
+      "id": "q6"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each binary number to its decimal value.",
+      "pairs": [
+        [
+          "11",
+          "3"
+        ],
+        [
+          "110",
+          "6"
+        ],
+        [
+          "1001",
+          "9"
+        ],
+        [
+          "10000",
+          "16"
+        ]
+      ],
+      "explanation": "11 is 2+1, 110 is 4+2, 1001 is 8+1, 10000 is 16.",
+      "id": "q7"
+    }
+  ]
+}

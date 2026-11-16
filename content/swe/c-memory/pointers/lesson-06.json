@@ -1,0 +1,148 @@
+{
+  "id": "cm-pointers-06",
+  "version": 2,
+  "minApp": 2,
+  "title": "Pointers in functions, NULL",
+  "xp": 15,
+  "tags": [
+    "c",
+    "pointers",
+    "functions"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Functions get copies",
+      "body": "C passes arguments by value. A function receives copies of the numbers you give it, so changing them does not change your variables. To let a function change your data, give it the address instead."
+    },
+    {
+      "id": "bad",
+      "kind": "code",
+      "title": "A swap that fails",
+      "body": "This prints `3 8`. `a` and `b` are copies, so swapping them changes nothing outside the function.",
+      "code": "void bad(int a, int b) {\n    int tmp = a;\n    a = b;\n    b = tmp;\n}\n// in main: x = 3, y = 8\nbad(x, y);\nprintf(\"%d %d\\n\", x, y);",
+      "language": "c"
+    },
+    {
+      "id": "good",
+      "kind": "code",
+      "title": "A swap that works",
+      "body": "Pass addresses and write through them. Calling `swap(&x, &y);` and then printing x and y gives `8 3`.",
+      "code": "void swap(int *a, int *b) {\n    int tmp = *a;\n    *a = *b;\n    *b = tmp;\n}\n// in main: x = 3, y = 8\nswap(&x, &y);\nprintf(\"%d %d\\n\", x, y);",
+      "language": "c"
+    },
+    {
+      "id": "null",
+      "kind": "text",
+      "title": "NULL means nothing",
+      "body": "`NULL` is a pointer value that points at nothing. Use it for \"no address yet\". Test with `if (p == NULL)` before using a pointer you are not sure about. Dereferencing `NULL` is undefined behavior; on common systems the program stops with a segmentation fault."
+    },
+    {
+      "id": "ex-seg",
+      "kind": "example",
+      "title": "Meeting a segfault",
+      "body": "Take `int *p = NULL; printf(\"%d\", *p);`.",
+      "steps": [
+        "`p` holds no valid address",
+        "`*p` tries to read memory the program may not use",
+        "The program usually crashes with Segmentation fault",
+        "Checking `p == NULL` first avoids this"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "A segmentation fault is the system stopping a program that touched memory it should not. It is a symptom, so look for a bad pointer."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "Why does `bad(x, y)` not swap x and y?",
+      "choices": [
+        "The function works on copies",
+        "The names differ",
+        "`tmp` is too small",
+        "`printf` hides it"
+      ],
+      "answerIndex": 0,
+      "explanation": "Arguments are copied, so the original variables stay unchanged.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What must you pass so a function can change `x`?",
+      "choices": [
+        "The address `&x`",
+        "A bigger int",
+        "The value `x`",
+        "The name \"x\" as text"
+      ],
+      "answerIndex": 0,
+      "explanation": "With the address, the function can write to where `x` lives.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "After `swap(&x, &y);` with `x = 3` and `y = 8`, what is x then y? Write it like `1 2`.",
+      "accepted": [
+        "8 3",
+        "8, 3",
+        "8,3"
+      ],
+      "keypad": "full",
+      "explanation": "The values were exchanged through the pointers.",
+      "id": "q3"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "A pointer that points at nothing holds \\_\\_.",
+      "choices": [
+        "NULL",
+        "0.5",
+        "-"
+      ],
+      "answerIndex": 0,
+      "explanation": "`NULL` is the null pointer.",
+      "id": "q4"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What usually happens when you dereference `NULL`?",
+      "choices": [
+        "The program crashes (segmentation fault)",
+        "It prints 0 always",
+        "It allocates memory",
+        "Nothing at all"
+      ],
+      "answerIndex": 0,
+      "explanation": "It is undefined behavior; a crash is the common result, but not guaranteed.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which check protects a dereference?",
+      "choices": [
+        "`if (p != NULL)`",
+        "`if (p == 0.0)`",
+        "`if (&p)`",
+        "`if (*p)`"
+      ],
+      "answerIndex": 0,
+      "explanation": "Test the pointer itself, not what it points at, before using it.",
+      "id": "q6"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put the lines of `swap` in order.",
+      "steps": [
+        "`int tmp = *a;`",
+        "`*a = *b;`",
+        "`*b = tmp;`"
+      ],
+      "explanation": "Save one value first, or it would be overwritten and lost.",
+      "id": "q7"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "id": "cf-functions-06",
+  "version": 2,
+  "minApp": 2,
+  "title": "Mini challenges",
+  "xp": 20,
+  "tags": [
+    "c",
+    "challenge",
+    "problem-solving"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Three small puzzles",
+      "body": "Time to combine what you know: variables, operators, loops and functions. Each puzzle below is small. Read the plan, predict the result, and then try writing your own version before checking."
+    },
+    {
+      "id": "pyr",
+      "kind": "code",
+      "title": "Challenge 1: a pyramid",
+      "body": "Row r has `h - r` spaces and then `2 * r - 1` hashes. For h = 3:",
+      "code": "    int h = 3;\n    for (int r = 1; r <= h; r++) {\n        for (int s = r; s < h; s++) {\n            printf(\" \");\n        }\n        for (int k = 1; k < 2*r; k++) {\n            printf(\"#\");\n        }\n        printf(\"\\n\");\n    }",
+      "language": "c"
+    },
+    {
+      "id": "pyrnote",
+      "kind": "text",
+      "title": "How it works",
+      "body": "The outer loop picks the row. The first inner loop prints the spaces that push the pyramid to the middle. The second prints an odd count of hashes: 1, 3 and 5. A new line then ends the row. Change `h` to make it taller."
+    },
+    {
+      "id": "pyrtrace",
+      "kind": "example",
+      "title": "Row 2 by hand",
+      "body": "With h = 3 and r = 2:",
+      "steps": [
+        "The space loop runs from `s = 2` up to 2, so once: one space",
+        "The hash loop runs `k` from 1 to 3, so three hashes",
+        "Row 2 is a space and ###, which is centred under row 1"
+      ]
+    },
+    {
+      "id": "coins",
+      "kind": "code",
+      "title": "Challenge 2: fewest coins",
+      "body": "Make 87 cents from 25, 10, 5 and 1. Take as many big coins as possible first.",
+      "code": "    int cents = 87;\n    int coins = 0;\n    coins += cents / 25;\n    cents %= 25;\n    coins += cents / 10;\n    cents %= 10;\n    coins += cents / 5;\n    cents %= 5;\n    coins += cents;\n    printf(\"%d\\n\", coins);",
+      "language": "c"
+    },
+    {
+      "id": "coinsnote",
+      "kind": "text",
+      "title": "Greedy change",
+      "body": "87 gives 3 quarters (75), leaving 12. That is 1 dime, leaving 2, then 0 nickels and 2 pennies. Total 3 + 1 + 2 is 6 coins. Taking the biggest coin first works for these coins. For other coin sets it can fail: for 6 with coins 4, 3 and 1, greedy uses 3 coins but 3 + 3 uses only 2."
+    },
+    {
+      "id": "sum",
+      "kind": "code",
+      "title": "Challenge 3: a checksum",
+      "body": "A check digit helps catch typing mistakes. Add all the digits of a number.",
+      "code": "int digit_sum(int n)\n{\n    int sum = 0;\n    while (n > 0)\n    {\n        sum += n % 10;\n        n /= 10;\n    }\n    return sum;\n}",
+      "language": "c"
+    },
+    {
+      "id": "chk",
+      "kind": "text",
+      "title": "The checksum idea",
+      "body": "The digits of 4729 add up to 22. Choose a check digit so the total becomes a multiple of 10: the next digit is 8, giving 47298. Its digit sum is 30, and `30 % 10` is 0. If someone mistypes one digit, the total is no longer a multiple of 10, so the error is caught."
+    },
+    {
+      "id": "real",
+      "kind": "tip",
+      "body": "Real card numbers use a stronger scheme called Luhn's algorithm. This simple sum misses swapped digits, since 4279 has the same digit sum as 4729."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "type_answer",
+      "prompt": "The pyramid with h = 3 prints how many hash symbols on its last row? Type the number.",
+      "accepted": [
+        "5",
+        "five"
+      ],
+      "keypad": "full",
+      "explanation": "Row 3 prints `2 * 3 - 1`, which is 5."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "How many spaces start row 1 of the h = 3 pyramid? Type the number.",
+      "accepted": [
+        "2",
+        "two"
+      ],
+      "keypad": "full",
+      "explanation": "Row 1 has `h - r`, which is 3 - 1, so 2 spaces."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Fewest coins for 87 cents using 25, 10, 5 and 1. Type the number of coins.",
+      "accepted": [
+        "6",
+        "six"
+      ],
+      "keypad": "full",
+      "explanation": "3 quarters, 1 dime and 2 pennies make 6 coins."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "With coins 4, 3 and 1, the fewest coins for 6 is what?",
+      "choices": [
+        "3 (4, 1, 1)",
+        "6",
+        "2 (3 and 3)",
+        "1"
+      ],
+      "answerIndex": 2,
+      "explanation": "Greedy picks 4, 1, 1 for 3 coins, but 3 + 3 uses only 2. Greedy is not always best."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "What is the digit sum of 4729? Type the number.",
+      "accepted": [
+        "22"
+      ],
+      "keypad": "full",
+      "explanation": "4 + 7 + 2 + 9 is 22."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "What check digit makes 4729 plus a digit sum to a multiple of 10?",
+      "choices": [
+        "2",
+        "0",
+        "9",
+        "8"
+      ],
+      "answerIndex": 3,
+      "explanation": "22 plus 8 is 30, a multiple of 10."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Why does the simple digit-sum checksum miss swapped digits?",
+      "choices": [
+        "A swap keeps the same total",
+        "It only checks the last digit",
+        "It cannot add digits",
+        "Swaps change the total by 10"
+      ],
+      "answerIndex": 0,
+      "explanation": "4729 and 4279 have the same digits, so the same sum."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "In `n % 10`, `n / 10` digit loops, which line removes the last digit?",
+      "choices": [
+        "`n %= 10;`",
+        "`n /= 10;`",
+        "`sum += n;`",
+        "`n++;`"
+      ],
+      "answerIndex": 1,
+      "explanation": "Integer division by 10 drops the last digit."
+    }
+  ]
+}

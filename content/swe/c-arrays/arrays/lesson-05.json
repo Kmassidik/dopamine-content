@@ -1,0 +1,175 @@
+{
+  "id": "ca-arrays-05",
+  "version": 2,
+  "minApp": 2,
+  "title": "Going out of bounds",
+  "xp": 15,
+  "tags": [
+    "c",
+    "arrays",
+    "safety"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "C does not check",
+      "body": "If `a` has 3 elements and you read `a[5]`, C does not stop you. No error appears at run time. The program just reads or writes whatever memory sits there. This is undefined behavior."
+    },
+    {
+      "id": "bug",
+      "kind": "code",
+      "title": "The classic bug",
+      "body": "The loop uses `<=`, so the last pass reads `a[3]`, which does not exist. The first three prints are 1 2 3, then the output is unpredictable.",
+      "code": "#include <stdio.h>\n\nint main(void) {\n    int a[3] = {1, 2, 3};\n    for (int i = 0; i <= 3; i++) {\n        printf(\"%d\\n\", a[i]);\n    }\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "undefined",
+      "kind": "text",
+      "title": "Undefined means anything",
+      "body": "The program may print garbage, crash with a segmentation fault, or even look fine today and fail tomorrow. Writing past the end is worse: it can overwrite other variables. Never rely on what happens."
+    },
+    {
+      "id": "asan",
+      "kind": "code",
+      "title": "Catch it with a tool",
+      "body": "Build with AddressSanitizer. The bug program then stops and reports `stack-buffer-overflow` and the line of the bad read.",
+      "code": "cc -g -fsanitize=address \\\n  prog.c -o prog\n./prog",
+      "language": "sh"
+    },
+    {
+      "id": "guard",
+      "kind": "code",
+      "title": "Check before you index",
+      "body": "When an index comes from outside, test it first. Here 5 is not between 0 and 2, so it prints `bad index`.",
+      "code": "int a[3] = {1, 2, 3};\nint idx = 5;\nif (idx >= 0 && idx < 3) {\n    printf(\"%d\\n\", a[idx]);\n} else {\n    printf(\"bad index\\n\");\n}",
+      "language": "c"
+    },
+    {
+      "id": "fix",
+      "kind": "example",
+      "title": "Fix the bug",
+      "body": "Repair the `i <= 3` loop.",
+      "steps": [
+        "Length is 3, so valid indexes are 0, 1, 2",
+        "The loop runs while `i <= 3`, which includes 3",
+        "Change it to `i < 3`",
+        "Now the last pass uses `a[2]`"
+      ]
+    },
+    {
+      "id": "loops",
+      "kind": "tip",
+      "body": "Most out-of-bounds bugs are `<=` where `<` was meant. Check every loop bound against the length."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What does C do when you read `a[5]` of a 3-element array?",
+      "choices": [
+        "It prints 0",
+        "It stops with an error",
+        "Nothing special: the behavior is undefined"
+      ],
+      "answerIndex": 2,
+      "explanation": "C does not check bounds, so anything can happen."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What kind of loop condition causes the classic bug?",
+      "choices": [
+        "`i <= n` for an array of length `n`",
+        "`i < n`",
+        "`i != -1`"
+      ],
+      "answerIndex": 0,
+      "explanation": "`i <= n` makes the last pass use index `n`, one past the end."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "In `int a[3]`, what is the first invalid index above 0? Type the number.",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "Valid indexes are 0, 1 and 2, so 3 is the first one past the end."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "Reading or writing past the end of an array is \\_\\_ behavior.",
+      "choices": [
+        "`defined`",
+        "`undefined`",
+        "`checked`"
+      ],
+      "answerIndex": 1,
+      "explanation": "The language makes no promise about what happens."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Which tool reports an out-of-bounds access while the program runs?",
+      "choices": [
+        "The preprocessor",
+        "The linker",
+        "AddressSanitizer"
+      ],
+      "answerIndex": 2,
+      "explanation": "Build with `-fsanitize=address` and it names the line."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which test protects `a[idx]` for an array of length 3?",
+      "choices": [
+        "`idx >= 0 && idx < 3`",
+        "`idx < 3`",
+        "`idx <= 3`"
+      ],
+      "answerIndex": 0,
+      "explanation": "Both ends need checking. A negative index is out of bounds too."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "The program ran fine on your computer with an out-of-bounds read. What does that tell you?",
+      "choices": [
+        "The bug is gone",
+        "Nothing, it can still fail elsewhere",
+        "The array was big enough"
+      ],
+      "answerIndex": 1,
+      "explanation": "Undefined behavior can look correct by luck."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each situation to what you should expect.",
+      "pairs": [
+        [
+          "`a[0]` of length 3",
+          "Valid, the first"
+        ],
+        [
+          "`a[2]` of length 3",
+          "Valid, the last"
+        ],
+        [
+          "`a[3]` of length 3",
+          "Undefined, past the end"
+        ],
+        [
+          "`a[-1]`",
+          "Undefined, before the start"
+        ]
+      ],
+      "explanation": "Only indexes 0 up to length minus 1 are safe."
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": "cg-sort-01",
+  "version": 2,
+  "minApp": 2,
+  "title": "Bubble sort",
+  "xp": 15,
+  "tags": [
+    "c",
+    "sorting"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Sorting an array",
+      "body": "Sorting puts items in order, here smallest first. Sorted data makes binary search possible and makes many other tasks easier. Bubble sort is the simplest idea: compare neighbours and swap them when they are in the wrong order."
+    },
+    {
+      "id": "pass",
+      "kind": "example",
+      "title": "One pass over {5, 1, 4, 2, 8}",
+      "body": "Walk along the array and compare each pair of neighbours.",
+      "steps": [
+        "Compare 5 and 1: wrong order, swap. Array: 1 5 4 2 8",
+        "Compare 5 and 4: swap. Array: 1 4 5 2 8",
+        "Compare 5 and 2: swap. Array: 1 4 2 5 8",
+        "Compare 5 and 8: fine. The largest item, 8, is at the end"
+      ]
+    },
+    {
+      "id": "why",
+      "kind": "text",
+      "title": "Why it is called bubble",
+      "body": "After pass 1 the largest item has bubbled to the end, and it is in its final place. After pass 2 the second largest is in place, and so on. So each pass can stop one item earlier than the last."
+    },
+    {
+      "id": "bubble",
+      "kind": "code",
+      "title": "Bubble sort in C",
+      "body": "`p` is the last index still in play, and it shrinks each pass. The `if` swaps a neighbour pair using a temporary variable `t`.",
+      "code": "for (int p = n - 1; p > 0; p--) {\n    for (int i = 0; i < p; i++) {\n        if (a[i] > a[i + 1]) {\n            int t = a[i];\n            a[i] = a[i + 1];\n            a[i + 1] = t;\n        }\n    }\n}",
+      "language": "c"
+    },
+    {
+      "id": "cost",
+      "kind": "text",
+      "title": "The cost",
+      "body": "Pass 1 makes 4 comparisons for 5 items, then 3, 2 and 1. That is 10 in total, or $n(n-1)/2$ for n items. This code does that many comparisons whatever the order of the input, so it is $\\Theta(n^2)$."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "A swap needs a third variable. Writing `a[i] = a[i + 1]` first would lose the old value of `a[i]`."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What does one bubble sort pass do to the largest unsorted item?",
+      "choices": [
+        "It moves it to the end of the unsorted part",
+        "It moves it to the front",
+        "It leaves it where it is"
+      ],
+      "answerIndex": 0,
+      "explanation": "Swapping neighbours carries the largest value along until it reaches the end.",
+      "id": "q1"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "After the first full pass on `{5, 1, 4, 2, 8}`, what is the last item?",
+      "accepted": [
+        "8"
+      ],
+      "keypad": "numeric",
+      "explanation": "8 is the largest. It was already at the end, and nothing is bigger.",
+      "id": "q2"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "After pass 1 on `{5, 1, 4, 2, 8}`, the array is...",
+      "choices": [
+        "1 4 2 5 8",
+        "1 2 4 5 8",
+        "5 1 4 2 8"
+      ],
+      "answerIndex": 0,
+      "explanation": "5 swapped past 1, 4 and 2, then stopped at 8.",
+      "id": "q3"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "To swap `a[i]` and `a[i + 1]` safely you need a \\_\\_ variable.",
+      "choices": [
+        "temporary",
+        "global",
+        "constant"
+      ],
+      "answerIndex": 0,
+      "explanation": "Without a temporary, the first assignment would overwrite a value you still need.",
+      "id": "q4"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "How many comparisons does this bubble sort make for 5 items? (4 + 3 + 2 + 1)",
+      "accepted": [
+        "10"
+      ],
+      "keypad": "numeric",
+      "explanation": "The passes make 4, 3, 2 and 1 comparisons: 10 in total, which is $n(n-1)/2$.",
+      "id": "q5"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put the steps of one bubble sort pass in order.",
+      "steps": [
+        "Start at the first pair",
+        "Compare the two neighbours",
+        "Swap them if the left one is bigger",
+        "Move one place right and repeat to the end of the pass"
+      ],
+      "explanation": "A pass is a left to right walk of compare and maybe swap.",
+      "id": "q6"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What is the big O of this bubble sort?",
+      "choices": [
+        "$O(n^2)$",
+        "$O(n)$",
+        "$O(\\log n)$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Two nested loops over about n items each.",
+      "id": "q7"
+    }
+  ]
+}

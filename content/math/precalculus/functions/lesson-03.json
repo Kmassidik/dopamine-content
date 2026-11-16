@@ -1,0 +1,159 @@
+{
+  "id": "pc-functions-03",
+  "version": 2,
+  "title": "Exponential and logarithmic models",
+  "xp": 15,
+  "tags": [
+    "precalculus",
+    "exponential",
+    "logarithms"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Repeated multiplying",
+      "body": "An exponential model has the form $y=a\\cdot b^x$. Here $a$ is the starting value and $b$ is the growth factor each step. If $b$ is more than 1 it grows, and if $b$ is between 0 and 1 it decays."
+    },
+    {
+      "id": "p1",
+      "kind": "example",
+      "title": "A doubling population",
+      "body": "A colony of 500 doubles every 3 hours, so $P=500\\cdot 2^{t/3}$.",
+      "steps": [
+        "At $t=6$: $500\\cdot 2^{2}=2000$",
+        "When does it reach 4000? Solve $500\\cdot 2^{t/3}=4000$",
+        "Divide by 500: $2^{t/3}=8$, and $8=2^3$",
+        "So $t/3=3$ and $t=9$ hours."
+      ]
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "Logarithms undo exponentials",
+      "body": "$\\log_b(y)$ asks: what power of $b$ gives $y$? So $\\log_2 32=5$ because $2^5=32$. When the base is not a neat match, use $\\ln$ on both sides: $1.05^t=5$ gives $t=\\frac{\\ln 5}{\\ln 1.05}\\approx 33.0$."
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Decay and half-life",
+      "body": "A substance with half-life 5 days follows $A=80\\cdot\\left(\\frac12\\right)^{t/5}$. After 15 days three halvings have happened: $80\\to40\\to20\\to10$ grams."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Which model describes decay?",
+      "choices": [
+        "$y=3(1.8)^x$",
+        "$y=3(2)^x$",
+        "$y=3(0.8)^x$",
+        "$y=3x$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Decay needs a factor between 0 and 1. Here $b=0.8$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "A colony is $P=500\\cdot 2^{t/3}$. What is $P$ at $t=6$?",
+      "accepted": [
+        "2000"
+      ],
+      "keypad": "numeric",
+      "explanation": "$2^{6/3}=2^2=4$, and $500\\cdot 4=2000$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "$\\log_2 32=$ ?",
+      "accepted": [
+        "5"
+      ],
+      "keypad": "numeric",
+      "explanation": "$2^5=32$, so the log is 5."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "Solve $2^x=64$.",
+      "accepted": [
+        "6"
+      ],
+      "keypad": "numeric",
+      "explanation": "$2^6=64$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "80 g with a half-life of 5 days. How much is left after 10 days?",
+      "choices": [
+        "40 g",
+        "10 g",
+        "30 g",
+        "20 g"
+      ],
+      "answerIndex": 3,
+      "explanation": "Two half-lives: $80\\to40\\to20$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Solve $1.05^t=5$. Which is correct?",
+      "choices": [
+        "$t=\\frac{\\ln 5}{\\ln 1.05}\\approx 33.0$",
+        "$t=\\frac{5}{1.05}\\approx 4.8$",
+        "$t=5\\ln 1.05\\approx 0.24$",
+        "$t=\\ln 5-\\ln 1.05\\approx 1.56$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Taking $\\ln$ of both sides gives $t\\ln 1.05=\\ln 5$. Divide by $\\ln 1.05$."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "For any base $b$, $\\log_b(b^x)=$ \\_\\_.",
+      "choices": [
+        "$b$",
+        "$x$",
+        "$1$",
+        "$bx$"
+      ],
+      "answerIndex": 1,
+      "explanation": "A log undoes the exponential, so you get the exponent back."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each model to what it says.",
+      "pairs": [
+        [
+          "$y=5\\cdot 2^x$",
+          "starts at 5, doubles"
+        ],
+        [
+          "$y=5\\cdot(0.5)^x$",
+          "starts at 5, halves"
+        ],
+        [
+          "$y=2\\cdot 5^x$",
+          "starts at 2, times 5"
+        ]
+      ],
+      "explanation": "The number in front is the start. The base is the factor per step."
+    },
+    {
+      "id": "q9",
+      "type": "order_steps",
+      "prompt": "Solve $3\\cdot 2^x=48$. Put the steps in order.",
+      "steps": [
+        "Divide both sides by 3",
+        "Get $2^x=16$",
+        "Write $16=2^4$",
+        "Conclude $x=4$"
+      ],
+      "explanation": "Isolate the power first, then match exponents."
+    }
+  ]
+}

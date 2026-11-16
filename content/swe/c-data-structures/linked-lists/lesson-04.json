@@ -1,0 +1,127 @@
+{
+  "id": "cd-lists-04",
+  "version": 2,
+  "minApp": 2,
+  "title": "Inserting into a list",
+  "xp": 15,
+  "tags": [
+    "c",
+    "linked-list",
+    "pointers"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Insert without moving data",
+      "body": "With an array, inserting in the middle shifts many items. A list only changes pointers. Find the node to insert after, then wire the new node in with two assignments."
+    },
+    {
+      "id": "after",
+      "kind": "code",
+      "title": "Insert after a node",
+      "code": "void insert_after(node *p, int v) {\n    node *n = malloc(sizeof(node));\n    if (n == NULL)\n        return;\n    n->value = v;\n    n->next = p->next;\n    p->next = n;\n}",
+      "language": "c",
+      "body": "Link the new node forward first, then link the earlier node to it."
+    },
+    {
+      "id": "order",
+      "kind": "text",
+      "title": "Order of the two lines",
+      "body": "`n->next = p->next` saves the rest of the list. Only then is it safe to change `p->next`. In the other order, p->next would already point at n, and the old rest of the list would be lost."
+    },
+    {
+      "id": "ex-insert",
+      "kind": "example",
+      "title": "Inserting 2",
+      "body": "The list is 1, then 3. Call `insert_after` on the node holding 1.",
+      "steps": [
+        "A new node holds 2, with next not yet set",
+        "`n->next = p->next` points it at node 3",
+        "`p->next = n` points node 1 at the new node",
+        "The list now reads 1, 2, 3"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "To insert at the very front there is no node before it, so the head pointer itself must change."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "Why is inserting into a list in the middle cheap?",
+      "choices": [
+        "It never needs malloc",
+        "Only pointers change, no items shift",
+        "Nodes sort themselves",
+        "It copies the whole list"
+      ],
+      "answerIndex": 1,
+      "explanation": "Existing nodes stay where they are in memory.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which line comes first inside `insert_after`?",
+      "choices": [
+        "p->next = n",
+        "free(p)",
+        "n->next = p->next",
+        "p = NULL"
+      ],
+      "answerIndex": 2,
+      "explanation": "First save the rest of the list in the new node. Then link the earlier node.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "The list is 5, 9. You call `insert_after` on the node holding 5 with value 7. What is the list's second value?",
+      "accepted": [
+        "7"
+      ],
+      "keypad": "numeric",
+      "explanation": "7 goes right after 5, before 9.",
+      "id": "q3"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "Insert a node at the front by making its next the old head, then moving \\_\\_.",
+      "choices": [
+        "tail",
+        "value",
+        "free",
+        "head"
+      ],
+      "answerIndex": 3,
+      "explanation": "The head pointer must now point at the new first node.",
+      "id": "q4"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What would `p->next = n` first, then `n->next = p->next` do?",
+      "choices": [
+        "Make n point to itself",
+        "Work the same",
+        "Free n",
+        "Insert at the end"
+      ],
+      "answerIndex": 0,
+      "explanation": "After the first line p->next is n, so the second line sets n->next to n. The old rest is lost.",
+      "id": "q5"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Order the steps to insert after node p.",
+      "steps": [
+        "Allocate the new node",
+        "Store the value",
+        "Set n->next to p->next",
+        "Set p->next to n"
+      ],
+      "explanation": "Set the new node's next first, then link p.",
+      "id": "q6"
+    }
+  ]
+}

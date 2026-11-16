@@ -1,0 +1,141 @@
+{
+  "id": "cg-recursion-03",
+  "version": 2,
+  "minApp": 2,
+  "title": "Factorial and Fibonacci",
+  "xp": 15,
+  "tags": [
+    "c",
+    "recursion"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Two classic examples",
+      "body": "The factorial of n, written n!, is n times every whole number below it down to 1. So 5! is 5 times 4 times 3 times 2 times 1, which is 120. It has a neat recursive form: n! equals n times (n - 1)!, and 1! is 1."
+    },
+    {
+      "id": "fact",
+      "kind": "code",
+      "title": "Factorial",
+      "body": "We use `long long` because factorials grow very fast.",
+      "code": "long long fact(int n) {\n    if (n <= 1) {\n        return 1;\n    }\n    return n * fact(n - 1);\n}",
+      "language": "c"
+    },
+    {
+      "id": "big",
+      "kind": "text",
+      "title": "Watch the size",
+      "body": "12! is 479,001,600, which fits in a 32-bit int. 13! is 6,227,020,800, which does not. A `long long` holds up to 20!, and 21! overflows even that. Overflow of signed integers is undefined behaviour in C, so avoid it."
+    },
+    {
+      "id": "fib",
+      "kind": "text",
+      "title": "Fibonacci numbers",
+      "body": "The Fibonacci sequence goes 0, 1, 1, 2, 3, 5, 8, 13. Each number is the sum of the two before it. Recursively: `fib(n)` is `fib(n - 1) + fib(n - 2)`, with two base cases, `fib(0)` is 0 and `fib(1)` is 1."
+    },
+    {
+      "id": "fibc",
+      "kind": "code",
+      "title": "Fibonacci",
+      "body": "The function calls itself twice, so each call branches into two more.",
+      "code": "int fib(int n) {\n    if (n < 2) {\n        return n;\n    }\n    return fib(n - 1) + fib(n - 2);\n}",
+      "language": "c"
+    },
+    {
+      "id": "calls",
+      "kind": "example",
+      "title": "Calls in fib(4)",
+      "body": "Count the calls this makes.",
+      "steps": [
+        "`fib(4)` calls `fib(3)` and `fib(2)`",
+        "`fib(3)` calls `fib(2)` and `fib(1)`. Each `fib(2)` calls `fib(1)` and `fib(0)`",
+        "`fib(2)` is computed twice, and so are some others",
+        "In total `fib(4)` makes 9 calls, and `fib(10)` makes 177"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What are the base cases of `fib`?",
+      "choices": [
+        "`fib(0)` and `fib(1)`",
+        "`fib(1)` only",
+        "`fib(10)`"
+      ],
+      "answerIndex": 0,
+      "explanation": "Both 0 and 1 return their own value, and every larger call reduces toward them.",
+      "id": "q1"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "What does `fact(5)` return?",
+      "accepted": [
+        "120"
+      ],
+      "keypad": "numeric",
+      "explanation": "5 times 4 times 3 times 2 times 1 is 120.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "What does `fib(10)` return?",
+      "accepted": [
+        "55"
+      ],
+      "keypad": "numeric",
+      "explanation": "The sequence 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 gives 55 at index 10.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does `fib(6)` return?",
+      "choices": [
+        "8",
+        "13",
+        "6"
+      ],
+      "answerIndex": 0,
+      "explanation": "fib(5) is 5 and fib(4) is 3, so fib(6) is 5 + 3 = 8.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "`fact(n)` is `n * \\_\\_`.",
+      "choices": [
+        "`fact(n - 1)`",
+        "`fact(n)`",
+        "`fib(n - 1)`"
+      ],
+      "answerIndex": 0,
+      "explanation": "n! is n times the factorial of the next smaller number.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Why is `long long` used for `fact`?",
+      "choices": [
+        "Factorials get too big for an int quickly",
+        "It makes the function faster",
+        "`int` can not hold 5"
+      ],
+      "answerIndex": 0,
+      "explanation": "13! already overflows a 32-bit int.",
+      "id": "q6"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "How many calls does `fib(5)` make, counting itself?",
+      "choices": [
+        "15",
+        "5",
+        "10"
+      ],
+      "answerIndex": 0,
+      "explanation": "fib(5) makes 1 call for itself, 9 for fib(4) and 5 for fib(3): 15 calls in all.",
+      "id": "q7"
+    }
+  ]
+}

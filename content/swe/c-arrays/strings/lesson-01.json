@@ -1,0 +1,165 @@
+{
+  "id": "ca-strings-01",
+  "version": 2,
+  "minApp": 2,
+  "title": "Strings as char arrays",
+  "xp": 15,
+  "tags": [
+    "c",
+    "strings"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Text is an array",
+      "body": "C has no separate string type. A string is an array of `char` that ends with a special byte, `'\\0'`, called the null terminator. Every piece of text you print is stored this way."
+    },
+    {
+      "id": "basic",
+      "kind": "code",
+      "title": "A string in memory",
+      "body": "`\"cat\"` needs 4 bytes: `c`, `a`, `t` and the terminator. `%s` prints the whole string, and `s[1]` is the single char `a`. The terminator's value is 0.",
+      "code": "char s[] = \"cat\";\nprintf(\"%s\\n\", s);\nprintf(\"%c %d\\n\", s[1], s[3]);",
+      "language": "c"
+    },
+    {
+      "id": "quotes",
+      "kind": "text",
+      "title": "Two kinds of quotes",
+      "body": "Single quotes make one character: `'a'`. Double quotes make a string: `\"a\"`, which holds two bytes, the letter and the terminator. They are different types and cannot be swapped."
+    },
+    {
+      "id": "length",
+      "kind": "code",
+      "title": "Length means up to the terminator",
+      "body": "This loop counts characters until it meets `'\\0'`. It prints 3, although the array has 4 slots. This is what `strlen` does for you.",
+      "code": "char s[] = \"cat\";\nint n = 0;\nwhile (s[n] != '\\0') {\n    n++;\n}\nprintf(\"%d\\n\", n);",
+      "language": "c"
+    },
+    {
+      "id": "edit",
+      "kind": "text",
+      "title": "Strings can be edited",
+      "body": "An array can be changed element by element: `s[1] = 'X';` turns \"abc\" into \"aXc\". Writing a terminator early cuts the string short, because everything after the first `'\\0'` is ignored by `%s`."
+    },
+    {
+      "id": "size",
+      "kind": "example",
+      "title": "Size and length differ",
+      "body": "Look at `char s[8] = \"hi\";`.",
+      "steps": [
+        "The array has 8 slots, so `sizeof s` is 8",
+        "The text `hi` fills slots 0 and 1",
+        "Slot 2 holds the terminator `'\\0'`",
+        "The length is 2, the number of chars before the terminator"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What marks the end of a C string?",
+      "choices": [
+        "The null character `'\\0'`",
+        "A space",
+        "A newline"
+      ],
+      "answerIndex": 0,
+      "explanation": "Functions like `printf` and `strlen` read until they reach the terminator."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "How many bytes does `char s[] = \"cat\";` occupy? Type the number.",
+      "accepted": [
+        "4"
+      ],
+      "keypad": "numeric",
+      "explanation": "Three letters plus the terminator make 4 bytes."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "What is the difference between `'a'` and `\"a\"`?",
+      "choices": [
+        "They are the same",
+        "`'a'` is one char, `\"a\"` is a string of two bytes",
+        "`'a'` is longer"
+      ],
+      "answerIndex": 1,
+      "explanation": "Double quotes add the terminator."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "After `char s[] = \"abc\"; s[1] = 0;`, how many characters does `%s` print? Type the number.",
+      "accepted": [
+        "1"
+      ],
+      "keypad": "numeric",
+      "explanation": "The 0 is a terminator, so the string ends after `a`."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "A string is an array of \\_\\_ ending with `'\\0'`.",
+      "choices": [
+        "`int`",
+        "`double`",
+        "`char`"
+      ],
+      "answerIndex": 2,
+      "explanation": "Each element is one character."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "What does `printf(\"%c\", s[1])` print for `s = \"cat\"`?",
+      "choices": [
+        "a",
+        "c",
+        "t"
+      ],
+      "answerIndex": 0,
+      "explanation": "Index 1 is the second character."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "For `char s[8] = \"hi\";`, what is the string's length?",
+      "choices": [
+        "8",
+        "2",
+        "3"
+      ],
+      "answerIndex": 1,
+      "explanation": "The length counts chars before the terminator, not the slots."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each item to its meaning.",
+      "pairs": [
+        [
+          "`'a'`",
+          "One character"
+        ],
+        [
+          "`\"a\"`",
+          "A string of 2 bytes"
+        ],
+        [
+          "`'\\0'`",
+          "End of string"
+        ],
+        [
+          "`%s`",
+          "Prints a string"
+        ]
+      ],
+      "explanation": "These four are the basics of C text."
+    }
+  ]
+}

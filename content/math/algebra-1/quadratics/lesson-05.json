@@ -1,0 +1,165 @@
+{
+  "id": "a1-quadratics-05",
+  "version": 2,
+  "title": "The discriminant and applications",
+  "xp": 20,
+  "tags": [
+    "algebra",
+    "quadratics"
+  ],
+  "learn": [
+    {
+      "id": "disc",
+      "kind": "text",
+      "title": "The discriminant",
+      "body": "The part under the root, $D=b^2-4ac$, is the discriminant. It tells you how many real solutions to expect before you finish: positive means two, zero means one, negative means none."
+    },
+    {
+      "id": "example-disc",
+      "kind": "example",
+      "title": "Count the solutions",
+      "body": "Compute $D$ for each equation.",
+      "steps": [
+        "$x^2+4x+4=0$: $D=16-16=0$, one solution ($x=-2$)",
+        "$x^2+2x+5=0$: $D=4-20=-16$, no real solutions",
+        "$x^2+x-2=0$: $D=1+8=9$, two solutions"
+      ]
+    },
+    {
+      "id": "meaning",
+      "kind": "text",
+      "title": "What it means on a graph",
+      "body": "Solutions are where the parabola meets the $x$-axis. Two solutions: it crosses twice. One: it just touches. None: it floats above or below."
+    },
+    {
+      "id": "example-ball",
+      "kind": "example",
+      "title": "A ball in the air",
+      "body": "Its height is $h=-5t^2+20t$ metres after $t$ seconds.",
+      "steps": [
+        "It lands when $h=0$: $-5t(t-4)=0$",
+        "So $t=0$ (the throw) or $t=4$ (the landing)",
+        "Highest at the axis $t=2$: $h=-20+40=20$ metres"
+      ]
+    },
+    {
+      "id": "reject",
+      "kind": "tip",
+      "body": "In a real problem, check whether each solution makes sense. A negative length or time is rejected."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "If $b^2-4ac>0$, how many real solutions are there?",
+      "choices": [
+        "One",
+        "Two",
+        "None"
+      ],
+      "answerIndex": 1,
+      "explanation": "The root of a positive number gives two different values, plus and minus."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Compute $b^2-4ac$ for $x^2+4x+4=0$.",
+      "accepted": [
+        "0",
+        "0.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$16-16=0$. So there is exactly one solution, $x=-2$."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Compute $b^2-4ac$ for $x^2+2x+5=0$.",
+      "accepted": [
+        "-16"
+      ],
+      "keypad": "numeric",
+      "explanation": "$4-20=-16$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What does that tell you about $x^2+2x+5=0$?",
+      "choices": [
+        "Two solutions",
+        "No real solutions",
+        "One solution"
+      ],
+      "answerIndex": 1,
+      "explanation": "The root of a negative number is not real, so the parabola never touches the $x$-axis."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "If $b^2-4ac=0$ there is exactly \\_\\_ solution.",
+      "choices": [
+        "two",
+        "no",
+        "one"
+      ],
+      "answerIndex": 2,
+      "explanation": "The plus and minus versions give the same number, so there is one repeated solution."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "How many real solutions does $x^2-6x+9=0$ have?",
+      "accepted": [
+        "1",
+        "1.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$b^2-4ac=36-36=0$, so one solution: $x=3$."
+    },
+    {
+      "id": "q7",
+      "type": "type_answer",
+      "prompt": "For which value of $k$ does $x^2+6x+k=0$ have exactly one solution?",
+      "accepted": [
+        "9",
+        "9.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "We need $36-4k=0$, so $k=9$."
+    },
+    {
+      "id": "q8",
+      "type": "type_answer",
+      "prompt": "A ball's height is $h=-5t^2+20t$ metres after $t$ seconds. At what time $t>0$ does it land?",
+      "accepted": [
+        "4",
+        "4.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Set $h=0$: $-5t(t-4)=0$, so $t=0$ or $t=4$. It lands at 4 seconds."
+    },
+    {
+      "id": "q9",
+      "type": "type_answer",
+      "prompt": "What is the ball's greatest height, in metres?",
+      "accepted": [
+        "20",
+        "20.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "The vertex is at $t=-\\frac{20}{2\\cdot(-5)}=2$. Then $h=-20+40=20$."
+    },
+    {
+      "id": "q10",
+      "type": "type_answer",
+      "prompt": "A rectangle is 3 cm longer than it is wide, and its area is 28 square cm. How wide is it, in cm?",
+      "accepted": [
+        "4",
+        "4.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$w(w+3)=28$, so $w^2+3w-28=0$ and $(w+7)(w-4)=0$. A width cannot be negative, so $w=4$."
+    }
+  ]
+}

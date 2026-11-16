@@ -1,0 +1,140 @@
+{
+  "id": "pa-fractions-03",
+  "version": 2,
+  "title": "Multiplying and dividing fractions",
+  "xp": 10,
+  "tags": [
+    "fractions",
+    "multiplication"
+  ],
+  "learn": [
+    {
+      "id": "p1",
+      "kind": "text",
+      "title": "Multiplying fractions",
+      "body": "Multiply the numerators together and the denominators together: $\\frac{a}{b}\\times\\frac{c}{d}=\\frac{ac}{bd}$. No common denominator is needed. $\\frac{2}{3}\\times\\frac{3}{4}=\\frac{6}{12}=\\frac{1}{2}$."
+    },
+    {
+      "id": "p2",
+      "kind": "text",
+      "title": "Cancel early",
+      "body": "You can simplify before multiplying. In $\\frac{2}{3}\\times\\frac{3}{4}$ the 3 on top and the 3 on the bottom cancel, and 2 and 4 simplify to 1 and 2. The result $\\frac{1}{2}$ appears with smaller numbers."
+    },
+    {
+      "id": "p3",
+      "kind": "text",
+      "title": "Dividing by a fraction",
+      "body": "Dividing by a fraction means multiplying by its reciprocal, which is the fraction flipped upside down. The reciprocal of $\\frac{1}{4}$ is $\\frac{4}{1}=4$. A whole number is a fraction over 1, so the reciprocal of 5 is $\\frac{1}{5}$."
+    },
+    {
+      "id": "p4",
+      "kind": "example",
+      "title": "Work out $\\frac{1}{2}\\div\\frac{1}{4}$",
+      "body": "Keep the first, flip the second, multiply.",
+      "steps": [
+        "Keep $\\frac{1}{2}$ and flip $\\frac{1}{4}$ to $\\frac{4}{1}$.",
+        "Multiply: $\\frac{1}{2}\\times\\frac{4}{1}=\\frac{4}{2}$.",
+        "Simplify: $\\frac{4}{2}=2$. There are two quarters in a half."
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "example",
+      "title": "Work out $\\frac{3}{4}\\times 8$",
+      "body": "Write 8 as $\\frac{8}{1}$.",
+      "steps": [
+        "$\\frac{3}{4}\\times\\frac{8}{1}=\\frac{24}{4}$.",
+        "$\\frac{24}{4}=6$."
+      ]
+    },
+    {
+      "id": "p6",
+      "kind": "tip",
+      "body": "Multiplying by a fraction less than 1 makes a number smaller. Dividing by one makes it larger."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is $\\frac{2}{3}\\times\\frac{3}{4}$?",
+      "choices": [
+        "$\\frac{5}{7}$",
+        "$\\frac{1}{2}$",
+        "$\\frac{2}{4}\\times 3$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Multiply across: $\\frac{6}{12}$, which simplifies to $\\frac{1}{2}$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "$\\frac{3}{4}\\times 8=\\ ?$",
+      "accepted": [
+        "6",
+        "6.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac{3}{4}\\times 8=\\frac{24}{4}=6$. Or take a quarter of 8 (which is 2) and triple it."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "The reciprocal of $\\frac{1}{4}$ is \\_\\_.",
+      "choices": [
+        "$\\frac{1}{4}$",
+        "$-4$",
+        "$4$"
+      ],
+      "answerIndex": 2,
+      "explanation": "Flip the fraction. $\\frac{1}{4}$ flipped is $\\frac{4}{1}=4$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What is $\\frac{1}{2}\\div\\frac{1}{4}$?",
+      "choices": [
+        "$\\frac{1}{8}$",
+        "$2$",
+        "$\\frac{1}{2}$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Multiply by the reciprocal: $\\frac{1}{2}\\times 4=2$."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "What is $\\frac{3}{4}\\div\\frac{3}{8}$?",
+      "choices": [
+        "$2$",
+        "$\\frac{9}{32}$",
+        "$\\frac{1}{2}$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$\\frac{3}{4}\\times\\frac{8}{3}=\\frac{24}{12}=2$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "What is $\\frac{2}{3}\\div 4$ as a decimal rounded to 2 places?",
+      "accepted": [
+        "0.17",
+        "0.167",
+        "0.1667"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac{2}{3}\\div 4=\\frac{2}{3}\\times\\frac{1}{4}=\\frac{1}{6}\\approx 0.17$."
+    },
+    {
+      "id": "q7",
+      "type": "order_steps",
+      "prompt": "Work out $\\frac{4}{5}\\div\\frac{2}{3}$. Put the steps in order.",
+      "steps": [
+        "Flip the second fraction to $\\frac{3}{2}$",
+        "Multiply $\\frac{4}{5}\\times\\frac{3}{2}=\\frac{12}{10}$",
+        "Simplify to $\\frac{6}{5}$"
+      ],
+      "explanation": "Keep, flip, multiply, then simplify."
+    }
+  ]
+}

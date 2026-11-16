@@ -1,0 +1,143 @@
+{
+  "id": "geo-polygons-05",
+  "version": 2,
+  "title": "Arcs, chords and inscribed angles",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "circles"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Pieces of a circle",
+      "body": "A chord joins two points on a circle. A diameter is the longest chord and passes through the centre. An arc is a piece of the circle itself, between two points. The picture shows a chord, a diameter and a radius.",
+      "image": "content/images/geo-circle-parts.svg",
+      "alt": "A circle with a horizontal diameter through its centre, a shorter horizontal chord above it, and a radius drawn straight down from the centre."
+    },
+    {
+      "id": "central",
+      "kind": "text",
+      "title": "Central and inscribed angles",
+      "body": "A central angle has its vertex at the centre, and it equals the arc it cuts off. An inscribed angle has its vertex on the circle, and it equals half the arc it cuts off."
+    },
+    {
+      "id": "semicircle",
+      "kind": "text",
+      "title": "The semicircle fact",
+      "body": "A diameter cuts off an arc of $180^\\circ$. Any inscribed angle that uses it has measure $90^\\circ$. So an angle drawn from the ends of a diameter to any point on the circle is a right angle."
+    },
+    {
+      "id": "use",
+      "kind": "example",
+      "title": "Use the rules",
+      "body": "Find the missing measures.",
+      "steps": [
+        "Central angle $80^\\circ$: arc $80^\\circ$, inscribed angle $40^\\circ$.",
+        "Arc $110^\\circ$: inscribed angle $55^\\circ$.",
+        "Radius 5, a chord is 3 from the centre. A radius drawn perpendicular to a chord cuts it in half.",
+        "Half the chord is $\\sqrt{25-9}=4$, so the chord is 8."
+      ]
+    },
+    {
+      "id": "same-arc",
+      "kind": "tip",
+      "body": "Inscribed angles that cut off the same arc are equal."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "An arc measures $80^\\circ$. What is the inscribed angle that cuts it off?",
+      "choices": [
+        "$80^\\circ$",
+        "$160^\\circ$",
+        "$40^\\circ$",
+        "$20^\\circ$"
+      ],
+      "answerIndex": 2,
+      "explanation": "An inscribed angle is half its arc."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "A central angle measures $70^\\circ$. How large is its arc in degrees?",
+      "accepted": [
+        "70"
+      ],
+      "keypad": "numeric",
+      "explanation": "A central angle equals its arc."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "An inscribed angle measures $35^\\circ$. How large is the arc it cuts off in degrees?",
+      "accepted": [
+        "70"
+      ],
+      "keypad": "numeric",
+      "explanation": "The arc is twice the inscribed angle."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "What is the longest chord in a circle?",
+      "choices": [
+        "The radius",
+        "Any chord is the same length",
+        "A chord near the edge",
+        "The diameter"
+      ],
+      "answerIndex": 3,
+      "explanation": "A chord through the centre is the longest possible."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "An angle inscribed in a semicircle measures \\_\\_ degrees.",
+      "choices": [
+        "45",
+        "90",
+        "180"
+      ],
+      "answerIndex": 1,
+      "explanation": "It cuts off a $180^\\circ$ arc, and half of that is $90^\\circ$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "The radius is 5 and a chord is 3 from the centre. How long is the chord?",
+      "accepted": [
+        "8"
+      ],
+      "keypad": "numeric",
+      "explanation": "Half the chord is $\\sqrt{5^2-3^2}=4$, so the chord is 8."
+    },
+    {
+      "id": "q7",
+      "type": "match_pairs",
+      "prompt": "Match each angle to its rule.",
+      "pairs": [
+        [
+          "Central angle",
+          "Equals its arc"
+        ],
+        [
+          "Inscribed angle",
+          "Half its arc"
+        ],
+        [
+          "In a semicircle",
+          "$90^\\circ$"
+        ],
+        [
+          "Full circle",
+          "$360^\\circ$ of arc"
+        ]
+      ],
+      "explanation": "These four rules cover most circle angle problems."
+    }
+  ]
+}

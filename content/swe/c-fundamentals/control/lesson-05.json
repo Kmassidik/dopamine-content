@@ -1,0 +1,178 @@
+{
+  "id": "cf-control-05",
+  "version": 2,
+  "minApp": 2,
+  "title": "for loops",
+  "xp": 15,
+  "tags": [
+    "c",
+    "loops",
+    "for"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "A loop in one line",
+      "body": "A `for` loop puts the start, the test and the change on a single line, separated by semicolons. It is the natural choice when you know how many times to repeat."
+    },
+    {
+      "id": "for",
+      "kind": "code",
+      "title": "Count from zero",
+      "body": "Start `i` at 0, repeat while `i < 3`, add 1 each time.",
+      "code": "    for (int i = 0; i < 3; i++) {\n        printf(\"%d\\n\", i);\n    }",
+      "language": "c"
+    },
+    {
+      "id": "parts",
+      "kind": "text",
+      "title": "The three parts",
+      "body": "Inside the parentheses: first an initialisation, `int i = 0`, which runs once. Second a condition, `i < 3`, tested before each pass. Third an update, `i++`, run after each pass. It is the same pattern as a while loop."
+    },
+    {
+      "id": "zero",
+      "kind": "text",
+      "title": "Counting from zero",
+      "body": "Programmers usually count from 0 and stop with `i < n`. This repeats exactly n times: with n equal to 3 it gives 0, 1, 2. Writing `i <= n` instead runs one extra time. That mistake is called an off-by-one error."
+    },
+    {
+      "id": "sum",
+      "kind": "code",
+      "title": "Adding 1 to 10",
+      "body": "Here we want 1 to 10 both included, so we use `<=`.",
+      "code": "    int sum = 0;\n    for (int i = 1; i <= 10; i++) {\n        sum += i;\n    }\n    printf(\"%d\\n\", sum);",
+      "language": "c"
+    },
+    {
+      "id": "step",
+      "kind": "text",
+      "title": "Other steps",
+      "body": "The update can be anything. `i += 2` counts by twos, and `i--` counts down by one. In the loop `for (int i = 10; i > 0; i -= 3)` the values are 10, 7, 4 and 1."
+    },
+    {
+      "id": "trace",
+      "kind": "example",
+      "title": "Tracing the sum",
+      "body": "Follow the first passes of `sum += i`.",
+      "steps": [
+        "`i` is 1, so `sum` becomes 1",
+        "`i` is 2, so `sum` becomes 3",
+        "`i` is 3, so `sum` becomes 6",
+        "After `i` reaches 10, `sum` is 55"
+      ]
+    },
+    {
+      "id": "scope",
+      "kind": "tip",
+      "body": "A variable declared in the `for` parentheses exists only inside that loop."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "How many times does `for (int i = 0; i < 5; i++)` run its block?",
+      "choices": [
+        "4",
+        "6",
+        "5",
+        "0"
+      ],
+      "answerIndex": 2,
+      "explanation": "`i` takes the values 0, 1, 2, 3 and 4."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "How many times does `for (int i = 1; i <= 5; i++)` run?",
+      "choices": [
+        "4",
+        "6",
+        "1",
+        "5"
+      ],
+      "answerIndex": 3,
+      "explanation": "`i` takes the values 1 to 5, five values."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What is the sum of 1 to 10 computed by the loop? Type the number.",
+      "accepted": [
+        "55"
+      ],
+      "keypad": "full",
+      "explanation": "1 + 2 + ... + 10 is 55."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "The three parts of a for loop are separated by \\_\\_.",
+      "choices": [
+        "semicolons",
+        "commas",
+        "colons",
+        "periods"
+      ],
+      "answerIndex": 0,
+      "explanation": "Write `for (init; condition; update)`."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "What is the last number printed by `for (int i = 10; i > 0; i -= 3)`? Type it.",
+      "accepted": [
+        "1"
+      ],
+      "keypad": "full",
+      "explanation": "The values are 10, 7, 4 and 1. After 1 comes -2, which fails `i > 0`."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "An off-by-one error is what?",
+      "choices": [
+        "A missing semicolon",
+        "A loop that runs one time too many or too few",
+        "A wrong variable type",
+        "An unused variable"
+      ],
+      "answerIndex": 1,
+      "explanation": "It usually comes from choosing `<` or `<=` wrongly."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Which `for` loop prints 1, 2, 3?",
+      "choices": [
+        "`for (int i = 1; i < 3; i++)`",
+        "`for (int i = 0; i <= 3; i++)`",
+        "`for (int i = 1; i <= 3; i++)`",
+        "`for (int i = 1; i > 3; i++)`"
+      ],
+      "answerIndex": 2,
+      "explanation": "Start at 1 and keep going while `i <= 3`."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each part of the for loop to what it does.",
+      "pairs": [
+        [
+          "`int i = 0`",
+          "Runs once at the start"
+        ],
+        [
+          "`i < 3`",
+          "Tested before every pass"
+        ],
+        [
+          "`i++`",
+          "Runs after every pass"
+        ]
+      ],
+      "explanation": "These three parts replace the three parts of a while loop."
+    }
+  ]
+}

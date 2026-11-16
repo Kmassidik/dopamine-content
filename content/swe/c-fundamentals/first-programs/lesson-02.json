@@ -1,0 +1,154 @@
+{
+  "id": "cf-first-02",
+  "version": 2,
+  "minApp": 2,
+  "title": "Hello, world and main",
+  "xp": 15,
+  "tags": [
+    "c",
+    "main",
+    "printf"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "The smallest useful program",
+      "body": "Almost every programmer starts with a program that prints a greeting. It is short, but it contains the pieces every C program needs. Today we read it line by line."
+    },
+    {
+      "id": "hello",
+      "kind": "code",
+      "title": "hello.c",
+      "body": "This is the whole program. It prints one line of text.",
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    printf(\"hello, world\\n\");\n    return 0;\n}",
+      "language": "c"
+    },
+    {
+      "id": "include",
+      "kind": "text",
+      "title": "The first line",
+      "body": "The `#include` line asks the compiler to bring in stdio, the standard input and output library. Without it, the compiler does not know what `printf` is."
+    },
+    {
+      "id": "main",
+      "kind": "text",
+      "title": "main",
+      "body": "`int main(void)` is where every C program starts. Its body sits between the curly braces `{` and `}`. The computer runs the lines inside, in order, from top to bottom."
+    },
+    {
+      "id": "printf",
+      "kind": "text",
+      "title": "printf and return",
+      "body": "`printf` prints text. The text goes in double quotes, and the `\\n` inside means a new line. Each instruction ends with a semicolon. `return 0;` says the program finished normally."
+    },
+    {
+      "id": "trace",
+      "kind": "example",
+      "title": "What happens when it runs",
+      "body": "The computer reads `main` from top to bottom.",
+      "steps": [
+        "It enters `main` at the opening brace",
+        "`printf` prints hello, world and then moves to a new line",
+        "`return 0;` ends the program, reporting success"
+      ]
+    },
+    {
+      "id": "semi",
+      "kind": "tip",
+      "body": "Missing semicolons are the most common beginner mistake. End every instruction with `;`."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Where does every C program start running?",
+      "choices": [
+        "At the first `#include`",
+        "At the last line",
+        "In `main`",
+        "At `return`"
+      ],
+      "answerIndex": 2,
+      "explanation": "The computer begins at `main` and works through its body in order."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What does `printf(\"hi\\n\");` print?",
+      "choices": [
+        "`hi\\n` exactly as typed",
+        "Nothing at all",
+        "`\"hi\"` with quotes",
+        "hi, then a new line"
+      ],
+      "answerIndex": 3,
+      "explanation": "`\\n` is not printed as letters. It means move to a new line."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "Every instruction in C ends with a \\_\\_.",
+      "choices": [
+        "semicolon",
+        "comma",
+        "colon",
+        "period"
+      ],
+      "answerIndex": 0,
+      "explanation": "The semicolon marks the end of each instruction."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "The `#include` line for stdio is needed so the compiler knows about \\_\\_.",
+      "choices": [
+        "`main`",
+        "`printf`",
+        "`return`",
+        "`int`"
+      ],
+      "answerIndex": 1,
+      "explanation": "`printf` is declared in the standard input and output library."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "What visible text does `printf(\"hello, world\\n\");` print? Type it.",
+      "accepted": [
+        "hello, world",
+        "hello,world"
+      ],
+      "keypad": "full",
+      "explanation": "The text between the quotes is printed. The `\\n` only moves to a new line."
+    },
+    {
+      "id": "q6",
+      "type": "order_steps",
+      "prompt": "Put these lines of hello.c in order.",
+      "steps": [
+        "The `#include` line",
+        "`int main(void)`",
+        "`{`",
+        "`printf(\"hello, world\\n\");`",
+        "`return 0;`",
+        "`}`"
+      ],
+      "explanation": "The include comes first, then main, then its body inside braces."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "What does `return 0;` tell the system?",
+      "choices": [
+        "The program crashed",
+        "Print the number 0",
+        "The program finished normally",
+        "Start the program again"
+      ],
+      "answerIndex": 2,
+      "explanation": "Returning 0 from `main` is the usual way to say everything went fine."
+    }
+  ]
+}

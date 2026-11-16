@@ -1,0 +1,150 @@
+{
+  "id": "cd-trees-05",
+  "version": 2,
+  "minApp": 2,
+  "title": "Tries",
+  "xp": 20,
+  "tags": [
+    "c",
+    "trie",
+    "strings"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "A tree of letters",
+      "body": "A trie, said like try, stores words by their letters. Each step down the tree is one letter. Words that start the same share the same path, so car, cart and cat share c then a. A flag on a node says a word ends there."
+    },
+    {
+      "id": "node",
+      "kind": "code",
+      "title": "A trie node",
+      "code": "typedef struct trie {\n    struct trie *kid[26];\n    int is_word;\n} trie;\ntrie *make(void) {\n    return calloc(1, sizeof(trie));\n}",
+      "language": "c",
+      "body": "One child pointer per letter a to z, plus the flag. We assume lowercase words. `make` returns a zeroed node, which means NULL pointers and 0 on the usual platforms."
+    },
+    {
+      "id": "add",
+      "kind": "code",
+      "title": "Adding a word",
+      "code": "void add(trie *t, const char *w) {\n    for (; *w; w++) {\n        int i = *w - 'a';\n        if (t->kid[i] == NULL)\n            t->kid[i] = make();\n        t = t->kid[i];\n    }\n    t->is_word = 1;\n}",
+      "language": "c",
+      "body": "`*w - 'a'` turns a letter into 0 to 25. The new child comes from `make`."
+    },
+    {
+      "id": "has",
+      "kind": "code",
+      "title": "Looking up",
+      "code": "int has(trie *t, const char *w) {\n    for (; *w; w++) {\n        t = t->kid[*w - 'a'];\n        if (t == NULL)\n            return 0;\n    }\n    return t->is_word;\n}",
+      "language": "c",
+      "body": "Follow the letters. A missing child means the word is not there. The flag tells whole words from mere prefixes."
+    },
+    {
+      "id": "ex-ca",
+      "kind": "example",
+      "title": "Is ca a word?",
+      "body": "The trie holds car, cart and cat.",
+      "steps": [
+        "Follow c, then a. Both children exist",
+        "The walk ends on the node for a",
+        "That node's `is_word` is 0, so ca is only a prefix",
+        "has returns 0"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "A trie finds a word in as many steps as it has letters, however many words are stored. The cost is memory: each node holds 26 pointers."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What does each step down a trie represent?",
+      "choices": [
+        "One word",
+        "One letter",
+        "One byte of the file",
+        "One hash"
+      ],
+      "answerIndex": 1,
+      "explanation": "Following letters spells out the word.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Why do car, cart and cat share nodes?",
+      "choices": [
+        "They have the same length",
+        "They are sorted",
+        "They begin with the same letters",
+        "They are stored twice"
+      ],
+      "answerIndex": 2,
+      "explanation": "Shared prefixes share the same path from the root.",
+      "id": "q2"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "A node's \\_\\_ flag marks that a word ends there.",
+      "choices": [
+        "root",
+        "leaf",
+        "kid",
+        "is_word"
+      ],
+      "answerIndex": 3,
+      "explanation": "Without the flag, a prefix like ca would look like a word.",
+      "id": "q3"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "In `*w - 'a'`, what index does the letter c give?",
+      "accepted": [
+        "2"
+      ],
+      "keypad": "numeric",
+      "explanation": "a is 0, b is 1 and c is 2.",
+      "id": "q4"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "A lookup of the word dog finds no child for d at the root. What does `has` return?",
+      "choices": [
+        "0",
+        "1",
+        "-1",
+        "It crashes"
+      ],
+      "answerIndex": 0,
+      "explanation": "A missing child means no stored word starts with that letter.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What is the main cost of a trie?",
+      "choices": [
+        "Slow search by letters",
+        "Memory for many pointers per node",
+        "Needing sorted input",
+        "Strings must be numbers"
+      ],
+      "answerIndex": 1,
+      "explanation": "Each node here holds 26 pointers, even when most are NULL.",
+      "id": "q6"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Order the steps to add a word.",
+      "steps": [
+        "Start at the root",
+        "For each letter, find or create its child",
+        "Move to that child",
+        "Set is_word on the final node"
+      ],
+      "explanation": "The flag goes on the node reached after the last letter.",
+      "id": "q7"
+    }
+  ]
+}

@@ -97,7 +97,7 @@ def main() -> int:
     for img in manifest["images"]:
         if not (ROOT / img["path"]).is_file():
             errors.append(f"{img['path']}: image missing")
-    errors.extend(standard.run(ROOT))
+    errors.extend(standard.run(ROOT / "content"))
     if errors:
         print("\n".join(errors))
         return 1

@@ -1,0 +1,154 @@
+{
+  "id": "geo-polygons-01",
+  "version": 2,
+  "title": "Quadrilaterals",
+  "xp": 15,
+  "tags": [
+    "geometry",
+    "polygons"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Four-sided figures",
+      "body": "A quadrilateral is a polygon with four sides. The angles of any quadrilateral add to $360^\\circ$, because a diagonal splits it into two triangles of $180^\\circ$ each. Special quadrilaterals have extra properties you can use."
+    },
+    {
+      "id": "parallelogram",
+      "kind": "text",
+      "title": "Parallelograms",
+      "body": "A parallelogram has two pairs of parallel sides. Opposite sides are equal, opposite angles are equal, and angles next to each other add to $180^\\circ$. Its diagonals cut each other in half."
+    },
+    {
+      "id": "special",
+      "kind": "text",
+      "title": "Rectangle, rhombus, square",
+      "body": "A rectangle is a parallelogram with four right angles, and its diagonals are equal. A rhombus is a parallelogram with four equal sides, and its diagonals cross at right angles. A square is both a rectangle and a rhombus."
+    },
+    {
+      "id": "others",
+      "kind": "text",
+      "title": "Trapezoid and kite",
+      "body": "A trapezoid has one pair of parallel sides. A kite has two pairs of equal sides that sit next to each other, and its diagonals cross at right angles."
+    },
+    {
+      "id": "use",
+      "kind": "example",
+      "title": "Use the properties",
+      "body": "Find the missing measures.",
+      "steps": [
+        "Parallelogram with one angle $70^\\circ$: the next angle is $180-70=110^\\circ$.",
+        "Rhombus with side 6: perimeter $=4\\cdot6=24$.",
+        "Quadrilateral angles $90,80,100$: the fourth is $360-270=90^\\circ$."
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What do the angles of any quadrilateral add to?",
+      "choices": [
+        "$360^\\circ$",
+        "$180^\\circ$",
+        "$270^\\circ$",
+        "$720^\\circ$"
+      ],
+      "answerIndex": 0,
+      "explanation": "A diagonal splits a quadrilateral into two triangles, $2\\cdot180=360$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "A parallelogram has an angle of $70^\\circ$. Find the angle next to it in degrees.",
+      "accepted": [
+        "110"
+      ],
+      "keypad": "numeric",
+      "explanation": "Neighbouring angles of a parallelogram add to $180^\\circ$."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Which quadrilateral always has four equal sides?",
+      "choices": [
+        "Rectangle",
+        "Rhombus",
+        "Trapezoid",
+        "Kite"
+      ],
+      "answerIndex": 1,
+      "explanation": "A rhombus has four equal sides. A rectangle has four right angles but only opposite sides equal."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "A rhombus has side length 6. Find its perimeter.",
+      "accepted": [
+        "24"
+      ],
+      "keypad": "numeric",
+      "explanation": "Four equal sides: $4\\cdot6=24$."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "Three angles of a quadrilateral are $90^\\circ$, $80^\\circ$ and $100^\\circ$. Find the fourth in degrees.",
+      "accepted": [
+        "90"
+      ],
+      "keypad": "numeric",
+      "explanation": "$360-90-80-100=90$."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which statement is true?",
+      "choices": [
+        "Every rectangle is a square",
+        "Every trapezoid is a rhombus",
+        "Every square is a rectangle",
+        "Every kite is a parallelogram"
+      ],
+      "answerIndex": 2,
+      "explanation": "A square has four right angles, so it is a rectangle. The reverse fails because a rectangle can have unequal sides."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "The diagonals of a rhombus cross at \\_\\_ angles.",
+      "choices": [
+        "right",
+        "equal",
+        "$45^\\circ$"
+      ],
+      "answerIndex": 0,
+      "explanation": "The diagonals of a rhombus are perpendicular."
+    },
+    {
+      "id": "q8",
+      "type": "match_pairs",
+      "prompt": "Match each shape to a property.",
+      "pairs": [
+        [
+          "Rectangle",
+          "Diagonals are equal"
+        ],
+        [
+          "Rhombus",
+          "Four equal sides"
+        ],
+        [
+          "Trapezoid",
+          "One pair of parallel sides"
+        ],
+        [
+          "Parallelogram",
+          "Opposite sides parallel"
+        ]
+      ],
+      "explanation": "These properties are what separate the four families."
+    }
+  ]
+}

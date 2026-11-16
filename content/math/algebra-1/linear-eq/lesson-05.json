@@ -1,0 +1,145 @@
+{
+  "id": "linear-eq-05",
+  "version": 2,
+  "title": "Formulas and literal equations",
+  "xp": 15,
+  "tags": [
+    "algebra",
+    "equations"
+  ],
+  "learn": [
+    {
+      "id": "literal",
+      "kind": "text",
+      "title": "Equations with many letters",
+      "body": "A formula such as $d=rt$ has several letters. A literal equation is one where you solve for a chosen letter in terms of the others. The steps are the same as for numbers."
+    },
+    {
+      "id": "example-solve-for-t",
+      "kind": "example",
+      "title": "Solve $d=rt$ for $t$",
+      "body": "Treat $d$ and $r$ like ordinary numbers.",
+      "steps": [
+        "$t$ is multiplied by $r$",
+        "Divide both sides by $r$: $\\frac{d}{r}=t$",
+        "So $t=\\frac{d}{r}$"
+      ]
+    },
+    {
+      "id": "example-perimeter",
+      "kind": "example",
+      "title": "Solve $P=2l+2w$ for $w$",
+      "body": "Undo the addition, then the multiplication.",
+      "steps": [
+        "Subtract $2l$: $P-2l=2w$",
+        "Divide both sides by 2: $w=\\frac{P-2l}{2}$",
+        "Check with $l=3,w=2$: $P=10$ and $\\frac{10-6}{2}=2$."
+      ]
+    },
+    {
+      "id": "plug-in",
+      "kind": "text",
+      "title": "Plugging in numbers",
+      "body": "You can also put numbers in first. For $A=\\frac{1}{2}bh$ with $A=24$ and $b=8$ we get $24=4h$, so $h=6$. Both ways work: rearrange first, or substitute first."
+    },
+    {
+      "id": "same-rules",
+      "kind": "tip",
+      "body": "Letters follow the same rules as numbers. Whatever you do to one side, do to the other, and undo operations in reverse order."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Solve $d=rt$ for $r$.",
+      "choices": [
+        "$r=dt$",
+        "$r=\\frac{d}{t}$",
+        "$r=\\frac{t}{d}$"
+      ],
+      "answerIndex": 1,
+      "explanation": "$r$ is multiplied by $t$, so divide both sides by $t$."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Use $d=rt$ with $d=60$ and $t=4$. $r=$ ?",
+      "accepted": [
+        "15",
+        "15.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$r=\\frac{d}{t}=\\frac{60}{4}=15$."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "If $A=lw$, then $w=\\_\\_$",
+      "choices": [
+        "$\\frac{A}{l}$",
+        "$Al$",
+        "$A-l$"
+      ],
+      "answerIndex": 0,
+      "explanation": "$w$ is multiplied by $l$, so divide both sides by $l$."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Solve $P=2l+2w$ for $l$.",
+      "choices": [
+        "$l=P-2w$",
+        "$l=\\frac{P-2w}{2}$",
+        "$l=\\frac{P+2w}{2}$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Subtract $2w$ from both sides: $P-2w=2l$. Then divide by 2."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "$A=\\frac{1}{2}bh$. If $A=24$ and $b=8$, then $h=$ ?",
+      "accepted": [
+        "6",
+        "6.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$24=\\frac{1}{2}\\cdot8\\cdot h=4h$, so $h=6$."
+    },
+    {
+      "id": "q6",
+      "type": "order_steps",
+      "prompt": "Solve $y=mx+b$ for $x$. Put the steps in order.",
+      "steps": [
+        "Subtract $b$ from both sides: $y-b=mx$",
+        "Divide both sides by $m$",
+        "Write the result: $x=\\frac{y-b}{m}$"
+      ],
+      "explanation": "Undo the addition first, then the multiplication, just like a two-step equation."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Solve $ax+b=c$ for $x$.",
+      "choices": [
+        "$x=\\frac{c+b}{a}$",
+        "$x=\\frac{c-b}{a}$",
+        "$x=c-\\frac{b}{a}$"
+      ],
+      "answerIndex": 1,
+      "explanation": "Subtract $b$ from both sides to get $ax=c-b$, then divide the whole right side by $a$."
+    },
+    {
+      "id": "q8",
+      "type": "type_answer",
+      "prompt": "$F=\\frac{9}{5}C+32$. If $C=100$, then $F=$ ?",
+      "accepted": [
+        "212",
+        "212.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$\\frac{9}{5}\\cdot100=180$, and $180+32=212$."
+    }
+  ]
+}

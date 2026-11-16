@@ -11,14 +11,14 @@
 <text x="70" y="136" font-size="16" font-weight="800" text-anchor="middle" fill="#14201A">1</text>
 <text x="94" y="136" font-size="16" font-weight="800" fill="#14201A">Draw</text>
 <text x="58" y="170" font-size="13" fill="#14201A">Write a small SVG</text>
-<text x="58" y="194" font-size="11.5" font-family="Menlo, Consolas, monospace" fill="#4F5D55">images/geo-triangle.svg</text>
+<text x="58" y="194" font-size="11.5" font-family="Menlo, Consolas, monospace" fill="#4F5D55">content/images/tri.svg</text>
 <text x="58" y="218" font-size="13" fill="#4F5D55">strict subset, 6 KB max</text>
 <rect x="280" y="100" width="200" height="150" rx="18" fill="#E4F8EC" stroke="#35C46F" stroke-width="2.5"/>
 <circle cx="310" cy="130" r="15" fill="#35C46F"/>
 <text x="310" y="136" font-size="16" font-weight="800" text-anchor="middle" fill="#14201A">2</text>
 <text x="334" y="136" font-size="16" font-weight="800" fill="#14201A">Use it in a lesson</text>
-<text x="298" y="170" font-size="11.5" font-family="Menlo, Consolas, monospace" fill="#14201A">"image": "images/x.svg"</text>
-<text x="298" y="194" font-size="11.5" font-family="Menlo, Consolas, monospace" fill="#4F5D55">"alt": "what it shows"</text>
+<text x="298" y="170" font-size="10" font-family="Menlo, Consolas, monospace" fill="#14201A">image: content/images/x.svg</text>
+<text x="298" y="194" font-size="11.5" font-family="Menlo, Consolas, monospace" fill="#4F5D55">alt: what it shows</text>
 <text x="298" y="218" font-size="13" fill="#4F5D55">alt text is required</text>
 <rect x="520" y="100" width="200" height="150" rx="18" fill="#FFF3CC" stroke="#FFC93C" stroke-width="2.5"/>
 <circle cx="550" cy="130" r="15" fill="#FFC93C"/>

@@ -1,0 +1,140 @@
+{
+  "id": "decisions-02",
+  "version": 2,
+  "minApp": 2,
+  "title": "Comparing values",
+  "xp": 10,
+  "tags": [
+    "python",
+    "conditions"
+  ],
+  "learn": [
+    {
+      "id": "true-false",
+      "kind": "text",
+      "title": "True or False",
+      "body": "A comparison asks a question about two values and answers `True` or `False`. These are values of type `bool`. An `if` uses that answer to decide what to do."
+    },
+    {
+      "id": "compare",
+      "kind": "code",
+      "title": "Comparison operators",
+      "body": "It prints True, False, True, True. `==` asks if two values are equal, `!=` asks if they differ, and `<=` means less than or equal.",
+      "code": "print(5 > 3)\nprint(5 == 3)\nprint(5 != 3)\nprint(4 <= 4)",
+      "language": "python"
+    },
+    {
+      "id": "equals",
+      "kind": "text",
+      "title": "= versus ==",
+      "body": "One `=` stores a value: `x = 5`. Two `==` compare: `x == 5` is `True` or `False`. Writing `if x = 5:` is an error. Mixing the two up is a very common beginner mistake."
+    },
+    {
+      "id": "logic",
+      "kind": "code",
+      "title": "and, or, not",
+      "body": "It prints True, True, False. `and` needs both sides true, `or` needs at least one, and `not` flips the answer.",
+      "code": "age = 15\nhas_ticket = True\nprint(age >= 12 and has_ticket)\nprint(age > 18 or has_ticket)\nprint(not has_ticket)",
+      "language": "python"
+    },
+    {
+      "id": "example-ride",
+      "kind": "example",
+      "title": "Can they ride?",
+      "body": "Riders must be at least 120 cm tall and at least 8 years old. A child is 130 cm tall and 7 years old.",
+      "steps": [
+        "`height >= 120` is True",
+        "`age >= 8` is False",
+        "True `and` False is False, so the child cannot ride"
+      ]
+    },
+    {
+      "id": "case",
+      "kind": "tip",
+      "body": "Text can be compared too. `\"cat\" == \"cat\"` is True, but `\"Cat\" == \"cat\"` is False because case matters."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What does `print(10 != 10)` show?",
+      "choices": [
+        "True",
+        "False"
+      ],
+      "answerIndex": 1,
+      "explanation": "10 is equal to 10, so \"not equal\" is False."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Which line compares two values?",
+      "choices": [
+        "`x = 5`",
+        "`x == 5`",
+        "`x + 5`"
+      ],
+      "answerIndex": 1,
+      "explanation": "`==` compares and gives True or False. `=` stores."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What does `print(3 > 2 and 2 > 5)` show?",
+      "accepted": [
+        "False",
+        "false"
+      ],
+      "keypad": "full",
+      "explanation": "`3 > 2` is True but `2 > 5` is False. `and` needs both, so it is False."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "What does `print(not (4 < 2))` show?",
+      "accepted": [
+        "True",
+        "true"
+      ],
+      "keypad": "full",
+      "explanation": "`4 < 2` is False, and `not` flips it to True."
+    },
+    {
+      "id": "q5",
+      "type": "match_pairs",
+      "prompt": "Match each symbol to its meaning.",
+      "pairs": [
+        [
+          "`==`",
+          "equal to"
+        ],
+        [
+          "`!=`",
+          "not equal to"
+        ],
+        [
+          "`>=`",
+          "greater than or equal to"
+        ],
+        [
+          "`<=`",
+          "less than or equal to"
+        ]
+      ],
+      "explanation": "Each symbol asks a different yes or no question."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "To check that BOTH conditions are true, join them with \\_\\_.",
+      "choices": [
+        "`and`",
+        "`or`",
+        "`not`"
+      ],
+      "answerIndex": 0,
+      "explanation": "`and` is true only when both sides are true."
+    }
+  ]
+}

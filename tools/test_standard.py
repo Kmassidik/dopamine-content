@@ -12,15 +12,16 @@ import standard  # noqa: E402
 import svgcheck  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
+CONTENT = ROOT / "content"
 
 
 def good_tree(tmp: Path):
     """Copy the real catalog and lessons into tmp so each test can break one thing."""
     import shutil
-    shutil.copy(ROOT / "catalog.json", tmp / "catalog.json")
+    shutil.copy(CONTENT / "catalog.json", tmp / "catalog.json")
     for d in ("math", "science", "electronics", "swe", "images"):
-        if (ROOT / d).is_dir():
-            shutil.copytree(ROOT / d, tmp / d)
+        if (CONTENT / d).is_dir():
+            shutil.copytree(CONTENT / d, tmp / d)
 
 
 class StandardTest(unittest.TestCase):
@@ -38,7 +39,7 @@ class StandardTest(unittest.TestCase):
         return {line.split("]")[0].split("[")[1] for line in standard.run(self.tmp)}
 
     def test_real_content_passes(self):
-        self.assertEqual(standard.run(ROOT), [])
+        self.assertEqual(standard.run(CONTENT), [])
 
     def test_lesson_without_learn_pages_fails(self):
         self.edit_lesson(lambda d: d.pop("learn"))
@@ -193,7 +194,7 @@ class SvgTest(unittest.TestCase):
         self.assertEqual(self.rules(GOOD_SVG), set())
 
     def test_real_images_pass(self):
-        files = list((ROOT / "images").glob("*.svg"))
+        files = list((CONTENT / "images").glob("*.svg"))
         self.assertGreaterEqual(len(files), 3)
         for f in files:
             self.assertEqual(svgcheck.check_svg(f.read_bytes()), [], f.name)

@@ -1,0 +1,145 @@
+{
+  "id": "a1-quadratics-02",
+  "version": 2,
+  "title": "Solving by factoring",
+  "xp": 20,
+  "tags": [
+    "algebra",
+    "quadratics"
+  ],
+  "learn": [
+    {
+      "id": "zero-product",
+      "kind": "text",
+      "title": "The zero product property",
+      "body": "If two numbers multiply to 0, at least one of them is 0. So if $(x-2)(x-3)=0$, then $x-2=0$ or $x-3=0$. This turns a quadratic into two easy equations."
+    },
+    {
+      "id": "example-factor",
+      "kind": "example",
+      "title": "Solve $x^2+2x-8=0$",
+      "body": "Factor, then set each factor to 0.",
+      "steps": [
+        "Factor: $(x+4)(x-2)=0$",
+        "$x+4=0$ gives $x=-4$",
+        "$x-2=0$ gives $x=2$",
+        "Check $x=2$: $4+4-8=0$."
+      ]
+    },
+    {
+      "id": "zero-first",
+      "kind": "text",
+      "title": "Move everything to one side",
+      "body": "The trick works only when one side is 0. For $x^2=3x$, first subtract $3x$: $x^2-3x=0$. Then factor: $x(x-3)=0$, so $x=0$ or $x=3$."
+    },
+    {
+      "id": "no-divide",
+      "kind": "tip",
+      "body": "Do not divide both sides by $x$. You would lose the solution $x=0$. Factor instead."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "If $a\\cdot b=0$, what must be true?",
+      "choices": [
+        "$a=0$ and $b=0$",
+        "$a=0$ or $b=0$",
+        "$a=1$ or $b=1$"
+      ],
+      "answerIndex": 1,
+      "explanation": "A product is zero only if one of the factors is zero. This is the zero product property."
+    },
+    {
+      "id": "q2",
+      "type": "type_answer",
+      "prompt": "Solve $(x-2)(x-3)=0$. What is the larger solution?",
+      "accepted": [
+        "3",
+        "3.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$x-2=0$ gives 2 and $x-3=0$ gives 3."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "Solve $x^2-5x+6=0$. What is the smaller solution?",
+      "accepted": [
+        "2",
+        "2.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "Factor: $(x-2)(x-3)=0$, so $x=2$ or $x=3$."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "Before factoring, write the equation with \\_\\_ on one side.",
+      "choices": [
+        "1",
+        "0",
+        "x"
+      ],
+      "answerIndex": 1,
+      "explanation": "The zero product property only works when the product equals zero."
+    },
+    {
+      "id": "q5",
+      "type": "type_answer",
+      "prompt": "Solve $x^2+2x-8=0$. What is the positive solution?",
+      "accepted": [
+        "2",
+        "2.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$(x+4)(x-2)=0$, so $x=-4$ or $x=2$."
+    },
+    {
+      "id": "q6",
+      "type": "type_answer",
+      "prompt": "In the same equation, what is the negative solution?",
+      "accepted": [
+        "-4",
+        "-4.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$x+4=0$ gives $x=-4$."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "Solve $x^2=3x$",
+      "choices": [
+        "$x=3$ only",
+        "$x=0$ or $x=3$",
+        "$x=0$ only"
+      ],
+      "answerIndex": 1,
+      "explanation": "$x^2-3x=0$, so $x(x-3)=0$. Dividing by $x$ would lose the solution $x=0$."
+    },
+    {
+      "id": "q8",
+      "type": "type_answer",
+      "prompt": "Solve $x^2-9=0$. What is the positive solution?",
+      "accepted": [
+        "3",
+        "3.0"
+      ],
+      "keypad": "numeric",
+      "explanation": "$(x-3)(x+3)=0$, so $x=3$ or $x=-3$."
+    },
+    {
+      "id": "q9",
+      "type": "order_steps",
+      "prompt": "Solve $x^2-7x+12=0$. Put the steps in order.",
+      "steps": [
+        "Factor: $(x-3)(x-4)=0$",
+        "Set each factor equal to 0",
+        "Solve: $x=3$ or $x=4$"
+      ],
+      "explanation": "Factor, split, then solve two one-step equations. Check: $9-21+12=0$."
+    }
+  ]
+}

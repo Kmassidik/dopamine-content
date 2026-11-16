@@ -1,0 +1,162 @@
+{
+  "id": "cf-data-05",
+  "version": 2,
+  "minApp": 2,
+  "title": "Integer division and modulo",
+  "xp": 15,
+  "tags": [
+    "c",
+    "operators",
+    "modulo"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Division with whole numbers",
+      "body": "When both sides of `/` are ints, C divides and throws away the fractional part. So `7 / 2` is 3, not 3.5. It drops the decimals, it does not round. This surprises almost every beginner."
+    },
+    {
+      "id": "mod",
+      "kind": "text",
+      "title": "The modulo operator",
+      "body": "`%` gives the remainder after division. `7 % 2` is 1, because 7 is three twos plus 1 left over. It only works on integers. In a format string `%` is something else, so do not confuse the two."
+    },
+    {
+      "id": "demo",
+      "kind": "code",
+      "title": "See both",
+      "body": "The middle line uses 2.0, a decimal, so C does real division.",
+      "code": "    printf(\"%d %d\\n\", 7 / 2, 7 % 2);\n    printf(\"%.1f\\n\", 7 / 2.0);\n    int m = 135;\n    printf(\"%d %d\\n\", m / 60, m % 60);",
+      "language": "c"
+    },
+    {
+      "id": "float",
+      "kind": "text",
+      "title": "Getting a decimal answer",
+      "body": "If either side is a decimal, the division is done with decimals. `7 / 2.0` is 3.5. You can also convert with a cast: `(double) 7 / 2` turns the 7 into a double first, so the result is 3.5."
+    },
+    {
+      "id": "uses",
+      "kind": "text",
+      "title": "What modulo is good for",
+      "body": "`n % 2 == 0` tests for even. `n % 10` is the last digit. `n / 10` removes the last digit. Time works too: 135 minutes is `135 / 60` hours and `135 % 60` minutes."
+    },
+    {
+      "id": "time",
+      "kind": "example",
+      "title": "135 minutes in hours",
+      "body": "Split 135 minutes into hours and minutes.",
+      "steps": [
+        "Hours: `135 / 60` is 2, because 60 fits into 135 twice",
+        "Minutes left: `135 % 60` is 15, the remainder",
+        "So 135 minutes is 2 hours and 15 minutes"
+      ]
+    },
+    {
+      "id": "zero",
+      "kind": "tip",
+      "body": "Dividing by zero is not allowed. With ints it is undefined behaviour, so check the divisor first."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "What is `7 / 2` in C when both are ints?",
+      "choices": [
+        "3",
+        "3.5",
+        "4",
+        "2"
+      ],
+      "answerIndex": 0,
+      "explanation": "Integer division drops the fractional part."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "What is `7 % 2`?",
+      "choices": [
+        "3",
+        "1",
+        "0",
+        "3.5"
+      ],
+      "answerIndex": 1,
+      "explanation": "The remainder when 7 is divided by 2 is 1."
+    },
+    {
+      "id": "q3",
+      "type": "type_answer",
+      "prompt": "What is `20 % 6`? Type the number.",
+      "accepted": [
+        "2"
+      ],
+      "keypad": "full",
+      "explanation": "6 goes into 20 three times (18), leaving 2."
+    },
+    {
+      "id": "q4",
+      "type": "type_answer",
+      "prompt": "What is `20 / 6` with ints? Type the number.",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "full",
+      "explanation": "The whole part of 3.33 is 3."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "`7 / \\_\\_` gives 3.5 in C.",
+      "choices": [
+        "`2`",
+        "`3`",
+        "`2.0`",
+        "`2%`"
+      ],
+      "answerIndex": 2,
+      "explanation": "A decimal on either side makes the division use decimals."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "prompt": "Which test checks whether `n` is even?",
+      "choices": [
+        "`n / 2 == 0`",
+        "`n % 2 == 1`",
+        "`n * 2 == 0`",
+        "`n % 2 == 0`"
+      ],
+      "answerIndex": 3,
+      "explanation": "An even number leaves no remainder when divided by 2."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "prompt": "`n` is 472. What does `n % 10` give?",
+      "choices": [
+        "2",
+        "47",
+        "4",
+        "472"
+      ],
+      "answerIndex": 0,
+      "explanation": "The remainder after dividing by 10 is the last digit."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "prompt": "`n` is 472. What does `n / 10` give with ints?",
+      "choices": [
+        "4",
+        "47",
+        "2",
+        "47.2"
+      ],
+      "answerIndex": 1,
+      "explanation": "Integer division removes the last digit."
+    }
+  ]
+}
