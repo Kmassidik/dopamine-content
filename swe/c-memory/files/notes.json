@@ -1,0 +1,59 @@
+{
+  "id": "cm-files-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Structs and Files: cheat sheet",
+  "blocks": [
+    {
+      "id": "big",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Structs group values. Files keep bytes on disk. Both are just memory laid out in a certain order."
+    },
+    {
+      "id": "n-struct",
+      "kind": "code",
+      "title": "Struct and typedef",
+      "code": "typedef struct {\n    char name[12];\n    int age;\n} person;\nperson p = {\"Ana\", 31};\nprintf(\"%d\\n\", p.age);",
+      "language": "c"
+    },
+    {
+      "id": "acc",
+      "kind": "list",
+      "title": "Reaching fields",
+      "items": [
+        "`p.age` with a struct variable",
+        "`ptr->age` with a pointer to a struct",
+        "`b = a` copies every field",
+        "Set text fields with `strcpy`"
+      ]
+    },
+    {
+      "id": "modes",
+      "kind": "list",
+      "title": "fopen modes",
+      "items": [
+        "`\"r\"` read, file must exist",
+        "`\"w\"` write, empties the file",
+        "`\"a\"` append at the end",
+        "Add `b` for bytes: `\"rb\"`, `\"wb\"`"
+      ]
+    },
+    {
+      "id": "fns",
+      "kind": "list",
+      "title": "File functions",
+      "items": [
+        "`fprintf` writes text, `fgets` reads a line",
+        "`fscanf` reads values, use a width with `%s`",
+        "`fread` and `fwrite` move blocks of bytes",
+        "`fgetc` and `fputc` move one byte"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Always check `fopen` for NULL and always `fclose`."
+    }
+  ]
+}

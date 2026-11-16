@@ -1,0 +1,144 @@
+{
+  "id": "cm-hex-02",
+  "version": 1,
+  "minApp": 2,
+  "title": "Hexadecimal",
+  "xp": 15,
+  "tags": [
+    "c",
+    "hex"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Why hex exists",
+      "body": "A byte written in binary is eight digits long, which is hard to read. Hexadecimal, or hex, is a shorter way. It uses base 16, so one hex digit stands for exactly four bits. That means one byte is always two hex digits."
+    },
+    {
+      "id": "digits",
+      "kind": "text",
+      "title": "The sixteen digits",
+      "body": "Hex needs 16 symbols. It uses 0 to 9, then letters: A is 10, B is 11, C is 12, D is 13, E is 14 and F is 15. Each place is worth 16 times the one before it: 1, 16, 256 and so on."
+    },
+    {
+      "id": "ex-hex",
+      "kind": "example",
+      "title": "Reading 0x2F",
+      "body": "In C, a hex number starts with `0x`. Convert 0x2F to decimal.",
+      "steps": [
+        "Ignore the prefix: the digits are 2 and F",
+        "F is 15, and the 2 is in the 16s place",
+        "2 * 16 = 32",
+        "32 + 15 = 47, so 0x2F is 47"
+      ]
+    },
+    {
+      "id": "printf",
+      "kind": "code",
+      "title": "Printing hex",
+      "body": "`%x` prints lowercase hex, `%X` uppercase. `%02x` pads to two digits with a zero. The output is `ff FF 255`, then `0a`.",
+      "code": "printf(\"%x %X %d\\n\", 255, 255, 0xFF);\nprintf(\"%02x\\n\", 10);",
+      "language": "c"
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "0xFF is the biggest byte: both hex digits are F. That is 15 * 16 + 15 = 255, the same limit you saw for one byte."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "How many hex digits describe exactly one byte?",
+      "choices": [
+        "1",
+        "2",
+        "4",
+        "8"
+      ],
+      "answerIndex": 1,
+      "explanation": "Each hex digit covers 4 bits, so 8 bits need two digits.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "In hex, which digit stands for 15?",
+      "choices": [
+        "E",
+        "F",
+        "G",
+        "A"
+      ],
+      "answerIndex": 1,
+      "explanation": "A is 10, B 11, C 12, D 13, E 14 and F 15.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "What is 0x10 in decimal?",
+      "accepted": [
+        "16"
+      ],
+      "keypad": "numeric",
+      "explanation": "1 in the 16s place plus 0 is 16.",
+      "id": "q3"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "What is 0x1F in decimal?",
+      "accepted": [
+        "31"
+      ],
+      "keypad": "numeric",
+      "explanation": "16 + 15 = 31.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "The `printf` format `%\\_\\_` prints a number in lowercase hex.",
+      "choices": [
+        "x",
+        "d",
+        "s"
+      ],
+      "answerIndex": 0,
+      "explanation": "`%x` is hex, `%d` is decimal and `%s` is a string.",
+      "id": "q5"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "What does `printf(\"%02x\", 10)` print?",
+      "accepted": [
+        "0a"
+      ],
+      "keypad": "full",
+      "explanation": "10 is A in hex, and `%02x` pads it to two digits.",
+      "id": "q6"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each hex number to its decimal value.",
+      "pairs": [
+        [
+          "0xA",
+          "10"
+        ],
+        [
+          "0x10",
+          "16"
+        ],
+        [
+          "0x20",
+          "32"
+        ],
+        [
+          "0xFF",
+          "255"
+        ]
+      ],
+      "explanation": "0x20 is 2*16 = 32, and 0xFF is 15*16 + 15 = 255.",
+      "id": "q7"
+    }
+  ]
+}

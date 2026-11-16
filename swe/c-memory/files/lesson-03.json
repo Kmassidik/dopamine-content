@@ -1,0 +1,140 @@
+{
+  "id": "cm-files-03",
+  "version": 1,
+  "minApp": 2,
+  "title": "fopen and fclose",
+  "xp": 15,
+  "tags": [
+    "c",
+    "files",
+    "stdio"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Data that survives",
+      "body": "Variables vanish when the program ends. A file keeps data on disk. In C you open a file with `fopen`, which returns a `FILE *`: a pointer to a handle that the library uses to track your position in the file. When you are done you call `fclose`."
+    },
+    {
+      "id": "modes",
+      "kind": "text",
+      "title": "The mode string",
+      "body": "`fopen(path, mode)` needs a mode. `\"r\"` reads and needs the file to exist. `\"w\"` writes and empties an existing file, or creates it. `\"a\"` appends to the end. Be careful: `\"w\"` on a file you wanted to keep deletes its contents."
+    },
+    {
+      "id": "check",
+      "kind": "code",
+      "title": "Always check for NULL",
+      "body": "If `fopen` fails, it returns `NULL`. It may fail because the folder or file does not exist, or you lack permission. This program prints `cannot open`.",
+      "code": "FILE *f = fopen(\"nope/missing.txt\",\n                \"r\");\nif (f == NULL) {\n    printf(\"cannot open\\n\");\n    return 1;\n}\nfclose(f);",
+      "language": "c"
+    },
+    {
+      "id": "ex-flow",
+      "kind": "example",
+      "title": "The usual flow",
+      "body": "Every file program follows the same steps.",
+      "steps": [
+        "`fopen` the file with a mode",
+        "Check the result is not `NULL`",
+        "Read or write",
+        "`fclose` it, which also saves pending data"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "A relative path like \"scores.txt\" is looked up from the folder where you run the program, not where the source file lives."
+    }
+  ],
+  "questions": [
+    {
+      "type": "fill_blank",
+      "prompt": "`fopen` returns a pointer to a \\_\\_.",
+      "choices": [
+        "FILE",
+        "file.h",
+        "char"
+      ],
+      "answerIndex": 0,
+      "explanation": "The type is `FILE *`.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does `fopen` return if the file cannot be opened?",
+      "choices": [
+        "NULL",
+        "0 bytes",
+        "An empty file",
+        "-1"
+      ],
+      "answerIndex": 0,
+      "explanation": "Always test for `NULL` before using the pointer.",
+      "id": "q2"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which mode opens an existing file for reading?",
+      "choices": [
+        "\"r\"",
+        "\"w\"",
+        "\"a\"",
+        "\"x\""
+      ],
+      "answerIndex": 0,
+      "explanation": "`\"r\"` is read.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does mode \"w\" do to an existing file?",
+      "choices": [
+        "Empties it",
+        "Appends to it",
+        "Leaves it untouched",
+        "Deletes the folder"
+      ],
+      "answerIndex": 0,
+      "explanation": "Writing starts from scratch, so old contents are lost.",
+      "id": "q4"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "Which one-letter mode adds to the end of a file?",
+      "accepted": [
+        "a",
+        "\"a\""
+      ],
+      "keypad": "full",
+      "explanation": "`\"a\"` appends and keeps what is already there.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Why call `fclose`?",
+      "choices": [
+        "To finish and save data and release the handle",
+        "To delete the file",
+        "To rename the file",
+        "To print it"
+      ],
+      "answerIndex": 0,
+      "explanation": "Closing flushes buffered data and frees the resource.",
+      "id": "q6"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put the steps in order.",
+      "steps": [
+        "`fopen` the file",
+        "Check the pointer is not `NULL`",
+        "Read or write",
+        "`fclose` the file"
+      ],
+      "explanation": "Open, verify, use, close.",
+      "id": "q7"
+    }
+  ]
+}

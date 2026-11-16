@@ -1,0 +1,59 @@
+{
+  "id": "cm-pointers-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Pointers: cheat sheet",
+  "blocks": [
+    {
+      "id": "big",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "A pointer is a variable that holds an address. `*p` follows the address to the value."
+    },
+    {
+      "id": "syn",
+      "kind": "list",
+      "title": "Pointer syntax",
+      "items": [
+        "`int *p = &n;` p points at n",
+        "`*p` is the value at the address",
+        "`p + 1` moves by one item, not one byte",
+        "`NULL` points at nothing"
+      ]
+    },
+    {
+      "id": "n-swap",
+      "kind": "code",
+      "title": "Swap through pointers",
+      "code": "void swap(int *a, int *b) {\n    int tmp = *a;\n    *a = *b;\n    *b = tmp;\n}",
+      "language": "c"
+    },
+    {
+      "id": "arr",
+      "kind": "list",
+      "title": "Arrays and pointers",
+      "items": [
+        "`a` is the address of `a[0]`",
+        "`a[i]` equals `*(a + i)`",
+        "A function gets only a pointer to the first item",
+        "Pass the length as another argument"
+      ]
+    },
+    {
+      "id": "str",
+      "kind": "list",
+      "title": "Strings",
+      "items": [
+        "A string ends with a 0 byte, `'\\0'`",
+        "`char *s = \"hi\"` is read-only text",
+        "`char t[] = \"hi\"` is a copy you can change",
+        "`strlen` does not count the 0 byte"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Never dereference NULL or step outside an array. Both are undefined behavior and often crash."
+    }
+  ]
+}

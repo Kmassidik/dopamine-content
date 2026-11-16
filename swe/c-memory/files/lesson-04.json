@@ -1,0 +1,146 @@
+{
+  "id": "cm-files-04",
+  "version": 1,
+  "minApp": 2,
+  "title": "Reading and writing text files",
+  "xp": 15,
+  "tags": [
+    "c",
+    "files",
+    "text"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "printf for files",
+      "body": "`fprintf(f, ...)` works like `printf`, but writes to the file `f`. To read, `fgets` fetches one line and `fscanf` reads formatted values. All three work on the `FILE *` you got from `fopen`."
+    },
+    {
+      "id": "write",
+      "kind": "code",
+      "title": "Writing lines",
+      "body": "This opens `scores.txt` for writing and puts two lines in it. Mode `\"w\"` creates the file or empties it.",
+      "code": "FILE *f = fopen(\"scores.txt\", \"w\");\nif (f == NULL)\n    return 1;\nfprintf(f, \"ana 90\\n\");\nfprintf(f, \"bo 85\\n\");\nfclose(f);",
+      "language": "c"
+    },
+    {
+      "id": "read",
+      "kind": "code",
+      "title": "Reading lines",
+      "body": "This prints `got: ana 90` and `got: bo 85`. `fgets` reads up to the size you give it, including the newline, and returns `NULL` at the end of the file.",
+      "code": "f = fopen(\"scores.txt\", \"r\");\nif (f == NULL)\n    return 1;\nchar line[40];\nwhile (fgets(line, sizeof line, f))\n    printf(\"got: %s\", line);\nfclose(f);",
+      "language": "c"
+    },
+    {
+      "id": "scan",
+      "kind": "code",
+      "title": "Reading values",
+      "body": "`fscanf` returns how many values it filled. The loop stops when that is not 2. With the two lines above this prints 175. `%19s` limits the name to 19 letters, so it fits `name[20]`.",
+      "code": "char name[20];\nint pts, total = 0;\nwhile (fscanf(f, \"%19s %d\",\n              name, &pts) == 2)\n    total += pts;\nprintf(\"%d\\n\", total);",
+      "language": "c"
+    },
+    {
+      "id": "ex-sum",
+      "kind": "example",
+      "title": "Adding the scores",
+      "body": "The file holds `ana 90` and `bo 85`.",
+      "steps": [
+        "The first `fscanf` reads ana and 90",
+        "The second reads bo and 85",
+        "The third finds the end and returns less than 2",
+        "total = 90 + 85 = 175"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Never use `%s` in `fscanf` without a width. A long word would overflow your array, the same bug as a buffer overflow."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "Which function writes formatted text to a file?",
+      "choices": [
+        "`fprintf`",
+        "`fgets`",
+        "`fclose`",
+        "`fopen`"
+      ],
+      "answerIndex": 0,
+      "explanation": "`fprintf` is `printf` with a file argument.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What does `fgets` return at the end of a file?",
+      "choices": [
+        "NULL",
+        "0",
+        "An empty string",
+        "The last line again"
+      ],
+      "answerIndex": 0,
+      "explanation": "Returning `NULL` lets a `while` loop stop.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "The file has `ana 90` and `bo 85`. What total does the `fscanf` loop print?",
+      "accepted": [
+        "175"
+      ],
+      "keypad": "numeric",
+      "explanation": "90 + 85 = 175.",
+      "id": "q3"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "The file has `ana 90`, `bo 85` and `cy 70`. What is the total of the points?",
+      "accepted": [
+        "245"
+      ],
+      "keypad": "numeric",
+      "explanation": "90 + 85 + 70 = 245.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "To add a line to the end of an existing file, open it with mode \\_\\_.",
+      "choices": [
+        "\"a\"",
+        "\"r\"",
+        "\"x\""
+      ],
+      "answerIndex": 0,
+      "explanation": "Append mode keeps the old lines.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Why write `%19s` for a `char name[20]`?",
+      "choices": [
+        "Leave room for the ending 0",
+        "It looks nice",
+        "Names have 19 letters",
+        "It speeds up reading"
+      ],
+      "answerIndex": 0,
+      "explanation": "19 letters plus the 0 byte fill exactly 20 bytes.",
+      "id": "q6"
+    },
+    {
+      "type": "order_steps",
+      "prompt": "Put the steps of saving and reading back in order.",
+      "steps": [
+        "Open with \"w\" and write lines",
+        "Close the file",
+        "Open the same file with \"r\"",
+        "Read the lines and close it"
+      ],
+      "explanation": "Close after writing so the data is saved before you read it.",
+      "id": "q7"
+    }
+  ]
+}

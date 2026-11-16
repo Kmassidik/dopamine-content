@@ -1,0 +1,148 @@
+{
+  "id": "cm-pointers-04",
+  "version": 1,
+  "minApp": 2,
+  "title": "Pointer arithmetic",
+  "xp": 15,
+  "tags": [
+    "c",
+    "pointers",
+    "arithmetic"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Adding to a pointer",
+      "body": "You can add whole numbers to a pointer. The key rule: `p + 1` moves by one item, not by one byte. For an `int *` it moves 4 bytes, for a `double *` it moves 8. The compiler multiplies by the item size for you."
+    },
+    {
+      "id": "demo",
+      "kind": "code",
+      "title": "Moving and measuring",
+      "body": "This prints 3, 3, 12, then 2. `q - p` counts items between the pointers. The byte gap is 12, because 3 items of 4 bytes each lie between them. `p++` moves `p` to the second item.",
+      "code": "int a[5] = {1, 2, 3, 4, 5};\nint *p = a;\nint *q = a + 3;\nprintf(\"%d\\n\", *(p + 2));\nprintf(\"%td\\n\", q - p);\nprintf(\"%ju\\n\", (uintmax_t)\n       ((uintptr_t)q - (uintptr_t)p));\np++;\nprintf(\"%d\\n\", *p);",
+      "language": "c"
+    },
+    {
+      "id": "ex-step",
+      "kind": "example",
+      "title": "Walking an array",
+      "body": "`p` points at `a[0]` of `{1, 2, 3, 4, 5}`. Where does `p + 4` point?",
+      "steps": [
+        "`p + 1` is `a[1]`, which holds 2",
+        "`p + 2` is `a[2]`, which holds 3",
+        "`p + 4` is `a[4]`, the last item",
+        "`*(p + 4)` is 5"
+      ]
+    },
+    {
+      "id": "limit",
+      "kind": "text",
+      "title": "Staying in bounds",
+      "body": "Pointer arithmetic only makes sense inside one array, or one item past its end. Reading or writing outside it is undefined behavior: the program may crash, print garbage, or seem to work. The compiler does not check this for you."
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "`%td` prints the difference of two pointers, a `ptrdiff_t`. It counts items, not bytes."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "`p` is an `int *`. How many bytes does `p + 1` move?",
+      "choices": [
+        "4",
+        "1",
+        "8",
+        "It depends on the value"
+      ],
+      "answerIndex": 0,
+      "explanation": "It moves one `int`, which is 4 bytes.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "`d` is a `double *`. How many bytes does `d + 1` move?",
+      "choices": [
+        "8",
+        "1",
+        "4",
+        "16"
+      ],
+      "answerIndex": 0,
+      "explanation": "One `double` is 8 bytes.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "`int a[5] = {1, 2, 3, 4, 5}; int *p = a;` What is `*(p + 3)`?",
+      "accepted": [
+        "4"
+      ],
+      "keypad": "numeric",
+      "explanation": "`p + 3` points at `a[3]`, which is 4.",
+      "id": "q3"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "`q` is `a + 3` and `p` is `a`. What does `q - p` give?",
+      "accepted": [
+        "3"
+      ],
+      "keypad": "numeric",
+      "explanation": "The subtraction counts items between them, not bytes.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "Reading outside an array is \\_\\_ behavior.",
+      "choices": [
+        "undefined",
+        "guaranteed",
+        "allowed"
+      ],
+      "answerIndex": 0,
+      "explanation": "The result is undefined: the program may crash or print garbage.",
+      "id": "q5"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "After `p++` on an `int *`, what does `p` point at?",
+      "choices": [
+        "The next int",
+        "The next byte",
+        "The same int",
+        "The previous int"
+      ],
+      "answerIndex": 0,
+      "explanation": "`++` moves by one item of the pointed type.",
+      "id": "q6"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match the expression to its meaning.",
+      "pairs": [
+        [
+          "`p + 1`",
+          "address of next item"
+        ],
+        [
+          "`*(p + 1)`",
+          "value of next item"
+        ],
+        [
+          "`q - p`",
+          "number of items between"
+        ],
+        [
+          "`p++`",
+          "moves p forward one item"
+        ]
+      ],
+      "explanation": "Pointer arithmetic always counts in items.",
+      "id": "q7"
+    }
+  ]
+}

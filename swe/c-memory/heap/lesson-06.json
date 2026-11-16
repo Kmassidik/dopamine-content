@@ -1,0 +1,148 @@
+{
+  "id": "cm-heap-06",
+  "version": 1,
+  "minApp": 2,
+  "title": "Common memory bugs",
+  "xp": 15,
+  "tags": [
+    "c",
+    "bugs",
+    "undefined-behavior"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "Three classic bugs",
+      "body": "Memory bugs are undefined behavior: the program may crash, print wrong values, or even seem to work, and it can change from run to run or machine to machine. Because failures are random, learn to spot them by reading. Here are the three most common."
+    },
+    {
+      "id": "uaf",
+      "kind": "code",
+      "title": "Use after free",
+      "body": "The block was given back, then read. The pointer still holds an address, but the memory is not yours. The result is unpredictable. After freeing, set `p = NULL` so that a mistake fails loudly.",
+      "code": "int *p = malloc(sizeof *p);\n*p = 5;\nfree(p);\nprintf(\"%d\\n\", *p);  /* bug */",
+      "language": "c"
+    },
+    {
+      "id": "df",
+      "kind": "code",
+      "title": "Double free",
+      "body": "Freeing the same block twice corrupts the heap's bookkeeping. It often crashes, sometimes later and somewhere else. Setting `p = NULL` after the first free makes the second call harmless.",
+      "code": "free(p);\nfree(p);  /* bug */",
+      "language": "c"
+    },
+    {
+      "id": "ovf",
+      "kind": "code",
+      "title": "Buffer overflow",
+      "body": "The block holds 3 ints, valid indexes 0, 1 and 2. Writing `a[3]` goes past its end and may overwrite other data. No error is reported at the write.",
+      "code": "int *a = malloc(3 * sizeof *a);\na[0] = 1;\na[3] = 4;  /* bug */",
+      "language": "c"
+    },
+    {
+      "id": "ex-spot",
+      "kind": "example",
+      "title": "Spot the bug",
+      "body": "`char *s = malloc(4); strcpy(s, \"cats\");`",
+      "steps": [
+        "`\"cats\"` has 4 letters",
+        "The ending 0 needs a 5th byte",
+        "Copying writes one byte past the block",
+        "The fix is `malloc(5)` or `strlen + 1`"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Code that appears to work is not proof of correctness. Tools such as Valgrind or the compiler option `-fsanitize=address` catch many of these bugs."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What is reading `*p` after `free(p)` called?",
+      "choices": [
+        "Use after free",
+        "A memory leak",
+        "A buffer overflow",
+        "A valid read"
+      ],
+      "answerIndex": 0,
+      "explanation": "The memory was given back, so it is no longer yours to read.",
+      "id": "q1"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What is calling `free(p)` twice on the same block called?",
+      "choices": [
+        "Double free",
+        "Dangling leak",
+        "Stack overflow",
+        "Safe cleanup"
+      ],
+      "answerIndex": 0,
+      "explanation": "A block may be freed only once.",
+      "id": "q2"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "`malloc(3 * sizeof *a)` for ints. What is the highest valid index?",
+      "accepted": [
+        "2"
+      ],
+      "keypad": "numeric",
+      "explanation": "Three items have indexes 0, 1 and 2.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "A program with a buffer overflow runs fine on your machine. What does that tell you?",
+      "choices": [
+        "Nothing, the bug may still exist",
+        "The code is correct",
+        "The compiler fixed it",
+        "It never crashes"
+      ],
+      "answerIndex": 0,
+      "explanation": "Undefined behavior can look harmless until the day it does not.",
+      "id": "q4"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "Setting a pointer to \\_\\_ after `free` makes a second `free` harmless.",
+      "choices": [
+        "NULL",
+        "1",
+        "0.0"
+      ],
+      "answerIndex": 0,
+      "explanation": "`free(NULL)` does nothing.",
+      "id": "q5"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each bug to its fix.",
+      "pairs": [
+        [
+          "Use after free",
+          "stop using the pointer, set it to NULL"
+        ],
+        [
+          "Double free",
+          "free each block once"
+        ],
+        [
+          "Buffer overflow",
+          "stay within the allocated size"
+        ],
+        [
+          "Memory leak",
+          "free before losing the pointer"
+        ]
+      ],
+      "explanation": "Each bug has its own habit that prevents it.",
+      "id": "q6"
+    }
+  ]
+}

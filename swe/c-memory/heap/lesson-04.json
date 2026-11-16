@@ -1,0 +1,146 @@
+{
+  "id": "cm-heap-04",
+  "version": 1,
+  "minApp": 2,
+  "title": "Memory leaks and Valgrind",
+  "xp": 15,
+  "tags": [
+    "c",
+    "leaks",
+    "valgrind"
+  ],
+  "learn": [
+    {
+      "id": "intro",
+      "kind": "text",
+      "title": "What a leak is",
+      "body": "A memory leak is heap memory you allocated and never freed, and can no longer reach. The program keeps running, so nothing looks wrong. But the memory stays reserved until the program ends. A long-running app that leaks a little each time can eventually run out."
+    },
+    {
+      "id": "demo",
+      "kind": "code",
+      "title": "A leaky loop",
+      "body": "This prints 0, 1, 2. Each pass asks for 100 ints, which is 400 bytes, and then loses the pointer when `p` goes out of scope. Three passes leak 1200 bytes. Adding `free(p);` at the end of the loop fixes it.",
+      "code": "for (int i = 0; i < 3; i++) {\n    int *p = malloc(100 * sizeof(int));\n    if (p == NULL)\n        return 1;\n    p[0] = i;\n    printf(\"%d\\n\", p[0]);\n}",
+      "language": "c"
+    },
+    {
+      "id": "tool",
+      "kind": "text",
+      "title": "Finding leaks with Valgrind",
+      "body": "Valgrind is a tool, common on Linux, that runs your program and reports memory mistakes. Compile with `-g` so it can show line numbers, then run the program under it. It lists blocks that were allocated but never freed. It is not available on every system."
+    },
+    {
+      "id": "cmd",
+      "kind": "code",
+      "title": "Running it",
+      "body": "Valgrind prints a summary of leaked bytes and where each block was allocated. A clean run ends with a message saying that all heap blocks were freed.",
+      "code": "clang -g leak.c -o leak\nvalgrind --leak-check=full ./leak",
+      "language": "c"
+    },
+    {
+      "id": "ex-fix",
+      "kind": "example",
+      "title": "Reading a report",
+      "body": "Imagine Valgrind says some bytes are definitely lost, with a `malloc` line from your loop.",
+      "steps": [
+        "The report points at the line that allocated the block",
+        "Find where that pointer is last used",
+        "Add `free` there, before the pointer is lost",
+        "Run Valgrind again to confirm"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "A leak rarely crashes anything. Only a tool or careful reading shows it, so check with Valgrind whenever you use `malloc`."
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "prompt": "What is a memory leak?",
+      "choices": [
+        "Heap memory that is never freed",
+        "Reading past an array",
+        "A missing semicolon",
+        "Using too many variables"
+      ],
+      "answerIndex": 0,
+      "explanation": "The block stays reserved but nothing can reach it.",
+      "id": "q1"
+    },
+    {
+      "type": "type_answer",
+      "prompt": "The example allocates 100 ints per pass for 3 passes. How many bytes leak? (int is 4 bytes)",
+      "accepted": [
+        "1200"
+      ],
+      "keypad": "numeric",
+      "explanation": "100 * 4 * 3 = 1200 bytes.",
+      "id": "q2"
+    },
+    {
+      "type": "fill_blank",
+      "prompt": "Compile with `-\\_\\_` so Valgrind can show line numbers.",
+      "choices": [
+        "g",
+        "O",
+        "w"
+      ],
+      "answerIndex": 0,
+      "explanation": "`-g` adds debugging information to the program.",
+      "id": "q3"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "How do you fix the leaky loop?",
+      "choices": [
+        "Call `free(p)` in each pass",
+        "Print p",
+        "Declare p as `int`",
+        "Use `sizeof` twice"
+      ],
+      "answerIndex": 0,
+      "explanation": "Each block is freed before its pointer disappears.",
+      "id": "q4"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Does a leak usually stop the program at once?",
+      "choices": [
+        "No, it usually keeps running",
+        "Yes, always",
+        "Yes, with a segfault",
+        "It prints a warning"
+      ],
+      "answerIndex": 0,
+      "explanation": "Leaks are quiet, which is why you need tools to find them.",
+      "id": "q5"
+    },
+    {
+      "type": "match_pairs",
+      "prompt": "Match each item to its job.",
+      "pairs": [
+        [
+          "`malloc`",
+          "asks for heap memory"
+        ],
+        [
+          "`free`",
+          "gives it back"
+        ],
+        [
+          "Valgrind",
+          "reports leaks and misuse"
+        ],
+        [
+          "`-g`",
+          "adds line info for tools"
+        ]
+      ],
+      "explanation": "Allocate, release, and verify with a tool.",
+      "id": "q6"
+    }
+  ]
+}

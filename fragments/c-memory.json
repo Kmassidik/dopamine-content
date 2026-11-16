@@ -1,0 +1,51 @@
+{
+  "course": {
+    "id": "c-memory",
+    "categoryId": "swe",
+    "title": "Memory and Pointers",
+    "description": "See how C stores data in bytes, then master pointers, the heap and files.",
+    "order": 4,
+    "dir": "swe/c-memory",
+    "overview": {
+      "summary": "Learn how memory really works in C: bytes, hex and addresses, pointers, malloc and free, structs and files, with every example tested.",
+      "outcomes": [
+        "Read bytes and hexadecimal numbers",
+        "Use addresses, pointers and pointer arithmetic",
+        "Pass pointers to functions and avoid NULL crashes",
+        "Allocate, grow and free heap memory safely",
+        "Spot leaks, use after free and overflows",
+        "Read and write text and binary files"
+      ],
+      "requirements": [
+        "Course C Fundamentals and Arrays: functions, arrays and strings"
+      ],
+      "minutes": 110
+    },
+    "units": [
+      {
+        "id": "cm-hex",
+        "title": "Bytes, Hex and Addresses",
+        "order": 1,
+        "dir": "addresses"
+      },
+      {
+        "id": "cm-pointers",
+        "title": "Pointers",
+        "order": 2,
+        "dir": "pointers"
+      },
+      {
+        "id": "cm-heap",
+        "title": "Dynamic Memory",
+        "order": 3,
+        "dir": "heap"
+      },
+      {
+        "id": "cm-files",
+        "title": "Structs and Files",
+        "order": 4,
+        "dir": "files"
+      }
+    ]
+  }
+}

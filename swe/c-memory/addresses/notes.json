@@ -1,0 +1,58 @@
+{
+  "id": "cm-hex-notes",
+  "version": 1,
+  "minApp": 2,
+  "title": "Bytes, Hex and Addresses: cheat sheet",
+  "blocks": [
+    {
+      "id": "big",
+      "kind": "text",
+      "title": "The big idea",
+      "body": "Memory is a row of numbered bytes. Each byte has an address. Everything your program holds is built from bytes."
+    },
+    {
+      "id": "bits",
+      "kind": "list",
+      "title": "Bits, bytes, hex",
+      "items": [
+        "8 bits = 1 byte = 256 values (0 to 255)",
+        "One hex digit = 4 bits, a byte = 2 hex digits",
+        "Hex digits: 0-9 then A=10 to F=15",
+        "`0xFF` is 255, `0x10` is 16"
+      ]
+    },
+    {
+      "id": "n-print",
+      "kind": "code",
+      "title": "Printing in hex",
+      "code": "printf(\"%x %02x\\n\", 255, 10);",
+      "language": "c"
+    },
+    {
+      "id": "ops",
+      "kind": "list",
+      "title": "Operators",
+      "items": [
+        "`&n` is the address of `n`",
+        "`%p` prints an address (cast to `void *`)",
+        "`sizeof x` is the size in bytes",
+        "`%zu` prints a `sizeof` result"
+      ]
+    },
+    {
+      "id": "sizes",
+      "kind": "list",
+      "title": "Sizes used here (64-bit)",
+      "items": [
+        "`char` 1, `int` 4, `long` 8",
+        "`double` 8, a pointer 8",
+        "Items in an array: `sizeof a / sizeof a[0]`"
+      ]
+    },
+    {
+      "id": "tip",
+      "kind": "tip",
+      "body": "Addresses differ between machines and runs. Print them to learn, but never rely on a value."
+    }
+  ]
+}
